@@ -1,4 +1,4 @@
-((typeof self !== 'undefined' ? self : this)["webpackJsonp_wix_ui_santa"] = (typeof self !== 'undefined' ? self : this)["webpackJsonp_wix_ui_santa"] || []).push([[42],{
+((typeof self !== 'undefined' ? self : this)["webpackJsonp_wix_ui_santa"] = (typeof self !== 'undefined' ? self : this)["webpackJsonp_wix_ui_santa"] || []).push([[44],{
 
 /***/ 12:
 /*!**********************************************!*\
@@ -100,6 +100,494 @@ module.exports = shouldUseNative() ? Object.assign : function (target, source) {
 
 	return to;
 };
+
+
+/***/ }),
+
+/***/ 131:
+/*!***************************************************!*\
+  !*** ../node_modules/wix-ui-core/radio-button.js ***!
+  \***************************************************/
+/*! no static exports found */
+/*! all exports used */
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(/*! ./dist/src/components/radio-button */ 132);
+
+
+/***/ }),
+
+/***/ 132:
+/*!*****************************************************************************!*\
+  !*** ../node_modules/wix-ui-core/dist/src/components/radio-button/index.js ***!
+  \*****************************************************************************/
+/*! no static exports found */
+/*! all exports used */
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var RadioButton_1 = __webpack_require__(/*! ./RadioButton */ 133);
+exports.RadioButton = RadioButton_1.RadioButton;
+//# sourceMappingURL=index.js.map
+
+/***/ }),
+
+/***/ 133:
+/*!***********************************************************************************!*\
+  !*** ../node_modules/wix-ui-core/dist/src/components/radio-button/RadioButton.js ***!
+  \***********************************************************************************/
+/*! no static exports found */
+/*! all exports used */
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var tslib_1 = __webpack_require__(/*! tslib */ 6);
+var React = __webpack_require__(/*! react */ 0);
+var RadioButton_st_css_1 = __webpack_require__(/*! ./RadioButton.st.css */ 134);
+var noop = function () { return null; };
+var RadioButton = /** @class */ (function (_super) {
+    tslib_1.__extends(RadioButton, _super);
+    function RadioButton() {
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.focusedByMouse = false;
+        _this.state = {
+            focused: false,
+            focusVisible: false,
+        };
+        _this.handleClick = function (event) {
+            _this.focusedByMouse = true;
+            _this.handleInputChange(event);
+        };
+        _this.handleInputChange = function (event) {
+            if (!_this.props.disabled) {
+                _this.props.onChange(tslib_1.__assign({ value: _this.props.value }, event));
+                if (_this.radioRef) {
+                    _this.radioRef.focus();
+                }
+            }
+        };
+        _this.onHover = function (event) {
+            _this.props.onHover(tslib_1.__assign({ value: _this.props.value }, event));
+        };
+        _this.onFocus = function () {
+            _this.setState({ focused: true, focusVisible: !_this.focusedByMouse });
+        };
+        _this.onInputBlur = function () {
+            _this.setState({ focused: false, focusVisible: false });
+            _this.focusedByMouse = false;
+        };
+        _this.handleInputKeyDown = function () {
+            _this.setState({ focusVisible: true });
+        };
+        _this.radioRef = undefined;
+        return _this;
+    }
+    RadioButton.prototype.render = function () {
+        var _this = this;
+        var _a = this.props, value = _a.value, name = _a.name, checkedIcon = _a.checkedIcon, uncheckedIcon = _a.uncheckedIcon, label = _a.label, checked = _a.checked, disabled = _a.disabled, required = _a.required, onIconBlur = _a.onIconBlur;
+        var focused = this.state.focused;
+        return (React.createElement("div", tslib_1.__assign({}, RadioButton_st_css_1.default('root', {
+            checked: checked,
+            disabled: disabled,
+            focused: focused,
+            'focus-visible': this.state.focusVisible,
+        }, this.props), { onChange: this.handleInputChange, onClick: this.handleClick, role: "radio", "aria-checked": checked ? checked : false }),
+            React.createElement("input", { type: "radio", className: RadioButton_st_css_1.default.hiddenRadio, disabled: disabled, required: required, onFocus: this.onFocus, onBlur: this.onInputBlur, checked: checked, value: value, name: name, onChange: function () { return null; }, onKeyDown: this.handleInputKeyDown, ref: function (radio) { return (_this.radioRef = radio); }, "aria-label": this.props['aria-label'] }),
+            React.createElement("span", { className: RadioButton_st_css_1.default.icon, onMouseEnter: this.onHover, onMouseLeave: onIconBlur }, checked ? checkedIcon : uncheckedIcon),
+            React.createElement("span", { className: RadioButton_st_css_1.default.label }, label)));
+    };
+    RadioButton.displayName = 'RadioButton';
+    RadioButton.defaultProps = {
+        onChange: noop,
+        onHover: noop,
+        onBlur: noop,
+    };
+    return RadioButton;
+}(React.Component));
+exports.RadioButton = RadioButton;
+//# sourceMappingURL=RadioButton.js.map
+
+/***/ }),
+
+/***/ 134:
+/*!***************************************************************************************!*\
+  !*** ../node_modules/wix-ui-core/dist/src/components/radio-button/RadioButton.st.css ***!
+  \***************************************************************************************/
+/*! exports provided: default */
+/*! all exports used */
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+/***/ (function(module, exports, __webpack_require__) {
+
+Object.defineProperty(exports, "__esModule", { value: true })
+
+exports.default = __webpack_require__.stylable.create(
+  "root",
+  "RadioButton1232350729",
+  {"root":"RadioButton1232350729--root","icon":"RadioButton1232350729--icon","label":"RadioButton1232350729--label","hiddenRadio":"RadioButton1232350729--hiddenRadio"},
+  "",
+  1,
+  /*! ../node_modules/wix-ui-core/dist/src/components/radio-button/RadioButton.st.css */ 134
+);
+
+
+
+/***/ }),
+
+/***/ 135:
+/*!***********************************!*\
+  !*** ./components/Rating/util.js ***!
+  \***********************************/
+/*! no static exports found */
+/*! all exports used */
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.precisionRound = precisionRound;
+exports.formatReviewsCount = formatReviewsCount;
+function precisionRound(number, precision) {
+  var factor = Math.pow(10, precision);
+  return Math.round(number * factor) / factor;
+}
+
+function formatReviewsCount(reviewsCount) {
+  if (reviewsCount < 1000) {
+    return "" + reviewsCount;
+  } else if (reviewsCount < 9950) {
+    return precisionRound(reviewsCount / 1000, 1) + "K";
+  } else if (reviewsCount < 999500) {
+    return precisionRound(reviewsCount / 1000, 0) + "K";
+  } else if (reviewsCount < 9950000) {
+    return precisionRound(reviewsCount / 1e6, 1) + "M";
+  } else {
+    return precisionRound(reviewsCount / 1e6, 0) + "M";
+  }
+}
+
+/***/ }),
+
+/***/ 136:
+/*!*******************************************!*\
+  !*** ./components/Rating/santa-layout.js ***!
+  \*******************************************/
+/*! no static exports found */
+/*! all exports used */
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
+
+var ratingsDisplayLayout = exports.ratingsDisplayLayout = function ratingsDisplayLayout(compNode, props) {
+  var getElement = function getElement(dataHook) {
+    return compNode.querySelector('[data-hook=\'' + dataHook + '\']');
+  };
+
+  var getWidthWithMargins = function getWidthWithMargins(elemHook) {
+    var elem = getElement(elemHook);
+    if (!elem) {
+      return 0;
+    }
+
+    var style = window.getComputedStyle(elem);
+    return parseInt(style.marginRight, 10) + elem.offsetWidth + parseInt(style.marginLeft, 10);
+  };
+
+  var getHeight = function getHeight(elemHook) {
+    var elem = getElement(elemHook);
+    if (!elem) {
+      return 0;
+    }
+    return elem.offsetHeight;
+  };
+
+  var getHeightWithMargins = function getHeightWithMargins(elemHook) {
+    var elem = getElement(elemHook);
+    if (!elem) {
+      return 0;
+    }
+
+    var style = window.getComputedStyle(elem);
+    return parseInt(style.marginTop, 10) + elem.offsetHeight + parseInt(style.marginBottom, 10);
+  };
+
+  if (props.mode === 'display') {
+    var iconsWidth = getWidthWithMargins('rating-icons');
+    var iconsHeight = getHeight('rating-icons');
+
+    var ratingWidth = getWidthWithMargins('rating-display-rating');
+    var ratingHeight = getHeight('rating-display-rating');
+
+    var reviewsCountWidth = getWidthWithMargins('rating-display-reviews-count');
+    var reviewsCountHeight = getHeight('rating-display-reviews-count');
+
+    var placeholderTextHeight = getHeight('rating-display-placeholder');
+
+    var resultWidth = parseInt(iconsWidth, 10) + parseInt(ratingWidth, 10) + parseInt(reviewsCountWidth, 10) + 'px';
+    compNode.style.minWidth = resultWidth;
+
+    var iconsHeightVal = parseInt(iconsHeight, 10);
+    var ratingHeightVal = parseInt(ratingHeight, 10);
+    var reviewsCountHeightVal = parseInt(reviewsCountHeight, 10);
+    var placeholderTextHeightVal = parseInt(placeholderTextHeight, 10);
+
+    var calculatedHeight = Math.max(iconsHeightVal, ratingHeightVal, reviewsCountHeightVal, placeholderTextHeightVal);
+    var resultHeight = calculatedHeight > 0 ? calculatedHeight + 'px' : '1.5em';
+    compNode.style.height = resultHeight;
+  } else if (props.labelPosition === 'side') {
+    // input mode - labelPosition 'side'
+    var additionalWidthForText = props.showTitle || props.showLabels ? Math.max.apply(Math, _toConsumableArray(['1', '2', '3', '4', '5', 'title'].map(function (lbl) {
+      if (!getElement('label_' + lbl)) {
+        return 0;
+      }
+      // set the styles to have labels in their minimal width, then measure, then reset width.
+      var container = getElement('label_' + lbl).parentElement;
+      container.style.width = 0;
+      var measure = getWidthWithMargins('label_' + lbl);
+      container.style.width = '';
+      return measure;
+    }))) : 0;
+
+    var _iconsWidth = getWidthWithMargins('rating-icons');
+
+    compNode.style.minWidth = _iconsWidth + additionalWidthForText + 'px';
+    compNode.style.height = Math.max(getHeight('labels-container'), getHeight('rating-icons')) + 'px';
+  } else {
+    // input mode - either labelPosition 'top' or 'bottom'
+    var labelsContainerWidth = getWidthWithMargins('labels-container');
+    compNode.style.minWidth = labelsContainerWidth + 'px';
+    compNode.style.height = getHeightWithMargins('labels-container') + getHeightWithMargins('rating-icons') + 'px';
+  }
+};
+
+/***/ }),
+
+/***/ 137:
+/*!******************************************!*\
+  !*** ./components/Rating/default-svg.js ***!
+  \******************************************/
+/*! no static exports found */
+/*! all exports used */
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.defaultSvg = undefined;
+
+var _react = __webpack_require__(/*! react */ 0);
+
+var React = _interopRequireWildcard(_react);
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+
+var defaultSvg = exports.defaultSvg = React.createElement("svg", { version: "1.1", id: "Layer_1", xmlns: "http://www.w3.org/2000/svg", width: "200px", height: "200px", xmlnsXlink: "http://www.w3.org/1999/xlink", xmlSpace: "preserve", viewBox: "0 0 200 200" });
+
+/***/ }),
+
+/***/ 138:
+/*!*************************************!*\
+  !*** ../node_modules/uuid/index.js ***!
+  \*************************************/
+/*! no static exports found */
+/*! all exports used */
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+/***/ (function(module, exports, __webpack_require__) {
+
+var v1 = __webpack_require__(/*! ./v1 */ 139);
+var v4 = __webpack_require__(/*! ./v4 */ 140);
+
+var uuid = v4;
+uuid.v1 = v1;
+uuid.v4 = v4;
+
+module.exports = uuid;
+
+
+/***/ }),
+
+/***/ 139:
+/*!**********************************!*\
+  !*** ../node_modules/uuid/v1.js ***!
+  \**********************************/
+/*! no static exports found */
+/*! all exports used */
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+/***/ (function(module, exports, __webpack_require__) {
+
+var rng = __webpack_require__(/*! ./lib/rng */ 49);
+var bytesToUuid = __webpack_require__(/*! ./lib/bytesToUuid */ 50);
+
+// **`v1()` - Generate time-based UUID**
+//
+// Inspired by https://github.com/LiosK/UUID.js
+// and http://docs.python.org/library/uuid.html
+
+var _nodeId;
+var _clockseq;
+
+// Previous uuid creation time
+var _lastMSecs = 0;
+var _lastNSecs = 0;
+
+// See https://github.com/broofa/node-uuid for API details
+function v1(options, buf, offset) {
+  var i = buf && offset || 0;
+  var b = buf || [];
+
+  options = options || {};
+  var node = options.node || _nodeId;
+  var clockseq = options.clockseq !== undefined ? options.clockseq : _clockseq;
+
+  // node and clockseq need to be initialized to random values if they're not
+  // specified.  We do this lazily to minimize issues related to insufficient
+  // system entropy.  See #189
+  if (node == null || clockseq == null) {
+    var seedBytes = rng();
+    if (node == null) {
+      // Per 4.5, create and 48-bit node id, (47 random bits + multicast bit = 1)
+      node = _nodeId = [
+        seedBytes[0] | 0x01,
+        seedBytes[1], seedBytes[2], seedBytes[3], seedBytes[4], seedBytes[5]
+      ];
+    }
+    if (clockseq == null) {
+      // Per 4.2.2, randomize (14 bit) clockseq
+      clockseq = _clockseq = (seedBytes[6] << 8 | seedBytes[7]) & 0x3fff;
+    }
+  }
+
+  // UUID timestamps are 100 nano-second units since the Gregorian epoch,
+  // (1582-10-15 00:00).  JSNumbers aren't precise enough for this, so
+  // time is handled internally as 'msecs' (integer milliseconds) and 'nsecs'
+  // (100-nanoseconds offset from msecs) since unix epoch, 1970-01-01 00:00.
+  var msecs = options.msecs !== undefined ? options.msecs : new Date().getTime();
+
+  // Per 4.2.1.2, use count of uuid's generated during the current clock
+  // cycle to simulate higher resolution clock
+  var nsecs = options.nsecs !== undefined ? options.nsecs : _lastNSecs + 1;
+
+  // Time since last uuid creation (in msecs)
+  var dt = (msecs - _lastMSecs) + (nsecs - _lastNSecs)/10000;
+
+  // Per 4.2.1.2, Bump clockseq on clock regression
+  if (dt < 0 && options.clockseq === undefined) {
+    clockseq = clockseq + 1 & 0x3fff;
+  }
+
+  // Reset nsecs if clock regresses (new clockseq) or we've moved onto a new
+  // time interval
+  if ((dt < 0 || msecs > _lastMSecs) && options.nsecs === undefined) {
+    nsecs = 0;
+  }
+
+  // Per 4.2.1.2 Throw error if too many uuids are requested
+  if (nsecs >= 10000) {
+    throw new Error('uuid.v1(): Can\'t create more than 10M uuids/sec');
+  }
+
+  _lastMSecs = msecs;
+  _lastNSecs = nsecs;
+  _clockseq = clockseq;
+
+  // Per 4.1.4 - Convert from unix epoch to Gregorian epoch
+  msecs += 12219292800000;
+
+  // `time_low`
+  var tl = ((msecs & 0xfffffff) * 10000 + nsecs) % 0x100000000;
+  b[i++] = tl >>> 24 & 0xff;
+  b[i++] = tl >>> 16 & 0xff;
+  b[i++] = tl >>> 8 & 0xff;
+  b[i++] = tl & 0xff;
+
+  // `time_mid`
+  var tmh = (msecs / 0x100000000 * 10000) & 0xfffffff;
+  b[i++] = tmh >>> 8 & 0xff;
+  b[i++] = tmh & 0xff;
+
+  // `time_high_and_version`
+  b[i++] = tmh >>> 24 & 0xf | 0x10; // include version
+  b[i++] = tmh >>> 16 & 0xff;
+
+  // `clock_seq_hi_and_reserved` (Per 4.2.2 - include variant)
+  b[i++] = clockseq >>> 8 | 0x80;
+
+  // `clock_seq_low`
+  b[i++] = clockseq & 0xff;
+
+  // `node`
+  for (var n = 0; n < 6; ++n) {
+    b[i + n] = node[n];
+  }
+
+  return buf ? buf : bytesToUuid(b);
+}
+
+module.exports = v1;
+
+
+/***/ }),
+
+/***/ 140:
+/*!**********************************!*\
+  !*** ../node_modules/uuid/v4.js ***!
+  \**********************************/
+/*! no static exports found */
+/*! all exports used */
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+/***/ (function(module, exports, __webpack_require__) {
+
+var rng = __webpack_require__(/*! ./lib/rng */ 49);
+var bytesToUuid = __webpack_require__(/*! ./lib/bytesToUuid */ 50);
+
+function v4(options, buf, offset) {
+  var i = buf && offset || 0;
+
+  if (typeof(options) == 'string') {
+    buf = options === 'binary' ? new Array(16) : null;
+    options = null;
+  }
+  options = options || {};
+
+  var rnds = options.random || (options.rng || rng)();
+
+  // Per 4.4, set bits for version and `clock_seq_hi_and_reserved`
+  rnds[6] = (rnds[6] & 0x0f) | 0x40;
+  rnds[8] = (rnds[8] & 0x3f) | 0x80;
+
+  // Copy bytes to buffer, if provided
+  if (buf) {
+    for (var ii = 0; ii < 16; ++ii) {
+      buf[i + ii] = rnds[ii];
+    }
+  }
+
+  return buf || bytesToUuid(rnds);
+}
+
+module.exports = v4;
 
 
 /***/ }),
@@ -964,198 +1452,10 @@ module.exports = emptyObject;
 
 /***/ }),
 
-/***/ 351:
-/*!********************************************************************************!*\
-  !*** ../node_modules/wix-ui-core/dist/src/components/pagination/Pagination.js ***!
-  \********************************************************************************/
-/*! no static exports found */
-/*! all exports used */
-/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-Object.defineProperty(exports, "__esModule", { value: true });
-var tslib_1 = __webpack_require__(/*! tslib */ 6);
-var React = __webpack_require__(/*! react */ 0);
-var PageStrip_1 = __webpack_require__(/*! ./PageStrip */ 648);
-var Pagination_st_css_1 = __webpack_require__(/*! ./Pagination.st.css */ 352);
-var root_min_width_1 = __webpack_require__(/*! ./root-min-width */ 650);
-var upperCaseFirst = function (str) {
-    return str[0].toUpperCase() + str.slice(1);
-};
-exports.getId = function (idPrefix, name) {
-    if (idPrefix === void 0) { idPrefix = ''; }
-    if (name === void 0) { name = ''; }
-    return idPrefix ? idPrefix + name : null;
-};
-exports.calculateWidth = function (totalPages) {
-    return totalPages.toString().length + "em";
-};
-var Pagination = /** @class */ (function (_super) {
-    tslib_1.__extends(Pagination, _super);
-    function Pagination() {
-        var _this = _super !== null && _super.apply(this, arguments) || this;
-        _this.state = {
-            pageInputValue: String(_this.props.currentPage),
-            pageInputHasError: false,
-        };
-        _this.handlePageInputChange = function (e) {
-            _this.setState({
-                pageInputValue: e.target.value,
-                pageInputHasError: false,
-            });
-        };
-        _this.handlePageInputKeyDown = function (event) {
-            // Enter
-            if (event.keyCode === 13) {
-                var page = Number(_this.state.pageInputValue);
-                if (page !== _this.props.currentPage) {
-                    if (1 <= page && page <= _this.props.totalPages) {
-                        _this.props.onChange({ event: event, page: page });
-                    }
-                    else {
-                        _this.setState({ pageInputHasError: true });
-                    }
-                }
-            }
-        };
-        _this.handlePageInputBlur = function (event) {
-            _this.setState({
-                pageInputValue: String(_this.props.currentPage),
-                pageInputHasError: false,
-            });
-        };
-        _this.handlePageClick = function (event, page) {
-            _this.props.onChange({ event: event, page: page });
-        };
-        _this.handlePageKeyDown = function (event, page) {
-            // Enter or Space
-            if (event.keyCode === 13 || event.keyCode === 32) {
-                _this.props.onChange({ event: event, page: page });
-            }
-        };
-        return _this;
-    }
-    Pagination.prototype.updateRootMinWidth = function () {
-        root_min_width_1.measureAndSetRootMinWidth(this.rootNode, this.props.paginationMode, this.props.id);
-    };
-    Pagination.prototype.componentDidMount = function () {
-        this.props.updateResponsiveLayout && this.updateRootMinWidth();
-    };
-    Pagination.prototype.componentDidUpdate = function () {
-        this.props.updateResponsiveLayout && this.updateRootMinWidth();
-    };
-    Pagination.prototype.getId = function (elementName) {
-        if (elementName === void 0) { elementName = ''; }
-        return exports.getId(this.props.id, elementName);
-    };
-    Object.defineProperty(Pagination.prototype, "maxPagesToShow", {
-        get: function () {
-            if (this.props.maxPagesToShow) {
-                return this.props.maxPagesToShow;
-            }
-            if (this.props.responsive) {
-                return 20;
-            }
-            return 7;
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Pagination.prototype.renderPageStrip = function () {
-        return (React.createElement(PageStrip_1.PageStrip, { id: this.props.id, totalPages: this.props.totalPages, currentPage: this.props.currentPage, maxPagesToShow: this.maxPagesToShow, showFirstPage: this.props.showFirstPage, showLastPage: this.props.showLastPage, responsive: this.props.responsive, pageUrl: this.props.pageUrl, gapLabel: this.props.gapLabel, onPageClick: this.handlePageClick, onPageKeyDown: this.handlePageKeyDown, updateResponsiveLayout: this.props.updateResponsiveLayout, disabled: this.props.disabled }));
-    };
-    Pagination.prototype.renderPageForm = function () {
-        return (React.createElement("div", { "data-hook": "page-form", id: this.getId('pageForm'), className: Pagination_st_css_1.default.pageForm, dir: "ltr" },
-            React.createElement("input", { id: this.getId('pageInput'), "data-hook": "page-input", type: "number", className: Pagination_st_css_1.default.pageInput, min: 1, max: this.props.totalPages, value: this.state.pageInputValue, disabled: this.props.disabled, onChange: this.handlePageInputChange, onKeyDown: this.handlePageInputKeyDown, "aria-label": 'Page number, select a number between 1 and ' +
-                    this.props.totalPages, onBlur: this.handlePageInputBlur, style: { width: exports.calculateWidth(this.props.totalPages) } }),
-            this.props.showInputModeTotalPages && [
-                React.createElement("span", { key: "slash", id: this.getId('slash'), className: Pagination_st_css_1.default.slash }, this.props.slashLabel),
-                React.createElement("span", { key: "total-pages", id: this.getId('totalPages'), "data-hook": "total-pages", className: Pagination_st_css_1.default.totalPages }, this.props.totalPages),
-            ]));
-    };
-    Pagination.prototype.renderNavButton = function (type) {
-        var _this = this;
-        var _a;
-        var _b = this.props, currentPage = _b.currentPage, totalPages = _b.totalPages, pageUrl = _b.pageUrl;
-        var disabled = this.props.disabled ||
-            (((type === "first" /* First */ || type === "previous" /* Prev */) &&
-                currentPage <= 1) ||
-                ((type === "last" /* Last */ || type === "next" /* Next */) &&
-                    currentPage >= totalPages));
-        var _c = (_a = {},
-            _a["previous" /* Prev */] = [
-                Pagination_st_css_1.default.navButtonPrevious,
-                this.props.previousLabel,
-                currentPage - 1,
-            ],
-            _a["next" /* Next */] = [
-                Pagination_st_css_1.default.navButtonNext,
-                this.props.nextLabel,
-                currentPage + 1,
-            ],
-            _a["first" /* First */] = [Pagination_st_css_1.default.navButtonFirst, this.props.firstLabel, 1],
-            _a["last" /* Last */] = [
-                Pagination_st_css_1.default.navButtonLast,
-                this.props.lastLabel,
-                totalPages,
-            ],
-            _a)[type], btnClass = _c[0], label = _c[1], page = _c[2];
-        return (React.createElement("a", tslib_1.__assign({ "data-hook": type, id: this.getId('navButton' + upperCaseFirst(type)) }, Pagination_st_css_1.default('navButton ' + btnClass, { disabled: disabled }), { "aria-label": upperCaseFirst(type) + ' Page', tabIndex: disabled || pageUrl ? null : 0, onClick: disabled ? null : function (event) { return _this.handlePageClick(event, page); }, onKeyDown: disabled ? null : function (event) { return _this.handlePageKeyDown(event, page); }, href: !disabled && pageUrl ? pageUrl(page) : null }), label));
-    };
-    Pagination.prototype.componentWillReceiveProps = function (nextProps) {
-        this.setState({
-            pageInputValue: String(nextProps.currentPage),
-            pageInputHasError: false,
-        });
-    };
-    Pagination.prototype.render = function () {
-        var _this = this;
-        var _a = this.props, showFirstLastNavButtons = _a.showFirstLastNavButtons, paginationMode = _a.paginationMode, width = _a.width, style = _a.style;
-        var styleStates = {
-            disabled: this.props.disabled,
-            error: this.state.pageInputHasError,
-        };
-        return (React.createElement("nav", tslib_1.__assign({ ref: function (el) { return (_this.rootNode = el); }, id: this.getId(''), "aria-label": "Pagination Navigation", dir: this.props.rtl ? 'rtl' : null, onClick: this.props.onClick, onDoubleClick: this.props.onDoubleClick, onMouseEnter: this.props.onMouseEnter, onMouseLeave: this.props.onMouseLeave, style: style || { width: width } }, Pagination_st_css_1.default('root', styleStates, this.props)),
-            this.renderNavButton("next" /* Next */),
-            this.renderNavButton("previous" /* Prev */),
-            paginationMode === 'input'
-                ? this.renderPageForm()
-                : this.renderPageStrip(),
-            showFirstLastNavButtons && this.renderNavButton("first" /* First */),
-            showFirstLastNavButtons && this.renderNavButton("last" /* Last */)));
-    };
-    Pagination.displayName = 'Pagination';
-    Pagination.defaultProps = {
-        currentPage: 1,
-        showFirstLastNavButtons: false,
-        showFirstPage: false,
-        showLastPage: false,
-        responsive: false,
-        paginationMode: 'pages',
-        showInputModeTotalPages: false,
-        disabled: false,
-        // dir="rtl" automatically flips the direction of less-than and more-than signs.
-        // If we decide to use different labels we need to add conditional logic.
-        firstLabel: '<<',
-        lastLabel: '>>',
-        previousLabel: '<',
-        nextLabel: '>',
-        gapLabel: '...',
-        slashLabel: '\u00A0/\u00A0',
-    };
-    return Pagination;
-}(React.Component));
-exports.Pagination = Pagination;
-//# sourceMappingURL=Pagination.js.map
-
-/***/ }),
-
-/***/ 352:
-/*!************************************************************************************!*\
-  !*** ../node_modules/wix-ui-core/dist/src/components/pagination/Pagination.st.css ***!
-  \************************************************************************************/
+/***/ 38:
+/*!*****************************************!*\
+  !*** ./components/Rating/Rating.st.css ***!
+  \*****************************************/
 /*! exports provided: default */
 /*! all exports used */
 /*! ModuleConcatenation bailout: Module is not an ECMAScript module */
@@ -1165,48 +1465,24 @@ Object.defineProperty(exports, "__esModule", { value: true })
 
 exports.default = __webpack_require__.stylable.create(
   "root",
-  "Pagination3815741391",
-  {"button-common-mixin":"Pagination3815741391--button-common-mixin","root":"Pagination3815741391--root","navButton":"Pagination3815741391--navButton","disabled":"Pagination3815741391--disabled","navButtonFirst":"Pagination3815741391--navButtonFirst","navButtonPrevious":"Pagination3815741391--navButtonPrevious","navButtonNext":"Pagination3815741391--navButtonNext","navButtonLast":"Pagination3815741391--navButtonLast","pageStrip":"Pagination3815741391--pageStrip","pageStripInner":"Pagination3815741391--pageStripInner","pageStripTemplate":"Pagination3815741391--pageStripTemplate","pageButton":"Pagination3815741391--pageButton","currentPage":"Pagination3815741391--currentPage","gap":"Pagination3815741391--gap","pageForm":"Pagination3815741391--pageForm","pageInput":"Pagination3815741391--pageInput","totalPages":"Pagination3815741391--totalPages","slash":"Pagination3815741391--slash"},
-  "",
-  1,
-  /*! ../node_modules/wix-ui-core/dist/src/components/pagination/Pagination.st.css */ 352
-);
-
-
-
-/***/ }),
-
-/***/ 353:
-/*!*************************************************!*\
-  !*** ./components/Pagination/Pagination.st.css ***!
-  \*************************************************/
-/*! exports provided: default */
-/*! all exports used */
-/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
-/***/ (function(module, exports, __webpack_require__) {
-
-Object.defineProperty(exports, "__esModule", { value: true })
-
-exports.default = __webpack_require__.stylable.create(
-  "root",
-  "Pagination3298768303",
-  {"pageButtonRules":"Pagination3298768303--pageButtonRules","root":"Pagination3298768303--root","selectedPageBG":"color_22","selectedPageBorderColor":"color_26","selectedPageBorderWidth":"0","selectedPageTextColor":"color_25","pageNumbersTextColor":"color_6","pageInputBG":"color_23","pageInputBorderColor":"color_27","pageInputBorderWidth":"0","pageInputTextColor":"color_26","totalPagesTextColor":"color_7","pageInputFocusBG":"color_8","pageInputFocusBorderColor":"color_38","pageInputFocusBorderWidth":"3","pageInputErrorBG":"color_2","pageInputErrorBorderColor":"color_22","pageInputErrorBorderWidth":"3","navButtonBG":"transparent","navButtonBorderWidth":"3","navButtonBorderColor":"color_32","navButtonDisabledBorderWidth":"3","navButtonDisabledBorderColor":"color_43","navButtonDisabledBG":"color_27","arrowsColor":"color_32","arrowsDisabledColor":"color_37","navButtonTextSize":"15px","navButtonTextColor":"color_15","navButtonDisabledTextColor":"color_11","fnt":"font_8","bRadius":"100px","shadow":"none"},
+  "Rating2556983050",
+  {"root":"Rating2556983050--root","displayMode":"Rating2556983050--displayMode","inputMode":"Rating2556983050--inputMode","stars":"Rating2556983050--stars","ratingValue":"Rating2556983050--ratingValue","reviewsCount":"Rating2556983050--reviewsCount","noReviewsPlaceholder":"Rating2556983050--noReviewsPlaceholder","labelsContainer":"Rating2556983050--labelsContainer","label":"Rating2556983050--label","title":"Rating2556983050--title","icon":"Rating2556983050--icon","halfIcon":"Rating2556983050--halfIcon","radioButton":"Rating2556983050--radioButton","filledShapeColor":"color_5","emptyShapeColor":"color_15","shapeBorderColor":"color_32","shapeBorderWidth":"3","labelFont":"font_8","labelFontColor":"color_15","errorFilledShapeColor":"color_7","errorShapeBorderColor":"color_37","errorShapeBorderWidth":"7","errorLabelFontColor":"color_17"},
   "",
   7,
-  /*! ./components/Pagination/Pagination.st.css */ 353
+  /*! ./components/Rating/Rating.st.css */ 38
 );
 
-exports.default.$skin = {"params":{"selectedPageBG":"COLOR_ALPHA","selectedPageBorderColor":"BORDER_COLOR_ALPHA","selectedPageBorderWidth":"BORDER_SIZE","selectedPageTextColor":"TEXT_COLOR","pageNumbersTextColor":"TEXT_COLOR","pageInputBG":"COLOR_ALPHA","pageInputBorderColor":"BORDER_COLOR_ALPHA","pageInputBorderWidth":"BORDER_SIZE","pageInputTextColor":"TEXT_COLOR","totalPagesTextColor":"TEXT_COLOR","pageInputFocusBG":"COLOR_ALPHA","pageInputFocusBorderColor":"BORDER_COLOR_ALPHA","pageInputFocusBorderWidth":"BORDER_SIZE","pageInputErrorBG":"COLOR_ALPHA","pageInputErrorBorderColor":"BORDER_COLOR_ALPHA","pageInputErrorBorderWidth":"BORDER_SIZE","navButtonBG":"COLOR_ALPHA","navButtonBorderWidth":"BORDER_SIZE","navButtonBorderColor":"BORDER_COLOR_ALPHA","navButtonDisabledBorderWidth":"BORDER_SIZE","navButtonDisabledBorderColor":"BORDER_COLOR_ALPHA","navButtonDisabledBG":"COLOR_ALPHA","arrowsColor":"COLOR_ALPHA","arrowsDisabledColor":"COLOR_ALPHA","navButtonTextSize":"TEXT_SIZE","navButtonTextColor":"TEXT_COLOR","navButtonDisabledTextColor":"TEXT_COLOR","fnt":"FONT","bRadius":"BORDER_RADIUS","shadow":"BOX_SHADOW"},"paramsDefaults":{"selectedPageBG":"color_22","selectedPageBorderColor":"color_26","selectedPageBorderWidth":"0","selectedPageTextColor":"color_25","pageNumbersTextColor":"color_6","pageInputBG":"color_23","pageInputBorderColor":"color_27","pageInputBorderWidth":"0","pageInputTextColor":"color_26","totalPagesTextColor":"color_7","pageInputFocusBG":"color_8","pageInputFocusBorderColor":"color_38","pageInputFocusBorderWidth":"3","pageInputErrorBG":"color_2","pageInputErrorBorderColor":"color_22","pageInputErrorBorderWidth":"3","navButtonBG":"transparent","navButtonBorderWidth":"3","navButtonBorderColor":"color_32","navButtonDisabledBorderWidth":"3","navButtonDisabledBorderColor":"color_43","navButtonDisabledBG":"color_27","arrowsColor":"color_32","arrowsDisabledColor":"color_37","navButtonTextSize":"15px","navButtonTextColor":"color_15","navButtonDisabledTextColor":"color_11","fnt":"font_8","bRadius":"100px","shadow":"none"}};
+exports.default.$skin = {"params":{"filledShapeColor":"COLOR_ALPHA","emptyShapeColor":"COLOR_ALPHA","shapeBorderColor":"BORDER_COLOR_ALPHA","shapeBorderWidth":"BORDER_SIZE","labelFont":"FONT","labelFontColor":"TEXT_COLOR","errorFilledShapeColor":"COLOR_ALPHA","errorShapeBorderColor":"BORDER_COLOR_ALPHA","errorShapeBorderWidth":"BORDER_SIZE","errorLabelFontColor":"TEXT_COLOR"},"paramsDefaults":{"filledShapeColor":"color_5","emptyShapeColor":"color_15","shapeBorderColor":"color_32","shapeBorderWidth":"3","labelFont":"font_8","labelFontColor":"color_15","errorFilledShapeColor":"color_7","errorShapeBorderColor":"color_37","errorShapeBorderWidth":"7","errorLabelFontColor":"color_17"}};
 exports.default.$skin.$render = function render_css($id, $params, $functions) {
-  return "\n" + $id + " .Pagination3815741391--button-common-mixin{display: inline-flex;flex-shrink: 0}\n" + $id + ".Pagination3815741391--root{display: inline-flex;user-select: none}\n" + $id + " .Pagination3815741391--navButton{display: inline-flex;flex-shrink: 0}\n" + $id + " .Pagination3815741391--navButton:not(.Pagination3815741391--disabled){cursor: pointer}\n" + $id + " .Pagination3815741391--navButtonFirst{order: 1}\n" + $id + " .Pagination3815741391--navButtonPrevious{order: 2}\n" + $id + " .Pagination3815741391--navButtonNext{order: 4}\n" + $id + " .Pagination3815741391--navButtonLast{order: 5}\n" + $id + " .Pagination3815741391--pageStrip{order: 3;overflow-x: hidden}\n" + $id + " .Pagination3815741391--pageStripInner{display: flex}\n" + $id + " .Pagination3815741391--pageStripTemplate{height: 0;overflow: hidden}\n" + $id + " .Pagination3815741391--pageButton{display: inline-flex;flex-shrink: 0;cursor: pointer}\n" + $id + " .Pagination3815741391--currentPage{display: inline-flex;flex-shrink: 0}\n" + $id + " .Pagination3815741391--gap{display: inline-flex;flex-shrink: 0}\n" + $id + " .Pagination3815741391--pageForm{display: flex;order: 3}\n" + $id + " .Pagination3815741391--pageInput{}\n" + $id + " .Pagination3815741391--totalPages{}\n" + $id + " .Pagination3815741391--slash{}\n" + $id + " .Pagination3298768303--pageButtonRules{min-width: 1em;min-height: 1em;line-height: 1em;justify-content: center;align-items: center;padding: 0.5em 0.5em;margin: 0.25em}\n" + $id + ".Pagination3298768303--root{align-items: stretch;font: " + $params["fnt"] + ";box-sizing: border-box}\n" + $id + ".Pagination3298768303--root .Pagination3815741391--pageButton{min-width: 1em;min-height: 1em;line-height: 1em;justify-content: center;align-items: center;padding: 0.5em 0.5em;margin: 0.25em;position: relative;color: " + $params["pageNumbersTextColor"] + "}\n" + $id + ".Pagination3298768303--root .Pagination3815741391--currentPage{min-width: 1em;min-height: 1em;line-height: 1em;justify-content: center;align-items: center;padding: 0.5em 0.5em;margin: 0.25em;color: " + $params["selectedPageTextColor"] + ";background: " + $params["selectedPageBG"] + ";border-radius: " + $params["bRadius"] + ";border: " + $params["selectedPageBorderWidth"] + " solid " + $params["selectedPageBorderColor"] + ";box-shadow: " + $params["shadow"] + ";padding: calc(0.5em - " + $params["selectedPageBorderWidth"] + ") calc(0.5em - " + $params["selectedPageBorderWidth"] + ")}\n" + $id + ".Pagination3298768303--root:not([data-pagination3815741391-disabled]) .Pagination3815741391--pageButton:hover::before{background: " + $params["selectedPageBG"] + ";opacity: 0.2;content: \"\";position: absolute;top: 0;right: 0;bottom: 0;left: 0;border-radius: " + $params["bRadius"] + "}\n" + $id + ".Pagination3298768303--root:not([data-pagination3815741391-disabled]) .Pagination3815741391--pageButton:hover{opacity: 0.7}\n" + $id + ".Pagination3298768303--root[data-pagination3815741391-disabled] .Pagination3815741391--pageButton{cursor: default}\n" + $id + ".Pagination3298768303--root .Pagination3815741391--navButton{min-width: 1em;min-height: 1em;padding: calc(0.75em - " + $params["navButtonBorderWidth"] + ");display: flex;justify-content: center;align-items: center;border: " + $params["navButtonBorderWidth"] + " solid " + $params["navButtonBorderColor"] + ";background: " + $params["navButtonBG"] + ";border-radius: " + $params["bRadius"] + "}\n" + $id + ".Pagination3298768303--root .Pagination3815741391--navButton[data-pagination3815741391-disabled], " + $id + ".Pagination3298768303--root[data-preview=\"disabled\"] .Pagination3815741391--navButton{padding: calc(0.75em - " + $params["navButtonDisabledBorderWidth"] + ");border: " + $params["navButtonDisabledBorderWidth"] + " solid " + $params["navButtonDisabledBorderColor"] + ";background: " + $params["navButtonDisabledBG"] + ";cursor: default}\n" + $id + ".Pagination3298768303--root .Pagination3815741391--navButton[data-pagination3815741391-disabled] svg, " + $id + ".Pagination3298768303--root[data-preview=\"disabled\"] .Pagination3815741391--navButton svg{fill: " + $params["arrowsDisabledColor"] + "}\n" + $id + ".Pagination3298768303--root .Pagination3815741391--navButton:hover:not([data-pagination3815741391-disabled]){opacity: 0.8}\n" + $id + ".Pagination3298768303--root .Pagination3815741391--navButton svg{width: 1em;min-width: 16px;height: 1em;min-height: 16px;fill: " + $params["arrowsColor"] + "}\n" + $id + ".Pagination3298768303--root[dir=\"rtl\"] .Pagination3815741391--navButton svg{transform: scaleX(-1)}\n" + $id + ".Pagination3298768303--root .Pagination3815741391--navButton span{font-size: " + $params["navButtonTextSize"] + ";color: " + $params["navButtonTextColor"] + ";line-height: 1em}\n" + $id + ".Pagination3298768303--root .Pagination3815741391--navButton[data-pagination3815741391-disabled] span, " + $id + ".Pagination3298768303--root[data-preview=\"disabled\"] .Pagination3815741391--navButton span{color: " + $params["navButtonDisabledTextColor"] + "}\n" + $id + ".Pagination3298768303--root .Pagination3815741391--navButtonFirst{margin-right: 1em}\n" + $id + ".Pagination3298768303--root[dir=\"rtl\"] .Pagination3815741391--navButtonFirst{margin-right: 0;margin-left: 1em}\n" + $id + ".Pagination3298768303--root .Pagination3815741391--navButtonPrevious{margin-right: 1em}\n" + $id + ".Pagination3298768303--root[dir=\"rtl\"] .Pagination3815741391--navButtonPrevious{margin-right: 0;margin-left: 1em}\n" + $id + ".Pagination3298768303--root .Pagination3815741391--navButtonLast{margin-left: 1em}\n" + $id + ".Pagination3298768303--root[dir=\"rtl\"] .Pagination3815741391--navButtonLast{margin-left: 0;margin-right: 1em}\n" + $id + ".Pagination3298768303--root .Pagination3815741391--navButtonNext{margin-left: 1em}\n" + $id + ".Pagination3298768303--root[dir=\"rtl\"] .Pagination3815741391--navButtonNext{margin-left: 0;margin-right: 1em}\n" + $id + ".Pagination3298768303--root .Pagination3815741391--gap{min-width: 1em;min-height: 1em;line-height: 1em;justify-content: center;align-items: center;padding: 0.5em 0.5em;margin: 0.25em;color: " + $params["pageNumbersTextColor"] + "}\n" + $id + ".Pagination3298768303--root .Pagination3815741391--pageStrip{min-width: 3em;overflow: visible;align-self: center}\n" + $id + ".Pagination3298768303--root .Pagination3815741391--pageStripInner{flex-grow: 1;flex-basis: auto;justify-content: center;overflow: visible;align-items: center}\n" + $id + ".Pagination3298768303--root .Pagination3815741391--pageStripTemplate{overflow: hidden}\n" + $id + ".Pagination3298768303--root .Pagination3815741391--pageForm{flex-grow: 1;flex-basis: auto;justify-content: center;align-items: stretch}\n" + $id + ".Pagination3298768303--root .Pagination3815741391--slash{width: 1em;height: 1em;flex-shrink: 0;align-self: center}\n" + $id + ".Pagination3298768303--root .Pagination3815741391--slash svg{width: 1em;height: 1em}\n" + $id + ".Pagination3298768303--root .Pagination3815741391--slash svg > g{stroke: " + $params["totalPagesTextColor"] + "}\n" + $id + ".Pagination3298768303--root .Pagination3815741391--pageInput{min-width: 3.5em;padding: calc(0.25em - " + $params["pageInputBorderWidth"] + ") calc(0.5ch - " + $params["pageInputBorderWidth"] + ");color: " + $params["pageInputTextColor"] + ";border-radius: " + $params["bRadius"] + ";border: " + $params["pageInputBorderWidth"] + " solid " + $params["pageInputBorderColor"] + ";text-align: center;margin: 0 0.25em;background: " + $params["pageInputBG"] + ";box-shadow: " + $params["shadow"] + ";font: inherit;-moz-appearance: textfield}\n" + $id + ".Pagination3298768303--root .Pagination3815741391--pageInput:hover{opacity: 0.8}\n" + $id + ".Pagination3298768303--root .Pagination3815741391--pageInput:focus, " + $id + ".Pagination3298768303--root[data-preview=\"focus\"] .Pagination3815741391--pageInput{padding: calc(0.25em - " + $params["pageInputFocusBorderWidth"] + ") calc(0.5ch - " + $params["pageInputFocusBorderWidth"] + ");background: " + $params["pageInputFocusBG"] + ";border: " + $params["pageInputFocusBorderWidth"] + " solid " + $params["pageInputFocusBorderColor"] + "}\n" + $id + ".Pagination3298768303--root .Pagination3815741391--pageInput::-webkit-inner-spin-button, " + $id + ".Pagination3298768303--root .Pagination3815741391--pageInput::-webkit-outer-spin-button{-webkit-appearance: none}\n" + $id + ".Pagination3298768303--root .Pagination3815741391--totalPages{max-width: 4ch;min-width: 1ch;padding-left: 0.25em;overflow: hidden;text-overflow: ellipsis;color: " + $params["totalPagesTextColor"] + ";align-self: center}\n" + $id + ".Pagination3298768303--root[data-pagination3815741391-error] .Pagination3815741391--pageInput, " + $id + ".Pagination3298768303--root[data-preview=\"error\"] .Pagination3815741391--pageInput{padding: calc(0.25em - " + $params["pageInputErrorBorderWidth"] + ") calc(0.5ch - " + $params["pageInputErrorBorderWidth"] + ");background: " + $params["pageInputErrorBG"] + ";border: " + $params["pageInputErrorBorderWidth"] + " solid " + $params["pageInputErrorBorderColor"] + "}\n@media all and (-ms-high-contrast: none), (-ms-high-contrast: active){\n  " + $id + ".Pagination3298768303--root .Pagination3815741391--totalPages{max-width: 6ch;min-width: 6ch}\n}\n";
+  return "\n" + $id + " .RadioButton1232350729--root{display: inline-block}\n" + $id + " .RadioButton1232350729--icon{cursor: pointer;height: auto}\n" + $id + " .RadioButton1232350729--label{}\n" + $id + " .RadioButton1232350729--root[data-radiobutton1232350729-checked] .RadioButton1232350729--icon, " + $id + " .RadioButton1232350729--root:hover .RadioButton1232350729--icon{}\n" + $id + " .RadioButton1232350729--root[data-radiobutton1232350729-disabled]{filter: grayscale(75%);opacity: 0.7}\n" + $id + " .RadioButton1232350729--hiddenRadio{position: absolute;overflow: hidden;height: 1px;width: 1px;margin: -1px;padding: 0;border: 0;opacity: 0}\n" + $id + ".Rating2556983050--root{display: inline-flex;align-items: center;font: " + $params["labelFont"] + "}\n" + $id + ".Rating2556983050--root[data-rating2556983050-rtl] .Rating2556983050--displayMode, " + $id + ".Rating2556983050--root[data-rating2556983050-rtl] .Rating2556983050--inputMode{direction: rtl}\n" + $id + " .Rating2556983050--displayMode{display: inline-flex;width: 100%;align-items: center}\n" + $id + ".Rating2556983050--root[data-rating2556983050-alignment=\"center\"] .Rating2556983050--displayMode{justify-content: center}\n" + $id + ".Rating2556983050--root[data-rating2556983050-alignment=\"right\"] .Rating2556983050--displayMode, " + $id + ".Rating2556983050--root[data-rating2556983050-rtl][data-rating2556983050-alignment=\"left\"] .Rating2556983050--displayMode{justify-content: flex-end}\n" + $id + ".Rating2556983050--root[data-rating2556983050-alignment=\"left\"] .Rating2556983050--displayMode, " + $id + ".Rating2556983050--root[data-rating2556983050-rtl][data-rating2556983050-alignment=\"right\"] .Rating2556983050--displayMode{justify-content: flex-start}\n" + $id + " .Rating2556983050--inputMode{display: inline-flex;flex-direction: column;width: 100%;text-align: center;align-items: center}\n" + $id + ".Rating2556983050--root[data-rating2556983050-alignment=\"right\"] .Rating2556983050--inputMode{text-align: right;align-items: flex-end}\n" + $id + ".Rating2556983050--root[data-rating2556983050-rtl][data-rating2556983050-alignment=\"right\"] .Rating2556983050--inputMode{align-items: flex-start}\n" + $id + ".Rating2556983050--root[data-rating2556983050-alignment=\"left\"] .Rating2556983050--inputMode{text-align: left;align-items: flex-start}\n" + $id + ".Rating2556983050--root[data-rating2556983050-rtl][data-rating2556983050-alignment=\"left\"] .Rating2556983050--inputMode{align-items: flex-end}\n" + $id + ".Rating2556983050--root[data-rating2556983050-labelposition=\"side\"] .Rating2556983050--inputMode, " + $id + ".Rating2556983050--root[data-rating2556983050-rtl][data-rating2556983050-labelposition=\"side\"] .Rating2556983050--inputMode{flex-direction: row;align-items: center}\n" + $id + " .Rating2556983050--stars{order: 2;display: flex}\n" + $id + ".Rating2556983050--root[data-rating2556983050-mode=\"input\"] .Rating2556983050--stars{cursor: pointer}\n" + $id + ".Rating2556983050--root[data-rating2556983050-disabled] .Rating2556983050--stars{pointer-events: none}\n" + $id + " .Rating2556983050--ratingValue, " + $id + " .Rating2556983050--reviewsCount, " + $id + " .Rating2556983050--noReviewsPlaceholder{color: " + $params["labelFontColor"] + ";line-height: 1.5}\n" + $id + " .Rating2556983050--ratingValue{order: 1;align-self: center}\n" + $id + " .Rating2556983050--reviewsCount{order: 3;align-self: center;white-space: nowrap}\n" + $id + " .Rating2556983050--noReviewsPlaceholder{align-self: center;white-space: nowrap;overflow-x: hidden}\n" + $id + " .Rating2556983050--labelsContainer{display: inline-flex;width: 100%;order: 1;overflow: hidden;align-items: flex-end}\n" + $id + ".Rating2556983050--root[data-rating2556983050-labelposition=\"bottom\"] .Rating2556983050--labelsContainer{align-items: flex-start}\n" + $id + ".Rating2556983050--root[data-rating2556983050-labelposition=\"side\"] .Rating2556983050--labelsContainer{align-items: center}\n" + $id + " .Rating2556983050--label, " + $id + " .Rating2556983050--title{color: " + $params["labelFontColor"] + ";line-height: 1.5;flex-shrink: 0;display: block;width: 100%}\n" + $id + ".Rating2556983050--root[data-rating2556983050-error] .Rating2556983050--label, " + $id + ".Rating2556983050--root[data-preview=\"error\"] .Rating2556983050--label, " + $id + ".Rating2556983050--root[data-rating2556983050-error] .Rating2556983050--title, " + $id + ".Rating2556983050--root[data-preview=\"error\"] .Rating2556983050--title{color: " + $params["errorLabelFontColor"] + "}\n" + $id + ".Rating2556983050--root[data-rating2556983050-labelposition=\"side\"] .Rating2556983050--stars{align-self: center}\n" + $id + " .Rating2556983050--label{visibility: hidden}\n" + $id + ".Rating2556983050--root[data-rating2556983050-labelposition=\"bottom\"] .Rating2556983050--stars, " + $id + ".Rating2556983050--root[data-rating2556983050-labelposition=\"side\"] .Rating2556983050--stars{order: 0}\n" + $id + ".Rating2556983050--root[data-rating2556983050-ratingafter] .Rating2556983050--stars{order: 0}\n" + $id + ".Rating2556983050--root[data-rating2556983050-noreviewsmode=\"nothing\"][data-rating2556983050-editormode] .Rating2556983050--stars, " + $id + ".Rating2556983050--root[data-rating2556983050-noreviewsmode=\"nothing\"][data-rating2556983050-editormode] .Rating2556983050--ratingValue, " + $id + ".Rating2556983050--root[data-rating2556983050-noreviewsmode=\"nothing\"][data-rating2556983050-editormode] .Rating2556983050--reviewsCount{opacity: 0.15}\n" + $id + " .Rating2556983050--icon{display: block;position: relative;stroke: " + $params["shapeBorderColor"] + ";stroke-width: " + $params["shapeBorderWidth"] + ";fill: " + $params["emptyShapeColor"] + "}\n" + $id + " .Rating2556983050--icon path{fill: " + $params["emptyShapeColor"] + "}\n" + $id + " .Rating2556983050--icon[data-rating2556983050-checked] path{fill: " + $params["filledShapeColor"] + "}\n" + $id + " .Rating2556983050--icon svg{display: block;height: 100%;width: 100%;transform: translateZ(0)}\n" + $id + " .Rating2556983050--halfIcon{position: absolute;top: 0;overflow: hidden}\n" + $id + ".Rating2556983050--root[data-rating2556983050-mode=\"display\"] .Rating2556983050--icon{cursor: default}\n" + $id + ".Rating2556983050--root[data-rating2556983050-error] .Rating2556983050--icon:not([data-rating2556983050-checked]), " + $id + ".Rating2556983050--root[data-preview=\"error\"] .Rating2556983050--icon{stroke: " + $params["errorShapeBorderColor"] + ";stroke-width: " + $params["errorShapeBorderWidth"] + "}\n" + $id + ".Rating2556983050--root[data-rating2556983050-error] .Rating2556983050--icon:not([data-rating2556983050-checked]) path, " + $id + ".Rating2556983050--root[data-preview=\"error\"] .Rating2556983050--icon path{fill: " + $params["errorFilledShapeColor"] + "}\n" + $id + " .Rating2556983050--radioButton{}\n";
 };
 
 /***/ }),
 
-/***/ 435:
-/*!****************************************!*\
-  !*** ./components/Pagination/index.js ***!
-  \****************************************/
+/***/ 439:
+/*!********************************************!*\
+  !*** ./components/RatingsDisplay/index.js ***!
+  \********************************************/
 /*! no static exports found */
 /*! all exports used */
 /*! ModuleConcatenation bailout: Module is not an ECMAScript module */
@@ -1219,20 +1495,736 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _Pagination = __webpack_require__(/*! ./Pagination */ 645);
+var _RatingsDisplay = __webpack_require__(/*! ./RatingsDisplay.santa */ 661);
 
-var _PaginationSt = __webpack_require__(/*! ./Pagination.st.css */ 353);
+var _Rating = __webpack_require__(/*! ../Rating/Rating */ 48);
 
-var _PaginationSt2 = _interopRequireDefault(_PaginationSt);
+var _RatingSt = __webpack_require__(/*! ../Rating/Rating.st.css */ 38);
+
+var _RatingSt2 = _interopRequireDefault(_RatingSt);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = {
-  componentType: 'wixui.Pagination',
-  component: _Pagination.Pagination,
-  santaComponent: _Pagination.santaPagination,
-  skin: _PaginationSt2.default.$skin
+  componentType: 'wixui.RatingsDisplay',
+  component: _Rating.Rating,
+  santaComponent: _RatingsDisplay.ratingsDisplay,
+  skin: _RatingSt2.default.$skin
 };
+
+/***/ }),
+
+/***/ 48:
+/*!*************************************!*\
+  !*** ./components/Rating/Rating.js ***!
+  \*************************************/
+/*! no static exports found */
+/*! all exports used */
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.Rating = exports.NoReviewsMode = exports.SplitRatingIcon = exports.RatingIcon = undefined;
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; /* eslint-disable complexity*/
+
+var _react = __webpack_require__(/*! react */ 0);
+
+var React = _interopRequireWildcard(_react);
+
+var _reactDom = __webpack_require__(/*! react-dom */ 11);
+
+var ReactDOM = _interopRequireWildcard(_reactDom);
+
+var _radioButton = __webpack_require__(/*! wix-ui-core/radio-button */ 131);
+
+var _util = __webpack_require__(/*! ./util */ 135);
+
+var _santaLayout = __webpack_require__(/*! ./santa-layout */ 136);
+
+var _RatingSt = __webpack_require__(/*! ./Rating.st.css */ 38);
+
+var _RatingSt2 = _interopRequireDefault(_RatingSt);
+
+var _propTypes = __webpack_require__(/*! prop-types */ 1);
+
+var _defaultSvg = __webpack_require__(/*! ./default-svg */ 137);
+
+var _uuid = __webpack_require__(/*! uuid */ 138);
+
+var _uuid2 = _interopRequireDefault(_uuid);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+var noop = function noop() {
+  return null;
+};
+var fiveItems = [1, 2, 3, 4, 5];
+
+var RatingIcon = exports.RatingIcon = function RatingIcon(props) {
+  var svg = props.svg,
+      checked = props.checked,
+      size = props.size,
+      split = props.split;
+
+  return React.createElement(
+    'span',
+    _extends({}, (0, _RatingSt2.default)('icon', { checked: checked, split: split }, props), { style: { height: size + 'px', width: size + 'px' } }),
+    svg
+  );
+};
+
+var SplitRatingIcon = exports.SplitRatingIcon = function SplitRatingIcon(_ref) {
+  var svg = _ref.svg,
+      size = _ref.size,
+      rtl = _ref.rtl;
+
+  return React.createElement(
+    'span',
+    { className: _RatingSt2.default.icon },
+    React.createElement(RatingIcon, { split: true, svg: svg, size: size }),
+    React.createElement(
+      'div',
+      {
+        className: _RatingSt2.default.halfIcon,
+        style: {
+          height: size + 'px',
+          width: size / 2 + 'px',
+          left: (rtl ? size / 2 : 0) + 'px'
+        }
+      },
+      React.createElement(RatingIcon, { checked: true, split: true, svg: svg, size: size })
+    )
+  );
+};
+
+RatingIcon.propTypes = {
+  checked: _propTypes.bool,
+  svg: _propTypes.node,
+  size: _propTypes.number,
+  split: _propTypes.bool
+};
+
+SplitRatingIcon.propTypes = {
+  svg: _propTypes.node,
+  size: _propTypes.number,
+  rtl: _propTypes.bool
+};
+
+var RatingIcons = function RatingIcons(props) {
+  var onChange = props.onChange,
+      checkedPredicate = props.checkedPredicate,
+      onHover = props.onHover,
+      shapeSpacing = props.shapeSpacing,
+      rtl = props.rtl,
+      labels = props.labels,
+      rating = props.rating,
+      onBlur = props.onBlur,
+      uncheckedIcon = props.uncheckedIcon,
+      checkedIconPredicate = props.checkedIconPredicate,
+      shapeSize = props.shapeSize,
+      required = props.required,
+      mode = props.mode,
+      labelPosition = props.labelPosition,
+      showLabels = props.showLabels,
+      showTitle = props.showTitle;
+
+  var name = (0, _uuid2.default)();
+
+  var getStarsStyle = function getStarsStyle() {
+    var horizontalMargins = void 0,
+        verticalMargins = void 0;
+
+    if (mode === 'input' && (showTitle || showLabels)) {
+      if (labelPosition === 'side') {
+        horizontalMargins = _defineProperty({}, rtl ? 'marginLeft' : 'marginRight', Math.max(15, shapeSpacing));
+      }
+
+      if (labelPosition !== 'side') {
+        verticalMargins = _defineProperty({}, labelPosition === 'top' ? 'marginTop' : 'marginBottom', shapeSize ? shapeSize / 2 : 18);
+      }
+    }
+
+    return Object.assign({ minWidth: 4 * shapeSpacing + 5 * shapeSize + 'px' }, horizontalMargins, verticalMargins);
+  };
+
+  return React.createElement(
+    'span',
+    {
+      tabIndex: mode === 'display' ? 0 : null,
+      className: _RatingSt2.default.stars,
+      style: getStarsStyle(),
+      'aria-label': rating ? rating + ' out of 5' : null,
+      'data-hook': 'rating-icons'
+    },
+    ' ',
+    fiveItems.map(function (value) {
+      return React.createElement(
+        'span',
+        {
+          'data-hook': 'rating-icon-' + value,
+          key: value,
+          style: _defineProperty({ display: 'flex' }, rtl ? 'paddingLeft' : 'paddingRight', value < 5 ? shapeSpacing : null),
+          'aria-label': !rating ? labels[value] : null,
+          onMouseEnter: function onMouseEnter(event) {
+            return onHover(_extends({ value: value }, event));
+          },
+          onMouseLeave: onBlur
+        },
+        React.createElement(_radioButton.RadioButton, {
+          className: mode === 'input' ? _RatingSt2.default.radioButton : null,
+          name: name,
+          'data-hook': 'input-radio-' + value,
+          value: '' + value,
+          checked: checkedPredicate(value),
+          label: '',
+          onChange: onChange,
+          checkedIcon: checkedIconPredicate(value),
+          uncheckedIcon: uncheckedIcon,
+          required: required
+        })
+      );
+    }),
+    ' '
+  );
+};
+
+RatingIcons.propTypes = {
+  rating: _propTypes.number,
+  shapeSize: _propTypes.number,
+  shapeSpacing: _propTypes.number,
+  rtl: _propTypes.bool,
+  dataHook: _propTypes.string,
+  onChange: _propTypes.func,
+  onHover: _propTypes.func,
+  onBlur: _propTypes.func,
+  checkedIcon: _propTypes.node,
+  uncheckedIcon: _propTypes.node,
+  splitIcon: _propTypes.node,
+  checkedPredicate: _propTypes.func,
+  checkedIconPredicate: _propTypes.func,
+  labels: _propTypes.object,
+  required: _propTypes.bool,
+  mode: _propTypes.string,
+  labelPosition: _propTypes.string,
+  showLabels: _propTypes.bool,
+  showTitle: _propTypes.bool
+};
+
+function wrapSvgString(svgString) {
+  return React.createElement('div', {
+    dangerouslySetInnerHTML: {
+      __html: svgString || ''
+    }
+  });
+}
+
+var NoReviewsMode = exports.NoReviewsMode = {
+  NOTHING: 'nothing',
+  EMPTY_ICONS: 'emptyIcons',
+  PLACEHOLDER_TEXT: 'placeholderText'
+};
+
+var Rating = exports.Rating = function (_React$Component) {
+  _inherits(Rating, _React$Component);
+
+  function Rating(props) {
+    _classCallCheck(this, Rating);
+
+    var _this = _possibleConstructorReturn(this, (Rating.__proto__ || Object.getPrototypeOf(Rating)).call(this, props));
+
+    _this.updateLayout = function () {
+      return (0, _santaLayout.ratingsDisplayLayout)(ReactDOM.findDOMNode(_this), _this.props);
+    };
+
+    _this.onRatingChange = function (event) {
+      var intValue = parseInt(event.value);
+
+      if (_this.props.disabled || intValue === _this.props.rating || event.type !== 'click') {
+        return;
+      }
+
+      _this.props.onChange({ event: event, rating: intValue });
+    };
+
+    _this.onIconHover = function (event) {
+      if (_this.props.disabled) {
+        return;
+      }
+
+      var intValue = parseInt(event.value);
+      _this.setState({ hovered: intValue });
+
+      var icon = {
+        value: intValue,
+        label: _this.props.labels[intValue]
+      };
+
+      _this.props.onIconMouseIn && _this.props.onIconMouseIn({ icon: icon });
+    };
+
+    _this.onIconBlur = function () {
+      if (_this.props.disabled) {
+        return;
+      }
+      _this.setState({ hovered: undefined });
+    };
+
+    _this.shouldEmptyIcons = function () {
+      return _this.isEmptyState() && _this.props.noReviewsMode === NoReviewsMode.EMPTY_ICONS;
+    };
+
+    _this.getCheckedThreshold = function () {
+      if (_this.shouldEmptyIcons()) {
+        return 0;
+      }
+
+      return (0, _util.precisionRound)((_this.state.hovered || _this.props.rating) + 0.7, 1);
+    };
+
+    _this.shouldSplitIcon = function (value) {
+      var lastCheckedIcon = value <= _this.getCheckedThreshold() && value + 1 > _this.getCheckedThreshold();
+      var decimal = _this.props.rating % 1;
+      return lastCheckedIcon && decimal >= 0.25 && decimal < 0.75; // // X.25 - X.74 - half star
+    };
+
+    _this.isEmptyState = function () {
+      return !_this.props.rating;
+    };
+
+    _this.showPlaceholderText = function () {
+      return _this.isEmptyState() && _this.props.noReviewsMode === NoReviewsMode.PLACEHOLDER_TEXT;
+    };
+
+    _this.showRatingInfo = function () {
+      var _this$props = _this.props,
+          noReviewsMode = _this$props.noReviewsMode,
+          editorMode = _this$props.editorMode;
+
+      return !_this.isEmptyState() || (noReviewsMode === NoReviewsMode.NOTHING ? editorMode : false);
+    };
+
+    _this.showIcons = function () {
+      var _this$props2 = _this.props,
+          noReviewsMode = _this$props2.noReviewsMode,
+          editorMode = _this$props2.editorMode;
+
+      return !_this.isEmptyState() || (noReviewsMode === NoReviewsMode.NOTHING ? editorMode : noReviewsMode !== NoReviewsMode.PLACEHOLDER_TEXT);
+    };
+
+    _this.getCurrentText = function () {
+      var _this$props3 = _this.props,
+          labels = _this$props3.labels,
+          rating = _this$props3.rating,
+          title = _this$props3.title,
+          showLabels = _this$props3.showLabels,
+          showTitle = _this$props3.showTitle;
+
+
+      if (_this.state.hovered && showLabels) {
+        return labels[_this.state.hovered];
+      } else if (rating && showLabels) {
+        return labels[rating];
+      }
+
+      return showTitle && title;
+    };
+
+    _this.state = {
+      hovered: undefined
+    };
+    return _this;
+  }
+
+  _createClass(Rating, [{
+    key: 'componentDidUpdate',
+    value: function componentDidUpdate() {
+      this.updateLayout();
+    }
+  }, {
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      this.updateLayout();
+
+      if (this.props.renderSeoScript) {
+        var jsonId = {
+          '@id': 'externalRating',
+          '@context': 'http://schema.org',
+          '@type': 'AggregateRating',
+          itemReviewed: {
+            '@type': 'Thing'
+          },
+          ratingValue: '' + this.props.rating,
+          ratingCount: '' + this.props.numRatings
+        };
+        this.props.renderSeoScript(jsonId);
+      }
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      var _this2 = this;
+
+      var _props = this.props,
+          mode = _props.mode,
+          icon = _props.icon,
+          labels = _props.labels,
+          showTitle = _props.showTitle,
+          labelPosition = _props.labelPosition,
+          editorMode = _props.editorMode,
+          disabled = _props.disabled,
+          shapeSpacing = _props.shapeSpacing,
+          ratingPosition = _props.ratingPosition,
+          showRating = _props.showRating,
+          showReviewsCount = _props.showReviewsCount,
+          noReviewsMode = _props.noReviewsMode,
+          rtl = _props.rtl,
+          id = _props.id,
+          shapeSize = _props.shapeSize,
+          showLabels = _props.showLabels,
+          textAlignment = _props.textAlignment,
+          onFocus = _props.onFocus,
+          onBlur = _props.onBlur,
+          shouldShowInvalid = _props.shouldShowInvalid;
+
+
+      var styleStates = {
+        ratingAfter: mode === 'display' && ratingPosition === 'after',
+        noReviewsMode: noReviewsMode,
+        labelPosition: labelPosition,
+        rtl: rtl,
+        editorMode: editorMode && this.isEmptyState(),
+        disabled: disabled,
+        alignment: textAlignment,
+        mode: mode,
+        error: mode === 'input' && shouldShowInvalid && !this.state.hovered && !editorMode
+      };
+
+      var actualIcon = typeof icon === 'string' ? wrapSvgString(icon) : icon;
+
+      var checkedIcon = React.createElement(RatingIcon, { svg: actualIcon, checked: true, size: shapeSize });
+      var uncheckedIcon = React.createElement(RatingIcon, { svg: actualIcon, size: shapeSize });
+      var splitIcon = React.createElement(SplitRatingIcon, { svg: actualIcon, size: shapeSize, rtl: rtl });
+
+      var displayLabelsSpacing = Math.max(shapeSpacing, 15);
+
+      var ratingStyle = {
+        marginRight: ratingPosition === 'after' ? 0 : displayLabelsSpacing,
+        marginLeft: ratingPosition === 'after' ? displayLabelsSpacing : 0
+      };
+
+      var ratingStyleRTL = {
+        marginLeft: ratingPosition === 'after' ? 0 : displayLabelsSpacing,
+        marginRight: ratingPosition === 'after' ? displayLabelsSpacing : 0
+      };
+
+      var numReviewsStyle = _defineProperty({}, 'margin' + (rtl ? 'Right' : 'Left'), ratingPosition === 'after' ? 15 : displayLabelsSpacing);
+
+      return React.createElement(
+        'div',
+        _extends({}, (0, _RatingSt2.default)('root', styleStates, this.props), {
+          role: 'radiogroup',
+          'data-hook': 'storybook-rating',
+          id: id,
+          style: this.props.style,
+          onClick: this.props.onClick,
+          onDoubleClick: this.props.onDoubleClick,
+          onMouseEnter: this.props.onMouseEnter,
+          onMouseLeave: this.props.onMouseLeave,
+          ref: function ref(compRef) {
+            return _this2.compRef = compRef;
+          }
+        }),
+        mode === 'display' ? React.createElement(
+          'div',
+          { className: _RatingSt2.default.displayMode },
+          this.showPlaceholderText() ? React.createElement(
+            'span',
+            { className: _RatingSt2.default.noReviewsPlaceholder, 'data-hook': 'rating-display-placeholder' },
+            this.props.noReviewsPlaceholder
+          ) : null,
+          showRating && this.showRatingInfo() ? React.createElement(
+            'span',
+            {
+              className: _RatingSt2.default.ratingValue,
+              'data-hook': 'rating-display-rating',
+              style: rtl ? ratingStyleRTL : ratingStyle
+            },
+            (this.props.rating || 0).toFixed(1)
+          ) : null,
+          this.showIcons() ? React.createElement(RatingIcons, {
+            rtl: rtl,
+            rating: this.props.rating,
+            labels: {},
+            shapeSpacing: shapeSpacing,
+            shapeSize: shapeSize,
+            onChange: noop,
+            onHover: noop,
+            onBlur: noop,
+            checkedIcon: checkedIcon,
+            uncheckedIcon: uncheckedIcon,
+            splitIcon: splitIcon,
+            checkedPredicate: function checkedPredicate(value) {
+              return value <= _this2.getCheckedThreshold();
+            },
+            checkedIconPredicate: function checkedIconPredicate(value) {
+              return _this2.shouldSplitIcon(value) ? splitIcon : checkedIcon;
+            },
+            mode: mode
+          }) : null,
+          showReviewsCount && this.showRatingInfo() ? React.createElement(
+            'span',
+            {
+              className: _RatingSt2.default.reviewsCount,
+              'data-hook': 'rating-display-reviews-count',
+              'aria-label': 'based on ' + this.props.numRatings + ' votes',
+              tabIndex: 0,
+              style: numReviewsStyle
+            },
+            (0, _util.formatReviewsCount)(this.props.numRatings),
+            ' ',
+            this.props.numRatingsLabel
+          ) : null
+        ) : React.createElement(
+          'div',
+          { className: _RatingSt2.default.inputMode, onFocus: onFocus, onBlur: onBlur },
+          React.createElement(
+            'span',
+            {
+              className: _RatingSt2.default.labelsContainer,
+              style: labelPosition !== 'side' ? { width: 5 * shapeSize + 4 * shapeSpacing + 'px' } : {},
+              'data-hook': 'labels-container'
+            },
+            showTitle || showLabels ? React.createElement(
+              'span',
+              {
+                className: _RatingSt2.default.title,
+                'data-hook': 'rating-input-title'
+              },
+              this.getCurrentText()
+            ) : null,
+            showLabels && fiveItems.map(function (value) {
+              return React.createElement(
+                'span',
+                { key: value, className: _RatingSt2.default.label },
+                React.createElement(
+                  'span',
+                  { 'data-hook': 'label_' + value },
+                  labels[value]
+                )
+              );
+            }),
+            showTitle && React.createElement(
+              'span',
+              { className: _RatingSt2.default.label },
+              React.createElement(
+                'span',
+                { 'data-hook': 'label_title' },
+                this.props.title
+              )
+            )
+          ),
+          React.createElement(RatingIcons, _extends({}, this.props, {
+            rating: null,
+            onChange: this.onRatingChange,
+            onHover: this.onIconHover,
+            onBlur: this.onIconBlur,
+            splitIcon: checkedIcon,
+            checkedIcon: checkedIcon,
+            uncheckedIcon: uncheckedIcon,
+            checkedPredicate: function checkedPredicate(value) {
+              return value <= (_this2.state.hovered || _this2.props.rating);
+            },
+            checkedIconPredicate: function checkedIconPredicate() {
+              return checkedIcon;
+            }
+          }))
+        )
+      );
+    }
+  }]);
+
+  return Rating;
+}(React.Component);
+
+Rating.propTypes = {
+  /** Santa requirement */
+  id: _propTypes.string,
+  /** Mode - Display or Input */
+  mode: (0, _propTypes.oneOf)(['display', 'input']),
+  /** SVG String Icon */
+  icon: (0, _propTypes.oneOfType)([_propTypes.node, _propTypes.string]),
+  /** The rating displayed / Current rating selected */
+  rating: _propTypes.number,
+  /** on Display mode, shows the number of reviews */
+  numRatings: _propTypes.number,
+  /** on Display mode, the label shown to describe the reviews */
+  numRatingsLabel: _propTypes.string,
+  /** on Display mode, toggles the numeric rating */
+  showRating: _propTypes.bool,
+  /** on Display mode, toggles the numeric count */
+  showReviewsCount: _propTypes.bool,
+  /** on Display mode, specifies the position of the numeric rating in relative to the stars */
+  ratingPosition: (0, _propTypes.oneOf)(['before', 'after']),
+  /** on Display mode, decides what to display incase there are no reviews */
+  noReviewsMode: (0, _propTypes.oneOf)([NoReviewsMode.NOTHING, NoReviewsMode.EMPTY_ICONS, NoReviewsMode.PLACEHOLDER_TEXT]),
+  /** on Display mode, specifies a placeholder text to use (if that option is selected) in the absence of reviews */
+  noReviewsPlaceholder: _propTypes.string,
+  /** on Input mode, a callback to invoke when the rating is changed by the user */
+  onChange: _propTypes.func,
+  /** on Input mode, a callback to invoke when an icon is hovered */
+  onIconMouseIn: _propTypes.func,
+  /** on Input mode, a callback to invoke when the component is focused */
+  onFocus: _propTypes.func,
+  /** on Input mode, a callback to invoke when the component is blured */
+  onBlur: _propTypes.func,
+  /** a callback to invoke when root is clicked */
+  onClick: _propTypes.func,
+  /** a callback to invoke when root is double clicked */
+  onDoubleClick: _propTypes.func,
+  /** a callback to invoke when mouse enters root */
+  onMouseEnter: _propTypes.func,
+  /** a callback to invoke when mouse leaves root */
+  onMouseLeave: _propTypes.func,
+  /** on Input mode, the title of the rating */
+  title: _propTypes.string,
+  /** on Input mode, the labels that represent each rating value */
+  labels: _propTypes.object,
+  /** on Input mode, the position of the labels that represent each rating value */
+  labelPosition: (0, _propTypes.oneOf)(['top', 'bottom', 'side']),
+  /** on Input mode, toggles the title */
+  showTitle: _propTypes.bool,
+  /** on Input mode, toggles the labels */
+  showLabels: _propTypes.bool,
+  /** on Input mode, specifies if this is required */
+  required: _propTypes.bool,
+  /** Sets the shape size */
+  shapeSize: _propTypes.number,
+  /** Sets the shape spacing */
+  shapeSpacing: _propTypes.number,
+  /** Aligns the title/labels text */
+  textAlignment: (0, _propTypes.oneOf)(['left', 'right', 'center']),
+  /** Sets RTL direction */
+  rtl: _propTypes.bool,
+  /** For displaying editor specific styles */
+  editorMode: _propTypes.bool,
+  /** for Disabled visual state */
+  disabled: _propTypes.bool,
+  /** Style - needed for font scaling */
+  style: _propTypes.object,
+  /** A function to render SEO script */
+  renderSeoScript: _propTypes.func,
+  /** for input mode - whether to toggle "error" style state */
+  shouldShowInvalid: _propTypes.bool
+};
+Rating.defaultProps = {
+  showRating: true,
+  showReviewsCount: true,
+  showTitle: true,
+  noReviewsMode: NoReviewsMode.EMPTY_ICONS,
+  icon: _defaultSvg.defaultSvg
+};
+
+/***/ }),
+
+/***/ 49:
+/*!***********************************************!*\
+  !*** ../node_modules/uuid/lib/rng-browser.js ***!
+  \***********************************************/
+/*! no static exports found */
+/*! all exports used */
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+/***/ (function(module, exports) {
+
+// Unique ID creation requires a high quality random # generator.  In the
+// browser this is a little complicated due to unknown quality of Math.random()
+// and inconsistent support for the `crypto` API.  We do the best we can via
+// feature-detection
+
+// getRandomValues needs to be invoked in a context where "this" is a Crypto
+// implementation. Also, find the complete implementation of crypto on IE11.
+var getRandomValues = (typeof(crypto) != 'undefined' && crypto.getRandomValues && crypto.getRandomValues.bind(crypto)) ||
+                      (typeof(msCrypto) != 'undefined' && typeof window.msCrypto.getRandomValues == 'function' && msCrypto.getRandomValues.bind(msCrypto));
+
+if (getRandomValues) {
+  // WHATWG crypto RNG - http://wiki.whatwg.org/wiki/Crypto
+  var rnds8 = new Uint8Array(16); // eslint-disable-line no-undef
+
+  module.exports = function whatwgRNG() {
+    getRandomValues(rnds8);
+    return rnds8;
+  };
+} else {
+  // Math.random()-based (RNG)
+  //
+  // If all else fails, use Math.random().  It's fast, but is of unspecified
+  // quality.
+  var rnds = new Array(16);
+
+  module.exports = function mathRNG() {
+    for (var i = 0, r; i < 16; i++) {
+      if ((i & 0x03) === 0) r = Math.random() * 0x100000000;
+      rnds[i] = r >>> ((i & 0x03) << 3) & 0xff;
+    }
+
+    return rnds;
+  };
+}
+
+
+/***/ }),
+
+/***/ 50:
+/*!***********************************************!*\
+  !*** ../node_modules/uuid/lib/bytesToUuid.js ***!
+  \***********************************************/
+/*! no static exports found */
+/*! all exports used */
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+/***/ (function(module, exports) {
+
+/**
+ * Convert array of 16 byte values to UUID string format of the form:
+ * XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX
+ */
+var byteToHex = [];
+for (var i = 0; i < 256; ++i) {
+  byteToHex[i] = (i + 0x100).toString(16).substr(1);
+}
+
+function bytesToUuid(buf, offset) {
+  var i = offset || 0;
+  var bth = byteToHex;
+  // join used to fix memory issue caused by concatenation: https://bugs.chromium.org/p/v8/issues/detail?id=3175#c4
+  return ([bth[buf[i++]], bth[buf[i++]], 
+	bth[buf[i++]], bth[buf[i++]], '-',
+	bth[buf[i++]], bth[buf[i++]], '-',
+	bth[buf[i++]], bth[buf[i++]], '-',
+	bth[buf[i++]], bth[buf[i++]], '-',
+	bth[buf[i++]], bth[buf[i++]],
+	bth[buf[i++]], bth[buf[i++]],
+	bth[buf[i++]], bth[buf[i++]]]).join('');
+}
+
+module.exports = bytesToUuid;
+
 
 /***/ }),
 
@@ -1467,10 +2459,10 @@ function __importDefault(mod) {
 
 /***/ }),
 
-/***/ 645:
-/*!*********************************************!*\
-  !*** ./components/Pagination/Pagination.js ***!
-  \*********************************************/
+/***/ 661:
+/*!***********************************************************!*\
+  !*** ./components/RatingsDisplay/RatingsDisplay.santa.js ***!
+  \***********************************************************/
 /*! no static exports found */
 /*! all exports used */
 /*! ModuleConcatenation bailout: Module is not an ECMAScript module */
@@ -1482,751 +2474,103 @@ function __importDefault(mod) {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.santaPagination = exports.Pagination = undefined;
-
-var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
-var _react = __webpack_require__(/*! react */ 0);
-
-var _react2 = _interopRequireDefault(_react);
+exports.ratingsDisplay = undefined;
 
 var _createReactClass = __webpack_require__(/*! create-react-class */ 17);
 
 var _createReactClass2 = _interopRequireDefault(_createReactClass);
 
-var _reactDom = __webpack_require__(/*! react-dom */ 11);
-
-var _reactDom2 = _interopRequireDefault(_reactDom);
-
-var _pagination = __webpack_require__(/*! wix-ui-core/pagination */ 646);
-
-var _paginationIcons = __webpack_require__(/*! ./paginationIcons */ 651);
-
-var _PaginationSt = __webpack_require__(/*! ./Pagination.st.css */ 353);
-
-var _PaginationSt2 = _interopRequireDefault(_PaginationSt);
-
 var _santaComponents = __webpack_require__(/*! santa-components */ 14);
 
-var _lodash = __webpack_require__(/*! lodash */ 2);
+var _RatingSt = __webpack_require__(/*! ../Rating/Rating.st.css */ 38);
 
-var _lodash2 = _interopRequireDefault(_lodash);
+var _RatingSt2 = _interopRequireDefault(_RatingSt);
 
-var _propTypes = __webpack_require__(/*! prop-types */ 1);
+var _Rating = __webpack_require__(/*! ../Rating/Rating */ 48);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var Pagination = exports.Pagination = function Pagination(props) {
-  var replaceArrowsWithText = props.replaceArrowsWithText,
-      firstLabel = props.firstLabel,
-      lastLabel = props.lastLabel,
-      previousLabel = props.previousLabel,
-      nextLabel = props.nextLabel,
-      paginationMode = props.paginationMode,
-      showFirstLastNavButtons = props.showFirstLastNavButtons;
-
-
-  var navigationButtonLabels = replaceArrowsWithText ? {
-    firstLabel: _react2.default.createElement(
-      'span',
-      null,
-      firstLabel
-    ),
-    lastLabel: _react2.default.createElement(
-      'span',
-      null,
-      lastLabel
-    ),
-    previousLabel: _react2.default.createElement(
-      'span',
-      null,
-      previousLabel
-    ),
-    nextLabel: _react2.default.createElement(
-      'span',
-      null,
-      nextLabel
-    )
-  } : {
-    replaceArrowsWithText: true,
-    firstLabel: _paginationIcons.arrowFirst,
-    lastLabel: _paginationIcons.arrowLast,
-    previousLabel: _paginationIcons.arrowPrevious,
-    nextLabel: _paginationIcons.arrowNext
-  };
-
-  var slashLabel = { slashLabel: _paginationIcons.slash }; //slash?
-
-  var states = {
-    navButtonsType: replaceArrowsWithText ? 'text' : 'arrows',
-    paginationMode: paginationMode,
-    navButtonsAmount: showFirstLastNavButtons ? 4 : 2
-  };
-
-  var coreProps = Object.assign({}, props, navigationButtonLabels, slashLabel);
-  return _react2.default.createElement(_pagination.Pagination, _extends({}, coreProps, (0, _PaginationSt2.default)('root', states, coreProps)));
-};
-
-Pagination.displayName = 'Pagination';
-Pagination.propTypes = {
-  replaceArrowsWithText: _propTypes.bool,
-  firstLabel: _propTypes.string,
-  lastLabel: _propTypes.string,
-  previousLabel: _propTypes.string,
-  nextLabel: _propTypes.string,
-  paginationMode: _propTypes.string,
-  showFirstLastNavButtons: _propTypes.bool
-};
 
 var skinBasedComp = _santaComponents.mixins.skinBasedComp,
     runTimeCompData = _santaComponents.mixins.runTimeCompData,
     textScaleMixin = _santaComponents.mixins.textScaleMixin;
 
 
+'use strict';
+
+var MOBILE_DEFAULT_FONT_SIZE = 13; //px
+
+var PREVIEW_STATES = {
+  NO_REVIEWS: 'noReviews'
+};
+
 var getComponentSkins = function getComponentSkins() {
   return {
-    'wixui.skins.Pagination': _PaginationSt2.default.$skin
+    'wixui.skins.Rating': _RatingSt2.default.$skin
   };
 };
 
-var santaPagination = exports.santaPagination = (0, _createReactClass2.default)({
-  displayName: 'Pagination',
+var ratingsDisplay = exports.ratingsDisplay = (0, _createReactClass2.default)({
+  displayName: 'RatingsDisplay',
 
   mixins: [skinBasedComp(getComponentSkins()), runTimeCompData, textScaleMixin(getComponentSkins())],
 
   propTypes: {
-    registerLayoutFunc: _santaComponents.santaTypesDefinitions.Layout.registerLayoutFunc.isRequired,
-    compTheme: _santaComponents.santaTypesDefinitions.Component.theme, // trigger re-render on style changes,
-    compProp: _santaComponents.santaTypesDefinitions.Component.compProp.isRequired,
-    compData: _santaComponents.santaTypesDefinitions.Component.compData.isRequired,
-    styleId: _santaComponents.santaTypesDefinitions.Component.styleId,
-    id: _santaComponents.santaTypesDefinitions.Component.id,
+    viewMode: _santaComponents.santaTypesDefinitions.RenderFlags.componentViewMode,
+    componentPreviewState: _santaComponents.santaTypesDefinitions.RenderFlags.componentPreviewState,
+    svgString: _santaComponents.santaTypesDefinitions.RawSvg.getRawSVG,
     style: _santaComponents.santaTypesDefinitions.Component.style,
+    jsonLdRenderer: _santaComponents.santaTypesDefinitions.JsonLd.renderer,
+    compData: _santaComponents.santaTypesDefinitions.Component.compData.isRequired,
+    compProp: _santaComponents.santaTypesDefinitions.Component.compProp.isRequired,
+    id: _santaComponents.santaTypesDefinitions.Component.id,
     isMobileView: _santaComponents.santaTypesDefinitions.isMobileView,
-    scale: _santaComponents.santaTypesDefinitions.Component.scale,
-    onChange: _propTypes.func
+    scale: _santaComponents.santaTypesDefinitions.Component.scale
   },
 
   statics: {
-    compSpecificIsDomOnlyOverride: function compSpecificIsDomOnlyOverride() {
-      return false;
-    },
     getComponentSkins: getComponentSkins
   },
 
-  handleChange: function handleChange(evt) {
-    var event = evt.event,
-        page = evt.page;
+  getMobileFontSize: function getMobileFontSize() {
+    // TODO: check if this can be removed, and use the default logic from 'textScaleMixin'
+    var initialFontSize = parseInt(this.getFontSize('labelFont').fontSize, 10);
 
-
-    if (event.keyCode) {
-      event.preventDefault(); //prevents viewer from scrolling after keyboard press
-    }
-
-    var target = _lodash2.default.defaults({ currentPage: page }, event.target);
-    var ev = _lodash2.default.defaults({ target: target }, event);
-
-    this.updateData({ currentPage: page });
-
-    if (this.props.onChange) {
-      this.props.onChange({ page: page });
-    }
-
-    this.handleAction(_santaComponents.constants.SITE.ACTION_TYPES.CHANGE, ev);
+    return initialFontSize > MOBILE_DEFAULT_FONT_SIZE ? MOBILE_DEFAULT_FONT_SIZE * this.props.scale + 'px' : initialFontSize * this.props.scale + 'px';
+  },
+  getStyle: function getStyle() {
+    return this.props.isMobileView ? Object.assign({}, this.props.style, { fontSize: this.getMobileFontSize() }) : this.props.style;
   },
   getSkinProperties: function getSkinProperties() {
-    var _this = this;
-
-    var _props$compData = this.props.compData,
-        totalPages = _props$compData.totalPages,
-        currentPage = _props$compData.currentPage,
-        firstText = _props$compData.firstText,
-        previousText = _props$compData.previousText,
-        nextText = _props$compData.nextText,
-        lastText = _props$compData.lastText;
-    var _props$compProp = this.props.compProp,
-        paginationMode = _props$compProp.paginationMode,
-        showFirstLastNavButtons = _props$compProp.showFirstLastNavButtons,
-        navigationType = _props$compProp.navigationType,
-        paginationDirection = _props$compProp.paginationDirection,
-        showInputModeTotalPages = _props$compProp.showInputModeTotalPages,
-        showFirstPage = _props$compProp.showFirstPage,
-        showLastPage = _props$compProp.showLastPage,
-        isDisabled = _props$compProp.isDisabled;
-    var _props = this.props,
-        styleId = _props.styleId,
-        id = _props.id,
-        isMobileView = _props.isMobileView;
-
-
-    var replaceArrowsWithText = !isMobileView && navigationType === 'text';
-
-    var getStyle = function getStyle() {
-      // eslint-disable-line complexity
-      var fontStyle = {};
-      var pagesModeMinFontSize = showFirstLastNavButtons ? 15 : 24;
-      var inputModeMinFontSize = showFirstLastNavButtons ? 11 : 16;
-
-      if (isMobileView) {
-        var fontSize = parseInt(_this.getFontSize('fnt').fontSize, 10);
-
-        if (paginationMode === 'pages' && fontSize > pagesModeMinFontSize) {
-          fontStyle.fontSize = pagesModeMinFontSize * _this.props.scale + 'px';
-        } else if (paginationMode === 'input' && fontSize > inputModeMinFontSize) {
-          fontStyle.fontSize = inputModeMinFontSize * _this.props.scale + 'px';
-        } else {
-          fontStyle.fontSize = fontSize * _this.props.scale + 'px';
-        }
-      }
-      return _lodash2.default.merge(_this.props.style, fontStyle);
-    };
-
-    var paginationProps = {
-      parentConst: Pagination,
-      id: id,
-      styleId: styleId,
-      totalPages: totalPages,
-      currentPage: currentPage,
-      onChange: this.handleChange,
-      paginationMode: paginationMode,
-      showFirstLastNavButtons: showFirstLastNavButtons,
-      firstLabel: firstText,
-      previousLabel: previousText,
-      nextLabel: nextText,
-      lastLabel: lastText,
-      replaceArrowsWithText: replaceArrowsWithText,
-      rtl: paginationDirection === 'rtl',
-      showInputModeTotalPages: showInputModeTotalPages,
-      responsive: true,
-      maxPagesToShow: 100,
-      showFirstPage: showFirstPage,
-      showLastPage: showLastPage,
-      width: this.props.style.width,
-      updateResponsiveLayout: function updateResponsiveLayout(updateFunc) {
-        _this.props.registerLayoutFunc(_reactDom2.default.findDOMNode(_this), updateFunc);
-      },
-      style: getStyle(),
-      disabled: isDisabled,
-      onMouseEnter: this.onMouseIn,
-      onMouseLeave: this.onMouseOut,
-      onClick: this.onClick,
-      onDoubleClick: this.onDblClick
-    };
+    var rating = this.props.componentPreviewState === PREVIEW_STATES.NO_REVIEWS ? null : this.props.compData.rating;
+    var renderSeoScript = this.props.compProp.renderSeo ? this.props.jsonLdRenderer : null;
 
     return {
-      '': paginationProps
+      '': {
+        parentConst: function parentConst(props) {
+          return _santaComponents.utils.createReactElement(_Rating.Rating, props);
+        },
+        id: this.props.id,
+        mode: 'display',
+        numRatingsLabel: this.props.compData.reviewsCountLabel,
+        numRatings: this.props.compData.numRatings,
+        noReviewsPlaceholder: this.props.compData.noReviewsPlaceholder,
+        rating: rating,
+        shapeSize: this.props.compProp.shapeSize,
+        rtl: this.props.compProp.direction === 'rtl',
+        shapeSpacing: this.props.compProp.shapeSpacing,
+        noReviewsMode: this.props.compProp.noReviewsMode,
+        ratingPosition: this.props.compProp.ratingPosition,
+        showRating: this.props.compProp.showRating,
+        textAlignment: this.props.compProp.alignment,
+        showReviewsCount: this.props.compProp.showReviewsCount,
+        editorMode: this.props.viewMode === 'editor',
+        icon: this.props.svgString,
+        style: this.getStyle(),
+        renderSeoScript: renderSeoScript
+      }
     };
   }
 });
-
-/***/ }),
-
-/***/ 646:
-/*!*************************************************!*\
-  !*** ../node_modules/wix-ui-core/pagination.js ***!
-  \*************************************************/
-/*! no static exports found */
-/*! all exports used */
-/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__(/*! ./dist/src/components/pagination */ 647);
-
-
-/***/ }),
-
-/***/ 647:
-/*!***************************************************************************!*\
-  !*** ../node_modules/wix-ui-core/dist/src/components/pagination/index.js ***!
-  \***************************************************************************/
-/*! no static exports found */
-/*! all exports used */
-/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-Object.defineProperty(exports, "__esModule", { value: true });
-var Pagination_1 = __webpack_require__(/*! ./Pagination */ 351);
-exports.Pagination = Pagination_1.Pagination;
-//# sourceMappingURL=index.js.map
-
-/***/ }),
-
-/***/ 648:
-/*!*******************************************************************************!*\
-  !*** ../node_modules/wix-ui-core/dist/src/components/pagination/PageStrip.js ***!
-  \*******************************************************************************/
-/*! no static exports found */
-/*! all exports used */
-/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-Object.defineProperty(exports, "__esModule", { value: true });
-var tslib_1 = __webpack_require__(/*! tslib */ 6);
-var React = __webpack_require__(/*! react */ 0);
-var page_strip_layout_1 = __webpack_require__(/*! ./page-strip-layout */ 649);
-var Pagination_st_css_1 = __webpack_require__(/*! ./Pagination.st.css */ 352);
-var PageStrip = /** @class */ (function (_super) {
-    tslib_1.__extends(PageStrip, _super);
-    function PageStrip() {
-        var _this = _super !== null && _super.apply(this, arguments) || this;
-        _this.responsiveLayoutIsFresh = false;
-        _this.unmounted = false;
-        _this.state = { responsiveLayout: null };
-        return _this;
-    }
-    PageStrip.prototype.componentDidMount = function () {
-        var _this = this;
-        if (this.props.updateResponsiveLayout) {
-            // We can't do this in componentWillMount because the caller might need to access DOM here,
-            // and SSR wouldn't work.
-            this.props.updateResponsiveLayout(function () {
-                _this.responsiveLayoutIsFresh = false;
-                // Even though we register a noop callback for `this.props.updateResponsiveLayout`
-                // in `componentWillUnmount`, we cannot guarantee that the user will not hold onto
-                // the old callback and invoke it after unmount, which is the reason for checking
-                // `this.unmounted`.
-                if (!_this.unmounted) {
-                    _this.updateLayoutIfNeeded();
-                }
-            });
-        }
-        else {
-            this.updateLayoutIfNeeded();
-        }
-    };
-    PageStrip.prototype.componentWillReceiveProps = function () {
-        this.responsiveLayoutIsFresh = false;
-    };
-    PageStrip.prototype.componentDidUpdate = function () {
-        if (!this.props.updateResponsiveLayout) {
-            this.updateLayoutIfNeeded();
-        }
-        this.forceRepaintInMsEdge();
-    };
-    PageStrip.prototype.componentWillUnmount = function () {
-        this.unmounted = true;
-        if (this.props.updateResponsiveLayout) {
-            this.props.updateResponsiveLayout(function () { return null; });
-        }
-    };
-    PageStrip.prototype.render = function () {
-        var _this = this;
-        return (React.createElement("div", { ref: function (el) { return (_this.rootNode = el); }, "data-hook": "page-strip", id: this.props.id ? this.props.id + 'pageStrip' : null, className: Pagination_st_css_1.default.pageStrip, "data-aid": "qa-page-strip" },
-            React.createElement("div", { className: Pagination_st_css_1.default.pageStripInner }, this.renderLayout(this.getLayout(), false)),
-            this.isResponsive() && (React.createElement("div", { className: Pagination_st_css_1.default.pageStripInner + ' ' + Pagination_st_css_1.default.pageStripTemplate }, this.renderLayout(page_strip_layout_1.createResponsiveLayoutTemplate(this.props), true)))));
-    };
-    PageStrip.prototype.forceRepaintInMsEdge = function () {
-        // MS Edge has a glitch that makes page numbers invisible when switching to the preview
-        // mode in Santa editor. As a workaround we need to force text re-rendering.
-        // Changing font-variant to small-caps should do the trick without actually affecting
-        // the appearance of digits.
-        var inlineStyle = this.rootNode.style;
-        inlineStyle.fontVariant = inlineStyle.fontVariant ? '' : 'small-caps';
-    };
-    // We can't use page numbers as keys, because we might need to render the same page twice
-    // for responsive layout. We also can't use index as a key, because React might reuse the
-    // node for another page, and keep keyboard focus on it, which we don't want.
-    PageStrip.prototype.renderLayout = function (layout, isDummy) {
-        var _this = this;
-        var _a = this.props, currentPage = _a.currentPage, pageUrl = _a.pageUrl, disabled = _a.disabled;
-        return layout.map(function (pageNumber, index) {
-            if (!pageNumber) {
-                return (React.createElement("span", { key: index, className: Pagination_st_css_1.default.gap }, _this.props.gapLabel));
-            }
-            if (pageNumber === currentPage) {
-                return (React.createElement("span", { key: pageNumber + '-' + index, "data-hook": "page-" + pageNumber + " current-page", "aria-label": "Page " + pageNumber, className: Pagination_st_css_1.default.currentPage }, pageNumber));
-            }
-            if (isDummy) {
-                return (React.createElement("a", { key: pageNumber + '-' + index, className: Pagination_st_css_1.default.pageButton }, pageNumber));
-            }
-            return (React.createElement("a", { key: pageNumber + '-' + index, "data-hook": "page-" + pageNumber, "aria-label": "Page " + pageNumber, className: Pagination_st_css_1.default.pageButton, tabIndex: disabled || pageUrl ? null : 0, onClick: disabled ? null : function (e) { return _this.props.onPageClick(e, pageNumber); }, onKeyDown: disabled ? null : function (e) { return _this.props.onPageKeyDown(e, pageNumber); }, href: !disabled && pageUrl ? pageUrl(pageNumber) : null }, pageNumber));
-        });
-    };
-    PageStrip.prototype.isResponsive = function () {
-        return (this.props.responsive &&
-            this.props.totalPages > 0 &&
-            this.props.maxPagesToShow > 1);
-    };
-    PageStrip.prototype.getLayout = function () {
-        if (!this.isResponsive()) {
-            return page_strip_layout_1.createStaticLayout(this.props);
-        }
-        if (this.state.responsiveLayout) {
-            return this.state.responsiveLayout;
-        }
-        return page_strip_layout_1.createStaticLayout({
-            totalPages: this.props.totalPages,
-            currentPage: this.props.currentPage,
-            showFirstPage: this.props.showFirstPage,
-            showLastPage: this.props.showLastPage,
-            // This is pretty arbitrary. 5 is the minimum space required to show the first, current, and last page.
-            maxPagesToShow: 5,
-        });
-    };
-    PageStrip.prototype.updateLayoutIfNeeded = function () {
-        if (!this.isResponsive() || this.responsiveLayoutIsFresh) {
-            return;
-        }
-        this.responsiveLayoutIsFresh = true;
-        this.setState({
-            responsiveLayout: page_strip_layout_1.createResponsiveLayout({
-                container: this.rootNode.children[1],
-                totalPages: this.props.totalPages,
-                currentPage: this.props.currentPage,
-                maxPagesToShow: this.props.maxPagesToShow,
-                showFirstPage: this.props.showFirstPage,
-                showLastPage: this.props.showLastPage,
-            }),
-        });
-    };
-    return PageStrip;
-}(React.Component));
-exports.PageStrip = PageStrip;
-//# sourceMappingURL=PageStrip.js.map
-
-/***/ }),
-
-/***/ 649:
-/*!***************************************************************************************!*\
-  !*** ../node_modules/wix-ui-core/dist/src/components/pagination/page-strip-layout.js ***!
-  \***************************************************************************************/
-/*! no static exports found */
-/*! all exports used */
-/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-Object.defineProperty(exports, "__esModule", { value: true });
-function createStaticLayout(_a) {
-    var totalPages = _a.totalPages, currentPage = _a.currentPage, maxPagesToShow = _a.maxPagesToShow, showFirstPage = _a.showFirstPage, showLastPage = _a.showLastPage;
-    return createLayout({
-        totalPages: totalPages,
-        currentPage: currentPage,
-        lowerBound: 1,
-        upperBound: totalPages,
-        pageRangeCost: function (a, b) { return b - a + 1; },
-        showFirstPage: showFirstPage,
-        showLastPage: showLastPage,
-        rewindToFirstCost: 2,
-        rewindToLastCost: 2,
-        budget: maxPagesToShow,
-    });
-}
-exports.createStaticLayout = createStaticLayout;
-function rangeToPreRenderForResponsiveLayout(totalPages, currentPage, maxPagesToShow) {
-    return [
-        Math.max(currentPage - maxPagesToShow, 1),
-        Math.min(currentPage + maxPagesToShow, totalPages),
-    ];
-}
-function createResponsiveLayoutTemplate(_a) {
-    var totalPages = _a.totalPages, currentPage = _a.currentPage, maxPagesToShow = _a.maxPagesToShow;
-    var _b = rangeToPreRenderForResponsiveLayout(totalPages, currentPage, maxPagesToShow), lowerBound = _b[0], upperBound = _b[1];
-    return [1, 0].concat(closedRange(lowerBound, upperBound), [0, totalPages]);
-}
-exports.createResponsiveLayoutTemplate = createResponsiveLayoutTemplate;
-// Takes a container with children rendered using createResponsiveLayoutTemplate,
-// measures the children, and decides how many can be shown without overflowing the container.
-// For measurements to work correctly the pages must not have any dynamic spacing between them
-// such as justify-content: space-evenly, but they can have static spacing such as margins.
-// As long as we're using flexbox with centered pages we don't need to worry about the outer
-// margins of the first and last page, they will be trimmed by flexbox automatically.
-// maxPagesToShow is not really taken into account, it's used to derive the range of pages
-// that was pre-rendered by createResponsiveLayoutTemplate().
-function createResponsiveLayout(_a) {
-    var container = _a.container, totalPages = _a.totalPages, currentPage = _a.currentPage, maxPagesToShow = _a.maxPagesToShow, showFirstPage = _a.showFirstPage, showLastPage = _a.showLastPage;
-    var children = Array.from(container.children);
-    var pages = children.slice(2, -2);
-    var containerWidth = container.getBoundingClientRect().width;
-    var firstRect = children[0].getBoundingClientRect();
-    var lastRect = children[children.length - 1].getBoundingClientRect();
-    var lowerRect = pages[0].getBoundingClientRect();
-    var upperRect = pages[pages.length - 1].getBoundingClientRect();
-    var rewindToFirstCost = mergeBoundingRects(firstRect, lowerRect).width - lowerRect.width;
-    var rewindToLastCost = mergeBoundingRects(lastRect, upperRect).width - upperRect.width;
-    var _b = rangeToPreRenderForResponsiveLayout(totalPages, currentPage, maxPagesToShow), lowerBound = _b[0], upperBound = _b[1];
-    var pageRangeCost = function (a, b) {
-        var aRect = pages[a - lowerBound].getBoundingClientRect();
-        var bRect = pages[b - lowerBound].getBoundingClientRect();
-        return mergeBoundingRects(aRect, bRect).width;
-    };
-    return createLayout({
-        totalPages: totalPages,
-        currentPage: currentPage,
-        lowerBound: lowerBound,
-        upperBound: upperBound,
-        pageRangeCost: pageRangeCost,
-        showFirstPage: showFirstPage,
-        showLastPage: showLastPage,
-        rewindToFirstCost: rewindToFirstCost,
-        rewindToLastCost: rewindToLastCost,
-        budget: containerWidth,
-    });
-}
-exports.createResponsiveLayout = createResponsiveLayout;
-function createLayoutByExpandingPageRange(_a) {
-    var totalPages = _a.totalPages, low = _a.low, high = _a.high, lowerBound = _a.lowerBound, upperBound = _a.upperBound, pageRangeCost = _a.pageRangeCost, budget = _a.budget, showRewindToFirst = _a.showRewindToFirst, showRewindToLast = _a.showRewindToLast, rewindToFirstCost = _a.rewindToFirstCost, rewindToLastCost = _a.rewindToLastCost;
-    var safeLowerBound = showRewindToFirst
-        ? Math.max(lowerBound, 4)
-        : lowerBound;
-    var safeUpperBound = showRewindToLast
-        ? Math.min(upperBound, totalPages - 3)
-        : upperBound;
-    if (!isNondecreasing([
-        lowerBound,
-        safeLowerBound,
-        low,
-        high,
-        safeUpperBound,
-        upperBound,
-    ])) {
-        return null;
-    }
-    lowerBound = safeLowerBound;
-    upperBound = safeUpperBound;
-    budget -=
-        (showRewindToFirst ? rewindToFirstCost : 0) +
-            (showRewindToLast ? rewindToLastCost : 0);
-    var acceptableLow = 0;
-    var acceptableHigh = 0;
-    while (lowerBound <= low &&
-        high <= upperBound &&
-        pageRangeCost(low, high) <= budget) {
-        acceptableLow = low;
-        acceptableHigh = high;
-        if (low === lowerBound && high === upperBound) {
-            break;
-        }
-        low = Math.max(low - 1, lowerBound);
-        high = Math.min(high + 1, upperBound);
-    }
-    return acceptableLow && acceptableHigh
-        ? (showRewindToFirst ? [1, 0] : []).concat(closedRange(acceptableLow, acceptableHigh), (showRewindToLast ? [0, totalPages] : [])) : null;
-}
-function createLayout(_a) {
-    var totalPages = _a.totalPages, currentPage = _a.currentPage, lowerBound = _a.lowerBound, upperBound = _a.upperBound, pageRangeCost = _a.pageRangeCost, showFirstPage = _a.showFirstPage, showLastPage = _a.showLastPage, rewindToFirstCost = _a.rewindToFirstCost, rewindToLastCost = _a.rewindToLastCost, budget = _a.budget;
-    var prevOrLowerBound = Math.max(currentPage - 1, lowerBound);
-    var nextOrUpperBound = Math.min(currentPage + 1, upperBound);
-    var expand = function (low, high, showRewindToFirst, showRewindToLast) {
-        return createLayoutByExpandingPageRange({
-            totalPages: totalPages,
-            low: low,
-            high: high,
-            lowerBound: lowerBound,
-            upperBound: upperBound,
-            pageRangeCost: pageRangeCost,
-            budget: budget,
-            showRewindToFirst: showRewindToFirst,
-            showRewindToLast: showRewindToLast,
-            rewindToFirstCost: rewindToFirstCost,
-            rewindToLastCost: rewindToLastCost,
-        });
-    };
-    return (
-    // Try to show the entire range.
-    ((lowerBound === 1 || !showFirstPage) &&
-        (upperBound === totalPages || !showLastPage) &&
-        expand(lowerBound, upperBound, false, false)) ||
-        // Ellipsis only in the end. Show at least one page after the current.
-        (showLastPage &&
-            lowerBound === 1 &&
-            expand(lowerBound, nextOrUpperBound, false, true)) ||
-        // Ellipsis only in the beginning. Show at least one page before the current.
-        (showFirstPage &&
-            upperBound === totalPages &&
-            expand(prevOrLowerBound, upperBound, true, false)) ||
-        // Ellipses on both sides. Show at least one page before the current and one after.
-        (showFirstPage &&
-            showLastPage &&
-            expand(prevOrLowerBound, nextOrUpperBound, true, true)) ||
-        // Ellipsis only in the end. Don't try to include the next page.
-        (showLastPage &&
-            lowerBound === 1 &&
-            expand(lowerBound, currentPage, false, true)) ||
-        // Ellipsis only in the beginning. Don't try to include the previous page.
-        (showFirstPage &&
-            upperBound === totalPages &&
-            expand(currentPage, upperBound, true, false)) ||
-        // Ellipses on both sides. Don't try to include the previous and the next page.
-        (showFirstPage &&
-            showLastPage &&
-            expand(currentPage, currentPage, true, true)) ||
-        // Cut off both sides without adding ellipses.
-        expand(currentPage, currentPage, false, false) || [currentPage] // If there's not enough space even for the current page, still show it.
-    );
-}
-function closedRange(start, stop, step) {
-    if (step === void 0) { step = 1; }
-    var result = [];
-    for (var i = start; i <= stop; i += step) {
-        result.push(i);
-    }
-    return result;
-}
-function isNondecreasing(sequence) {
-    for (var i = 1; i < sequence.length; i++) {
-        if (sequence[i] < sequence[i - 1]) {
-            return false;
-        }
-    }
-    return true;
-}
-function mergeBoundingRects(a, b) {
-    var top = Math.min(a.top, b.top);
-    var right = Math.max(a.right, b.right);
-    var bottom = Math.max(a.bottom, b.bottom);
-    var left = Math.min(a.left, b.left);
-    var width = right - left;
-    var height = bottom - top;
-    return { top: top, right: right, bottom: bottom, left: left, width: width, height: height };
-}
-//# sourceMappingURL=page-strip-layout.js.map
-
-/***/ }),
-
-/***/ 650:
-/*!************************************************************************************!*\
-  !*** ../node_modules/wix-ui-core/dist/src/components/pagination/root-min-width.js ***!
-  \************************************************************************************/
-/*! no static exports found */
-/*! all exports used */
-/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-Object.defineProperty(exports, "__esModule", { value: true });
-var Pagination_1 = __webpack_require__(/*! ./Pagination */ 351);
-exports.measureAndSetRootMinWidth = function (compNode, paginationMode, idPrefix) {
-    if (idPrefix === void 0) { idPrefix = ''; }
-    compNode.style.minWidth = '';
-    compNode.style.minHeight = '';
-    var getById = function (id) {
-        return compNode.querySelector("#" + Pagination_1.getId(idPrefix, id));
-    };
-    var getMinWidth = function (elmnt) {
-        return elmnt ? parseInt(window.getComputedStyle(elmnt).minWidth, 10) : 0;
-    };
-    var getWidthWithMargins = function (element) {
-        if (!element) {
-            return 0;
-        }
-        var style = window.getComputedStyle(element);
-        return (parseInt(style.marginRight, 10) +
-            element.offsetWidth +
-            parseInt(style.marginLeft, 10));
-    };
-    var getHeightWithMargins = function (element) {
-        if (!element) {
-            return 0;
-        }
-        var style = window.getComputedStyle(element);
-        return (parseInt(style.marginBottom, 10) +
-            element.offsetHeight +
-            parseInt(style.marginTop, 10));
-    };
-    var navButtonsMinWidth = getWidthWithMargins(getById('navButtonNext')) +
-        getWidthWithMargins(getById('navButtonPrevious')) +
-        getWidthWithMargins(getById('navButtonFirst')) +
-        getWidthWithMargins(getById('navButtonLast'));
-    var selectionMinWidth = 0;
-    var minHeight = 0;
-    if (paginationMode === 'pages') {
-        // means we're in "pages" pagination mode
-        selectionMinWidth = getMinWidth(getById('pageStrip'));
-        minHeight = Math.max(getHeightWithMargins(getById('pageStrip')), getHeightWithMargins(getById('navButtonNext')));
-    }
-    else {
-        // means we're in "input" pagination mode
-        selectionMinWidth =
-            getWidthWithMargins(getById('totalPages')) +
-                getWidthWithMargins(getById('slash')) +
-                getWidthWithMargins(getById('pageInput'));
-        minHeight = Math.max(getHeightWithMargins(getById('pageInput')), getHeightWithMargins(getById('navButtonNext')));
-    }
-    compNode.style.minWidth = navButtonsMinWidth + selectionMinWidth + 'px';
-    compNode.style.minHeight = minHeight + 'px';
-};
-//# sourceMappingURL=root-min-width.js.map
-
-/***/ }),
-
-/***/ 651:
-/*!**************************************************!*\
-  !*** ./components/Pagination/paginationIcons.js ***!
-  \**************************************************/
-/*! no static exports found */
-/*! all exports used */
-/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.slash = exports.arrowNext = exports.arrowPrevious = exports.arrowLast = exports.arrowFirst = undefined;
-
-var _react = __webpack_require__(/*! react */ 0);
-
-var _react2 = _interopRequireDefault(_react);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var arrowFirst = exports.arrowFirst = _react2.default.createElement(
-  "svg",
-  { version: "1.1", xmlns: "http://www.w3.org/2000/svg", x: "0px", y: "0px", viewBox: "0 0 200 200", enableBackground: "new 0 0 200 200", xmlSpace: "preserve" },
-  _react2.default.createElement(
-    "g",
-    null,
-    _react2.default.createElement("path", { d: "M94.606,32.523l-72.009,68.199l70.48,66.745l-5.518,5.837l-76.627-72.582l78.156-74.027L94.606,32.523z" }),
-    _react2.default.createElement("path", { d: "M107.059,100.723l70.48,66.745l-5.518,5.837l-76.627-72.582l78.156-74.027l5.518,5.828L107.059,100.723z" })
-  )
-);
-
-var arrowLast = exports.arrowLast = _react2.default.createElement(
-  "svg",
-  { version: "1.1", xmlns: "http://www.w3.org/2000/svg", x: "0px", y: "0px", viewBox: "0 0 200 200", enableBackground: "new 0 0 200 200", xmlSpace: "preserve" },
-  _react2.default.createElement(
-    "g",
-    null,
-    _react2.default.createElement("path", { d: "M112.442,26.696l76.627,72.582l-78.156,74.027l-5.518-5.828l72.009-68.199l-70.48-66.745L112.442,26.696z" }),
-    _react2.default.createElement("path", { d: "M27.979,26.696l76.627,72.582l-78.156,74.027l-5.518-5.828l72.009-68.199l-70.48-66.745L27.979,26.696z" })
-  )
-);
-
-var arrowPrevious = exports.arrowPrevious = _react2.default.createElement(
-  "svg",
-  { version: "1.1", xmlns: "http://www.w3.org/2000/svg", x: "0px", y: "0px", viewBox: "0 0 200 200", enableBackground: "new 0 0 200 200", xmlSpace: "preserve" },
-  _react2.default.createElement("path", { d: "M130.789,173.304l-76.627-72.582l78.156-74.027l5.518,5.828l-72.009,68.199l70.48,66.745L130.789,173.304z" })
-);
-
-var arrowNext = exports.arrowNext = _react2.default.createElement(
-  "svg",
-  { version: "1.1", xmlns: "http://www.w3.org/2000/svg", x: "0px", y: "0px", viewBox: "0 0 200 200", enableBackground: "new 0 0 200 200", xmlSpace: "preserve" },
-  _react2.default.createElement("path", { d: "M69.211,26.696l76.627,72.582l-78.156,74.027l-5.518-5.828l72.009-68.199l-70.48-66.745L69.211,26.696z" })
-);
-
-var slash = exports.slash = _react2.default.createElement(
-  "svg",
-  { xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 15 26", version: "1.1" },
-  _react2.default.createElement("defs", null),
-  _react2.default.createElement(
-    "g",
-    { stroke: "none", strokeWidth: "1", fill: "none", fillRule: "evenodd", strokeLinecap: "square" },
-    _react2.default.createElement(
-      "g",
-      null,
-      _react2.default.createElement("path", { d: "M13.5,4.5 L2,21.9807621" })
-    )
-  )
-);
 
 /***/ }),
 
@@ -2291,4 +2635,4 @@ module.exports = invariant;
 /***/ })
 
 }]);
-//# sourceMappingURL=wixui.Pagination.chunk.js.map
+//# sourceMappingURL=wixui.RatingsDisplay.chunk.js.map

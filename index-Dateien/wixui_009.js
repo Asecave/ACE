@@ -1,4 +1,4 @@
-((typeof self !== 'undefined' ? self : this)["webpackJsonp_wix_ui_santa"] = (typeof self !== 'undefined' ? self : this)["webpackJsonp_wix_ui_santa"] || []).push([[44],{
+((typeof self !== 'undefined' ? self : this)["webpackJsonp_wix_ui_santa"] = (typeof self !== 'undefined' ? self : this)["webpackJsonp_wix_ui_santa"] || []).push([[43],{
 
 /***/ 12:
 /*!**********************************************!*\
@@ -100,494 +100,6 @@ module.exports = shouldUseNative() ? Object.assign : function (target, source) {
 
 	return to;
 };
-
-
-/***/ }),
-
-/***/ 131:
-/*!***************************************************!*\
-  !*** ../node_modules/wix-ui-core/radio-button.js ***!
-  \***************************************************/
-/*! no static exports found */
-/*! all exports used */
-/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__(/*! ./dist/src/components/radio-button */ 132);
-
-
-/***/ }),
-
-/***/ 132:
-/*!*****************************************************************************!*\
-  !*** ../node_modules/wix-ui-core/dist/src/components/radio-button/index.js ***!
-  \*****************************************************************************/
-/*! no static exports found */
-/*! all exports used */
-/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-Object.defineProperty(exports, "__esModule", { value: true });
-var RadioButton_1 = __webpack_require__(/*! ./RadioButton */ 133);
-exports.RadioButton = RadioButton_1.RadioButton;
-//# sourceMappingURL=index.js.map
-
-/***/ }),
-
-/***/ 133:
-/*!***********************************************************************************!*\
-  !*** ../node_modules/wix-ui-core/dist/src/components/radio-button/RadioButton.js ***!
-  \***********************************************************************************/
-/*! no static exports found */
-/*! all exports used */
-/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-Object.defineProperty(exports, "__esModule", { value: true });
-var tslib_1 = __webpack_require__(/*! tslib */ 6);
-var React = __webpack_require__(/*! react */ 0);
-var RadioButton_st_css_1 = __webpack_require__(/*! ./RadioButton.st.css */ 134);
-var noop = function () { return null; };
-var RadioButton = /** @class */ (function (_super) {
-    tslib_1.__extends(RadioButton, _super);
-    function RadioButton() {
-        var _this = _super !== null && _super.apply(this, arguments) || this;
-        _this.focusedByMouse = false;
-        _this.state = {
-            focused: false,
-            focusVisible: false,
-        };
-        _this.handleClick = function (event) {
-            _this.focusedByMouse = true;
-            _this.handleInputChange(event);
-        };
-        _this.handleInputChange = function (event) {
-            if (!_this.props.disabled) {
-                _this.props.onChange(tslib_1.__assign({ value: _this.props.value }, event));
-                if (_this.radioRef) {
-                    _this.radioRef.focus();
-                }
-            }
-        };
-        _this.onHover = function (event) {
-            _this.props.onHover(tslib_1.__assign({ value: _this.props.value }, event));
-        };
-        _this.onFocus = function () {
-            _this.setState({ focused: true, focusVisible: !_this.focusedByMouse });
-        };
-        _this.onInputBlur = function () {
-            _this.setState({ focused: false, focusVisible: false });
-            _this.focusedByMouse = false;
-        };
-        _this.handleInputKeyDown = function () {
-            _this.setState({ focusVisible: true });
-        };
-        _this.radioRef = undefined;
-        return _this;
-    }
-    RadioButton.prototype.render = function () {
-        var _this = this;
-        var _a = this.props, value = _a.value, name = _a.name, checkedIcon = _a.checkedIcon, uncheckedIcon = _a.uncheckedIcon, label = _a.label, checked = _a.checked, disabled = _a.disabled, required = _a.required, onIconBlur = _a.onIconBlur;
-        var focused = this.state.focused;
-        return (React.createElement("div", tslib_1.__assign({}, RadioButton_st_css_1.default('root', {
-            checked: checked,
-            disabled: disabled,
-            focused: focused,
-            'focus-visible': this.state.focusVisible,
-        }, this.props), { onChange: this.handleInputChange, onClick: this.handleClick, role: "radio", "aria-checked": checked ? checked : false }),
-            React.createElement("input", { type: "radio", className: RadioButton_st_css_1.default.hiddenRadio, disabled: disabled, required: required, onFocus: this.onFocus, onBlur: this.onInputBlur, checked: checked, value: value, name: name, onChange: function () { return null; }, onKeyDown: this.handleInputKeyDown, ref: function (radio) { return (_this.radioRef = radio); }, "aria-label": this.props['aria-label'] }),
-            React.createElement("span", { className: RadioButton_st_css_1.default.icon, onMouseEnter: this.onHover, onMouseLeave: onIconBlur }, checked ? checkedIcon : uncheckedIcon),
-            React.createElement("span", { className: RadioButton_st_css_1.default.label }, label)));
-    };
-    RadioButton.displayName = 'RadioButton';
-    RadioButton.defaultProps = {
-        onChange: noop,
-        onHover: noop,
-        onBlur: noop,
-    };
-    return RadioButton;
-}(React.Component));
-exports.RadioButton = RadioButton;
-//# sourceMappingURL=RadioButton.js.map
-
-/***/ }),
-
-/***/ 134:
-/*!***************************************************************************************!*\
-  !*** ../node_modules/wix-ui-core/dist/src/components/radio-button/RadioButton.st.css ***!
-  \***************************************************************************************/
-/*! exports provided: default */
-/*! all exports used */
-/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
-/***/ (function(module, exports, __webpack_require__) {
-
-Object.defineProperty(exports, "__esModule", { value: true })
-
-exports.default = __webpack_require__.stylable.create(
-  "root",
-  "RadioButton1232350729",
-  {"root":"RadioButton1232350729--root","icon":"RadioButton1232350729--icon","label":"RadioButton1232350729--label","hiddenRadio":"RadioButton1232350729--hiddenRadio"},
-  "",
-  1,
-  /*! ../node_modules/wix-ui-core/dist/src/components/radio-button/RadioButton.st.css */ 134
-);
-
-
-
-/***/ }),
-
-/***/ 135:
-/*!***********************************!*\
-  !*** ./components/Rating/util.js ***!
-  \***********************************/
-/*! no static exports found */
-/*! all exports used */
-/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.precisionRound = precisionRound;
-exports.formatReviewsCount = formatReviewsCount;
-function precisionRound(number, precision) {
-  var factor = Math.pow(10, precision);
-  return Math.round(number * factor) / factor;
-}
-
-function formatReviewsCount(reviewsCount) {
-  if (reviewsCount < 1000) {
-    return "" + reviewsCount;
-  } else if (reviewsCount < 9950) {
-    return precisionRound(reviewsCount / 1000, 1) + "K";
-  } else if (reviewsCount < 999500) {
-    return precisionRound(reviewsCount / 1000, 0) + "K";
-  } else if (reviewsCount < 9950000) {
-    return precisionRound(reviewsCount / 1e6, 1) + "M";
-  } else {
-    return precisionRound(reviewsCount / 1e6, 0) + "M";
-  }
-}
-
-/***/ }),
-
-/***/ 136:
-/*!*******************************************!*\
-  !*** ./components/Rating/santa-layout.js ***!
-  \*******************************************/
-/*! no static exports found */
-/*! all exports used */
-/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
-
-var ratingsDisplayLayout = exports.ratingsDisplayLayout = function ratingsDisplayLayout(compNode, props) {
-  var getElement = function getElement(dataHook) {
-    return compNode.querySelector('[data-hook=\'' + dataHook + '\']');
-  };
-
-  var getWidthWithMargins = function getWidthWithMargins(elemHook) {
-    var elem = getElement(elemHook);
-    if (!elem) {
-      return 0;
-    }
-
-    var style = window.getComputedStyle(elem);
-    return parseInt(style.marginRight, 10) + elem.offsetWidth + parseInt(style.marginLeft, 10);
-  };
-
-  var getHeight = function getHeight(elemHook) {
-    var elem = getElement(elemHook);
-    if (!elem) {
-      return 0;
-    }
-    return elem.offsetHeight;
-  };
-
-  var getHeightWithMargins = function getHeightWithMargins(elemHook) {
-    var elem = getElement(elemHook);
-    if (!elem) {
-      return 0;
-    }
-
-    var style = window.getComputedStyle(elem);
-    return parseInt(style.marginTop, 10) + elem.offsetHeight + parseInt(style.marginBottom, 10);
-  };
-
-  if (props.mode === 'display') {
-    var iconsWidth = getWidthWithMargins('rating-icons');
-    var iconsHeight = getHeight('rating-icons');
-
-    var ratingWidth = getWidthWithMargins('rating-display-rating');
-    var ratingHeight = getHeight('rating-display-rating');
-
-    var reviewsCountWidth = getWidthWithMargins('rating-display-reviews-count');
-    var reviewsCountHeight = getHeight('rating-display-reviews-count');
-
-    var placeholderTextHeight = getHeight('rating-display-placeholder');
-
-    var resultWidth = parseInt(iconsWidth, 10) + parseInt(ratingWidth, 10) + parseInt(reviewsCountWidth, 10) + 'px';
-    compNode.style.minWidth = resultWidth;
-
-    var iconsHeightVal = parseInt(iconsHeight, 10);
-    var ratingHeightVal = parseInt(ratingHeight, 10);
-    var reviewsCountHeightVal = parseInt(reviewsCountHeight, 10);
-    var placeholderTextHeightVal = parseInt(placeholderTextHeight, 10);
-
-    var calculatedHeight = Math.max(iconsHeightVal, ratingHeightVal, reviewsCountHeightVal, placeholderTextHeightVal);
-    var resultHeight = calculatedHeight > 0 ? calculatedHeight + 'px' : '1.5em';
-    compNode.style.height = resultHeight;
-  } else if (props.labelPosition === 'side') {
-    // input mode - labelPosition 'side'
-    var additionalWidthForText = props.showTitle || props.showLabels ? Math.max.apply(Math, _toConsumableArray(['1', '2', '3', '4', '5', 'title'].map(function (lbl) {
-      if (!getElement('label_' + lbl)) {
-        return 0;
-      }
-      // set the styles to have labels in their minimal width, then measure, then reset width.
-      var container = getElement('label_' + lbl).parentElement;
-      container.style.width = 0;
-      var measure = getWidthWithMargins('label_' + lbl);
-      container.style.width = '';
-      return measure;
-    }))) : 0;
-
-    var _iconsWidth = getWidthWithMargins('rating-icons');
-
-    compNode.style.minWidth = _iconsWidth + additionalWidthForText + 'px';
-    compNode.style.height = Math.max(getHeight('labels-container'), getHeight('rating-icons')) + 'px';
-  } else {
-    // input mode - either labelPosition 'top' or 'bottom'
-    var labelsContainerWidth = getWidthWithMargins('labels-container');
-    compNode.style.minWidth = labelsContainerWidth + 'px';
-    compNode.style.height = getHeightWithMargins('labels-container') + getHeightWithMargins('rating-icons') + 'px';
-  }
-};
-
-/***/ }),
-
-/***/ 137:
-/*!******************************************!*\
-  !*** ./components/Rating/default-svg.js ***!
-  \******************************************/
-/*! no static exports found */
-/*! all exports used */
-/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.defaultSvg = undefined;
-
-var _react = __webpack_require__(/*! react */ 0);
-
-var React = _interopRequireWildcard(_react);
-
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
-
-var defaultSvg = exports.defaultSvg = React.createElement("svg", { version: "1.1", id: "Layer_1", xmlns: "http://www.w3.org/2000/svg", width: "200px", height: "200px", xmlnsXlink: "http://www.w3.org/1999/xlink", xmlSpace: "preserve", viewBox: "0 0 200 200" });
-
-/***/ }),
-
-/***/ 138:
-/*!*************************************!*\
-  !*** ../node_modules/uuid/index.js ***!
-  \*************************************/
-/*! no static exports found */
-/*! all exports used */
-/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
-/***/ (function(module, exports, __webpack_require__) {
-
-var v1 = __webpack_require__(/*! ./v1 */ 139);
-var v4 = __webpack_require__(/*! ./v4 */ 140);
-
-var uuid = v4;
-uuid.v1 = v1;
-uuid.v4 = v4;
-
-module.exports = uuid;
-
-
-/***/ }),
-
-/***/ 139:
-/*!**********************************!*\
-  !*** ../node_modules/uuid/v1.js ***!
-  \**********************************/
-/*! no static exports found */
-/*! all exports used */
-/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
-/***/ (function(module, exports, __webpack_require__) {
-
-var rng = __webpack_require__(/*! ./lib/rng */ 49);
-var bytesToUuid = __webpack_require__(/*! ./lib/bytesToUuid */ 50);
-
-// **`v1()` - Generate time-based UUID**
-//
-// Inspired by https://github.com/LiosK/UUID.js
-// and http://docs.python.org/library/uuid.html
-
-var _nodeId;
-var _clockseq;
-
-// Previous uuid creation time
-var _lastMSecs = 0;
-var _lastNSecs = 0;
-
-// See https://github.com/broofa/node-uuid for API details
-function v1(options, buf, offset) {
-  var i = buf && offset || 0;
-  var b = buf || [];
-
-  options = options || {};
-  var node = options.node || _nodeId;
-  var clockseq = options.clockseq !== undefined ? options.clockseq : _clockseq;
-
-  // node and clockseq need to be initialized to random values if they're not
-  // specified.  We do this lazily to minimize issues related to insufficient
-  // system entropy.  See #189
-  if (node == null || clockseq == null) {
-    var seedBytes = rng();
-    if (node == null) {
-      // Per 4.5, create and 48-bit node id, (47 random bits + multicast bit = 1)
-      node = _nodeId = [
-        seedBytes[0] | 0x01,
-        seedBytes[1], seedBytes[2], seedBytes[3], seedBytes[4], seedBytes[5]
-      ];
-    }
-    if (clockseq == null) {
-      // Per 4.2.2, randomize (14 bit) clockseq
-      clockseq = _clockseq = (seedBytes[6] << 8 | seedBytes[7]) & 0x3fff;
-    }
-  }
-
-  // UUID timestamps are 100 nano-second units since the Gregorian epoch,
-  // (1582-10-15 00:00).  JSNumbers aren't precise enough for this, so
-  // time is handled internally as 'msecs' (integer milliseconds) and 'nsecs'
-  // (100-nanoseconds offset from msecs) since unix epoch, 1970-01-01 00:00.
-  var msecs = options.msecs !== undefined ? options.msecs : new Date().getTime();
-
-  // Per 4.2.1.2, use count of uuid's generated during the current clock
-  // cycle to simulate higher resolution clock
-  var nsecs = options.nsecs !== undefined ? options.nsecs : _lastNSecs + 1;
-
-  // Time since last uuid creation (in msecs)
-  var dt = (msecs - _lastMSecs) + (nsecs - _lastNSecs)/10000;
-
-  // Per 4.2.1.2, Bump clockseq on clock regression
-  if (dt < 0 && options.clockseq === undefined) {
-    clockseq = clockseq + 1 & 0x3fff;
-  }
-
-  // Reset nsecs if clock regresses (new clockseq) or we've moved onto a new
-  // time interval
-  if ((dt < 0 || msecs > _lastMSecs) && options.nsecs === undefined) {
-    nsecs = 0;
-  }
-
-  // Per 4.2.1.2 Throw error if too many uuids are requested
-  if (nsecs >= 10000) {
-    throw new Error('uuid.v1(): Can\'t create more than 10M uuids/sec');
-  }
-
-  _lastMSecs = msecs;
-  _lastNSecs = nsecs;
-  _clockseq = clockseq;
-
-  // Per 4.1.4 - Convert from unix epoch to Gregorian epoch
-  msecs += 12219292800000;
-
-  // `time_low`
-  var tl = ((msecs & 0xfffffff) * 10000 + nsecs) % 0x100000000;
-  b[i++] = tl >>> 24 & 0xff;
-  b[i++] = tl >>> 16 & 0xff;
-  b[i++] = tl >>> 8 & 0xff;
-  b[i++] = tl & 0xff;
-
-  // `time_mid`
-  var tmh = (msecs / 0x100000000 * 10000) & 0xfffffff;
-  b[i++] = tmh >>> 8 & 0xff;
-  b[i++] = tmh & 0xff;
-
-  // `time_high_and_version`
-  b[i++] = tmh >>> 24 & 0xf | 0x10; // include version
-  b[i++] = tmh >>> 16 & 0xff;
-
-  // `clock_seq_hi_and_reserved` (Per 4.2.2 - include variant)
-  b[i++] = clockseq >>> 8 | 0x80;
-
-  // `clock_seq_low`
-  b[i++] = clockseq & 0xff;
-
-  // `node`
-  for (var n = 0; n < 6; ++n) {
-    b[i + n] = node[n];
-  }
-
-  return buf ? buf : bytesToUuid(b);
-}
-
-module.exports = v1;
-
-
-/***/ }),
-
-/***/ 140:
-/*!**********************************!*\
-  !*** ../node_modules/uuid/v4.js ***!
-  \**********************************/
-/*! no static exports found */
-/*! all exports used */
-/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
-/***/ (function(module, exports, __webpack_require__) {
-
-var rng = __webpack_require__(/*! ./lib/rng */ 49);
-var bytesToUuid = __webpack_require__(/*! ./lib/bytesToUuid */ 50);
-
-function v4(options, buf, offset) {
-  var i = buf && offset || 0;
-
-  if (typeof(options) == 'string') {
-    buf = options === 'binary' ? new Array(16) : null;
-    options = null;
-  }
-  options = options || {};
-
-  var rnds = options.random || (options.rng || rng)();
-
-  // Per 4.4, set bits for version and `clock_seq_hi_and_reserved`
-  rnds[6] = (rnds[6] & 0x0f) | 0x40;
-  rnds[8] = (rnds[8] & 0x3f) | 0x80;
-
-  // Copy bytes to buffer, if provided
-  if (buf) {
-    for (var ii = 0; ii < 16; ++ii) {
-      buf[i + ii] = rnds[ii];
-    }
-  }
-
-  return buf || bytesToUuid(rnds);
-}
-
-module.exports = v4;
 
 
 /***/ }),
@@ -1452,10 +964,10 @@ module.exports = emptyObject;
 
 /***/ }),
 
-/***/ 38:
-/*!*****************************************!*\
-  !*** ./components/Rating/Rating.st.css ***!
-  \*****************************************/
+/***/ 240:
+/*!***************************************************!*\
+  !*** ./components/ProgressBar/ProgressBar.st.css ***!
+  \***************************************************/
 /*! exports provided: default */
 /*! all exports used */
 /*! ModuleConcatenation bailout: Module is not an ECMAScript module */
@@ -1465,24 +977,24 @@ Object.defineProperty(exports, "__esModule", { value: true })
 
 exports.default = __webpack_require__.stylable.create(
   "root",
-  "Rating2556983050",
-  {"root":"Rating2556983050--root","displayMode":"Rating2556983050--displayMode","inputMode":"Rating2556983050--inputMode","stars":"Rating2556983050--stars","ratingValue":"Rating2556983050--ratingValue","reviewsCount":"Rating2556983050--reviewsCount","noReviewsPlaceholder":"Rating2556983050--noReviewsPlaceholder","labelsContainer":"Rating2556983050--labelsContainer","label":"Rating2556983050--label","title":"Rating2556983050--title","icon":"Rating2556983050--icon","halfIcon":"Rating2556983050--halfIcon","radioButton":"Rating2556983050--radioButton","filledShapeColor":"color_5","emptyShapeColor":"color_15","shapeBorderColor":"color_32","shapeBorderWidth":"3","labelFont":"font_8","labelFontColor":"color_15","errorFilledShapeColor":"color_7","errorShapeBorderColor":"color_37","errorShapeBorderWidth":"7","errorLabelFontColor":"color_17"},
+  "ProgressBar944847283",
+  {"root":"ProgressBar944847283--root","barBackgroundColor":"color_8","barForegroundColor":"color_6","borderRadius":"0px","boxShadow":"0 1px 4px rgba(0, 0, 0, .6)","borderSize":"0px","borderColor":"color_5"},
   "",
   7,
-  /*! ./components/Rating/Rating.st.css */ 38
+  /*! ./components/ProgressBar/ProgressBar.st.css */ 240
 );
 
-exports.default.$skin = {"params":{"filledShapeColor":"COLOR_ALPHA","emptyShapeColor":"COLOR_ALPHA","shapeBorderColor":"BORDER_COLOR_ALPHA","shapeBorderWidth":"BORDER_SIZE","labelFont":"FONT","labelFontColor":"TEXT_COLOR","errorFilledShapeColor":"COLOR_ALPHA","errorShapeBorderColor":"BORDER_COLOR_ALPHA","errorShapeBorderWidth":"BORDER_SIZE","errorLabelFontColor":"TEXT_COLOR"},"paramsDefaults":{"filledShapeColor":"color_5","emptyShapeColor":"color_15","shapeBorderColor":"color_32","shapeBorderWidth":"3","labelFont":"font_8","labelFontColor":"color_15","errorFilledShapeColor":"color_7","errorShapeBorderColor":"color_37","errorShapeBorderWidth":"7","errorLabelFontColor":"color_17"}};
+exports.default.$skin = {"params":{"barBackgroundColor":"COLOR_ALPHA","barForegroundColor":"COLOR_ALPHA","borderRadius":"BORDER_RADIUS","boxShadow":"BOX_SHADOW","borderSize":"BORDER_SIZE","borderColor":"COLOR_ALPHA"},"paramsDefaults":{"barBackgroundColor":"color_8","barForegroundColor":"color_6","borderRadius":"0px","boxShadow":"0 1px 4px rgba(0, 0, 0, .6)","borderSize":"0px","borderColor":"color_5"}};
 exports.default.$skin.$render = function render_css($id, $params, $functions) {
-  return "\n" + $id + " .RadioButton1232350729--root{display: inline-block}\n" + $id + " .RadioButton1232350729--icon{cursor: pointer;height: auto}\n" + $id + " .RadioButton1232350729--label{}\n" + $id + " .RadioButton1232350729--root[data-radiobutton1232350729-checked] .RadioButton1232350729--icon, " + $id + " .RadioButton1232350729--root:hover .RadioButton1232350729--icon{}\n" + $id + " .RadioButton1232350729--root[data-radiobutton1232350729-disabled]{filter: grayscale(75%);opacity: 0.7}\n" + $id + " .RadioButton1232350729--hiddenRadio{position: absolute;overflow: hidden;height: 1px;width: 1px;margin: -1px;padding: 0;border: 0;opacity: 0}\n" + $id + ".Rating2556983050--root{display: inline-flex;align-items: center;font: " + $params["labelFont"] + "}\n" + $id + ".Rating2556983050--root[data-rating2556983050-rtl] .Rating2556983050--displayMode, " + $id + ".Rating2556983050--root[data-rating2556983050-rtl] .Rating2556983050--inputMode{direction: rtl}\n" + $id + " .Rating2556983050--displayMode{display: inline-flex;width: 100%;align-items: center}\n" + $id + ".Rating2556983050--root[data-rating2556983050-alignment=\"center\"] .Rating2556983050--displayMode{justify-content: center}\n" + $id + ".Rating2556983050--root[data-rating2556983050-alignment=\"right\"] .Rating2556983050--displayMode, " + $id + ".Rating2556983050--root[data-rating2556983050-rtl][data-rating2556983050-alignment=\"left\"] .Rating2556983050--displayMode{justify-content: flex-end}\n" + $id + ".Rating2556983050--root[data-rating2556983050-alignment=\"left\"] .Rating2556983050--displayMode, " + $id + ".Rating2556983050--root[data-rating2556983050-rtl][data-rating2556983050-alignment=\"right\"] .Rating2556983050--displayMode{justify-content: flex-start}\n" + $id + " .Rating2556983050--inputMode{display: inline-flex;flex-direction: column;width: 100%;text-align: center;align-items: center}\n" + $id + ".Rating2556983050--root[data-rating2556983050-alignment=\"right\"] .Rating2556983050--inputMode{text-align: right;align-items: flex-end}\n" + $id + ".Rating2556983050--root[data-rating2556983050-rtl][data-rating2556983050-alignment=\"right\"] .Rating2556983050--inputMode{align-items: flex-start}\n" + $id + ".Rating2556983050--root[data-rating2556983050-alignment=\"left\"] .Rating2556983050--inputMode{text-align: left;align-items: flex-start}\n" + $id + ".Rating2556983050--root[data-rating2556983050-rtl][data-rating2556983050-alignment=\"left\"] .Rating2556983050--inputMode{align-items: flex-end}\n" + $id + ".Rating2556983050--root[data-rating2556983050-labelposition=\"side\"] .Rating2556983050--inputMode, " + $id + ".Rating2556983050--root[data-rating2556983050-rtl][data-rating2556983050-labelposition=\"side\"] .Rating2556983050--inputMode{flex-direction: row;align-items: center}\n" + $id + " .Rating2556983050--stars{order: 2;display: flex}\n" + $id + ".Rating2556983050--root[data-rating2556983050-mode=\"input\"] .Rating2556983050--stars{cursor: pointer}\n" + $id + ".Rating2556983050--root[data-rating2556983050-disabled] .Rating2556983050--stars{pointer-events: none}\n" + $id + " .Rating2556983050--ratingValue, " + $id + " .Rating2556983050--reviewsCount, " + $id + " .Rating2556983050--noReviewsPlaceholder{color: " + $params["labelFontColor"] + ";line-height: 1.5}\n" + $id + " .Rating2556983050--ratingValue{order: 1;align-self: center}\n" + $id + " .Rating2556983050--reviewsCount{order: 3;align-self: center;white-space: nowrap}\n" + $id + " .Rating2556983050--noReviewsPlaceholder{align-self: center;white-space: nowrap;overflow-x: hidden}\n" + $id + " .Rating2556983050--labelsContainer{display: inline-flex;width: 100%;order: 1;overflow: hidden;align-items: flex-end}\n" + $id + ".Rating2556983050--root[data-rating2556983050-labelposition=\"bottom\"] .Rating2556983050--labelsContainer{align-items: flex-start}\n" + $id + ".Rating2556983050--root[data-rating2556983050-labelposition=\"side\"] .Rating2556983050--labelsContainer{align-items: center}\n" + $id + " .Rating2556983050--label, " + $id + " .Rating2556983050--title{color: " + $params["labelFontColor"] + ";line-height: 1.5;flex-shrink: 0;display: block;width: 100%}\n" + $id + ".Rating2556983050--root[data-rating2556983050-error] .Rating2556983050--label, " + $id + ".Rating2556983050--root[data-preview=\"error\"] .Rating2556983050--label, " + $id + ".Rating2556983050--root[data-rating2556983050-error] .Rating2556983050--title, " + $id + ".Rating2556983050--root[data-preview=\"error\"] .Rating2556983050--title{color: " + $params["errorLabelFontColor"] + "}\n" + $id + ".Rating2556983050--root[data-rating2556983050-labelposition=\"side\"] .Rating2556983050--stars{align-self: center}\n" + $id + " .Rating2556983050--label{visibility: hidden}\n" + $id + ".Rating2556983050--root[data-rating2556983050-labelposition=\"bottom\"] .Rating2556983050--stars, " + $id + ".Rating2556983050--root[data-rating2556983050-labelposition=\"side\"] .Rating2556983050--stars{order: 0}\n" + $id + ".Rating2556983050--root[data-rating2556983050-ratingafter] .Rating2556983050--stars{order: 0}\n" + $id + ".Rating2556983050--root[data-rating2556983050-noreviewsmode=\"nothing\"][data-rating2556983050-editormode] .Rating2556983050--stars, " + $id + ".Rating2556983050--root[data-rating2556983050-noreviewsmode=\"nothing\"][data-rating2556983050-editormode] .Rating2556983050--ratingValue, " + $id + ".Rating2556983050--root[data-rating2556983050-noreviewsmode=\"nothing\"][data-rating2556983050-editormode] .Rating2556983050--reviewsCount{opacity: 0.15}\n" + $id + " .Rating2556983050--icon{display: block;position: relative;stroke: " + $params["shapeBorderColor"] + ";stroke-width: " + $params["shapeBorderWidth"] + ";fill: " + $params["emptyShapeColor"] + "}\n" + $id + " .Rating2556983050--icon path{fill: " + $params["emptyShapeColor"] + "}\n" + $id + " .Rating2556983050--icon[data-rating2556983050-checked] path{fill: " + $params["filledShapeColor"] + "}\n" + $id + " .Rating2556983050--icon svg{display: block;height: 100%;width: 100%;transform: translateZ(0)}\n" + $id + " .Rating2556983050--halfIcon{position: absolute;top: 0;overflow: hidden}\n" + $id + ".Rating2556983050--root[data-rating2556983050-mode=\"display\"] .Rating2556983050--icon{cursor: default}\n" + $id + ".Rating2556983050--root[data-rating2556983050-error] .Rating2556983050--icon:not([data-rating2556983050-checked]), " + $id + ".Rating2556983050--root[data-preview=\"error\"] .Rating2556983050--icon{stroke: " + $params["errorShapeBorderColor"] + ";stroke-width: " + $params["errorShapeBorderWidth"] + "}\n" + $id + ".Rating2556983050--root[data-rating2556983050-error] .Rating2556983050--icon:not([data-rating2556983050-checked]) path, " + $id + ".Rating2556983050--root[data-preview=\"error\"] .Rating2556983050--icon path{fill: " + $params["errorFilledShapeColor"] + "}\n" + $id + " .Rating2556983050--radioButton{}\n";
+  return "\n" + $id + ".LinearProgressBar3941501373--root{width: 100%;display: flex;align-items: center}\n" + $id + " .LinearProgressBar3941501373--progressIndicationSection{position: relative;height: 100%;display: flex;justify-content: center;align-items: center}\n" + $id + " .LinearProgressBar3941501373--barContainer{width: 100%;position: relative;height: 100%}\n" + $id + " .LinearProgressBar3941501373--barBackground, " + $id + " .LinearProgressBar3941501373--barForeground{top: 50%;transform: translateY(-50%);position: absolute}\n" + $id + " .LinearProgressBar3941501373--barBackground{width: 100%}\n" + $id + " .LinearProgressBar3941501373--indicationContainer{}\n" + $id + ".ProgressBar944847283--root{z-index: 0;height: 100%;width: 100%}\n" + $id + ".ProgressBar944847283--root .LinearProgressBar3941501373--barContainer{border-radius: " + $params["borderRadius"] + ";height: 100%;width: 100%;box-shadow: " + $params["boxShadow"] + ";border-width: " + $params["borderSize"] + ";border-color: " + $params["borderColor"] + ";box-sizing: border-box;overflow: hidden;border-style: solid}\n" + $id + ".ProgressBar944847283--root[data-progressbar944847283-direction=\"rtl\"]{direction: rtl}\n" + $id + ".ProgressBar944847283--root[data-progressbar944847283-direction=\"ltr\"]{direction: ltr}\n" + $id + ".ProgressBar944847283--root .LinearProgressBar3941501373--barBackground{background: " + $params["barBackgroundColor"] + ";border-radius: " + $functions["getInnerBorderRadius"]($params["borderRadius"], $params["borderSize"]) + ";height: 100%;width: 100%}\n" + $id + ".ProgressBar944847283--root .LinearProgressBar3941501373--barForeground{background: " + $params["barForegroundColor"] + ";height: 100%;border-radius: " + $functions["getInnerBorderRadius"]($params["borderRadius"], $params["borderSize"]) + ";transition-timing-function: cubic-bezier(0.645,0.045,0.355,1);transition-duration: 300ms}\n" + $id + ".ProgressBar944847283--root[data-progressbar944847283-viewmode=\"editor\"] .LinearProgressBar3941501373--barForeground{transition: initial}\n";
 };
 
 /***/ }),
 
-/***/ 439:
-/*!********************************************!*\
-  !*** ./components/RatingsDisplay/index.js ***!
-  \********************************************/
+/***/ 359:
+/*!***********************************************!*\
+  !*** ./components/ProgressBar/ProgressBar.js ***!
+  \***********************************************/
 /*! no static exports found */
 /*! all exports used */
 /*! ModuleConcatenation bailout: Module is not an ECMAScript module */
@@ -1494,76 +1006,29 @@ exports.default.$skin.$render = function render_css($id, $params, $functions) {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+exports.ProgressBar = undefined;
 
-var _RatingsDisplay = __webpack_require__(/*! ./RatingsDisplay.santa */ 661);
-
-var _Rating = __webpack_require__(/*! ../Rating/Rating */ 48);
-
-var _RatingSt = __webpack_require__(/*! ../Rating/Rating.st.css */ 38);
-
-var _RatingSt2 = _interopRequireDefault(_RatingSt);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-exports.default = {
-  componentType: 'wixui.RatingsDisplay',
-  component: _Rating.Rating,
-  santaComponent: _RatingsDisplay.ratingsDisplay,
-  skin: _RatingSt2.default.$skin
-};
-
-/***/ }),
-
-/***/ 48:
-/*!*************************************!*\
-  !*** ./components/Rating/Rating.js ***!
-  \*************************************/
-/*! no static exports found */
-/*! all exports used */
-/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.Rating = exports.NoReviewsMode = exports.SplitRatingIcon = exports.RatingIcon = undefined;
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; /* eslint-disable complexity*/
-
 var _react = __webpack_require__(/*! react */ 0);
 
-var React = _interopRequireWildcard(_react);
+var _react2 = _interopRequireDefault(_react);
 
-var _reactDom = __webpack_require__(/*! react-dom */ 11);
+var _linearProgressBar = __webpack_require__(/*! wix-ui-core/linear-progress-bar */ 671);
 
-var ReactDOM = _interopRequireWildcard(_reactDom);
+var _ProgressBarSt = __webpack_require__(/*! ./ProgressBar.st.css */ 240);
 
-var _radioButton = __webpack_require__(/*! wix-ui-core/radio-button */ 131);
-
-var _util = __webpack_require__(/*! ./util */ 135);
-
-var _santaLayout = __webpack_require__(/*! ./santa-layout */ 136);
-
-var _RatingSt = __webpack_require__(/*! ./Rating.st.css */ 38);
-
-var _RatingSt2 = _interopRequireDefault(_RatingSt);
+var _ProgressBarSt2 = _interopRequireDefault(_ProgressBarSt);
 
 var _propTypes = __webpack_require__(/*! prop-types */ 1);
 
-var _defaultSvg = __webpack_require__(/*! ./default-svg */ 137);
-
-var _uuid = __webpack_require__(/*! uuid */ 138);
-
-var _uuid2 = _interopRequireDefault(_uuid);
+var _dataHooks = __webpack_require__(/*! ./data-hooks */ 676);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -1571,660 +1036,74 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+var ProgressBar = exports.ProgressBar = function (_React$Component) {
+  _inherits(ProgressBar, _React$Component);
 
-var noop = function noop() {
-  return null;
-};
-var fiveItems = [1, 2, 3, 4, 5];
+  function ProgressBar() {
+    _classCallCheck(this, ProgressBar);
 
-var RatingIcon = exports.RatingIcon = function RatingIcon(props) {
-  var svg = props.svg,
-      checked = props.checked,
-      size = props.size,
-      split = props.split;
-
-  return React.createElement(
-    'span',
-    _extends({}, (0, _RatingSt2.default)('icon', { checked: checked, split: split }, props), { style: { height: size + 'px', width: size + 'px' } }),
-    svg
-  );
-};
-
-var SplitRatingIcon = exports.SplitRatingIcon = function SplitRatingIcon(_ref) {
-  var svg = _ref.svg,
-      size = _ref.size,
-      rtl = _ref.rtl;
-
-  return React.createElement(
-    'span',
-    { className: _RatingSt2.default.icon },
-    React.createElement(RatingIcon, { split: true, svg: svg, size: size }),
-    React.createElement(
-      'div',
-      {
-        className: _RatingSt2.default.halfIcon,
-        style: {
-          height: size + 'px',
-          width: size / 2 + 'px',
-          left: (rtl ? size / 2 : 0) + 'px'
-        }
-      },
-      React.createElement(RatingIcon, { checked: true, split: true, svg: svg, size: size })
-    )
-  );
-};
-
-RatingIcon.propTypes = {
-  checked: _propTypes.bool,
-  svg: _propTypes.node,
-  size: _propTypes.number,
-  split: _propTypes.bool
-};
-
-SplitRatingIcon.propTypes = {
-  svg: _propTypes.node,
-  size: _propTypes.number,
-  rtl: _propTypes.bool
-};
-
-var RatingIcons = function RatingIcons(props) {
-  var onChange = props.onChange,
-      checkedPredicate = props.checkedPredicate,
-      onHover = props.onHover,
-      shapeSpacing = props.shapeSpacing,
-      rtl = props.rtl,
-      labels = props.labels,
-      rating = props.rating,
-      onBlur = props.onBlur,
-      uncheckedIcon = props.uncheckedIcon,
-      checkedIconPredicate = props.checkedIconPredicate,
-      shapeSize = props.shapeSize,
-      required = props.required,
-      mode = props.mode,
-      labelPosition = props.labelPosition,
-      showLabels = props.showLabels,
-      showTitle = props.showTitle;
-
-  var name = (0, _uuid2.default)();
-
-  var getStarsStyle = function getStarsStyle() {
-    var horizontalMargins = void 0,
-        verticalMargins = void 0;
-
-    if (mode === 'input' && (showTitle || showLabels)) {
-      if (labelPosition === 'side') {
-        horizontalMargins = _defineProperty({}, rtl ? 'marginLeft' : 'marginRight', Math.max(15, shapeSpacing));
-      }
-
-      if (labelPosition !== 'side') {
-        verticalMargins = _defineProperty({}, labelPosition === 'top' ? 'marginTop' : 'marginBottom', shapeSize ? shapeSize / 2 : 18);
-      }
-    }
-
-    return Object.assign({ minWidth: 4 * shapeSpacing + 5 * shapeSize + 'px' }, horizontalMargins, verticalMargins);
-  };
-
-  return React.createElement(
-    'span',
-    {
-      tabIndex: mode === 'display' ? 0 : null,
-      className: _RatingSt2.default.stars,
-      style: getStarsStyle(),
-      'aria-label': rating ? rating + ' out of 5' : null,
-      'data-hook': 'rating-icons'
-    },
-    ' ',
-    fiveItems.map(function (value) {
-      return React.createElement(
-        'span',
-        {
-          'data-hook': 'rating-icon-' + value,
-          key: value,
-          style: _defineProperty({ display: 'flex' }, rtl ? 'paddingLeft' : 'paddingRight', value < 5 ? shapeSpacing : null),
-          'aria-label': !rating ? labels[value] : null,
-          onMouseEnter: function onMouseEnter(event) {
-            return onHover(_extends({ value: value }, event));
-          },
-          onMouseLeave: onBlur
-        },
-        React.createElement(_radioButton.RadioButton, {
-          className: mode === 'input' ? _RatingSt2.default.radioButton : null,
-          name: name,
-          'data-hook': 'input-radio-' + value,
-          value: '' + value,
-          checked: checkedPredicate(value),
-          label: '',
-          onChange: onChange,
-          checkedIcon: checkedIconPredicate(value),
-          uncheckedIcon: uncheckedIcon,
-          required: required
-        })
-      );
-    }),
-    ' '
-  );
-};
-
-RatingIcons.propTypes = {
-  rating: _propTypes.number,
-  shapeSize: _propTypes.number,
-  shapeSpacing: _propTypes.number,
-  rtl: _propTypes.bool,
-  dataHook: _propTypes.string,
-  onChange: _propTypes.func,
-  onHover: _propTypes.func,
-  onBlur: _propTypes.func,
-  checkedIcon: _propTypes.node,
-  uncheckedIcon: _propTypes.node,
-  splitIcon: _propTypes.node,
-  checkedPredicate: _propTypes.func,
-  checkedIconPredicate: _propTypes.func,
-  labels: _propTypes.object,
-  required: _propTypes.bool,
-  mode: _propTypes.string,
-  labelPosition: _propTypes.string,
-  showLabels: _propTypes.bool,
-  showTitle: _propTypes.bool
-};
-
-function wrapSvgString(svgString) {
-  return React.createElement('div', {
-    dangerouslySetInnerHTML: {
-      __html: svgString || ''
-    }
-  });
-}
-
-var NoReviewsMode = exports.NoReviewsMode = {
-  NOTHING: 'nothing',
-  EMPTY_ICONS: 'emptyIcons',
-  PLACEHOLDER_TEXT: 'placeholderText'
-};
-
-var Rating = exports.Rating = function (_React$Component) {
-  _inherits(Rating, _React$Component);
-
-  function Rating(props) {
-    _classCallCheck(this, Rating);
-
-    var _this = _possibleConstructorReturn(this, (Rating.__proto__ || Object.getPrototypeOf(Rating)).call(this, props));
-
-    _this.updateLayout = function () {
-      return (0, _santaLayout.ratingsDisplayLayout)(ReactDOM.findDOMNode(_this), _this.props);
-    };
-
-    _this.onRatingChange = function (event) {
-      var intValue = parseInt(event.value);
-
-      if (_this.props.disabled || intValue === _this.props.rating || event.type !== 'click') {
-        return;
-      }
-
-      _this.props.onChange({ event: event, rating: intValue });
-    };
-
-    _this.onIconHover = function (event) {
-      if (_this.props.disabled) {
-        return;
-      }
-
-      var intValue = parseInt(event.value);
-      _this.setState({ hovered: intValue });
-
-      var icon = {
-        value: intValue,
-        label: _this.props.labels[intValue]
-      };
-
-      _this.props.onIconMouseIn && _this.props.onIconMouseIn({ icon: icon });
-    };
-
-    _this.onIconBlur = function () {
-      if (_this.props.disabled) {
-        return;
-      }
-      _this.setState({ hovered: undefined });
-    };
-
-    _this.shouldEmptyIcons = function () {
-      return _this.isEmptyState() && _this.props.noReviewsMode === NoReviewsMode.EMPTY_ICONS;
-    };
-
-    _this.getCheckedThreshold = function () {
-      if (_this.shouldEmptyIcons()) {
-        return 0;
-      }
-
-      return (0, _util.precisionRound)((_this.state.hovered || _this.props.rating) + 0.7, 1);
-    };
-
-    _this.shouldSplitIcon = function (value) {
-      var lastCheckedIcon = value <= _this.getCheckedThreshold() && value + 1 > _this.getCheckedThreshold();
-      var decimal = _this.props.rating % 1;
-      return lastCheckedIcon && decimal >= 0.25 && decimal < 0.75; // // X.25 - X.74 - half star
-    };
-
-    _this.isEmptyState = function () {
-      return !_this.props.rating;
-    };
-
-    _this.showPlaceholderText = function () {
-      return _this.isEmptyState() && _this.props.noReviewsMode === NoReviewsMode.PLACEHOLDER_TEXT;
-    };
-
-    _this.showRatingInfo = function () {
-      var _this$props = _this.props,
-          noReviewsMode = _this$props.noReviewsMode,
-          editorMode = _this$props.editorMode;
-
-      return !_this.isEmptyState() || (noReviewsMode === NoReviewsMode.NOTHING ? editorMode : false);
-    };
-
-    _this.showIcons = function () {
-      var _this$props2 = _this.props,
-          noReviewsMode = _this$props2.noReviewsMode,
-          editorMode = _this$props2.editorMode;
-
-      return !_this.isEmptyState() || (noReviewsMode === NoReviewsMode.NOTHING ? editorMode : noReviewsMode !== NoReviewsMode.PLACEHOLDER_TEXT);
-    };
-
-    _this.getCurrentText = function () {
-      var _this$props3 = _this.props,
-          labels = _this$props3.labels,
-          rating = _this$props3.rating,
-          title = _this$props3.title,
-          showLabels = _this$props3.showLabels,
-          showTitle = _this$props3.showTitle;
-
-
-      if (_this.state.hovered && showLabels) {
-        return labels[_this.state.hovered];
-      } else if (rating && showLabels) {
-        return labels[rating];
-      }
-
-      return showTitle && title;
-    };
-
-    _this.state = {
-      hovered: undefined
-    };
-    return _this;
+    return _possibleConstructorReturn(this, (ProgressBar.__proto__ || Object.getPrototypeOf(ProgressBar)).apply(this, arguments));
   }
 
-  _createClass(Rating, [{
-    key: 'componentDidUpdate',
-    value: function componentDidUpdate() {
-      this.updateLayout();
-    }
-  }, {
-    key: 'componentDidMount',
-    value: function componentDidMount() {
-      this.updateLayout();
-
-      if (this.props.renderSeoScript) {
-        var jsonId = {
-          '@id': 'externalRating',
-          '@context': 'http://schema.org',
-          '@type': 'AggregateRating',
-          itemReviewed: {
-            '@type': 'Thing'
-          },
-          ratingValue: '' + this.props.rating,
-          ratingCount: '' + this.props.numRatings
-        };
-        this.props.renderSeoScript(jsonId);
-      }
-    }
-  }, {
+  _createClass(ProgressBar, [{
     key: 'render',
     value: function render() {
-      var _this2 = this;
-
       var _props = this.props,
-          mode = _props.mode,
-          icon = _props.icon,
-          labels = _props.labels,
-          showTitle = _props.showTitle,
-          labelPosition = _props.labelPosition,
-          editorMode = _props.editorMode,
-          disabled = _props.disabled,
-          shapeSpacing = _props.shapeSpacing,
-          ratingPosition = _props.ratingPosition,
-          showRating = _props.showRating,
-          showReviewsCount = _props.showReviewsCount,
-          noReviewsMode = _props.noReviewsMode,
-          rtl = _props.rtl,
-          id = _props.id,
-          shapeSize = _props.shapeSize,
-          showLabels = _props.showLabels,
-          textAlignment = _props.textAlignment,
-          onFocus = _props.onFocus,
-          onBlur = _props.onBlur,
-          shouldShowInvalid = _props.shouldShowInvalid;
+          direction = _props.direction,
+          viewMode = _props.viewMode,
+          max = _props.targetValue,
+          rest = _objectWithoutProperties(_props, ['direction', 'viewMode', 'targetValue']);
 
-
-      var styleStates = {
-        ratingAfter: mode === 'display' && ratingPosition === 'after',
-        noReviewsMode: noReviewsMode,
-        labelPosition: labelPosition,
-        rtl: rtl,
-        editorMode: editorMode && this.isEmptyState(),
-        disabled: disabled,
-        alignment: textAlignment,
-        mode: mode,
-        error: mode === 'input' && shouldShowInvalid && !this.state.hovered && !editorMode
-      };
-
-      var actualIcon = typeof icon === 'string' ? wrapSvgString(icon) : icon;
-
-      var checkedIcon = React.createElement(RatingIcon, { svg: actualIcon, checked: true, size: shapeSize });
-      var uncheckedIcon = React.createElement(RatingIcon, { svg: actualIcon, size: shapeSize });
-      var splitIcon = React.createElement(SplitRatingIcon, { svg: actualIcon, size: shapeSize, rtl: rtl });
-
-      var displayLabelsSpacing = Math.max(shapeSpacing, 15);
-
-      var ratingStyle = {
-        marginRight: ratingPosition === 'after' ? 0 : displayLabelsSpacing,
-        marginLeft: ratingPosition === 'after' ? displayLabelsSpacing : 0
-      };
-
-      var ratingStyleRTL = {
-        marginLeft: ratingPosition === 'after' ? 0 : displayLabelsSpacing,
-        marginRight: ratingPosition === 'after' ? displayLabelsSpacing : 0
-      };
-
-      var numReviewsStyle = _defineProperty({}, 'margin' + (rtl ? 'Right' : 'Left'), ratingPosition === 'after' ? 15 : displayLabelsSpacing);
-
-      return React.createElement(
-        'div',
-        _extends({}, (0, _RatingSt2.default)('root', styleStates, this.props), {
-          role: 'radiogroup',
-          'data-hook': 'storybook-rating',
-          id: id,
-          style: this.props.style,
-          onClick: this.props.onClick,
-          onDoubleClick: this.props.onDoubleClick,
-          onMouseEnter: this.props.onMouseEnter,
-          onMouseLeave: this.props.onMouseLeave,
-          ref: function ref(compRef) {
-            return _this2.compRef = compRef;
-          }
-        }),
-        mode === 'display' ? React.createElement(
-          'div',
-          { className: _RatingSt2.default.displayMode },
-          this.showPlaceholderText() ? React.createElement(
-            'span',
-            { className: _RatingSt2.default.noReviewsPlaceholder, 'data-hook': 'rating-display-placeholder' },
-            this.props.noReviewsPlaceholder
-          ) : null,
-          showRating && this.showRatingInfo() ? React.createElement(
-            'span',
-            {
-              className: _RatingSt2.default.ratingValue,
-              'data-hook': 'rating-display-rating',
-              style: rtl ? ratingStyleRTL : ratingStyle
-            },
-            (this.props.rating || 0).toFixed(1)
-          ) : null,
-          this.showIcons() ? React.createElement(RatingIcons, {
-            rtl: rtl,
-            rating: this.props.rating,
-            labels: {},
-            shapeSpacing: shapeSpacing,
-            shapeSize: shapeSize,
-            onChange: noop,
-            onHover: noop,
-            onBlur: noop,
-            checkedIcon: checkedIcon,
-            uncheckedIcon: uncheckedIcon,
-            splitIcon: splitIcon,
-            checkedPredicate: function checkedPredicate(value) {
-              return value <= _this2.getCheckedThreshold();
-            },
-            checkedIconPredicate: function checkedIconPredicate(value) {
-              return _this2.shouldSplitIcon(value) ? splitIcon : checkedIcon;
-            },
-            mode: mode
-          }) : null,
-          showReviewsCount && this.showRatingInfo() ? React.createElement(
-            'span',
-            {
-              className: _RatingSt2.default.reviewsCount,
-              'data-hook': 'rating-display-reviews-count',
-              'aria-label': 'based on ' + this.props.numRatings + ' votes',
-              tabIndex: 0,
-              style: numReviewsStyle
-            },
-            (0, _util.formatReviewsCount)(this.props.numRatings),
-            ' ',
-            this.props.numRatingsLabel
-          ) : null
-        ) : React.createElement(
-          'div',
-          { className: _RatingSt2.default.inputMode, onFocus: onFocus, onBlur: onBlur },
-          React.createElement(
-            'span',
-            {
-              className: _RatingSt2.default.labelsContainer,
-              style: labelPosition !== 'side' ? { width: 5 * shapeSize + 4 * shapeSpacing + 'px' } : {},
-              'data-hook': 'labels-container'
-            },
-            showTitle || showLabels ? React.createElement(
-              'span',
-              {
-                className: _RatingSt2.default.title,
-                'data-hook': 'rating-input-title'
-              },
-              this.getCurrentText()
-            ) : null,
-            showLabels && fiveItems.map(function (value) {
-              return React.createElement(
-                'span',
-                { key: value, className: _RatingSt2.default.label },
-                React.createElement(
-                  'span',
-                  { 'data-hook': 'label_' + value },
-                  labels[value]
-                )
-              );
-            }),
-            showTitle && React.createElement(
-              'span',
-              { className: _RatingSt2.default.label },
-              React.createElement(
-                'span',
-                { 'data-hook': 'label_title' },
-                this.props.title
-              )
-            )
-          ),
-          React.createElement(RatingIcons, _extends({}, this.props, {
-            rating: null,
-            onChange: this.onRatingChange,
-            onHover: this.onIconHover,
-            onBlur: this.onIconBlur,
-            splitIcon: checkedIcon,
-            checkedIcon: checkedIcon,
-            uncheckedIcon: uncheckedIcon,
-            checkedPredicate: function checkedPredicate(value) {
-              return value <= (_this2.state.hovered || _this2.props.rating);
-            },
-            checkedIconPredicate: function checkedIconPredicate() {
-              return checkedIcon;
-            }
-          }))
-        )
-      );
+      var styles = (0, _ProgressBarSt2.default)('root', { direction: direction, viewMode: viewMode }, this.props);
+      return _react2.default.createElement(_linearProgressBar.LinearProgressBar, _extends({ max: max, 'data-hook': _dataHooks.DATAHOOKS.coreComponent }, rest, styles));
     }
   }]);
 
-  return Rating;
-}(React.Component);
+  return ProgressBar;
+}(_react2.default.Component);
 
-Rating.propTypes = {
-  /** Santa requirement */
-  id: _propTypes.string,
-  /** Mode - Display or Input */
-  mode: (0, _propTypes.oneOf)(['display', 'input']),
-  /** SVG String Icon */
-  icon: (0, _propTypes.oneOfType)([_propTypes.node, _propTypes.string]),
-  /** The rating displayed / Current rating selected */
-  rating: _propTypes.number,
-  /** on Display mode, shows the number of reviews */
-  numRatings: _propTypes.number,
-  /** on Display mode, the label shown to describe the reviews */
-  numRatingsLabel: _propTypes.string,
-  /** on Display mode, toggles the numeric rating */
-  showRating: _propTypes.bool,
-  /** on Display mode, toggles the numeric count */
-  showReviewsCount: _propTypes.bool,
-  /** on Display mode, specifies the position of the numeric rating in relative to the stars */
-  ratingPosition: (0, _propTypes.oneOf)(['before', 'after']),
-  /** on Display mode, decides what to display incase there are no reviews */
-  noReviewsMode: (0, _propTypes.oneOf)([NoReviewsMode.NOTHING, NoReviewsMode.EMPTY_ICONS, NoReviewsMode.PLACEHOLDER_TEXT]),
-  /** on Display mode, specifies a placeholder text to use (if that option is selected) in the absence of reviews */
-  noReviewsPlaceholder: _propTypes.string,
-  /** on Input mode, a callback to invoke when the rating is changed by the user */
-  onChange: _propTypes.func,
-  /** on Input mode, a callback to invoke when an icon is hovered */
-  onIconMouseIn: _propTypes.func,
-  /** on Input mode, a callback to invoke when the component is focused */
-  onFocus: _propTypes.func,
-  /** on Input mode, a callback to invoke when the component is blured */
-  onBlur: _propTypes.func,
-  /** a callback to invoke when root is clicked */
-  onClick: _propTypes.func,
-  /** a callback to invoke when root is double clicked */
-  onDoubleClick: _propTypes.func,
-  /** a callback to invoke when mouse enters root */
-  onMouseEnter: _propTypes.func,
-  /** a callback to invoke when mouse leaves root */
-  onMouseLeave: _propTypes.func,
-  /** on Input mode, the title of the rating */
-  title: _propTypes.string,
-  /** on Input mode, the labels that represent each rating value */
-  labels: _propTypes.object,
-  /** on Input mode, the position of the labels that represent each rating value */
-  labelPosition: (0, _propTypes.oneOf)(['top', 'bottom', 'side']),
-  /** on Input mode, toggles the title */
-  showTitle: _propTypes.bool,
-  /** on Input mode, toggles the labels */
-  showLabels: _propTypes.bool,
-  /** on Input mode, specifies if this is required */
-  required: _propTypes.bool,
-  /** Sets the shape size */
-  shapeSize: _propTypes.number,
-  /** Sets the shape spacing */
-  shapeSpacing: _propTypes.number,
-  /** Aligns the title/labels text */
-  textAlignment: (0, _propTypes.oneOf)(['left', 'right', 'center']),
-  /** Sets RTL direction */
-  rtl: _propTypes.bool,
-  /** For displaying editor specific styles */
-  editorMode: _propTypes.bool,
-  /** for Disabled visual state */
-  disabled: _propTypes.bool,
-  /** Style - needed for font scaling */
-  style: _propTypes.object,
-  /** A function to render SEO script */
-  renderSeoScript: _propTypes.func,
-  /** for input mode - whether to toggle "error" style state */
-  shouldShowInvalid: _propTypes.bool
-};
-Rating.defaultProps = {
-  showRating: true,
-  showReviewsCount: true,
-  showTitle: true,
-  noReviewsMode: NoReviewsMode.EMPTY_ICONS,
-  icon: _defaultSvg.defaultSvg
+ProgressBar.propTypes = {
+  className: _propTypes.string.isRequired,
+  value: _propTypes.number,
+  targetValue: _propTypes.number,
+  direction: (0, _propTypes.oneOf)(['rtl', 'ltr']).isRequired,
+  viewMode: _propTypes.string
 };
 
 /***/ }),
 
-/***/ 49:
-/*!***********************************************!*\
-  !*** ../node_modules/uuid/lib/rng-browser.js ***!
-  \***********************************************/
+/***/ 442:
+/*!*****************************************!*\
+  !*** ./components/ProgressBar/index.js ***!
+  \*****************************************/
 /*! no static exports found */
 /*! all exports used */
 /*! ModuleConcatenation bailout: Module is not an ECMAScript module */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
-// Unique ID creation requires a high quality random # generator.  In the
-// browser this is a little complicated due to unknown quality of Math.random()
-// and inconsistent support for the `crypto` API.  We do the best we can via
-// feature-detection
-
-// getRandomValues needs to be invoked in a context where "this" is a Crypto
-// implementation. Also, find the complete implementation of crypto on IE11.
-var getRandomValues = (typeof(crypto) != 'undefined' && crypto.getRandomValues && crypto.getRandomValues.bind(crypto)) ||
-                      (typeof(msCrypto) != 'undefined' && typeof window.msCrypto.getRandomValues == 'function' && msCrypto.getRandomValues.bind(msCrypto));
-
-if (getRandomValues) {
-  // WHATWG crypto RNG - http://wiki.whatwg.org/wiki/Crypto
-  var rnds8 = new Uint8Array(16); // eslint-disable-line no-undef
-
-  module.exports = function whatwgRNG() {
-    getRandomValues(rnds8);
-    return rnds8;
-  };
-} else {
-  // Math.random()-based (RNG)
-  //
-  // If all else fails, use Math.random().  It's fast, but is of unspecified
-  // quality.
-  var rnds = new Array(16);
-
-  module.exports = function mathRNG() {
-    for (var i = 0, r; i < 16; i++) {
-      if ((i & 0x03) === 0) r = Math.random() * 0x100000000;
-      rnds[i] = r >>> ((i & 0x03) << 3) & 0xff;
-    }
-
-    return rnds;
-  };
-}
+"use strict";
 
 
-/***/ }),
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
 
-/***/ 50:
-/*!***********************************************!*\
-  !*** ../node_modules/uuid/lib/bytesToUuid.js ***!
-  \***********************************************/
-/*! no static exports found */
-/*! all exports used */
-/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
-/***/ (function(module, exports) {
+var _ProgressBar = __webpack_require__(/*! ./ProgressBar */ 359);
 
-/**
- * Convert array of 16 byte values to UUID string format of the form:
- * XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX
- */
-var byteToHex = [];
-for (var i = 0; i < 256; ++i) {
-  byteToHex[i] = (i + 0x100).toString(16).substr(1);
-}
+var _ProgressBar2 = __webpack_require__(/*! ./ProgressBar.santa */ 677);
 
-function bytesToUuid(buf, offset) {
-  var i = offset || 0;
-  var bth = byteToHex;
-  // join used to fix memory issue caused by concatenation: https://bugs.chromium.org/p/v8/issues/detail?id=3175#c4
-  return ([bth[buf[i++]], bth[buf[i++]], 
-	bth[buf[i++]], bth[buf[i++]], '-',
-	bth[buf[i++]], bth[buf[i++]], '-',
-	bth[buf[i++]], bth[buf[i++]], '-',
-	bth[buf[i++]], bth[buf[i++]], '-',
-	bth[buf[i++]], bth[buf[i++]],
-	bth[buf[i++]], bth[buf[i++]],
-	bth[buf[i++]], bth[buf[i++]]]).join('');
-}
+var _ProgressBarSt = __webpack_require__(/*! ./ProgressBar.st.css */ 240);
 
-module.exports = bytesToUuid;
+var _ProgressBarSt2 = _interopRequireDefault(_ProgressBarSt);
 
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = {
+  componentType: 'wixui.ProgressBar',
+  component: _ProgressBar.ProgressBar,
+  santaComponent: _ProgressBar2.santaProgressBar,
+  skin: _ProgressBarSt2.default.$skin
+};
 
 /***/ }),
 
@@ -2459,10 +1338,196 @@ function __importDefault(mod) {
 
 /***/ }),
 
-/***/ 661:
-/*!***********************************************************!*\
-  !*** ./components/RatingsDisplay/RatingsDisplay.santa.js ***!
-  \***********************************************************/
+/***/ 671:
+/*!**********************************************************!*\
+  !*** ../node_modules/wix-ui-core/linear-progress-bar.js ***!
+  \**********************************************************/
+/*! no static exports found */
+/*! all exports used */
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(/*! ./dist/src/components/linear-progress-bar */ 672);
+
+
+/***/ }),
+
+/***/ 672:
+/*!************************************************************************************!*\
+  !*** ../node_modules/wix-ui-core/dist/src/components/linear-progress-bar/index.js ***!
+  \************************************************************************************/
+/*! no static exports found */
+/*! all exports used */
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var LinearProgressBar_1 = __webpack_require__(/*! ./LinearProgressBar */ 673);
+exports.LinearProgressBar = LinearProgressBar_1.LinearProgressBar;
+//# sourceMappingURL=index.js.map
+
+/***/ }),
+
+/***/ 673:
+/*!************************************************************************************************!*\
+  !*** ../node_modules/wix-ui-core/dist/src/components/linear-progress-bar/LinearProgressBar.js ***!
+  \************************************************************************************************/
+/*! no static exports found */
+/*! all exports used */
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var tslib_1 = __webpack_require__(/*! tslib */ 6);
+var React = __webpack_require__(/*! react */ 0);
+var LinearProgressBar_st_css_1 = __webpack_require__(/*! ./LinearProgressBar.st.css */ 674);
+var DataHooks_1 = __webpack_require__(/*! ./DataHooks */ 675);
+var FULL_PROGRESS = 100;
+var NO_PROGRESS = 0;
+var resolveIndicationElement = function (props) {
+    var wrapped = function (dataHook, children) { return (React.createElement("div", { "data-hook": dataHook, className: LinearProgressBar_st_css_1.default.indicationContainer }, children)); };
+    if (props.error && props.errorIcon) {
+        return wrapped(DataHooks_1.ProgressBarDataHooks.errorIcon, props.errorIcon);
+    }
+    if (props.value === FULL_PROGRESS && props.successIcon) {
+        return wrapped(DataHooks_1.ProgressBarDataHooks.successIcon, props.successIcon);
+    }
+    return wrapped(DataHooks_1.ProgressBarDataHooks.progressPercentage, React.createElement("span", null, props.value + "%"));
+};
+var renderBarSection = function (value) {
+    var progressWidth = { width: value + "%" };
+    return (React.createElement("div", { "data-hook": DataHooks_1.ProgressBarDataHooks.container, className: LinearProgressBar_st_css_1.default.barContainer },
+        React.createElement("div", { "data-hook": DataHooks_1.ProgressBarDataHooks.background, className: LinearProgressBar_st_css_1.default.barBackground }),
+        React.createElement("div", { "data-hook": DataHooks_1.ProgressBarDataHooks.foreground, style: progressWidth, className: LinearProgressBar_st_css_1.default.barForeground })));
+};
+var getRelativeValue = function (props) {
+    var value = props.value, min = props.min, max = props.max;
+    var relativeValue = ((+value - min) / (max - min)) * 100;
+    return parseInt(relativeValue, 10);
+};
+var normalizeProps = function (props) {
+    if (props.value >= props.max) {
+        return tslib_1.__assign({}, props, { value: FULL_PROGRESS });
+    }
+    if (props.value < props.min ||
+        [undefined, null, ''].includes(props.value)) {
+        return tslib_1.__assign({}, props, { value: NO_PROGRESS });
+    }
+    return tslib_1.__assign({}, props, { value: getRelativeValue(props) });
+};
+var getDataAttributes = function (props) {
+    var _a;
+    return _a = {},
+        _a[DataHooks_1.ProgressBarDataKeys.value] = props.value,
+        _a[DataHooks_1.ProgressBarDataKeys.min] = props.min,
+        _a[DataHooks_1.ProgressBarDataKeys.max] = props.max,
+        _a;
+};
+exports.LinearProgressBar = function (props) {
+    var error = props.error, showProgressIndication = props.showProgressIndication;
+    var _props = normalizeProps(props);
+    var success = _props.value === FULL_PROGRESS;
+    return (React.createElement("div", tslib_1.__assign({}, getDataAttributes(_props), { "data-min": _props.min }, LinearProgressBar_st_css_1.default('root', { error: error, success: success }, _props)),
+        renderBarSection(_props.value),
+        showProgressIndication && (React.createElement("div", { "data-hook": DataHooks_1.ProgressBarDataHooks.progressIndicator, className: LinearProgressBar_st_css_1.default.progressIndicationSection }, resolveIndicationElement(_props)))));
+};
+exports.LinearProgressBar.displayName = 'LinearProgressBar';
+exports.LinearProgressBar.defaultProps = {
+    min: NO_PROGRESS,
+    max: FULL_PROGRESS,
+};
+//# sourceMappingURL=LinearProgressBar.js.map
+
+/***/ }),
+
+/***/ 674:
+/*!****************************************************************************************************!*\
+  !*** ../node_modules/wix-ui-core/dist/src/components/linear-progress-bar/LinearProgressBar.st.css ***!
+  \****************************************************************************************************/
+/*! exports provided: default */
+/*! all exports used */
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+/***/ (function(module, exports, __webpack_require__) {
+
+Object.defineProperty(exports, "__esModule", { value: true })
+
+exports.default = __webpack_require__.stylable.create(
+  "root",
+  "LinearProgressBar3941501373",
+  {"root":"LinearProgressBar3941501373--root","progressIndicationSection":"LinearProgressBar3941501373--progressIndicationSection","barContainer":"LinearProgressBar3941501373--barContainer","barBackground":"LinearProgressBar3941501373--barBackground","barForeground":"LinearProgressBar3941501373--barForeground","indicationContainer":"LinearProgressBar3941501373--indicationContainer"},
+  "",
+  1,
+  /*! ../node_modules/wix-ui-core/dist/src/components/linear-progress-bar/LinearProgressBar.st.css */ 674
+);
+
+
+
+/***/ }),
+
+/***/ 675:
+/*!****************************************************************************************!*\
+  !*** ../node_modules/wix-ui-core/dist/src/components/linear-progress-bar/DataHooks.js ***!
+  \****************************************************************************************/
+/*! no static exports found */
+/*! all exports used */
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+/**
+ * ProgressBar data-hook props used for testing.
+ */
+var ProgressBarDataHooks;
+(function (ProgressBarDataHooks) {
+    ProgressBarDataHooks["container"] = "progressbar-container";
+    ProgressBarDataHooks["background"] = "progressbar-background";
+    ProgressBarDataHooks["foreground"] = "progressbar-foreground";
+    ProgressBarDataHooks["progressIndicator"] = "progress-indicator";
+    ProgressBarDataHooks["successIcon"] = "success-icon";
+    ProgressBarDataHooks["errorIcon"] = "error-icon";
+    ProgressBarDataHooks["progressPercentage"] = "progress-percentages";
+})(ProgressBarDataHooks = exports.ProgressBarDataHooks || (exports.ProgressBarDataHooks = {}));
+/**
+ * ProgressBar attribute keys used to store internal data (current value, min, max etc...)
+ */
+var ProgressBarDataKeys;
+(function (ProgressBarDataKeys) {
+    ProgressBarDataKeys["value"] = "data-progress-value";
+    ProgressBarDataKeys["min"] = "data-progress-min-value";
+    ProgressBarDataKeys["max"] = "data-progress-max-value";
+})(ProgressBarDataKeys = exports.ProgressBarDataKeys || (exports.ProgressBarDataKeys = {}));
+//# sourceMappingURL=DataHooks.js.map
+
+/***/ }),
+
+/***/ 676:
+/*!**********************************************!*\
+  !*** ./components/ProgressBar/data-hooks.js ***!
+  \**********************************************/
+/*! no static exports found */
+/*! all exports used */
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+module.exports = { DATAHOOKS: {
+    coreComponent: 'progress-bar-core-component'
+  } };
+
+/***/ }),
+
+/***/ 677:
+/*!*****************************************************!*\
+  !*** ./components/ProgressBar/ProgressBar.santa.js ***!
+  \*****************************************************/
 /*! no static exports found */
 /*! all exports used */
 /*! ModuleConcatenation bailout: Module is not an ECMAScript module */
@@ -2474,99 +1539,94 @@ function __importDefault(mod) {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.ratingsDisplay = undefined;
+exports.santaProgressBar = undefined;
 
 var _createReactClass = __webpack_require__(/*! create-react-class */ 17);
 
 var _createReactClass2 = _interopRequireDefault(_createReactClass);
 
+var _lodash = __webpack_require__(/*! lodash */ 2);
+
+var _lodash2 = _interopRequireDefault(_lodash);
+
+var _ProgressBarSt = __webpack_require__(/*! ./ProgressBar.st.css */ 240);
+
+var _ProgressBarSt2 = _interopRequireDefault(_ProgressBarSt);
+
 var _santaComponents = __webpack_require__(/*! santa-components */ 14);
 
-var _RatingSt = __webpack_require__(/*! ../Rating/Rating.st.css */ 38);
-
-var _RatingSt2 = _interopRequireDefault(_RatingSt);
-
-var _Rating = __webpack_require__(/*! ../Rating/Rating */ 48);
+var _ProgressBar = __webpack_require__(/*! ./ProgressBar */ 359);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var skinBasedComp = _santaComponents.mixins.skinBasedComp,
-    runTimeCompData = _santaComponents.mixins.runTimeCompData,
-    textScaleMixin = _santaComponents.mixins.textScaleMixin;
+    runTimeCompData = _santaComponents.mixins.runTimeCompData;
 
-
-'use strict';
-
-var MOBILE_DEFAULT_FONT_SIZE = 13; //px
-
-var PREVIEW_STATES = {
-  NO_REVIEWS: 'noReviews'
-};
 
 var getComponentSkins = function getComponentSkins() {
   return {
-    'wixui.skins.Rating': _RatingSt2.default.$skin
+    'wixui.skins.ProgressBar': _ProgressBarSt2.default.$skin
   };
 };
 
-var ratingsDisplay = exports.ratingsDisplay = (0, _createReactClass2.default)({
-  displayName: 'RatingsDisplay',
+var DEFAULT_EDITING_VALUE = 60;
 
-  mixins: [skinBasedComp(getComponentSkins()), runTimeCompData, textScaleMixin(getComponentSkins())],
+/**
+ * @class components.progressBar
+ * @extends {core.skinBasedComp}
+ */
+var santaProgressBar = exports.santaProgressBar = (0, _createReactClass2.default)({
+  displayName: 'ProgressBar',
+
+  mixins: [skinBasedComp(getComponentSkins()), runTimeCompData],
 
   propTypes: {
-    viewMode: _santaComponents.santaTypesDefinitions.RenderFlags.componentViewMode,
-    componentPreviewState: _santaComponents.santaTypesDefinitions.RenderFlags.componentPreviewState,
-    svgString: _santaComponents.santaTypesDefinitions.RawSvg.getRawSVG,
-    style: _santaComponents.santaTypesDefinitions.Component.style,
-    jsonLdRenderer: _santaComponents.santaTypesDefinitions.JsonLd.renderer,
+    structure: _santaComponents.santaTypesDefinitions.Component.structure.isRequired,
     compData: _santaComponents.santaTypesDefinitions.Component.compData.isRequired,
     compProp: _santaComponents.santaTypesDefinitions.Component.compProp.isRequired,
-    id: _santaComponents.santaTypesDefinitions.Component.id,
-    isMobileView: _santaComponents.santaTypesDefinitions.isMobileView,
-    scale: _santaComponents.santaTypesDefinitions.Component.scale
+    style: _santaComponents.santaTypesDefinitions.Component.style,
+    styleId: _santaComponents.santaTypesDefinitions.Component.styleId,
+    componentViewMode: _santaComponents.santaTypesDefinitions.RenderFlags.componentViewMode
   },
 
   statics: {
     getComponentSkins: getComponentSkins
   },
 
-  getMobileFontSize: function getMobileFontSize() {
-    // TODO: check if this can be removed, and use the default logic from 'textScaleMixin'
-    var initialFontSize = parseInt(this.getFontSize('labelFont').fontSize, 10);
-
-    return initialFontSize > MOBILE_DEFAULT_FONT_SIZE ? MOBILE_DEFAULT_FONT_SIZE * this.props.scale + 'px' : initialFontSize * this.props.scale + 'px';
+  getRelativeDefaultEditingValue: function getRelativeDefaultEditingValue(targetValue) {
+    return targetValue / 100 * DEFAULT_EDITING_VALUE;
   },
-  getStyle: function getStyle() {
-    return this.props.isMobileView ? Object.assign({}, this.props.style, { fontSize: this.getMobileFontSize() }) : this.props.style;
+  getValue: function getValue() {
+    var _props = this.props,
+        compData = _props.compData,
+        componentViewMode = _props.componentViewMode;
+    var value = compData.value,
+        targetValue = compData.targetValue;
+
+    return componentViewMode === 'editor' && (!value || value >= targetValue) ? this.getRelativeDefaultEditingValue(targetValue) : value;
   },
   getSkinProperties: function getSkinProperties() {
-    var rating = this.props.componentPreviewState === PREVIEW_STATES.NO_REVIEWS ? null : this.props.compData.rating;
-    var renderSeoScript = this.props.compProp.renderSeo ? this.props.jsonLdRenderer : null;
+    var _props2 = this.props,
+        structure = _props2.structure,
+        style = _props2.style,
+        compData = _props2.compData,
+        compProp = _props2.compProp,
+        styleId = _props2.styleId,
+        componentViewMode = _props2.componentViewMode;
+
+    var props = _lodash2.default.assign({}, compProp, compData, {
+      styleId: styleId,
+      className: styleId,
+      style: style,
+      viewMode: componentViewMode,
+      width: _lodash2.default.get(structure, 'layout.width', 0),
+      height: _lodash2.default.get(structure, 'layout.height', 0),
+      value: this.getValue()
+    });
 
     return {
       '': {
-        parentConst: function parentConst(props) {
-          return _santaComponents.utils.createReactElement(_Rating.Rating, props);
-        },
-        id: this.props.id,
-        mode: 'display',
-        numRatingsLabel: this.props.compData.reviewsCountLabel,
-        numRatings: this.props.compData.numRatings,
-        noReviewsPlaceholder: this.props.compData.noReviewsPlaceholder,
-        rating: rating,
-        shapeSize: this.props.compProp.shapeSize,
-        rtl: this.props.compProp.direction === 'rtl',
-        shapeSpacing: this.props.compProp.shapeSpacing,
-        noReviewsMode: this.props.compProp.noReviewsMode,
-        ratingPosition: this.props.compProp.ratingPosition,
-        showRating: this.props.compProp.showRating,
-        textAlignment: this.props.compProp.alignment,
-        showReviewsCount: this.props.compProp.showReviewsCount,
-        editorMode: this.props.viewMode === 'editor',
-        icon: this.props.svgString,
-        style: this.getStyle(),
-        renderSeoScript: renderSeoScript
+        children: [_santaComponents.utils.createReactElement(_ProgressBar.ProgressBar, props)]
       }
     };
   }
@@ -2635,4 +1695,4 @@ module.exports = invariant;
 /***/ })
 
 }]);
-//# sourceMappingURL=wixui.RatingsDisplay.chunk.js.map
+//# sourceMappingURL=wixui.ProgressBar.chunk.js.map
