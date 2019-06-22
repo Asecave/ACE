@@ -1,4 +1,4 @@
-((typeof self !== 'undefined' ? self : this)["webpackJsonp_wix_ui_santa"] = (typeof self !== 'undefined' ? self : this)["webpackJsonp_wix_ui_santa"] || []).push([[48],{
+((typeof self !== 'undefined' ? self : this)["webpackJsonp_wix_ui_santa"] = (typeof self !== 'undefined' ? self : this)["webpackJsonp_wix_ui_santa"] || []).push([[40],{
 
 /***/ 12:
 /*!**********************************************!*\
@@ -964,61 +964,10 @@ module.exports = emptyObject;
 
 /***/ }),
 
-/***/ 357:
-/*!****************************************************************************!*\
-  !*** ../node_modules/wix-ui-core/dist/src/components/slider/Slider.st.css ***!
-  \****************************************************************************/
-/*! exports provided: default */
-/*! all exports used */
-/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
-/***/ (function(module, exports, __webpack_require__) {
-
-Object.defineProperty(exports, "__esModule", { value: true })
-
-exports.default = __webpack_require__.stylable.create(
-  "root",
-  "Slider2207263592",
-  {"root":"Slider2207263592--root","tooltip":"Slider2207263592--tooltip","track":"Slider2207263592--track","inner":"Slider2207263592--inner","trackFill":"Slider2207263592--trackFill","thumb":"Slider2207263592--thumb","thumbShape":"Slider2207263592--thumbShape","tick":"Slider2207263592--tick","tickLineWidth":"1px","tickLineHeight":"10px","tickDotSize":"3px","tickMarksGap":"12px","tooltipGap":"10px"},
-  "",
-  1,
-  /*! ../node_modules/wix-ui-core/dist/src/components/slider/Slider.st.css */ 357
-);
-
-
-
-/***/ }),
-
-/***/ 358:
-/*!*****************************************!*\
-  !*** ./components/Slider/Slider.st.css ***!
-  \*****************************************/
-/*! exports provided: default */
-/*! all exports used */
-/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
-/***/ (function(module, exports, __webpack_require__) {
-
-Object.defineProperty(exports, "__esModule", { value: true })
-
-exports.default = __webpack_require__.stylable.create(
-  "root",
-  "Slider3992224720",
-  {"root":"Slider3992224720--root","thumbBackground":"color_25","thumbBackgroundHover":"color_23","thumbBackgroundFocus":"color_22","thumbBackgroundDisabled":"color_21","thumbBoxShadow":"0 1px 4px rgba(0, 0, 0, .6)","trackFill":"color_22","trackFillHover":"color_23","trackFillFocus":"color_24","trackFillDisabled":"color_25","trackBoxShadow":"0 1px 4px rgba(0, 0, 0, .6)","trackBackground":"color_26","trackBackgroundHover":"color_27","trackBackgroundFocus":"color_28","trackBackgroundDisabled":"color_29","tooltipBackground":"color_30","tooltipFontSize":"14","tooltipFontFamily":"arial","tooltipFontColor":"color_1","tooltipBoxShadow":"initial","tickMarkColor":"color_4","thumbBorderColor":"color_22","thumbBorderColorHover":"color_23","thumbBorderColorFocus":"color_24","thumbBorderColorDisabled":"color_25","thumbBorderWidth":"4","thumbBorderWidthHover":"4","thumbBorderWidthFocus":"4","thumbBorderWidthDisabled":"4","thumbBorderRadius":"8px","trackBorderColor":"color_28","trackBorderColorHover":"color_29","trackBorderColorFocus":"color_30","trackBorderColorDisabled":"color_31","trackBorderWidth":"7","trackBorderWidthHover":"6","trackBorderWidthFocus":"6","trackBorderWidthDisabled":"6","tooltipBorderRadius":"2px","trackBorderRadius":"8px"},
-  "",
-  7,
-  /*! ./components/Slider/Slider.st.css */ 358
-);
-
-exports.default.$skin = {"params":{"thumbBackground":"COLOR_ALPHA","thumbBackgroundHover":"COLOR_ALPHA","thumbBackgroundFocus":"COLOR_ALPHA","thumbBackgroundDisabled":"COLOR_ALPHA","thumbBoxShadow":"BOX_SHADOW","trackFill":"COLOR_ALPHA","trackFillHover":"COLOR_ALPHA","trackFillFocus":"COLOR_ALPHA","trackFillDisabled":"COLOR_ALPHA","trackBoxShadow":"BOX_SHADOW","trackBackground":"COLOR_ALPHA","trackBackgroundHover":"COLOR_ALPHA","trackBackgroundFocus":"COLOR_ALPHA","trackBackgroundDisabled":"COLOR_ALPHA","tooltipBackground":"COLOR_ALPHA","tooltipFontSize":"TEXT_SIZE","tooltipFontFamily":"FONT_FAMILY","tooltipFontColor":"TEXT_COLOR","tooltipBoxShadow":"BOX_SHADOW","tickMarkColor":"COLOR_ALPHA","thumbBorderColor":"COLOR_ALPHA","thumbBorderColorHover":"COLOR_ALPHA","thumbBorderColorFocus":"COLOR_ALPHA","thumbBorderColorDisabled":"COLOR_ALPHA","thumbBorderWidth":"BORDER_SIZE","thumbBorderWidthHover":"BORDER_SIZE","thumbBorderWidthFocus":"BORDER_SIZE","thumbBorderWidthDisabled":"BORDER_SIZE","thumbBorderRadius":"BORDER_RADIUS","trackBorderColor":"COLOR_ALPHA","trackBorderColorHover":"COLOR_ALPHA","trackBorderColorFocus":"COLOR_ALPHA","trackBorderColorDisabled":"COLOR_ALPHA","trackBorderWidth":"BORDER_SIZE","trackBorderWidthHover":"BORDER_SIZE","trackBorderWidthFocus":"BORDER_SIZE","trackBorderWidthDisabled":"BORDER_SIZE","tooltipBorderRadius":"BORDER_RADIUS","trackBorderRadius":"BORDER_RADIUS"},"paramsDefaults":{"thumbBackground":"color_25","thumbBackgroundHover":"color_23","thumbBackgroundFocus":"color_22","thumbBackgroundDisabled":"color_21","thumbBoxShadow":"0 1px 4px rgba(0, 0, 0, .6)","trackFill":"color_22","trackFillHover":"color_23","trackFillFocus":"color_24","trackFillDisabled":"color_25","trackBoxShadow":"0 1px 4px rgba(0, 0, 0, .6)","trackBackground":"color_26","trackBackgroundHover":"color_27","trackBackgroundFocus":"color_28","trackBackgroundDisabled":"color_29","tooltipBackground":"color_30","tooltipFontSize":"14","tooltipFontFamily":"arial","tooltipFontColor":"color_1","tooltipBoxShadow":"initial","tickMarkColor":"color_4","thumbBorderColor":"color_22","thumbBorderColorHover":"color_23","thumbBorderColorFocus":"color_24","thumbBorderColorDisabled":"color_25","thumbBorderWidth":"4","thumbBorderWidthHover":"4","thumbBorderWidthFocus":"4","thumbBorderWidthDisabled":"4","thumbBorderRadius":"8px","trackBorderColor":"color_28","trackBorderColorHover":"color_29","trackBorderColorFocus":"color_30","trackBorderColorDisabled":"color_31","trackBorderWidth":"7","trackBorderWidthHover":"6","trackBorderWidthFocus":"6","trackBorderWidthDisabled":"6","tooltipBorderRadius":"2px","trackBorderRadius":"8px"}};
-exports.default.$skin.$render = function render_css($id, $params, $functions) {
-  return "\n" + $id + ".Slider2207263592--root{position: relative;box-sizing: border-box;outline: none}\n" + $id + ".Slider2207263592--root *{box-sizing: border-box}\n" + $id + " .Slider2207263592--tooltip{position: absolute;background: #363636;color: #fff;padding: 4px 12px;text-align: center;font-size: 14px;line-height: 1.5;border-radius: 3px;white-space: nowrap}\n" + $id + " .Slider2207263592--tooltip::after, " + $id + " .Slider2207263592--tooltip::before{content: ' ';position: absolute;margin-left: -8px;border-width: 8px;border-style: solid}\n" + $id + " .Slider2207263592--track{z-index: 0;width: 100%;height: 25%;position: relative;cursor: pointer;background: #dadada;opacity: 1;border-radius: 8px;overflow: hidden;border: 2px solid transparent;min-height: 1px}\n" + $id + " .Slider2207263592--inner{display: flex;position: relative;align-items: center;justify-content: center;width: 100%;height: 100%}\n" + $id + " .Slider2207263592--trackFill{position: absolute;background: linear-gradient(to right,#4992e3,#70bff3);height: 100%;width: 100%}\n" + $id + ".Slider2207263592--root[data-slider2207263592-dir=\"rtl\"] .Slider2207263592--trackFill{right: 0}\n" + $id + ".Slider2207263592--root[data-slider2207263592-orientation=\"vertical\"] .Slider2207263592--track{width: 25%;height: 100%}\n" + $id + ".Slider2207263592--root[data-slider2207263592-orientation=\"vertical\"] .Slider2207263592--trackFill{background: linear-gradient(to top,#4992e3,#70bff3)}\n" + $id + " .Slider2207263592--thumb{z-index: 2;position: absolute;cursor: pointer}\n" + $id + " .Slider2207263592--thumbShape{width: 100%;height: 100%;background: green;border: 2px solid blue}\n" + $id + " .Slider2207263592--thumbShape[data-slider2207263592-shapetype=\"circle\"]{border-radius: 50%}\n" + $id + " .Slider2207263592--thumbShape[data-slider2207263592-shapetype=\"square\"]{border-radius: 7px}\n" + $id + " .Slider2207263592--thumbShape[data-slider2207263592-shapetype=\"rectangle\"]{border-radius: 37px}\n" + $id + " .Slider2207263592--thumbShape[data-slider2207263592-shapetype=\"bar\"]{border-radius: 7px}\n" + $id + ".Slider2207263592--root[data-slider2207263592-orientation=\"horizontal\"] .Slider2207263592--tooltip[data-slider2207263592-normalposition]{left: 50%;top: calc(-7px - 10px);transform: translate(-50%,-100%)}\n" + $id + ".Slider2207263592--root[data-slider2207263592-orientation=\"horizontal\"] .Slider2207263592--tooltip[data-slider2207263592-acrossposition]{left: 50%;bottom: calc(-7px - 10px);transform: translate(-50%,100%)}\n" + $id + ".Slider2207263592--root[data-slider2207263592-orientation=\"vertical\"] .Slider2207263592--tooltip[data-slider2207263592-normalposition]{left: 50%;left: calc(-7px - 10px);transform: translate(-100%,-50%)}\n" + $id + ".Slider2207263592--root[data-slider2207263592-orientation=\"vertical\"] .Slider2207263592--tooltip[data-slider2207263592-acrossposition]{right: calc(-7px - 10px);transform: translate(100%,-50%)}\n" + $id + ".Slider2207263592--root[data-slider2207263592-orientation=\"horizontal\"] .Slider2207263592--tooltip[data-slider2207263592-normalposition]::after, " + $id + ".Slider2207263592--root[data-slider2207263592-orientation=\"horizontal\"] .Slider2207263592--tooltip[data-slider2207263592-normalposition]::before{border-color: #363636 transparent transparent transparent;top: 100%;left: 50%}\n" + $id + ".Slider2207263592--root[data-slider2207263592-orientation=\"horizontal\"] .Slider2207263592--tooltip[data-slider2207263592-acrossposition]::after, " + $id + ".Slider2207263592--root[data-slider2207263592-orientation=\"horizontal\"] .Slider2207263592--tooltip[data-slider2207263592-acrossposition]::before{border-color: transparent transparent #363636 transparent;bottom: 100%;left: 50%}\n" + $id + ".Slider2207263592--root[data-slider2207263592-orientation=\"vertical\"] .Slider2207263592--tooltip{top: 50%}\n" + $id + ".Slider2207263592--root[data-slider2207263592-orientation=\"vertical\"] .Slider2207263592--tooltip::after, " + $id + ".Slider2207263592--root[data-slider2207263592-orientation=\"vertical\"] .Slider2207263592--tooltip::before{top: 50%;transform: translateY(-50%)}\n" + $id + ".Slider2207263592--root[data-slider2207263592-orientation=\"vertical\"] .Slider2207263592--tooltip[data-slider2207263592-normalposition]::after, " + $id + ".Slider2207263592--root[data-slider2207263592-orientation=\"vertical\"] .Slider2207263592--tooltip[data-slider2207263592-normalposition]::before{left: 100%;margin-left: 0;border-color: transparent transparent transparent #363636}\n" + $id + ".Slider2207263592--root[data-slider2207263592-orientation=\"vertical\"] .Slider2207263592--tooltip[data-slider2207263592-acrossposition]::after, " + $id + ".Slider2207263592--root[data-slider2207263592-orientation=\"vertical\"] .Slider2207263592--tooltip[data-slider2207263592-acrossposition]::before{right: 100%;border-color: transparent #363636 transparent transparent}\n" + $id + " .Slider2207263592--tick{display: inline-block;position: absolute;background: #000;cursor: pointer}\n" + $id + ".Slider2207263592--root[data-slider2207263592-orientation=\"horizontal\"][data-slider2207263592-tickmarksshape=\"line\"] .Slider2207263592--tick{width: 1px;height: 10px}\n" + $id + ".Slider2207263592--root[data-slider2207263592-orientation=\"vertical\"][data-slider2207263592-tickmarksshape=\"line\"] .Slider2207263592--tick{height: 1px;width: 10px}\n" + $id + ".Slider2207263592--root[data-slider2207263592-tickmarksshape=\"dot\"] .Slider2207263592--tick{width: 3px;height: 3px;border-radius: 50%}\n" + $id + ".Slider2207263592--root[data-slider2207263592-orientation=\"horizontal\"][data-slider2207263592-tickmarksshape=\"dot\"] .Slider2207263592--tick{transform: translateX(calc(- 3px,2))}\n" + $id + ".Slider2207263592--root[data-slider2207263592-orientation=\"vertical\"][data-slider2207263592-tickmarksshape=\"dot\"] .Slider2207263592--tick{transform: translateY(calc(3px,2))}\n" + $id + ".Slider2207263592--root[data-slider2207263592-orientation=\"horizontal\"][data-slider2207263592-tickmarksposition=\"normal\"] .Slider2207263592--tick{bottom: 0}\n" + $id + ".Slider2207263592--root[data-slider2207263592-orientation=\"vertical\"][data-slider2207263592-tickmarksposition=\"normal\"] .Slider2207263592--tick{right: 0}\n" + $id + ".Slider2207263592--root[data-slider2207263592-orientation=\"horizontal\"][data-slider2207263592-tickmarksposition=\"middle\"] .Slider2207263592--tick{top: 50%;transform: translateY(-50%)}\n" + $id + ".Slider2207263592--root[data-slider2207263592-orientation=\"vertical\"][data-slider2207263592-tickmarksposition=\"middle\"] .Slider2207263592--tick{left: 50%;transform: translateX(-50%)}\n" + $id + ".Slider2207263592--root[data-slider2207263592-orientation=\"horizontal\"][data-slider2207263592-tickmarksposition=\"across\"] .Slider2207263592--tick{top: 0}\n" + $id + ".Slider2207263592--root[data-slider2207263592-orientation=\"vertical\"][data-slider2207263592-tickmarksposition=\"across\"] .Slider2207263592--tick{left: 0}\n" + $id + ".Slider3992224720--root{z-index: 0}\n" + $id + ".Slider3992224720--root .Slider2207263592--thumbShape{background: " + $params["thumbBackground"] + ";border-color: " + $params["thumbBorderColor"] + ";border-width: " + $params["thumbBorderWidth"] + ";box-shadow: " + $params["thumbBoxShadow"] + ";border-style: solid}\n" + $id + ".Slider3992224720--root .Slider2207263592--tick{background: " + $params["tickMarkColor"] + "}\n" + $id + ".Slider3992224720--root .Slider2207263592--tooltip{font-family: " + $params["tooltipFontFamily"] + ";font-size: " + $params["tooltipFontSize"] + ";color: " + $params["tooltipFontColor"] + ";background: " + $params["tooltipBackground"] + ";border-width: 0;border-radius: " + $params["tooltipBorderRadius"] + ";box-shadow: " + $params["tooltipBoxShadow"] + "}\n" + $id + ".Slider3992224720--root .Slider2207263592--tooltip::before{border-width: 0}\n" + $id + ".Slider3992224720--root[data-slider2207263592-orientation=\"horizontal\"] .Slider2207263592--tooltip[data-slider2207263592-normalposition]::after{border-color: " + $params["tooltipBackground"] + " transparent transparent transparent}\n" + $id + ".Slider3992224720--root[data-slider2207263592-orientation=\"horizontal\"] .Slider2207263592--tooltip[data-slider2207263592-acrossposition]::after{border-color: transparent transparent " + $params["tooltipBackground"] + " transparent}\n" + $id + ".Slider3992224720--root[data-slider2207263592-orientation=\"vertical\"] .Slider2207263592--tooltip[data-slider2207263592-normalposition]::after{border-color: transparent transparent transparent " + $params["tooltipBackground"] + "}\n" + $id + ".Slider3992224720--root[data-slider2207263592-orientation=\"vertical\"] .Slider2207263592--tooltip[data-slider2207263592-acrossposition]::after{border-color: transparent " + $params["tooltipBackground"] + " transparent transparent}\n" + $id + ".Slider3992224720--root[data-slider3992224720-preview-hover] .Slider2207263592--thumbShape, " + $id + ".Slider3992224720--root:hover .Slider2207263592--thumbShape{background: " + $params["thumbBackgroundHover"] + ";border-color: " + $params["thumbBorderColorHover"] + ";border-width: " + $params["thumbBorderWidthHover"] + "}\n" + $id + ".Slider3992224720--root[data-slider3992224720-preview-focus] .Slider2207263592--thumbShape, " + $id + ".Slider3992224720--root:focus .Slider2207263592--thumbShape{background: " + $params["thumbBackgroundFocus"] + ";border-color: " + $params["thumbBorderColorFocus"] + ";border-width: " + $params["thumbBorderWidthFocus"] + "}\n" + $id + ".Slider3992224720--root[data-slider3992224720-preview-disabled] .Slider2207263592--thumbShape, " + $id + ".Slider3992224720--root[data-slider2207263592-disabled] .Slider2207263592--thumbShape{background: " + $params["thumbBackgroundDisabled"] + ";border-color: " + $params["thumbBorderColorDisabled"] + ";border-width: " + $params["thumbBorderWidthDisabled"] + "}\n" + $id + ".Slider3992224720--root .Slider2207263592--track{background: " + $params["trackBackground"] + ";border-radius: " + $params["trackBorderRadius"] + ";border-color: " + $params["trackBorderColor"] + ";border-width: " + $params["trackBorderWidth"] + ";box-shadow: " + $params["trackBoxShadow"] + "}\n" + $id + ".Slider3992224720--root .Slider2207263592--trackFill{background: " + $params["trackFill"] + ";border-radius: " + $params["trackBorderRadius"] + "}\n" + $id + ".Slider3992224720--root[data-slider2207263592-orientation=\"horizontal\"][data-slider2207263592-dir=\"ltr\"] .Slider2207263592--trackFill{border-top-left-radius: 0;border-bottom-left-radius: 0}\n" + $id + ".Slider3992224720--root[data-slider2207263592-orientation=\"horizontal\"][data-slider2207263592-dir=\"rtl\"] .Slider2207263592--trackFill{border-top-right-radius: 0;border-bottom-right-radius: 0}\n" + $id + ".Slider3992224720--root[data-slider2207263592-orientation=\"vertical\"] .Slider2207263592--trackFill{border-bottom-right-radius: 0;border-bottom-left-radius: 0}\n" + $id + ".Slider3992224720--root[data-slider3992224720-preview-hover] .Slider2207263592--trackFill, " + $id + ".Slider3992224720--root:hover .Slider2207263592--trackFill{background: " + $params["trackFillHover"] + "}\n" + $id + ".Slider3992224720--root[data-slider3992224720-preview-focus] .Slider2207263592--trackFill, " + $id + ".Slider3992224720--root:focus .Slider2207263592--trackFill{background: " + $params["trackFillFocus"] + "}\n" + $id + ".Slider3992224720--root[data-slider3992224720-preview-disabled] .Slider2207263592--trackFill, " + $id + ".Slider3992224720--root[data-slider2207263592-disabled] .Slider2207263592--trackFill{background: " + $params["trackFillDisabled"] + "}\n" + $id + ".Slider3992224720--root[data-slider3992224720-preview-hover] .Slider2207263592--track, " + $id + ".Slider3992224720--root:hover .Slider2207263592--track{background: " + $params["trackBackgroundHover"] + ";border-color: " + $params["trackBorderColorHover"] + ";border-width: " + $params["trackBorderWidthHover"] + "}\n" + $id + ".Slider3992224720--root[data-slider3992224720-preview-focus] .Slider2207263592--track, " + $id + ".Slider3992224720--root:focus .Slider2207263592--track{background: " + $params["trackBackgroundFocus"] + ";border-color: " + $params["trackBorderColorFocus"] + ";border-width: " + $params["trackBorderWidthFocus"] + "}\n" + $id + ".Slider3992224720--root[data-slider3992224720-preview-disabled] .Slider2207263592--track, " + $id + ".Slider3992224720--root[data-slider2207263592-disabled] .Slider2207263592--track{background: " + $params["trackBackgroundDisabled"] + ";border-color: " + $params["trackBorderColorDisabled"] + ";border-width: " + $params["trackBorderWidthDisabled"] + "}\n" + $id + ".Slider3992224720--root .Slider2207263592--thumbShape[data-slider2207263592-shapetype=\"circle\"]{border-radius: 50%}\n" + $id + ".Slider3992224720--root .Slider2207263592--thumbShape[data-slider2207263592-shapetype=\"circle\"][data-slider2207263592-shapetype=\"circle\"]{border-radius: " + $params["thumbBorderRadius"] + "}\n" + $id + ".Slider3992224720--root .Slider2207263592--thumbShape[data-slider2207263592-shapetype=\"square\"]{border-radius: 17px}\n" + $id + ".Slider3992224720--root .Slider2207263592--thumbShape[data-slider2207263592-shapetype=\"square\"][data-slider2207263592-shapetype=\"square\"]{border-radius: " + $params["thumbBorderRadius"] + "}\n" + $id + ".Slider3992224720--root .Slider2207263592--thumbShape[data-slider2207263592-shapetype=\"rectangle\"]{border-radius: 37px}\n" + $id + ".Slider3992224720--root .Slider2207263592--thumbShape[data-slider2207263592-shapetype=\"rectangle\"][data-slider2207263592-shapetype=\"rectangle\"]{border-radius: " + $params["thumbBorderRadius"] + "}\n" + $id + ".Slider3992224720--root .Slider2207263592--thumbShape[data-slider2207263592-shapetype=\"bar\"]{border-radius: 5px}\n" + $id + ".Slider3992224720--root .Slider2207263592--thumbShape[data-slider2207263592-shapetype=\"bar\"][data-slider2207263592-shapetype=\"bar\"]{border-radius: " + $params["thumbBorderRadius"] + "}\n";
-};
-
-/***/ }),
-
-/***/ 441:
-/*!************************************!*\
-  !*** ./components/Slider/index.js ***!
-  \************************************/
+/***/ 292:
+/*!************************************************************!*\
+  !*** ./components/LineShareButton/lineShareButtonTypes.js ***!
+  \************************************************************/
 /*! no static exports found */
 /*! all exports used */
 /*! ModuleConcatenation bailout: Module is not an ECMAScript module */
@@ -1030,259 +979,23 @@ exports.default.$skin.$render = function render_css($id, $params, $functions) {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-
-var _Slider = __webpack_require__(/*! ./Slider */ 664);
-
-var _SliderSt = __webpack_require__(/*! ./Slider.st.css */ 358);
-
-var _SliderSt2 = _interopRequireDefault(_SliderSt);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
 exports.default = {
-  componentType: 'wixui.Slider',
-  component: _Slider.Slider,
-  santaComponent: _Slider.santaSlider,
-  skin: _SliderSt2.default.$skin
+  button: 'a',
+  classicWithButton: 'e',
+  classicBig: 'd',
+  classicMedium: 'c',
+  classicSmall: 'b',
+  bubbleBig: 'h',
+  bubbleMedium: 'g',
+  bubbleSmall: 'f'
 };
 
 /***/ }),
 
-/***/ 6:
-/*!******************************************!*\
-  !*** ../node_modules/tslib/tslib.es6.js ***!
-  \******************************************/
-/*! exports provided: __extends, __assign, __rest, __decorate, __param, __metadata, __awaiter, __generator, __exportStar, __values, __read, __spread, __spreadArrays, __await, __asyncGenerator, __asyncDelegator, __asyncValues, __makeTemplateObject, __importStar, __importDefault */
-/*! all exports used */
-/*! ModuleConcatenation bailout: Module is referenced from these modules with unsupported syntax: ../node_modules/@wix/search-box/dist/src/components/ClearButton/index.js (referenced with cjs require), ../node_modules/@wix/search-box/dist/src/components/QuickResultItem/QuickResultItem.js (referenced with cjs require), ../node_modules/@wix/search-box/dist/src/components/SearchBox/SearchBox.js (referenced with cjs require), ../node_modules/@wix/search-box/dist/src/components/SearchBox/index.js (referenced with cjs require), ../node_modules/@wix/search-box/dist/src/components/SuggestionItem/SuggestionItem.js (referenced with cjs require), ../node_modules/@wix/search-box/dist/src/index.js (referenced with cjs require), ../node_modules/wix-ui-core/dist/src/clients/GoogleMaps/google2address/google2address.js (referenced with cjs require), ../node_modules/wix-ui-core/dist/src/components/address-input/AddressInput.js (referenced with cjs require), ../node_modules/wix-ui-core/dist/src/components/button-next/button-next.js (referenced with cjs require), ../node_modules/wix-ui-core/dist/src/components/captcha/Captcha.js (referenced with cjs require), ../node_modules/wix-ui-core/dist/src/components/deprecated/divider/Divider.js (referenced with cjs require), ../node_modules/wix-ui-core/dist/src/components/dropdown-content/DropdownContent.js (referenced with cjs require), ../node_modules/wix-ui-core/dist/src/components/dropdown-option/DropdownOption.js (referenced with cjs require), ../node_modules/wix-ui-core/dist/src/components/dropdown-option/OptionFactory.js (referenced with cjs require), ../node_modules/wix-ui-core/dist/src/components/dropdown/Dropdown.js (referenced with cjs require), ../node_modules/wix-ui-core/dist/src/components/file-picker-button/FilePickerButton.js (referenced with cjs require), ../node_modules/wix-ui-core/dist/src/components/input-with-options/InputWithOptions.js (referenced with cjs require), ../node_modules/wix-ui-core/dist/src/components/input/Input.js (referenced with cjs require), ../node_modules/wix-ui-core/dist/src/components/linear-progress-bar/LinearProgressBar.js (referenced with cjs require), ../node_modules/wix-ui-core/dist/src/components/pagination/PageStrip.js (referenced with cjs require), ../node_modules/wix-ui-core/dist/src/components/pagination/Pagination.js (referenced with cjs require), ../node_modules/wix-ui-core/dist/src/components/popover/Popover.js (referenced with cjs require), ../node_modules/wix-ui-core/dist/src/components/popover/index.js (referenced with cjs require), ../node_modules/wix-ui-core/dist/src/components/popover/modifiers.js (referenced with cjs require), ../node_modules/wix-ui-core/dist/src/components/radio-button/RadioButton.js (referenced with cjs require), ../node_modules/wix-ui-core/dist/src/components/slider/Slider.js (referenced with cjs require), ../node_modules/wix-ui-core/dist/src/components/slider/Thumb.js (referenced with cjs require), ../node_modules/wix-ui-core/dist/src/components/slider/Ticks.js (referenced with cjs require), ../node_modules/wix-ui-core/dist/src/components/time-picker/Tickers.js (referenced with cjs require), ../node_modules/wix-ui-core/dist/src/components/time-picker/TimePicker.js (referenced with cjs require), ../node_modules/wix-ui-core/dist/src/components/video/Video.js (referenced with cjs require), ../node_modules/wix-ui-core/dist/src/components/video/players/DailyMotion.js (referenced with cjs require), ../node_modules/wix-ui-core/dist/src/components/video/players/Facebook.js (referenced with cjs require), ../node_modules/wix-ui-core/dist/src/components/video/players/Playable.js (referenced with cjs require), ../node_modules/wix-ui-core/dist/src/components/video/players/Twitch.js (referenced with cjs require), ../node_modules/wix-ui-core/dist/src/components/video/players/Vimeo.js (referenced with cjs require), ../node_modules/wix-ui-core/dist/src/components/video/players/YouTube.js (referenced with cjs require), ../node_modules/wix-ui-core/dist/src/components/video/players/playerHOC.js (referenced with cjs require), ../node_modules/wix-ui-core/dist/src/hocs/Focusable/FocusableHOC.js (referenced with cjs require) */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__extends", function() { return __extends; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__assign", function() { return __assign; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__rest", function() { return __rest; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__decorate", function() { return __decorate; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__param", function() { return __param; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__metadata", function() { return __metadata; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__awaiter", function() { return __awaiter; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__generator", function() { return __generator; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__exportStar", function() { return __exportStar; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__values", function() { return __values; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__read", function() { return __read; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__spread", function() { return __spread; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__spreadArrays", function() { return __spreadArrays; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__await", function() { return __await; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__asyncGenerator", function() { return __asyncGenerator; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__asyncDelegator", function() { return __asyncDelegator; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__asyncValues", function() { return __asyncValues; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__makeTemplateObject", function() { return __makeTemplateObject; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__importStar", function() { return __importStar; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__importDefault", function() { return __importDefault; });
-/*! *****************************************************************************
-Copyright (c) Microsoft Corporation. All rights reserved.
-Licensed under the Apache License, Version 2.0 (the "License"); you may not use
-this file except in compliance with the License. You may obtain a copy of the
-License at http://www.apache.org/licenses/LICENSE-2.0
-
-THIS CODE IS PROVIDED ON AN *AS IS* BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
-KIND, EITHER EXPRESS OR IMPLIED, INCLUDING WITHOUT LIMITATION ANY IMPLIED
-WARRANTIES OR CONDITIONS OF TITLE, FITNESS FOR A PARTICULAR PURPOSE,
-MERCHANTABLITY OR NON-INFRINGEMENT.
-
-See the Apache Version 2.0 License for specific language governing permissions
-and limitations under the License.
-***************************************************************************** */
-/* global Reflect, Promise */
-
-var extendStatics = function(d, b) {
-    extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return extendStatics(d, b);
-};
-
-function __extends(d, b) {
-    extendStatics(d, b);
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-}
-
-var __assign = function() {
-    __assign = Object.assign || function __assign(t) {
-        for (var s, i = 1, n = arguments.length; i < n; i++) {
-            s = arguments[i];
-            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
-        }
-        return t;
-    }
-    return __assign.apply(this, arguments);
-}
-
-function __rest(s, e) {
-    var t = {};
-    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
-        t[p] = s[p];
-    if (s != null && typeof Object.getOwnPropertySymbols === "function")
-        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
-            if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))
-                t[p[i]] = s[p[i]];
-        }
-    return t;
-}
-
-function __decorate(decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-}
-
-function __param(paramIndex, decorator) {
-    return function (target, key) { decorator(target, key, paramIndex); }
-}
-
-function __metadata(metadataKey, metadataValue) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(metadataKey, metadataValue);
-}
-
-function __awaiter(thisArg, _arguments, P, generator) {
-    return new (P || (P = Promise))(function (resolve, reject) {
-        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
-        step((generator = generator.apply(thisArg, _arguments || [])).next());
-    });
-}
-
-function __generator(thisArg, body) {
-    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
-    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
-    function verb(n) { return function (v) { return step([n, v]); }; }
-    function step(op) {
-        if (f) throw new TypeError("Generator is already executing.");
-        while (_) try {
-            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
-            if (y = 0, t) op = [op[0] & 2, t.value];
-            switch (op[0]) {
-                case 0: case 1: t = op; break;
-                case 4: _.label++; return { value: op[1], done: false };
-                case 5: _.label++; y = op[1]; op = [0]; continue;
-                case 7: op = _.ops.pop(); _.trys.pop(); continue;
-                default:
-                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
-                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
-                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
-                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
-                    if (t[2]) _.ops.pop();
-                    _.trys.pop(); continue;
-            }
-            op = body.call(thisArg, _);
-        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
-        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
-    }
-}
-
-function __exportStar(m, exports) {
-    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
-}
-
-function __values(o) {
-    var m = typeof Symbol === "function" && o[Symbol.iterator], i = 0;
-    if (m) return m.call(o);
-    return {
-        next: function () {
-            if (o && i >= o.length) o = void 0;
-            return { value: o && o[i++], done: !o };
-        }
-    };
-}
-
-function __read(o, n) {
-    var m = typeof Symbol === "function" && o[Symbol.iterator];
-    if (!m) return o;
-    var i = m.call(o), r, ar = [], e;
-    try {
-        while ((n === void 0 || n-- > 0) && !(r = i.next()).done) ar.push(r.value);
-    }
-    catch (error) { e = { error: error }; }
-    finally {
-        try {
-            if (r && !r.done && (m = i["return"])) m.call(i);
-        }
-        finally { if (e) throw e.error; }
-    }
-    return ar;
-}
-
-function __spread() {
-    for (var ar = [], i = 0; i < arguments.length; i++)
-        ar = ar.concat(__read(arguments[i]));
-    return ar;
-}
-
-function __spreadArrays() {
-    for (var s = 0, i = 0, il = arguments.length; i < il; i++) s += arguments[i].length;
-    for (var r = Array(s), k = 0, i = 0; i < il; i++)
-        for (var a = arguments[i], j = 0, jl = a.length; j < jl; j++, k++)
-            r[k] = a[j];
-    return r;
-};
-
-function __await(v) {
-    return this instanceof __await ? (this.v = v, this) : new __await(v);
-}
-
-function __asyncGenerator(thisArg, _arguments, generator) {
-    if (!Symbol.asyncIterator) throw new TypeError("Symbol.asyncIterator is not defined.");
-    var g = generator.apply(thisArg, _arguments || []), i, q = [];
-    return i = {}, verb("next"), verb("throw"), verb("return"), i[Symbol.asyncIterator] = function () { return this; }, i;
-    function verb(n) { if (g[n]) i[n] = function (v) { return new Promise(function (a, b) { q.push([n, v, a, b]) > 1 || resume(n, v); }); }; }
-    function resume(n, v) { try { step(g[n](v)); } catch (e) { settle(q[0][3], e); } }
-    function step(r) { r.value instanceof __await ? Promise.resolve(r.value.v).then(fulfill, reject) : settle(q[0][2], r); }
-    function fulfill(value) { resume("next", value); }
-    function reject(value) { resume("throw", value); }
-    function settle(f, v) { if (f(v), q.shift(), q.length) resume(q[0][0], q[0][1]); }
-}
-
-function __asyncDelegator(o) {
-    var i, p;
-    return i = {}, verb("next"), verb("throw", function (e) { throw e; }), verb("return"), i[Symbol.iterator] = function () { return this; }, i;
-    function verb(n, f) { i[n] = o[n] ? function (v) { return (p = !p) ? { value: __await(o[n](v)), done: n === "return" } : f ? f(v) : v; } : f; }
-}
-
-function __asyncValues(o) {
-    if (!Symbol.asyncIterator) throw new TypeError("Symbol.asyncIterator is not defined.");
-    var m = o[Symbol.asyncIterator], i;
-    return m ? m.call(o) : (o = typeof __values === "function" ? __values(o) : o[Symbol.iterator](), i = {}, verb("next"), verb("throw"), verb("return"), i[Symbol.asyncIterator] = function () { return this; }, i);
-    function verb(n) { i[n] = o[n] && function (v) { return new Promise(function (resolve, reject) { v = o[n](v), settle(resolve, reject, v.done, v.value); }); }; }
-    function settle(resolve, reject, d, v) { Promise.resolve(v).then(function(v) { resolve({ value: v, done: d }); }, reject); }
-}
-
-function __makeTemplateObject(cooked, raw) {
-    if (Object.defineProperty) { Object.defineProperty(cooked, "raw", { value: raw }); } else { cooked.raw = raw; }
-    return cooked;
-};
-
-function __importStar(mod) {
-    if (mod && mod.__esModule) return mod;
-    var result = {};
-    if (mod != null) for (var k in mod) if (Object.hasOwnProperty.call(mod, k)) result[k] = mod[k];
-    result.default = mod;
-    return result;
-}
-
-function __importDefault(mod) {
-    return (mod && mod.__esModule) ? mod : { default: mod };
-}
-
-
-/***/ }),
-
-/***/ 664:
-/*!*************************************!*\
-  !*** ./components/Slider/Slider.js ***!
-  \*************************************/
+/***/ 397:
+/*!*******************************************************!*\
+  !*** ./components/LineShareButton/LineShareButton.js ***!
+  \*******************************************************/
 /*! no static exports found */
 /*! all exports used */
 /*! ModuleConcatenation bailout: Module is not an ECMAScript module */
@@ -1294,836 +1007,355 @@ function __importDefault(mod) {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.santaSlider = exports.Slider = undefined;
 
-var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+__webpack_require__(/*! ./LineShareButton.st.css */ 398);
 
 var _react = __webpack_require__(/*! react */ 0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _createReactClass = __webpack_require__(/*! create-react-class */ 17);
+var _lineShareButtonTypes = __webpack_require__(/*! ./lineShareButtonTypes */ 292);
 
-var _createReactClass2 = _interopRequireDefault(_createReactClass);
+var _lineShareButtonTypes2 = _interopRequireDefault(_lineShareButtonTypes);
 
-var _lodash = __webpack_require__(/*! lodash */ 2);
+var _lineShareButtonLanguages = __webpack_require__(/*! ./lineShareButtonLanguages */ 844);
 
-var _lodash2 = _interopRequireDefault(_lodash);
+var _lineShareButtonLanguages2 = _interopRequireDefault(_lineShareButtonLanguages);
+
+var _lineShareButtonSizes = __webpack_require__(/*! ./lineShareButtonSizes */ 845);
+
+var _lineShareButtonSizes2 = _interopRequireDefault(_lineShareButtonSizes);
 
 var _propTypes = __webpack_require__(/*! prop-types */ 1);
 
-var _slider = __webpack_require__(/*! wix-ui-core/slider */ 665);
-
-var _SliderSt = __webpack_require__(/*! ./Slider.st.css */ 358);
-
-var _SliderSt2 = _interopRequireDefault(_SliderSt);
-
-var _santaComponents = __webpack_require__(/*! santa-components */ 14);
+var _propTypes2 = _interopRequireDefault(_propTypes);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+function LineShareButton(props) {
+  var lang = _lineShareButtonLanguages2.default[props.lang] ? props.lang : 'en';
+  var buttonType = _lineShareButtonTypes2.default[props.buttonType] ? props.buttonType : 'button';
 
-function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+  return _react2.default.createElement(
+    'div',
+    { key: lang + '-' + buttonType, id: 'line-it-button-container', style: _lineShareButtonSizes2.default[buttonType](lang) },
+    _react2.default.createElement('div', {
+      className: 'line-it-button',
+      'data-lang': _lineShareButtonLanguages2.default[lang],
+      'data-type': 'share-' + _lineShareButtonTypes2.default[buttonType],
+      'data-ver': '2',
+      'data-url': props.url || '',
+      style: { display: 'none' }
+    })
+  );
+}
 
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+LineShareButton.displayName = 'LineShareButton';
 
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var Slider = exports.Slider = function (_React$Component) {
-  _inherits(Slider, _React$Component);
-
-  function Slider() {
-    _classCallCheck(this, Slider);
-
-    return _possibleConstructorReturn(this, (Slider.__proto__ || Object.getPrototypeOf(Slider)).apply(this, arguments));
-  }
-
-  _createClass(Slider, [{
-    key: 'focus',
-    value: function focus() {
-      this.node.focus();
-    }
-  }, {
-    key: 'blur',
-    value: function blur() {
-      this.node.blur();
-    }
-  }, {
-    key: 'render',
-    value: function render() {
-      var _this2 = this;
-
-      var _props = this.props,
-          previewState = _props.previewState,
-          componentViewMode = _props.componentViewMode,
-          isMobileView = _props.isMobileView,
-          tooltipPosition = _props.tooltipPosition,
-          orientation = _props.orientation,
-          isDisabled = _props.isDisabled,
-          restOfProps = _objectWithoutProperties(_props, ['previewState', 'componentViewMode', 'isMobileView', 'tooltipPosition', 'orientation', 'isDisabled']);
-
-      var styles = (0, _SliderSt2.default)('root', _defineProperty({}, 'preview-' + previewState, true), restOfProps);
-      var shouldAlwaysShowTooltip = componentViewMode === 'editor' && this.props.tooltipVisibility !== 'none';
-      var overriddenProps = {
-        tooltipVisibility: shouldAlwaysShowTooltip ? 'always' : this.props.tooltipVisibility,
-        tooltipPosition: isMobileView ? 'normal' : tooltipPosition,
-        orientation: isMobileView ? 'horizontal' : orientation
-      };
-      var overriddenStyle = {
-        width: this.props.style.width,
-        height: this.props.style.height
-      };
-
-      return _react2.default.createElement(_slider.Slider, _extends({
-        ref: function ref(node) {
-          return _this2.node = node;
-        }
-      }, restOfProps, styles, overriddenProps, {
-        disabled: isDisabled,
-        style: overriddenStyle
-      }));
-    }
-  }]);
-
-  return Slider;
-}(_react2.default.Component);
-
-Slider.displayName = 'Slider';
-Slider.propTypes = {
-  previewState: _propTypes.string,
-  tooltipVisibility: _propTypes.string,
-  componentViewMode: _propTypes.string,
-  tooltipPosition: _propTypes.string,
-  orientation: _propTypes.string,
-  isMobileView: _propTypes.bool,
-  isDisabled: _propTypes.bool,
-  style: _propTypes.object
-};
-Slider.defaultProps = {
-  style: { width: 0, height: 0 }
+LineShareButton.propTypes = {
+  buttonType: _propTypes2.default.string,
+  lang: _propTypes2.default.string,
+  url: _propTypes2.default.string
 };
 
-var skinBasedComp = _santaComponents.mixins.skinBasedComp,
-    runTimeCompData = _santaComponents.mixins.runTimeCompData,
-    inputFocusMixin = _santaComponents.mixins.inputFocusMixin;
-
-
-var getComponentSkins = function getComponentSkins() {
-  return {
-    'wixui.skins.Slider': _SliderSt2.default.$skin
-  };
+LineShareButton.defaultProps = {
+  lang: 'en',
+  type: 'button',
+  url: ''
 };
 
-/**
- * @class components.slider
- * @extends {core.skinBasedComp}
- */
-
-var santaSlider = exports.santaSlider = (0, _createReactClass2.default)({
-  displayName: 'Slider',
-
-  mixins: [skinBasedComp(getComponentSkins()), runTimeCompData, inputFocusMixin],
-
-  propTypes: {
-    structure: _santaComponents.santaTypesDefinitions.Component.structure.isRequired,
-    compProp: _santaComponents.santaTypesDefinitions.Component.compProp.isRequired,
-    compData: _santaComponents.santaTypesDefinitions.Component.compData.isRequired,
-    componentViewMode: _santaComponents.santaTypesDefinitions.RenderFlags.componentViewMode,
-    componentPreviewState: _santaComponents.santaTypesDefinitions.RenderFlags.componentPreviewState,
-    styleId: _santaComponents.santaTypesDefinitions.Component.styleId,
-    style: _santaComponents.santaTypesDefinitions.Component.style,
-    isMobileView: _santaComponents.santaTypesDefinitions.isMobileView
-  },
-
-  statics: {
-    compSpecificIsDomOnlyOverride: function compSpecificIsDomOnlyOverride() {
-      return false;
-    },
-    behaviors: _lodash2.default.clone(inputFocusMixin.INPUT_FOCUS_BEHAVIORS),
-    getComponentSkins: getComponentSkins
-  },
-
-  getInitialState: function getInitialState() {
-    return {
-      value: this.props.compData.value
-    };
-  },
-  UNSAFE_componentWillReceiveProps: function UNSAFE_componentWillReceiveProps(nextProps) {
-    // eslint-disable-line
-    this.setState({ value: nextProps.compData.value });
-  },
-  handleChange: function handleChange(value) {
-    var nextState = { value: value };
-    this.setState(nextState);
-    this.updateData(nextState);
-    this.handleAction('change', nextState);
-  },
-  focus: function focus() {
-    this.sliderRef.focus();
-  },
-  blur: function blur() {
-    this.sliderRef.blur();
-  },
-  handleFocus: function handleFocus() {
-    this.handleAction('focus');
-  },
-  handleBlur: function handleBlur() {
-    this.handleAction('blur');
-  },
-  getSkinProperties: function getSkinProperties() {
-    var _this3 = this;
-
-    var sliderProps = _lodash2.default.assign({}, this.props.compData, this.props.compProp, {
-      styleId: this.props.styleId,
-      className: this.props.styleId,
-      style: this.props.style,
-      onChange: this.handleChange,
-      onFocus: this.handleFocus,
-      onBlur: this.handleBlur,
-      value: this.state.value,
-      width: _lodash2.default.get(this.props.structure, 'layout.width', 0),
-      height: _lodash2.default.get(this.props.structure, 'layout.height', 0),
-      previewState: this.props.componentPreviewState,
-      componentViewMode: this.props.componentViewMode,
-      isMobileView: this.props.isMobileView,
-      ref: function ref(sliderRef) {
-        _this3.sliderRef = sliderRef;
-      }
-    });
-
-    return {
-      '': {
-        children: [_santaComponents.utils.createReactElement(Slider, sliderProps)]
-      }
-    };
-  }
-});
+exports.default = LineShareButton;
 
 /***/ }),
 
-/***/ 665:
+/***/ 398:
+/*!***********************************************************!*\
+  !*** ./components/LineShareButton/LineShareButton.st.css ***!
+  \***********************************************************/
+/*! exports provided: default */
+/*! all exports used */
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+/***/ (function(module, exports, __webpack_require__) {
+
+Object.defineProperty(exports, "__esModule", { value: true })
+
+exports.default = __webpack_require__.stylable.create(
+  "root",
+  "LineShareButton2783482091",
+  {"root":"LineShareButton2783482091--root"},
+  "",
+  1,
+  /*! ./components/LineShareButton/LineShareButton.st.css */ 398
+);
+
+exports.default.$skin = {"params":{},"paramsDefaults":{}};
+exports.default.$skin.$render = function render_css($id, $params, $functions) {
+  return "\n" + $id + ".LineShareButton2783482091--root{}\n";
+};
+
+/***/ }),
+
+/***/ 447:
 /*!*********************************************!*\
-  !*** ../node_modules/wix-ui-core/slider.js ***!
+  !*** ./components/LineShareButton/index.js ***!
   \*********************************************/
 /*! no static exports found */
 /*! all exports used */
 /*! ModuleConcatenation bailout: Module is not an ECMAScript module */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! ./dist/src/components/slider */ 666);
-
-
-/***/ }),
-
-/***/ 666:
-/*!***********************************************************************!*\
-  !*** ../node_modules/wix-ui-core/dist/src/components/slider/index.js ***!
-  \***********************************************************************/
-/*! no static exports found */
-/*! all exports used */
-/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
-/***/ (function(module, exports, __webpack_require__) {
-
 "use strict";
 
-Object.defineProperty(exports, "__esModule", { value: true });
-var Slider_1 = __webpack_require__(/*! ./Slider */ 667);
-exports.Slider = Slider_1.Slider;
-//# sourceMappingURL=index.js.map
 
-/***/ }),
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
 
-/***/ 667:
-/*!************************************************************************!*\
-  !*** ../node_modules/wix-ui-core/dist/src/components/slider/Slider.js ***!
-  \************************************************************************/
-/*! no static exports found */
-/*! all exports used */
-/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
-/***/ (function(module, exports, __webpack_require__) {
+var _componentType = __webpack_require__(/*! ./ds/componentType */ 65);
 
-"use strict";
+var _componentType2 = _interopRequireDefault(_componentType);
 
-Object.defineProperty(exports, "__esModule", { value: true });
-var tslib_1 = __webpack_require__(/*! tslib */ 6);
-var React = __webpack_require__(/*! react */ 0);
-var Ticks_1 = __webpack_require__(/*! ./Ticks */ 668);
-var Thumb_1 = __webpack_require__(/*! ./Thumb */ 669);
-var Slider_st_css_1 = __webpack_require__(/*! ./Slider.st.css */ 357);
-var noop = __webpack_require__(/*! lodash/noop */ 670);
-var CONTINUOUS_STEP = 0.01;
-var Slider = /** @class */ (function (_super) {
-    tslib_1.__extends(Slider, _super);
-    function Slider() {
-        var _this = _super !== null && _super.apply(this, arguments) || this;
-        _this.state = {
-            dragging: false,
-            mouseDown: false,
-            thumbHover: false,
-            inKeyPress: false,
-        };
-        _this.setTrackNode = function (track) {
-            _this.track = track;
-        };
-        _this.handleBlur = function () {
-            _this.setState({ inKeyPress: false });
-            _this.props.onBlur();
-        };
-        _this.handleMouseDown = function () {
-            _this.setState({ mouseDown: true });
-        };
-        _this.handleMouseUp = function () {
-            _this.setState({ mouseDown: false, dragging: false });
-        };
-        _this.handleKeyDown = function (ev) {
-            var _a = _this.props, min = _a.min, max = _a.max, value = _a.value, disabled = _a.disabled, readOnly = _a.readOnly, dir = _a.dir;
-            var ltr = dir === 'ltr';
-            if (disabled || readOnly) {
-                return;
-            }
-            var step = _this.getStepValue();
-            var nextValue;
-            switch (ev.key) {
-                case 'ArrowDown':
-                    nextValue = value - step;
-                    break;
-                case 'ArrowLeft':
-                    if (ltr) {
-                        nextValue = value - step;
-                    }
-                    else {
-                        nextValue = value + step;
-                    }
-                    break;
-                case 'ArrowUp':
-                    nextValue = value + step;
-                    break;
-                case 'ArrowRight':
-                    if (ltr) {
-                        nextValue = value + step;
-                    }
-                    else {
-                        nextValue = value - step;
-                    }
-                    break;
-                case 'PageDown':
-                    nextValue = value - 0.1 * (max - min);
-                    break;
-                case 'PageUp':
-                    nextValue = value + 0.1 * (max - min);
-                    break;
-                case 'Home':
-                    nextValue = min;
-                    break;
-                case 'End':
-                    nextValue = max;
-                    break;
-                default:
-                    nextValue = undefined;
-            }
-            if (typeof nextValue !== 'undefined') {
-                _this.handleChange(nextValue);
-                _this.setState({
-                    inKeyPress: true,
-                });
-                ev.preventDefault();
-            }
-        };
-        _this.handleMouseMove = function (ev) {
-            if (_this.state.mouseDown && !_this.state.dragging) {
-                _this.setState({ dragging: true });
-            }
-            if (_this.state.dragging) {
-                _this.moveThumbByMouse(ev);
-            }
-        };
-        _this.handleThumbEnter = function () {
-            _this.setState({ thumbHover: true });
-        };
-        _this.handleThumbLeave = function () {
-            _this.setState({ thumbHover: false });
-        };
-        _this.moveThumbByMouse = function (ev) {
-            if (ev.touches) {
-                ev.preventDefault();
-                ev = ev.touches[0];
-            }
-            var _a = _this.props, min = _a.min, max = _a.max, disabled = _a.disabled, readOnly = _a.readOnly, dir = _a.dir;
-            var rtl = _this.isRtl();
-            if (disabled || readOnly) {
-                return;
-            }
-            var isVertical = _this.isVertical();
-            var step = _this.getStepValue();
-            var thumbSize = _this.getThumbSizeMainAxis();
-            var totalSteps = Math.ceil((max - min) / step);
-            var rect = _this.track.getBoundingClientRect();
-            var value, pxStep, sliderPos;
-            if (isVertical) {
-                sliderPos = rect.bottom - (ev.clientY + thumbSize / 2);
-                pxStep = (rect.height - thumbSize) / totalSteps;
-            }
-            else {
-                if (rtl) {
-                    sliderPos = rect.left + rect.width - thumbSize / 2 - ev.clientX;
-                }
-                else {
-                    sliderPos = ev.clientX - (rect.left + thumbSize / 2);
-                }
-                pxStep = (rect.width - thumbSize) / totalSteps;
-            }
-            value = min + step * Math.round(sliderPos / pxStep);
-            _this.handleChange(value);
-        };
-        return _this;
-    }
-    Slider.prototype.componentDidMount = function () {
-        document.addEventListener('mouseup', this.handleMouseUp);
-        document.addEventListener('mousemove', this.handleMouseMove);
-        document.addEventListener('touchend', this.handleMouseUp);
-        document.addEventListener('touchmove', this.handleMouseMove, {
-            passive: false,
-        });
-    };
-    Slider.prototype.componentWillUnmount = function () {
-        document.removeEventListener('mouseup', this.handleMouseUp);
-        document.removeEventListener('mousemove', this.handleMouseMove);
-        document.removeEventListener('touchend', this.handleMouseUp);
-        document.removeEventListener('touchmove', this.handleMouseMove);
-    };
-    Slider.prototype.focus = function () {
-        this.root.focus();
-        this.props.onFocus();
-    };
-    Slider.prototype.blur = function () {
-        this.root.blur();
-        this.props.onBlur();
-    };
-    Slider.prototype.getStartPos = function () {
-        return this.props.dir === 'rtl' ? 'right' : 'left';
-    };
-    Slider.prototype.calcDiscreteStepValue = function (min, max, step, stepType) {
-        if (stepType === 'count') {
-            return (max - min) / step;
-        }
-        return step;
-    };
-    Slider.prototype.getStepValue = function () {
-        var _a = this.props, min = _a.min, max = _a.max, step = _a.step, stepType = _a.stepType;
-        if (step > 0) {
-            return this.calcDiscreteStepValue(min, max, step, stepType);
-        }
-        return CONTINUOUS_STEP;
-    };
-    Slider.prototype.isShallowEqual = function (v, o) {
-        for (var key in v) {
-            if (!(key in o) || v[key] !== o[key]) {
-                return false;
-            }
-        }
-        for (var key in o) {
-            if (!(key in v) || v[key] !== o[key]) {
-                return false;
-            }
-        }
-        return true;
-    };
-    Slider.prototype.getSliderSize = function () {
-        var _a = this.props.style, width = _a.width, height = _a.height;
-        var isVertical = this.isVertical();
-        var val = isVertical ? width : height;
-        return Math.min(val, Math.min(width, height));
-    };
-    Slider.prototype.getSliderLength = function () {
-        return this.isVertical() ? this.props.style.height : this.props.style.width;
-    };
-    Slider.prototype.getThumbSize = function () {
-        var size = Thumb_1.getThumbSize(this.props.thumbShape, this.getSliderSize(), this.isVertical());
-        var offsets = this.getInnerOffsets();
-        var offset = offsets.offsetHeight || offsets.offsetWidth || 0;
-        return {
-            width: size.width - offset,
-            height: size.height - offset,
-        };
-    };
-    Slider.prototype.getThumbSizeMainAxis = function () {
-        var size = this.getThumbSize();
-        return this.isVertical() ? size.height : size.width;
-    };
-    Slider.prototype.getThumbSizeCrossAxis = function () {
-        var size = this.getThumbSize();
-        return this.isVertical() ? size.width : size.height;
-    };
-    Slider.prototype.handleChange = function (value) {
-        value = this.floorValue(this.clamp(value, this.props.min, this.props.max), 2);
-        if (value !== this.props.value) {
-            this.props.onChange(value);
-        }
-    };
-    Slider.prototype.clamp = function (val, min, max) {
-        return Math.min(Math.max(val, min), max);
-    };
-    Slider.prototype.isRtl = function () {
-        return this.props.dir === 'rtl';
-    };
-    Slider.prototype.isVertical = function () {
-        return this.props.orientation === 'vertical';
-    };
-    Slider.prototype.isContinuous = function () {
-        return !this.props.step;
-    };
-    Slider.prototype.shouldShowTooltip = function () {
-        switch (this.props.tooltipVisibility) {
-            case 'always':
-                return true;
-            case 'none':
-                return false;
-            default:
-            case 'hover':
-                return (this.state.dragging || this.state.thumbHover || this.state.inKeyPress);
-        }
-    };
-    Slider.prototype.calcThumbProgressPosition = function () {
-        var thumbSize = this.getThumbSizeMainAxis();
-        var _a = this.props, value = _a.value, min = _a.min, max = _a.max;
-        var pct = (value - min) / (max - min);
-        var clampedPct = this.clamp(pct, 0, 1);
-        return "calc(" + clampedPct + " *(100% - " + thumbSize + "px))";
-    };
-    Slider.prototype.calcTrackFillPosition = function () {
-        var thumbSize = this.getThumbSizeMainAxis();
-        var _a = this.props, value = _a.value, min = _a.min, max = _a.max;
-        var pct = (value - min) / (max - min);
-        var clampedPct = this.clamp(pct, 0, 1);
-        return "calc(" + clampedPct + " *(100% - " + thumbSize + "px) + " + thumbSize + "px - 2px)";
-    };
-    Slider.prototype.calcThumbCrossPosition = function () {
-        var thumbSize = this.getThumbSizeCrossAxis();
-        return "calc(50% - " + thumbSize / 2 + "px)";
-    };
-    Slider.prototype.calcThumbPosition = function () {
-        var _a;
-        var progressVal = this.calcThumbProgressPosition();
-        var crossVal = this.calcThumbCrossPosition();
-        if (this.isVertical()) {
-            return { bottom: progressVal, left: 0 };
-        }
-        return _a = {}, _a[this.getStartPos()] = progressVal, _a.top = 0, _a;
-    };
-    Slider.prototype.floorValue = function (value, precision) {
-        if (precision === void 0) { precision = 1; }
-        var clampedValue = Math.floor(Math.pow(10, precision) * value) / Math.pow(10, precision);
-        return clampedValue;
-    };
-    Slider.prototype.renderTooltip = function () {
-        var _a;
-        if (!this.shouldShowTooltip()) {
-            return null;
-        }
-        var tooltipPosition = this.props.tooltipPosition;
-        var positionClassname = tooltipPosition + 'Position';
-        var clampedValue = this.floorValue(this.props.value);
-        return (React.createElement("div", tslib_1.__assign({ "data-hook": "tooltip" }, Slider_st_css_1.default('tooltip', (_a = {}, _a[positionClassname] = true, _a))),
-            this.props.tooltipPrefix,
-            clampedValue,
-            this.props.tooltipSuffix));
-    };
-    Slider.prototype.ticksShown = function () {
-        return !this.isContinuous() && this.props.tickMarksShape !== 'none';
-    };
-    Slider.prototype.getInnerOffsets = function () {
-        var showTicks = this.ticksShown();
-        if (!showTicks) {
-            return {};
-        }
-        var isHorizontal = !this.isVertical();
-        var tickSize = this.props.tickMarksShape === 'line' ? 10 : 3;
-        var tickMarksPos = this.props.tickMarksPosition;
-        var tickMarksGap = 12;
-        var offsetWidth, offsetHeight, offsetLeft, offsetTop;
-        if (tickMarksPos === 'normal') {
-            offsetHeight = tickSize + tickMarksGap;
-        }
-        else if (tickMarksPos === 'across') {
-            offsetTop = tickSize + tickMarksGap;
-            offsetHeight = tickSize + tickMarksGap;
-        }
-        if (isHorizontal) {
-            return { offsetHeight: offsetHeight, offsetTop: offsetTop };
-        }
-        return { offsetWidth: offsetHeight, offsetLeft: offsetTop };
-    };
-    Slider.prototype.getInnerDims = function () {
-        var offsets = this.getInnerOffsets();
-        var style = {};
-        if (offsets.offsetTop) {
-            style.top = offsets.offsetTop;
-        }
-        if (offsets.offsetLeft) {
-            style.left = offsets.offsetLeft;
-        }
-        if (offsets.offsetHeight) {
-            style.height = "calc(100% - " + offsets.offsetHeight + "px)";
-        }
-        if (offsets.offsetWidth) {
-            style.width = "calc(100% - " + offsets.offsetWidth + "px)";
-        }
-        return style;
-    };
-    Slider.prototype.render = function () {
-        var _this = this;
-        var _a = this.props, value = _a.value, min = _a.min, max = _a.max, trackSize = _a.trackSize, disabled = _a.disabled, dir = _a.dir, onFocus = _a.onFocus, tickMarksPosition = _a.tickMarksPosition, tickMarksShape = _a.tickMarksShape, thumbShape = _a.thumbShape, orientation = _a.orientation, style = _a.style;
-        var vertical = this.isVertical();
-        var thumbSize = this.getThumbSize();
-        var crossThumbSize = this.getThumbSizeCrossAxis();
-        var mainThumbSize = this.getThumbSizeMainAxis();
-        var showTicks = this.ticksShown();
-        var step = this.getStepValue();
-        var thumbPosition = this.calcThumbPosition();
-        var trackStyle = vertical
-            ? { width: trackSize + "%" }
-            : { height: trackSize + "%" };
-        var trackFillPosition = vertical
-            ? {
-                bottom: 0,
-                height: this.calcTrackFillPosition(),
-            }
-            : {
-                width: this.calcTrackFillPosition(),
-            };
-        return (React.createElement("div", tslib_1.__assign({}, Slider_st_css_1.default('root', {
-            orientation: vertical ? 'vertical' : 'horizontal',
-            dir: dir,
-            tickMarksPosition: tickMarksPosition,
-            tickMarksShape: tickMarksShape,
-            disabled: disabled,
-        }, this.props), { onMouseDown: this.handleMouseDown, onTouchStart: this.handleMouseDown, onKeyDown: this.handleKeyDown, onFocus: onFocus, onBlur: this.handleBlur, "data-value": value, "data-min": min, "data-max": max, "data-orientation": orientation, "data-dir": dir, tabIndex: 0, style: style, ref: function (root) { return (_this.root = root); }, role: "slider", "aria-valuemin": min, "aria-valuemax": max, "aria-valuenow": value }),
-            React.createElement("div", { className: Slider_st_css_1.default.inner, style: this.getInnerDims() },
-                React.createElement("div", { "data-hook": "track", ref: this.setTrackNode, className: Slider_st_css_1.default.track, onClick: this.moveThumbByMouse, style: trackStyle },
-                    React.createElement("div", { className: Slider_st_css_1.default.trackFill, style: trackFillPosition })),
-                React.createElement(Thumb_1.Thumb, { shape: thumbShape, thumbPosition: thumbPosition, thumbSize: thumbSize, onMouseEnter: this.handleThumbEnter, onMouseLeave: this.handleThumbLeave }, this.renderTooltip())),
-            showTicks && (React.createElement(Ticks_1.Ticks, { pStyle: Slider_st_css_1.default, step: step, min: min, max: max, thumbSize: mainThumbSize, vertical: vertical, trackSize: vertical
-                    ? this.props.style.height - mainThumbSize
-                    : this.props.style.width - crossThumbSize, tickMarksShape: tickMarksShape, onTickClick: this.moveThumbByMouse }))));
-    };
-    Slider.displayName = 'Slider';
-    Slider.defaultProps = {
-        min: 0,
-        max: 10,
-        value: 5,
-        stepType: 'value',
-        thumbShape: 'circle',
-        orientation: 'horizontal',
-        disabled: false,
-        readOnly: false,
-        tooltipVisibility: 'hover',
-        tooltipPosition: 'normal',
-        tooltipPrefix: '',
-        tooltipSuffix: '',
-        tickMarksPosition: 'normal',
-        tickMarksShape: 'line',
-        dir: 'ltr',
-        onFocus: noop,
-        onBlur: noop,
-        style: {
-            width: 0,
-            height: 0,
-        },
-    };
-    return Slider;
-}(React.PureComponent));
-exports.Slider = Slider;
-//# sourceMappingURL=Slider.js.map
+var _LineShareButton = __webpack_require__(/*! ./LineShareButton */ 397);
 
-/***/ }),
+var _LineShareButton2 = _interopRequireDefault(_LineShareButton);
 
-/***/ 668:
-/*!***********************************************************************!*\
-  !*** ../node_modules/wix-ui-core/dist/src/components/slider/Ticks.js ***!
-  \***********************************************************************/
-/*! no static exports found */
-/*! all exports used */
-/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
-/***/ (function(module, exports, __webpack_require__) {
+var _LineShareButton3 = __webpack_require__(/*! ./LineShareButton.santa */ 846);
 
-"use strict";
+var _LineShareButtonSt = __webpack_require__(/*! ./LineShareButton.st.css */ 398);
 
-Object.defineProperty(exports, "__esModule", { value: true });
-var tslib_1 = __webpack_require__(/*! tslib */ 6);
-var React = __webpack_require__(/*! react */ 0);
-var Ticks = /** @class */ (function (_super) {
-    tslib_1.__extends(Ticks, _super);
-    function Ticks() {
-        return _super !== null && _super.apply(this, arguments) || this;
-    }
-    Ticks.prototype.calcMaximumTickDensity = function () {
-        if (this.props.tickMarksShape === 'line') {
-            return 1 / 8;
-        }
-        return 1 / 16;
-    };
-    Ticks.prototype.calcStep = function () {
-        var _a = this.props, step = _a.step, min = _a.min, max = _a.max, trackSize = _a.trackSize;
-        var totalTickCount = (max - min) / Number(step);
-        var density = Math.min(totalTickCount / trackSize, this.calcMaximumTickDensity());
-        var adjustedStep = (max - min) / (trackSize * density);
-        return adjustedStep;
-    };
-    Ticks.prototype.renderTick = function (i, min, max, vertical, thumbSize, pStyle) {
-        var tickMarksShape = this.props.tickMarksShape;
-        var pct = (i - min) / (max - min);
-        var val = "calc(" + pct + " * calc(100% - " + thumbSize + "px) + " + thumbSize /
-            2 + "px)";
-        return (React.createElement("div", tslib_1.__assign({}, pStyle('tick', { tickMarksShape: tickMarksShape }), { key: i, "data-hook": "tick", onClick: this.props.onTickClick, style: vertical ? { bottom: val } : { left: val } })));
-    };
-    Ticks.prototype.render = function () {
-        var _a = this.props, min = _a.min, max = _a.max, thumbSize = _a.thumbSize, vertical = _a.vertical, trackSize = _a.trackSize, pStyle = _a.pStyle;
-        if (!trackSize) {
-            return null;
-        }
-        var step = this.calcStep();
-        var ticks = [];
-        for (var i = min; i < max; i += step) {
-            ticks.push(this.renderTick(i, min, max, vertical, thumbSize, pStyle));
-        }
-        ticks.push(this.renderTick(max, min, max, vertical, thumbSize, pStyle));
-        return React.createElement("div", { "data-hook": "ticks-wrapper" }, ticks);
-    };
-    return Ticks;
-}(React.PureComponent));
-exports.Ticks = Ticks;
-//# sourceMappingURL=Ticks.js.map
+var _LineShareButtonSt2 = _interopRequireDefault(_LineShareButtonSt);
 
-/***/ }),
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-/***/ 669:
-/*!***********************************************************************!*\
-  !*** ../node_modules/wix-ui-core/dist/src/components/slider/Thumb.js ***!
-  \***********************************************************************/
-/*! no static exports found */
-/*! all exports used */
-/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-Object.defineProperty(exports, "__esModule", { value: true });
-var tslib_1 = __webpack_require__(/*! tslib */ 6);
-var React = __webpack_require__(/*! react */ 0);
-var Slider_st_css_1 = __webpack_require__(/*! ./Slider.st.css */ 357);
-var Thumb = /** @class */ (function (_super) {
-    tslib_1.__extends(Thumb, _super);
-    function Thumb() {
-        return _super !== null && _super.apply(this, arguments) || this;
-    }
-    Thumb.prototype.render = function () {
-        var _a = this.props, shape = _a.shape, thumbSize = _a.thumbSize;
-        var ThumbShape = thumbShapes[shape];
-        return (React.createElement("div", { "data-hook": "thumb", className: Slider_st_css_1.default.thumb, onMouseEnter: this.props.onMouseEnter, onMouseLeave: this.props.onMouseLeave, style: tslib_1.__assign({}, this.props.thumbPosition, thumbSize) },
-            React.createElement(ThumbShape.component, null),
-            this.props.children));
-    };
-    return Thumb;
-}(React.Component));
-exports.Thumb = Thumb;
-function getThumbSize(shape) {
-    var rest = [];
-    for (var _i = 1; _i < arguments.length; _i++) {
-        rest[_i - 1] = arguments[_i];
-    }
-    var _a;
-    return (_a = thumbShapes[shape]).getThumbSize.apply(_a, rest);
-}
-exports.getThumbSize = getThumbSize;
-var CircleThumb = /** @class */ (function (_super) {
-    tslib_1.__extends(CircleThumb, _super);
-    function CircleThumb() {
-        return _super !== null && _super.apply(this, arguments) || this;
-    }
-    CircleThumb.prototype.render = function () {
-        return (React.createElement("div", tslib_1.__assign({}, Slider_st_css_1.default('thumbShape', { shapeType: 'circle' }), { style: { borderRadius: '50%' } })));
-    };
-    return CircleThumb;
-}(React.PureComponent));
-var RectangleThumb = /** @class */ (function (_super) {
-    tslib_1.__extends(RectangleThumb, _super);
-    function RectangleThumb() {
-        return _super !== null && _super.apply(this, arguments) || this;
-    }
-    RectangleThumb.prototype.render = function () {
-        return React.createElement("div", tslib_1.__assign({}, Slider_st_css_1.default('thumbShape', { shapeType: 'rectangle' })));
-    };
-    return RectangleThumb;
-}(React.PureComponent));
-var SquareThumb = /** @class */ (function (_super) {
-    tslib_1.__extends(SquareThumb, _super);
-    function SquareThumb() {
-        return _super !== null && _super.apply(this, arguments) || this;
-    }
-    SquareThumb.prototype.render = function () {
-        return React.createElement("div", tslib_1.__assign({}, Slider_st_css_1.default('thumbShape', { shapeType: 'square' })));
-    };
-    return SquareThumb;
-}(React.PureComponent));
-var BarThumb = /** @class */ (function (_super) {
-    tslib_1.__extends(BarThumb, _super);
-    function BarThumb() {
-        return _super !== null && _super.apply(this, arguments) || this;
-    }
-    BarThumb.prototype.render = function () {
-        return React.createElement("div", tslib_1.__assign({}, Slider_st_css_1.default('thumbShape', { shapeType: 'bar' })));
-    };
-    return BarThumb;
-}(React.PureComponent));
-var thumbShapes = {
-    circle: {
-        component: CircleThumb,
-        getThumbSize: function (sliderSize) { return ({ width: sliderSize, height: sliderSize }); },
-    },
-    rectangle: {
-        component: RectangleThumb,
-        getThumbSize: function (sliderSize, isVertical) {
-            var _a;
-            return (_a = {},
-                _a[isVertical ? 'height' : 'width'] = 1.5 * sliderSize,
-                _a[isVertical ? 'width' : 'height'] = sliderSize,
-                _a);
-        },
-    },
-    square: {
-        component: SquareThumb,
-        getThumbSize: function (sliderSize) { return ({ width: sliderSize, height: sliderSize }); },
-    },
-    bar: {
-        component: BarThumb,
-        getThumbSize: function (sliderSize, isVertical) {
-            var _a;
-            return (_a = {},
-                _a[isVertical ? 'height' : 'width'] = 0.5 * sliderSize,
-                _a[isVertical ? 'width' : 'height'] = sliderSize,
-                _a);
-        },
-    },
+exports.default = {
+  componentType: _componentType2.default,
+  component: _LineShareButton2.default,
+  santaComponent: _LineShareButton3.LineShareButtonSanta,
+  skin: _LineShareButtonSt2.default.$skin
 };
-//# sourceMappingURL=Thumb.js.map
 
 /***/ }),
 
-/***/ 670:
-/*!**************************************!*\
-  !*** ../node_modules/lodash/noop.js ***!
-  \**************************************/
+/***/ 65:
+/*!********************************************************!*\
+  !*** ./components/LineShareButton/ds/componentType.js ***!
+  \********************************************************/
 /*! no static exports found */
 /*! all exports used */
 /*! ModuleConcatenation bailout: Module is not an ECMAScript module */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! lodash */ 2).noop
+"use strict";
+
+
+module.exports = 'wixui.LineShareButton';
+
+/***/ }),
+
+/***/ 844:
+/*!****************************************************************!*\
+  !*** ./components/LineShareButton/lineShareButtonLanguages.js ***!
+  \****************************************************************/
+/*! no static exports found */
+/*! all exports used */
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = {
+  en: 'en',
+  ko: 'ko',
+  ja: 'ja',
+  zh: 'zh_Hant',
+  th: 'th',
+  id: 'id'
+};
+
+/***/ }),
+
+/***/ 845:
+/*!************************************************************!*\
+  !*** ./components/LineShareButton/lineShareButtonSizes.js ***!
+  \************************************************************/
+/*! no static exports found */
+/*! all exports used */
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = {
+  button: function button(lang) {
+    var size = { width: 53, height: 20 };
+
+    switch (lang) {
+      case 'ko':
+        size.width = 63;
+        break;
+      case 'ja':
+        size.width = 80;
+        break;
+      case 'zh':
+        size.width = 46;
+        break;
+      case 'th':
+        size.width = 47;
+        break;
+      default:
+    }
+    return size;
+  },
+  classicWithButton: function classicWithButton() {
+    return { width: 35, height: 60 };
+  },
+  classicBig: function classicBig() {
+    return { width: 40, height: 40 };
+  },
+  classicMedium: function classicMedium() {
+    return { width: 30, height: 30 };
+  },
+  classicSmall: function classicSmall() {
+    return { width: 20, height: 20 };
+  },
+  bubbleBig: function bubbleBig() {
+    return { width: 40, height: 40 };
+  },
+  bubbleMedium: function bubbleMedium() {
+    return { width: 30, height: 29 };
+  },
+  bubbleSmall: function bubbleSmall() {
+    return { width: 20, height: 19 };
+  }
+};
+
+/***/ }),
+
+/***/ 846:
+/*!*************************************************************!*\
+  !*** ./components/LineShareButton/LineShareButton.santa.js ***!
+  \*************************************************************/
+/*! no static exports found */
+/*! all exports used */
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.LineShareButtonSanta = undefined;
+
+var _createReactClass = __webpack_require__(/*! create-react-class */ 17);
+
+var _createReactClass2 = _interopRequireDefault(_createReactClass);
+
+var _santaComponents = __webpack_require__(/*! santa-components */ 14);
+
+var _LineShareButton = __webpack_require__(/*! ./LineShareButton */ 397);
+
+var _LineShareButton2 = _interopRequireDefault(_LineShareButton);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+// import style from './LineShareButton.st.css';
+
+var skinBasedComp = _santaComponents.mixins.skinBasedComp;
+
+
+var getComponentSkins = function getComponentSkins() {
+  return {
+    // TODO: use style.$skin when https://jira.wixpress.com/browse/INF-395 is solved
+    // 'wixui.skins.LineShareButton': style.$skin,
+    'wixui.skins.LineShareButton': {
+      $render: function $render() {
+        return '';
+      }
+    }
+  };
+};
+
+/**
+ * @class components.lineShareButton
+ * @extends {core.skinBasedComp}
+ */
+var LineShareButtonSanta = exports.LineShareButtonSanta = (0, _createReactClass2.default)({
+  displayName: 'LineShareButton',
+
+  mixins: [skinBasedComp(getComponentSkins())],
+
+  propTypes: {
+    styleId: _santaComponents.santaTypesDefinitions.Component.styleId,
+    compProp: _santaComponents.santaTypesDefinitions.Component.compProp.isRequired,
+    externalScriptLoader: _santaComponents.santaTypesDefinitions.SiteAspects.externalScriptLoader.isRequired,
+    userLanguage: _santaComponents.santaTypesDefinitions.WixUserSantaTypes.userLanguage.isRequired,
+    currentUrl: _santaComponents.santaTypesDefinitions.currentUrl,
+    currentLanguage: _santaComponents.santaTypesDefinitions.RendererModel.multilingual.currentLanguage,
+    isMLEnabled: _santaComponents.santaTypesDefinitions.RendererModel.multilingual.isEnabled
+  },
+
+  statics: {
+    getComponentSkins: getComponentSkins
+  },
+
+  loadButton: function loadButton() {
+    if (typeof LineIt === 'undefined') {
+      return false;
+    }
+
+    LineIt.loadButton();
+    return true;
+  },
+  loadScript: function loadScript() {
+    var _this = this;
+
+    this.props.externalScriptLoader.loadScript('LINE', function () {
+      _this.loadButton();
+    }, {
+      currentUrl: this.props.currentUrl.full
+    });
+  },
+  componentDidMount: function componentDidMount() {
+    if (!this.loadButton()) {
+      this.loadScript();
+    }
+  },
+  componentDidUpdate: function componentDidUpdate(prevProps) {
+    if (this.props.compProp.buttonType !== prevProps.compProp.buttonType) {
+      this.loadButton();
+    }
+  },
+  getSkinProperties: function getSkinProperties() {
+    var buttonType = this.props.compProp.buttonType || 'button';
+    var lang = this.props.isMLEnabled && this.props.currentLanguage.languageCode || this.props.userLanguage;
+    var props = {
+      className: this.props.styleId,
+      buttonType: buttonType,
+      lang: lang,
+      url: this.props.currentUrl.full
+    };
+
+    return {
+      '': {
+        children: _santaComponents.utils.createReactElement(_LineShareButton2.default, props),
+        style: {
+          height: '',
+          width: ''
+        }
+      }
+    };
+  }
+});
 
 /***/ }),
 
@@ -2188,4 +1420,4 @@ module.exports = invariant;
 /***/ })
 
 }]);
-//# sourceMappingURL=wixui.Slider.chunk.js.map
+//# sourceMappingURL=wixui.LineShareButton.chunk.js.map

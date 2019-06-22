@@ -1,4 +1,4 @@
-((typeof self !== 'undefined' ? self : this)["webpackJsonp_wix_ui_santa"] = (typeof self !== 'undefined' ? self : this)["webpackJsonp_wix_ui_santa"] || []).push([[40],{
+((typeof self !== 'undefined' ? self : this)["webpackJsonp_wix_ui_santa"] = (typeof self !== 'undefined' ? self : this)["webpackJsonp_wix_ui_santa"] || []).push([[51],{
 
 /***/ 12:
 /*!**********************************************!*\
@@ -964,114 +964,10 @@ module.exports = emptyObject;
 
 /***/ }),
 
-/***/ 292:
-/*!************************************************************!*\
-  !*** ./components/LineShareButton/lineShareButtonTypes.js ***!
-  \************************************************************/
-/*! no static exports found */
-/*! all exports used */
-/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = {
-  button: 'a',
-  classicWithButton: 'e',
-  classicBig: 'd',
-  classicMedium: 'c',
-  classicSmall: 'b',
-  bubbleBig: 'h',
-  bubbleMedium: 'g',
-  bubbleSmall: 'f'
-};
-
-/***/ }),
-
-/***/ 397:
-/*!*******************************************************!*\
-  !*** ./components/LineShareButton/LineShareButton.js ***!
-  \*******************************************************/
-/*! no static exports found */
-/*! all exports used */
-/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-__webpack_require__(/*! ./LineShareButton.st.css */ 398);
-
-var _react = __webpack_require__(/*! react */ 0);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _lineShareButtonTypes = __webpack_require__(/*! ./lineShareButtonTypes */ 292);
-
-var _lineShareButtonTypes2 = _interopRequireDefault(_lineShareButtonTypes);
-
-var _lineShareButtonLanguages = __webpack_require__(/*! ./lineShareButtonLanguages */ 844);
-
-var _lineShareButtonLanguages2 = _interopRequireDefault(_lineShareButtonLanguages);
-
-var _lineShareButtonSizes = __webpack_require__(/*! ./lineShareButtonSizes */ 845);
-
-var _lineShareButtonSizes2 = _interopRequireDefault(_lineShareButtonSizes);
-
-var _propTypes = __webpack_require__(/*! prop-types */ 1);
-
-var _propTypes2 = _interopRequireDefault(_propTypes);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function LineShareButton(props) {
-  var lang = _lineShareButtonLanguages2.default[props.lang] ? props.lang : 'en';
-  var buttonType = _lineShareButtonTypes2.default[props.buttonType] ? props.buttonType : 'button';
-
-  return _react2.default.createElement(
-    'div',
-    { key: lang + '-' + buttonType, id: 'line-it-button-container', style: _lineShareButtonSizes2.default[buttonType](lang) },
-    _react2.default.createElement('div', {
-      className: 'line-it-button',
-      'data-lang': _lineShareButtonLanguages2.default[lang],
-      'data-type': 'share-' + _lineShareButtonTypes2.default[buttonType],
-      'data-ver': '2',
-      'data-url': props.url || '',
-      style: { display: 'none' }
-    })
-  );
-}
-
-LineShareButton.displayName = 'LineShareButton';
-
-LineShareButton.propTypes = {
-  buttonType: _propTypes2.default.string,
-  lang: _propTypes2.default.string,
-  url: _propTypes2.default.string
-};
-
-LineShareButton.defaultProps = {
-  lang: 'en',
-  type: 'button',
-  url: ''
-};
-
-exports.default = LineShareButton;
-
-/***/ }),
-
-/***/ 398:
-/*!***********************************************************!*\
-  !*** ./components/LineShareButton/LineShareButton.st.css ***!
-  \***********************************************************/
+/***/ 354:
+/*!*************************************!*\
+  !*** ./components/Tags/Tags.st.css ***!
+  \*************************************/
 /*! exports provided: default */
 /*! all exports used */
 /*! ModuleConcatenation bailout: Module is not an ECMAScript module */
@@ -1081,24 +977,24 @@ Object.defineProperty(exports, "__esModule", { value: true })
 
 exports.default = __webpack_require__.stylable.create(
   "root",
-  "LineShareButton2783482091",
-  {"root":"LineShareButton2783482091--root"},
+  "Tags3268887993",
+  {"root":"Tags3268887993--root","tagsContainer":"Tags3268887993--tagsContainer","tag":"Tags3268887993--tag","tagBackgroundColor":"color_8","tagBorderColor":"color_3","tagBorderSize":"3","tagBoxShadow":"0 1px 4px rgba(0, 0, 0, .6)","tagFont":"font_4","tagFontColor":"color_3","tagBackgroundColorHover":"color_6","tagFontColorHover":"color_1","tagBorderRadius":"100px"},
   "",
   1,
-  /*! ./components/LineShareButton/LineShareButton.st.css */ 398
+  /*! ./components/Tags/Tags.st.css */ 354
 );
 
-exports.default.$skin = {"params":{},"paramsDefaults":{}};
+exports.default.$skin = {"params":{"tagBackgroundColor":"COLOR","tagBorderColor":"BORDER_COLOR_ALPHA","tagBorderSize":"BORDER_SIZE","tagBoxShadow":"BOX_SHADOW","tagFont":"FONT","tagFontColor":"COLOR","tagBackgroundColorHover":"COLOR","tagFontColorHover":"COLOR","tagBorderRadius":"BORDER_RADIUS"},"paramsDefaults":{"tagBackgroundColor":"color_8","tagBorderColor":"color_3","tagBorderSize":"3","tagBoxShadow":"0 1px 4px rgba(0, 0, 0, .6)","tagFont":"font_4","tagFontColor":"color_3","tagBackgroundColorHover":"color_6","tagFontColorHover":"color_1","tagBorderRadius":"100px"}};
 exports.default.$skin.$render = function render_css($id, $params, $functions) {
-  return "\n" + $id + ".LineShareButton2783482091--root{}\n";
+  return "\n" + $id + ".Tags3268887993--root{}\n" + $id + " .Tags3268887993--tagsContainer{display: flex;align-items: center;flex-direction: row;flex-wrap: wrap}\n" + $id + ".Tags3268887993--root[data-tags3268887993-alignment=\"left\"] .Tags3268887993--tagsContainer{justify-content: flex-start}\n" + $id + ".Tags3268887993--root[data-tags3268887993-alignment=\"center\"] .Tags3268887993--tagsContainer{justify-content: center}\n" + $id + ".Tags3268887993--root[data-tags3268887993-alignment=\"right\"] .Tags3268887993--tagsContainer{justify-content: flex-end}\n" + $id + " .Tags3268887993--tag{box-shadow: " + $params["tagBoxShadow"] + ";border: " + $params["tagBorderSize"] + " solid " + $params["tagBorderColor"] + ";border-radius: " + $params["tagBorderRadius"] + ";cursor: pointer;background-color: " + $params["tagBackgroundColor"] + ";font: " + $params["tagFont"] + ";color: " + $params["tagFontColor"] + ";text-decoration: none;white-space: nowrap;overflow: hidden;text-overflow: ellipsis}\n" + $id + " .Tags3268887993--tag:hover{color: " + $params["tagFontColorHover"] + ";background-color: " + $params["tagBackgroundColorHover"] + "}\n";
 };
 
 /***/ }),
 
-/***/ 447:
-/*!*********************************************!*\
-  !*** ./components/LineShareButton/index.js ***!
-  \*********************************************/
+/***/ 436:
+/*!**********************************!*\
+  !*** ./components/Tags/index.js ***!
+  \**********************************/
 /*! no static exports found */
 /*! all exports used */
 /*! ModuleConcatenation bailout: Module is not an ECMAScript module */
@@ -1111,51 +1007,27 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _componentType = __webpack_require__(/*! ./ds/componentType */ 65);
+var _Tags = __webpack_require__(/*! ./Tags.js */ 652);
 
-var _componentType2 = _interopRequireDefault(_componentType);
+var _TagsSt = __webpack_require__(/*! ./Tags.st.css */ 354);
 
-var _LineShareButton = __webpack_require__(/*! ./LineShareButton */ 397);
-
-var _LineShareButton2 = _interopRequireDefault(_LineShareButton);
-
-var _LineShareButton3 = __webpack_require__(/*! ./LineShareButton.santa */ 846);
-
-var _LineShareButtonSt = __webpack_require__(/*! ./LineShareButton.st.css */ 398);
-
-var _LineShareButtonSt2 = _interopRequireDefault(_LineShareButtonSt);
+var _TagsSt2 = _interopRequireDefault(_TagsSt);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = {
-  componentType: _componentType2.default,
-  component: _LineShareButton2.default,
-  santaComponent: _LineShareButton3.LineShareButtonSanta,
-  skin: _LineShareButtonSt2.default.$skin
+  componentType: 'wixui.Tags',
+  component: _Tags.Tags,
+  santaComponent: _Tags.santaTags,
+  skin: _TagsSt2.default.$skin
 };
 
 /***/ }),
 
-/***/ 65:
-/*!********************************************************!*\
-  !*** ./components/LineShareButton/ds/componentType.js ***!
-  \********************************************************/
-/*! no static exports found */
-/*! all exports used */
-/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-module.exports = 'wixui.LineShareButton';
-
-/***/ }),
-
-/***/ 844:
-/*!****************************************************************!*\
-  !*** ./components/LineShareButton/lineShareButtonLanguages.js ***!
-  \****************************************************************/
+/***/ 652:
+/*!*********************************!*\
+  !*** ./components/Tags/Tags.js ***!
+  \*********************************/
 /*! no static exports found */
 /*! all exports used */
 /*! ModuleConcatenation bailout: Module is not an ECMAScript module */
@@ -1167,94 +1039,19 @@ module.exports = 'wixui.LineShareButton';
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = {
-  en: 'en',
-  ko: 'ko',
-  ja: 'ja',
-  zh: 'zh_Hant',
-  th: 'th',
-  id: 'id'
-};
+exports.santaTags = exports.Tags = undefined;
 
-/***/ }),
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-/***/ 845:
-/*!************************************************************!*\
-  !*** ./components/LineShareButton/lineShareButtonSizes.js ***!
-  \************************************************************/
-/*! no static exports found */
-/*! all exports used */
-/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
-/***/ (function(module, exports, __webpack_require__) {
+var _react = __webpack_require__(/*! react */ 0);
 
-"use strict";
+var _react2 = _interopRequireDefault(_react);
 
+var _propTypes = __webpack_require__(/*! prop-types */ 1);
 
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = {
-  button: function button(lang) {
-    var size = { width: 53, height: 20 };
+var _TagsSt = __webpack_require__(/*! ./Tags.st.css */ 354);
 
-    switch (lang) {
-      case 'ko':
-        size.width = 63;
-        break;
-      case 'ja':
-        size.width = 80;
-        break;
-      case 'zh':
-        size.width = 46;
-        break;
-      case 'th':
-        size.width = 47;
-        break;
-      default:
-    }
-    return size;
-  },
-  classicWithButton: function classicWithButton() {
-    return { width: 35, height: 60 };
-  },
-  classicBig: function classicBig() {
-    return { width: 40, height: 40 };
-  },
-  classicMedium: function classicMedium() {
-    return { width: 30, height: 30 };
-  },
-  classicSmall: function classicSmall() {
-    return { width: 20, height: 20 };
-  },
-  bubbleBig: function bubbleBig() {
-    return { width: 40, height: 40 };
-  },
-  bubbleMedium: function bubbleMedium() {
-    return { width: 30, height: 29 };
-  },
-  bubbleSmall: function bubbleSmall() {
-    return { width: 20, height: 19 };
-  }
-};
-
-/***/ }),
-
-/***/ 846:
-/*!*************************************************************!*\
-  !*** ./components/LineShareButton/LineShareButton.santa.js ***!
-  \*************************************************************/
-/*! no static exports found */
-/*! all exports used */
-/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.LineShareButtonSanta = undefined;
+var _TagsSt2 = _interopRequireDefault(_TagsSt);
 
 var _createReactClass = __webpack_require__(/*! create-react-class */ 17);
 
@@ -1262,96 +1059,118 @@ var _createReactClass2 = _interopRequireDefault(_createReactClass);
 
 var _santaComponents = __webpack_require__(/*! santa-components */ 14);
 
-var _LineShareButton = __webpack_require__(/*! ./LineShareButton */ 397);
-
-var _LineShareButton2 = _interopRequireDefault(_LineShareButton);
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-// import style from './LineShareButton.st.css';
+var Tags = exports.Tags = function Tags(props) {
+  var id = props.id,
+      alignment = props.alignment,
+      verticalSpacing = props.verticalSpacing,
+      horizontalSpacing = props.horizontalSpacing,
+      tags = props.tags,
+      onTagClick = props.onTagClick;
 
-var skinBasedComp = _santaComponents.mixins.skinBasedComp;
+  var tagsContainerStyle = {
+    margin: verticalSpacing / -2 + 'px ' + horizontalSpacing / -2 + 'px'
+  };
+  var tagStyle = {
+    margin: verticalSpacing / 2 + 'px ' + horizontalSpacing / 2 + 'px',
+    maxWidth: 'calc(100% + ' + horizontalSpacing + ')'
+  };
+
+  return _react2.default.createElement(
+    'div',
+    _extends({ id: id }, (0, _TagsSt2.default)('root', { alignment: alignment }, props), { style: props.style }),
+    _react2.default.createElement(
+      'nav',
+      {
+        style: tagsContainerStyle,
+        className: _TagsSt2.default.tagsContainer,
+        'aria-label': 'Tags Navigation'
+      },
+      tags.map(function (_ref, id) {
+        var label = _ref.label,
+            link = _ref.link;
+        return _react2.default.createElement(
+          'a',
+          _extends({
+            'data-hook': 'tag',
+            key: id,
+            tabIndex: '0',
+            style: tagStyle,
+            className: _TagsSt2.default.tag,
+            onClick: function onClick() {
+              return onTagClick(label);
+            }
+          }, link),
+          label
+        );
+      })
+    )
+  );
+};
+
+Tags.displayName = 'CoreTags';
+
+Tags.propTypes = {
+  id: _propTypes.string,
+  className: _propTypes.string,
+  tags: _propTypes.array,
+  horizontalSpacing: _propTypes.number,
+  verticalSpacing: _propTypes.number,
+  alignment: _propTypes.string,
+  onTagClick: _propTypes.func,
+  style: _propTypes.object
+};
+
+var skinBasedComp = _santaComponents.mixins.skinBasedComp,
+    runTimeCompData = _santaComponents.mixins.runTimeCompData;
 
 
 var getComponentSkins = function getComponentSkins() {
   return {
-    // TODO: use style.$skin when https://jira.wixpress.com/browse/INF-395 is solved
-    // 'wixui.skins.LineShareButton': style.$skin,
-    'wixui.skins.LineShareButton': {
-      $render: function $render() {
-        return '';
-      }
-    }
+    'wixui.skins.Tags': _TagsSt2.default.$skin
   };
 };
 
-/**
- * @class components.lineShareButton
- * @extends {core.skinBasedComp}
- */
-var LineShareButtonSanta = exports.LineShareButtonSanta = (0, _createReactClass2.default)({
-  displayName: 'LineShareButton',
+var santaTags = exports.santaTags = (0, _createReactClass2.default)({
+  displayName: 'Tags',
 
-  mixins: [skinBasedComp(getComponentSkins())],
+  mixins: [skinBasedComp(getComponentSkins()), runTimeCompData],
 
   propTypes: {
-    styleId: _santaComponents.santaTypesDefinitions.Component.styleId,
+    tagList: _santaComponents.santaTypesDefinitions.Tags.tagList,
+    styleId: _santaComponents.santaTypesDefinitions.Component.styleId.isRequired,
     compProp: _santaComponents.santaTypesDefinitions.Component.compProp.isRequired,
-    externalScriptLoader: _santaComponents.santaTypesDefinitions.SiteAspects.externalScriptLoader.isRequired,
-    userLanguage: _santaComponents.santaTypesDefinitions.WixUserSantaTypes.userLanguage.isRequired,
-    currentUrl: _santaComponents.santaTypesDefinitions.currentUrl,
-    currentLanguage: _santaComponents.santaTypesDefinitions.RendererModel.multilingual.currentLanguage,
-    isMLEnabled: _santaComponents.santaTypesDefinitions.RendererModel.multilingual.isEnabled
+    compData: _santaComponents.santaTypesDefinitions.Component.compData.isRequired,
+    style: _santaComponents.santaTypesDefinitions.Component.style.isRequired
   },
 
   statics: {
     getComponentSkins: getComponentSkins
   },
 
-  loadButton: function loadButton() {
-    if (typeof LineIt === 'undefined') {
-      return false;
-    }
-
-    LineIt.loadButton();
-    return true;
-  },
-  loadScript: function loadScript() {
-    var _this = this;
-
-    this.props.externalScriptLoader.loadScript('LINE', function () {
-      _this.loadButton();
-    }, {
-      currentUrl: this.props.currentUrl.full
-    });
-  },
-  componentDidMount: function componentDidMount() {
-    if (!this.loadButton()) {
-      this.loadScript();
-    }
-  },
-  componentDidUpdate: function componentDidUpdate(prevProps) {
-    if (this.props.compProp.buttonType !== prevProps.compProp.buttonType) {
-      this.loadButton();
-    }
+  onTagClick: function onTagClick(tag) {
+    this.handleAction(_santaComponents.constants.SITE.ACTION_TYPES.TAG_CLICK, { tag: tag });
   },
   getSkinProperties: function getSkinProperties() {
-    var buttonType = this.props.compProp.buttonType || 'button';
-    var lang = this.props.isMLEnabled && this.props.currentLanguage.languageCode || this.props.userLanguage;
-    var props = {
-      className: this.props.styleId,
-      buttonType: buttonType,
-      lang: lang,
-      url: this.props.currentUrl.full
-    };
+    var _props = this.props,
+        styleId = _props.styleId,
+        _props$compProp = _props.compProp,
+        horizontalSpacing = _props$compProp.horizontalSpacing,
+        verticalSpacing = _props$compProp.verticalSpacing,
+        alignment = _props$compProp.alignment;
+
 
     return {
       '': {
-        children: _santaComponents.utils.createReactElement(_LineShareButton2.default, props),
-        style: {
-          height: '',
-          width: ''
-        }
+        parentConst: Tags,
+        className: styleId,
+        tags: this.props.tagList,
+        horizontalSpacing: horizontalSpacing,
+        verticalSpacing: verticalSpacing,
+        alignment: alignment,
+        onTagClick: this.onTagClick,
+        style: this.props.style
       }
     };
   }
@@ -1420,4 +1239,4 @@ module.exports = invariant;
 /***/ })
 
 }]);
-//# sourceMappingURL=wixui.LineShareButton.chunk.js.map
+//# sourceMappingURL=wixui.Tags.chunk.js.map

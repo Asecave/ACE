@@ -1,4 +1,4 @@
-((typeof self !== 'undefined' ? self : this)["webpackJsonp_wix_ui_santa"] = (typeof self !== 'undefined' ? self : this)["webpackJsonp_wix_ui_santa"] || []).push([[44],{
+((typeof self !== 'undefined' ? self : this)["webpackJsonp_wix_ui_santa"] = (typeof self !== 'undefined' ? self : this)["webpackJsonp_wix_ui_santa"] || []).push([[53],{
 
 /***/ 12:
 /*!**********************************************!*\
@@ -100,494 +100,6 @@ module.exports = shouldUseNative() ? Object.assign : function (target, source) {
 
 	return to;
 };
-
-
-/***/ }),
-
-/***/ 131:
-/*!***************************************************!*\
-  !*** ../node_modules/wix-ui-core/radio-button.js ***!
-  \***************************************************/
-/*! no static exports found */
-/*! all exports used */
-/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__(/*! ./dist/src/components/radio-button */ 132);
-
-
-/***/ }),
-
-/***/ 132:
-/*!*****************************************************************************!*\
-  !*** ../node_modules/wix-ui-core/dist/src/components/radio-button/index.js ***!
-  \*****************************************************************************/
-/*! no static exports found */
-/*! all exports used */
-/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-Object.defineProperty(exports, "__esModule", { value: true });
-var RadioButton_1 = __webpack_require__(/*! ./RadioButton */ 133);
-exports.RadioButton = RadioButton_1.RadioButton;
-//# sourceMappingURL=index.js.map
-
-/***/ }),
-
-/***/ 133:
-/*!***********************************************************************************!*\
-  !*** ../node_modules/wix-ui-core/dist/src/components/radio-button/RadioButton.js ***!
-  \***********************************************************************************/
-/*! no static exports found */
-/*! all exports used */
-/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-Object.defineProperty(exports, "__esModule", { value: true });
-var tslib_1 = __webpack_require__(/*! tslib */ 6);
-var React = __webpack_require__(/*! react */ 0);
-var RadioButton_st_css_1 = __webpack_require__(/*! ./RadioButton.st.css */ 134);
-var noop = function () { return null; };
-var RadioButton = /** @class */ (function (_super) {
-    tslib_1.__extends(RadioButton, _super);
-    function RadioButton() {
-        var _this = _super !== null && _super.apply(this, arguments) || this;
-        _this.focusedByMouse = false;
-        _this.state = {
-            focused: false,
-            focusVisible: false,
-        };
-        _this.handleClick = function (event) {
-            _this.focusedByMouse = true;
-            _this.handleInputChange(event);
-        };
-        _this.handleInputChange = function (event) {
-            if (!_this.props.disabled) {
-                _this.props.onChange(tslib_1.__assign({ value: _this.props.value }, event));
-                if (_this.radioRef) {
-                    _this.radioRef.focus();
-                }
-            }
-        };
-        _this.onHover = function (event) {
-            _this.props.onHover(tslib_1.__assign({ value: _this.props.value }, event));
-        };
-        _this.onFocus = function () {
-            _this.setState({ focused: true, focusVisible: !_this.focusedByMouse });
-        };
-        _this.onInputBlur = function () {
-            _this.setState({ focused: false, focusVisible: false });
-            _this.focusedByMouse = false;
-        };
-        _this.handleInputKeyDown = function () {
-            _this.setState({ focusVisible: true });
-        };
-        _this.radioRef = undefined;
-        return _this;
-    }
-    RadioButton.prototype.render = function () {
-        var _this = this;
-        var _a = this.props, value = _a.value, name = _a.name, checkedIcon = _a.checkedIcon, uncheckedIcon = _a.uncheckedIcon, label = _a.label, checked = _a.checked, disabled = _a.disabled, required = _a.required, onIconBlur = _a.onIconBlur;
-        var focused = this.state.focused;
-        return (React.createElement("div", tslib_1.__assign({}, RadioButton_st_css_1.default('root', {
-            checked: checked,
-            disabled: disabled,
-            focused: focused,
-            'focus-visible': this.state.focusVisible,
-        }, this.props), { onChange: this.handleInputChange, onClick: this.handleClick, role: "radio", "aria-checked": checked ? checked : false }),
-            React.createElement("input", { type: "radio", className: RadioButton_st_css_1.default.hiddenRadio, disabled: disabled, required: required, onFocus: this.onFocus, onBlur: this.onInputBlur, checked: checked, value: value, name: name, onChange: function () { return null; }, onKeyDown: this.handleInputKeyDown, ref: function (radio) { return (_this.radioRef = radio); }, "aria-label": this.props['aria-label'] }),
-            React.createElement("span", { className: RadioButton_st_css_1.default.icon, onMouseEnter: this.onHover, onMouseLeave: onIconBlur }, checked ? checkedIcon : uncheckedIcon),
-            React.createElement("span", { className: RadioButton_st_css_1.default.label }, label)));
-    };
-    RadioButton.displayName = 'RadioButton';
-    RadioButton.defaultProps = {
-        onChange: noop,
-        onHover: noop,
-        onBlur: noop,
-    };
-    return RadioButton;
-}(React.Component));
-exports.RadioButton = RadioButton;
-//# sourceMappingURL=RadioButton.js.map
-
-/***/ }),
-
-/***/ 134:
-/*!***************************************************************************************!*\
-  !*** ../node_modules/wix-ui-core/dist/src/components/radio-button/RadioButton.st.css ***!
-  \***************************************************************************************/
-/*! exports provided: default */
-/*! all exports used */
-/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
-/***/ (function(module, exports, __webpack_require__) {
-
-Object.defineProperty(exports, "__esModule", { value: true })
-
-exports.default = __webpack_require__.stylable.create(
-  "root",
-  "RadioButton1232350729",
-  {"root":"RadioButton1232350729--root","icon":"RadioButton1232350729--icon","label":"RadioButton1232350729--label","hiddenRadio":"RadioButton1232350729--hiddenRadio"},
-  "",
-  1,
-  /*! ../node_modules/wix-ui-core/dist/src/components/radio-button/RadioButton.st.css */ 134
-);
-
-
-
-/***/ }),
-
-/***/ 135:
-/*!***********************************!*\
-  !*** ./components/Rating/util.js ***!
-  \***********************************/
-/*! no static exports found */
-/*! all exports used */
-/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.precisionRound = precisionRound;
-exports.formatReviewsCount = formatReviewsCount;
-function precisionRound(number, precision) {
-  var factor = Math.pow(10, precision);
-  return Math.round(number * factor) / factor;
-}
-
-function formatReviewsCount(reviewsCount) {
-  if (reviewsCount < 1000) {
-    return "" + reviewsCount;
-  } else if (reviewsCount < 9950) {
-    return precisionRound(reviewsCount / 1000, 1) + "K";
-  } else if (reviewsCount < 999500) {
-    return precisionRound(reviewsCount / 1000, 0) + "K";
-  } else if (reviewsCount < 9950000) {
-    return precisionRound(reviewsCount / 1e6, 1) + "M";
-  } else {
-    return precisionRound(reviewsCount / 1e6, 0) + "M";
-  }
-}
-
-/***/ }),
-
-/***/ 136:
-/*!*******************************************!*\
-  !*** ./components/Rating/santa-layout.js ***!
-  \*******************************************/
-/*! no static exports found */
-/*! all exports used */
-/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
-
-var ratingsDisplayLayout = exports.ratingsDisplayLayout = function ratingsDisplayLayout(compNode, props) {
-  var getElement = function getElement(dataHook) {
-    return compNode.querySelector('[data-hook=\'' + dataHook + '\']');
-  };
-
-  var getWidthWithMargins = function getWidthWithMargins(elemHook) {
-    var elem = getElement(elemHook);
-    if (!elem) {
-      return 0;
-    }
-
-    var style = window.getComputedStyle(elem);
-    return parseInt(style.marginRight, 10) + elem.offsetWidth + parseInt(style.marginLeft, 10);
-  };
-
-  var getHeight = function getHeight(elemHook) {
-    var elem = getElement(elemHook);
-    if (!elem) {
-      return 0;
-    }
-    return elem.offsetHeight;
-  };
-
-  var getHeightWithMargins = function getHeightWithMargins(elemHook) {
-    var elem = getElement(elemHook);
-    if (!elem) {
-      return 0;
-    }
-
-    var style = window.getComputedStyle(elem);
-    return parseInt(style.marginTop, 10) + elem.offsetHeight + parseInt(style.marginBottom, 10);
-  };
-
-  if (props.mode === 'display') {
-    var iconsWidth = getWidthWithMargins('rating-icons');
-    var iconsHeight = getHeight('rating-icons');
-
-    var ratingWidth = getWidthWithMargins('rating-display-rating');
-    var ratingHeight = getHeight('rating-display-rating');
-
-    var reviewsCountWidth = getWidthWithMargins('rating-display-reviews-count');
-    var reviewsCountHeight = getHeight('rating-display-reviews-count');
-
-    var placeholderTextHeight = getHeight('rating-display-placeholder');
-
-    var resultWidth = parseInt(iconsWidth, 10) + parseInt(ratingWidth, 10) + parseInt(reviewsCountWidth, 10) + 'px';
-    compNode.style.minWidth = resultWidth;
-
-    var iconsHeightVal = parseInt(iconsHeight, 10);
-    var ratingHeightVal = parseInt(ratingHeight, 10);
-    var reviewsCountHeightVal = parseInt(reviewsCountHeight, 10);
-    var placeholderTextHeightVal = parseInt(placeholderTextHeight, 10);
-
-    var calculatedHeight = Math.max(iconsHeightVal, ratingHeightVal, reviewsCountHeightVal, placeholderTextHeightVal);
-    var resultHeight = calculatedHeight > 0 ? calculatedHeight + 'px' : '1.5em';
-    compNode.style.height = resultHeight;
-  } else if (props.labelPosition === 'side') {
-    // input mode - labelPosition 'side'
-    var additionalWidthForText = props.showTitle || props.showLabels ? Math.max.apply(Math, _toConsumableArray(['1', '2', '3', '4', '5', 'title'].map(function (lbl) {
-      if (!getElement('label_' + lbl)) {
-        return 0;
-      }
-      // set the styles to have labels in their minimal width, then measure, then reset width.
-      var container = getElement('label_' + lbl).parentElement;
-      container.style.width = 0;
-      var measure = getWidthWithMargins('label_' + lbl);
-      container.style.width = '';
-      return measure;
-    }))) : 0;
-
-    var _iconsWidth = getWidthWithMargins('rating-icons');
-
-    compNode.style.minWidth = _iconsWidth + additionalWidthForText + 'px';
-    compNode.style.height = Math.max(getHeight('labels-container'), getHeight('rating-icons')) + 'px';
-  } else {
-    // input mode - either labelPosition 'top' or 'bottom'
-    var labelsContainerWidth = getWidthWithMargins('labels-container');
-    compNode.style.minWidth = labelsContainerWidth + 'px';
-    compNode.style.height = getHeightWithMargins('labels-container') + getHeightWithMargins('rating-icons') + 'px';
-  }
-};
-
-/***/ }),
-
-/***/ 137:
-/*!******************************************!*\
-  !*** ./components/Rating/default-svg.js ***!
-  \******************************************/
-/*! no static exports found */
-/*! all exports used */
-/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.defaultSvg = undefined;
-
-var _react = __webpack_require__(/*! react */ 0);
-
-var React = _interopRequireWildcard(_react);
-
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
-
-var defaultSvg = exports.defaultSvg = React.createElement("svg", { version: "1.1", id: "Layer_1", xmlns: "http://www.w3.org/2000/svg", width: "200px", height: "200px", xmlnsXlink: "http://www.w3.org/1999/xlink", xmlSpace: "preserve", viewBox: "0 0 200 200" });
-
-/***/ }),
-
-/***/ 138:
-/*!*************************************!*\
-  !*** ../node_modules/uuid/index.js ***!
-  \*************************************/
-/*! no static exports found */
-/*! all exports used */
-/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
-/***/ (function(module, exports, __webpack_require__) {
-
-var v1 = __webpack_require__(/*! ./v1 */ 139);
-var v4 = __webpack_require__(/*! ./v4 */ 140);
-
-var uuid = v4;
-uuid.v1 = v1;
-uuid.v4 = v4;
-
-module.exports = uuid;
-
-
-/***/ }),
-
-/***/ 139:
-/*!**********************************!*\
-  !*** ../node_modules/uuid/v1.js ***!
-  \**********************************/
-/*! no static exports found */
-/*! all exports used */
-/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
-/***/ (function(module, exports, __webpack_require__) {
-
-var rng = __webpack_require__(/*! ./lib/rng */ 49);
-var bytesToUuid = __webpack_require__(/*! ./lib/bytesToUuid */ 50);
-
-// **`v1()` - Generate time-based UUID**
-//
-// Inspired by https://github.com/LiosK/UUID.js
-// and http://docs.python.org/library/uuid.html
-
-var _nodeId;
-var _clockseq;
-
-// Previous uuid creation time
-var _lastMSecs = 0;
-var _lastNSecs = 0;
-
-// See https://github.com/broofa/node-uuid for API details
-function v1(options, buf, offset) {
-  var i = buf && offset || 0;
-  var b = buf || [];
-
-  options = options || {};
-  var node = options.node || _nodeId;
-  var clockseq = options.clockseq !== undefined ? options.clockseq : _clockseq;
-
-  // node and clockseq need to be initialized to random values if they're not
-  // specified.  We do this lazily to minimize issues related to insufficient
-  // system entropy.  See #189
-  if (node == null || clockseq == null) {
-    var seedBytes = rng();
-    if (node == null) {
-      // Per 4.5, create and 48-bit node id, (47 random bits + multicast bit = 1)
-      node = _nodeId = [
-        seedBytes[0] | 0x01,
-        seedBytes[1], seedBytes[2], seedBytes[3], seedBytes[4], seedBytes[5]
-      ];
-    }
-    if (clockseq == null) {
-      // Per 4.2.2, randomize (14 bit) clockseq
-      clockseq = _clockseq = (seedBytes[6] << 8 | seedBytes[7]) & 0x3fff;
-    }
-  }
-
-  // UUID timestamps are 100 nano-second units since the Gregorian epoch,
-  // (1582-10-15 00:00).  JSNumbers aren't precise enough for this, so
-  // time is handled internally as 'msecs' (integer milliseconds) and 'nsecs'
-  // (100-nanoseconds offset from msecs) since unix epoch, 1970-01-01 00:00.
-  var msecs = options.msecs !== undefined ? options.msecs : new Date().getTime();
-
-  // Per 4.2.1.2, use count of uuid's generated during the current clock
-  // cycle to simulate higher resolution clock
-  var nsecs = options.nsecs !== undefined ? options.nsecs : _lastNSecs + 1;
-
-  // Time since last uuid creation (in msecs)
-  var dt = (msecs - _lastMSecs) + (nsecs - _lastNSecs)/10000;
-
-  // Per 4.2.1.2, Bump clockseq on clock regression
-  if (dt < 0 && options.clockseq === undefined) {
-    clockseq = clockseq + 1 & 0x3fff;
-  }
-
-  // Reset nsecs if clock regresses (new clockseq) or we've moved onto a new
-  // time interval
-  if ((dt < 0 || msecs > _lastMSecs) && options.nsecs === undefined) {
-    nsecs = 0;
-  }
-
-  // Per 4.2.1.2 Throw error if too many uuids are requested
-  if (nsecs >= 10000) {
-    throw new Error('uuid.v1(): Can\'t create more than 10M uuids/sec');
-  }
-
-  _lastMSecs = msecs;
-  _lastNSecs = nsecs;
-  _clockseq = clockseq;
-
-  // Per 4.1.4 - Convert from unix epoch to Gregorian epoch
-  msecs += 12219292800000;
-
-  // `time_low`
-  var tl = ((msecs & 0xfffffff) * 10000 + nsecs) % 0x100000000;
-  b[i++] = tl >>> 24 & 0xff;
-  b[i++] = tl >>> 16 & 0xff;
-  b[i++] = tl >>> 8 & 0xff;
-  b[i++] = tl & 0xff;
-
-  // `time_mid`
-  var tmh = (msecs / 0x100000000 * 10000) & 0xfffffff;
-  b[i++] = tmh >>> 8 & 0xff;
-  b[i++] = tmh & 0xff;
-
-  // `time_high_and_version`
-  b[i++] = tmh >>> 24 & 0xf | 0x10; // include version
-  b[i++] = tmh >>> 16 & 0xff;
-
-  // `clock_seq_hi_and_reserved` (Per 4.2.2 - include variant)
-  b[i++] = clockseq >>> 8 | 0x80;
-
-  // `clock_seq_low`
-  b[i++] = clockseq & 0xff;
-
-  // `node`
-  for (var n = 0; n < 6; ++n) {
-    b[i + n] = node[n];
-  }
-
-  return buf ? buf : bytesToUuid(b);
-}
-
-module.exports = v1;
-
-
-/***/ }),
-
-/***/ 140:
-/*!**********************************!*\
-  !*** ../node_modules/uuid/v4.js ***!
-  \**********************************/
-/*! no static exports found */
-/*! all exports used */
-/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
-/***/ (function(module, exports, __webpack_require__) {
-
-var rng = __webpack_require__(/*! ./lib/rng */ 49);
-var bytesToUuid = __webpack_require__(/*! ./lib/bytesToUuid */ 50);
-
-function v4(options, buf, offset) {
-  var i = buf && offset || 0;
-
-  if (typeof(options) == 'string') {
-    buf = options === 'binary' ? new Array(16) : null;
-    options = null;
-  }
-  options = options || {};
-
-  var rnds = options.random || (options.rng || rng)();
-
-  // Per 4.4, set bits for version and `clock_seq_hi_and_reserved`
-  rnds[6] = (rnds[6] & 0x0f) | 0x40;
-  rnds[8] = (rnds[8] & 0x3f) | 0x80;
-
-  // Copy bytes to buffer, if provided
-  if (buf) {
-    for (var ii = 0; ii < 16; ++ii) {
-      buf[i + ii] = rnds[ii];
-    }
-  }
-
-  return buf || bytesToUuid(rnds);
-}
-
-module.exports = v4;
 
 
 /***/ }),
@@ -1452,37 +964,10 @@ module.exports = emptyObject;
 
 /***/ }),
 
-/***/ 38:
-/*!*****************************************!*\
-  !*** ./components/Rating/Rating.st.css ***!
-  \*****************************************/
-/*! exports provided: default */
-/*! all exports used */
-/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
-/***/ (function(module, exports, __webpack_require__) {
-
-Object.defineProperty(exports, "__esModule", { value: true })
-
-exports.default = __webpack_require__.stylable.create(
-  "root",
-  "Rating2556983050",
-  {"root":"Rating2556983050--root","displayMode":"Rating2556983050--displayMode","inputMode":"Rating2556983050--inputMode","stars":"Rating2556983050--stars","ratingValue":"Rating2556983050--ratingValue","reviewsCount":"Rating2556983050--reviewsCount","noReviewsPlaceholder":"Rating2556983050--noReviewsPlaceholder","labelsContainer":"Rating2556983050--labelsContainer","label":"Rating2556983050--label","title":"Rating2556983050--title","icon":"Rating2556983050--icon","halfIcon":"Rating2556983050--halfIcon","radioButton":"Rating2556983050--radioButton","filledShapeColor":"color_5","emptyShapeColor":"color_15","shapeBorderColor":"color_32","shapeBorderWidth":"3","labelFont":"font_8","labelFontColor":"color_15","errorFilledShapeColor":"color_7","errorShapeBorderColor":"color_37","errorShapeBorderWidth":"7","errorLabelFontColor":"color_17"},
-  "",
-  7,
-  /*! ./components/Rating/Rating.st.css */ 38
-);
-
-exports.default.$skin = {"params":{"filledShapeColor":"COLOR_ALPHA","emptyShapeColor":"COLOR_ALPHA","shapeBorderColor":"BORDER_COLOR_ALPHA","shapeBorderWidth":"BORDER_SIZE","labelFont":"FONT","labelFontColor":"TEXT_COLOR","errorFilledShapeColor":"COLOR_ALPHA","errorShapeBorderColor":"BORDER_COLOR_ALPHA","errorShapeBorderWidth":"BORDER_SIZE","errorLabelFontColor":"TEXT_COLOR"},"paramsDefaults":{"filledShapeColor":"color_5","emptyShapeColor":"color_15","shapeBorderColor":"color_32","shapeBorderWidth":"3","labelFont":"font_8","labelFontColor":"color_15","errorFilledShapeColor":"color_7","errorShapeBorderColor":"color_37","errorShapeBorderWidth":"7","errorLabelFontColor":"color_17"}};
-exports.default.$skin.$render = function render_css($id, $params, $functions) {
-  return "\n" + $id + " .RadioButton1232350729--root{display: inline-block}\n" + $id + " .RadioButton1232350729--icon{cursor: pointer;height: auto}\n" + $id + " .RadioButton1232350729--label{}\n" + $id + " .RadioButton1232350729--root[data-radiobutton1232350729-checked] .RadioButton1232350729--icon, " + $id + " .RadioButton1232350729--root:hover .RadioButton1232350729--icon{}\n" + $id + " .RadioButton1232350729--root[data-radiobutton1232350729-disabled]{filter: grayscale(75%);opacity: 0.7}\n" + $id + " .RadioButton1232350729--hiddenRadio{position: absolute;overflow: hidden;height: 1px;width: 1px;margin: -1px;padding: 0;border: 0;opacity: 0}\n" + $id + ".Rating2556983050--root{display: inline-flex;align-items: center;font: " + $params["labelFont"] + "}\n" + $id + ".Rating2556983050--root[data-rating2556983050-rtl] .Rating2556983050--displayMode, " + $id + ".Rating2556983050--root[data-rating2556983050-rtl] .Rating2556983050--inputMode{direction: rtl}\n" + $id + " .Rating2556983050--displayMode{display: inline-flex;width: 100%;align-items: center}\n" + $id + ".Rating2556983050--root[data-rating2556983050-alignment=\"center\"] .Rating2556983050--displayMode{justify-content: center}\n" + $id + ".Rating2556983050--root[data-rating2556983050-alignment=\"right\"] .Rating2556983050--displayMode, " + $id + ".Rating2556983050--root[data-rating2556983050-rtl][data-rating2556983050-alignment=\"left\"] .Rating2556983050--displayMode{justify-content: flex-end}\n" + $id + ".Rating2556983050--root[data-rating2556983050-alignment=\"left\"] .Rating2556983050--displayMode, " + $id + ".Rating2556983050--root[data-rating2556983050-rtl][data-rating2556983050-alignment=\"right\"] .Rating2556983050--displayMode{justify-content: flex-start}\n" + $id + " .Rating2556983050--inputMode{display: inline-flex;flex-direction: column;width: 100%;text-align: center;align-items: center}\n" + $id + ".Rating2556983050--root[data-rating2556983050-alignment=\"right\"] .Rating2556983050--inputMode{text-align: right;align-items: flex-end}\n" + $id + ".Rating2556983050--root[data-rating2556983050-rtl][data-rating2556983050-alignment=\"right\"] .Rating2556983050--inputMode{align-items: flex-start}\n" + $id + ".Rating2556983050--root[data-rating2556983050-alignment=\"left\"] .Rating2556983050--inputMode{text-align: left;align-items: flex-start}\n" + $id + ".Rating2556983050--root[data-rating2556983050-rtl][data-rating2556983050-alignment=\"left\"] .Rating2556983050--inputMode{align-items: flex-end}\n" + $id + ".Rating2556983050--root[data-rating2556983050-labelposition=\"side\"] .Rating2556983050--inputMode, " + $id + ".Rating2556983050--root[data-rating2556983050-rtl][data-rating2556983050-labelposition=\"side\"] .Rating2556983050--inputMode{flex-direction: row;align-items: center}\n" + $id + " .Rating2556983050--stars{order: 2;display: flex}\n" + $id + ".Rating2556983050--root[data-rating2556983050-mode=\"input\"] .Rating2556983050--stars{cursor: pointer}\n" + $id + ".Rating2556983050--root[data-rating2556983050-disabled] .Rating2556983050--stars{pointer-events: none}\n" + $id + " .Rating2556983050--ratingValue, " + $id + " .Rating2556983050--reviewsCount, " + $id + " .Rating2556983050--noReviewsPlaceholder{color: " + $params["labelFontColor"] + ";line-height: 1.5}\n" + $id + " .Rating2556983050--ratingValue{order: 1;align-self: center}\n" + $id + " .Rating2556983050--reviewsCount{order: 3;align-self: center;white-space: nowrap}\n" + $id + " .Rating2556983050--noReviewsPlaceholder{align-self: center;white-space: nowrap;overflow-x: hidden}\n" + $id + " .Rating2556983050--labelsContainer{display: inline-flex;width: 100%;order: 1;overflow: hidden;align-items: flex-end}\n" + $id + ".Rating2556983050--root[data-rating2556983050-labelposition=\"bottom\"] .Rating2556983050--labelsContainer{align-items: flex-start}\n" + $id + ".Rating2556983050--root[data-rating2556983050-labelposition=\"side\"] .Rating2556983050--labelsContainer{align-items: center}\n" + $id + " .Rating2556983050--label, " + $id + " .Rating2556983050--title{color: " + $params["labelFontColor"] + ";line-height: 1.5;flex-shrink: 0;display: block;width: 100%}\n" + $id + ".Rating2556983050--root[data-rating2556983050-error] .Rating2556983050--label, " + $id + ".Rating2556983050--root[data-preview=\"error\"] .Rating2556983050--label, " + $id + ".Rating2556983050--root[data-rating2556983050-error] .Rating2556983050--title, " + $id + ".Rating2556983050--root[data-preview=\"error\"] .Rating2556983050--title{color: " + $params["errorLabelFontColor"] + "}\n" + $id + ".Rating2556983050--root[data-rating2556983050-labelposition=\"side\"] .Rating2556983050--stars{align-self: center}\n" + $id + " .Rating2556983050--label{visibility: hidden}\n" + $id + ".Rating2556983050--root[data-rating2556983050-labelposition=\"bottom\"] .Rating2556983050--stars, " + $id + ".Rating2556983050--root[data-rating2556983050-labelposition=\"side\"] .Rating2556983050--stars{order: 0}\n" + $id + ".Rating2556983050--root[data-rating2556983050-ratingafter] .Rating2556983050--stars{order: 0}\n" + $id + ".Rating2556983050--root[data-rating2556983050-noreviewsmode=\"nothing\"][data-rating2556983050-editormode] .Rating2556983050--stars, " + $id + ".Rating2556983050--root[data-rating2556983050-noreviewsmode=\"nothing\"][data-rating2556983050-editormode] .Rating2556983050--ratingValue, " + $id + ".Rating2556983050--root[data-rating2556983050-noreviewsmode=\"nothing\"][data-rating2556983050-editormode] .Rating2556983050--reviewsCount{opacity: 0.15}\n" + $id + " .Rating2556983050--icon{display: block;position: relative;stroke: " + $params["shapeBorderColor"] + ";stroke-width: " + $params["shapeBorderWidth"] + ";fill: " + $params["emptyShapeColor"] + "}\n" + $id + " .Rating2556983050--icon path{fill: " + $params["emptyShapeColor"] + "}\n" + $id + " .Rating2556983050--icon[data-rating2556983050-checked] path{fill: " + $params["filledShapeColor"] + "}\n" + $id + " .Rating2556983050--icon svg{display: block;height: 100%;width: 100%;transform: translateZ(0)}\n" + $id + " .Rating2556983050--halfIcon{position: absolute;top: 0;overflow: hidden}\n" + $id + ".Rating2556983050--root[data-rating2556983050-mode=\"display\"] .Rating2556983050--icon{cursor: default}\n" + $id + ".Rating2556983050--root[data-rating2556983050-error] .Rating2556983050--icon:not([data-rating2556983050-checked]), " + $id + ".Rating2556983050--root[data-preview=\"error\"] .Rating2556983050--icon{stroke: " + $params["errorShapeBorderColor"] + ";stroke-width: " + $params["errorShapeBorderWidth"] + "}\n" + $id + ".Rating2556983050--root[data-rating2556983050-error] .Rating2556983050--icon:not([data-rating2556983050-checked]) path, " + $id + ".Rating2556983050--root[data-preview=\"error\"] .Rating2556983050--icon path{fill: " + $params["errorFilledShapeColor"] + "}\n" + $id + " .Rating2556983050--radioButton{}\n";
-};
-
-/***/ }),
-
-/***/ 439:
-/*!********************************************!*\
-  !*** ./components/RatingsDisplay/index.js ***!
-  \********************************************/
+/***/ 224:
+/*!******************************************!*\
+  !*** ./legacy/utils/namespaceClasses.js ***!
+  \******************************************/
 /*! no static exports found */
 /*! all exports used */
 /*! ModuleConcatenation bailout: Module is not an ECMAScript module */
@@ -1495,75 +980,25 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _RatingsDisplay = __webpack_require__(/*! ./RatingsDisplay.santa */ 661);
-
-var _Rating = __webpack_require__(/*! ../Rating/Rating */ 48);
-
-var _RatingSt = __webpack_require__(/*! ../Rating/Rating.st.css */ 38);
-
-var _RatingSt2 = _interopRequireDefault(_RatingSt);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-exports.default = {
-  componentType: 'wixui.RatingsDisplay',
-  component: _Rating.Rating,
-  santaComponent: _RatingsDisplay.ratingsDisplay,
-  skin: _RatingSt2.default.$skin
-};
-
-/***/ }),
-
-/***/ 48:
-/*!*************************************!*\
-  !*** ./components/Rating/Rating.js ***!
-  \*************************************/
-/*! no static exports found */
-/*! all exports used */
-/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.Rating = exports.NoReviewsMode = exports.SplitRatingIcon = exports.RatingIcon = undefined;
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; /* eslint-disable complexity*/
+exports.default = namespaceClasses;
 
 var _react = __webpack_require__(/*! react */ 0);
 
-var React = _interopRequireWildcard(_react);
-
-var _reactDom = __webpack_require__(/*! react-dom */ 11);
-
-var ReactDOM = _interopRequireWildcard(_reactDom);
-
-var _radioButton = __webpack_require__(/*! wix-ui-core/radio-button */ 131);
-
-var _util = __webpack_require__(/*! ./util */ 135);
-
-var _santaLayout = __webpack_require__(/*! ./santa-layout */ 136);
-
-var _RatingSt = __webpack_require__(/*! ./Rating.st.css */ 38);
-
-var _RatingSt2 = _interopRequireDefault(_RatingSt);
+var _react2 = _interopRequireDefault(_react);
 
 var _propTypes = __webpack_require__(/*! prop-types */ 1);
 
-var _defaultSvg = __webpack_require__(/*! ./default-svg */ 137);
+var _hoistNonReactMethods = __webpack_require__(/*! hoist-non-react-methods */ 60);
 
-var _uuid = __webpack_require__(/*! uuid */ 138);
-
-var _uuid2 = _interopRequireDefault(_uuid);
+var _hoistNonReactMethods2 = _interopRequireDefault(_hoistNonReactMethods);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -1571,898 +1006,57 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-var noop = function noop() {
-  return null;
-};
-var fiveItems = [1, 2, 3, 4, 5];
-
-var RatingIcon = exports.RatingIcon = function RatingIcon(props) {
-  var svg = props.svg,
-      checked = props.checked,
-      size = props.size,
-      split = props.split;
-
-  return React.createElement(
-    'span',
-    _extends({}, (0, _RatingSt2.default)('icon', { checked: checked, split: split }, props), { style: { height: size + 'px', width: size + 'px' } }),
-    svg
-  );
+var isStatelessComponent = function isStatelessComponent(Component) {
+  return !(Component.prototype && Component.prototype.render);
 };
 
-var SplitRatingIcon = exports.SplitRatingIcon = function SplitRatingIcon(_ref) {
-  var svg = _ref.svg,
-      size = _ref.size,
-      rtl = _ref.rtl;
+function namespaceClasses(Component, classes) {
+  var Namespaced = function (_React$Component) {
+    _inherits(Namespaced, _React$Component);
 
-  return React.createElement(
-    'span',
-    { className: _RatingSt2.default.icon },
-    React.createElement(RatingIcon, { split: true, svg: svg, size: size }),
-    React.createElement(
-      'div',
-      {
-        className: _RatingSt2.default.halfIcon,
-        style: {
-          height: size + 'px',
-          width: size / 2 + 'px',
-          left: (rtl ? size / 2 : 0) + 'px'
-        }
-      },
-      React.createElement(RatingIcon, { checked: true, split: true, svg: svg, size: size })
-    )
-  );
-};
+    function Namespaced() {
+      _classCallCheck(this, Namespaced);
 
-RatingIcon.propTypes = {
-  checked: _propTypes.bool,
-  svg: _propTypes.node,
-  size: _propTypes.number,
-  split: _propTypes.bool
-};
-
-SplitRatingIcon.propTypes = {
-  svg: _propTypes.node,
-  size: _propTypes.number,
-  rtl: _propTypes.bool
-};
-
-var RatingIcons = function RatingIcons(props) {
-  var onChange = props.onChange,
-      checkedPredicate = props.checkedPredicate,
-      onHover = props.onHover,
-      shapeSpacing = props.shapeSpacing,
-      rtl = props.rtl,
-      labels = props.labels,
-      rating = props.rating,
-      onBlur = props.onBlur,
-      uncheckedIcon = props.uncheckedIcon,
-      checkedIconPredicate = props.checkedIconPredicate,
-      shapeSize = props.shapeSize,
-      required = props.required,
-      mode = props.mode,
-      labelPosition = props.labelPosition,
-      showLabels = props.showLabels,
-      showTitle = props.showTitle;
-
-  var name = (0, _uuid2.default)();
-
-  var getStarsStyle = function getStarsStyle() {
-    var horizontalMargins = void 0,
-        verticalMargins = void 0;
-
-    if (mode === 'input' && (showTitle || showLabels)) {
-      if (labelPosition === 'side') {
-        horizontalMargins = _defineProperty({}, rtl ? 'marginLeft' : 'marginRight', Math.max(15, shapeSpacing));
-      }
-
-      if (labelPosition !== 'side') {
-        verticalMargins = _defineProperty({}, labelPosition === 'top' ? 'marginTop' : 'marginBottom', shapeSize ? shapeSize / 2 : 18);
-      }
+      return _possibleConstructorReturn(this, (Namespaced.__proto__ || Object.getPrototypeOf(Namespaced)).apply(this, arguments));
     }
 
-    return Object.assign({ minWidth: 4 * shapeSpacing + 5 * shapeSize + 'px' }, horizontalMargins, verticalMargins);
-  };
+    _createClass(Namespaced, [{
+      key: 'render',
+      value: function render() {
+        var _this2 = this;
 
-  return React.createElement(
-    'span',
-    {
-      tabIndex: mode === 'display' ? 0 : null,
-      className: _RatingSt2.default.stars,
-      style: getStarsStyle(),
-      'aria-label': rating ? rating + ' out of 5' : null,
-      'data-hook': 'rating-icons'
-    },
-    ' ',
-    fiveItems.map(function (value) {
-      return React.createElement(
-        'span',
-        {
-          'data-hook': 'rating-icon-' + value,
-          key: value,
-          style: _defineProperty({ display: 'flex' }, rtl ? 'paddingLeft' : 'paddingRight', value < 5 ? shapeSpacing : null),
-          'aria-label': !rating ? labels[value] : null,
-          onMouseEnter: function onMouseEnter(event) {
-            return onHover(_extends({ value: value }, event));
-          },
-          onMouseLeave: onBlur
-        },
-        React.createElement(_radioButton.RadioButton, {
-          className: mode === 'input' ? _RatingSt2.default.radioButton : null,
-          name: name,
-          'data-hook': 'input-radio-' + value,
-          value: '' + value,
-          checked: checkedPredicate(value),
-          label: '',
-          onChange: onChange,
-          checkedIcon: checkedIconPredicate(value),
-          uncheckedIcon: uncheckedIcon,
-          required: required
-        })
-      );
-    }),
-    ' '
-  );
-};
+        var _props = this.props,
+            styleId = _props.styleId,
+            rest = _objectWithoutProperties(_props, ['styleId']);
 
-RatingIcons.propTypes = {
-  rating: _propTypes.number,
-  shapeSize: _propTypes.number,
-  shapeSpacing: _propTypes.number,
-  rtl: _propTypes.bool,
-  dataHook: _propTypes.string,
-  onChange: _propTypes.func,
-  onHover: _propTypes.func,
-  onBlur: _propTypes.func,
-  checkedIcon: _propTypes.node,
-  uncheckedIcon: _propTypes.node,
-  splitIcon: _propTypes.node,
-  checkedPredicate: _propTypes.func,
-  checkedIconPredicate: _propTypes.func,
-  labels: _propTypes.object,
-  required: _propTypes.bool,
-  mode: _propTypes.string,
-  labelPosition: _propTypes.string,
-  showLabels: _propTypes.bool,
-  showTitle: _propTypes.bool
-};
+        var withNamespace = {};
+        classes.forEach(function (cls) {
+          withNamespace[cls] = styleId + '_' + cls;
+        });
+        return isStatelessComponent(Component) ? _react2.default.createElement(Component, _extends({ classes: withNamespace }, rest)) : _react2.default.createElement(Component, _extends({ ref: function ref(_ref) {
+            return _this2.wrappedComponentRef = _ref;
+          }, classes: withNamespace }, rest));
+      }
+    }]);
 
-function wrapSvgString(svgString) {
-  return React.createElement('div', {
-    dangerouslySetInnerHTML: {
-      __html: svgString || ''
-    }
-  });
+    return Namespaced;
+  }(_react2.default.Component);
+
+  Namespaced.propTypes = _extends({
+    styleId: _propTypes.string
+  }, Component.propTypes);
+
+  return isStatelessComponent(Component) ? Namespaced : (0, _hoistNonReactMethods2.default)(Namespaced, Component, { delegateTo: function delegateTo(c) {
+      return c.wrappedComponentRef;
+    }, hoistStatics: true });
 }
-
-var NoReviewsMode = exports.NoReviewsMode = {
-  NOTHING: 'nothing',
-  EMPTY_ICONS: 'emptyIcons',
-  PLACEHOLDER_TEXT: 'placeholderText'
-};
-
-var Rating = exports.Rating = function (_React$Component) {
-  _inherits(Rating, _React$Component);
-
-  function Rating(props) {
-    _classCallCheck(this, Rating);
-
-    var _this = _possibleConstructorReturn(this, (Rating.__proto__ || Object.getPrototypeOf(Rating)).call(this, props));
-
-    _this.updateLayout = function () {
-      return (0, _santaLayout.ratingsDisplayLayout)(ReactDOM.findDOMNode(_this), _this.props);
-    };
-
-    _this.onRatingChange = function (event) {
-      var intValue = parseInt(event.value);
-
-      if (_this.props.disabled || intValue === _this.props.rating || event.type !== 'click') {
-        return;
-      }
-
-      _this.props.onChange({ event: event, rating: intValue });
-    };
-
-    _this.onIconHover = function (event) {
-      if (_this.props.disabled) {
-        return;
-      }
-
-      var intValue = parseInt(event.value);
-      _this.setState({ hovered: intValue });
-
-      var icon = {
-        value: intValue,
-        label: _this.props.labels[intValue]
-      };
-
-      _this.props.onIconMouseIn && _this.props.onIconMouseIn({ icon: icon });
-    };
-
-    _this.onIconBlur = function () {
-      if (_this.props.disabled) {
-        return;
-      }
-      _this.setState({ hovered: undefined });
-    };
-
-    _this.shouldEmptyIcons = function () {
-      return _this.isEmptyState() && _this.props.noReviewsMode === NoReviewsMode.EMPTY_ICONS;
-    };
-
-    _this.getCheckedThreshold = function () {
-      if (_this.shouldEmptyIcons()) {
-        return 0;
-      }
-
-      return (0, _util.precisionRound)((_this.state.hovered || _this.props.rating) + 0.7, 1);
-    };
-
-    _this.shouldSplitIcon = function (value) {
-      var lastCheckedIcon = value <= _this.getCheckedThreshold() && value + 1 > _this.getCheckedThreshold();
-      var decimal = _this.props.rating % 1;
-      return lastCheckedIcon && decimal >= 0.25 && decimal < 0.75; // // X.25 - X.74 - half star
-    };
-
-    _this.isEmptyState = function () {
-      return !_this.props.rating;
-    };
-
-    _this.showPlaceholderText = function () {
-      return _this.isEmptyState() && _this.props.noReviewsMode === NoReviewsMode.PLACEHOLDER_TEXT;
-    };
-
-    _this.showRatingInfo = function () {
-      var _this$props = _this.props,
-          noReviewsMode = _this$props.noReviewsMode,
-          editorMode = _this$props.editorMode;
-
-      return !_this.isEmptyState() || (noReviewsMode === NoReviewsMode.NOTHING ? editorMode : false);
-    };
-
-    _this.showIcons = function () {
-      var _this$props2 = _this.props,
-          noReviewsMode = _this$props2.noReviewsMode,
-          editorMode = _this$props2.editorMode;
-
-      return !_this.isEmptyState() || (noReviewsMode === NoReviewsMode.NOTHING ? editorMode : noReviewsMode !== NoReviewsMode.PLACEHOLDER_TEXT);
-    };
-
-    _this.getCurrentText = function () {
-      var _this$props3 = _this.props,
-          labels = _this$props3.labels,
-          rating = _this$props3.rating,
-          title = _this$props3.title,
-          showLabels = _this$props3.showLabels,
-          showTitle = _this$props3.showTitle;
-
-
-      if (_this.state.hovered && showLabels) {
-        return labels[_this.state.hovered];
-      } else if (rating && showLabels) {
-        return labels[rating];
-      }
-
-      return showTitle && title;
-    };
-
-    _this.state = {
-      hovered: undefined
-    };
-    return _this;
-  }
-
-  _createClass(Rating, [{
-    key: 'componentDidUpdate',
-    value: function componentDidUpdate() {
-      this.updateLayout();
-    }
-  }, {
-    key: 'componentDidMount',
-    value: function componentDidMount() {
-      this.updateLayout();
-
-      if (this.props.renderSeoScript) {
-        var jsonId = {
-          '@id': 'externalRating',
-          '@context': 'http://schema.org',
-          '@type': 'AggregateRating',
-          itemReviewed: {
-            '@type': 'Thing'
-          },
-          ratingValue: '' + this.props.rating,
-          ratingCount: '' + this.props.numRatings
-        };
-        this.props.renderSeoScript(jsonId);
-      }
-    }
-  }, {
-    key: 'render',
-    value: function render() {
-      var _this2 = this;
-
-      var _props = this.props,
-          mode = _props.mode,
-          icon = _props.icon,
-          labels = _props.labels,
-          showTitle = _props.showTitle,
-          labelPosition = _props.labelPosition,
-          editorMode = _props.editorMode,
-          disabled = _props.disabled,
-          shapeSpacing = _props.shapeSpacing,
-          ratingPosition = _props.ratingPosition,
-          showRating = _props.showRating,
-          showReviewsCount = _props.showReviewsCount,
-          noReviewsMode = _props.noReviewsMode,
-          rtl = _props.rtl,
-          id = _props.id,
-          shapeSize = _props.shapeSize,
-          showLabels = _props.showLabels,
-          textAlignment = _props.textAlignment,
-          onFocus = _props.onFocus,
-          onBlur = _props.onBlur,
-          shouldShowInvalid = _props.shouldShowInvalid;
-
-
-      var styleStates = {
-        ratingAfter: mode === 'display' && ratingPosition === 'after',
-        noReviewsMode: noReviewsMode,
-        labelPosition: labelPosition,
-        rtl: rtl,
-        editorMode: editorMode && this.isEmptyState(),
-        disabled: disabled,
-        alignment: textAlignment,
-        mode: mode,
-        error: mode === 'input' && shouldShowInvalid && !this.state.hovered && !editorMode
-      };
-
-      var actualIcon = typeof icon === 'string' ? wrapSvgString(icon) : icon;
-
-      var checkedIcon = React.createElement(RatingIcon, { svg: actualIcon, checked: true, size: shapeSize });
-      var uncheckedIcon = React.createElement(RatingIcon, { svg: actualIcon, size: shapeSize });
-      var splitIcon = React.createElement(SplitRatingIcon, { svg: actualIcon, size: shapeSize, rtl: rtl });
-
-      var displayLabelsSpacing = Math.max(shapeSpacing, 15);
-
-      var ratingStyle = {
-        marginRight: ratingPosition === 'after' ? 0 : displayLabelsSpacing,
-        marginLeft: ratingPosition === 'after' ? displayLabelsSpacing : 0
-      };
-
-      var ratingStyleRTL = {
-        marginLeft: ratingPosition === 'after' ? 0 : displayLabelsSpacing,
-        marginRight: ratingPosition === 'after' ? displayLabelsSpacing : 0
-      };
-
-      var numReviewsStyle = _defineProperty({}, 'margin' + (rtl ? 'Right' : 'Left'), ratingPosition === 'after' ? 15 : displayLabelsSpacing);
-
-      return React.createElement(
-        'div',
-        _extends({}, (0, _RatingSt2.default)('root', styleStates, this.props), {
-          role: 'radiogroup',
-          'data-hook': 'storybook-rating',
-          id: id,
-          style: this.props.style,
-          onClick: this.props.onClick,
-          onDoubleClick: this.props.onDoubleClick,
-          onMouseEnter: this.props.onMouseEnter,
-          onMouseLeave: this.props.onMouseLeave,
-          ref: function ref(compRef) {
-            return _this2.compRef = compRef;
-          }
-        }),
-        mode === 'display' ? React.createElement(
-          'div',
-          { className: _RatingSt2.default.displayMode },
-          this.showPlaceholderText() ? React.createElement(
-            'span',
-            { className: _RatingSt2.default.noReviewsPlaceholder, 'data-hook': 'rating-display-placeholder' },
-            this.props.noReviewsPlaceholder
-          ) : null,
-          showRating && this.showRatingInfo() ? React.createElement(
-            'span',
-            {
-              className: _RatingSt2.default.ratingValue,
-              'data-hook': 'rating-display-rating',
-              style: rtl ? ratingStyleRTL : ratingStyle
-            },
-            (this.props.rating || 0).toFixed(1)
-          ) : null,
-          this.showIcons() ? React.createElement(RatingIcons, {
-            rtl: rtl,
-            rating: this.props.rating,
-            labels: {},
-            shapeSpacing: shapeSpacing,
-            shapeSize: shapeSize,
-            onChange: noop,
-            onHover: noop,
-            onBlur: noop,
-            checkedIcon: checkedIcon,
-            uncheckedIcon: uncheckedIcon,
-            splitIcon: splitIcon,
-            checkedPredicate: function checkedPredicate(value) {
-              return value <= _this2.getCheckedThreshold();
-            },
-            checkedIconPredicate: function checkedIconPredicate(value) {
-              return _this2.shouldSplitIcon(value) ? splitIcon : checkedIcon;
-            },
-            mode: mode
-          }) : null,
-          showReviewsCount && this.showRatingInfo() ? React.createElement(
-            'span',
-            {
-              className: _RatingSt2.default.reviewsCount,
-              'data-hook': 'rating-display-reviews-count',
-              'aria-label': 'based on ' + this.props.numRatings + ' votes',
-              tabIndex: 0,
-              style: numReviewsStyle
-            },
-            (0, _util.formatReviewsCount)(this.props.numRatings),
-            ' ',
-            this.props.numRatingsLabel
-          ) : null
-        ) : React.createElement(
-          'div',
-          { className: _RatingSt2.default.inputMode, onFocus: onFocus, onBlur: onBlur },
-          React.createElement(
-            'span',
-            {
-              className: _RatingSt2.default.labelsContainer,
-              style: labelPosition !== 'side' ? { width: 5 * shapeSize + 4 * shapeSpacing + 'px' } : {},
-              'data-hook': 'labels-container'
-            },
-            showTitle || showLabels ? React.createElement(
-              'span',
-              {
-                className: _RatingSt2.default.title,
-                'data-hook': 'rating-input-title'
-              },
-              this.getCurrentText()
-            ) : null,
-            showLabels && fiveItems.map(function (value) {
-              return React.createElement(
-                'span',
-                { key: value, className: _RatingSt2.default.label },
-                React.createElement(
-                  'span',
-                  { 'data-hook': 'label_' + value },
-                  labels[value]
-                )
-              );
-            }),
-            showTitle && React.createElement(
-              'span',
-              { className: _RatingSt2.default.label },
-              React.createElement(
-                'span',
-                { 'data-hook': 'label_title' },
-                this.props.title
-              )
-            )
-          ),
-          React.createElement(RatingIcons, _extends({}, this.props, {
-            rating: null,
-            onChange: this.onRatingChange,
-            onHover: this.onIconHover,
-            onBlur: this.onIconBlur,
-            splitIcon: checkedIcon,
-            checkedIcon: checkedIcon,
-            uncheckedIcon: uncheckedIcon,
-            checkedPredicate: function checkedPredicate(value) {
-              return value <= (_this2.state.hovered || _this2.props.rating);
-            },
-            checkedIconPredicate: function checkedIconPredicate() {
-              return checkedIcon;
-            }
-          }))
-        )
-      );
-    }
-  }]);
-
-  return Rating;
-}(React.Component);
-
-Rating.propTypes = {
-  /** Santa requirement */
-  id: _propTypes.string,
-  /** Mode - Display or Input */
-  mode: (0, _propTypes.oneOf)(['display', 'input']),
-  /** SVG String Icon */
-  icon: (0, _propTypes.oneOfType)([_propTypes.node, _propTypes.string]),
-  /** The rating displayed / Current rating selected */
-  rating: _propTypes.number,
-  /** on Display mode, shows the number of reviews */
-  numRatings: _propTypes.number,
-  /** on Display mode, the label shown to describe the reviews */
-  numRatingsLabel: _propTypes.string,
-  /** on Display mode, toggles the numeric rating */
-  showRating: _propTypes.bool,
-  /** on Display mode, toggles the numeric count */
-  showReviewsCount: _propTypes.bool,
-  /** on Display mode, specifies the position of the numeric rating in relative to the stars */
-  ratingPosition: (0, _propTypes.oneOf)(['before', 'after']),
-  /** on Display mode, decides what to display incase there are no reviews */
-  noReviewsMode: (0, _propTypes.oneOf)([NoReviewsMode.NOTHING, NoReviewsMode.EMPTY_ICONS, NoReviewsMode.PLACEHOLDER_TEXT]),
-  /** on Display mode, specifies a placeholder text to use (if that option is selected) in the absence of reviews */
-  noReviewsPlaceholder: _propTypes.string,
-  /** on Input mode, a callback to invoke when the rating is changed by the user */
-  onChange: _propTypes.func,
-  /** on Input mode, a callback to invoke when an icon is hovered */
-  onIconMouseIn: _propTypes.func,
-  /** on Input mode, a callback to invoke when the component is focused */
-  onFocus: _propTypes.func,
-  /** on Input mode, a callback to invoke when the component is blured */
-  onBlur: _propTypes.func,
-  /** a callback to invoke when root is clicked */
-  onClick: _propTypes.func,
-  /** a callback to invoke when root is double clicked */
-  onDoubleClick: _propTypes.func,
-  /** a callback to invoke when mouse enters root */
-  onMouseEnter: _propTypes.func,
-  /** a callback to invoke when mouse leaves root */
-  onMouseLeave: _propTypes.func,
-  /** on Input mode, the title of the rating */
-  title: _propTypes.string,
-  /** on Input mode, the labels that represent each rating value */
-  labels: _propTypes.object,
-  /** on Input mode, the position of the labels that represent each rating value */
-  labelPosition: (0, _propTypes.oneOf)(['top', 'bottom', 'side']),
-  /** on Input mode, toggles the title */
-  showTitle: _propTypes.bool,
-  /** on Input mode, toggles the labels */
-  showLabels: _propTypes.bool,
-  /** on Input mode, specifies if this is required */
-  required: _propTypes.bool,
-  /** Sets the shape size */
-  shapeSize: _propTypes.number,
-  /** Sets the shape spacing */
-  shapeSpacing: _propTypes.number,
-  /** Aligns the title/labels text */
-  textAlignment: (0, _propTypes.oneOf)(['left', 'right', 'center']),
-  /** Sets RTL direction */
-  rtl: _propTypes.bool,
-  /** For displaying editor specific styles */
-  editorMode: _propTypes.bool,
-  /** for Disabled visual state */
-  disabled: _propTypes.bool,
-  /** Style - needed for font scaling */
-  style: _propTypes.object,
-  /** A function to render SEO script */
-  renderSeoScript: _propTypes.func,
-  /** for input mode - whether to toggle "error" style state */
-  shouldShowInvalid: _propTypes.bool
-};
-Rating.defaultProps = {
-  showRating: true,
-  showReviewsCount: true,
-  showTitle: true,
-  noReviewsMode: NoReviewsMode.EMPTY_ICONS,
-  icon: _defaultSvg.defaultSvg
-};
 
 /***/ }),
 
-/***/ 49:
-/*!***********************************************!*\
-  !*** ../node_modules/uuid/lib/rng-browser.js ***!
-  \***********************************************/
-/*! no static exports found */
-/*! all exports used */
-/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
-/***/ (function(module, exports) {
-
-// Unique ID creation requires a high quality random # generator.  In the
-// browser this is a little complicated due to unknown quality of Math.random()
-// and inconsistent support for the `crypto` API.  We do the best we can via
-// feature-detection
-
-// getRandomValues needs to be invoked in a context where "this" is a Crypto
-// implementation. Also, find the complete implementation of crypto on IE11.
-var getRandomValues = (typeof(crypto) != 'undefined' && crypto.getRandomValues && crypto.getRandomValues.bind(crypto)) ||
-                      (typeof(msCrypto) != 'undefined' && typeof window.msCrypto.getRandomValues == 'function' && msCrypto.getRandomValues.bind(msCrypto));
-
-if (getRandomValues) {
-  // WHATWG crypto RNG - http://wiki.whatwg.org/wiki/Crypto
-  var rnds8 = new Uint8Array(16); // eslint-disable-line no-undef
-
-  module.exports = function whatwgRNG() {
-    getRandomValues(rnds8);
-    return rnds8;
-  };
-} else {
-  // Math.random()-based (RNG)
-  //
-  // If all else fails, use Math.random().  It's fast, but is of unspecified
-  // quality.
-  var rnds = new Array(16);
-
-  module.exports = function mathRNG() {
-    for (var i = 0, r; i < 16; i++) {
-      if ((i & 0x03) === 0) r = Math.random() * 0x100000000;
-      rnds[i] = r >>> ((i & 0x03) << 3) & 0xff;
-    }
-
-    return rnds;
-  };
-}
-
-
-/***/ }),
-
-/***/ 50:
-/*!***********************************************!*\
-  !*** ../node_modules/uuid/lib/bytesToUuid.js ***!
-  \***********************************************/
-/*! no static exports found */
-/*! all exports used */
-/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
-/***/ (function(module, exports) {
-
-/**
- * Convert array of 16 byte values to UUID string format of the form:
- * XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX
- */
-var byteToHex = [];
-for (var i = 0; i < 256; ++i) {
-  byteToHex[i] = (i + 0x100).toString(16).substr(1);
-}
-
-function bytesToUuid(buf, offset) {
-  var i = offset || 0;
-  var bth = byteToHex;
-  // join used to fix memory issue caused by concatenation: https://bugs.chromium.org/p/v8/issues/detail?id=3175#c4
-  return ([bth[buf[i++]], bth[buf[i++]], 
-	bth[buf[i++]], bth[buf[i++]], '-',
-	bth[buf[i++]], bth[buf[i++]], '-',
-	bth[buf[i++]], bth[buf[i++]], '-',
-	bth[buf[i++]], bth[buf[i++]], '-',
-	bth[buf[i++]], bth[buf[i++]],
-	bth[buf[i++]], bth[buf[i++]],
-	bth[buf[i++]], bth[buf[i++]]]).join('');
-}
-
-module.exports = bytesToUuid;
-
-
-/***/ }),
-
-/***/ 6:
-/*!******************************************!*\
-  !*** ../node_modules/tslib/tslib.es6.js ***!
-  \******************************************/
-/*! exports provided: __extends, __assign, __rest, __decorate, __param, __metadata, __awaiter, __generator, __exportStar, __values, __read, __spread, __spreadArrays, __await, __asyncGenerator, __asyncDelegator, __asyncValues, __makeTemplateObject, __importStar, __importDefault */
-/*! all exports used */
-/*! ModuleConcatenation bailout: Module is referenced from these modules with unsupported syntax: ../node_modules/@wix/search-box/dist/src/components/ClearButton/index.js (referenced with cjs require), ../node_modules/@wix/search-box/dist/src/components/QuickResultItem/QuickResultItem.js (referenced with cjs require), ../node_modules/@wix/search-box/dist/src/components/SearchBox/SearchBox.js (referenced with cjs require), ../node_modules/@wix/search-box/dist/src/components/SearchBox/index.js (referenced with cjs require), ../node_modules/@wix/search-box/dist/src/components/SuggestionItem/SuggestionItem.js (referenced with cjs require), ../node_modules/@wix/search-box/dist/src/index.js (referenced with cjs require), ../node_modules/wix-ui-core/dist/src/clients/GoogleMaps/google2address/google2address.js (referenced with cjs require), ../node_modules/wix-ui-core/dist/src/components/address-input/AddressInput.js (referenced with cjs require), ../node_modules/wix-ui-core/dist/src/components/button-next/button-next.js (referenced with cjs require), ../node_modules/wix-ui-core/dist/src/components/captcha/Captcha.js (referenced with cjs require), ../node_modules/wix-ui-core/dist/src/components/deprecated/divider/Divider.js (referenced with cjs require), ../node_modules/wix-ui-core/dist/src/components/dropdown-content/DropdownContent.js (referenced with cjs require), ../node_modules/wix-ui-core/dist/src/components/dropdown-option/DropdownOption.js (referenced with cjs require), ../node_modules/wix-ui-core/dist/src/components/dropdown-option/OptionFactory.js (referenced with cjs require), ../node_modules/wix-ui-core/dist/src/components/dropdown/Dropdown.js (referenced with cjs require), ../node_modules/wix-ui-core/dist/src/components/file-picker-button/FilePickerButton.js (referenced with cjs require), ../node_modules/wix-ui-core/dist/src/components/input-with-options/InputWithOptions.js (referenced with cjs require), ../node_modules/wix-ui-core/dist/src/components/input/Input.js (referenced with cjs require), ../node_modules/wix-ui-core/dist/src/components/linear-progress-bar/LinearProgressBar.js (referenced with cjs require), ../node_modules/wix-ui-core/dist/src/components/pagination/PageStrip.js (referenced with cjs require), ../node_modules/wix-ui-core/dist/src/components/pagination/Pagination.js (referenced with cjs require), ../node_modules/wix-ui-core/dist/src/components/popover/Popover.js (referenced with cjs require), ../node_modules/wix-ui-core/dist/src/components/popover/index.js (referenced with cjs require), ../node_modules/wix-ui-core/dist/src/components/popover/modifiers.js (referenced with cjs require), ../node_modules/wix-ui-core/dist/src/components/radio-button/RadioButton.js (referenced with cjs require), ../node_modules/wix-ui-core/dist/src/components/slider/Slider.js (referenced with cjs require), ../node_modules/wix-ui-core/dist/src/components/slider/Thumb.js (referenced with cjs require), ../node_modules/wix-ui-core/dist/src/components/slider/Ticks.js (referenced with cjs require), ../node_modules/wix-ui-core/dist/src/components/time-picker/Tickers.js (referenced with cjs require), ../node_modules/wix-ui-core/dist/src/components/time-picker/TimePicker.js (referenced with cjs require), ../node_modules/wix-ui-core/dist/src/components/video/Video.js (referenced with cjs require), ../node_modules/wix-ui-core/dist/src/components/video/players/DailyMotion.js (referenced with cjs require), ../node_modules/wix-ui-core/dist/src/components/video/players/Facebook.js (referenced with cjs require), ../node_modules/wix-ui-core/dist/src/components/video/players/Playable.js (referenced with cjs require), ../node_modules/wix-ui-core/dist/src/components/video/players/Twitch.js (referenced with cjs require), ../node_modules/wix-ui-core/dist/src/components/video/players/Vimeo.js (referenced with cjs require), ../node_modules/wix-ui-core/dist/src/components/video/players/YouTube.js (referenced with cjs require), ../node_modules/wix-ui-core/dist/src/components/video/players/playerHOC.js (referenced with cjs require), ../node_modules/wix-ui-core/dist/src/hocs/Focusable/FocusableHOC.js (referenced with cjs require) */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__extends", function() { return __extends; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__assign", function() { return __assign; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__rest", function() { return __rest; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__decorate", function() { return __decorate; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__param", function() { return __param; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__metadata", function() { return __metadata; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__awaiter", function() { return __awaiter; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__generator", function() { return __generator; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__exportStar", function() { return __exportStar; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__values", function() { return __values; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__read", function() { return __read; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__spread", function() { return __spread; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__spreadArrays", function() { return __spreadArrays; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__await", function() { return __await; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__asyncGenerator", function() { return __asyncGenerator; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__asyncDelegator", function() { return __asyncDelegator; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__asyncValues", function() { return __asyncValues; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__makeTemplateObject", function() { return __makeTemplateObject; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__importStar", function() { return __importStar; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__importDefault", function() { return __importDefault; });
-/*! *****************************************************************************
-Copyright (c) Microsoft Corporation. All rights reserved.
-Licensed under the Apache License, Version 2.0 (the "License"); you may not use
-this file except in compliance with the License. You may obtain a copy of the
-License at http://www.apache.org/licenses/LICENSE-2.0
-
-THIS CODE IS PROVIDED ON AN *AS IS* BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
-KIND, EITHER EXPRESS OR IMPLIED, INCLUDING WITHOUT LIMITATION ANY IMPLIED
-WARRANTIES OR CONDITIONS OF TITLE, FITNESS FOR A PARTICULAR PURPOSE,
-MERCHANTABLITY OR NON-INFRINGEMENT.
-
-See the Apache Version 2.0 License for specific language governing permissions
-and limitations under the License.
-***************************************************************************** */
-/* global Reflect, Promise */
-
-var extendStatics = function(d, b) {
-    extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return extendStatics(d, b);
-};
-
-function __extends(d, b) {
-    extendStatics(d, b);
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-}
-
-var __assign = function() {
-    __assign = Object.assign || function __assign(t) {
-        for (var s, i = 1, n = arguments.length; i < n; i++) {
-            s = arguments[i];
-            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
-        }
-        return t;
-    }
-    return __assign.apply(this, arguments);
-}
-
-function __rest(s, e) {
-    var t = {};
-    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
-        t[p] = s[p];
-    if (s != null && typeof Object.getOwnPropertySymbols === "function")
-        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
-            if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))
-                t[p[i]] = s[p[i]];
-        }
-    return t;
-}
-
-function __decorate(decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-}
-
-function __param(paramIndex, decorator) {
-    return function (target, key) { decorator(target, key, paramIndex); }
-}
-
-function __metadata(metadataKey, metadataValue) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(metadataKey, metadataValue);
-}
-
-function __awaiter(thisArg, _arguments, P, generator) {
-    return new (P || (P = Promise))(function (resolve, reject) {
-        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
-        step((generator = generator.apply(thisArg, _arguments || [])).next());
-    });
-}
-
-function __generator(thisArg, body) {
-    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
-    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
-    function verb(n) { return function (v) { return step([n, v]); }; }
-    function step(op) {
-        if (f) throw new TypeError("Generator is already executing.");
-        while (_) try {
-            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
-            if (y = 0, t) op = [op[0] & 2, t.value];
-            switch (op[0]) {
-                case 0: case 1: t = op; break;
-                case 4: _.label++; return { value: op[1], done: false };
-                case 5: _.label++; y = op[1]; op = [0]; continue;
-                case 7: op = _.ops.pop(); _.trys.pop(); continue;
-                default:
-                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
-                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
-                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
-                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
-                    if (t[2]) _.ops.pop();
-                    _.trys.pop(); continue;
-            }
-            op = body.call(thisArg, _);
-        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
-        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
-    }
-}
-
-function __exportStar(m, exports) {
-    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
-}
-
-function __values(o) {
-    var m = typeof Symbol === "function" && o[Symbol.iterator], i = 0;
-    if (m) return m.call(o);
-    return {
-        next: function () {
-            if (o && i >= o.length) o = void 0;
-            return { value: o && o[i++], done: !o };
-        }
-    };
-}
-
-function __read(o, n) {
-    var m = typeof Symbol === "function" && o[Symbol.iterator];
-    if (!m) return o;
-    var i = m.call(o), r, ar = [], e;
-    try {
-        while ((n === void 0 || n-- > 0) && !(r = i.next()).done) ar.push(r.value);
-    }
-    catch (error) { e = { error: error }; }
-    finally {
-        try {
-            if (r && !r.done && (m = i["return"])) m.call(i);
-        }
-        finally { if (e) throw e.error; }
-    }
-    return ar;
-}
-
-function __spread() {
-    for (var ar = [], i = 0; i < arguments.length; i++)
-        ar = ar.concat(__read(arguments[i]));
-    return ar;
-}
-
-function __spreadArrays() {
-    for (var s = 0, i = 0, il = arguments.length; i < il; i++) s += arguments[i].length;
-    for (var r = Array(s), k = 0, i = 0; i < il; i++)
-        for (var a = arguments[i], j = 0, jl = a.length; j < jl; j++, k++)
-            r[k] = a[j];
-    return r;
-};
-
-function __await(v) {
-    return this instanceof __await ? (this.v = v, this) : new __await(v);
-}
-
-function __asyncGenerator(thisArg, _arguments, generator) {
-    if (!Symbol.asyncIterator) throw new TypeError("Symbol.asyncIterator is not defined.");
-    var g = generator.apply(thisArg, _arguments || []), i, q = [];
-    return i = {}, verb("next"), verb("throw"), verb("return"), i[Symbol.asyncIterator] = function () { return this; }, i;
-    function verb(n) { if (g[n]) i[n] = function (v) { return new Promise(function (a, b) { q.push([n, v, a, b]) > 1 || resume(n, v); }); }; }
-    function resume(n, v) { try { step(g[n](v)); } catch (e) { settle(q[0][3], e); } }
-    function step(r) { r.value instanceof __await ? Promise.resolve(r.value.v).then(fulfill, reject) : settle(q[0][2], r); }
-    function fulfill(value) { resume("next", value); }
-    function reject(value) { resume("throw", value); }
-    function settle(f, v) { if (f(v), q.shift(), q.length) resume(q[0][0], q[0][1]); }
-}
-
-function __asyncDelegator(o) {
-    var i, p;
-    return i = {}, verb("next"), verb("throw", function (e) { throw e; }), verb("return"), i[Symbol.iterator] = function () { return this; }, i;
-    function verb(n, f) { i[n] = o[n] ? function (v) { return (p = !p) ? { value: __await(o[n](v)), done: n === "return" } : f ? f(v) : v; } : f; }
-}
-
-function __asyncValues(o) {
-    if (!Symbol.asyncIterator) throw new TypeError("Symbol.asyncIterator is not defined.");
-    var m = o[Symbol.asyncIterator], i;
-    return m ? m.call(o) : (o = typeof __values === "function" ? __values(o) : o[Symbol.iterator](), i = {}, verb("next"), verb("throw"), verb("return"), i[Symbol.asyncIterator] = function () { return this; }, i);
-    function verb(n) { i[n] = o[n] && function (v) { return new Promise(function (resolve, reject) { v = o[n](v), settle(resolve, reject, v.done, v.value); }); }; }
-    function settle(resolve, reject, d, v) { Promise.resolve(v).then(function(v) { resolve({ value: v, done: d }); }, reject); }
-}
-
-function __makeTemplateObject(cooked, raw) {
-    if (Object.defineProperty) { Object.defineProperty(cooked, "raw", { value: raw }); } else { cooked.raw = raw; }
-    return cooked;
-};
-
-function __importStar(mod) {
-    if (mod && mod.__esModule) return mod;
-    var result = {};
-    if (mod != null) for (var k in mod) if (Object.hasOwnProperty.call(mod, k)) result[k] = mod[k];
-    result.default = mod;
-    return result;
-}
-
-function __importDefault(mod) {
-    return (mod && mod.__esModule) ? mod : { default: mod };
-}
-
-
-/***/ }),
-
-/***/ 661:
-/*!***********************************************************!*\
-  !*** ./components/RatingsDisplay/RatingsDisplay.santa.js ***!
-  \***********************************************************/
+/***/ 286:
+/*!****************************************************************!*\
+  !*** ./legacy/components/CoreToggleSwitch/CoreToggleSwitch.js ***!
+  \****************************************************************/
 /*! no static exports found */
 /*! all exports used */
 /*! ModuleConcatenation bailout: Module is not an ECMAScript module */
@@ -2474,103 +1068,673 @@ function __importDefault(mod) {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.ratingsDisplay = undefined;
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(/*! react */ 0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _propTypes = __webpack_require__(/*! prop-types */ 1);
+
+var _utils = __webpack_require__(/*! ./utils */ 287);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var _ = __webpack_require__(/*! lodash */ 2);
+
+/**
+ * Toggle Switch
+ */
+
+var ToggleSwitch = function (_React$PureComponent) {
+  _inherits(ToggleSwitch, _React$PureComponent);
+
+  function ToggleSwitch() {
+    var _ref;
+
+    var _temp, _this, _ret;
+
+    _classCallCheck(this, ToggleSwitch);
+
+    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = ToggleSwitch.__proto__ || Object.getPrototypeOf(ToggleSwitch)).call.apply(_ref, [this].concat(args))), _this), _this.id = _this.props.id || _.uniqueId('ToggleSwitch'), _this.inputRef = null, _this.toggle = null, _temp), _possibleConstructorReturn(_this, _ret);
+  }
+
+  _createClass(ToggleSwitch, [{
+    key: 'handleChange',
+    value: function handleChange(e) {
+      if (!this.props.disabled) {
+        this.props.onChange(e);
+      }
+    }
+  }, {
+    key: 'focus',
+    value: function focus() {
+      this.inputRef.focus();
+    }
+  }, {
+    key: 'blur',
+    value: function blur() {
+      this.inputRef.blur();
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      var _this2 = this;
+
+      var _props = this.props,
+          checked = _props.checked,
+          disabled = _props.disabled,
+          classes = _props.classes,
+          styles = _props.styles,
+          previewState = _props.previewState,
+          dataHook = _props.dataHook,
+          dataClass = _props.dataClass;
+      var id = this.id;
+
+
+      return _react2.default.createElement(
+        'label',
+        {
+          className: classes.root,
+          style: styles.root,
+          ref: function ref(_ref2) {
+            return _this2.toggle = _ref2;
+          },
+          'data-preview': previewState,
+          onClick: function onClick() {
+            return _this2.inputRef && _this2.inputRef.focus();
+          },
+          'data-hook': dataHook,
+          'data-class': dataClass
+        },
+        _react2.default.createElement('input', {
+          type: 'checkbox',
+          id: id,
+          checked: checked,
+          disabled: disabled,
+          onChange: function onChange(e) {
+            return _this2.handleChange(e);
+          },
+          ref: function ref(el) {
+            return _this2.inputRef = el;
+          }
+        }),
+        _react2.default.createElement('div', { className: classes.outerLabel, style: styles.outerLabel, 'aria-label': 'Toggle' }),
+        _react2.default.createElement(
+          'div',
+          { className: classes.innerLabel, style: styles.innerLabel },
+          _react2.default.createElement(
+            'svg',
+            { className: classes.toggleIcon, style: styles.toggleIcon, viewBox: (0, _utils.getViewBox)(checked) },
+            _react2.default.createElement('path', { d: (0, _utils.getPathDescription)(checked) })
+          )
+        )
+      );
+    }
+  }]);
+
+  return ToggleSwitch;
+}(_react2.default.PureComponent);
+
+ToggleSwitch.propTypes = {
+  /** Is the toggleSwitch checked or not */
+  checked: _propTypes.bool,
+  /** Callback function when user changes the value of the component */
+  onChange: _propTypes.func.isRequired,
+  /** Is the toggleSwitch disabled or not */
+  disabled: _propTypes.bool,
+  /** Classes object */
+  classes: _propTypes.object.isRequired,
+  /** Component ID, will be generated automatically if not provided */
+  /** Styles object */
+  styles: _propTypes.object,
+  /** Component ID, will be generated automatically if not provided */
+  id: _propTypes.string,
+  /** Preview state, initiate hover, focus, etc. synthetically */
+  previewState: _propTypes.string,
+  dataHook: _propTypes.string,
+  dataClass: _propTypes.string
+};
+ToggleSwitch.defaultProps = {
+  checked: false,
+  styles: {},
+  previewState: ''
+};
+exports.default = ToggleSwitch;
+
+/***/ }),
+
+/***/ 287:
+/*!*****************************************************!*\
+  !*** ./legacy/components/CoreToggleSwitch/utils.js ***!
+  \*****************************************************/
+/*! no static exports found */
+/*! all exports used */
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+var activeViewBox = exports.activeViewBox = '0 0 41 32';
+var activePathD = exports.activePathD = 'M0.169 17.815c0.169 1.098 0.76 2.111 1.689 2.871l14.269 10.385c1.942 1.435 4.644 1.013 6.079-0.844l18.069-23.303c1.435-1.858 1.098-4.559-0.844-5.995s-4.644-1.098-6.164 0.844l-15.367 19.842-10.723-7.852c-1.942-1.435-4.644-1.013-6.164 0.844-0.76 0.929-1.013 2.111-0.844 3.208z';
+
+var inactiveViewBox = exports.inactiveViewBox = '0 0 143 32';
+var inactivePathD = exports.inactivePathD = 'M0 0h142.545v32h-142.545v-32z';
+
+var getViewBox = exports.getViewBox = function getViewBox(checked) {
+  return checked ? activeViewBox : inactiveViewBox;
+};
+
+var getPathDescription = exports.getPathDescription = function getPathDescription(checked) {
+  return checked ? activePathD : inactivePathD;
+};
+
+/***/ }),
+
+/***/ 411:
+/*!*************************************************!*\
+  !*** ./legacy/components/ToggleSwitch/index.js ***!
+  \*************************************************/
+/*! no static exports found */
+/*! all exports used */
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _ToggleSwitch = __webpack_require__(/*! ./ToggleSwitch */ 464);
+
+exports.default = {
+  componentType: 'wixui.ToggleSwitch',
+  component: _ToggleSwitch.ToggleSwitchWithClasses,
+  santaComponent: _ToggleSwitch.ToggleSwitchSanta,
+  skin: _ToggleSwitch.skinJson
+};
+
+/***/ }),
+
+/***/ 464:
+/*!********************************************************!*\
+  !*** ./legacy/components/ToggleSwitch/ToggleSwitch.js ***!
+  \********************************************************/
+/*! no static exports found */
+/*! all exports used */
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.ToggleSwitchSanta = exports.skinJson = exports.ToggleSwitchWithClasses = undefined;
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 var _createReactClass = __webpack_require__(/*! create-react-class */ 17);
 
 var _createReactClass2 = _interopRequireDefault(_createReactClass);
 
+var _react = __webpack_require__(/*! react */ 0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _lodash = __webpack_require__(/*! lodash */ 2);
+
+var _lodash2 = _interopRequireDefault(_lodash);
+
+var _CoreToggleSwitch = __webpack_require__(/*! ../CoreToggleSwitch/CoreToggleSwitch */ 286);
+
+var _CoreToggleSwitch2 = _interopRequireDefault(_CoreToggleSwitch);
+
+var _propTypes = __webpack_require__(/*! prop-types */ 1);
+
+var _theme = __webpack_require__(/*! ./theme */ 465);
+
+var skin = _interopRequireWildcard(_theme);
+
 var _santaComponents = __webpack_require__(/*! santa-components */ 14);
 
-var _RatingSt = __webpack_require__(/*! ../Rating/Rating.st.css */ 38);
+var _namespaceClasses = __webpack_require__(/*! ../../utils/namespaceClasses */ 224);
 
-var _RatingSt2 = _interopRequireDefault(_RatingSt);
+var _namespaceClasses2 = _interopRequireDefault(_namespaceClasses);
 
-var _Rating = __webpack_require__(/*! ../Rating/Rating */ 48);
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+function handleClick(e, onClick) {
+  e.stopPropagation();
+  if (e.target.tagName === 'INPUT') {
+    onClick();
+  }
+}
+
+function concatPercent(value) {
+  return value !== 0 ? value + '%' : value;
+}
+
+function calcUncheckedLeftValue(pKnobSize, pTrackHeight, knobWidth, isRtl) {
+  if (isRtl) {
+    return pKnobSize > pTrackHeight ? 100 - knobWidth : 100 - knobWidth - (pTrackHeight - pKnobSize) / 4;
+  } else {
+    return pKnobSize > pTrackHeight ? 0 : (pTrackHeight - pKnobSize) / 4;
+  }
+}
+
+function calcCheckedLeftValue(pKnobSize, pTrackHeight, knobWidth, isRtl) {
+  if (isRtl) {
+    return pKnobSize > pTrackHeight ? 0 : (pTrackHeight - pKnobSize) / 4;
+  } else {
+    return pKnobSize > pTrackHeight ? 100 - knobWidth : 100 - knobWidth - (pTrackHeight - pKnobSize) / 4;
+  }
+}
+
+var ToggleSwitch = function (_React$Component) {
+  _inherits(ToggleSwitch, _React$Component);
+
+  function ToggleSwitch() {
+    _classCallCheck(this, ToggleSwitch);
+
+    return _possibleConstructorReturn(this, (ToggleSwitch.__proto__ || Object.getPrototypeOf(ToggleSwitch)).apply(this, arguments));
+  }
+
+  _createClass(ToggleSwitch, [{
+    key: 'focus',
+    value: function focus() {
+      this.coreRef.focus();
+      this.props.onFocus();
+    }
+  }, {
+    key: 'blur',
+    value: function blur() {
+      this.coreRef.blur();
+      this.props.onBlur();
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      var _this2 = this;
+
+      var _props = this.props,
+          classes = _props.classes,
+          checked = _props.checked,
+          id = _props.id,
+          trackHeight = _props.trackHeight,
+          knobSize = _props.knobSize,
+          isDisabled = _props.isDisabled,
+          displayKnobIcons = _props.displayKnobIcons,
+          onChange = _props.onChange,
+          _onClick = _props.onClick,
+          onFocus = _props.onFocus,
+          onBlur = _props.onBlur,
+          isRtl = _props.isRtl,
+          previewState = _props.previewState,
+          coreProps = _objectWithoutProperties(_props, ['classes', 'checked', 'id', 'trackHeight', 'knobSize', 'isDisabled', 'displayKnobIcons', 'onChange', 'onClick', 'onFocus', 'onBlur', 'isRtl', 'previewState']);
+
+      var pKnobSize = Number(knobSize);
+      var knobHeight = pKnobSize;
+      var knobWidth = pKnobSize / 2;
+      var pTrackHeight = Number(trackHeight);
+
+      var uncheckedLeft = calcUncheckedLeftValue(pKnobSize, pTrackHeight, knobWidth, isRtl);
+      var checkedLeft = calcCheckedLeftValue(pKnobSize, pTrackHeight, knobWidth, isRtl);
+
+      var parsedPreviewState = (previewState || '').replace('regular', '').trim().replace(/ /g, ':');
+      var isChecked = previewState ? parsedPreviewState.indexOf('checked') !== -1 : checked;
+
+      var styles = {
+        outerLabel: {
+          height: pTrackHeight + '%'
+        },
+        innerLabel: {
+          width: concatPercent(knobWidth),
+          height: concatPercent(knobHeight),
+          left: isChecked ? concatPercent(checkedLeft) : concatPercent(uncheckedLeft)
+        },
+        toggleIcon: {
+          display: displayKnobIcons ? 'block' : 'none'
+        }
+      };
+
+      var style = { display: 'inline-block', width: '100%', height: '100%' };
+      return _react2.default.createElement(
+        'div',
+        { style: style, onClick: function onClick(e) {
+            return handleClick(e, _onClick);
+          }, onFocus: onFocus, onBlur: onBlur },
+        _react2.default.createElement(_CoreToggleSwitch2.default, _extends({
+          classes: classes,
+          styles: styles,
+          disabled: isDisabled,
+          checked: isChecked,
+          id: id,
+          onChange: onChange,
+          previewState: parsedPreviewState,
+          ref: function ref(e) {
+            return _this2.coreRef = e;
+          }
+        }, coreProps))
+      );
+    }
+  }]);
+
+  return ToggleSwitch;
+}(_react2.default.Component);
+
+ToggleSwitch.displayName = 'ToggleSwitch';
+ToggleSwitch.propTypes = _extends({}, _CoreToggleSwitch2.default.propTypes, {
+  classes: _propTypes.object,
+  checked: _propTypes.bool,
+  id: _propTypes.string.isRequired,
+  trackHeight: _propTypes.number.isRequired,
+  knobSize: _propTypes.number.isRequired,
+  isDisabled: _propTypes.bool,
+  displayKnobIcons: _propTypes.bool,
+  onChange: _propTypes.func.isRequired,
+  onClick: _propTypes.func,
+  onFocus: _propTypes.func,
+  onBlur: _propTypes.func,
+  isRtl: _propTypes.bool,
+  previewState: _propTypes.string
+});
+ToggleSwitch.defaultProps = {
+  onClick: function onClick() {},
+  onFocus: function onFocus() {},
+  onBlur: function onBlur() {},
+  isRtl: false,
+  previewState: ''
+};
+
+var ToggleSwitchWithClasses = exports.ToggleSwitchWithClasses = (0, _namespaceClasses2.default)(ToggleSwitch, skin.classes);
+
 var skinBasedComp = _santaComponents.mixins.skinBasedComp,
     runTimeCompData = _santaComponents.mixins.runTimeCompData,
-    textScaleMixin = _santaComponents.mixins.textScaleMixin;
-
-
-'use strict';
-
-var MOBILE_DEFAULT_FONT_SIZE = 13; //px
-
-var PREVIEW_STATES = {
-  NO_REVIEWS: 'noReviews'
-};
+    inputFocusMixin = _santaComponents.mixins.inputFocusMixin;
+var skinJson = exports.skinJson = skin.json;
 
 var getComponentSkins = function getComponentSkins() {
-  return {
-    'wixui.skins.Rating': _RatingSt2.default.$skin
-  };
+  return skinJson;
 };
 
-var ratingsDisplay = exports.ratingsDisplay = (0, _createReactClass2.default)({
-  displayName: 'RatingsDisplay',
+/**
+     * @class components.toggleSwitch
+     * @extends {core.skinBasedComp}
+     */
 
-  mixins: [skinBasedComp(getComponentSkins()), runTimeCompData, textScaleMixin(getComponentSkins())],
+var ToggleSwitchSanta = exports.ToggleSwitchSanta = (0, _createReactClass2.default)({
+  displayName: 'ToggleSwitch',
+
+  mixins: [skinBasedComp(getComponentSkins()), runTimeCompData, inputFocusMixin],
 
   propTypes: {
-    viewMode: _santaComponents.santaTypesDefinitions.RenderFlags.componentViewMode,
-    componentPreviewState: _santaComponents.santaTypesDefinitions.RenderFlags.componentPreviewState,
-    svgString: _santaComponents.santaTypesDefinitions.RawSvg.getRawSVG,
-    style: _santaComponents.santaTypesDefinitions.Component.style,
-    jsonLdRenderer: _santaComponents.santaTypesDefinitions.JsonLd.renderer,
-    compData: _santaComponents.santaTypesDefinitions.Component.compData.isRequired,
+    structure: _santaComponents.santaTypesDefinitions.Component.structure.isRequired,
     compProp: _santaComponents.santaTypesDefinitions.Component.compProp.isRequired,
+    compData: _santaComponents.santaTypesDefinitions.Component.compData.isRequired,
+    componentViewMode: _santaComponents.santaTypesDefinitions.RenderFlags.componentViewMode,
+    componentPreviewState: _santaComponents.santaTypesDefinitions.RenderFlags.componentPreviewState,
+    styleId: _santaComponents.santaTypesDefinitions.Component.styleId,
+    style: _santaComponents.santaTypesDefinitions.Component.style,
     id: _santaComponents.santaTypesDefinitions.Component.id,
-    isMobileView: _santaComponents.santaTypesDefinitions.isMobileView,
-    scale: _santaComponents.santaTypesDefinitions.Component.scale
+    isMobileView: _santaComponents.santaTypesDefinitions.isMobileView
   },
 
   statics: {
+    behaviors: _lodash2.default.assign({}, inputFocusMixin.INPUT_FOCUS_BEHAVIORS),
     getComponentSkins: getComponentSkins
   },
 
-  getMobileFontSize: function getMobileFontSize() {
-    // TODO: check if this can be removed, and use the default logic from 'textScaleMixin'
-    var initialFontSize = parseInt(this.getFontSize('labelFont').fontSize, 10);
-
-    return initialFontSize > MOBILE_DEFAULT_FONT_SIZE ? MOBILE_DEFAULT_FONT_SIZE * this.props.scale + 'px' : initialFontSize * this.props.scale + 'px';
+  focus: function focus() {
+    this.toggleSwitchRef.focus();
   },
-  getStyle: function getStyle() {
-    return this.props.isMobileView ? Object.assign({}, this.props.style, { fontSize: this.getMobileFontSize() }) : this.props.style;
+  blur: function blur() {
+    this.toggleSwitchRef.blur();
+  },
+  getInitialState: function getInitialState() {
+    return {
+      checked: Boolean(this.props.compData.checked)
+    };
+  },
+  UNSAFE_componentWillReceiveProps: function UNSAFE_componentWillReceiveProps(nextProps) {
+    // eslint-disable-line
+    this.setState({
+      checked: Boolean(nextProps.compData.checked)
+    });
+  },
+  onChange: function onChange() {
+    var updatedData = {
+      checked: !this.state.checked
+    };
+    this.setState(updatedData);
+    this.updateData(updatedData);
+    this.handleAction('change', updatedData);
+  },
+  onFocus: function onFocus() {
+    this.handleAction('focus');
+  },
+  onBlur: function onBlur() {
+    this.handleAction('blur');
+  },
+  onClick: function onClick() {
+    this.handleAction('click');
   },
   getSkinProperties: function getSkinProperties() {
-    var rating = this.props.componentPreviewState === PREVIEW_STATES.NO_REVIEWS ? null : this.props.compData.rating;
-    var renderSeoScript = this.props.compProp.renderSeo ? this.props.jsonLdRenderer : null;
+    var _this3 = this;
+
+    var checked = this.state.checked;
+    var _props2 = this.props,
+        id = _props2.id,
+        styleId = _props2.styleId;
+    var _props$compProp = this.props.compProp,
+        trackHeight = _props$compProp.trackHeight,
+        knobSize = _props$compProp.knobSize,
+        isDisabled = _props$compProp.isDisabled,
+        displayKnobIcons = _props$compProp.displayKnobIcons,
+        alignment = _props$compProp.alignment;
+
+
+    var toggleProps = {
+      id: 'toggle-switch-' + id,
+      styleId: styleId,
+      checked: checked,
+      trackHeight: trackHeight,
+      knobSize: knobSize,
+      isDisabled: isDisabled,
+      displayKnobIcons: displayKnobIcons,
+      isRtl: alignment === 'right',
+      previewState: this.getComponentPreviewState(),
+      onChange: function onChange() {
+        return _this3.onChange();
+      },
+      onFocus: function onFocus() {
+        return _this3.onFocus();
+      },
+      onBlur: function onBlur() {
+        return _this3.onBlur();
+      },
+      onClick: function onClick() {
+        return _this3.onClick();
+      },
+      ref: function ref(toggleSwitchRef) {
+        _this3.toggleSwitchRef = toggleSwitchRef;
+      }
+    };
 
     return {
       '': {
-        parentConst: function parentConst(props) {
-          return _santaComponents.utils.createReactElement(_Rating.Rating, props);
-        },
-        id: this.props.id,
-        mode: 'display',
-        numRatingsLabel: this.props.compData.reviewsCountLabel,
-        numRatings: this.props.compData.numRatings,
-        noReviewsPlaceholder: this.props.compData.noReviewsPlaceholder,
-        rating: rating,
-        shapeSize: this.props.compProp.shapeSize,
-        rtl: this.props.compProp.direction === 'rtl',
-        shapeSpacing: this.props.compProp.shapeSpacing,
-        noReviewsMode: this.props.compProp.noReviewsMode,
-        ratingPosition: this.props.compProp.ratingPosition,
-        showRating: this.props.compProp.showRating,
-        textAlignment: this.props.compProp.alignment,
-        showReviewsCount: this.props.compProp.showReviewsCount,
-        editorMode: this.props.viewMode === 'editor',
-        icon: this.props.svgString,
-        style: this.getStyle(),
-        renderSeoScript: renderSeoScript
+        children: [_santaComponents.utils.createReactElement(ToggleSwitchWithClasses, toggleProps)]
       }
     };
   }
 });
+
+/***/ }),
+
+/***/ 465:
+/*!*************************************************!*\
+  !*** ./legacy/components/ToggleSwitch/theme.js ***!
+  \*************************************************/
+/*! no static exports found */
+/*! all exports used */
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+// this file was prevaled
+
+module.exports = { "json": { "wixui.skins.ToggleSwitch": { "params": { "outerLabelBorderSizeFocus": "BORDER_SIZE", "outerLabelBorderColorFocus": "COLOR_ALPHA", "backgroundColorFocus": "COLOR_ALPHA", "outerLabelBorderSizeDisabled": "BORDER_SIZE", "outerLabelBorderColorDisabled": "COLOR_ALPHA", "backgroundColorDisabled": "COLOR_ALPHA", "innerLabelBorderSizeDisabled": "BORDER_SIZE", "innerLabelBorderColorDisabled": "COLOR_ALPHA", "innerLabelBackgroundColorDisabled": "COLOR_ALPHA", "colorCheckedDisabled": "COLOR_ALPHA", "colorDisabled": "COLOR_ALPHA", "outerLabelBorderSizeHoverChecked": "BORDER_SIZE", "outerLabelBorderColorHoverChecked": "COLOR_ALPHA", "backgroundColorHoverChecked": "COLOR_ALPHA", "innerLabelBorderSizeHoverChecked": "BORDER_SIZE", "innerLabelBorderColorHoverChecked": "COLOR_ALPHA", "innerLabelBackgroundColorHoverChecked": "COLOR_ALPHA", "colorHoverChecked": "COLOR_ALPHA", "outerLabelBorderSizeHover": "BORDER_SIZE", "outerLabelBorderColorHover": "COLOR_ALPHA", "backgroundColorHover": "COLOR_ALPHA", "innerLabelBorderSizeHover": "BORDER_SIZE", "innerLabelBorderColorHover": "COLOR_ALPHA", "innerLabelBackgroundColorHover": "COLOR_ALPHA", "colorHover": "COLOR_ALPHA", "outerLabelBorderSizeChecked": "BORDER_SIZE", "outerLabelBorderColorChecked": "COLOR_ALPHA", "backgroundColorChecked": "COLOR_ALPHA", "innerLabelBorderSizeChecked": "BORDER_SIZE", "innerLabelBorderColorChecked": "COLOR_ALPHA", "innerLabelBackgroundColorChecked": "COLOR_ALPHA", "colorChecked": "COLOR_ALPHA", "outerLabelBoxShadow": "BOX_SHADOW", "outerLabelBorderSize": "BORDER_SIZE", "outerLabelBorderColor": "COLOR_ALPHA", "borderRadius": "BORDER_RADIUS", "backgroundColor": "COLOR_ALPHA", "innerLabelBoxShadow": "BOX_SHADOW", "innerLabelBorderSize": "BORDER_SIZE", "innerLabelBorderColor": "COLOR_ALPHA", "innerLabelBackgroundColor": "COLOR_ALPHA", "color": "COLOR_ALPHA" }, "paramsDefaults": { "outerLabelBorderSizeFocus": "0", "outerLabelBorderColorFocus": "color_23", "backgroundColorFocus": "color_6", "outerLabelBorderSizeDisabled": "0", "outerLabelBorderColorDisabled": "color_20", "backgroundColorDisabled": "color_3", "innerLabelBorderSizeDisabled": "0", "innerLabelBorderColorDisabled": "color_25", "innerLabelBackgroundColorDisabled": "color_15", "colorCheckedDisabled": "color_9", "colorDisabled": "color_8",
+        "outerLabelBorderSizeHoverChecked": "0", "outerLabelBorderColorHoverChecked": "color_22", "backgroundColorHoverChecked": "color_1", "innerLabelBorderSizeHoverChecked": "0", "innerLabelBorderColorHoverChecked": "color_27", "innerLabelBackgroundColorHoverChecked": "color_17", "colorHoverChecked": "color_11", "outerLabelBorderSizeHover": "0", "outerLabelBorderColorHover": "color_21", "backgroundColorHover": "color_2", "innerLabelBorderSizeHover": "0", "innerLabelBorderColorHover": "color_26",
+        "innerLabelBackgroundColorHover": "color_16", "colorHover": "color_10", "outerLabelBorderSizeChecked": "0", "outerLabelBorderColorChecked": "color_19", "backgroundColorChecked": "color_4", "innerLabelBorderSizeChecked": "0", "innerLabelBorderColorChecked": "color_24", "innerLabelBackgroundColorChecked": "color_14", "colorChecked": "color_7", "outerLabelBoxShadow": "1.5px 1.5px 1px rgba(0,0,0,0.2)", "outerLabelBorderSize": "0", "outerLabelBorderColor": "color_18", "borderRadius": "12px", "backgroundColor": "color_5", "innerLabelBoxShadow": "1.5px 1.5px 1px rgba(0,0,0,0.2)", "innerLabelBorderSize": "0", "innerLabelBorderColor": "color_23", "innerLabelBackgroundColor": "color_13", "color": "color_6" }, "css": { "%_root": "width:100%;height:100%;display:inline-flex;outline:none;position:relative;align-items:center;-webkit-tap-highlight-color:rgba(0, 0, 0, 0);", "%_root > input[type=checkbox]": "width:1px;height:1px;margin:0;opacity:0;position:absolute;", "%_root > input[type=checkbox]:focus,%_root[data-preview~=\"focus\"] > input[type=checkbox][type=checkbox]": "outline:none;",
+        "%_root > input[type=checkbox]:checked:focus,%_root[data-preview~=\"checked:focus\"] > input[type=checkbox][type=checkbox]": "outline:none;", "%_root > input[type=checkbox]:checked:focus + %_outerLabel,%_root[data-preview~=\"checked:focus\"] > input[type=checkbox][type=checkbox] + %_outerLabel": "border-width:[outerLabelBorderSizeFocus];border-color:[outerLabelBorderColorFocus];background-color:[backgroundColorFocus];", "%_root > input[type=checkbox]:focus + %_outerLabel,%_root[data-preview~=\"focus\"] > input[type=checkbox][type=checkbox] + %_outerLabel": "border-width:[outerLabelBorderSizeFocus];border-color:[outerLabelBorderColorFocus];background-color:[backgroundColorFocus];", "%_root > input[type=checkbox]:checked:disabled:hover + %_outerLabel,%_root[data-preview~=\"checked:disabled:hover\"] > input[type=checkbox][type=checkbox] + %_outerLabel": "cursor:default;border-width:[outerLabelBorderSizeDisabled];border-color:[outerLabelBorderColorDisabled];background-color:[backgroundColorDisabled];", "%_root > input[type=checkbox]:checked:disabled:hover ~ %_innerLabel,%_root[data-preview~=\"checked:disabled:hover\"] > input[type=checkbox][type=checkbox] ~ %_innerLabel": "cursor:default;border-width:[innerLabelBorderSizeDisabled];border-color:[innerLabelBorderColorDisabled];background-color:[innerLabelBackgroundColorDisabled];", "%_root > input[type=checkbox]:checked:disabled:hover ~ %_innerLabel > %_toggleIcon path,%_root[data-preview~=\"checked:disabled:hover\"] > input[type=checkbox][type=checkbox] ~ %_innerLabel > %_toggleIcon path": "fill:[colorCheckedDisabled];", "%_root > input[type=checkbox]:disabled:hover + %_outerLabel,%_root[data-preview~=\"disabled:hover\"] > input[type=checkbox][type=checkbox] + %_outerLabel": "cursor:default;border-width:[outerLabelBorderSizeDisabled];border-color:[outerLabelBorderColorDisabled];background-color:[backgroundColorDisabled];", "%_root > input[type=checkbox]:disabled:hover ~ %_innerLabel,%_root[data-preview~=\"disabled:hover\"] > input[type=checkbox][type=checkbox] ~ %_innerLabel": "cursor:default;border-width:[innerLabelBorderSizeDisabled];border-color:[innerLabelBorderColorDisabled];background-color:[innerLabelBackgroundColorDisabled];", "%_root > input[type=checkbox]:disabled:hover ~ %_innerLabel > %_toggleIcon path,%_root[data-preview~=\"disabled:hover\"] > input[type=checkbox][type=checkbox] ~ %_innerLabel > %_toggleIcon path": "fill:[colorDisabled];", "%_root > input[type=checkbox]:checked:hover + %_outerLabel,%_root[data-preview~=\"checked:hover\"] > input[type=checkbox][type=checkbox] + %_outerLabel": "border-width:[outerLabelBorderSizeHoverChecked];border-color:[outerLabelBorderColorHoverChecked];background-color:[backgroundColorHoverChecked];", "%_root > input[type=checkbox]:checked:hover ~ %_innerLabel,%_root[data-preview~=\"checked:hover\"] > input[type=checkbox][type=checkbox] ~ %_innerLabel": "border-width:[innerLabelBorderSizeHoverChecked];border-color:[innerLabelBorderColorHoverChecked];background-color:[innerLabelBackgroundColorHoverChecked];", "%_root > input[type=checkbox]:checked:hover ~ %_innerLabel > %_toggleIcon path,%_root[data-preview~=\"checked:hover\"] > input[type=checkbox][type=checkbox] ~ %_innerLabel > %_toggleIcon path": "fill:[colorHoverChecked];", "%_root > input[type=checkbox]:hover + %_outerLabel,%_root[data-preview~=\"hover\"] > input[type=checkbox][type=checkbox] + %_outerLabel": "border-width:[outerLabelBorderSizeHover];border-color:[outerLabelBorderColorHover];background-color:[backgroundColorHover];", "%_root > input[type=checkbox]:hover ~ %_innerLabel,%_root[data-preview~=\"hover\"] > input[type=checkbox][type=checkbox] ~ %_innerLabel": "border-width:[innerLabelBorderSizeHover];border-color:[innerLabelBorderColorHover];background-color:[innerLabelBackgroundColorHover];", "%_root > input[type=checkbox]:hover ~ %_innerLabel > %_toggleIcon path,%_root[data-preview~=\"hover\"] > input[type=checkbox][type=checkbox] ~ %_innerLabel > %_toggleIcon path": "fill:[colorHover];", "%_root > input[type=checkbox]:checked:disabled + %_outerLabel,%_root[data-preview~=\"checked:disabled\"] > input[type=checkbox][type=checkbox] + %_outerLabel": "cursor:default;border-width:[outerLabelBorderSizeDisabled];border-color:[outerLabelBorderColorDisabled];background-color:[backgroundColorDisabled];", "%_root > input[type=checkbox]:checked:disabled ~ %_innerLabel,%_root[data-preview~=\"checked:disabled\"] > input[type=checkbox][type=checkbox] ~ %_innerLabel": "cursor:default;border-width:[innerLabelBorderSizeDisabled];border-color:[innerLabelBorderColorDisabled];background-color:[innerLabelBackgroundColorDisabled];", "%_root > input[type=checkbox]:checked:disabled ~ %_innerLabel > %_toggleIcon path,%_root[data-preview~=\"checked:disabled\"] > input[type=checkbox][type=checkbox] ~ %_innerLabel > %_toggleIcon path": "fill:[colorCheckedDisabled];", "%_root > input[type=checkbox]:disabled + %_outerLabel,%_root[data-preview~=\"disabled\"] > input[type=checkbox][type=checkbox] + %_outerLabel": "cursor:default;border-width:[outerLabelBorderSizeDisabled];border-color:[outerLabelBorderColorDisabled];background-color:[backgroundColorDisabled];", "%_root > input[type=checkbox]:disabled ~ %_innerLabel,%_root[data-preview~=\"disabled\"] > input[type=checkbox][type=checkbox] ~ %_innerLabel": "cursor:default;border-width:[innerLabelBorderSizeDisabled];border-color:[innerLabelBorderColorDisabled];background-color:[innerLabelBackgroundColorDisabled];", "%_root > input[type=checkbox]:disabled ~ %_innerLabel > %_toggleIcon path,%_root[data-preview~=\"disabled\"] > input[type=checkbox][type=checkbox] ~ %_innerLabel > %_toggleIcon path": "fill:[colorDisabled];", "%_root > input[type=checkbox]:checked + %_outerLabel,%_root[data-preview~=\"checked\"] > input[type=checkbox][type=checkbox] + %_outerLabel": "border-width:[outerLabelBorderSizeChecked];border-color:[outerLabelBorderColorChecked];background-color:[backgroundColorChecked];", "%_root > input[type=checkbox]:checked ~ %_innerLabel,%_root[data-preview~=\"checked\"] > input[type=checkbox][type=checkbox] ~ %_innerLabel": "left:23px;border-width:[innerLabelBorderSizeChecked];border-color:[innerLabelBorderColorChecked];background-color:[innerLabelBackgroundColorChecked];", "%_root > input[type=checkbox]:checked ~ %_innerLabel > %_toggleIcon,%_root[data-preview~=\"checked\"] > input[type=checkbox][type=checkbox] ~ %_innerLabel > %_toggleIcon": "transition:all .3s cubic-bezier(0,1,0,1), visibility 0s;", "%_root > input[type=checkbox]:checked ~ %_innerLabel > %_toggleIcon path,%_root[data-preview~=\"checked\"] > input[type=checkbox][type=checkbox] ~ %_innerLabel > %_toggleIcon path": "fill:[colorChecked];", "%_outerLabel": "width:100%;cursor:pointer;height:100%;display:inline-block;box-sizing:border-box;transition:all .3s ease, visibility 0s;[outerLabelBoxShadow];border-width:[outerLabelBorderSize];border-color:[outerLabelBorderColor];border-style:solid;[borderRadius];background-color:[backgroundColor];", "%_innerLabel": "top:50%;left:1px;width:21px;height:22px;cursor:pointer;display:flex;position:absolute;transform:translate(0, -50%);transition:all .3s ease, visibility 0s;text-align:center;[innerLabelBoxShadow];box-sizing:border-box;align-items:center;border-width:[innerLabelBorderSize];border-color:[innerLabelBorderColor];border-style:solid;[borderRadius];justify-content:center;background-color:[innerLabelBackgroundColor];", "%_toggleIcon": "width:50%;height:50%;display:none;transition:all .3s cubic-bezier(1,0,1,0), visibility 0s;", "%_toggleIcon path": "fill:[color];" } } }, "classes": ["root", "outerLabel", "innerLabel", "toggleIcon"] };
+
+/***/ }),
+
+/***/ 60:
+/*!************************************************************!*\
+  !*** ../node_modules/hoist-non-react-methods/lib/index.js ***!
+  \************************************************************/
+/*! no static exports found */
+/*! all exports used */
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+exports.__esModule = true;
+exports.default = hoistNonReactMethods;
+var REACT_PROTOTYPE = {
+  autobind: true,
+  childContextTypes: true,
+  componentDidMount: true,
+  componentDidUpdate: true,
+  componentWillMount: true,
+  componentWillReceiveProps: true,
+  componentWillUnmount: true,
+  componentWillUpdate: true,
+  contextTypes: true,
+  displayName: true,
+  forceUpdate: true,
+  getChildContext: true,
+  getDefaultProps: true,
+  getDOMNode: true,
+  getInitialState: true,
+  isMounted: true,
+  mixins: true,
+  propTypes: true,
+  render: true,
+  replaceProps: true,
+  replaceState: true,
+  setProps: true,
+  setState: true,
+  shouldComponentUpdate: true,
+  statics: true,
+  updateComponent: true
+};
+
+var REACT_STATICS = {
+  childContextTypes: true,
+  contextTypes: true,
+  defaultProps: true,
+  displayName: true,
+  getDefaultProps: true,
+  mixins: true,
+  propTypes: true,
+  type: true
+};
+
+var KNOWN_STATICS = {
+  name: true,
+  length: true,
+  prototype: true,
+  caller: true,
+  arguments: true,
+  arity: true
+};
+
+var defaultConfig = {
+  delegateTo: function delegateTo(w) {
+    return w.refs.child;
+  },
+  hoistStatics: true
+};
+
+function hoistNonReactMethods(targetComponent, sourceComponent, config) {
+  var targetComponentName = targetComponent.displayName || targetComponent.name || 'Wrapper';
+  var sourceComponentName = sourceComponent.displayName || sourceComponent.name || 'WrappedComponent';
+  var hoistStatics = config && typeof config.hoistStatics !== 'undefined' ? config.hoistStatics : defaultConfig.hoistStatics;
+  var delegateTo = config && typeof config.delegateTo !== 'undefined' ? config.delegateTo : defaultConfig.delegateTo;
+  // backwards compatible where config option is delegateTo function
+  if (typeof config === 'function') delegateTo = config;
+
+  if (hoistStatics) {
+    var statics = Object.getOwnPropertyNames(sourceComponent).filter(function (k) {
+      return !REACT_STATICS[k] && !KNOWN_STATICS[k];
+    });
+
+    statics.forEach(function (methodName) {
+      if (targetComponent[methodName]) console.warn('Static method ' + methodName + ' already exists in wrapper component ' + targetComponentName + ', and won\'t be hoisted. Consider changing the name on ' + sourceComponentName + '.');
+      targetComponent[methodName] = sourceComponent[methodName];
+    });
+  }
+
+  var methods = Object.getOwnPropertyNames(sourceComponent.prototype).filter(function (k) {
+    return !REACT_PROTOTYPE[k];
+  });
+
+  methods.forEach(function (methodName) {
+    if (targetComponent.prototype[methodName]) {
+      console.warn('Method ' + methodName + ' already exists in wrapper component ' + targetComponentName + ', and won\'t be hoisted. Consider changing the name on ' + sourceComponentName + '.');
+      return;
+    }
+
+    targetComponent.prototype[methodName] = function () {
+      var _sourceComponent$prot;
+
+      for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+        args[_key] = arguments[_key];
+      }
+
+      return (_sourceComponent$prot = sourceComponent.prototype[methodName]).call.apply(_sourceComponent$prot, [delegateTo.call(this, this)].concat(args));
+    };
+  });
+
+  return targetComponent;
+}
+//# sourceMappingURL=index.js.map
 
 /***/ }),
 
@@ -2635,4 +1799,4 @@ module.exports = invariant;
 /***/ })
 
 }]);
-//# sourceMappingURL=wixui.RatingsDisplay.chunk.js.map
+//# sourceMappingURL=wixui.ToggleSwitch.chunk.js.map
