@@ -1,9 +1,9 @@
-((typeof self !== 'undefined' ? self : this)["webpackJsonp_wix_ui_santa"] = (typeof self !== 'undefined' ? self : this)["webpackJsonp_wix_ui_santa"] || []).push([[50],{
+((typeof self !== 'undefined' ? self : this)["webpackJsonp_wix_ui_santa"] = (typeof self !== 'undefined' ? self : this)["webpackJsonp_wix_ui_santa"] || []).push([[49],{
 
-/***/ 448:
-/*!******************************************!*\
-  !*** ./components/StylableLine/index.js ***!
-  \******************************************/
+/***/ 399:
+/*!*****************************************************!*\
+  !*** ./components/StylableButton/StylableButton.js ***!
+  \*****************************************************/
 /*! no static exports found */
 /*! all exports used */
 /*! ModuleConcatenation bailout: Module is not an ECMAScript module */
@@ -15,32 +15,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-
-var _StylableLine = __webpack_require__(/*! ./StylableLine */ 847);
-
-exports.default = {
-  componentType: 'wixui.StylableLine',
-  component: _StylableLine.StylableLine
-};
-
-/***/ }),
-
-/***/ 847:
-/*!*************************************************!*\
-  !*** ./components/StylableLine/StylableLine.js ***!
-  \*************************************************/
-/*! no static exports found */
-/*! all exports used */
-/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.StylableLine = undefined;
+exports.StylableButton = undefined;
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
@@ -48,13 +23,177 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 var _react = __webpack_require__(/*! react */ 0);
 
+var React = _interopRequireWildcard(_react);
+
+var _propTypes = __webpack_require__(/*! prop-types */ 1);
+
+var _StylableButtonSt = __webpack_require__(/*! ./StylableButton.st.css */ 850);
+
+var _StylableButtonSt2 = _interopRequireDefault(_StylableButtonSt);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+
+function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var KEY_CODES = { ENTER: 13, SPACE: 32 };
+
+var StylableButton = exports.StylableButton = function (_React$Component) {
+  _inherits(StylableButton, _React$Component);
+
+  function StylableButton() {
+    var _ref;
+
+    var _temp, _this, _ret;
+
+    _classCallCheck(this, StylableButton);
+
+    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = StylableButton.__proto__ || Object.getPrototypeOf(StylableButton)).call.apply(_ref, [this].concat(args))), _this), _this.getCommonAttributes = function () {
+      return _extends({
+        'aria-label': _this.props.label
+      }, (0, _StylableButtonSt2.default)('root', { error: _this.props.hasError, disabled: _this.props.disabled }, _this.props), {
+        onKeyPress: _this.onKeyPressEventHandler,
+        onClick: _this.props.disabled ? null : _this.props.onClick,
+        style: _this.props.style,
+        id: _this.props.id
+      });
+    }, _this.renderButtonContent = function () {
+      return React.createElement(
+        'div',
+        { className: _StylableButtonSt2.default.container },
+        _this.props.label ? React.createElement(
+          'span',
+          { className: _StylableButtonSt2.default.labelContainer },
+          _this.props.label
+        ) : null,
+        _this.props.icon ? React.createElement(
+          'span',
+          { className: _StylableButtonSt2.default.iconContainer, 'aria-hidden': 'true' },
+          _this.props.icon
+        ) : null
+      );
+    }, _this.renderLinkedButton = function () {
+      var _this$getCommonAttrib = _this.getCommonAttributes(),
+          className = _this$getCommonAttrib.className,
+          restOfAttr = _objectWithoutProperties(_this$getCommonAttrib, ['className']);
+
+      return React.createElement(
+        'a',
+        _extends({ href: _this.props.disabled ? '#' : _this.props.href, 'data-anchor': _this.props.dataAnchor, target: _this.props.target }, restOfAttr, { className: className + ' ' + _StylableButtonSt2.default.link }),
+        _this.renderButtonContent()
+      );
+    }, _this.renderRegularButton = function () {
+      return React.createElement(
+        'button',
+        _extends({ type: 'button', disabled: _this.props.disabled }, _this.getCommonAttributes()),
+        _this.renderButtonContent()
+      );
+    }, _this.onKeyPressEventHandler = function (e) {
+      if (!_this.props.href && e.keyCode === KEY_CODES.ENTER) {
+        _this.props.onClick && _this.props.onClick();
+      } else if (_this.props.href && e.keyCode === KEY_CODES.SPACE) {
+        _this.props.onClick && _this.props.onClick();
+      }
+    }, _temp), _possibleConstructorReturn(_this, _ret);
+  }
+
+  _createClass(StylableButton, [{
+    key: 'render',
+    value: function render() {
+      var href = this.props.href;
+
+      return href ? this.renderLinkedButton() : this.renderRegularButton();
+    }
+  }]);
+
+  return StylableButton;
+}(React.Component);
+
+StylableButton.propTypes = {
+  label: _propTypes.PropTypes.string,
+  icon: _propTypes.PropTypes.node,
+  href: _propTypes.PropTypes.string,
+  onClick: _propTypes.PropTypes.func,
+  style: _propTypes.PropTypes.object,
+  hasError: _propTypes.PropTypes.bool,
+  disabled: _propTypes.PropTypes.bool,
+  target: _propTypes.PropTypes.string,
+  dataAnchor: _propTypes.PropTypes.string,
+  id: _propTypes.PropTypes.string,
+  className: _propTypes.PropTypes.string
+};
+
+/***/ }),
+
+/***/ 449:
+/*!********************************************!*\
+  !*** ./components/StylableButton/index.js ***!
+  \********************************************/
+/*! no static exports found */
+/*! all exports used */
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _StylableButton = __webpack_require__(/*! ./StylableButton.santa */ 849);
+
+var _StylableButton2 = __webpack_require__(/*! ./StylableButton */ 399);
+
+exports.default = {
+  componentType: 'wixui.StylableButton',
+  component: _StylableButton2.StylableButton,
+  santaComponent: _StylableButton.SantaStylableButton
+};
+
+/***/ }),
+
+/***/ 849:
+/*!***********************************************************!*\
+  !*** ./components/StylableButton/StylableButton.santa.js ***!
+  \***********************************************************/
+/*! no static exports found */
+/*! all exports used */
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.SantaStylableButton = undefined;
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+exports.createIconFromString = createIconFromString;
+
+var _react = __webpack_require__(/*! react */ 0);
+
 var _react2 = _interopRequireDefault(_react);
 
 var _santaComponents = __webpack_require__(/*! santa-components */ 14);
 
-var _StylableLineSt = __webpack_require__(/*! ./StylableLine.st.css */ 848);
-
-var _StylableLineSt2 = _interopRequireDefault(_StylableLineSt);
+var _StylableButton = __webpack_require__(/*! ./StylableButton */ 399);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -64,49 +203,62 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var StylableLine = exports.StylableLine = function (_React$Component) {
-  _inherits(StylableLine, _React$Component);
+function createIconFromString(svgString) {
+  return _react2.default.createElement('div', {
+    dangerouslySetInnerHTML: {
+      __html: svgString || ''
+    }
+  });
+}
 
-  function StylableLine() {
-    _classCallCheck(this, StylableLine);
+var SantaStylableButton = exports.SantaStylableButton = function (_SantaComponent) {
+  _inherits(SantaStylableButton, _SantaComponent);
 
-    return _possibleConstructorReturn(this, (StylableLine.__proto__ || Object.getPrototypeOf(StylableLine)).apply(this, arguments));
+  function SantaStylableButton() {
+    _classCallCheck(this, SantaStylableButton);
+
+    return _possibleConstructorReturn(this, (SantaStylableButton.__proto__ || Object.getPrototypeOf(SantaStylableButton)).apply(this, arguments));
   }
 
-  _createClass(StylableLine, [{
+  _createClass(SantaStylableButton, [{
     key: 'render',
     value: function render() {
-      var props = this.props;
-      var className = props.styleId + ' ' + props.styleId + '--root line';
-      return _react2.default.createElement(
-        'div',
-        _extends({ style: this.props.style }, (0, _StylableLineSt2.default)('root', {}, { className: className }), { id: props.id }),
-        _react2.default.createElement(
-          'span',
-          (0, _StylableLineSt2.default)('text', {}),
-          'stylable'
-        )
-      );
+      var _props = this.props,
+          svgString = _props.svgString,
+          styleId = _props.styleId,
+          compData = _props.compData;
+
+
+      return _react2.default.createElement(_StylableButton.StylableButton, _extends({}, this.getRequiredProps(), {
+        label: compData.label,
+        className: styleId + '--root',
+        icon: createIconFromString(svgString)
+
+      }));
     }
   }]);
 
-  return StylableLine;
-}(_react2.default.Component);
+  return SantaStylableButton;
+}(_santaComponents.SantaComponent);
 
-StylableLine.displayName = 'StylableLine';
-StylableLine.stylable = true;
-StylableLine.propTypes = {
+SantaStylableButton.displayName = 'StylableButton';
+SantaStylableButton.stylable = true;
+SantaStylableButton.propTypes = {
   id: _santaComponents.santaTypesDefinitions.Component.id,
   styleId: _santaComponents.santaTypesDefinitions.Component.styleId,
-  style: _santaComponents.santaTypesDefinitions.Component.style
+  style: _santaComponents.santaTypesDefinitions.Component.style,
+  compData: _santaComponents.santaTypesDefinitions.Component.compData.isRequired,
+  svgString: _santaComponents.santaTypesDefinitions.RawSvg.getRawSVG,
+  renderedLink: _santaComponents.santaTypesDefinitions.Link.renderedLink,
+  compProp: _santaComponents.santaTypesDefinitions.Component.compProp.isRequired
 };
 
 /***/ }),
 
-/***/ 848:
-/*!*****************************************************!*\
-  !*** ./components/StylableLine/StylableLine.st.css ***!
-  \*****************************************************/
+/***/ 850:
+/*!*********************************************************!*\
+  !*** ./components/StylableButton/StylableButton.st.css ***!
+  \*********************************************************/
 /*! exports provided: default */
 /*! all exports used */
 /*! ModuleConcatenation bailout: Module is not an ECMAScript module */
@@ -116,11 +268,11 @@ Object.defineProperty(exports, "__esModule", { value: true })
 
 exports.default = __webpack_require__.stylable.create(
   "root",
-  "StylableLine1578375768",
-  {"root":"StylableLine1578375768--root","text":"StylableLine1578375768--text"},
+  "StylableButton3172224474",
+  {"root":"StylableButton3172224474--root","link":"StylableButton3172224474--link","container":"StylableButton3172224474--container","labelContainer":"StylableButton3172224474--labelContainer","iconContainer":"StylableButton3172224474--iconContainer"},
   "",
   1,
-  /*! ./components/StylableLine/StylableLine.st.css */ 848
+  /*! ./components/StylableButton/StylableButton.st.css */ 850
 );
 
 
@@ -128,4 +280,4 @@ exports.default = __webpack_require__.stylable.create(
 /***/ })
 
 }]);
-//# sourceMappingURL=wixui.StylableLine.chunk.js.map
+//# sourceMappingURL=wixui.StylableButton.chunk.js.map

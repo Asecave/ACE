@@ -1,4 +1,4 @@
-((typeof self !== 'undefined' ? self : this)["webpackJsonp_wix_ui_santa"] = (typeof self !== 'undefined' ? self : this)["webpackJsonp_wix_ui_santa"] || []).push([[53],{
+((typeof self !== 'undefined' ? self : this)["webpackJsonp_wix_ui_santa"] = (typeof self !== 'undefined' ? self : this)["webpackJsonp_wix_ui_santa"] || []).push([[42],{
 
 /***/ 12:
 /*!**********************************************!*\
@@ -964,10 +964,10 @@ module.exports = emptyObject;
 
 /***/ }),
 
-/***/ 224:
-/*!******************************************!*\
-  !*** ./legacy/utils/namespaceClasses.js ***!
-  \******************************************/
+/***/ 351:
+/*!********************************************************************************!*\
+  !*** ../node_modules/wix-ui-core/dist/src/components/pagination/Pagination.js ***!
+  \********************************************************************************/
 /*! no static exports found */
 /*! all exports used */
 /*! ModuleConcatenation bailout: Module is not an ECMAScript module */
@@ -975,281 +975,238 @@ module.exports = emptyObject;
 
 "use strict";
 
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-exports.default = namespaceClasses;
-
-var _react = __webpack_require__(/*! react */ 0);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _propTypes = __webpack_require__(/*! prop-types */ 1);
-
-var _hoistNonReactMethods = __webpack_require__(/*! hoist-non-react-methods */ 60);
-
-var _hoistNonReactMethods2 = _interopRequireDefault(_hoistNonReactMethods);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var isStatelessComponent = function isStatelessComponent(Component) {
-  return !(Component.prototype && Component.prototype.render);
+Object.defineProperty(exports, "__esModule", { value: true });
+var tslib_1 = __webpack_require__(/*! tslib */ 6);
+var React = __webpack_require__(/*! react */ 0);
+var PageStrip_1 = __webpack_require__(/*! ./PageStrip */ 648);
+var Pagination_st_css_1 = __webpack_require__(/*! ./Pagination.st.css */ 352);
+var root_min_width_1 = __webpack_require__(/*! ./root-min-width */ 650);
+var upperCaseFirst = function (str) {
+    return str[0].toUpperCase() + str.slice(1);
 };
-
-function namespaceClasses(Component, classes) {
-  var Namespaced = function (_React$Component) {
-    _inherits(Namespaced, _React$Component);
-
-    function Namespaced() {
-      _classCallCheck(this, Namespaced);
-
-      return _possibleConstructorReturn(this, (Namespaced.__proto__ || Object.getPrototypeOf(Namespaced)).apply(this, arguments));
+exports.getId = function (idPrefix, name) {
+    if (idPrefix === void 0) { idPrefix = ''; }
+    if (name === void 0) { name = ''; }
+    return idPrefix ? idPrefix + name : null;
+};
+exports.calculateWidth = function (totalPages) {
+    return totalPages.toString().length + "em";
+};
+var Pagination = /** @class */ (function (_super) {
+    tslib_1.__extends(Pagination, _super);
+    function Pagination() {
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.state = {
+            pageInputValue: String(_this.props.currentPage),
+            pageInputHasError: false,
+        };
+        _this.handlePageInputChange = function (e) {
+            _this.setState({
+                pageInputValue: e.target.value,
+                pageInputHasError: false,
+            });
+        };
+        _this.handlePageInputKeyDown = function (event) {
+            // Enter
+            if (event.keyCode === 13) {
+                var page = Number(_this.state.pageInputValue);
+                if (page !== _this.props.currentPage) {
+                    if (1 <= page && page <= _this.props.totalPages) {
+                        _this.props.onChange({ event: event, page: page });
+                    }
+                    else {
+                        _this.setState({ pageInputHasError: true });
+                    }
+                }
+            }
+        };
+        _this.handlePageInputBlur = function (event) {
+            _this.setState({
+                pageInputValue: String(_this.props.currentPage),
+                pageInputHasError: false,
+            });
+        };
+        _this.handlePageClick = function (event, page) {
+            _this.props.onChange({ event: event, page: page });
+        };
+        _this.handlePageKeyDown = function (event, page) {
+            // Enter or Space
+            if (event.keyCode === 13 || event.keyCode === 32) {
+                _this.props.onChange({ event: event, page: page });
+            }
+        };
+        return _this;
     }
-
-    _createClass(Namespaced, [{
-      key: 'render',
-      value: function render() {
-        var _this2 = this;
-
-        var _props = this.props,
-            styleId = _props.styleId,
-            rest = _objectWithoutProperties(_props, ['styleId']);
-
-        var withNamespace = {};
-        classes.forEach(function (cls) {
-          withNamespace[cls] = styleId + '_' + cls;
-        });
-        return isStatelessComponent(Component) ? _react2.default.createElement(Component, _extends({ classes: withNamespace }, rest)) : _react2.default.createElement(Component, _extends({ ref: function ref(_ref) {
-            return _this2.wrappedComponentRef = _ref;
-          }, classes: withNamespace }, rest));
-      }
-    }]);
-
-    return Namespaced;
-  }(_react2.default.Component);
-
-  Namespaced.propTypes = _extends({
-    styleId: _propTypes.string
-  }, Component.propTypes);
-
-  return isStatelessComponent(Component) ? Namespaced : (0, _hoistNonReactMethods2.default)(Namespaced, Component, { delegateTo: function delegateTo(c) {
-      return c.wrappedComponentRef;
-    }, hoistStatics: true });
-}
-
-/***/ }),
-
-/***/ 286:
-/*!****************************************************************!*\
-  !*** ./legacy/components/CoreToggleSwitch/CoreToggleSwitch.js ***!
-  \****************************************************************/
-/*! no static exports found */
-/*! all exports used */
-/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = __webpack_require__(/*! react */ 0);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _propTypes = __webpack_require__(/*! prop-types */ 1);
-
-var _utils = __webpack_require__(/*! ./utils */ 287);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var _ = __webpack_require__(/*! lodash */ 2);
-
-/**
- * Toggle Switch
- */
-
-var ToggleSwitch = function (_React$PureComponent) {
-  _inherits(ToggleSwitch, _React$PureComponent);
-
-  function ToggleSwitch() {
-    var _ref;
-
-    var _temp, _this, _ret;
-
-    _classCallCheck(this, ToggleSwitch);
-
-    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
-    }
-
-    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = ToggleSwitch.__proto__ || Object.getPrototypeOf(ToggleSwitch)).call.apply(_ref, [this].concat(args))), _this), _this.id = _this.props.id || _.uniqueId('ToggleSwitch'), _this.inputRef = null, _this.toggle = null, _temp), _possibleConstructorReturn(_this, _ret);
-  }
-
-  _createClass(ToggleSwitch, [{
-    key: 'handleChange',
-    value: function handleChange(e) {
-      if (!this.props.disabled) {
-        this.props.onChange(e);
-      }
-    }
-  }, {
-    key: 'focus',
-    value: function focus() {
-      this.inputRef.focus();
-    }
-  }, {
-    key: 'blur',
-    value: function blur() {
-      this.inputRef.blur();
-    }
-  }, {
-    key: 'render',
-    value: function render() {
-      var _this2 = this;
-
-      var _props = this.props,
-          checked = _props.checked,
-          disabled = _props.disabled,
-          classes = _props.classes,
-          styles = _props.styles,
-          previewState = _props.previewState,
-          dataHook = _props.dataHook,
-          dataClass = _props.dataClass;
-      var id = this.id;
-
-
-      return _react2.default.createElement(
-        'label',
-        {
-          className: classes.root,
-          style: styles.root,
-          ref: function ref(_ref2) {
-            return _this2.toggle = _ref2;
-          },
-          'data-preview': previewState,
-          onClick: function onClick() {
-            return _this2.inputRef && _this2.inputRef.focus();
-          },
-          'data-hook': dataHook,
-          'data-class': dataClass
+    Pagination.prototype.updateRootMinWidth = function () {
+        root_min_width_1.measureAndSetRootMinWidth(this.rootNode, this.props.paginationMode, this.props.id);
+    };
+    Pagination.prototype.componentDidMount = function () {
+        this.props.updateResponsiveLayout && this.updateRootMinWidth();
+    };
+    Pagination.prototype.componentDidUpdate = function () {
+        this.props.updateResponsiveLayout && this.updateRootMinWidth();
+    };
+    Pagination.prototype.getId = function (elementName) {
+        if (elementName === void 0) { elementName = ''; }
+        return exports.getId(this.props.id, elementName);
+    };
+    Object.defineProperty(Pagination.prototype, "maxPagesToShow", {
+        get: function () {
+            if (this.props.maxPagesToShow) {
+                return this.props.maxPagesToShow;
+            }
+            if (this.props.responsive) {
+                return 20;
+            }
+            return 7;
         },
-        _react2.default.createElement('input', {
-          type: 'checkbox',
-          id: id,
-          checked: checked,
-          disabled: disabled,
-          onChange: function onChange(e) {
-            return _this2.handleChange(e);
-          },
-          ref: function ref(el) {
-            return _this2.inputRef = el;
-          }
-        }),
-        _react2.default.createElement('div', { className: classes.outerLabel, style: styles.outerLabel, 'aria-label': 'Toggle' }),
-        _react2.default.createElement(
-          'div',
-          { className: classes.innerLabel, style: styles.innerLabel },
-          _react2.default.createElement(
-            'svg',
-            { className: classes.toggleIcon, style: styles.toggleIcon, viewBox: (0, _utils.getViewBox)(checked) },
-            _react2.default.createElement('path', { d: (0, _utils.getPathDescription)(checked) })
-          )
-        )
-      );
-    }
-  }]);
-
-  return ToggleSwitch;
-}(_react2.default.PureComponent);
-
-ToggleSwitch.propTypes = {
-  /** Is the toggleSwitch checked or not */
-  checked: _propTypes.bool,
-  /** Callback function when user changes the value of the component */
-  onChange: _propTypes.func.isRequired,
-  /** Is the toggleSwitch disabled or not */
-  disabled: _propTypes.bool,
-  /** Classes object */
-  classes: _propTypes.object.isRequired,
-  /** Component ID, will be generated automatically if not provided */
-  /** Styles object */
-  styles: _propTypes.object,
-  /** Component ID, will be generated automatically if not provided */
-  id: _propTypes.string,
-  /** Preview state, initiate hover, focus, etc. synthetically */
-  previewState: _propTypes.string,
-  dataHook: _propTypes.string,
-  dataClass: _propTypes.string
-};
-ToggleSwitch.defaultProps = {
-  checked: false,
-  styles: {},
-  previewState: ''
-};
-exports.default = ToggleSwitch;
+        enumerable: true,
+        configurable: true
+    });
+    Pagination.prototype.renderPageStrip = function () {
+        return (React.createElement(PageStrip_1.PageStrip, { id: this.props.id, totalPages: this.props.totalPages, currentPage: this.props.currentPage, maxPagesToShow: this.maxPagesToShow, showFirstPage: this.props.showFirstPage, showLastPage: this.props.showLastPage, responsive: this.props.responsive, pageUrl: this.props.pageUrl, gapLabel: this.props.gapLabel, onPageClick: this.handlePageClick, onPageKeyDown: this.handlePageKeyDown, updateResponsiveLayout: this.props.updateResponsiveLayout, disabled: this.props.disabled }));
+    };
+    Pagination.prototype.renderPageForm = function () {
+        return (React.createElement("div", { "data-hook": "page-form", id: this.getId('pageForm'), className: Pagination_st_css_1.default.pageForm, dir: "ltr" },
+            React.createElement("input", { id: this.getId('pageInput'), "data-hook": "page-input", type: "number", className: Pagination_st_css_1.default.pageInput, min: 1, max: this.props.totalPages, value: this.state.pageInputValue, disabled: this.props.disabled, onChange: this.handlePageInputChange, onKeyDown: this.handlePageInputKeyDown, "aria-label": 'Page number, select a number between 1 and ' +
+                    this.props.totalPages, onBlur: this.handlePageInputBlur, style: { width: exports.calculateWidth(this.props.totalPages) } }),
+            this.props.showInputModeTotalPages && [
+                React.createElement("span", { key: "slash", id: this.getId('slash'), className: Pagination_st_css_1.default.slash }, this.props.slashLabel),
+                React.createElement("span", { key: "total-pages", id: this.getId('totalPages'), "data-hook": "total-pages", className: Pagination_st_css_1.default.totalPages }, this.props.totalPages),
+            ]));
+    };
+    Pagination.prototype.renderNavButton = function (type) {
+        var _this = this;
+        var _a;
+        var _b = this.props, currentPage = _b.currentPage, totalPages = _b.totalPages, pageUrl = _b.pageUrl;
+        var disabled = this.props.disabled ||
+            (((type === "first" /* First */ || type === "previous" /* Prev */) &&
+                currentPage <= 1) ||
+                ((type === "last" /* Last */ || type === "next" /* Next */) &&
+                    currentPage >= totalPages));
+        var _c = (_a = {},
+            _a["previous" /* Prev */] = [
+                Pagination_st_css_1.default.navButtonPrevious,
+                this.props.previousLabel,
+                currentPage - 1,
+            ],
+            _a["next" /* Next */] = [
+                Pagination_st_css_1.default.navButtonNext,
+                this.props.nextLabel,
+                currentPage + 1,
+            ],
+            _a["first" /* First */] = [Pagination_st_css_1.default.navButtonFirst, this.props.firstLabel, 1],
+            _a["last" /* Last */] = [
+                Pagination_st_css_1.default.navButtonLast,
+                this.props.lastLabel,
+                totalPages,
+            ],
+            _a)[type], btnClass = _c[0], label = _c[1], page = _c[2];
+        return (React.createElement("a", tslib_1.__assign({ "data-hook": type, id: this.getId('navButton' + upperCaseFirst(type)) }, Pagination_st_css_1.default('navButton ' + btnClass, { disabled: disabled }), { "aria-label": upperCaseFirst(type) + ' Page', tabIndex: disabled || pageUrl ? null : 0, onClick: disabled ? null : function (event) { return _this.handlePageClick(event, page); }, onKeyDown: disabled ? null : function (event) { return _this.handlePageKeyDown(event, page); }, href: !disabled && pageUrl ? pageUrl(page) : null }), label));
+    };
+    Pagination.prototype.componentWillReceiveProps = function (nextProps) {
+        this.setState({
+            pageInputValue: String(nextProps.currentPage),
+            pageInputHasError: false,
+        });
+    };
+    Pagination.prototype.render = function () {
+        var _this = this;
+        var _a = this.props, showFirstLastNavButtons = _a.showFirstLastNavButtons, paginationMode = _a.paginationMode, width = _a.width, style = _a.style;
+        var styleStates = {
+            disabled: this.props.disabled,
+            error: this.state.pageInputHasError,
+        };
+        return (React.createElement("nav", tslib_1.__assign({ ref: function (el) { return (_this.rootNode = el); }, id: this.getId(''), "aria-label": "Pagination Navigation", dir: this.props.rtl ? 'rtl' : null, onClick: this.props.onClick, onDoubleClick: this.props.onDoubleClick, onMouseEnter: this.props.onMouseEnter, onMouseLeave: this.props.onMouseLeave, style: style || { width: width } }, Pagination_st_css_1.default('root', styleStates, this.props)),
+            this.renderNavButton("next" /* Next */),
+            this.renderNavButton("previous" /* Prev */),
+            paginationMode === 'input'
+                ? this.renderPageForm()
+                : this.renderPageStrip(),
+            showFirstLastNavButtons && this.renderNavButton("first" /* First */),
+            showFirstLastNavButtons && this.renderNavButton("last" /* Last */)));
+    };
+    Pagination.displayName = 'Pagination';
+    Pagination.defaultProps = {
+        currentPage: 1,
+        showFirstLastNavButtons: false,
+        showFirstPage: false,
+        showLastPage: false,
+        responsive: false,
+        paginationMode: 'pages',
+        showInputModeTotalPages: false,
+        disabled: false,
+        // dir="rtl" automatically flips the direction of less-than and more-than signs.
+        // If we decide to use different labels we need to add conditional logic.
+        firstLabel: '<<',
+        lastLabel: '>>',
+        previousLabel: '<',
+        nextLabel: '>',
+        gapLabel: '...',
+        slashLabel: '\u00A0/\u00A0',
+    };
+    return Pagination;
+}(React.Component));
+exports.Pagination = Pagination;
+//# sourceMappingURL=Pagination.js.map
 
 /***/ }),
 
-/***/ 287:
-/*!*****************************************************!*\
-  !*** ./legacy/components/CoreToggleSwitch/utils.js ***!
-  \*****************************************************/
-/*! no static exports found */
+/***/ 352:
+/*!************************************************************************************!*\
+  !*** ../node_modules/wix-ui-core/dist/src/components/pagination/Pagination.st.css ***!
+  \************************************************************************************/
+/*! exports provided: default */
 /*! all exports used */
 /*! ModuleConcatenation bailout: Module is not an ECMAScript module */
 /***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
+Object.defineProperty(exports, "__esModule", { value: true })
+
+exports.default = __webpack_require__.stylable.create(
+  "root",
+  "Pagination3815741391",
+  {"button-common-mixin":"Pagination3815741391--button-common-mixin","root":"Pagination3815741391--root","navButton":"Pagination3815741391--navButton","disabled":"Pagination3815741391--disabled","navButtonFirst":"Pagination3815741391--navButtonFirst","navButtonPrevious":"Pagination3815741391--navButtonPrevious","navButtonNext":"Pagination3815741391--navButtonNext","navButtonLast":"Pagination3815741391--navButtonLast","pageStrip":"Pagination3815741391--pageStrip","pageStripInner":"Pagination3815741391--pageStripInner","pageStripTemplate":"Pagination3815741391--pageStripTemplate","pageButton":"Pagination3815741391--pageButton","currentPage":"Pagination3815741391--currentPage","gap":"Pagination3815741391--gap","pageForm":"Pagination3815741391--pageForm","pageInput":"Pagination3815741391--pageInput","totalPages":"Pagination3815741391--totalPages","slash":"Pagination3815741391--slash"},
+  "",
+  1,
+  /*! ../node_modules/wix-ui-core/dist/src/components/pagination/Pagination.st.css */ 352
+);
 
 
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-var activeViewBox = exports.activeViewBox = '0 0 41 32';
-var activePathD = exports.activePathD = 'M0.169 17.815c0.169 1.098 0.76 2.111 1.689 2.871l14.269 10.385c1.942 1.435 4.644 1.013 6.079-0.844l18.069-23.303c1.435-1.858 1.098-4.559-0.844-5.995s-4.644-1.098-6.164 0.844l-15.367 19.842-10.723-7.852c-1.942-1.435-4.644-1.013-6.164 0.844-0.76 0.929-1.013 2.111-0.844 3.208z';
-
-var inactiveViewBox = exports.inactiveViewBox = '0 0 143 32';
-var inactivePathD = exports.inactivePathD = 'M0 0h142.545v32h-142.545v-32z';
-
-var getViewBox = exports.getViewBox = function getViewBox(checked) {
-  return checked ? activeViewBox : inactiveViewBox;
-};
-
-var getPathDescription = exports.getPathDescription = function getPathDescription(checked) {
-  return checked ? activePathD : inactivePathD;
-};
 
 /***/ }),
 
-/***/ 411:
+/***/ 353:
 /*!*************************************************!*\
-  !*** ./legacy/components/ToggleSwitch/index.js ***!
+  !*** ./components/Pagination/Pagination.st.css ***!
   \*************************************************/
+/*! exports provided: default */
+/*! all exports used */
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+/***/ (function(module, exports, __webpack_require__) {
+
+Object.defineProperty(exports, "__esModule", { value: true })
+
+exports.default = __webpack_require__.stylable.create(
+  "root",
+  "Pagination3298768303",
+  {"pageButtonRules":"Pagination3298768303--pageButtonRules","root":"Pagination3298768303--root","selectedPageBG":"color_22","selectedPageBorderColor":"color_26","selectedPageBorderWidth":"0","selectedPageTextColor":"color_25","pageNumbersTextColor":"color_6","pageInputBG":"color_23","pageInputBorderColor":"color_27","pageInputBorderWidth":"0","pageInputTextColor":"color_26","totalPagesTextColor":"color_7","pageInputFocusBG":"color_8","pageInputFocusBorderColor":"color_38","pageInputFocusBorderWidth":"3","pageInputErrorBG":"color_2","pageInputErrorBorderColor":"color_22","pageInputErrorBorderWidth":"3","navButtonBG":"transparent","navButtonBorderWidth":"3","navButtonBorderColor":"color_32","navButtonDisabledBorderWidth":"3","navButtonDisabledBorderColor":"color_43","navButtonDisabledBG":"color_27","arrowsColor":"color_32","arrowsDisabledColor":"color_37","navButtonTextSize":"15px","navButtonTextColor":"color_15","navButtonDisabledTextColor":"color_11","fnt":"font_8","bRadius":"100px","shadow":"none"},
+  "",
+  7,
+  /*! ./components/Pagination/Pagination.st.css */ 353
+);
+
+exports.default.$skin = {"params":{"selectedPageBG":"COLOR_ALPHA","selectedPageBorderColor":"BORDER_COLOR_ALPHA","selectedPageBorderWidth":"BORDER_SIZE","selectedPageTextColor":"TEXT_COLOR","pageNumbersTextColor":"TEXT_COLOR","pageInputBG":"COLOR_ALPHA","pageInputBorderColor":"BORDER_COLOR_ALPHA","pageInputBorderWidth":"BORDER_SIZE","pageInputTextColor":"TEXT_COLOR","totalPagesTextColor":"TEXT_COLOR","pageInputFocusBG":"COLOR_ALPHA","pageInputFocusBorderColor":"BORDER_COLOR_ALPHA","pageInputFocusBorderWidth":"BORDER_SIZE","pageInputErrorBG":"COLOR_ALPHA","pageInputErrorBorderColor":"BORDER_COLOR_ALPHA","pageInputErrorBorderWidth":"BORDER_SIZE","navButtonBG":"COLOR_ALPHA","navButtonBorderWidth":"BORDER_SIZE","navButtonBorderColor":"BORDER_COLOR_ALPHA","navButtonDisabledBorderWidth":"BORDER_SIZE","navButtonDisabledBorderColor":"BORDER_COLOR_ALPHA","navButtonDisabledBG":"COLOR_ALPHA","arrowsColor":"COLOR_ALPHA","arrowsDisabledColor":"COLOR_ALPHA","navButtonTextSize":"TEXT_SIZE","navButtonTextColor":"TEXT_COLOR","navButtonDisabledTextColor":"TEXT_COLOR","fnt":"FONT","bRadius":"BORDER_RADIUS","shadow":"BOX_SHADOW"},"paramsDefaults":{"selectedPageBG":"color_22","selectedPageBorderColor":"color_26","selectedPageBorderWidth":"0","selectedPageTextColor":"color_25","pageNumbersTextColor":"color_6","pageInputBG":"color_23","pageInputBorderColor":"color_27","pageInputBorderWidth":"0","pageInputTextColor":"color_26","totalPagesTextColor":"color_7","pageInputFocusBG":"color_8","pageInputFocusBorderColor":"color_38","pageInputFocusBorderWidth":"3","pageInputErrorBG":"color_2","pageInputErrorBorderColor":"color_22","pageInputErrorBorderWidth":"3","navButtonBG":"transparent","navButtonBorderWidth":"3","navButtonBorderColor":"color_32","navButtonDisabledBorderWidth":"3","navButtonDisabledBorderColor":"color_43","navButtonDisabledBG":"color_27","arrowsColor":"color_32","arrowsDisabledColor":"color_37","navButtonTextSize":"15px","navButtonTextColor":"color_15","navButtonDisabledTextColor":"color_11","fnt":"font_8","bRadius":"100px","shadow":"none"}};
+exports.default.$skin.$render = function render_css($id, $params, $functions) {
+  return "\n" + $id + " .Pagination3815741391--button-common-mixin{display: inline-flex;flex-shrink: 0}\n" + $id + ".Pagination3815741391--root{display: inline-flex;user-select: none}\n" + $id + " .Pagination3815741391--navButton{display: inline-flex;flex-shrink: 0}\n" + $id + " .Pagination3815741391--navButton:not(.Pagination3815741391--disabled){cursor: pointer}\n" + $id + " .Pagination3815741391--navButtonFirst{order: 1}\n" + $id + " .Pagination3815741391--navButtonPrevious{order: 2}\n" + $id + " .Pagination3815741391--navButtonNext{order: 4}\n" + $id + " .Pagination3815741391--navButtonLast{order: 5}\n" + $id + " .Pagination3815741391--pageStrip{order: 3;overflow-x: hidden}\n" + $id + " .Pagination3815741391--pageStripInner{display: flex}\n" + $id + " .Pagination3815741391--pageStripTemplate{height: 0;overflow: hidden}\n" + $id + " .Pagination3815741391--pageButton{display: inline-flex;flex-shrink: 0;cursor: pointer}\n" + $id + " .Pagination3815741391--currentPage{display: inline-flex;flex-shrink: 0}\n" + $id + " .Pagination3815741391--gap{display: inline-flex;flex-shrink: 0}\n" + $id + " .Pagination3815741391--pageForm{display: flex;order: 3}\n" + $id + " .Pagination3815741391--pageInput{}\n" + $id + " .Pagination3815741391--totalPages{}\n" + $id + " .Pagination3815741391--slash{}\n" + $id + " .Pagination3298768303--pageButtonRules{min-width: 1em;min-height: 1em;line-height: 1em;justify-content: center;align-items: center;padding: 0.5em 0.5em;margin: 0.25em}\n" + $id + ".Pagination3298768303--root{align-items: stretch;font: " + $params["fnt"] + ";box-sizing: border-box}\n" + $id + ".Pagination3298768303--root .Pagination3815741391--pageButton{min-width: 1em;min-height: 1em;line-height: 1em;justify-content: center;align-items: center;padding: 0.5em 0.5em;margin: 0.25em;position: relative;color: " + $params["pageNumbersTextColor"] + "}\n" + $id + ".Pagination3298768303--root .Pagination3815741391--currentPage{min-width: 1em;min-height: 1em;line-height: 1em;justify-content: center;align-items: center;padding: 0.5em 0.5em;margin: 0.25em;color: " + $params["selectedPageTextColor"] + ";background: " + $params["selectedPageBG"] + ";border-radius: " + $params["bRadius"] + ";border: " + $params["selectedPageBorderWidth"] + " solid " + $params["selectedPageBorderColor"] + ";box-shadow: " + $params["shadow"] + ";padding: calc(0.5em - " + $params["selectedPageBorderWidth"] + ") calc(0.5em - " + $params["selectedPageBorderWidth"] + ")}\n" + $id + ".Pagination3298768303--root:not([data-pagination3815741391-disabled]) .Pagination3815741391--pageButton:hover::before{background: " + $params["selectedPageBG"] + ";opacity: 0.2;content: \"\";position: absolute;top: 0;right: 0;bottom: 0;left: 0;border-radius: " + $params["bRadius"] + "}\n" + $id + ".Pagination3298768303--root:not([data-pagination3815741391-disabled]) .Pagination3815741391--pageButton:hover{opacity: 0.7}\n" + $id + ".Pagination3298768303--root[data-pagination3815741391-disabled] .Pagination3815741391--pageButton{cursor: default}\n" + $id + ".Pagination3298768303--root .Pagination3815741391--navButton{min-width: 1em;min-height: 1em;padding: calc(0.75em - " + $params["navButtonBorderWidth"] + ");display: flex;justify-content: center;align-items: center;border: " + $params["navButtonBorderWidth"] + " solid " + $params["navButtonBorderColor"] + ";background: " + $params["navButtonBG"] + ";border-radius: " + $params["bRadius"] + "}\n" + $id + ".Pagination3298768303--root .Pagination3815741391--navButton[data-pagination3815741391-disabled], " + $id + ".Pagination3298768303--root[data-preview=\"disabled\"] .Pagination3815741391--navButton{padding: calc(0.75em - " + $params["navButtonDisabledBorderWidth"] + ");border: " + $params["navButtonDisabledBorderWidth"] + " solid " + $params["navButtonDisabledBorderColor"] + ";background: " + $params["navButtonDisabledBG"] + ";cursor: default}\n" + $id + ".Pagination3298768303--root .Pagination3815741391--navButton[data-pagination3815741391-disabled] svg, " + $id + ".Pagination3298768303--root[data-preview=\"disabled\"] .Pagination3815741391--navButton svg{fill: " + $params["arrowsDisabledColor"] + "}\n" + $id + ".Pagination3298768303--root .Pagination3815741391--navButton:hover:not([data-pagination3815741391-disabled]){opacity: 0.8}\n" + $id + ".Pagination3298768303--root .Pagination3815741391--navButton svg{width: 1em;min-width: 16px;height: 1em;min-height: 16px;fill: " + $params["arrowsColor"] + "}\n" + $id + ".Pagination3298768303--root[dir=\"rtl\"] .Pagination3815741391--navButton svg{transform: scaleX(-1)}\n" + $id + ".Pagination3298768303--root .Pagination3815741391--navButton span{font-size: " + $params["navButtonTextSize"] + ";color: " + $params["navButtonTextColor"] + ";line-height: 1em}\n" + $id + ".Pagination3298768303--root .Pagination3815741391--navButton[data-pagination3815741391-disabled] span, " + $id + ".Pagination3298768303--root[data-preview=\"disabled\"] .Pagination3815741391--navButton span{color: " + $params["navButtonDisabledTextColor"] + "}\n" + $id + ".Pagination3298768303--root .Pagination3815741391--navButtonFirst{margin-right: 1em}\n" + $id + ".Pagination3298768303--root[dir=\"rtl\"] .Pagination3815741391--navButtonFirst{margin-right: 0;margin-left: 1em}\n" + $id + ".Pagination3298768303--root .Pagination3815741391--navButtonPrevious{margin-right: 1em}\n" + $id + ".Pagination3298768303--root[dir=\"rtl\"] .Pagination3815741391--navButtonPrevious{margin-right: 0;margin-left: 1em}\n" + $id + ".Pagination3298768303--root .Pagination3815741391--navButtonLast{margin-left: 1em}\n" + $id + ".Pagination3298768303--root[dir=\"rtl\"] .Pagination3815741391--navButtonLast{margin-left: 0;margin-right: 1em}\n" + $id + ".Pagination3298768303--root .Pagination3815741391--navButtonNext{margin-left: 1em}\n" + $id + ".Pagination3298768303--root[dir=\"rtl\"] .Pagination3815741391--navButtonNext{margin-left: 0;margin-right: 1em}\n" + $id + ".Pagination3298768303--root .Pagination3815741391--gap{min-width: 1em;min-height: 1em;line-height: 1em;justify-content: center;align-items: center;padding: 0.5em 0.5em;margin: 0.25em;color: " + $params["pageNumbersTextColor"] + "}\n" + $id + ".Pagination3298768303--root .Pagination3815741391--pageStrip{min-width: 3em;overflow: visible;align-self: center}\n" + $id + ".Pagination3298768303--root .Pagination3815741391--pageStripInner{flex-grow: 1;flex-basis: auto;justify-content: center;overflow: visible;align-items: center}\n" + $id + ".Pagination3298768303--root .Pagination3815741391--pageStripTemplate{overflow: hidden}\n" + $id + ".Pagination3298768303--root .Pagination3815741391--pageForm{flex-grow: 1;flex-basis: auto;justify-content: center;align-items: stretch}\n" + $id + ".Pagination3298768303--root .Pagination3815741391--slash{width: 1em;height: 1em;flex-shrink: 0;align-self: center}\n" + $id + ".Pagination3298768303--root .Pagination3815741391--slash svg{width: 1em;height: 1em}\n" + $id + ".Pagination3298768303--root .Pagination3815741391--slash svg > g{stroke: " + $params["totalPagesTextColor"] + "}\n" + $id + ".Pagination3298768303--root .Pagination3815741391--pageInput{min-width: 3.5em;padding: calc(0.25em - " + $params["pageInputBorderWidth"] + ") calc(0.5ch - " + $params["pageInputBorderWidth"] + ");color: " + $params["pageInputTextColor"] + ";border-radius: " + $params["bRadius"] + ";border: " + $params["pageInputBorderWidth"] + " solid " + $params["pageInputBorderColor"] + ";text-align: center;margin: 0 0.25em;background: " + $params["pageInputBG"] + ";box-shadow: " + $params["shadow"] + ";font: inherit;-moz-appearance: textfield}\n" + $id + ".Pagination3298768303--root .Pagination3815741391--pageInput:hover{opacity: 0.8}\n" + $id + ".Pagination3298768303--root .Pagination3815741391--pageInput:focus, " + $id + ".Pagination3298768303--root[data-preview=\"focus\"] .Pagination3815741391--pageInput{padding: calc(0.25em - " + $params["pageInputFocusBorderWidth"] + ") calc(0.5ch - " + $params["pageInputFocusBorderWidth"] + ");background: " + $params["pageInputFocusBG"] + ";border: " + $params["pageInputFocusBorderWidth"] + " solid " + $params["pageInputFocusBorderColor"] + "}\n" + $id + ".Pagination3298768303--root .Pagination3815741391--pageInput::-webkit-inner-spin-button, " + $id + ".Pagination3298768303--root .Pagination3815741391--pageInput::-webkit-outer-spin-button{-webkit-appearance: none}\n" + $id + ".Pagination3298768303--root .Pagination3815741391--totalPages{max-width: 4ch;min-width: 1ch;padding-left: 0.25em;overflow: hidden;text-overflow: ellipsis;color: " + $params["totalPagesTextColor"] + ";align-self: center}\n" + $id + ".Pagination3298768303--root[data-pagination3815741391-error] .Pagination3815741391--pageInput, " + $id + ".Pagination3298768303--root[data-preview=\"error\"] .Pagination3815741391--pageInput{padding: calc(0.25em - " + $params["pageInputErrorBorderWidth"] + ") calc(0.5ch - " + $params["pageInputErrorBorderWidth"] + ");background: " + $params["pageInputErrorBG"] + ";border: " + $params["pageInputErrorBorderWidth"] + " solid " + $params["pageInputErrorBorderColor"] + "}\n@media all and (-ms-high-contrast: none), (-ms-high-contrast: active){\n  " + $id + ".Pagination3298768303--root .Pagination3815741391--totalPages{max-width: 6ch;min-width: 6ch}\n}\n";
+};
+
+/***/ }),
+
+/***/ 435:
+/*!****************************************!*\
+  !*** ./components/Pagination/index.js ***!
+  \****************************************/
 /*! no static exports found */
 /*! all exports used */
 /*! ModuleConcatenation bailout: Module is not an ECMAScript module */
@@ -1262,21 +1219,258 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _ToggleSwitch = __webpack_require__(/*! ./ToggleSwitch */ 464);
+var _Pagination = __webpack_require__(/*! ./Pagination */ 645);
+
+var _PaginationSt = __webpack_require__(/*! ./Pagination.st.css */ 353);
+
+var _PaginationSt2 = _interopRequireDefault(_PaginationSt);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = {
-  componentType: 'wixui.ToggleSwitch',
-  component: _ToggleSwitch.ToggleSwitchWithClasses,
-  santaComponent: _ToggleSwitch.ToggleSwitchSanta,
-  skin: _ToggleSwitch.skinJson
+  componentType: 'wixui.Pagination',
+  component: _Pagination.Pagination,
+  santaComponent: _Pagination.santaPagination,
+  skin: _PaginationSt2.default.$skin
 };
 
 /***/ }),
 
-/***/ 464:
-/*!********************************************************!*\
-  !*** ./legacy/components/ToggleSwitch/ToggleSwitch.js ***!
-  \********************************************************/
+/***/ 6:
+/*!******************************************!*\
+  !*** ../node_modules/tslib/tslib.es6.js ***!
+  \******************************************/
+/*! exports provided: __extends, __assign, __rest, __decorate, __param, __metadata, __awaiter, __generator, __exportStar, __values, __read, __spread, __spreadArrays, __await, __asyncGenerator, __asyncDelegator, __asyncValues, __makeTemplateObject, __importStar, __importDefault */
+/*! all exports used */
+/*! ModuleConcatenation bailout: Module is referenced from these modules with unsupported syntax: ../node_modules/@wix/search-box/dist/src/components/ClearButton/index.js (referenced with cjs require), ../node_modules/@wix/search-box/dist/src/components/QuickResultItem/QuickResultItem.js (referenced with cjs require), ../node_modules/@wix/search-box/dist/src/components/SearchBox/SearchBox.js (referenced with cjs require), ../node_modules/@wix/search-box/dist/src/components/SearchBox/index.js (referenced with cjs require), ../node_modules/@wix/search-box/dist/src/components/SuggestionItem/SuggestionItem.js (referenced with cjs require), ../node_modules/@wix/search-box/dist/src/index.js (referenced with cjs require), ../node_modules/wix-ui-core/dist/src/clients/GoogleMaps/google2address/google2address.js (referenced with cjs require), ../node_modules/wix-ui-core/dist/src/components/address-input/AddressInput.js (referenced with cjs require), ../node_modules/wix-ui-core/dist/src/components/button-next/button-next.js (referenced with cjs require), ../node_modules/wix-ui-core/dist/src/components/captcha/Captcha.js (referenced with cjs require), ../node_modules/wix-ui-core/dist/src/components/deprecated/divider/Divider.js (referenced with cjs require), ../node_modules/wix-ui-core/dist/src/components/dropdown-content/DropdownContent.js (referenced with cjs require), ../node_modules/wix-ui-core/dist/src/components/dropdown-option/DropdownOption.js (referenced with cjs require), ../node_modules/wix-ui-core/dist/src/components/dropdown-option/OptionFactory.js (referenced with cjs require), ../node_modules/wix-ui-core/dist/src/components/dropdown/Dropdown.js (referenced with cjs require), ../node_modules/wix-ui-core/dist/src/components/file-picker-button/FilePickerButton.js (referenced with cjs require), ../node_modules/wix-ui-core/dist/src/components/input-with-options/InputWithOptions.js (referenced with cjs require), ../node_modules/wix-ui-core/dist/src/components/input/Input.js (referenced with cjs require), ../node_modules/wix-ui-core/dist/src/components/linear-progress-bar/LinearProgressBar.js (referenced with cjs require), ../node_modules/wix-ui-core/dist/src/components/pagination/PageStrip.js (referenced with cjs require), ../node_modules/wix-ui-core/dist/src/components/pagination/Pagination.js (referenced with cjs require), ../node_modules/wix-ui-core/dist/src/components/popover/Popover.js (referenced with cjs require), ../node_modules/wix-ui-core/dist/src/components/popover/index.js (referenced with cjs require), ../node_modules/wix-ui-core/dist/src/components/popover/modifiers.js (referenced with cjs require), ../node_modules/wix-ui-core/dist/src/components/radio-button/RadioButton.js (referenced with cjs require), ../node_modules/wix-ui-core/dist/src/components/slider/Slider.js (referenced with cjs require), ../node_modules/wix-ui-core/dist/src/components/slider/Thumb.js (referenced with cjs require), ../node_modules/wix-ui-core/dist/src/components/slider/Ticks.js (referenced with cjs require), ../node_modules/wix-ui-core/dist/src/components/time-picker/Tickers.js (referenced with cjs require), ../node_modules/wix-ui-core/dist/src/components/time-picker/TimePicker.js (referenced with cjs require), ../node_modules/wix-ui-core/dist/src/components/video/Video.js (referenced with cjs require), ../node_modules/wix-ui-core/dist/src/components/video/players/DailyMotion.js (referenced with cjs require), ../node_modules/wix-ui-core/dist/src/components/video/players/Facebook.js (referenced with cjs require), ../node_modules/wix-ui-core/dist/src/components/video/players/Playable.js (referenced with cjs require), ../node_modules/wix-ui-core/dist/src/components/video/players/Twitch.js (referenced with cjs require), ../node_modules/wix-ui-core/dist/src/components/video/players/Vimeo.js (referenced with cjs require), ../node_modules/wix-ui-core/dist/src/components/video/players/YouTube.js (referenced with cjs require), ../node_modules/wix-ui-core/dist/src/components/video/players/playerHOC.js (referenced with cjs require), ../node_modules/wix-ui-core/dist/src/hocs/Focusable/FocusableHOC.js (referenced with cjs require) */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__extends", function() { return __extends; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__assign", function() { return __assign; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__rest", function() { return __rest; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__decorate", function() { return __decorate; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__param", function() { return __param; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__metadata", function() { return __metadata; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__awaiter", function() { return __awaiter; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__generator", function() { return __generator; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__exportStar", function() { return __exportStar; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__values", function() { return __values; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__read", function() { return __read; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__spread", function() { return __spread; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__spreadArrays", function() { return __spreadArrays; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__await", function() { return __await; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__asyncGenerator", function() { return __asyncGenerator; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__asyncDelegator", function() { return __asyncDelegator; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__asyncValues", function() { return __asyncValues; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__makeTemplateObject", function() { return __makeTemplateObject; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__importStar", function() { return __importStar; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__importDefault", function() { return __importDefault; });
+/*! *****************************************************************************
+Copyright (c) Microsoft Corporation. All rights reserved.
+Licensed under the Apache License, Version 2.0 (the "License"); you may not use
+this file except in compliance with the License. You may obtain a copy of the
+License at http://www.apache.org/licenses/LICENSE-2.0
+
+THIS CODE IS PROVIDED ON AN *AS IS* BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+KIND, EITHER EXPRESS OR IMPLIED, INCLUDING WITHOUT LIMITATION ANY IMPLIED
+WARRANTIES OR CONDITIONS OF TITLE, FITNESS FOR A PARTICULAR PURPOSE,
+MERCHANTABLITY OR NON-INFRINGEMENT.
+
+See the Apache Version 2.0 License for specific language governing permissions
+and limitations under the License.
+***************************************************************************** */
+/* global Reflect, Promise */
+
+var extendStatics = function(d, b) {
+    extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return extendStatics(d, b);
+};
+
+function __extends(d, b) {
+    extendStatics(d, b);
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+}
+
+var __assign = function() {
+    __assign = Object.assign || function __assign(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
+        }
+        return t;
+    }
+    return __assign.apply(this, arguments);
+}
+
+function __rest(s, e) {
+    var t = {};
+    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
+        t[p] = s[p];
+    if (s != null && typeof Object.getOwnPropertySymbols === "function")
+        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
+            if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))
+                t[p[i]] = s[p[i]];
+        }
+    return t;
+}
+
+function __decorate(decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+}
+
+function __param(paramIndex, decorator) {
+    return function (target, key) { decorator(target, key, paramIndex); }
+}
+
+function __metadata(metadataKey, metadataValue) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(metadataKey, metadataValue);
+}
+
+function __awaiter(thisArg, _arguments, P, generator) {
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+}
+
+function __generator(thisArg, body) {
+    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
+    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+    function verb(n) { return function (v) { return step([n, v]); }; }
+    function step(op) {
+        if (f) throw new TypeError("Generator is already executing.");
+        while (_) try {
+            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
+            if (y = 0, t) op = [op[0] & 2, t.value];
+            switch (op[0]) {
+                case 0: case 1: t = op; break;
+                case 4: _.label++; return { value: op[1], done: false };
+                case 5: _.label++; y = op[1]; op = [0]; continue;
+                case 7: op = _.ops.pop(); _.trys.pop(); continue;
+                default:
+                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
+                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
+                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
+                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
+                    if (t[2]) _.ops.pop();
+                    _.trys.pop(); continue;
+            }
+            op = body.call(thisArg, _);
+        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
+        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
+    }
+}
+
+function __exportStar(m, exports) {
+    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
+}
+
+function __values(o) {
+    var m = typeof Symbol === "function" && o[Symbol.iterator], i = 0;
+    if (m) return m.call(o);
+    return {
+        next: function () {
+            if (o && i >= o.length) o = void 0;
+            return { value: o && o[i++], done: !o };
+        }
+    };
+}
+
+function __read(o, n) {
+    var m = typeof Symbol === "function" && o[Symbol.iterator];
+    if (!m) return o;
+    var i = m.call(o), r, ar = [], e;
+    try {
+        while ((n === void 0 || n-- > 0) && !(r = i.next()).done) ar.push(r.value);
+    }
+    catch (error) { e = { error: error }; }
+    finally {
+        try {
+            if (r && !r.done && (m = i["return"])) m.call(i);
+        }
+        finally { if (e) throw e.error; }
+    }
+    return ar;
+}
+
+function __spread() {
+    for (var ar = [], i = 0; i < arguments.length; i++)
+        ar = ar.concat(__read(arguments[i]));
+    return ar;
+}
+
+function __spreadArrays() {
+    for (var s = 0, i = 0, il = arguments.length; i < il; i++) s += arguments[i].length;
+    for (var r = Array(s), k = 0, i = 0; i < il; i++)
+        for (var a = arguments[i], j = 0, jl = a.length; j < jl; j++, k++)
+            r[k] = a[j];
+    return r;
+};
+
+function __await(v) {
+    return this instanceof __await ? (this.v = v, this) : new __await(v);
+}
+
+function __asyncGenerator(thisArg, _arguments, generator) {
+    if (!Symbol.asyncIterator) throw new TypeError("Symbol.asyncIterator is not defined.");
+    var g = generator.apply(thisArg, _arguments || []), i, q = [];
+    return i = {}, verb("next"), verb("throw"), verb("return"), i[Symbol.asyncIterator] = function () { return this; }, i;
+    function verb(n) { if (g[n]) i[n] = function (v) { return new Promise(function (a, b) { q.push([n, v, a, b]) > 1 || resume(n, v); }); }; }
+    function resume(n, v) { try { step(g[n](v)); } catch (e) { settle(q[0][3], e); } }
+    function step(r) { r.value instanceof __await ? Promise.resolve(r.value.v).then(fulfill, reject) : settle(q[0][2], r); }
+    function fulfill(value) { resume("next", value); }
+    function reject(value) { resume("throw", value); }
+    function settle(f, v) { if (f(v), q.shift(), q.length) resume(q[0][0], q[0][1]); }
+}
+
+function __asyncDelegator(o) {
+    var i, p;
+    return i = {}, verb("next"), verb("throw", function (e) { throw e; }), verb("return"), i[Symbol.iterator] = function () { return this; }, i;
+    function verb(n, f) { i[n] = o[n] ? function (v) { return (p = !p) ? { value: __await(o[n](v)), done: n === "return" } : f ? f(v) : v; } : f; }
+}
+
+function __asyncValues(o) {
+    if (!Symbol.asyncIterator) throw new TypeError("Symbol.asyncIterator is not defined.");
+    var m = o[Symbol.asyncIterator], i;
+    return m ? m.call(o) : (o = typeof __values === "function" ? __values(o) : o[Symbol.iterator](), i = {}, verb("next"), verb("throw"), verb("return"), i[Symbol.asyncIterator] = function () { return this; }, i);
+    function verb(n) { i[n] = o[n] && function (v) { return new Promise(function (resolve, reject) { v = o[n](v), settle(resolve, reject, v.done, v.value); }); }; }
+    function settle(resolve, reject, d, v) { Promise.resolve(v).then(function(v) { resolve({ value: v, done: d }); }, reject); }
+}
+
+function __makeTemplateObject(cooked, raw) {
+    if (Object.defineProperty) { Object.defineProperty(cooked, "raw", { value: raw }); } else { cooked.raw = raw; }
+    return cooked;
+};
+
+function __importStar(mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (Object.hasOwnProperty.call(mod, k)) result[k] = mod[k];
+    result.default = mod;
+    return result;
+}
+
+function __importDefault(mod) {
+    return (mod && mod.__esModule) ? mod : { default: mod };
+}
+
+
+/***/ }),
+
+/***/ 645:
+/*!*********************************************!*\
+  !*** ./components/Pagination/Pagination.js ***!
+  \*********************************************/
 /*! no static exports found */
 /*! all exports used */
 /*! ModuleConcatenation bailout: Module is not an ECMAScript module */
@@ -1288,344 +1482,684 @@ exports.default = {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.ToggleSwitchSanta = exports.skinJson = exports.ToggleSwitchWithClasses = undefined;
+exports.santaPagination = exports.Pagination = undefined;
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+var _react = __webpack_require__(/*! react */ 0);
+
+var _react2 = _interopRequireDefault(_react);
 
 var _createReactClass = __webpack_require__(/*! create-react-class */ 17);
 
 var _createReactClass2 = _interopRequireDefault(_createReactClass);
 
-var _react = __webpack_require__(/*! react */ 0);
+var _reactDom = __webpack_require__(/*! react-dom */ 11);
 
-var _react2 = _interopRequireDefault(_react);
+var _reactDom2 = _interopRequireDefault(_reactDom);
+
+var _pagination = __webpack_require__(/*! wix-ui-core/pagination */ 646);
+
+var _paginationIcons = __webpack_require__(/*! ./paginationIcons */ 651);
+
+var _PaginationSt = __webpack_require__(/*! ./Pagination.st.css */ 353);
+
+var _PaginationSt2 = _interopRequireDefault(_PaginationSt);
+
+var _santaComponents = __webpack_require__(/*! santa-components */ 14);
 
 var _lodash = __webpack_require__(/*! lodash */ 2);
 
 var _lodash2 = _interopRequireDefault(_lodash);
 
-var _CoreToggleSwitch = __webpack_require__(/*! ../CoreToggleSwitch/CoreToggleSwitch */ 286);
-
-var _CoreToggleSwitch2 = _interopRequireDefault(_CoreToggleSwitch);
-
 var _propTypes = __webpack_require__(/*! prop-types */ 1);
-
-var _theme = __webpack_require__(/*! ./theme */ 465);
-
-var skin = _interopRequireWildcard(_theme);
-
-var _santaComponents = __webpack_require__(/*! santa-components */ 14);
-
-var _namespaceClasses = __webpack_require__(/*! ../../utils/namespaceClasses */ 224);
-
-var _namespaceClasses2 = _interopRequireDefault(_namespaceClasses);
-
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+var Pagination = exports.Pagination = function Pagination(props) {
+  var replaceArrowsWithText = props.replaceArrowsWithText,
+      firstLabel = props.firstLabel,
+      lastLabel = props.lastLabel,
+      previousLabel = props.previousLabel,
+      nextLabel = props.nextLabel,
+      paginationMode = props.paginationMode,
+      showFirstLastNavButtons = props.showFirstLastNavButtons;
 
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+  var navigationButtonLabels = replaceArrowsWithText ? {
+    firstLabel: _react2.default.createElement(
+      'span',
+      null,
+      firstLabel
+    ),
+    lastLabel: _react2.default.createElement(
+      'span',
+      null,
+      lastLabel
+    ),
+    previousLabel: _react2.default.createElement(
+      'span',
+      null,
+      previousLabel
+    ),
+    nextLabel: _react2.default.createElement(
+      'span',
+      null,
+      nextLabel
+    )
+  } : {
+    replaceArrowsWithText: true,
+    firstLabel: _paginationIcons.arrowFirst,
+    lastLabel: _paginationIcons.arrowLast,
+    previousLabel: _paginationIcons.arrowPrevious,
+    nextLabel: _paginationIcons.arrowNext
+  };
 
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+  var slashLabel = { slashLabel: _paginationIcons.slash }; //slash?
 
-function handleClick(e, onClick) {
-  e.stopPropagation();
-  if (e.target.tagName === 'INPUT') {
-    onClick();
-  }
-}
+  var states = {
+    navButtonsType: replaceArrowsWithText ? 'text' : 'arrows',
+    paginationMode: paginationMode,
+    navButtonsAmount: showFirstLastNavButtons ? 4 : 2
+  };
 
-function concatPercent(value) {
-  return value !== 0 ? value + '%' : value;
-}
-
-function calcUncheckedLeftValue(pKnobSize, pTrackHeight, knobWidth, isRtl) {
-  if (isRtl) {
-    return pKnobSize > pTrackHeight ? 100 - knobWidth : 100 - knobWidth - (pTrackHeight - pKnobSize) / 4;
-  } else {
-    return pKnobSize > pTrackHeight ? 0 : (pTrackHeight - pKnobSize) / 4;
-  }
-}
-
-function calcCheckedLeftValue(pKnobSize, pTrackHeight, knobWidth, isRtl) {
-  if (isRtl) {
-    return pKnobSize > pTrackHeight ? 0 : (pTrackHeight - pKnobSize) / 4;
-  } else {
-    return pKnobSize > pTrackHeight ? 100 - knobWidth : 100 - knobWidth - (pTrackHeight - pKnobSize) / 4;
-  }
-}
-
-var ToggleSwitch = function (_React$Component) {
-  _inherits(ToggleSwitch, _React$Component);
-
-  function ToggleSwitch() {
-    _classCallCheck(this, ToggleSwitch);
-
-    return _possibleConstructorReturn(this, (ToggleSwitch.__proto__ || Object.getPrototypeOf(ToggleSwitch)).apply(this, arguments));
-  }
-
-  _createClass(ToggleSwitch, [{
-    key: 'focus',
-    value: function focus() {
-      this.coreRef.focus();
-      this.props.onFocus();
-    }
-  }, {
-    key: 'blur',
-    value: function blur() {
-      this.coreRef.blur();
-      this.props.onBlur();
-    }
-  }, {
-    key: 'render',
-    value: function render() {
-      var _this2 = this;
-
-      var _props = this.props,
-          classes = _props.classes,
-          checked = _props.checked,
-          id = _props.id,
-          trackHeight = _props.trackHeight,
-          knobSize = _props.knobSize,
-          isDisabled = _props.isDisabled,
-          displayKnobIcons = _props.displayKnobIcons,
-          onChange = _props.onChange,
-          _onClick = _props.onClick,
-          onFocus = _props.onFocus,
-          onBlur = _props.onBlur,
-          isRtl = _props.isRtl,
-          previewState = _props.previewState,
-          coreProps = _objectWithoutProperties(_props, ['classes', 'checked', 'id', 'trackHeight', 'knobSize', 'isDisabled', 'displayKnobIcons', 'onChange', 'onClick', 'onFocus', 'onBlur', 'isRtl', 'previewState']);
-
-      var pKnobSize = Number(knobSize);
-      var knobHeight = pKnobSize;
-      var knobWidth = pKnobSize / 2;
-      var pTrackHeight = Number(trackHeight);
-
-      var uncheckedLeft = calcUncheckedLeftValue(pKnobSize, pTrackHeight, knobWidth, isRtl);
-      var checkedLeft = calcCheckedLeftValue(pKnobSize, pTrackHeight, knobWidth, isRtl);
-
-      var parsedPreviewState = (previewState || '').replace('regular', '').trim().replace(/ /g, ':');
-      var isChecked = previewState ? parsedPreviewState.indexOf('checked') !== -1 : checked;
-
-      var styles = {
-        outerLabel: {
-          height: pTrackHeight + '%'
-        },
-        innerLabel: {
-          width: concatPercent(knobWidth),
-          height: concatPercent(knobHeight),
-          left: isChecked ? concatPercent(checkedLeft) : concatPercent(uncheckedLeft)
-        },
-        toggleIcon: {
-          display: displayKnobIcons ? 'block' : 'none'
-        }
-      };
-
-      var style = { display: 'inline-block', width: '100%', height: '100%' };
-      return _react2.default.createElement(
-        'div',
-        { style: style, onClick: function onClick(e) {
-            return handleClick(e, _onClick);
-          }, onFocus: onFocus, onBlur: onBlur },
-        _react2.default.createElement(_CoreToggleSwitch2.default, _extends({
-          classes: classes,
-          styles: styles,
-          disabled: isDisabled,
-          checked: isChecked,
-          id: id,
-          onChange: onChange,
-          previewState: parsedPreviewState,
-          ref: function ref(e) {
-            return _this2.coreRef = e;
-          }
-        }, coreProps))
-      );
-    }
-  }]);
-
-  return ToggleSwitch;
-}(_react2.default.Component);
-
-ToggleSwitch.displayName = 'ToggleSwitch';
-ToggleSwitch.propTypes = _extends({}, _CoreToggleSwitch2.default.propTypes, {
-  classes: _propTypes.object,
-  checked: _propTypes.bool,
-  id: _propTypes.string.isRequired,
-  trackHeight: _propTypes.number.isRequired,
-  knobSize: _propTypes.number.isRequired,
-  isDisabled: _propTypes.bool,
-  displayKnobIcons: _propTypes.bool,
-  onChange: _propTypes.func.isRequired,
-  onClick: _propTypes.func,
-  onFocus: _propTypes.func,
-  onBlur: _propTypes.func,
-  isRtl: _propTypes.bool,
-  previewState: _propTypes.string
-});
-ToggleSwitch.defaultProps = {
-  onClick: function onClick() {},
-  onFocus: function onFocus() {},
-  onBlur: function onBlur() {},
-  isRtl: false,
-  previewState: ''
+  var coreProps = Object.assign({}, props, navigationButtonLabels, slashLabel);
+  return _react2.default.createElement(_pagination.Pagination, _extends({}, coreProps, (0, _PaginationSt2.default)('root', states, coreProps)));
 };
 
-var ToggleSwitchWithClasses = exports.ToggleSwitchWithClasses = (0, _namespaceClasses2.default)(ToggleSwitch, skin.classes);
+Pagination.displayName = 'Pagination';
+Pagination.propTypes = {
+  replaceArrowsWithText: _propTypes.bool,
+  firstLabel: _propTypes.string,
+  lastLabel: _propTypes.string,
+  previousLabel: _propTypes.string,
+  nextLabel: _propTypes.string,
+  paginationMode: _propTypes.string,
+  showFirstLastNavButtons: _propTypes.bool
+};
 
 var skinBasedComp = _santaComponents.mixins.skinBasedComp,
     runTimeCompData = _santaComponents.mixins.runTimeCompData,
-    inputFocusMixin = _santaComponents.mixins.inputFocusMixin;
-var skinJson = exports.skinJson = skin.json;
+    textScaleMixin = _santaComponents.mixins.textScaleMixin;
+
 
 var getComponentSkins = function getComponentSkins() {
-  return skinJson;
+  return {
+    'wixui.skins.Pagination': _PaginationSt2.default.$skin
+  };
 };
 
-/**
-     * @class components.toggleSwitch
-     * @extends {core.skinBasedComp}
-     */
+var santaPagination = exports.santaPagination = (0, _createReactClass2.default)({
+  displayName: 'Pagination',
 
-var ToggleSwitchSanta = exports.ToggleSwitchSanta = (0, _createReactClass2.default)({
-  displayName: 'ToggleSwitch',
-
-  mixins: [skinBasedComp(getComponentSkins()), runTimeCompData, inputFocusMixin],
+  mixins: [skinBasedComp(getComponentSkins()), runTimeCompData, textScaleMixin(getComponentSkins())],
 
   propTypes: {
-    structure: _santaComponents.santaTypesDefinitions.Component.structure.isRequired,
+    registerLayoutFunc: _santaComponents.santaTypesDefinitions.Layout.registerLayoutFunc.isRequired,
+    compTheme: _santaComponents.santaTypesDefinitions.Component.theme, // trigger re-render on style changes,
     compProp: _santaComponents.santaTypesDefinitions.Component.compProp.isRequired,
     compData: _santaComponents.santaTypesDefinitions.Component.compData.isRequired,
-    componentViewMode: _santaComponents.santaTypesDefinitions.RenderFlags.componentViewMode,
-    componentPreviewState: _santaComponents.santaTypesDefinitions.RenderFlags.componentPreviewState,
     styleId: _santaComponents.santaTypesDefinitions.Component.styleId,
-    style: _santaComponents.santaTypesDefinitions.Component.style,
     id: _santaComponents.santaTypesDefinitions.Component.id,
-    isMobileView: _santaComponents.santaTypesDefinitions.isMobileView
+    style: _santaComponents.santaTypesDefinitions.Component.style,
+    isMobileView: _santaComponents.santaTypesDefinitions.isMobileView,
+    scale: _santaComponents.santaTypesDefinitions.Component.scale,
+    onChange: _propTypes.func
   },
 
   statics: {
-    behaviors: _lodash2.default.assign({}, inputFocusMixin.INPUT_FOCUS_BEHAVIORS),
+    compSpecificIsDomOnlyOverride: function compSpecificIsDomOnlyOverride() {
+      return false;
+    },
     getComponentSkins: getComponentSkins
   },
 
-  focus: function focus() {
-    this.toggleSwitchRef.focus();
-  },
-  blur: function blur() {
-    this.toggleSwitchRef.blur();
-  },
-  getInitialState: function getInitialState() {
-    return {
-      checked: Boolean(this.props.compData.checked)
-    };
-  },
-  UNSAFE_componentWillReceiveProps: function UNSAFE_componentWillReceiveProps(nextProps) {
-    // eslint-disable-line
-    this.setState({
-      checked: Boolean(nextProps.compData.checked)
-    });
-  },
-  onChange: function onChange() {
-    var updatedData = {
-      checked: !this.state.checked
-    };
-    this.setState(updatedData);
-    this.updateData(updatedData);
-    this.handleAction('change', updatedData);
-  },
-  onFocus: function onFocus() {
-    this.handleAction('focus');
-  },
-  onBlur: function onBlur() {
-    this.handleAction('blur');
-  },
-  onClick: function onClick() {
-    this.handleAction('click');
+  handleChange: function handleChange(evt) {
+    var event = evt.event,
+        page = evt.page;
+
+
+    if (event.keyCode) {
+      event.preventDefault(); //prevents viewer from scrolling after keyboard press
+    }
+
+    var target = _lodash2.default.defaults({ currentPage: page }, event.target);
+    var ev = _lodash2.default.defaults({ target: target }, event);
+
+    this.updateData({ currentPage: page });
+
+    if (this.props.onChange) {
+      this.props.onChange({ page: page });
+    }
+
+    this.handleAction(_santaComponents.constants.SITE.ACTION_TYPES.CHANGE, ev);
   },
   getSkinProperties: function getSkinProperties() {
-    var _this3 = this;
+    var _this = this;
 
-    var checked = this.state.checked;
-    var _props2 = this.props,
-        id = _props2.id,
-        styleId = _props2.styleId;
+    var _props$compData = this.props.compData,
+        totalPages = _props$compData.totalPages,
+        currentPage = _props$compData.currentPage,
+        firstText = _props$compData.firstText,
+        previousText = _props$compData.previousText,
+        nextText = _props$compData.nextText,
+        lastText = _props$compData.lastText;
     var _props$compProp = this.props.compProp,
-        trackHeight = _props$compProp.trackHeight,
-        knobSize = _props$compProp.knobSize,
-        isDisabled = _props$compProp.isDisabled,
-        displayKnobIcons = _props$compProp.displayKnobIcons,
-        alignment = _props$compProp.alignment;
+        paginationMode = _props$compProp.paginationMode,
+        showFirstLastNavButtons = _props$compProp.showFirstLastNavButtons,
+        navigationType = _props$compProp.navigationType,
+        paginationDirection = _props$compProp.paginationDirection,
+        showInputModeTotalPages = _props$compProp.showInputModeTotalPages,
+        showFirstPage = _props$compProp.showFirstPage,
+        showLastPage = _props$compProp.showLastPage,
+        isDisabled = _props$compProp.isDisabled;
+    var _props = this.props,
+        styleId = _props.styleId,
+        id = _props.id,
+        isMobileView = _props.isMobileView;
 
 
-    var toggleProps = {
-      id: 'toggle-switch-' + id,
-      styleId: styleId,
-      checked: checked,
-      trackHeight: trackHeight,
-      knobSize: knobSize,
-      isDisabled: isDisabled,
-      displayKnobIcons: displayKnobIcons,
-      isRtl: alignment === 'right',
-      previewState: this.getComponentPreviewState(),
-      onChange: function onChange() {
-        return _this3.onChange();
-      },
-      onFocus: function onFocus() {
-        return _this3.onFocus();
-      },
-      onBlur: function onBlur() {
-        return _this3.onBlur();
-      },
-      onClick: function onClick() {
-        return _this3.onClick();
-      },
-      ref: function ref(toggleSwitchRef) {
-        _this3.toggleSwitchRef = toggleSwitchRef;
+    var replaceArrowsWithText = !isMobileView && navigationType === 'text';
+
+    var getStyle = function getStyle() {
+      // eslint-disable-line complexity
+      var fontStyle = {};
+      var pagesModeMinFontSize = showFirstLastNavButtons ? 15 : 24;
+      var inputModeMinFontSize = showFirstLastNavButtons ? 11 : 16;
+
+      if (isMobileView) {
+        var fontSize = parseInt(_this.getFontSize('fnt').fontSize, 10);
+
+        if (paginationMode === 'pages' && fontSize > pagesModeMinFontSize) {
+          fontStyle.fontSize = pagesModeMinFontSize * _this.props.scale + 'px';
+        } else if (paginationMode === 'input' && fontSize > inputModeMinFontSize) {
+          fontStyle.fontSize = inputModeMinFontSize * _this.props.scale + 'px';
+        } else {
+          fontStyle.fontSize = fontSize * _this.props.scale + 'px';
+        }
       }
+      return _lodash2.default.merge(_this.props.style, fontStyle);
+    };
+
+    var paginationProps = {
+      parentConst: Pagination,
+      id: id,
+      styleId: styleId,
+      totalPages: totalPages,
+      currentPage: currentPage,
+      onChange: this.handleChange,
+      paginationMode: paginationMode,
+      showFirstLastNavButtons: showFirstLastNavButtons,
+      firstLabel: firstText,
+      previousLabel: previousText,
+      nextLabel: nextText,
+      lastLabel: lastText,
+      replaceArrowsWithText: replaceArrowsWithText,
+      rtl: paginationDirection === 'rtl',
+      showInputModeTotalPages: showInputModeTotalPages,
+      responsive: true,
+      maxPagesToShow: 100,
+      showFirstPage: showFirstPage,
+      showLastPage: showLastPage,
+      width: this.props.style.width,
+      updateResponsiveLayout: function updateResponsiveLayout(updateFunc) {
+        _this.props.registerLayoutFunc(_reactDom2.default.findDOMNode(_this), updateFunc);
+      },
+      style: getStyle(),
+      disabled: isDisabled,
+      onMouseEnter: this.onMouseIn,
+      onMouseLeave: this.onMouseOut,
+      onClick: this.onClick,
+      onDoubleClick: this.onDblClick
     };
 
     return {
-      '': {
-        children: [_santaComponents.utils.createReactElement(ToggleSwitchWithClasses, toggleProps)]
-      }
+      '': paginationProps
     };
   }
 });
 
 /***/ }),
 
-/***/ 465:
+/***/ 646:
 /*!*************************************************!*\
-  !*** ./legacy/components/ToggleSwitch/theme.js ***!
+  !*** ../node_modules/wix-ui-core/pagination.js ***!
   \*************************************************/
 /*! no static exports found */
 /*! all exports used */
 /*! ModuleConcatenation bailout: Module is not an ECMAScript module */
 /***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
+module.exports = __webpack_require__(/*! ./dist/src/components/pagination */ 647);
 
-
-// this file was prevaled
-
-module.exports = { "json": { "wixui.skins.ToggleSwitch": { "params": { "outerLabelBorderSizeFocus": "BORDER_SIZE", "outerLabelBorderColorFocus": "COLOR_ALPHA", "backgroundColorFocus": "COLOR_ALPHA", "outerLabelBorderSizeDisabled": "BORDER_SIZE", "outerLabelBorderColorDisabled": "COLOR_ALPHA", "backgroundColorDisabled": "COLOR_ALPHA", "innerLabelBorderSizeDisabled": "BORDER_SIZE", "innerLabelBorderColorDisabled": "COLOR_ALPHA", "innerLabelBackgroundColorDisabled": "COLOR_ALPHA", "colorCheckedDisabled": "COLOR_ALPHA", "colorDisabled": "COLOR_ALPHA", "outerLabelBorderSizeHoverChecked": "BORDER_SIZE", "outerLabelBorderColorHoverChecked": "COLOR_ALPHA", "backgroundColorHoverChecked": "COLOR_ALPHA", "innerLabelBorderSizeHoverChecked": "BORDER_SIZE", "innerLabelBorderColorHoverChecked": "COLOR_ALPHA", "innerLabelBackgroundColorHoverChecked": "COLOR_ALPHA", "colorHoverChecked": "COLOR_ALPHA", "outerLabelBorderSizeHover": "BORDER_SIZE", "outerLabelBorderColorHover": "COLOR_ALPHA", "backgroundColorHover": "COLOR_ALPHA", "innerLabelBorderSizeHover": "BORDER_SIZE", "innerLabelBorderColorHover": "COLOR_ALPHA", "innerLabelBackgroundColorHover": "COLOR_ALPHA", "colorHover": "COLOR_ALPHA", "outerLabelBorderSizeChecked": "BORDER_SIZE", "outerLabelBorderColorChecked": "COLOR_ALPHA", "backgroundColorChecked": "COLOR_ALPHA", "innerLabelBorderSizeChecked": "BORDER_SIZE", "innerLabelBorderColorChecked": "COLOR_ALPHA", "innerLabelBackgroundColorChecked": "COLOR_ALPHA", "colorChecked": "COLOR_ALPHA", "outerLabelBoxShadow": "BOX_SHADOW", "outerLabelBorderSize": "BORDER_SIZE", "outerLabelBorderColor": "COLOR_ALPHA", "borderRadius": "BORDER_RADIUS", "backgroundColor": "COLOR_ALPHA", "innerLabelBoxShadow": "BOX_SHADOW", "innerLabelBorderSize": "BORDER_SIZE", "innerLabelBorderColor": "COLOR_ALPHA", "innerLabelBackgroundColor": "COLOR_ALPHA", "color": "COLOR_ALPHA" }, "paramsDefaults": { "outerLabelBorderSizeFocus": "0", "outerLabelBorderColorFocus": "color_23", "backgroundColorFocus": "color_6", "outerLabelBorderSizeDisabled": "0", "outerLabelBorderColorDisabled": "color_20", "backgroundColorDisabled": "color_3", "innerLabelBorderSizeDisabled": "0", "innerLabelBorderColorDisabled": "color_25", "innerLabelBackgroundColorDisabled": "color_15", "colorCheckedDisabled": "color_9", "colorDisabled": "color_8",
-        "outerLabelBorderSizeHoverChecked": "0", "outerLabelBorderColorHoverChecked": "color_22", "backgroundColorHoverChecked": "color_1", "innerLabelBorderSizeHoverChecked": "0", "innerLabelBorderColorHoverChecked": "color_27", "innerLabelBackgroundColorHoverChecked": "color_17", "colorHoverChecked": "color_11", "outerLabelBorderSizeHover": "0", "outerLabelBorderColorHover": "color_21", "backgroundColorHover": "color_2", "innerLabelBorderSizeHover": "0", "innerLabelBorderColorHover": "color_26",
-        "innerLabelBackgroundColorHover": "color_16", "colorHover": "color_10", "outerLabelBorderSizeChecked": "0", "outerLabelBorderColorChecked": "color_19", "backgroundColorChecked": "color_4", "innerLabelBorderSizeChecked": "0", "innerLabelBorderColorChecked": "color_24", "innerLabelBackgroundColorChecked": "color_14", "colorChecked": "color_7", "outerLabelBoxShadow": "1.5px 1.5px 1px rgba(0,0,0,0.2)", "outerLabelBorderSize": "0", "outerLabelBorderColor": "color_18", "borderRadius": "12px", "backgroundColor": "color_5", "innerLabelBoxShadow": "1.5px 1.5px 1px rgba(0,0,0,0.2)", "innerLabelBorderSize": "0", "innerLabelBorderColor": "color_23", "innerLabelBackgroundColor": "color_13", "color": "color_6" }, "css": { "%_root": "width:100%;height:100%;display:inline-flex;outline:none;position:relative;align-items:center;-webkit-tap-highlight-color:rgba(0, 0, 0, 0);", "%_root > input[type=checkbox]": "width:1px;height:1px;margin:0;opacity:0;position:absolute;", "%_root > input[type=checkbox]:focus,%_root[data-preview~=\"focus\"] > input[type=checkbox][type=checkbox]": "outline:none;",
-        "%_root > input[type=checkbox]:checked:focus,%_root[data-preview~=\"checked:focus\"] > input[type=checkbox][type=checkbox]": "outline:none;", "%_root > input[type=checkbox]:checked:focus + %_outerLabel,%_root[data-preview~=\"checked:focus\"] > input[type=checkbox][type=checkbox] + %_outerLabel": "border-width:[outerLabelBorderSizeFocus];border-color:[outerLabelBorderColorFocus];background-color:[backgroundColorFocus];", "%_root > input[type=checkbox]:focus + %_outerLabel,%_root[data-preview~=\"focus\"] > input[type=checkbox][type=checkbox] + %_outerLabel": "border-width:[outerLabelBorderSizeFocus];border-color:[outerLabelBorderColorFocus];background-color:[backgroundColorFocus];", "%_root > input[type=checkbox]:checked:disabled:hover + %_outerLabel,%_root[data-preview~=\"checked:disabled:hover\"] > input[type=checkbox][type=checkbox] + %_outerLabel": "cursor:default;border-width:[outerLabelBorderSizeDisabled];border-color:[outerLabelBorderColorDisabled];background-color:[backgroundColorDisabled];", "%_root > input[type=checkbox]:checked:disabled:hover ~ %_innerLabel,%_root[data-preview~=\"checked:disabled:hover\"] > input[type=checkbox][type=checkbox] ~ %_innerLabel": "cursor:default;border-width:[innerLabelBorderSizeDisabled];border-color:[innerLabelBorderColorDisabled];background-color:[innerLabelBackgroundColorDisabled];", "%_root > input[type=checkbox]:checked:disabled:hover ~ %_innerLabel > %_toggleIcon path,%_root[data-preview~=\"checked:disabled:hover\"] > input[type=checkbox][type=checkbox] ~ %_innerLabel > %_toggleIcon path": "fill:[colorCheckedDisabled];", "%_root > input[type=checkbox]:disabled:hover + %_outerLabel,%_root[data-preview~=\"disabled:hover\"] > input[type=checkbox][type=checkbox] + %_outerLabel": "cursor:default;border-width:[outerLabelBorderSizeDisabled];border-color:[outerLabelBorderColorDisabled];background-color:[backgroundColorDisabled];", "%_root > input[type=checkbox]:disabled:hover ~ %_innerLabel,%_root[data-preview~=\"disabled:hover\"] > input[type=checkbox][type=checkbox] ~ %_innerLabel": "cursor:default;border-width:[innerLabelBorderSizeDisabled];border-color:[innerLabelBorderColorDisabled];background-color:[innerLabelBackgroundColorDisabled];", "%_root > input[type=checkbox]:disabled:hover ~ %_innerLabel > %_toggleIcon path,%_root[data-preview~=\"disabled:hover\"] > input[type=checkbox][type=checkbox] ~ %_innerLabel > %_toggleIcon path": "fill:[colorDisabled];", "%_root > input[type=checkbox]:checked:hover + %_outerLabel,%_root[data-preview~=\"checked:hover\"] > input[type=checkbox][type=checkbox] + %_outerLabel": "border-width:[outerLabelBorderSizeHoverChecked];border-color:[outerLabelBorderColorHoverChecked];background-color:[backgroundColorHoverChecked];", "%_root > input[type=checkbox]:checked:hover ~ %_innerLabel,%_root[data-preview~=\"checked:hover\"] > input[type=checkbox][type=checkbox] ~ %_innerLabel": "border-width:[innerLabelBorderSizeHoverChecked];border-color:[innerLabelBorderColorHoverChecked];background-color:[innerLabelBackgroundColorHoverChecked];", "%_root > input[type=checkbox]:checked:hover ~ %_innerLabel > %_toggleIcon path,%_root[data-preview~=\"checked:hover\"] > input[type=checkbox][type=checkbox] ~ %_innerLabel > %_toggleIcon path": "fill:[colorHoverChecked];", "%_root > input[type=checkbox]:hover + %_outerLabel,%_root[data-preview~=\"hover\"] > input[type=checkbox][type=checkbox] + %_outerLabel": "border-width:[outerLabelBorderSizeHover];border-color:[outerLabelBorderColorHover];background-color:[backgroundColorHover];", "%_root > input[type=checkbox]:hover ~ %_innerLabel,%_root[data-preview~=\"hover\"] > input[type=checkbox][type=checkbox] ~ %_innerLabel": "border-width:[innerLabelBorderSizeHover];border-color:[innerLabelBorderColorHover];background-color:[innerLabelBackgroundColorHover];", "%_root > input[type=checkbox]:hover ~ %_innerLabel > %_toggleIcon path,%_root[data-preview~=\"hover\"] > input[type=checkbox][type=checkbox] ~ %_innerLabel > %_toggleIcon path": "fill:[colorHover];", "%_root > input[type=checkbox]:checked:disabled + %_outerLabel,%_root[data-preview~=\"checked:disabled\"] > input[type=checkbox][type=checkbox] + %_outerLabel": "cursor:default;border-width:[outerLabelBorderSizeDisabled];border-color:[outerLabelBorderColorDisabled];background-color:[backgroundColorDisabled];", "%_root > input[type=checkbox]:checked:disabled ~ %_innerLabel,%_root[data-preview~=\"checked:disabled\"] > input[type=checkbox][type=checkbox] ~ %_innerLabel": "cursor:default;border-width:[innerLabelBorderSizeDisabled];border-color:[innerLabelBorderColorDisabled];background-color:[innerLabelBackgroundColorDisabled];", "%_root > input[type=checkbox]:checked:disabled ~ %_innerLabel > %_toggleIcon path,%_root[data-preview~=\"checked:disabled\"] > input[type=checkbox][type=checkbox] ~ %_innerLabel > %_toggleIcon path": "fill:[colorCheckedDisabled];", "%_root > input[type=checkbox]:disabled + %_outerLabel,%_root[data-preview~=\"disabled\"] > input[type=checkbox][type=checkbox] + %_outerLabel": "cursor:default;border-width:[outerLabelBorderSizeDisabled];border-color:[outerLabelBorderColorDisabled];background-color:[backgroundColorDisabled];", "%_root > input[type=checkbox]:disabled ~ %_innerLabel,%_root[data-preview~=\"disabled\"] > input[type=checkbox][type=checkbox] ~ %_innerLabel": "cursor:default;border-width:[innerLabelBorderSizeDisabled];border-color:[innerLabelBorderColorDisabled];background-color:[innerLabelBackgroundColorDisabled];", "%_root > input[type=checkbox]:disabled ~ %_innerLabel > %_toggleIcon path,%_root[data-preview~=\"disabled\"] > input[type=checkbox][type=checkbox] ~ %_innerLabel > %_toggleIcon path": "fill:[colorDisabled];", "%_root > input[type=checkbox]:checked + %_outerLabel,%_root[data-preview~=\"checked\"] > input[type=checkbox][type=checkbox] + %_outerLabel": "border-width:[outerLabelBorderSizeChecked];border-color:[outerLabelBorderColorChecked];background-color:[backgroundColorChecked];", "%_root > input[type=checkbox]:checked ~ %_innerLabel,%_root[data-preview~=\"checked\"] > input[type=checkbox][type=checkbox] ~ %_innerLabel": "left:23px;border-width:[innerLabelBorderSizeChecked];border-color:[innerLabelBorderColorChecked];background-color:[innerLabelBackgroundColorChecked];", "%_root > input[type=checkbox]:checked ~ %_innerLabel > %_toggleIcon,%_root[data-preview~=\"checked\"] > input[type=checkbox][type=checkbox] ~ %_innerLabel > %_toggleIcon": "transition:all .3s cubic-bezier(0,1,0,1), visibility 0s;", "%_root > input[type=checkbox]:checked ~ %_innerLabel > %_toggleIcon path,%_root[data-preview~=\"checked\"] > input[type=checkbox][type=checkbox] ~ %_innerLabel > %_toggleIcon path": "fill:[colorChecked];", "%_outerLabel": "width:100%;cursor:pointer;height:100%;display:inline-block;box-sizing:border-box;transition:all .3s ease, visibility 0s;[outerLabelBoxShadow];border-width:[outerLabelBorderSize];border-color:[outerLabelBorderColor];border-style:solid;[borderRadius];background-color:[backgroundColor];", "%_innerLabel": "top:50%;left:1px;width:21px;height:22px;cursor:pointer;display:flex;position:absolute;transform:translate(0, -50%);transition:all .3s ease, visibility 0s;text-align:center;[innerLabelBoxShadow];box-sizing:border-box;align-items:center;border-width:[innerLabelBorderSize];border-color:[innerLabelBorderColor];border-style:solid;[borderRadius];justify-content:center;background-color:[innerLabelBackgroundColor];", "%_toggleIcon": "width:50%;height:50%;display:none;transition:all .3s cubic-bezier(1,0,1,0), visibility 0s;", "%_toggleIcon path": "fill:[color];" } } }, "classes": ["root", "outerLabel", "innerLabel", "toggleIcon"] };
 
 /***/ }),
 
-/***/ 60:
-/*!************************************************************!*\
-  !*** ../node_modules/hoist-non-react-methods/lib/index.js ***!
-  \************************************************************/
+/***/ 647:
+/*!***************************************************************************!*\
+  !*** ../node_modules/wix-ui-core/dist/src/components/pagination/index.js ***!
+  \***************************************************************************/
+/*! no static exports found */
+/*! all exports used */
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var Pagination_1 = __webpack_require__(/*! ./Pagination */ 351);
+exports.Pagination = Pagination_1.Pagination;
+//# sourceMappingURL=index.js.map
+
+/***/ }),
+
+/***/ 648:
+/*!*******************************************************************************!*\
+  !*** ../node_modules/wix-ui-core/dist/src/components/pagination/PageStrip.js ***!
+  \*******************************************************************************/
+/*! no static exports found */
+/*! all exports used */
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var tslib_1 = __webpack_require__(/*! tslib */ 6);
+var React = __webpack_require__(/*! react */ 0);
+var page_strip_layout_1 = __webpack_require__(/*! ./page-strip-layout */ 649);
+var Pagination_st_css_1 = __webpack_require__(/*! ./Pagination.st.css */ 352);
+var PageStrip = /** @class */ (function (_super) {
+    tslib_1.__extends(PageStrip, _super);
+    function PageStrip() {
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.responsiveLayoutIsFresh = false;
+        _this.unmounted = false;
+        _this.state = { responsiveLayout: null };
+        return _this;
+    }
+    PageStrip.prototype.componentDidMount = function () {
+        var _this = this;
+        if (this.props.updateResponsiveLayout) {
+            // We can't do this in componentWillMount because the caller might need to access DOM here,
+            // and SSR wouldn't work.
+            this.props.updateResponsiveLayout(function () {
+                _this.responsiveLayoutIsFresh = false;
+                // Even though we register a noop callback for `this.props.updateResponsiveLayout`
+                // in `componentWillUnmount`, we cannot guarantee that the user will not hold onto
+                // the old callback and invoke it after unmount, which is the reason for checking
+                // `this.unmounted`.
+                if (!_this.unmounted) {
+                    _this.updateLayoutIfNeeded();
+                }
+            });
+        }
+        else {
+            this.updateLayoutIfNeeded();
+        }
+    };
+    PageStrip.prototype.componentWillReceiveProps = function () {
+        this.responsiveLayoutIsFresh = false;
+    };
+    PageStrip.prototype.componentDidUpdate = function () {
+        if (!this.props.updateResponsiveLayout) {
+            this.updateLayoutIfNeeded();
+        }
+        this.forceRepaintInMsEdge();
+    };
+    PageStrip.prototype.componentWillUnmount = function () {
+        this.unmounted = true;
+        if (this.props.updateResponsiveLayout) {
+            this.props.updateResponsiveLayout(function () { return null; });
+        }
+    };
+    PageStrip.prototype.render = function () {
+        var _this = this;
+        return (React.createElement("div", { ref: function (el) { return (_this.rootNode = el); }, "data-hook": "page-strip", id: this.props.id ? this.props.id + 'pageStrip' : null, className: Pagination_st_css_1.default.pageStrip, "data-aid": "qa-page-strip" },
+            React.createElement("div", { className: Pagination_st_css_1.default.pageStripInner }, this.renderLayout(this.getLayout(), false)),
+            this.isResponsive() && (React.createElement("div", { className: Pagination_st_css_1.default.pageStripInner + ' ' + Pagination_st_css_1.default.pageStripTemplate }, this.renderLayout(page_strip_layout_1.createResponsiveLayoutTemplate(this.props), true)))));
+    };
+    PageStrip.prototype.forceRepaintInMsEdge = function () {
+        // MS Edge has a glitch that makes page numbers invisible when switching to the preview
+        // mode in Santa editor. As a workaround we need to force text re-rendering.
+        // Changing font-variant to small-caps should do the trick without actually affecting
+        // the appearance of digits.
+        var inlineStyle = this.rootNode.style;
+        inlineStyle.fontVariant = inlineStyle.fontVariant ? '' : 'small-caps';
+    };
+    // We can't use page numbers as keys, because we might need to render the same page twice
+    // for responsive layout. We also can't use index as a key, because React might reuse the
+    // node for another page, and keep keyboard focus on it, which we don't want.
+    PageStrip.prototype.renderLayout = function (layout, isDummy) {
+        var _this = this;
+        var _a = this.props, currentPage = _a.currentPage, pageUrl = _a.pageUrl, disabled = _a.disabled;
+        return layout.map(function (pageNumber, index) {
+            if (!pageNumber) {
+                return (React.createElement("span", { key: index, className: Pagination_st_css_1.default.gap }, _this.props.gapLabel));
+            }
+            if (pageNumber === currentPage) {
+                return (React.createElement("span", { key: pageNumber + '-' + index, "data-hook": "page-" + pageNumber + " current-page", "aria-label": "Page " + pageNumber, className: Pagination_st_css_1.default.currentPage }, pageNumber));
+            }
+            if (isDummy) {
+                return (React.createElement("a", { key: pageNumber + '-' + index, className: Pagination_st_css_1.default.pageButton }, pageNumber));
+            }
+            return (React.createElement("a", { key: pageNumber + '-' + index, "data-hook": "page-" + pageNumber, "aria-label": "Page " + pageNumber, className: Pagination_st_css_1.default.pageButton, tabIndex: disabled || pageUrl ? null : 0, onClick: disabled ? null : function (e) { return _this.props.onPageClick(e, pageNumber); }, onKeyDown: disabled ? null : function (e) { return _this.props.onPageKeyDown(e, pageNumber); }, href: !disabled && pageUrl ? pageUrl(pageNumber) : null }, pageNumber));
+        });
+    };
+    PageStrip.prototype.isResponsive = function () {
+        return (this.props.responsive &&
+            this.props.totalPages > 0 &&
+            this.props.maxPagesToShow > 1);
+    };
+    PageStrip.prototype.getLayout = function () {
+        if (!this.isResponsive()) {
+            return page_strip_layout_1.createStaticLayout(this.props);
+        }
+        if (this.state.responsiveLayout) {
+            return this.state.responsiveLayout;
+        }
+        return page_strip_layout_1.createStaticLayout({
+            totalPages: this.props.totalPages,
+            currentPage: this.props.currentPage,
+            showFirstPage: this.props.showFirstPage,
+            showLastPage: this.props.showLastPage,
+            // This is pretty arbitrary. 5 is the minimum space required to show the first, current, and last page.
+            maxPagesToShow: 5,
+        });
+    };
+    PageStrip.prototype.updateLayoutIfNeeded = function () {
+        if (!this.isResponsive() || this.responsiveLayoutIsFresh) {
+            return;
+        }
+        this.responsiveLayoutIsFresh = true;
+        this.setState({
+            responsiveLayout: page_strip_layout_1.createResponsiveLayout({
+                container: this.rootNode.children[1],
+                totalPages: this.props.totalPages,
+                currentPage: this.props.currentPage,
+                maxPagesToShow: this.props.maxPagesToShow,
+                showFirstPage: this.props.showFirstPage,
+                showLastPage: this.props.showLastPage,
+            }),
+        });
+    };
+    return PageStrip;
+}(React.Component));
+exports.PageStrip = PageStrip;
+//# sourceMappingURL=PageStrip.js.map
+
+/***/ }),
+
+/***/ 649:
+/*!***************************************************************************************!*\
+  !*** ../node_modules/wix-ui-core/dist/src/components/pagination/page-strip-layout.js ***!
+  \***************************************************************************************/
+/*! no static exports found */
+/*! all exports used */
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+function createStaticLayout(_a) {
+    var totalPages = _a.totalPages, currentPage = _a.currentPage, maxPagesToShow = _a.maxPagesToShow, showFirstPage = _a.showFirstPage, showLastPage = _a.showLastPage;
+    return createLayout({
+        totalPages: totalPages,
+        currentPage: currentPage,
+        lowerBound: 1,
+        upperBound: totalPages,
+        pageRangeCost: function (a, b) { return b - a + 1; },
+        showFirstPage: showFirstPage,
+        showLastPage: showLastPage,
+        rewindToFirstCost: 2,
+        rewindToLastCost: 2,
+        budget: maxPagesToShow,
+    });
+}
+exports.createStaticLayout = createStaticLayout;
+function rangeToPreRenderForResponsiveLayout(totalPages, currentPage, maxPagesToShow) {
+    return [
+        Math.max(currentPage - maxPagesToShow, 1),
+        Math.min(currentPage + maxPagesToShow, totalPages),
+    ];
+}
+function createResponsiveLayoutTemplate(_a) {
+    var totalPages = _a.totalPages, currentPage = _a.currentPage, maxPagesToShow = _a.maxPagesToShow;
+    var _b = rangeToPreRenderForResponsiveLayout(totalPages, currentPage, maxPagesToShow), lowerBound = _b[0], upperBound = _b[1];
+    return [1, 0].concat(closedRange(lowerBound, upperBound), [0, totalPages]);
+}
+exports.createResponsiveLayoutTemplate = createResponsiveLayoutTemplate;
+// Takes a container with children rendered using createResponsiveLayoutTemplate,
+// measures the children, and decides how many can be shown without overflowing the container.
+// For measurements to work correctly the pages must not have any dynamic spacing between them
+// such as justify-content: space-evenly, but they can have static spacing such as margins.
+// As long as we're using flexbox with centered pages we don't need to worry about the outer
+// margins of the first and last page, they will be trimmed by flexbox automatically.
+// maxPagesToShow is not really taken into account, it's used to derive the range of pages
+// that was pre-rendered by createResponsiveLayoutTemplate().
+function createResponsiveLayout(_a) {
+    var container = _a.container, totalPages = _a.totalPages, currentPage = _a.currentPage, maxPagesToShow = _a.maxPagesToShow, showFirstPage = _a.showFirstPage, showLastPage = _a.showLastPage;
+    var children = Array.from(container.children);
+    var pages = children.slice(2, -2);
+    var containerWidth = container.getBoundingClientRect().width;
+    var firstRect = children[0].getBoundingClientRect();
+    var lastRect = children[children.length - 1].getBoundingClientRect();
+    var lowerRect = pages[0].getBoundingClientRect();
+    var upperRect = pages[pages.length - 1].getBoundingClientRect();
+    var rewindToFirstCost = mergeBoundingRects(firstRect, lowerRect).width - lowerRect.width;
+    var rewindToLastCost = mergeBoundingRects(lastRect, upperRect).width - upperRect.width;
+    var _b = rangeToPreRenderForResponsiveLayout(totalPages, currentPage, maxPagesToShow), lowerBound = _b[0], upperBound = _b[1];
+    var pageRangeCost = function (a, b) {
+        var aRect = pages[a - lowerBound].getBoundingClientRect();
+        var bRect = pages[b - lowerBound].getBoundingClientRect();
+        return mergeBoundingRects(aRect, bRect).width;
+    };
+    return createLayout({
+        totalPages: totalPages,
+        currentPage: currentPage,
+        lowerBound: lowerBound,
+        upperBound: upperBound,
+        pageRangeCost: pageRangeCost,
+        showFirstPage: showFirstPage,
+        showLastPage: showLastPage,
+        rewindToFirstCost: rewindToFirstCost,
+        rewindToLastCost: rewindToLastCost,
+        budget: containerWidth,
+    });
+}
+exports.createResponsiveLayout = createResponsiveLayout;
+function createLayoutByExpandingPageRange(_a) {
+    var totalPages = _a.totalPages, low = _a.low, high = _a.high, lowerBound = _a.lowerBound, upperBound = _a.upperBound, pageRangeCost = _a.pageRangeCost, budget = _a.budget, showRewindToFirst = _a.showRewindToFirst, showRewindToLast = _a.showRewindToLast, rewindToFirstCost = _a.rewindToFirstCost, rewindToLastCost = _a.rewindToLastCost;
+    var safeLowerBound = showRewindToFirst
+        ? Math.max(lowerBound, 4)
+        : lowerBound;
+    var safeUpperBound = showRewindToLast
+        ? Math.min(upperBound, totalPages - 3)
+        : upperBound;
+    if (!isNondecreasing([
+        lowerBound,
+        safeLowerBound,
+        low,
+        high,
+        safeUpperBound,
+        upperBound,
+    ])) {
+        return null;
+    }
+    lowerBound = safeLowerBound;
+    upperBound = safeUpperBound;
+    budget -=
+        (showRewindToFirst ? rewindToFirstCost : 0) +
+            (showRewindToLast ? rewindToLastCost : 0);
+    var acceptableLow = 0;
+    var acceptableHigh = 0;
+    while (lowerBound <= low &&
+        high <= upperBound &&
+        pageRangeCost(low, high) <= budget) {
+        acceptableLow = low;
+        acceptableHigh = high;
+        if (low === lowerBound && high === upperBound) {
+            break;
+        }
+        low = Math.max(low - 1, lowerBound);
+        high = Math.min(high + 1, upperBound);
+    }
+    return acceptableLow && acceptableHigh
+        ? (showRewindToFirst ? [1, 0] : []).concat(closedRange(acceptableLow, acceptableHigh), (showRewindToLast ? [0, totalPages] : [])) : null;
+}
+function createLayout(_a) {
+    var totalPages = _a.totalPages, currentPage = _a.currentPage, lowerBound = _a.lowerBound, upperBound = _a.upperBound, pageRangeCost = _a.pageRangeCost, showFirstPage = _a.showFirstPage, showLastPage = _a.showLastPage, rewindToFirstCost = _a.rewindToFirstCost, rewindToLastCost = _a.rewindToLastCost, budget = _a.budget;
+    var prevOrLowerBound = Math.max(currentPage - 1, lowerBound);
+    var nextOrUpperBound = Math.min(currentPage + 1, upperBound);
+    var expand = function (low, high, showRewindToFirst, showRewindToLast) {
+        return createLayoutByExpandingPageRange({
+            totalPages: totalPages,
+            low: low,
+            high: high,
+            lowerBound: lowerBound,
+            upperBound: upperBound,
+            pageRangeCost: pageRangeCost,
+            budget: budget,
+            showRewindToFirst: showRewindToFirst,
+            showRewindToLast: showRewindToLast,
+            rewindToFirstCost: rewindToFirstCost,
+            rewindToLastCost: rewindToLastCost,
+        });
+    };
+    return (
+    // Try to show the entire range.
+    ((lowerBound === 1 || !showFirstPage) &&
+        (upperBound === totalPages || !showLastPage) &&
+        expand(lowerBound, upperBound, false, false)) ||
+        // Ellipsis only in the end. Show at least one page after the current.
+        (showLastPage &&
+            lowerBound === 1 &&
+            expand(lowerBound, nextOrUpperBound, false, true)) ||
+        // Ellipsis only in the beginning. Show at least one page before the current.
+        (showFirstPage &&
+            upperBound === totalPages &&
+            expand(prevOrLowerBound, upperBound, true, false)) ||
+        // Ellipses on both sides. Show at least one page before the current and one after.
+        (showFirstPage &&
+            showLastPage &&
+            expand(prevOrLowerBound, nextOrUpperBound, true, true)) ||
+        // Ellipsis only in the end. Don't try to include the next page.
+        (showLastPage &&
+            lowerBound === 1 &&
+            expand(lowerBound, currentPage, false, true)) ||
+        // Ellipsis only in the beginning. Don't try to include the previous page.
+        (showFirstPage &&
+            upperBound === totalPages &&
+            expand(currentPage, upperBound, true, false)) ||
+        // Ellipses on both sides. Don't try to include the previous and the next page.
+        (showFirstPage &&
+            showLastPage &&
+            expand(currentPage, currentPage, true, true)) ||
+        // Cut off both sides without adding ellipses.
+        expand(currentPage, currentPage, false, false) || [currentPage] // If there's not enough space even for the current page, still show it.
+    );
+}
+function closedRange(start, stop, step) {
+    if (step === void 0) { step = 1; }
+    var result = [];
+    for (var i = start; i <= stop; i += step) {
+        result.push(i);
+    }
+    return result;
+}
+function isNondecreasing(sequence) {
+    for (var i = 1; i < sequence.length; i++) {
+        if (sequence[i] < sequence[i - 1]) {
+            return false;
+        }
+    }
+    return true;
+}
+function mergeBoundingRects(a, b) {
+    var top = Math.min(a.top, b.top);
+    var right = Math.max(a.right, b.right);
+    var bottom = Math.max(a.bottom, b.bottom);
+    var left = Math.min(a.left, b.left);
+    var width = right - left;
+    var height = bottom - top;
+    return { top: top, right: right, bottom: bottom, left: left, width: width, height: height };
+}
+//# sourceMappingURL=page-strip-layout.js.map
+
+/***/ }),
+
+/***/ 650:
+/*!************************************************************************************!*\
+  !*** ../node_modules/wix-ui-core/dist/src/components/pagination/root-min-width.js ***!
+  \************************************************************************************/
+/*! no static exports found */
+/*! all exports used */
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var Pagination_1 = __webpack_require__(/*! ./Pagination */ 351);
+exports.measureAndSetRootMinWidth = function (compNode, paginationMode, idPrefix) {
+    if (idPrefix === void 0) { idPrefix = ''; }
+    compNode.style.minWidth = '';
+    compNode.style.minHeight = '';
+    var getById = function (id) {
+        return compNode.querySelector("#" + Pagination_1.getId(idPrefix, id));
+    };
+    var getMinWidth = function (elmnt) {
+        return elmnt ? parseInt(window.getComputedStyle(elmnt).minWidth, 10) : 0;
+    };
+    var getWidthWithMargins = function (element) {
+        if (!element) {
+            return 0;
+        }
+        var style = window.getComputedStyle(element);
+        return (parseInt(style.marginRight, 10) +
+            element.offsetWidth +
+            parseInt(style.marginLeft, 10));
+    };
+    var getHeightWithMargins = function (element) {
+        if (!element) {
+            return 0;
+        }
+        var style = window.getComputedStyle(element);
+        return (parseInt(style.marginBottom, 10) +
+            element.offsetHeight +
+            parseInt(style.marginTop, 10));
+    };
+    var navButtonsMinWidth = getWidthWithMargins(getById('navButtonNext')) +
+        getWidthWithMargins(getById('navButtonPrevious')) +
+        getWidthWithMargins(getById('navButtonFirst')) +
+        getWidthWithMargins(getById('navButtonLast'));
+    var selectionMinWidth = 0;
+    var minHeight = 0;
+    if (paginationMode === 'pages') {
+        // means we're in "pages" pagination mode
+        selectionMinWidth = getMinWidth(getById('pageStrip'));
+        minHeight = Math.max(getHeightWithMargins(getById('pageStrip')), getHeightWithMargins(getById('navButtonNext')));
+    }
+    else {
+        // means we're in "input" pagination mode
+        selectionMinWidth =
+            getWidthWithMargins(getById('totalPages')) +
+                getWidthWithMargins(getById('slash')) +
+                getWidthWithMargins(getById('pageInput'));
+        minHeight = Math.max(getHeightWithMargins(getById('pageInput')), getHeightWithMargins(getById('navButtonNext')));
+    }
+    compNode.style.minWidth = navButtonsMinWidth + selectionMinWidth + 'px';
+    compNode.style.minHeight = minHeight + 'px';
+};
+//# sourceMappingURL=root-min-width.js.map
+
+/***/ }),
+
+/***/ 651:
+/*!**************************************************!*\
+  !*** ./components/Pagination/paginationIcons.js ***!
+  \**************************************************/
 /*! no static exports found */
 /*! all exports used */
 /*! ModuleConcatenation bailout: Module is not an ECMAScript module */
@@ -1634,107 +2168,65 @@ module.exports = { "json": { "wixui.skins.ToggleSwitch": { "params": { "outerLab
 "use strict";
 
 
-exports.__esModule = true;
-exports.default = hoistNonReactMethods;
-var REACT_PROTOTYPE = {
-  autobind: true,
-  childContextTypes: true,
-  componentDidMount: true,
-  componentDidUpdate: true,
-  componentWillMount: true,
-  componentWillReceiveProps: true,
-  componentWillUnmount: true,
-  componentWillUpdate: true,
-  contextTypes: true,
-  displayName: true,
-  forceUpdate: true,
-  getChildContext: true,
-  getDefaultProps: true,
-  getDOMNode: true,
-  getInitialState: true,
-  isMounted: true,
-  mixins: true,
-  propTypes: true,
-  render: true,
-  replaceProps: true,
-  replaceState: true,
-  setProps: true,
-  setState: true,
-  shouldComponentUpdate: true,
-  statics: true,
-  updateComponent: true
-};
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.slash = exports.arrowNext = exports.arrowPrevious = exports.arrowLast = exports.arrowFirst = undefined;
 
-var REACT_STATICS = {
-  childContextTypes: true,
-  contextTypes: true,
-  defaultProps: true,
-  displayName: true,
-  getDefaultProps: true,
-  mixins: true,
-  propTypes: true,
-  type: true
-};
+var _react = __webpack_require__(/*! react */ 0);
 
-var KNOWN_STATICS = {
-  name: true,
-  length: true,
-  prototype: true,
-  caller: true,
-  arguments: true,
-  arity: true
-};
+var _react2 = _interopRequireDefault(_react);
 
-var defaultConfig = {
-  delegateTo: function delegateTo(w) {
-    return w.refs.child;
-  },
-  hoistStatics: true
-};
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function hoistNonReactMethods(targetComponent, sourceComponent, config) {
-  var targetComponentName = targetComponent.displayName || targetComponent.name || 'Wrapper';
-  var sourceComponentName = sourceComponent.displayName || sourceComponent.name || 'WrappedComponent';
-  var hoistStatics = config && typeof config.hoistStatics !== 'undefined' ? config.hoistStatics : defaultConfig.hoistStatics;
-  var delegateTo = config && typeof config.delegateTo !== 'undefined' ? config.delegateTo : defaultConfig.delegateTo;
-  // backwards compatible where config option is delegateTo function
-  if (typeof config === 'function') delegateTo = config;
+var arrowFirst = exports.arrowFirst = _react2.default.createElement(
+  "svg",
+  { version: "1.1", xmlns: "http://www.w3.org/2000/svg", x: "0px", y: "0px", viewBox: "0 0 200 200", enableBackground: "new 0 0 200 200", xmlSpace: "preserve" },
+  _react2.default.createElement(
+    "g",
+    null,
+    _react2.default.createElement("path", { d: "M94.606,32.523l-72.009,68.199l70.48,66.745l-5.518,5.837l-76.627-72.582l78.156-74.027L94.606,32.523z" }),
+    _react2.default.createElement("path", { d: "M107.059,100.723l70.48,66.745l-5.518,5.837l-76.627-72.582l78.156-74.027l5.518,5.828L107.059,100.723z" })
+  )
+);
 
-  if (hoistStatics) {
-    var statics = Object.getOwnPropertyNames(sourceComponent).filter(function (k) {
-      return !REACT_STATICS[k] && !KNOWN_STATICS[k];
-    });
+var arrowLast = exports.arrowLast = _react2.default.createElement(
+  "svg",
+  { version: "1.1", xmlns: "http://www.w3.org/2000/svg", x: "0px", y: "0px", viewBox: "0 0 200 200", enableBackground: "new 0 0 200 200", xmlSpace: "preserve" },
+  _react2.default.createElement(
+    "g",
+    null,
+    _react2.default.createElement("path", { d: "M112.442,26.696l76.627,72.582l-78.156,74.027l-5.518-5.828l72.009-68.199l-70.48-66.745L112.442,26.696z" }),
+    _react2.default.createElement("path", { d: "M27.979,26.696l76.627,72.582l-78.156,74.027l-5.518-5.828l72.009-68.199l-70.48-66.745L27.979,26.696z" })
+  )
+);
 
-    statics.forEach(function (methodName) {
-      if (targetComponent[methodName]) console.warn('Static method ' + methodName + ' already exists in wrapper component ' + targetComponentName + ', and won\'t be hoisted. Consider changing the name on ' + sourceComponentName + '.');
-      targetComponent[methodName] = sourceComponent[methodName];
-    });
-  }
+var arrowPrevious = exports.arrowPrevious = _react2.default.createElement(
+  "svg",
+  { version: "1.1", xmlns: "http://www.w3.org/2000/svg", x: "0px", y: "0px", viewBox: "0 0 200 200", enableBackground: "new 0 0 200 200", xmlSpace: "preserve" },
+  _react2.default.createElement("path", { d: "M130.789,173.304l-76.627-72.582l78.156-74.027l5.518,5.828l-72.009,68.199l70.48,66.745L130.789,173.304z" })
+);
 
-  var methods = Object.getOwnPropertyNames(sourceComponent.prototype).filter(function (k) {
-    return !REACT_PROTOTYPE[k];
-  });
+var arrowNext = exports.arrowNext = _react2.default.createElement(
+  "svg",
+  { version: "1.1", xmlns: "http://www.w3.org/2000/svg", x: "0px", y: "0px", viewBox: "0 0 200 200", enableBackground: "new 0 0 200 200", xmlSpace: "preserve" },
+  _react2.default.createElement("path", { d: "M69.211,26.696l76.627,72.582l-78.156,74.027l-5.518-5.828l72.009-68.199l-70.48-66.745L69.211,26.696z" })
+);
 
-  methods.forEach(function (methodName) {
-    if (targetComponent.prototype[methodName]) {
-      console.warn('Method ' + methodName + ' already exists in wrapper component ' + targetComponentName + ', and won\'t be hoisted. Consider changing the name on ' + sourceComponentName + '.');
-      return;
-    }
-
-    targetComponent.prototype[methodName] = function () {
-      var _sourceComponent$prot;
-
-      for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-        args[_key] = arguments[_key];
-      }
-
-      return (_sourceComponent$prot = sourceComponent.prototype[methodName]).call.apply(_sourceComponent$prot, [delegateTo.call(this, this)].concat(args));
-    };
-  });
-
-  return targetComponent;
-}
-//# sourceMappingURL=index.js.map
+var slash = exports.slash = _react2.default.createElement(
+  "svg",
+  { xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 15 26", version: "1.1" },
+  _react2.default.createElement("defs", null),
+  _react2.default.createElement(
+    "g",
+    { stroke: "none", strokeWidth: "1", fill: "none", fillRule: "evenodd", strokeLinecap: "square" },
+    _react2.default.createElement(
+      "g",
+      null,
+      _react2.default.createElement("path", { d: "M13.5,4.5 L2,21.9807621" })
+    )
+  )
+);
 
 /***/ }),
 
@@ -1799,4 +2291,4 @@ module.exports = invariant;
 /***/ })
 
 }]);
-//# sourceMappingURL=wixui.ToggleSwitch.chunk.js.map
+//# sourceMappingURL=wixui.Pagination.chunk.js.map

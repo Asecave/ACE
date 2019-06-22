@@ -1,4 +1,4 @@
-((typeof self !== 'undefined' ? self : this)["webpackJsonp_wix_ui_santa"] = (typeof self !== 'undefined' ? self : this)["webpackJsonp_wix_ui_santa"] || []).push([[45],{
+((typeof self !== 'undefined' ? self : this)["webpackJsonp_wix_ui_santa"] = (typeof self !== 'undefined' ? self : this)["webpackJsonp_wix_ui_santa"] || []).push([[39],{
 
 /***/ 12:
 /*!**********************************************!*\
@@ -100,494 +100,6 @@ module.exports = shouldUseNative() ? Object.assign : function (target, source) {
 
 	return to;
 };
-
-
-/***/ }),
-
-/***/ 131:
-/*!***************************************************!*\
-  !*** ../node_modules/wix-ui-core/radio-button.js ***!
-  \***************************************************/
-/*! no static exports found */
-/*! all exports used */
-/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__(/*! ./dist/src/components/radio-button */ 132);
-
-
-/***/ }),
-
-/***/ 132:
-/*!*****************************************************************************!*\
-  !*** ../node_modules/wix-ui-core/dist/src/components/radio-button/index.js ***!
-  \*****************************************************************************/
-/*! no static exports found */
-/*! all exports used */
-/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-Object.defineProperty(exports, "__esModule", { value: true });
-var RadioButton_1 = __webpack_require__(/*! ./RadioButton */ 133);
-exports.RadioButton = RadioButton_1.RadioButton;
-//# sourceMappingURL=index.js.map
-
-/***/ }),
-
-/***/ 133:
-/*!***********************************************************************************!*\
-  !*** ../node_modules/wix-ui-core/dist/src/components/radio-button/RadioButton.js ***!
-  \***********************************************************************************/
-/*! no static exports found */
-/*! all exports used */
-/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-Object.defineProperty(exports, "__esModule", { value: true });
-var tslib_1 = __webpack_require__(/*! tslib */ 6);
-var React = __webpack_require__(/*! react */ 0);
-var RadioButton_st_css_1 = __webpack_require__(/*! ./RadioButton.st.css */ 134);
-var noop = function () { return null; };
-var RadioButton = /** @class */ (function (_super) {
-    tslib_1.__extends(RadioButton, _super);
-    function RadioButton() {
-        var _this = _super !== null && _super.apply(this, arguments) || this;
-        _this.focusedByMouse = false;
-        _this.state = {
-            focused: false,
-            focusVisible: false,
-        };
-        _this.handleClick = function (event) {
-            _this.focusedByMouse = true;
-            _this.handleInputChange(event);
-        };
-        _this.handleInputChange = function (event) {
-            if (!_this.props.disabled) {
-                _this.props.onChange(tslib_1.__assign({ value: _this.props.value }, event));
-                if (_this.radioRef) {
-                    _this.radioRef.focus();
-                }
-            }
-        };
-        _this.onHover = function (event) {
-            _this.props.onHover(tslib_1.__assign({ value: _this.props.value }, event));
-        };
-        _this.onFocus = function () {
-            _this.setState({ focused: true, focusVisible: !_this.focusedByMouse });
-        };
-        _this.onInputBlur = function () {
-            _this.setState({ focused: false, focusVisible: false });
-            _this.focusedByMouse = false;
-        };
-        _this.handleInputKeyDown = function () {
-            _this.setState({ focusVisible: true });
-        };
-        _this.radioRef = undefined;
-        return _this;
-    }
-    RadioButton.prototype.render = function () {
-        var _this = this;
-        var _a = this.props, value = _a.value, name = _a.name, checkedIcon = _a.checkedIcon, uncheckedIcon = _a.uncheckedIcon, label = _a.label, checked = _a.checked, disabled = _a.disabled, required = _a.required, onIconBlur = _a.onIconBlur;
-        var focused = this.state.focused;
-        return (React.createElement("div", tslib_1.__assign({}, RadioButton_st_css_1.default('root', {
-            checked: checked,
-            disabled: disabled,
-            focused: focused,
-            'focus-visible': this.state.focusVisible,
-        }, this.props), { onChange: this.handleInputChange, onClick: this.handleClick, role: "radio", "aria-checked": checked ? checked : false }),
-            React.createElement("input", { type: "radio", className: RadioButton_st_css_1.default.hiddenRadio, disabled: disabled, required: required, onFocus: this.onFocus, onBlur: this.onInputBlur, checked: checked, value: value, name: name, onChange: function () { return null; }, onKeyDown: this.handleInputKeyDown, ref: function (radio) { return (_this.radioRef = radio); }, "aria-label": this.props['aria-label'] }),
-            React.createElement("span", { className: RadioButton_st_css_1.default.icon, onMouseEnter: this.onHover, onMouseLeave: onIconBlur }, checked ? checkedIcon : uncheckedIcon),
-            React.createElement("span", { className: RadioButton_st_css_1.default.label }, label)));
-    };
-    RadioButton.displayName = 'RadioButton';
-    RadioButton.defaultProps = {
-        onChange: noop,
-        onHover: noop,
-        onBlur: noop,
-    };
-    return RadioButton;
-}(React.Component));
-exports.RadioButton = RadioButton;
-//# sourceMappingURL=RadioButton.js.map
-
-/***/ }),
-
-/***/ 134:
-/*!***************************************************************************************!*\
-  !*** ../node_modules/wix-ui-core/dist/src/components/radio-button/RadioButton.st.css ***!
-  \***************************************************************************************/
-/*! exports provided: default */
-/*! all exports used */
-/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
-/***/ (function(module, exports, __webpack_require__) {
-
-Object.defineProperty(exports, "__esModule", { value: true })
-
-exports.default = __webpack_require__.stylable.create(
-  "root",
-  "RadioButton1232350729",
-  {"root":"RadioButton1232350729--root","icon":"RadioButton1232350729--icon","label":"RadioButton1232350729--label","hiddenRadio":"RadioButton1232350729--hiddenRadio"},
-  "",
-  1,
-  /*! ../node_modules/wix-ui-core/dist/src/components/radio-button/RadioButton.st.css */ 134
-);
-
-
-
-/***/ }),
-
-/***/ 135:
-/*!***********************************!*\
-  !*** ./components/Rating/util.js ***!
-  \***********************************/
-/*! no static exports found */
-/*! all exports used */
-/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.precisionRound = precisionRound;
-exports.formatReviewsCount = formatReviewsCount;
-function precisionRound(number, precision) {
-  var factor = Math.pow(10, precision);
-  return Math.round(number * factor) / factor;
-}
-
-function formatReviewsCount(reviewsCount) {
-  if (reviewsCount < 1000) {
-    return "" + reviewsCount;
-  } else if (reviewsCount < 9950) {
-    return precisionRound(reviewsCount / 1000, 1) + "K";
-  } else if (reviewsCount < 999500) {
-    return precisionRound(reviewsCount / 1000, 0) + "K";
-  } else if (reviewsCount < 9950000) {
-    return precisionRound(reviewsCount / 1e6, 1) + "M";
-  } else {
-    return precisionRound(reviewsCount / 1e6, 0) + "M";
-  }
-}
-
-/***/ }),
-
-/***/ 136:
-/*!*******************************************!*\
-  !*** ./components/Rating/santa-layout.js ***!
-  \*******************************************/
-/*! no static exports found */
-/*! all exports used */
-/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
-
-var ratingsDisplayLayout = exports.ratingsDisplayLayout = function ratingsDisplayLayout(compNode, props) {
-  var getElement = function getElement(dataHook) {
-    return compNode.querySelector('[data-hook=\'' + dataHook + '\']');
-  };
-
-  var getWidthWithMargins = function getWidthWithMargins(elemHook) {
-    var elem = getElement(elemHook);
-    if (!elem) {
-      return 0;
-    }
-
-    var style = window.getComputedStyle(elem);
-    return parseInt(style.marginRight, 10) + elem.offsetWidth + parseInt(style.marginLeft, 10);
-  };
-
-  var getHeight = function getHeight(elemHook) {
-    var elem = getElement(elemHook);
-    if (!elem) {
-      return 0;
-    }
-    return elem.offsetHeight;
-  };
-
-  var getHeightWithMargins = function getHeightWithMargins(elemHook) {
-    var elem = getElement(elemHook);
-    if (!elem) {
-      return 0;
-    }
-
-    var style = window.getComputedStyle(elem);
-    return parseInt(style.marginTop, 10) + elem.offsetHeight + parseInt(style.marginBottom, 10);
-  };
-
-  if (props.mode === 'display') {
-    var iconsWidth = getWidthWithMargins('rating-icons');
-    var iconsHeight = getHeight('rating-icons');
-
-    var ratingWidth = getWidthWithMargins('rating-display-rating');
-    var ratingHeight = getHeight('rating-display-rating');
-
-    var reviewsCountWidth = getWidthWithMargins('rating-display-reviews-count');
-    var reviewsCountHeight = getHeight('rating-display-reviews-count');
-
-    var placeholderTextHeight = getHeight('rating-display-placeholder');
-
-    var resultWidth = parseInt(iconsWidth, 10) + parseInt(ratingWidth, 10) + parseInt(reviewsCountWidth, 10) + 'px';
-    compNode.style.minWidth = resultWidth;
-
-    var iconsHeightVal = parseInt(iconsHeight, 10);
-    var ratingHeightVal = parseInt(ratingHeight, 10);
-    var reviewsCountHeightVal = parseInt(reviewsCountHeight, 10);
-    var placeholderTextHeightVal = parseInt(placeholderTextHeight, 10);
-
-    var calculatedHeight = Math.max(iconsHeightVal, ratingHeightVal, reviewsCountHeightVal, placeholderTextHeightVal);
-    var resultHeight = calculatedHeight > 0 ? calculatedHeight + 'px' : '1.5em';
-    compNode.style.height = resultHeight;
-  } else if (props.labelPosition === 'side') {
-    // input mode - labelPosition 'side'
-    var additionalWidthForText = props.showTitle || props.showLabels ? Math.max.apply(Math, _toConsumableArray(['1', '2', '3', '4', '5', 'title'].map(function (lbl) {
-      if (!getElement('label_' + lbl)) {
-        return 0;
-      }
-      // set the styles to have labels in their minimal width, then measure, then reset width.
-      var container = getElement('label_' + lbl).parentElement;
-      container.style.width = 0;
-      var measure = getWidthWithMargins('label_' + lbl);
-      container.style.width = '';
-      return measure;
-    }))) : 0;
-
-    var _iconsWidth = getWidthWithMargins('rating-icons');
-
-    compNode.style.minWidth = _iconsWidth + additionalWidthForText + 'px';
-    compNode.style.height = Math.max(getHeight('labels-container'), getHeight('rating-icons')) + 'px';
-  } else {
-    // input mode - either labelPosition 'top' or 'bottom'
-    var labelsContainerWidth = getWidthWithMargins('labels-container');
-    compNode.style.minWidth = labelsContainerWidth + 'px';
-    compNode.style.height = getHeightWithMargins('labels-container') + getHeightWithMargins('rating-icons') + 'px';
-  }
-};
-
-/***/ }),
-
-/***/ 137:
-/*!******************************************!*\
-  !*** ./components/Rating/default-svg.js ***!
-  \******************************************/
-/*! no static exports found */
-/*! all exports used */
-/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.defaultSvg = undefined;
-
-var _react = __webpack_require__(/*! react */ 0);
-
-var React = _interopRequireWildcard(_react);
-
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
-
-var defaultSvg = exports.defaultSvg = React.createElement("svg", { version: "1.1", id: "Layer_1", xmlns: "http://www.w3.org/2000/svg", width: "200px", height: "200px", xmlnsXlink: "http://www.w3.org/1999/xlink", xmlSpace: "preserve", viewBox: "0 0 200 200" });
-
-/***/ }),
-
-/***/ 138:
-/*!*************************************!*\
-  !*** ../node_modules/uuid/index.js ***!
-  \*************************************/
-/*! no static exports found */
-/*! all exports used */
-/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
-/***/ (function(module, exports, __webpack_require__) {
-
-var v1 = __webpack_require__(/*! ./v1 */ 139);
-var v4 = __webpack_require__(/*! ./v4 */ 140);
-
-var uuid = v4;
-uuid.v1 = v1;
-uuid.v4 = v4;
-
-module.exports = uuid;
-
-
-/***/ }),
-
-/***/ 139:
-/*!**********************************!*\
-  !*** ../node_modules/uuid/v1.js ***!
-  \**********************************/
-/*! no static exports found */
-/*! all exports used */
-/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
-/***/ (function(module, exports, __webpack_require__) {
-
-var rng = __webpack_require__(/*! ./lib/rng */ 49);
-var bytesToUuid = __webpack_require__(/*! ./lib/bytesToUuid */ 50);
-
-// **`v1()` - Generate time-based UUID**
-//
-// Inspired by https://github.com/LiosK/UUID.js
-// and http://docs.python.org/library/uuid.html
-
-var _nodeId;
-var _clockseq;
-
-// Previous uuid creation time
-var _lastMSecs = 0;
-var _lastNSecs = 0;
-
-// See https://github.com/broofa/node-uuid for API details
-function v1(options, buf, offset) {
-  var i = buf && offset || 0;
-  var b = buf || [];
-
-  options = options || {};
-  var node = options.node || _nodeId;
-  var clockseq = options.clockseq !== undefined ? options.clockseq : _clockseq;
-
-  // node and clockseq need to be initialized to random values if they're not
-  // specified.  We do this lazily to minimize issues related to insufficient
-  // system entropy.  See #189
-  if (node == null || clockseq == null) {
-    var seedBytes = rng();
-    if (node == null) {
-      // Per 4.5, create and 48-bit node id, (47 random bits + multicast bit = 1)
-      node = _nodeId = [
-        seedBytes[0] | 0x01,
-        seedBytes[1], seedBytes[2], seedBytes[3], seedBytes[4], seedBytes[5]
-      ];
-    }
-    if (clockseq == null) {
-      // Per 4.2.2, randomize (14 bit) clockseq
-      clockseq = _clockseq = (seedBytes[6] << 8 | seedBytes[7]) & 0x3fff;
-    }
-  }
-
-  // UUID timestamps are 100 nano-second units since the Gregorian epoch,
-  // (1582-10-15 00:00).  JSNumbers aren't precise enough for this, so
-  // time is handled internally as 'msecs' (integer milliseconds) and 'nsecs'
-  // (100-nanoseconds offset from msecs) since unix epoch, 1970-01-01 00:00.
-  var msecs = options.msecs !== undefined ? options.msecs : new Date().getTime();
-
-  // Per 4.2.1.2, use count of uuid's generated during the current clock
-  // cycle to simulate higher resolution clock
-  var nsecs = options.nsecs !== undefined ? options.nsecs : _lastNSecs + 1;
-
-  // Time since last uuid creation (in msecs)
-  var dt = (msecs - _lastMSecs) + (nsecs - _lastNSecs)/10000;
-
-  // Per 4.2.1.2, Bump clockseq on clock regression
-  if (dt < 0 && options.clockseq === undefined) {
-    clockseq = clockseq + 1 & 0x3fff;
-  }
-
-  // Reset nsecs if clock regresses (new clockseq) or we've moved onto a new
-  // time interval
-  if ((dt < 0 || msecs > _lastMSecs) && options.nsecs === undefined) {
-    nsecs = 0;
-  }
-
-  // Per 4.2.1.2 Throw error if too many uuids are requested
-  if (nsecs >= 10000) {
-    throw new Error('uuid.v1(): Can\'t create more than 10M uuids/sec');
-  }
-
-  _lastMSecs = msecs;
-  _lastNSecs = nsecs;
-  _clockseq = clockseq;
-
-  // Per 4.1.4 - Convert from unix epoch to Gregorian epoch
-  msecs += 12219292800000;
-
-  // `time_low`
-  var tl = ((msecs & 0xfffffff) * 10000 + nsecs) % 0x100000000;
-  b[i++] = tl >>> 24 & 0xff;
-  b[i++] = tl >>> 16 & 0xff;
-  b[i++] = tl >>> 8 & 0xff;
-  b[i++] = tl & 0xff;
-
-  // `time_mid`
-  var tmh = (msecs / 0x100000000 * 10000) & 0xfffffff;
-  b[i++] = tmh >>> 8 & 0xff;
-  b[i++] = tmh & 0xff;
-
-  // `time_high_and_version`
-  b[i++] = tmh >>> 24 & 0xf | 0x10; // include version
-  b[i++] = tmh >>> 16 & 0xff;
-
-  // `clock_seq_hi_and_reserved` (Per 4.2.2 - include variant)
-  b[i++] = clockseq >>> 8 | 0x80;
-
-  // `clock_seq_low`
-  b[i++] = clockseq & 0xff;
-
-  // `node`
-  for (var n = 0; n < 6; ++n) {
-    b[i + n] = node[n];
-  }
-
-  return buf ? buf : bytesToUuid(b);
-}
-
-module.exports = v1;
-
-
-/***/ }),
-
-/***/ 140:
-/*!**********************************!*\
-  !*** ../node_modules/uuid/v4.js ***!
-  \**********************************/
-/*! no static exports found */
-/*! all exports used */
-/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
-/***/ (function(module, exports, __webpack_require__) {
-
-var rng = __webpack_require__(/*! ./lib/rng */ 49);
-var bytesToUuid = __webpack_require__(/*! ./lib/bytesToUuid */ 50);
-
-function v4(options, buf, offset) {
-  var i = buf && offset || 0;
-
-  if (typeof(options) == 'string') {
-    buf = options === 'binary' ? new Array(16) : null;
-    options = null;
-  }
-  options = options || {};
-
-  var rnds = options.random || (options.rng || rng)();
-
-  // Per 4.4, set bits for version and `clock_seq_hi_and_reserved`
-  rnds[6] = (rnds[6] & 0x0f) | 0x40;
-  rnds[8] = (rnds[8] & 0x3f) | 0x80;
-
-  // Copy bytes to buffer, if provided
-  if (buf) {
-    for (var ii = 0; ii < 16; ++ii) {
-      buf[i + ii] = rnds[ii];
-    }
-  }
-
-  return buf || bytesToUuid(rnds);
-}
-
-module.exports = v4;
 
 
 /***/ }),
@@ -1452,10 +964,43 @@ module.exports = emptyObject;
 
 /***/ }),
 
-/***/ 38:
-/*!*****************************************!*\
-  !*** ./components/Rating/Rating.st.css ***!
-  \*****************************************/
+/***/ 21:
+/*!*************************************************!*\
+  !*** ../node_modules/webpack/buildin/global.js ***!
+  \*************************************************/
+/*! no static exports found */
+/*! all exports used */
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+/***/ (function(module, exports) {
+
+var g;
+
+// This works in non-strict mode
+g = (function() {
+	return this;
+})();
+
+try {
+	// This works if eval is allowed (see CSP)
+	g = g || new Function("return this")();
+} catch (e) {
+	// This works if the window reference is available
+	if (typeof window === "object") g = window;
+}
+
+// g can still be undefined, but nothing to do about it...
+// We return undefined, instead of nothing here, so it's
+// easier to handle this case. if(!global) { ...}
+
+module.exports = g;
+
+
+/***/ }),
+
+/***/ 355:
+/*!*******************************************!*\
+  !*** ./components/Captcha/Captcha.st.css ***!
+  \*******************************************/
 /*! exports provided: default */
 /*! all exports used */
 /*! ModuleConcatenation bailout: Module is not an ECMAScript module */
@@ -1465,58 +1010,23 @@ Object.defineProperty(exports, "__esModule", { value: true })
 
 exports.default = __webpack_require__.stylable.create(
   "root",
-  "Rating2556983050",
-  {"root":"Rating2556983050--root","displayMode":"Rating2556983050--displayMode","inputMode":"Rating2556983050--inputMode","stars":"Rating2556983050--stars","ratingValue":"Rating2556983050--ratingValue","reviewsCount":"Rating2556983050--reviewsCount","noReviewsPlaceholder":"Rating2556983050--noReviewsPlaceholder","labelsContainer":"Rating2556983050--labelsContainer","label":"Rating2556983050--label","title":"Rating2556983050--title","icon":"Rating2556983050--icon","halfIcon":"Rating2556983050--halfIcon","radioButton":"Rating2556983050--radioButton","filledShapeColor":"color_5","emptyShapeColor":"color_15","shapeBorderColor":"color_32","shapeBorderWidth":"3","labelFont":"font_8","labelFontColor":"color_15","errorFilledShapeColor":"color_7","errorShapeBorderColor":"color_37","errorShapeBorderWidth":"7","errorLabelFontColor":"color_17"},
+  "Captcha217700995",
+  {"root":"Captcha217700995--root"},
   "",
   7,
-  /*! ./components/Rating/Rating.st.css */ 38
+  /*! ./components/Captcha/Captcha.st.css */ 355
 );
 
-exports.default.$skin = {"params":{"filledShapeColor":"COLOR_ALPHA","emptyShapeColor":"COLOR_ALPHA","shapeBorderColor":"BORDER_COLOR_ALPHA","shapeBorderWidth":"BORDER_SIZE","labelFont":"FONT","labelFontColor":"TEXT_COLOR","errorFilledShapeColor":"COLOR_ALPHA","errorShapeBorderColor":"BORDER_COLOR_ALPHA","errorShapeBorderWidth":"BORDER_SIZE","errorLabelFontColor":"TEXT_COLOR"},"paramsDefaults":{"filledShapeColor":"color_5","emptyShapeColor":"color_15","shapeBorderColor":"color_32","shapeBorderWidth":"3","labelFont":"font_8","labelFontColor":"color_15","errorFilledShapeColor":"color_7","errorShapeBorderColor":"color_37","errorShapeBorderWidth":"7","errorLabelFontColor":"color_17"}};
+exports.default.$skin = {"params":{},"paramsDefaults":{}};
 exports.default.$skin.$render = function render_css($id, $params, $functions) {
-  return "\n" + $id + " .RadioButton1232350729--root{display: inline-block}\n" + $id + " .RadioButton1232350729--icon{cursor: pointer;height: auto}\n" + $id + " .RadioButton1232350729--label{}\n" + $id + " .RadioButton1232350729--root[data-radiobutton1232350729-checked] .RadioButton1232350729--icon, " + $id + " .RadioButton1232350729--root:hover .RadioButton1232350729--icon{}\n" + $id + " .RadioButton1232350729--root[data-radiobutton1232350729-disabled]{filter: grayscale(75%);opacity: 0.7}\n" + $id + " .RadioButton1232350729--hiddenRadio{position: absolute;overflow: hidden;height: 1px;width: 1px;margin: -1px;padding: 0;border: 0;opacity: 0}\n" + $id + ".Rating2556983050--root{display: inline-flex;align-items: center;font: " + $params["labelFont"] + "}\n" + $id + ".Rating2556983050--root[data-rating2556983050-rtl] .Rating2556983050--displayMode, " + $id + ".Rating2556983050--root[data-rating2556983050-rtl] .Rating2556983050--inputMode{direction: rtl}\n" + $id + " .Rating2556983050--displayMode{display: inline-flex;width: 100%;align-items: center}\n" + $id + ".Rating2556983050--root[data-rating2556983050-alignment=\"center\"] .Rating2556983050--displayMode{justify-content: center}\n" + $id + ".Rating2556983050--root[data-rating2556983050-alignment=\"right\"] .Rating2556983050--displayMode, " + $id + ".Rating2556983050--root[data-rating2556983050-rtl][data-rating2556983050-alignment=\"left\"] .Rating2556983050--displayMode{justify-content: flex-end}\n" + $id + ".Rating2556983050--root[data-rating2556983050-alignment=\"left\"] .Rating2556983050--displayMode, " + $id + ".Rating2556983050--root[data-rating2556983050-rtl][data-rating2556983050-alignment=\"right\"] .Rating2556983050--displayMode{justify-content: flex-start}\n" + $id + " .Rating2556983050--inputMode{display: inline-flex;flex-direction: column;width: 100%;text-align: center;align-items: center}\n" + $id + ".Rating2556983050--root[data-rating2556983050-alignment=\"right\"] .Rating2556983050--inputMode{text-align: right;align-items: flex-end}\n" + $id + ".Rating2556983050--root[data-rating2556983050-rtl][data-rating2556983050-alignment=\"right\"] .Rating2556983050--inputMode{align-items: flex-start}\n" + $id + ".Rating2556983050--root[data-rating2556983050-alignment=\"left\"] .Rating2556983050--inputMode{text-align: left;align-items: flex-start}\n" + $id + ".Rating2556983050--root[data-rating2556983050-rtl][data-rating2556983050-alignment=\"left\"] .Rating2556983050--inputMode{align-items: flex-end}\n" + $id + ".Rating2556983050--root[data-rating2556983050-labelposition=\"side\"] .Rating2556983050--inputMode, " + $id + ".Rating2556983050--root[data-rating2556983050-rtl][data-rating2556983050-labelposition=\"side\"] .Rating2556983050--inputMode{flex-direction: row;align-items: center}\n" + $id + " .Rating2556983050--stars{order: 2;display: flex}\n" + $id + ".Rating2556983050--root[data-rating2556983050-mode=\"input\"] .Rating2556983050--stars{cursor: pointer}\n" + $id + ".Rating2556983050--root[data-rating2556983050-disabled] .Rating2556983050--stars{pointer-events: none}\n" + $id + " .Rating2556983050--ratingValue, " + $id + " .Rating2556983050--reviewsCount, " + $id + " .Rating2556983050--noReviewsPlaceholder{color: " + $params["labelFontColor"] + ";line-height: 1.5}\n" + $id + " .Rating2556983050--ratingValue{order: 1;align-self: center}\n" + $id + " .Rating2556983050--reviewsCount{order: 3;align-self: center;white-space: nowrap}\n" + $id + " .Rating2556983050--noReviewsPlaceholder{align-self: center;white-space: nowrap;overflow-x: hidden}\n" + $id + " .Rating2556983050--labelsContainer{display: inline-flex;width: 100%;order: 1;overflow: hidden;align-items: flex-end}\n" + $id + ".Rating2556983050--root[data-rating2556983050-labelposition=\"bottom\"] .Rating2556983050--labelsContainer{align-items: flex-start}\n" + $id + ".Rating2556983050--root[data-rating2556983050-labelposition=\"side\"] .Rating2556983050--labelsContainer{align-items: center}\n" + $id + " .Rating2556983050--label, " + $id + " .Rating2556983050--title{color: " + $params["labelFontColor"] + ";line-height: 1.5;flex-shrink: 0;display: block;width: 100%}\n" + $id + ".Rating2556983050--root[data-rating2556983050-error] .Rating2556983050--label, " + $id + ".Rating2556983050--root[data-preview=\"error\"] .Rating2556983050--label, " + $id + ".Rating2556983050--root[data-rating2556983050-error] .Rating2556983050--title, " + $id + ".Rating2556983050--root[data-preview=\"error\"] .Rating2556983050--title{color: " + $params["errorLabelFontColor"] + "}\n" + $id + ".Rating2556983050--root[data-rating2556983050-labelposition=\"side\"] .Rating2556983050--stars{align-self: center}\n" + $id + " .Rating2556983050--label{visibility: hidden}\n" + $id + ".Rating2556983050--root[data-rating2556983050-labelposition=\"bottom\"] .Rating2556983050--stars, " + $id + ".Rating2556983050--root[data-rating2556983050-labelposition=\"side\"] .Rating2556983050--stars{order: 0}\n" + $id + ".Rating2556983050--root[data-rating2556983050-ratingafter] .Rating2556983050--stars{order: 0}\n" + $id + ".Rating2556983050--root[data-rating2556983050-noreviewsmode=\"nothing\"][data-rating2556983050-editormode] .Rating2556983050--stars, " + $id + ".Rating2556983050--root[data-rating2556983050-noreviewsmode=\"nothing\"][data-rating2556983050-editormode] .Rating2556983050--ratingValue, " + $id + ".Rating2556983050--root[data-rating2556983050-noreviewsmode=\"nothing\"][data-rating2556983050-editormode] .Rating2556983050--reviewsCount{opacity: 0.15}\n" + $id + " .Rating2556983050--icon{display: block;position: relative;stroke: " + $params["shapeBorderColor"] + ";stroke-width: " + $params["shapeBorderWidth"] + ";fill: " + $params["emptyShapeColor"] + "}\n" + $id + " .Rating2556983050--icon path{fill: " + $params["emptyShapeColor"] + "}\n" + $id + " .Rating2556983050--icon[data-rating2556983050-checked] path{fill: " + $params["filledShapeColor"] + "}\n" + $id + " .Rating2556983050--icon svg{display: block;height: 100%;width: 100%;transform: translateZ(0)}\n" + $id + " .Rating2556983050--halfIcon{position: absolute;top: 0;overflow: hidden}\n" + $id + ".Rating2556983050--root[data-rating2556983050-mode=\"display\"] .Rating2556983050--icon{cursor: default}\n" + $id + ".Rating2556983050--root[data-rating2556983050-error] .Rating2556983050--icon:not([data-rating2556983050-checked]), " + $id + ".Rating2556983050--root[data-preview=\"error\"] .Rating2556983050--icon{stroke: " + $params["errorShapeBorderColor"] + ";stroke-width: " + $params["errorShapeBorderWidth"] + "}\n" + $id + ".Rating2556983050--root[data-rating2556983050-error] .Rating2556983050--icon:not([data-rating2556983050-checked]) path, " + $id + ".Rating2556983050--root[data-preview=\"error\"] .Rating2556983050--icon path{fill: " + $params["errorFilledShapeColor"] + "}\n" + $id + " .Rating2556983050--radioButton{}\n";
+  return "\n" + $id + ".Captcha3325868082--root{position: relative}\n" + $id + " .Captcha3325868082--loaderWrapper{}\n" + $id + " .Captcha3325868082--captcha{}\n" + $id + ".Captcha3325868082--root[data-captcha3325868082-loaded] .Captcha3325868082--captcha{display: block}\n" + $id + ".Captcha3325868082--root[data-captcha3325868082-loaded] .Captcha3325868082--loaderWrapper{display: none}\n" + $id + ".Captcha3325868082--root .Captcha3325868082--captcha{display: none}\n" + $id + ".Captcha3325868082--root .Captcha3325868082--requiredField{position: absolute;opacity: 0.0;bottom: 0;left: 0;-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none}\n" + $id + ".Captcha217700995--root{}\n" + $id + ".Captcha217700995--root .Captcha3325868082--captcha{transform: scale(0.77);transform-origin: top left}\n";
 };
 
 /***/ }),
 
-/***/ 437:
-/*!******************************************!*\
-  !*** ./components/RatingsInput/index.js ***!
-  \******************************************/
-/*! no static exports found */
-/*! all exports used */
-/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _ratingsInput = __webpack_require__(/*! ./ratingsInput */ 653);
-
-var _Rating = __webpack_require__(/*! ../Rating/Rating */ 48);
-
-var _RatingSt = __webpack_require__(/*! ../Rating/Rating.st.css */ 38);
-
-var _RatingSt2 = _interopRequireDefault(_RatingSt);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-exports.default = {
-  componentType: 'wixui.RatingsInput',
-  component: _Rating.Rating,
-  santaComponent: _ratingsInput.ratingsInput,
-  skin: _RatingSt2.default.$skin
-};
-
-/***/ }),
-
-/***/ 48:
+/***/ 438:
 /*!*************************************!*\
-  !*** ./components/Rating/Rating.js ***!
+  !*** ./components/Captcha/index.js ***!
   \*************************************/
 /*! no static exports found */
 /*! all exports used */
@@ -1529,702 +1039,21 @@ exports.default = {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.Rating = exports.NoReviewsMode = exports.SplitRatingIcon = exports.RatingIcon = undefined;
 
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+var _Captcha = __webpack_require__(/*! ./Captcha */ 654);
 
-var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; /* eslint-disable complexity*/
+var _CaptchaSt = __webpack_require__(/*! ./Captcha.st.css */ 355);
 
-var _react = __webpack_require__(/*! react */ 0);
-
-var React = _interopRequireWildcard(_react);
-
-var _reactDom = __webpack_require__(/*! react-dom */ 11);
-
-var ReactDOM = _interopRequireWildcard(_reactDom);
-
-var _radioButton = __webpack_require__(/*! wix-ui-core/radio-button */ 131);
-
-var _util = __webpack_require__(/*! ./util */ 135);
-
-var _santaLayout = __webpack_require__(/*! ./santa-layout */ 136);
-
-var _RatingSt = __webpack_require__(/*! ./Rating.st.css */ 38);
-
-var _RatingSt2 = _interopRequireDefault(_RatingSt);
-
-var _propTypes = __webpack_require__(/*! prop-types */ 1);
-
-var _defaultSvg = __webpack_require__(/*! ./default-svg */ 137);
-
-var _uuid = __webpack_require__(/*! uuid */ 138);
-
-var _uuid2 = _interopRequireDefault(_uuid);
+var _CaptchaSt2 = _interopRequireDefault(_CaptchaSt);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-var noop = function noop() {
-  return null;
+exports.default = {
+  componentType: 'wixui.Captcha',
+  component: _Captcha.Captcha,
+  santaComponent: _Captcha.santaCaptcha,
+  skin: _CaptchaSt2.default.$skin
 };
-var fiveItems = [1, 2, 3, 4, 5];
-
-var RatingIcon = exports.RatingIcon = function RatingIcon(props) {
-  var svg = props.svg,
-      checked = props.checked,
-      size = props.size,
-      split = props.split;
-
-  return React.createElement(
-    'span',
-    _extends({}, (0, _RatingSt2.default)('icon', { checked: checked, split: split }, props), { style: { height: size + 'px', width: size + 'px' } }),
-    svg
-  );
-};
-
-var SplitRatingIcon = exports.SplitRatingIcon = function SplitRatingIcon(_ref) {
-  var svg = _ref.svg,
-      size = _ref.size,
-      rtl = _ref.rtl;
-
-  return React.createElement(
-    'span',
-    { className: _RatingSt2.default.icon },
-    React.createElement(RatingIcon, { split: true, svg: svg, size: size }),
-    React.createElement(
-      'div',
-      {
-        className: _RatingSt2.default.halfIcon,
-        style: {
-          height: size + 'px',
-          width: size / 2 + 'px',
-          left: (rtl ? size / 2 : 0) + 'px'
-        }
-      },
-      React.createElement(RatingIcon, { checked: true, split: true, svg: svg, size: size })
-    )
-  );
-};
-
-RatingIcon.propTypes = {
-  checked: _propTypes.bool,
-  svg: _propTypes.node,
-  size: _propTypes.number,
-  split: _propTypes.bool
-};
-
-SplitRatingIcon.propTypes = {
-  svg: _propTypes.node,
-  size: _propTypes.number,
-  rtl: _propTypes.bool
-};
-
-var RatingIcons = function RatingIcons(props) {
-  var onChange = props.onChange,
-      checkedPredicate = props.checkedPredicate,
-      onHover = props.onHover,
-      shapeSpacing = props.shapeSpacing,
-      rtl = props.rtl,
-      labels = props.labels,
-      rating = props.rating,
-      onBlur = props.onBlur,
-      uncheckedIcon = props.uncheckedIcon,
-      checkedIconPredicate = props.checkedIconPredicate,
-      shapeSize = props.shapeSize,
-      required = props.required,
-      mode = props.mode,
-      labelPosition = props.labelPosition,
-      showLabels = props.showLabels,
-      showTitle = props.showTitle;
-
-  var name = (0, _uuid2.default)();
-
-  var getStarsStyle = function getStarsStyle() {
-    var horizontalMargins = void 0,
-        verticalMargins = void 0;
-
-    if (mode === 'input' && (showTitle || showLabels)) {
-      if (labelPosition === 'side') {
-        horizontalMargins = _defineProperty({}, rtl ? 'marginLeft' : 'marginRight', Math.max(15, shapeSpacing));
-      }
-
-      if (labelPosition !== 'side') {
-        verticalMargins = _defineProperty({}, labelPosition === 'top' ? 'marginTop' : 'marginBottom', shapeSize ? shapeSize / 2 : 18);
-      }
-    }
-
-    return Object.assign({ minWidth: 4 * shapeSpacing + 5 * shapeSize + 'px' }, horizontalMargins, verticalMargins);
-  };
-
-  return React.createElement(
-    'span',
-    {
-      tabIndex: mode === 'display' ? 0 : null,
-      className: _RatingSt2.default.stars,
-      style: getStarsStyle(),
-      'aria-label': rating ? rating + ' out of 5' : null,
-      'data-hook': 'rating-icons'
-    },
-    ' ',
-    fiveItems.map(function (value) {
-      return React.createElement(
-        'span',
-        {
-          'data-hook': 'rating-icon-' + value,
-          key: value,
-          style: _defineProperty({ display: 'flex' }, rtl ? 'paddingLeft' : 'paddingRight', value < 5 ? shapeSpacing : null),
-          'aria-label': !rating ? labels[value] : null,
-          onMouseEnter: function onMouseEnter(event) {
-            return onHover(_extends({ value: value }, event));
-          },
-          onMouseLeave: onBlur
-        },
-        React.createElement(_radioButton.RadioButton, {
-          className: mode === 'input' ? _RatingSt2.default.radioButton : null,
-          name: name,
-          'data-hook': 'input-radio-' + value,
-          value: '' + value,
-          checked: checkedPredicate(value),
-          label: '',
-          onChange: onChange,
-          checkedIcon: checkedIconPredicate(value),
-          uncheckedIcon: uncheckedIcon,
-          required: required
-        })
-      );
-    }),
-    ' '
-  );
-};
-
-RatingIcons.propTypes = {
-  rating: _propTypes.number,
-  shapeSize: _propTypes.number,
-  shapeSpacing: _propTypes.number,
-  rtl: _propTypes.bool,
-  dataHook: _propTypes.string,
-  onChange: _propTypes.func,
-  onHover: _propTypes.func,
-  onBlur: _propTypes.func,
-  checkedIcon: _propTypes.node,
-  uncheckedIcon: _propTypes.node,
-  splitIcon: _propTypes.node,
-  checkedPredicate: _propTypes.func,
-  checkedIconPredicate: _propTypes.func,
-  labels: _propTypes.object,
-  required: _propTypes.bool,
-  mode: _propTypes.string,
-  labelPosition: _propTypes.string,
-  showLabels: _propTypes.bool,
-  showTitle: _propTypes.bool
-};
-
-function wrapSvgString(svgString) {
-  return React.createElement('div', {
-    dangerouslySetInnerHTML: {
-      __html: svgString || ''
-    }
-  });
-}
-
-var NoReviewsMode = exports.NoReviewsMode = {
-  NOTHING: 'nothing',
-  EMPTY_ICONS: 'emptyIcons',
-  PLACEHOLDER_TEXT: 'placeholderText'
-};
-
-var Rating = exports.Rating = function (_React$Component) {
-  _inherits(Rating, _React$Component);
-
-  function Rating(props) {
-    _classCallCheck(this, Rating);
-
-    var _this = _possibleConstructorReturn(this, (Rating.__proto__ || Object.getPrototypeOf(Rating)).call(this, props));
-
-    _this.updateLayout = function () {
-      return (0, _santaLayout.ratingsDisplayLayout)(ReactDOM.findDOMNode(_this), _this.props);
-    };
-
-    _this.onRatingChange = function (event) {
-      var intValue = parseInt(event.value);
-
-      if (_this.props.disabled || intValue === _this.props.rating || event.type !== 'click') {
-        return;
-      }
-
-      _this.props.onChange({ event: event, rating: intValue });
-    };
-
-    _this.onIconHover = function (event) {
-      if (_this.props.disabled) {
-        return;
-      }
-
-      var intValue = parseInt(event.value);
-      _this.setState({ hovered: intValue });
-
-      var icon = {
-        value: intValue,
-        label: _this.props.labels[intValue]
-      };
-
-      _this.props.onIconMouseIn && _this.props.onIconMouseIn({ icon: icon });
-    };
-
-    _this.onIconBlur = function () {
-      if (_this.props.disabled) {
-        return;
-      }
-      _this.setState({ hovered: undefined });
-    };
-
-    _this.shouldEmptyIcons = function () {
-      return _this.isEmptyState() && _this.props.noReviewsMode === NoReviewsMode.EMPTY_ICONS;
-    };
-
-    _this.getCheckedThreshold = function () {
-      if (_this.shouldEmptyIcons()) {
-        return 0;
-      }
-
-      return (0, _util.precisionRound)((_this.state.hovered || _this.props.rating) + 0.7, 1);
-    };
-
-    _this.shouldSplitIcon = function (value) {
-      var lastCheckedIcon = value <= _this.getCheckedThreshold() && value + 1 > _this.getCheckedThreshold();
-      var decimal = _this.props.rating % 1;
-      return lastCheckedIcon && decimal >= 0.25 && decimal < 0.75; // // X.25 - X.74 - half star
-    };
-
-    _this.isEmptyState = function () {
-      return !_this.props.rating;
-    };
-
-    _this.showPlaceholderText = function () {
-      return _this.isEmptyState() && _this.props.noReviewsMode === NoReviewsMode.PLACEHOLDER_TEXT;
-    };
-
-    _this.showRatingInfo = function () {
-      var _this$props = _this.props,
-          noReviewsMode = _this$props.noReviewsMode,
-          editorMode = _this$props.editorMode;
-
-      return !_this.isEmptyState() || (noReviewsMode === NoReviewsMode.NOTHING ? editorMode : false);
-    };
-
-    _this.showIcons = function () {
-      var _this$props2 = _this.props,
-          noReviewsMode = _this$props2.noReviewsMode,
-          editorMode = _this$props2.editorMode;
-
-      return !_this.isEmptyState() || (noReviewsMode === NoReviewsMode.NOTHING ? editorMode : noReviewsMode !== NoReviewsMode.PLACEHOLDER_TEXT);
-    };
-
-    _this.getCurrentText = function () {
-      var _this$props3 = _this.props,
-          labels = _this$props3.labels,
-          rating = _this$props3.rating,
-          title = _this$props3.title,
-          showLabels = _this$props3.showLabels,
-          showTitle = _this$props3.showTitle;
-
-
-      if (_this.state.hovered && showLabels) {
-        return labels[_this.state.hovered];
-      } else if (rating && showLabels) {
-        return labels[rating];
-      }
-
-      return showTitle && title;
-    };
-
-    _this.state = {
-      hovered: undefined
-    };
-    return _this;
-  }
-
-  _createClass(Rating, [{
-    key: 'componentDidUpdate',
-    value: function componentDidUpdate() {
-      this.updateLayout();
-    }
-  }, {
-    key: 'componentDidMount',
-    value: function componentDidMount() {
-      this.updateLayout();
-
-      if (this.props.renderSeoScript) {
-        var jsonId = {
-          '@id': 'externalRating',
-          '@context': 'http://schema.org',
-          '@type': 'AggregateRating',
-          itemReviewed: {
-            '@type': 'Thing'
-          },
-          ratingValue: '' + this.props.rating,
-          ratingCount: '' + this.props.numRatings
-        };
-        this.props.renderSeoScript(jsonId);
-      }
-    }
-  }, {
-    key: 'render',
-    value: function render() {
-      var _this2 = this;
-
-      var _props = this.props,
-          mode = _props.mode,
-          icon = _props.icon,
-          labels = _props.labels,
-          showTitle = _props.showTitle,
-          labelPosition = _props.labelPosition,
-          editorMode = _props.editorMode,
-          disabled = _props.disabled,
-          shapeSpacing = _props.shapeSpacing,
-          ratingPosition = _props.ratingPosition,
-          showRating = _props.showRating,
-          showReviewsCount = _props.showReviewsCount,
-          noReviewsMode = _props.noReviewsMode,
-          rtl = _props.rtl,
-          id = _props.id,
-          shapeSize = _props.shapeSize,
-          showLabels = _props.showLabels,
-          textAlignment = _props.textAlignment,
-          onFocus = _props.onFocus,
-          onBlur = _props.onBlur,
-          shouldShowInvalid = _props.shouldShowInvalid;
-
-
-      var styleStates = {
-        ratingAfter: mode === 'display' && ratingPosition === 'after',
-        noReviewsMode: noReviewsMode,
-        labelPosition: labelPosition,
-        rtl: rtl,
-        editorMode: editorMode && this.isEmptyState(),
-        disabled: disabled,
-        alignment: textAlignment,
-        mode: mode,
-        error: mode === 'input' && shouldShowInvalid && !this.state.hovered && !editorMode
-      };
-
-      var actualIcon = typeof icon === 'string' ? wrapSvgString(icon) : icon;
-
-      var checkedIcon = React.createElement(RatingIcon, { svg: actualIcon, checked: true, size: shapeSize });
-      var uncheckedIcon = React.createElement(RatingIcon, { svg: actualIcon, size: shapeSize });
-      var splitIcon = React.createElement(SplitRatingIcon, { svg: actualIcon, size: shapeSize, rtl: rtl });
-
-      var displayLabelsSpacing = Math.max(shapeSpacing, 15);
-
-      var ratingStyle = {
-        marginRight: ratingPosition === 'after' ? 0 : displayLabelsSpacing,
-        marginLeft: ratingPosition === 'after' ? displayLabelsSpacing : 0
-      };
-
-      var ratingStyleRTL = {
-        marginLeft: ratingPosition === 'after' ? 0 : displayLabelsSpacing,
-        marginRight: ratingPosition === 'after' ? displayLabelsSpacing : 0
-      };
-
-      var numReviewsStyle = _defineProperty({}, 'margin' + (rtl ? 'Right' : 'Left'), ratingPosition === 'after' ? 15 : displayLabelsSpacing);
-
-      return React.createElement(
-        'div',
-        _extends({}, (0, _RatingSt2.default)('root', styleStates, this.props), {
-          role: 'radiogroup',
-          'data-hook': 'storybook-rating',
-          id: id,
-          style: this.props.style,
-          onClick: this.props.onClick,
-          onDoubleClick: this.props.onDoubleClick,
-          onMouseEnter: this.props.onMouseEnter,
-          onMouseLeave: this.props.onMouseLeave,
-          ref: function ref(compRef) {
-            return _this2.compRef = compRef;
-          }
-        }),
-        mode === 'display' ? React.createElement(
-          'div',
-          { className: _RatingSt2.default.displayMode },
-          this.showPlaceholderText() ? React.createElement(
-            'span',
-            { className: _RatingSt2.default.noReviewsPlaceholder, 'data-hook': 'rating-display-placeholder' },
-            this.props.noReviewsPlaceholder
-          ) : null,
-          showRating && this.showRatingInfo() ? React.createElement(
-            'span',
-            {
-              className: _RatingSt2.default.ratingValue,
-              'data-hook': 'rating-display-rating',
-              style: rtl ? ratingStyleRTL : ratingStyle
-            },
-            (this.props.rating || 0).toFixed(1)
-          ) : null,
-          this.showIcons() ? React.createElement(RatingIcons, {
-            rtl: rtl,
-            rating: this.props.rating,
-            labels: {},
-            shapeSpacing: shapeSpacing,
-            shapeSize: shapeSize,
-            onChange: noop,
-            onHover: noop,
-            onBlur: noop,
-            checkedIcon: checkedIcon,
-            uncheckedIcon: uncheckedIcon,
-            splitIcon: splitIcon,
-            checkedPredicate: function checkedPredicate(value) {
-              return value <= _this2.getCheckedThreshold();
-            },
-            checkedIconPredicate: function checkedIconPredicate(value) {
-              return _this2.shouldSplitIcon(value) ? splitIcon : checkedIcon;
-            },
-            mode: mode
-          }) : null,
-          showReviewsCount && this.showRatingInfo() ? React.createElement(
-            'span',
-            {
-              className: _RatingSt2.default.reviewsCount,
-              'data-hook': 'rating-display-reviews-count',
-              'aria-label': 'based on ' + this.props.numRatings + ' votes',
-              tabIndex: 0,
-              style: numReviewsStyle
-            },
-            (0, _util.formatReviewsCount)(this.props.numRatings),
-            ' ',
-            this.props.numRatingsLabel
-          ) : null
-        ) : React.createElement(
-          'div',
-          { className: _RatingSt2.default.inputMode, onFocus: onFocus, onBlur: onBlur },
-          React.createElement(
-            'span',
-            {
-              className: _RatingSt2.default.labelsContainer,
-              style: labelPosition !== 'side' ? { width: 5 * shapeSize + 4 * shapeSpacing + 'px' } : {},
-              'data-hook': 'labels-container'
-            },
-            showTitle || showLabels ? React.createElement(
-              'span',
-              {
-                className: _RatingSt2.default.title,
-                'data-hook': 'rating-input-title'
-              },
-              this.getCurrentText()
-            ) : null,
-            showLabels && fiveItems.map(function (value) {
-              return React.createElement(
-                'span',
-                { key: value, className: _RatingSt2.default.label },
-                React.createElement(
-                  'span',
-                  { 'data-hook': 'label_' + value },
-                  labels[value]
-                )
-              );
-            }),
-            showTitle && React.createElement(
-              'span',
-              { className: _RatingSt2.default.label },
-              React.createElement(
-                'span',
-                { 'data-hook': 'label_title' },
-                this.props.title
-              )
-            )
-          ),
-          React.createElement(RatingIcons, _extends({}, this.props, {
-            rating: null,
-            onChange: this.onRatingChange,
-            onHover: this.onIconHover,
-            onBlur: this.onIconBlur,
-            splitIcon: checkedIcon,
-            checkedIcon: checkedIcon,
-            uncheckedIcon: uncheckedIcon,
-            checkedPredicate: function checkedPredicate(value) {
-              return value <= (_this2.state.hovered || _this2.props.rating);
-            },
-            checkedIconPredicate: function checkedIconPredicate() {
-              return checkedIcon;
-            }
-          }))
-        )
-      );
-    }
-  }]);
-
-  return Rating;
-}(React.Component);
-
-Rating.propTypes = {
-  /** Santa requirement */
-  id: _propTypes.string,
-  /** Mode - Display or Input */
-  mode: (0, _propTypes.oneOf)(['display', 'input']),
-  /** SVG String Icon */
-  icon: (0, _propTypes.oneOfType)([_propTypes.node, _propTypes.string]),
-  /** The rating displayed / Current rating selected */
-  rating: _propTypes.number,
-  /** on Display mode, shows the number of reviews */
-  numRatings: _propTypes.number,
-  /** on Display mode, the label shown to describe the reviews */
-  numRatingsLabel: _propTypes.string,
-  /** on Display mode, toggles the numeric rating */
-  showRating: _propTypes.bool,
-  /** on Display mode, toggles the numeric count */
-  showReviewsCount: _propTypes.bool,
-  /** on Display mode, specifies the position of the numeric rating in relative to the stars */
-  ratingPosition: (0, _propTypes.oneOf)(['before', 'after']),
-  /** on Display mode, decides what to display incase there are no reviews */
-  noReviewsMode: (0, _propTypes.oneOf)([NoReviewsMode.NOTHING, NoReviewsMode.EMPTY_ICONS, NoReviewsMode.PLACEHOLDER_TEXT]),
-  /** on Display mode, specifies a placeholder text to use (if that option is selected) in the absence of reviews */
-  noReviewsPlaceholder: _propTypes.string,
-  /** on Input mode, a callback to invoke when the rating is changed by the user */
-  onChange: _propTypes.func,
-  /** on Input mode, a callback to invoke when an icon is hovered */
-  onIconMouseIn: _propTypes.func,
-  /** on Input mode, a callback to invoke when the component is focused */
-  onFocus: _propTypes.func,
-  /** on Input mode, a callback to invoke when the component is blured */
-  onBlur: _propTypes.func,
-  /** a callback to invoke when root is clicked */
-  onClick: _propTypes.func,
-  /** a callback to invoke when root is double clicked */
-  onDoubleClick: _propTypes.func,
-  /** a callback to invoke when mouse enters root */
-  onMouseEnter: _propTypes.func,
-  /** a callback to invoke when mouse leaves root */
-  onMouseLeave: _propTypes.func,
-  /** on Input mode, the title of the rating */
-  title: _propTypes.string,
-  /** on Input mode, the labels that represent each rating value */
-  labels: _propTypes.object,
-  /** on Input mode, the position of the labels that represent each rating value */
-  labelPosition: (0, _propTypes.oneOf)(['top', 'bottom', 'side']),
-  /** on Input mode, toggles the title */
-  showTitle: _propTypes.bool,
-  /** on Input mode, toggles the labels */
-  showLabels: _propTypes.bool,
-  /** on Input mode, specifies if this is required */
-  required: _propTypes.bool,
-  /** Sets the shape size */
-  shapeSize: _propTypes.number,
-  /** Sets the shape spacing */
-  shapeSpacing: _propTypes.number,
-  /** Aligns the title/labels text */
-  textAlignment: (0, _propTypes.oneOf)(['left', 'right', 'center']),
-  /** Sets RTL direction */
-  rtl: _propTypes.bool,
-  /** For displaying editor specific styles */
-  editorMode: _propTypes.bool,
-  /** for Disabled visual state */
-  disabled: _propTypes.bool,
-  /** Style - needed for font scaling */
-  style: _propTypes.object,
-  /** A function to render SEO script */
-  renderSeoScript: _propTypes.func,
-  /** for input mode - whether to toggle "error" style state */
-  shouldShowInvalid: _propTypes.bool
-};
-Rating.defaultProps = {
-  showRating: true,
-  showReviewsCount: true,
-  showTitle: true,
-  noReviewsMode: NoReviewsMode.EMPTY_ICONS,
-  icon: _defaultSvg.defaultSvg
-};
-
-/***/ }),
-
-/***/ 49:
-/*!***********************************************!*\
-  !*** ../node_modules/uuid/lib/rng-browser.js ***!
-  \***********************************************/
-/*! no static exports found */
-/*! all exports used */
-/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
-/***/ (function(module, exports) {
-
-// Unique ID creation requires a high quality random # generator.  In the
-// browser this is a little complicated due to unknown quality of Math.random()
-// and inconsistent support for the `crypto` API.  We do the best we can via
-// feature-detection
-
-// getRandomValues needs to be invoked in a context where "this" is a Crypto
-// implementation. Also, find the complete implementation of crypto on IE11.
-var getRandomValues = (typeof(crypto) != 'undefined' && crypto.getRandomValues && crypto.getRandomValues.bind(crypto)) ||
-                      (typeof(msCrypto) != 'undefined' && typeof window.msCrypto.getRandomValues == 'function' && msCrypto.getRandomValues.bind(msCrypto));
-
-if (getRandomValues) {
-  // WHATWG crypto RNG - http://wiki.whatwg.org/wiki/Crypto
-  var rnds8 = new Uint8Array(16); // eslint-disable-line no-undef
-
-  module.exports = function whatwgRNG() {
-    getRandomValues(rnds8);
-    return rnds8;
-  };
-} else {
-  // Math.random()-based (RNG)
-  //
-  // If all else fails, use Math.random().  It's fast, but is of unspecified
-  // quality.
-  var rnds = new Array(16);
-
-  module.exports = function mathRNG() {
-    for (var i = 0, r; i < 16; i++) {
-      if ((i & 0x03) === 0) r = Math.random() * 0x100000000;
-      rnds[i] = r >>> ((i & 0x03) << 3) & 0xff;
-    }
-
-    return rnds;
-  };
-}
-
-
-/***/ }),
-
-/***/ 50:
-/*!***********************************************!*\
-  !*** ../node_modules/uuid/lib/bytesToUuid.js ***!
-  \***********************************************/
-/*! no static exports found */
-/*! all exports used */
-/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
-/***/ (function(module, exports) {
-
-/**
- * Convert array of 16 byte values to UUID string format of the form:
- * XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX
- */
-var byteToHex = [];
-for (var i = 0; i < 256; ++i) {
-  byteToHex[i] = (i + 0x100).toString(16).substr(1);
-}
-
-function bytesToUuid(buf, offset) {
-  var i = offset || 0;
-  var bth = byteToHex;
-  // join used to fix memory issue caused by concatenation: https://bugs.chromium.org/p/v8/issues/detail?id=3175#c4
-  return ([bth[buf[i++]], bth[buf[i++]], 
-	bth[buf[i++]], bth[buf[i++]], '-',
-	bth[buf[i++]], bth[buf[i++]], '-',
-	bth[buf[i++]], bth[buf[i++]], '-',
-	bth[buf[i++]], bth[buf[i++]], '-',
-	bth[buf[i++]], bth[buf[i++]],
-	bth[buf[i++]], bth[buf[i++]],
-	bth[buf[i++]], bth[buf[i++]]]).join('');
-}
-
-module.exports = bytesToUuid;
-
 
 /***/ }),
 
@@ -2459,10 +1288,10 @@ function __importDefault(mod) {
 
 /***/ }),
 
-/***/ 653:
-/*!*************************************************!*\
-  !*** ./components/RatingsInput/ratingsInput.js ***!
-  \*************************************************/
+/***/ 654:
+/*!***************************************!*\
+  !*** ./components/Captcha/Captcha.js ***!
+  \***************************************/
 /*! no static exports found */
 /*! all exports used */
 /*! ModuleConcatenation bailout: Module is not an ECMAScript module */
@@ -2474,9 +1303,11 @@ function __importDefault(mod) {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.ratingsInput = undefined;
+exports.santaCaptcha = exports.Captcha = undefined;
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 var _react = __webpack_require__(/*! react */ 0);
 
@@ -2490,189 +1321,835 @@ var _lodash = __webpack_require__(/*! lodash */ 2);
 
 var _lodash2 = _interopRequireDefault(_lodash);
 
+var _propTypes = __webpack_require__(/*! prop-types */ 1);
+
+var _captcha = __webpack_require__(/*! wix-ui-core/captcha */ 655);
+
+var _CaptchaSt = __webpack_require__(/*! ./Captcha.st.css */ 355);
+
+var _CaptchaSt2 = _interopRequireDefault(_CaptchaSt);
+
 var _santaComponents = __webpack_require__(/*! santa-components */ 14);
-
-var _Rating = __webpack_require__(/*! ../Rating/Rating */ 48);
-
-var _RatingSt = __webpack_require__(/*! ../Rating/Rating.st.css */ 38);
-
-var _RatingSt2 = _interopRequireDefault(_RatingSt);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var wixCaptchaPublicKey = '6LejwKAUAAAAACs5B-wV9ndjxrE49x3lGztPznl_';
+var defaultLangCode = _captcha.CaptchaLang.EnglishUS.toString();
+
+var Captcha = exports.Captcha = function (_React$Component) {
+  _inherits(Captcha, _React$Component);
+
+  function Captcha() {
+    _classCallCheck(this, Captcha);
+
+    return _possibleConstructorReturn(this, (Captcha.__proto__ || Object.getPrototypeOf(Captcha)).apply(this, arguments));
+  }
+
+  _createClass(Captcha, [{
+    key: 'render',
+    value: function render() {
+      var _this2 = this;
+
+      var _props = this.props,
+          required = _props.required,
+          onVerify = _props.onVerify,
+          onExpire = _props.onExpire,
+          onReset = _props.onReset,
+          captchaKey = _props.captchaKey,
+          size = _props.size,
+          lang = _props.lang,
+          theme = _props.theme,
+          captchaType = _props.captchaType;
+
+
+      var publicKey = captchaKey ? captchaKey : wixCaptchaPublicKey;
+      return _react2.default.createElement(_captcha.Captcha, _extends({
+        ref: function ref(node) {
+          return _this2.node = node;
+        },
+        required: required,
+        sitekey: publicKey,
+        onVerify: onVerify,
+        onExpire: onExpire,
+        onReset: onReset,
+        size: size,
+        lang: Captcha.tranlateLangCodeToCaptchaLang(lang),
+        theme: theme,
+        captchaType: captchaType
+      }, (0, _CaptchaSt2.default)('root', {}, this.props)));
+    }
+  }], [{
+    key: 'tranlateLangCodeToCaptchaLang',
+    value: function tranlateLangCodeToCaptchaLang(siteLangCode) {
+      if (siteLangCode === _captcha.CaptchaLang.EnglishUS.toString()) {
+        return _captcha.CaptchaLang.EnglishUS;
+      }
+      var foundLang = Object.values(_captcha.CaptchaLang).includes(siteLangCode);
+      if (foundLang) {
+        return siteLangCode;
+      } else {
+        return _captcha.CaptchaLang.EnglishUS;
+      }
+    }
+  }]);
+
+  return Captcha;
+}(_react2.default.Component);
+
+Captcha.displayName = 'Captcha';
+Captcha.propTypes = {
+  onVerify: _propTypes.func,
+  onExpire: _propTypes.func,
+  onReset: _propTypes.func,
+  captchaKey: _propTypes.string,
+  size: _propTypes.string,
+  captchaType: _propTypes.string,
+  theme: _propTypes.string,
+  lang: _propTypes.string,
+  componentViewMode: _propTypes.string,
+  required: _propTypes.bool,
+  style: _propTypes.object
+};
+
 var skinBasedComp = _santaComponents.mixins.skinBasedComp,
     runTimeCompData = _santaComponents.mixins.runTimeCompData,
-    textScaleMixin = _santaComponents.mixins.textScaleMixin,
-    validatableWithSyncMixin = _santaComponents.mixins.validatableWithSyncMixin,
-    compStateMixin = _santaComponents.mixins.compStateMixin,
     inputFocusMixin = _santaComponents.mixins.inputFocusMixin;
 
-
-var MOBILE_DEFAULT_FONT_SIZE = 13; //px
-
-var getPublicState = function getPublicState(state) {
-  return validatableWithSyncMixin.getPublicState(state);
+var getComponentSkins = function getComponentSkins() {
+  return { 'wixui.skins.Captcha': _CaptchaSt2.default.$skin };
 };
 
 /**
- * @class components.ratingsInput
+ * @class components.captcha
  * @extends {core.skinBasedComp}
  */
 
-var ratingsInput = exports.ratingsInput = (0, _createReactClass2.default)({
-  displayName: 'RatingsInput',
+var santaCaptcha = exports.santaCaptcha = (0, _createReactClass2.default)({
+  displayName: 'Captcha',
 
-  mixins: [skinBasedComp({
-    'wixui.skins.Rating': _RatingSt2.default.$skin
-  }), runTimeCompData, textScaleMixin({
-    'wixui.skins.Rating': _RatingSt2.default.$skin
-  }), validatableWithSyncMixin.validatableWithSync, compStateMixin(getPublicState), inputFocusMixin],
+  mixins: [skinBasedComp(getComponentSkins()), runTimeCompData, inputFocusMixin],
 
   propTypes: {
-    viewMode: _santaComponents.santaTypesDefinitions.RenderFlags.componentViewMode,
-    svgString: _santaComponents.santaTypesDefinitions.RawSvg.getRawSVG,
-    componentPreviewState: _santaComponents.santaTypesDefinitions.RenderFlags.componentPreviewState,
-    registerLayoutFunc: _santaComponents.santaTypesDefinitions.Layout.registerLayoutFunc,
-    compData: _santaComponents.santaTypesDefinitions.Component.compData.isRequired,
+    structure: _santaComponents.santaTypesDefinitions.Component.structure.isRequired,
+    shouldResetComponent: _santaComponents.santaTypesDefinitions.RenderFlags.shouldResetComponent,
     compProp: _santaComponents.santaTypesDefinitions.Component.compProp.isRequired,
+    compData: _santaComponents.santaTypesDefinitions.Component.compData.isRequired,
+    componentViewMode: _santaComponents.santaTypesDefinitions.RenderFlags.componentViewMode,
+    styleId: _santaComponents.santaTypesDefinitions.Component.styleId,
     style: _santaComponents.santaTypesDefinitions.Component.style,
-    scale: _santaComponents.santaTypesDefinitions.Component.scale,
     id: _santaComponents.santaTypesDefinitions.Component.id,
-    isMobileView: _santaComponents.santaTypesDefinitions.isMobileView
-    // invalid: PropTypes.bool,
-    // validityIndication: PropTypes.bool
+    currentLanguage: _santaComponents.santaTypesDefinitions.RendererModel.multilingual.currentLanguage,
+    isMLEnabled: _santaComponents.santaTypesDefinitions.RendererModel.multilingual.isEnabled
   },
 
   statics: {
-    compSpecificIsDomOnlyOverride: function compSpecificIsDomOnlyOverride() {
-      return false;
+    behaviors: {
+      resetCaptcha: { methodName: 'resetCaptcha' }
     },
-
-    behaviors: _lodash2.default.assign({}, validatableWithSyncMixin.VALIDATABLE_WITH_SYNC_BEHAVIORS, inputFocusMixin.INPUT_FOCUS_BEHAVIORS)
+    getComponentSkins: getComponentSkins
   },
 
-  getInitialState: function getInitialState() {
-    return getPublicState();
+  resetCaptcha: function resetCaptcha() {
+    this.captchaRef.node.resetCaptcha();
   },
-  UNSAFE_componentWillMount: function UNSAFE_componentWillMount() {
-    // eslint-disable-line camelcase
-    this.setState({
-      value: this.props.compData.value || null
-    });
-  },
-  UNSAFE_componentWillReceiveProps: function UNSAFE_componentWillReceiveProps(nextProps) {
-    // eslint-disable-line camelcase
-    this.setState({ value: nextProps.compData.value });
-  },
-  handleIconMouseIn: function handleIconMouseIn(evt) {
-    var _evt$icon = evt.icon,
-        value = _evt$icon.value,
-        label = _evt$icon.label;
-
-    this.handleAction('iconMouseIn', { value: value, label: label });
-  },
-  handleChange: function handleChange(evt) {
-    var event = evt.event,
-        rating = evt.rating;
 
 
-    var target = _lodash2.default.defaults({ value: rating }, event.target);
-    var ev = _lodash2.default.defaults({ target: target }, event);
-
-    this.updateData({ value: rating });
-    this.setState({ value: rating });
-    this.handleAction('change', ev);
-  },
-  handleFocus: function handleFocus() {
-    this.handleAction('focus');
-  },
-  handleBlur: function handleBlur() {
-    this.handleAction('blur');
-  },
-  focus: function focus() {
-    var valueToFocus = this.props.compData.value || 1;
-    var refExists = !!(this.compRoot && this.compRoot.compRef);
-    var elementToFocus = refExists && Array.from(this.compRoot.compRef.getElementsByTagName('input'))[valueToFocus - 1];
-    elementToFocus && elementToFocus.focus();
-  },
-  blur: function blur() {
-    var valueToBlur = this.props.compData.value || 1;
-    var refExists = !!(this.compRoot && this.compRoot.compRef);
-    var elementToBlur = refExists && Array.from(this.compRoot.compRef.getElementsByTagName('input'))[valueToBlur - 1];
-    elementToBlur && elementToBlur.blur();
+  /**
+   * in case where we preview the site and go back to the editor we want to reset the captcha.
+   * @param prevProps
+   */
+  componentDidUpdate: function componentDidUpdate(prevProps) {
+    if (this.props.shouldResetComponent && prevProps.shouldResetComponent !== this.props.shouldResetComponent) {
+      this.resetCaptcha();
+    }
   },
   getSkinProperties: function getSkinProperties() {
-    var _this = this;
+    var _this3 = this;
 
-    var _props$compData = this.props.compData,
-        value = _props$compData.value,
-        titleText = _props$compData.titleText,
-        labels = _props$compData.labels;
-    var _props$compProp = this.props.compProp,
-        showTitle = _props$compProp.showTitle,
-        showLabels = _props$compProp.showLabels,
-        labelPosition = _props$compProp.labelPosition,
-        labelAlignment = _props$compProp.labelAlignment,
-        direction = _props$compProp.direction,
-        required = _props$compProp.required,
-        isDisabled = _props$compProp.isDisabled,
-        shapeSize = _props$compProp.shapeSize,
-        shapeSpacing = _props$compProp.shapeSpacing;
-    var _props = this.props,
-        id = _props.id,
-        isMobileView = _props.isMobileView;
-
-
-    var compStyle = this.props.style;
-
-    var getRating = function getRating() {
-      return _this.props.viewMode === 'editor' && _lodash2.default.isNil(value) ? 3 : value;
-    };
-
-    if (isMobileView) {
-      var fontStyle = {};
-      var initialFontSize = parseInt(this.getFontSize('labelFont').fontSize, 10);
-
-      fontStyle.fontSize = initialFontSize > MOBILE_DEFAULT_FONT_SIZE ? MOBILE_DEFAULT_FONT_SIZE * this.props.scale + 'px' : initialFontSize * this.props.scale + 'px';
-
-      compStyle = Object.assign({}, this.props.style, fontStyle);
-    }
-
+    var languageCode = this.props.isMLEnabled ? this.props.currentLanguage.code : defaultLangCode;
+    var captchaProps = _lodash2.default.assign({}, this.props.compData, this.props.compProp, {
+      className: this.props.styleId,
+      style: this.props.style,
+      id: this.props.id,
+      lang: languageCode,
+      required: true,
+      onVerify: function onVerify(token) {
+        _this3.updateData({ token: token });
+      },
+      onExpire: function onExpire() {
+        _this3.updateData({ token: undefined });
+      },
+      onReset: function onReset() {
+        _this3.updateData({ token: undefined });
+      },
+      ref: function ref(captchaRef) {
+        _this3.captchaRef = captchaRef;
+      }
+    });
     return {
       '': {
-        parentConst: function parentConst(santaProps) {
-          var coreProps = Object.assign({}, santaProps);
-          return _react2.default.createElement(_Rating.Rating, _extends({}, coreProps, (0, _RatingSt2.default)('root', {}, coreProps), {
-            ref: function ref(cref) {
-              _this.compRoot = cref;
-            } }));
-        },
-        mode: 'input',
-        rating: getRating(),
-        id: id,
-        rtl: direction === 'rtl',
-        showTitle: showTitle,
-        showLabels: showLabels && this.props.componentPreviewState !== 'error',
-        shapeSize: shapeSize,
-        shapeSpacing: shapeSpacing,
-        textAlignment: labelAlignment,
-        icon: this.props.svgString,
-        required: required,
-        labelPosition: isMobileView && labelPosition === 'side' ? 'top' : labelPosition,
-        labels: labels,
-        title: titleText,
-        onIconMouseIn: this.handleIconMouseIn,
-        onChange: this.handleChange,
-        style: compStyle,
-        onFocus: this.handleFocus,
-        onBlur: this.handleBlur,
-        disabled: isDisabled,
-        shouldShowInvalid: !this.isValid() && this.shouldShowValidityIndication(),
-        editorMode: this.props.viewMode === 'editor'
+        children: [_santaComponents.utils.createReactElement(Captcha, captchaProps)]
       }
     };
   }
 });
+
+/***/ }),
+
+/***/ 655:
+/*!**********************************************!*\
+  !*** ../node_modules/wix-ui-core/captcha.js ***!
+  \**********************************************/
+/*! no static exports found */
+/*! all exports used */
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(/*! ./dist/src/components/captcha */ 656);
+
+
+/***/ }),
+
+/***/ 656:
+/*!************************************************************************!*\
+  !*** ../node_modules/wix-ui-core/dist/src/components/captcha/index.js ***!
+  \************************************************************************/
+/*! no static exports found */
+/*! all exports used */
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var Captcha_1 = __webpack_require__(/*! ./Captcha */ 657);
+exports.Captcha = Captcha_1.Captcha;
+var types_1 = __webpack_require__(/*! ./types */ 660);
+exports.Size = types_1.Size;
+exports.CaptchaType = types_1.CaptchaType;
+exports.Theme = types_1.Theme;
+exports.CaptchaLang = types_1.CaptchaLang;
+//# sourceMappingURL=index.js.map
+
+/***/ }),
+
+/***/ 657:
+/*!**************************************************************************!*\
+  !*** ../node_modules/wix-ui-core/dist/src/components/captcha/Captcha.js ***!
+  \**************************************************************************/
+/*! no static exports found */
+/*! all exports used */
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var tslib_1 = __webpack_require__(/*! tslib */ 6);
+var React = __webpack_require__(/*! react */ 0);
+var Reaptcha = __webpack_require__(/*! reaptcha */ 658);
+var Captcha_st_css_1 = __webpack_require__(/*! ./Captcha.st.css */ 659);
+/**
+ * Captcha
+ */
+var Captcha = /** @class */ (function (_super) {
+    tslib_1.__extends(Captcha, _super);
+    function Captcha() {
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.captchaRef = null;
+        _this.state = {
+            rendered: false,
+            token: undefined,
+        };
+        /**
+         * this will indicate the google component is loaded and ready to be displayed
+         */
+        _this.onLoad = function () {
+            if (_this.props.onLoad) {
+                _this.props.onLoad();
+            }
+        };
+        /**
+         * the user has successfully taken the captcha and we have the verification id
+         * @param verificationString
+         */
+        _this.onVerified = function (verificationString) {
+            _this.setState({ token: verificationString });
+            if (_this.props.onVerify) {
+                _this.props.onVerify(verificationString);
+            }
+        };
+        /**
+         * The user has taken the captcha challange however it has not been verified the page was not submitted in time
+         * so we need to ask the user to retake the captcha challenge.
+         */
+        _this.onExpired = function () {
+            _this.setState({ token: undefined });
+            if (_this.props.onExpire) {
+                _this.props.onExpire();
+            }
+        };
+        /**
+         * triggered when the inner captcha is actually rendered
+         */
+        _this.onRender = function () {
+            _this.setState({ rendered: true });
+            if (_this.props.onRender) {
+                _this.props.onRender();
+            }
+        };
+        /**
+         * this method will pass the error to the registered error call back.
+         */
+        _this.onError = function () {
+            if (_this.props.onError) {
+                _this.props.onError();
+            }
+        };
+        return _this;
+    }
+    /**
+     * reload a new captcha from google
+     */
+    Captcha.prototype.resetCaptcha = function () {
+        var _this = this;
+        if (this.captchaRef) {
+            this.captchaRef.reset();
+        }
+        this.setState({ token: undefined }, function () {
+            if (_this.props.onReset) {
+                _this.props.onReset();
+            }
+        });
+    };
+    /**
+     * returns the verification token to the caller
+     */
+    Captcha.prototype.getVerificationToken = function () {
+        return this.state.token;
+    };
+    /**
+     * return true if the captcha challenge has been successfully taken
+     */
+    Captcha.prototype.isVerified = function () {
+        return this.state.token !== undefined;
+    };
+    /**
+     * we render the captcha.
+     * we render a loader until we get a loaded indication from the captcha lib
+     *
+     */
+    Captcha.prototype.render = function () {
+        var _this = this;
+        var _a = this.props, sitekey = _a.sitekey, loader = _a.loader, captchaType = _a.captchaType, size = _a.size, theme = _a.theme, lang = _a.lang, required = _a.required;
+        return (React.createElement("div", tslib_1.__assign({}, Captcha_st_css_1.default('root', { loaded: this.state.rendered }, this.props), { "data-captcha-type": captchaType, "data-theme": theme, "data-lang": lang, "data-size": size }),
+            !this.state.rendered && (React.createElement("div", { className: Captcha_st_css_1.default.loaderWrapper }, loader)),
+            React.createElement("div", { className: Captcha_st_css_1.default.captcha },
+                React.createElement(Reaptcha, { ref: function (e) { return (_this.captchaRef = e); }, sitekey: sitekey, captchaType: captchaType, size: size, theme: theme, hl: lang, onLoad: this.onLoad, onVerify: this.onVerified, onExpire: this.onExpired, onRender: this.onRender, onError: this.onError }),
+                required && (React.createElement("input", { "data-hook": "required-field", className: Captcha_st_css_1.default.requiredField, type: "checkbox", required: true, onChange: function () { }, checked: this.isVerified() })))));
+    };
+    Captcha.displayName = 'Captcha';
+    return Captcha;
+}(React.PureComponent));
+exports.Captcha = Captcha;
+//# sourceMappingURL=Captcha.js.map
+
+/***/ }),
+
+/***/ 658:
+/*!**********************************************!*\
+  !*** ../node_modules/reaptcha/dist/index.js ***!
+  \**********************************************/
+/*! no static exports found */
+/*! all exports used */
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+/***/ (function(module, exports, __webpack_require__) {
+
+/* WEBPACK VAR INJECTION */(function(global) {(function webpackUniversalModuleDefinition(root, factory) {
+	if(true)
+		module.exports = factory(__webpack_require__(/*! react */ 0));
+	else {}
+})(global, function(__WEBPACK_EXTERNAL_MODULE__0__) {
+return /******/ (function(modules) { // webpackBootstrap
+/******/ 	// The module cache
+/******/ 	var installedModules = {};
+/******/
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/
+/******/ 		// Check if module is in cache
+/******/ 		if(installedModules[moduleId]) {
+/******/ 			return installedModules[moduleId].exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = installedModules[moduleId] = {
+/******/ 			i: moduleId,
+/******/ 			l: false,
+/******/ 			exports: {}
+/******/ 		};
+/******/
+/******/ 		// Execute the module function
+/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+/******/
+/******/ 		// Flag the module as loaded
+/******/ 		module.l = true;
+/******/
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/
+/******/
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = modules;
+/******/
+/******/ 	// expose the module cache
+/******/ 	__webpack_require__.c = installedModules;
+/******/
+/******/ 	// define getter function for harmony exports
+/******/ 	__webpack_require__.d = function(exports, name, getter) {
+/******/ 		if(!__webpack_require__.o(exports, name)) {
+/******/ 			Object.defineProperty(exports, name, { enumerable: true, get: getter });
+/******/ 		}
+/******/ 	};
+/******/
+/******/ 	// define __esModule on exports
+/******/ 	__webpack_require__.r = function(exports) {
+/******/ 		if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 			Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 		}
+/******/ 		Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 	};
+/******/
+/******/ 	// create a fake namespace object
+/******/ 	// mode & 1: value is a module id, require it
+/******/ 	// mode & 2: merge all properties of value into the ns
+/******/ 	// mode & 4: return value when already ns object
+/******/ 	// mode & 8|1: behave like require
+/******/ 	__webpack_require__.t = function(value, mode) {
+/******/ 		if(mode & 1) value = __webpack_require__(value);
+/******/ 		if(mode & 8) return value;
+/******/ 		if((mode & 4) && typeof value === 'object' && value && value.__esModule) return value;
+/******/ 		var ns = Object.create(null);
+/******/ 		__webpack_require__.r(ns);
+/******/ 		Object.defineProperty(ns, 'default', { enumerable: true, value: value });
+/******/ 		if(mode & 2 && typeof value != 'string') for(var key in value) __webpack_require__.d(ns, key, function(key) { return value[key]; }.bind(null, key));
+/******/ 		return ns;
+/******/ 	};
+/******/
+/******/ 	// getDefaultExport function for compatibility with non-harmony modules
+/******/ 	__webpack_require__.n = function(module) {
+/******/ 		var getter = module && module.__esModule ?
+/******/ 			function getDefault() { return module['default']; } :
+/******/ 			function getModuleExports() { return module; };
+/******/ 		__webpack_require__.d(getter, 'a', getter);
+/******/ 		return getter;
+/******/ 	};
+/******/
+/******/ 	// Object.prototype.hasOwnProperty.call
+/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
+/******/
+/******/ 	// __webpack_public_path__
+/******/ 	__webpack_require__.p = "";
+/******/
+/******/
+/******/ 	// Load entry module and return exports
+/******/ 	return __webpack_require__(__webpack_require__.s = 1);
+/******/ })
+/************************************************************************/
+/******/ ([
+/* 0 */
+/***/ (function(module, exports) {
+
+module.exports = __WEBPACK_EXTERNAL_MODULE__0__;
+
+/***/ }),
+/* 1 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+
+// EXTERNAL MODULE: external {"amd":"react","commonjs":"react","commonjs2":"react","root":"React"}
+var external_amd_react_commonjs_react_commonjs2_react_root_React_ = __webpack_require__(0);
+var external_amd_react_commonjs_react_commonjs2_react_root_React_default = /*#__PURE__*/__webpack_require__.n(external_amd_react_commonjs_react_commonjs2_react_root_React_);
+
+// CONCATENATED MODULE: ./utils/injectScript.js
+/* harmony default export */ var injectScript = (function (scriptSrc) {
+  var script = document.createElement('script');
+  script.async = true;
+  script.defer = true;
+  script.src = scriptSrc;
+
+  if (document.head) {
+    document.head.appendChild(script);
+  }
+});
+// CONCATENATED MODULE: ./utils/isAnyScriptPresent.js
+/* harmony default export */ var isAnyScriptPresent = (function (regex) {
+  return Array.from(document.scripts).reduce(function (isPresent, script) {
+    return isPresent ? isPresent : regex.test(script.src);
+  }, false);
+});
+// CONCATENATED MODULE: ./index.js
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
+
+
+var RECAPTCHA_SCRIPT_URL = 'https://recaptcha.net/recaptcha/api.js';
+var RECAPTCHA_SCRIPT_REGEX = /(http|https):\/\/(www)?.+\/recaptcha/;
+
+var index_Reaptcha =
+/*#__PURE__*/
+function (_Component) {
+  _inherits(Reaptcha, _Component);
+
+  function Reaptcha(props) {
+    var _this;
+
+    _classCallCheck(this, Reaptcha);
+
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(Reaptcha).call(this, props));
+
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "container", null);
+
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "_isAvailable", function () {
+      return Boolean(window && window.grecaptcha && window.grecaptcha.ready);
+    });
+
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "_inject", function () {
+      if (_this.props.inject && !isAnyScriptPresent(RECAPTCHA_SCRIPT_REGEX)) {
+        var hlParam = _this.props.hl ? "&hl=".concat(_this.props.hl) : '';
+        var src = "".concat(RECAPTCHA_SCRIPT_URL, "?render=explicit").concat(hlParam);
+        injectScript(src);
+      }
+    });
+
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "_prepare", function () {
+      var _this$props = _this.props,
+          explicit = _this$props.explicit,
+          onLoad = _this$props.onLoad;
+      window.grecaptcha.ready(function () {
+        _this.setState({
+          ready: true
+        }, function () {
+          if (!explicit) {
+            _this.renderExplicitly();
+          }
+
+          if (onLoad) {
+            onLoad();
+          }
+        });
+      });
+    });
+
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "_renderRecaptcha", function (container, config) {
+      return window.grecaptcha.render(container, config);
+    });
+
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "_resetRecaptcha", function () {
+      return window.grecaptcha.reset(_this.state.instanceId);
+    });
+
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "_executeRecaptcha", function () {
+      return window.grecaptcha.execute(_this.state.instanceId);
+    });
+
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "_stopTimer", function () {
+      if (_this.state.timer) {
+        clearInterval(_this.state.timer);
+      }
+    });
+
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "componentDidMount", function () {
+      _this._inject();
+
+      if (_this._isAvailable()) {
+        _this._prepare();
+      } else {
+        var timer = setInterval(function () {
+          if (_this._isAvailable()) {
+            _this._prepare();
+
+            _this._stopTimer();
+          }
+        }, 500);
+
+        _this.setState({
+          timer: timer
+        });
+      }
+    });
+
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "shouldComponentUpdate", function () {
+      return !_this.state.rendered;
+    });
+
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "componentWillUnmount", function () {
+      _this._stopTimer();
+
+      if (_this.state.rendered) {
+        _this._resetRecaptcha();
+      }
+    });
+
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "renderExplicitly", function () {
+      return new Promise(function (resolve, reject) {
+        if (_this.state.rendered) {
+          return reject(new Error('This recaptcha instance has been already rendered.'));
+        }
+
+        if (_this.state.ready && _this.container) {
+          var instanceId = _this._renderRecaptcha(_this.container, {
+            sitekey: _this.props.sitekey,
+            theme: _this.props.theme,
+            size: _this.props.size,
+            badge: _this.state.invisible ? _this.props.badge : null,
+            tabindex: _this.props.tabindex,
+            callback: _this.props.onVerify,
+            'expired-callback': _this.props.onExpire,
+            'error-callback': _this.props.onError,
+            isolated: _this.state.invisible ? _this.props.isolated : null,
+            hl: _this.state.invisible ? null : _this.props.hl
+          });
+
+          _this.setState({
+            instanceId: instanceId,
+            rendered: true
+          }, function () {
+            if (_this.props.onRender) {
+              _this.props.onRender();
+            }
+
+            resolve();
+          });
+        } else {
+          return reject(new Error('Recaptcha is not ready for rendering yet.'));
+        }
+      });
+    });
+
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "reset", function () {
+      return new Promise(function (resolve, reject) {
+        if (_this.state.rendered) {
+          _this._resetRecaptcha();
+
+          return resolve();
+        }
+
+        reject(new Error('This recaptcha instance did not render yet.'));
+      });
+    });
+
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "execute", function () {
+      return new Promise(function (resolve, reject) {
+        if (!_this.state.invisible) {
+          return reject(new Error('Manual execution is only available for invisible size.'));
+        }
+
+        if (_this.state.rendered) {
+          _this._executeRecaptcha();
+
+          resolve();
+        }
+
+        return reject(new Error('This recaptcha instance did not render yet.'));
+      });
+    });
+
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "render", function () {
+      return external_amd_react_commonjs_react_commonjs2_react_root_React_default.a.createElement("div", {
+        id: _this.props.id,
+        className: _this.props.className,
+        ref: function ref(e) {
+          return _this.container = e;
+        }
+      });
+    });
+
+    _this.state = {
+      instanceId: null,
+      ready: false,
+      rendered: false,
+      invisible: _this.props.size === 'invisible',
+      timer: null
+    };
+    return _this;
+  }
+
+  return Reaptcha;
+}(external_amd_react_commonjs_react_commonjs2_react_root_React_["Component"]);
+
+_defineProperty(index_Reaptcha, "defaultProps", {
+  id: '',
+  className: 'g-recaptcha',
+  theme: 'light',
+  size: 'normal',
+  badge: 'bottomright',
+  tabindex: 0,
+  explicit: false,
+  inject: true,
+  isolated: false,
+  hl: ''
+});
+
+/* harmony default export */ var index = __webpack_exports__["default"] = (index_Reaptcha);
+
+/***/ })
+/******/ ])["default"];
+});
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../webpack/buildin/global.js */ 21)))
+
+/***/ }),
+
+/***/ 659:
+/*!******************************************************************************!*\
+  !*** ../node_modules/wix-ui-core/dist/src/components/captcha/Captcha.st.css ***!
+  \******************************************************************************/
+/*! exports provided: default */
+/*! all exports used */
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+/***/ (function(module, exports, __webpack_require__) {
+
+Object.defineProperty(exports, "__esModule", { value: true })
+
+exports.default = __webpack_require__.stylable.create(
+  "root",
+  "Captcha3325868082",
+  {"root":"Captcha3325868082--root","loaderWrapper":"Captcha3325868082--loaderWrapper","captcha":"Captcha3325868082--captcha","requiredField":"Captcha3325868082--requiredField"},
+  "",
+  1,
+  /*! ../node_modules/wix-ui-core/dist/src/components/captcha/Captcha.st.css */ 659
+);
+
+
+
+/***/ }),
+
+/***/ 660:
+/*!************************************************************************!*\
+  !*** ../node_modules/wix-ui-core/dist/src/components/captcha/types.js ***!
+  \************************************************************************/
+/*! no static exports found */
+/*! all exports used */
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var CaptchaType;
+(function (CaptchaType) {
+    CaptchaType["image"] = "image";
+    CaptchaType["audio"] = "audio";
+})(CaptchaType = exports.CaptchaType || (exports.CaptchaType = {}));
+var Theme;
+(function (Theme) {
+    Theme["light"] = "light";
+    Theme["dark"] = "dark";
+})(Theme = exports.Theme || (exports.Theme = {}));
+var Size;
+(function (Size) {
+    Size["normal"] = "normal";
+    Size["compact"] = "compact";
+})(Size = exports.Size || (exports.Size = {}));
+// to ensure that the passed lang is supported we expose the supported langs
+// all of these languages are taken from
+// this list: https://developers.google.com/recaptcha/docs/language
+var CaptchaLang;
+(function (CaptchaLang) {
+    CaptchaLang["Arabic"] = "ar";
+    CaptchaLang["Afrikaans"] = "af";
+    CaptchaLang["Amharic"] = "am";
+    CaptchaLang["Armenian"] = "hy";
+    CaptchaLang["Azerbaijani"] = "az";
+    CaptchaLang["Basque"] = "eu";
+    CaptchaLang["Bengali"] = "bn";
+    CaptchaLang["Bulgarian"] = "bg";
+    CaptchaLang["Catalan"] = "ca";
+    CaptchaLang["ChineseHongKong"] = "zh-HK";
+    CaptchaLang["ChineseSimplified"] = "zh-CN";
+    CaptchaLang["ChineseTraditional"] = "zh-TW";
+    CaptchaLang["Croatian"] = "hr";
+    CaptchaLang["Czech"] = "cs";
+    CaptchaLang["Danish"] = "da";
+    CaptchaLang["Dutch"] = "nl";
+    CaptchaLang["EnglishUK"] = "en-GB";
+    CaptchaLang["EnglishUS"] = "en";
+    CaptchaLang["Estonian"] = "et";
+    CaptchaLang["Filipino"] = "fil";
+    CaptchaLang["Finnish"] = "fr";
+    CaptchaLang["FrenchCanadian"] = "fr-CA";
+    CaptchaLang["Galician"] = "gl";
+    CaptchaLang["Georgian"] = "ka";
+    CaptchaLang["German"] = "de";
+    CaptchaLang["GermanAustria"] = "de-AT";
+    CaptchaLang["GermanSwitzerland"] = "de-CH";
+    CaptchaLang["Greek"] = "el";
+    CaptchaLang["Gujarati"] = "gu";
+    CaptchaLang["Hebrew"] = "iw";
+    CaptchaLang["Hindi"] = "hi";
+    CaptchaLang["Hungarain"] = "hu";
+    CaptchaLang["Icelandic"] = "is";
+    CaptchaLang["Indonesian"] = "id";
+    CaptchaLang["Italian"] = "it";
+    CaptchaLang["Japanese"] = "ja";
+    CaptchaLang["Kannada"] = "kn";
+    CaptchaLang["Korean"] = "ko";
+    CaptchaLang["Laothian"] = "lo";
+    CaptchaLang["Latvian"] = "lv";
+    CaptchaLang["Lithuanian"] = "lt";
+    CaptchaLang["Malay"] = "ms";
+    CaptchaLang["Malayalam"] = "ml";
+    CaptchaLang["Marathi"] = "mr";
+    CaptchaLang["Mongolian"] = "mn";
+    CaptchaLang["Norwegian"] = "no";
+    CaptchaLang["Persian"] = "fa";
+    CaptchaLang["Polish"] = "pl";
+    CaptchaLang["Portuguese"] = "pt";
+    CaptchaLang["PortugueseBrazil"] = "pt-BR";
+    CaptchaLang["PortuguesePortugal"] = "pt-PT";
+    CaptchaLang["Romanian"] = "ro";
+    CaptchaLang["Russian"] = "ru";
+    CaptchaLang["Serbian"] = "sr";
+    CaptchaLang["Sinhalese"] = "si";
+    CaptchaLang["Slovak"] = "sk";
+    CaptchaLang["Slovenian"] = "sl";
+    CaptchaLang["Spanish"] = "es";
+    CaptchaLang["SpanishLatinAmerica"] = "es-419";
+    CaptchaLang["Swahili"] = "sw";
+    CaptchaLang["Swedish"] = "sv";
+    CaptchaLang["Tamil"] = "ta";
+    CaptchaLang["Telugu"] = "te";
+    CaptchaLang["Thai"] = "th";
+    CaptchaLang["Turkish"] = "tr";
+    CaptchaLang["Ukrainian"] = "uk";
+    CaptchaLang["Urdu"] = "ur";
+    CaptchaLang["Vietnamese"] = "vi";
+    CaptchaLang["Zulu"] = "zu";
+})(CaptchaLang = exports.CaptchaLang || (exports.CaptchaLang = {}));
+//# sourceMappingURL=types.js.map
 
 /***/ }),
 
@@ -2737,4 +2214,4 @@ module.exports = invariant;
 /***/ })
 
 }]);
-//# sourceMappingURL=wixui.RatingsInput.chunk.js.map
+//# sourceMappingURL=wixui.Captcha.chunk.js.map

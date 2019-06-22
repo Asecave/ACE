@@ -1,4 +1,4 @@
-((typeof self !== 'undefined' ? self : this)["webpackJsonp_wix_ui_santa"] = (typeof self !== 'undefined' ? self : this)["webpackJsonp_wix_ui_santa"] || []).push([[38],{
+((typeof self !== 'undefined' ? self : this)["webpackJsonp_wix_ui_santa"] = (typeof self !== 'undefined' ? self : this)["webpackJsonp_wix_ui_santa"] || []).push([[51],{
 
 /***/ 12:
 /*!**********************************************!*\
@@ -964,10 +964,10 @@ module.exports = emptyObject;
 
 /***/ }),
 
-/***/ 273:
-/*!***************************************************!*\
-  !*** ./components/BorisButton/BorisButton.st.css ***!
-  \***************************************************/
+/***/ 354:
+/*!*************************************!*\
+  !*** ./components/Tags/Tags.st.css ***!
+  \*************************************/
 /*! exports provided: default */
 /*! all exports used */
 /*! ModuleConcatenation bailout: Module is not an ECMAScript module */
@@ -977,24 +977,24 @@ Object.defineProperty(exports, "__esModule", { value: true })
 
 exports.default = __webpack_require__.stylable.create(
   "root",
-  "BorisButton498476808",
-  {"root":"BorisButton498476808--root","plusIcon":"BorisButton498476808--plusIcon","buttonLabel":"BorisButton498476808--buttonLabel","label":"BorisButton498476808--label","btn_fnt":"font_9","btn_txt":"color_6","fntlbl":"font_8","txtlbl":"color_15"},
+  "Tags3268887993",
+  {"root":"Tags3268887993--root","tagsContainer":"Tags3268887993--tagsContainer","tag":"Tags3268887993--tag","tagBackgroundColor":"color_8","tagBorderColor":"color_3","tagBorderSize":"3","tagBoxShadow":"0 1px 4px rgba(0, 0, 0, .6)","tagFont":"font_4","tagFontColor":"color_3","tagBackgroundColorHover":"color_6","tagFontColorHover":"color_1","tagBorderRadius":"100px"},
   "",
-  7,
-  /*! ./components/BorisButton/BorisButton.st.css */ 273
+  1,
+  /*! ./components/Tags/Tags.st.css */ 354
 );
 
-exports.default.$skin = {"params":{"btn_fnt":"FONT","btn_txt":"TEXT_COLOR","fntlbl":"FONT","txtlbl":"TEXT_COLOR"},"paramsDefaults":{"btn_fnt":"font_9","btn_txt":"color_6","fntlbl":"font_8","txtlbl":"color_15"}};
+exports.default.$skin = {"params":{"tagBackgroundColor":"COLOR","tagBorderColor":"BORDER_COLOR_ALPHA","tagBorderSize":"BORDER_SIZE","tagBoxShadow":"BOX_SHADOW","tagFont":"FONT","tagFontColor":"COLOR","tagBackgroundColorHover":"COLOR","tagFontColorHover":"COLOR","tagBorderRadius":"BORDER_RADIUS"},"paramsDefaults":{"tagBackgroundColor":"color_8","tagBorderColor":"color_3","tagBorderSize":"3","tagBoxShadow":"0 1px 4px rgba(0, 0, 0, .6)","tagFont":"font_4","tagFontColor":"color_3","tagBackgroundColorHover":"color_6","tagFontColorHover":"color_1","tagBorderRadius":"100px"}};
 exports.default.$skin.$render = function render_css($id, $params, $functions) {
-  return "\n" + $id + " .FilePickerButton3895074374--root{}\n" + $id + " .FilePickerButton3895074374--fileInput{position: absolute;width: 1px;height: 1px;padding: 0;margin: -1px;overflow: hidden;border: 0}\n" + $id + " .FilePickerButton3895074374--chooseFileButton{}\n" + $id + ".BorisButton498476808--root{display: flex;height: 100%;flex-direction: column}\n" + $id + ".BorisButton498476808--root .FilePickerButton3895074374--root .FilePickerButton3895074374--chooseFileButton{font: " + $params["btn_fnt"] + ";color: " + $params["btn_txt"] + ";display: inline-block;position: relative;white-space: nowrap}\n" + $id + " .BorisButton498476808--plusIcon{fill: " + $params["btn_txt"] + "}\n" + $id + ".BorisButton498476808--root[data-borisbutton498476808-buttonalignment=\"ltr\"] .BorisButton498476808--buttonLabel{margin-left: 8px}\n" + $id + ".BorisButton498476808--root[data-borisbutton498476808-buttonalignment=\"rtl\"] .FilePickerButton3895074374--root{direction: rtl}\n" + $id + ".BorisButton498476808--root[data-borisbutton498476808-buttonalignment=\"rtl\"] .BorisButton498476808--buttonLabel{margin-right: 8px;direction: ltr}\n" + $id + " .BorisButton498476808--label{font: " + $params["fntlbl"] + ";color: " + $params["txtlbl"] + ";word-break: break-word;display: inline-block;line-height: 1;direction: ltr}\n" + $id + ".BorisButton498476808--root[data-borisbutton498476808-filesalignment=\"left\"] .BorisButton498476808--label{text-align: left}\n" + $id + ".BorisButton498476808--root[data-borisbutton498476808-filesalignment=\"center\"] .BorisButton498476808--label{text-align: center}\n" + $id + ".BorisButton498476808--root[data-borisbutton498476808-filesalignment=\"right\"] .BorisButton498476808--label{text-align: right;direction: rtl}\n";
+  return "\n" + $id + ".Tags3268887993--root{}\n" + $id + " .Tags3268887993--tagsContainer{display: flex;align-items: center;flex-direction: row;flex-wrap: wrap}\n" + $id + ".Tags3268887993--root[data-tags3268887993-alignment=\"left\"] .Tags3268887993--tagsContainer{justify-content: flex-start}\n" + $id + ".Tags3268887993--root[data-tags3268887993-alignment=\"center\"] .Tags3268887993--tagsContainer{justify-content: center}\n" + $id + ".Tags3268887993--root[data-tags3268887993-alignment=\"right\"] .Tags3268887993--tagsContainer{justify-content: flex-end}\n" + $id + " .Tags3268887993--tag{box-shadow: " + $params["tagBoxShadow"] + ";border: " + $params["tagBorderSize"] + " solid " + $params["tagBorderColor"] + ";border-radius: " + $params["tagBorderRadius"] + ";cursor: pointer;background-color: " + $params["tagBackgroundColor"] + ";font: " + $params["tagFont"] + ";color: " + $params["tagFontColor"] + ";text-decoration: none;white-space: nowrap;overflow: hidden;text-overflow: ellipsis}\n" + $id + " .Tags3268887993--tag:hover{color: " + $params["tagFontColorHover"] + ";background-color: " + $params["tagBackgroundColorHover"] + "}\n";
 };
 
 /***/ }),
 
-/***/ 367:
-/*!***********************************************!*\
-  !*** ./components/BorisButton/BorisButton.js ***!
-  \***********************************************/
+/***/ 436:
+/*!**********************************!*\
+  !*** ./components/Tags/index.js ***!
+  \**********************************/
 /*! no static exports found */
 /*! all exports used */
 /*! ModuleConcatenation bailout: Module is not an ECMAScript module */
@@ -1006,702 +1006,171 @@ exports.default.$skin.$render = function render_css($id, $params, $functions) {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.BorisButton = exports.dataHooks = undefined;
+
+var _Tags = __webpack_require__(/*! ./Tags.js */ 652);
+
+var _TagsSt = __webpack_require__(/*! ./Tags.st.css */ 354);
+
+var _TagsSt2 = _interopRequireDefault(_TagsSt);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = {
+  componentType: 'wixui.Tags',
+  component: _Tags.Tags,
+  santaComponent: _Tags.santaTags,
+  skin: _TagsSt2.default.$skin
+};
+
+/***/ }),
+
+/***/ 652:
+/*!*********************************!*\
+  !*** ./components/Tags/Tags.js ***!
+  \*********************************/
+/*! no static exports found */
+/*! all exports used */
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.santaTags = exports.Tags = undefined;
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 var _react = __webpack_require__(/*! react */ 0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _BorisButtonSt = __webpack_require__(/*! ./BorisButton.st.css */ 273);
-
-var _BorisButtonSt2 = _interopRequireDefault(_BorisButtonSt);
-
-var _filePickerButton = __webpack_require__(/*! wix-ui-core/file-picker-button */ 697);
-
-var _lodash = __webpack_require__(/*! lodash */ 2);
-
-var _lodash2 = _interopRequireDefault(_lodash);
-
 var _propTypes = __webpack_require__(/*! prop-types */ 1);
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+var _TagsSt = __webpack_require__(/*! ./Tags.st.css */ 354);
 
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var defaultLabelMargin = 14;
-var paddingLimit = '20px';
-
-var dataHooks = exports.dataHooks = {
-  filePickerButton: 'boris-button-file-picker-button'
-};
-
-var PlusIcon = function PlusIcon() {
-  return _react2.default.createElement(
-    'svg',
-    {
-      width: '15px',
-      height: '15px',
-      viewBox: '0 0 15 15',
-      version: '1.1',
-      xmlns: 'http://www.w3.org/2000/svg' },
-    _react2.default.createElement(
-      'g',
-      { stroke: 'none', strokeWidth: '1', fill: 'none', fillRule: 'evenodd' },
-      _react2.default.createElement(
-        'g',
-        { className: _BorisButtonSt2.default.plusIcon },
-        _react2.default.createElement('rect', { x: '6', y: '1', width: '3', height: '13' }),
-        _react2.default.createElement('rect', { x: '1', y: '6', width: '13', height: '3' })
-      )
-    )
-  );
-};
-
-var BorisButton = exports.BorisButton = function (_React$Component) {
-  _inherits(BorisButton, _React$Component);
-
-  function BorisButton() {
-    _classCallCheck(this, BorisButton);
-
-    return _possibleConstructorReturn(this, (BorisButton.__proto__ || Object.getPrototypeOf(BorisButton)).apply(this, arguments));
-  }
-
-  _createClass(BorisButton, [{
-    key: 'render',
-    value: function render() {
-      var _props = this.props,
-          id = _props.id,
-          buttonLabel = _props.buttonLabel,
-          buttonAlignment = _props.buttonAlignment,
-          filesAlignment = _props.filesAlignment,
-          label = _props.label,
-          labelMargin = _props.labelMargin;
-
-      var filePickerButtonId = id + '-filePickerButton';
-      var labelStyle = _extends({}, this._getLabelPadding(), {
-        marginBottom: _lodash2.default.isNumber(labelMargin) ? labelMargin : defaultLabelMargin
-      });
-
-      return _react2.default.createElement(
-        'div',
-        (0, _BorisButtonSt2.default)('root', { buttonAlignment: buttonAlignment, filesAlignment: filesAlignment }, this.props),
-        _react2.default.createElement(
-          'label',
-          {
-            className: _BorisButtonSt2.default.label,
-            htmlFor: filePickerButtonId,
-            style: labelStyle
-          },
-          label
-        ),
-        _react2.default.createElement(
-          _filePickerButton.FilePickerButton,
-          {
-            id: filePickerButtonId,
-            'data-hook': dataHooks.filePickerButton },
-          _react2.default.createElement(PlusIcon, null),
-          _react2.default.createElement(
-            'span',
-            { className: _BorisButtonSt2.default.buttonLabel },
-            buttonLabel
-          )
-        )
-      );
-    }
-  }, {
-    key: '_getLabelPadding',
-    value: function _getLabelPadding() {
-      var _props2 = this.props,
-          textAlignment = _props2.textAlignment,
-          labelPadding = _props2.labelPadding,
-          filesAlignment = _props2.filesAlignment;
-
-      var alignment = textAlignment || filesAlignment;
-
-      switch (alignment) {
-        case 'left':
-          return { paddingLeft: labelPadding, paddingRight: paddingLimit };
-        case 'right':
-          return { paddingRight: labelPadding, paddingLeft: paddingLimit };
-        default:
-          return {};
-      }
-    }
-  }]);
-
-  return BorisButton;
-}(_react2.default.Component);
-
-BorisButton.displayName = 'BorisButton';
-BorisButton.propTypes = {
-  id: _propTypes.string.isRequired,
-  buttonLabel: _propTypes.string.isRequired,
-  label: _propTypes.string,
-  buttonAlignment: (0, _propTypes.oneOf)(['rtl', 'ltr']).isRequired,
-  filesAlignment: (0, _propTypes.oneOf)(['left', 'center', 'right']).isRequired,
-  labelMargin: _propTypes.number.isRequired,
-  labelPadding: _propTypes.number.isRequired
-};
-
-/***/ }),
-
-/***/ 444:
-/*!*****************************************!*\
-  !*** ./components/BorisButton/index.js ***!
-  \*****************************************/
-/*! no static exports found */
-/*! all exports used */
-/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _BorisButton = __webpack_require__(/*! ./BorisButton */ 367);
-
-var _BorisButton2 = __webpack_require__(/*! ./BorisButton.santa */ 702);
-
-var _BorisButtonSt = __webpack_require__(/*! ./BorisButton.st.css */ 273);
-
-var _BorisButtonSt2 = _interopRequireDefault(_BorisButtonSt);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-exports.default = {
-  componentType: 'wixui.BorisButton',
-  component: _BorisButton.BorisButton,
-  santaComponent: _BorisButton2.santaBorisButton,
-  skin: _BorisButtonSt2.default.$skin
-};
-
-/***/ }),
-
-/***/ 58:
-/*!***********************************************************!*\
-  !*** ../node_modules/wix-ui-core/dist/src/utils/index.js ***!
-  \***********************************************************/
-/*! no static exports found */
-/*! all exports used */
-/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-Object.defineProperty(exports, "__esModule", { value: true });
-var React = __webpack_require__(/*! react */ 0);
-exports.buildChildrenObject = function (children, childrenObject) {
-    return React.Children.toArray(children).reduce(function (acc, child) {
-        if (!React.isValidElement(child)) {
-            return acc;
-        }
-        if (!child.type || !child.type.displayName) {
-            return acc;
-        }
-        var name = child.type.displayName.split('.').pop();
-        acc[name] = child;
-        return acc;
-    }, childrenObject || {});
-};
-exports.createComponentThatRendersItsChildren = function (displayName) {
-    var Element = function (_a) {
-        var children = _a.children;
-        return typeof children === 'string'
-            ? React.createElement('div', {}, children)
-            : children;
-    };
-    Element.displayName = displayName;
-    return Element;
-};
-exports.noop = function () { return null; };
-exports.isReactElement = function (child, Element) {
-    return child && child.type === Element;
-};
-exports.isStatelessComponent = function (Component) {
-    return !(Component.prototype && Component.prototype.render);
-};
-//# sourceMappingURL=index.js.map
-
-/***/ }),
-
-/***/ 6:
-/*!******************************************!*\
-  !*** ../node_modules/tslib/tslib.es6.js ***!
-  \******************************************/
-/*! exports provided: __extends, __assign, __rest, __decorate, __param, __metadata, __awaiter, __generator, __exportStar, __values, __read, __spread, __spreadArrays, __await, __asyncGenerator, __asyncDelegator, __asyncValues, __makeTemplateObject, __importStar, __importDefault */
-/*! all exports used */
-/*! ModuleConcatenation bailout: Module is referenced from these modules with unsupported syntax: ../node_modules/@wix/search-box/dist/src/components/ClearButton/index.js (referenced with cjs require), ../node_modules/@wix/search-box/dist/src/components/QuickResultItem/QuickResultItem.js (referenced with cjs require), ../node_modules/@wix/search-box/dist/src/components/SearchBox/SearchBox.js (referenced with cjs require), ../node_modules/@wix/search-box/dist/src/components/SearchBox/index.js (referenced with cjs require), ../node_modules/@wix/search-box/dist/src/components/SuggestionItem/SuggestionItem.js (referenced with cjs require), ../node_modules/@wix/search-box/dist/src/index.js (referenced with cjs require), ../node_modules/wix-ui-core/dist/src/clients/GoogleMaps/google2address/google2address.js (referenced with cjs require), ../node_modules/wix-ui-core/dist/src/components/address-input/AddressInput.js (referenced with cjs require), ../node_modules/wix-ui-core/dist/src/components/button-next/button-next.js (referenced with cjs require), ../node_modules/wix-ui-core/dist/src/components/captcha/Captcha.js (referenced with cjs require), ../node_modules/wix-ui-core/dist/src/components/deprecated/divider/Divider.js (referenced with cjs require), ../node_modules/wix-ui-core/dist/src/components/dropdown-content/DropdownContent.js (referenced with cjs require), ../node_modules/wix-ui-core/dist/src/components/dropdown-option/DropdownOption.js (referenced with cjs require), ../node_modules/wix-ui-core/dist/src/components/dropdown-option/OptionFactory.js (referenced with cjs require), ../node_modules/wix-ui-core/dist/src/components/dropdown/Dropdown.js (referenced with cjs require), ../node_modules/wix-ui-core/dist/src/components/file-picker-button/FilePickerButton.js (referenced with cjs require), ../node_modules/wix-ui-core/dist/src/components/input-with-options/InputWithOptions.js (referenced with cjs require), ../node_modules/wix-ui-core/dist/src/components/input/Input.js (referenced with cjs require), ../node_modules/wix-ui-core/dist/src/components/linear-progress-bar/LinearProgressBar.js (referenced with cjs require), ../node_modules/wix-ui-core/dist/src/components/pagination/PageStrip.js (referenced with cjs require), ../node_modules/wix-ui-core/dist/src/components/pagination/Pagination.js (referenced with cjs require), ../node_modules/wix-ui-core/dist/src/components/popover/Popover.js (referenced with cjs require), ../node_modules/wix-ui-core/dist/src/components/popover/index.js (referenced with cjs require), ../node_modules/wix-ui-core/dist/src/components/popover/modifiers.js (referenced with cjs require), ../node_modules/wix-ui-core/dist/src/components/radio-button/RadioButton.js (referenced with cjs require), ../node_modules/wix-ui-core/dist/src/components/slider/Slider.js (referenced with cjs require), ../node_modules/wix-ui-core/dist/src/components/slider/Thumb.js (referenced with cjs require), ../node_modules/wix-ui-core/dist/src/components/slider/Ticks.js (referenced with cjs require), ../node_modules/wix-ui-core/dist/src/components/time-picker/Tickers.js (referenced with cjs require), ../node_modules/wix-ui-core/dist/src/components/time-picker/TimePicker.js (referenced with cjs require), ../node_modules/wix-ui-core/dist/src/components/video/Video.js (referenced with cjs require), ../node_modules/wix-ui-core/dist/src/components/video/players/DailyMotion.js (referenced with cjs require), ../node_modules/wix-ui-core/dist/src/components/video/players/Facebook.js (referenced with cjs require), ../node_modules/wix-ui-core/dist/src/components/video/players/Playable.js (referenced with cjs require), ../node_modules/wix-ui-core/dist/src/components/video/players/Twitch.js (referenced with cjs require), ../node_modules/wix-ui-core/dist/src/components/video/players/Vimeo.js (referenced with cjs require), ../node_modules/wix-ui-core/dist/src/components/video/players/YouTube.js (referenced with cjs require), ../node_modules/wix-ui-core/dist/src/components/video/players/playerHOC.js (referenced with cjs require), ../node_modules/wix-ui-core/dist/src/hocs/Focusable/FocusableHOC.js (referenced with cjs require) */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__extends", function() { return __extends; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__assign", function() { return __assign; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__rest", function() { return __rest; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__decorate", function() { return __decorate; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__param", function() { return __param; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__metadata", function() { return __metadata; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__awaiter", function() { return __awaiter; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__generator", function() { return __generator; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__exportStar", function() { return __exportStar; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__values", function() { return __values; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__read", function() { return __read; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__spread", function() { return __spread; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__spreadArrays", function() { return __spreadArrays; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__await", function() { return __await; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__asyncGenerator", function() { return __asyncGenerator; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__asyncDelegator", function() { return __asyncDelegator; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__asyncValues", function() { return __asyncValues; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__makeTemplateObject", function() { return __makeTemplateObject; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__importStar", function() { return __importStar; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__importDefault", function() { return __importDefault; });
-/*! *****************************************************************************
-Copyright (c) Microsoft Corporation. All rights reserved.
-Licensed under the Apache License, Version 2.0 (the "License"); you may not use
-this file except in compliance with the License. You may obtain a copy of the
-License at http://www.apache.org/licenses/LICENSE-2.0
-
-THIS CODE IS PROVIDED ON AN *AS IS* BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
-KIND, EITHER EXPRESS OR IMPLIED, INCLUDING WITHOUT LIMITATION ANY IMPLIED
-WARRANTIES OR CONDITIONS OF TITLE, FITNESS FOR A PARTICULAR PURPOSE,
-MERCHANTABLITY OR NON-INFRINGEMENT.
-
-See the Apache Version 2.0 License for specific language governing permissions
-and limitations under the License.
-***************************************************************************** */
-/* global Reflect, Promise */
-
-var extendStatics = function(d, b) {
-    extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return extendStatics(d, b);
-};
-
-function __extends(d, b) {
-    extendStatics(d, b);
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-}
-
-var __assign = function() {
-    __assign = Object.assign || function __assign(t) {
-        for (var s, i = 1, n = arguments.length; i < n; i++) {
-            s = arguments[i];
-            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
-        }
-        return t;
-    }
-    return __assign.apply(this, arguments);
-}
-
-function __rest(s, e) {
-    var t = {};
-    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
-        t[p] = s[p];
-    if (s != null && typeof Object.getOwnPropertySymbols === "function")
-        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
-            if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))
-                t[p[i]] = s[p[i]];
-        }
-    return t;
-}
-
-function __decorate(decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-}
-
-function __param(paramIndex, decorator) {
-    return function (target, key) { decorator(target, key, paramIndex); }
-}
-
-function __metadata(metadataKey, metadataValue) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(metadataKey, metadataValue);
-}
-
-function __awaiter(thisArg, _arguments, P, generator) {
-    return new (P || (P = Promise))(function (resolve, reject) {
-        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
-        step((generator = generator.apply(thisArg, _arguments || [])).next());
-    });
-}
-
-function __generator(thisArg, body) {
-    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
-    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
-    function verb(n) { return function (v) { return step([n, v]); }; }
-    function step(op) {
-        if (f) throw new TypeError("Generator is already executing.");
-        while (_) try {
-            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
-            if (y = 0, t) op = [op[0] & 2, t.value];
-            switch (op[0]) {
-                case 0: case 1: t = op; break;
-                case 4: _.label++; return { value: op[1], done: false };
-                case 5: _.label++; y = op[1]; op = [0]; continue;
-                case 7: op = _.ops.pop(); _.trys.pop(); continue;
-                default:
-                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
-                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
-                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
-                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
-                    if (t[2]) _.ops.pop();
-                    _.trys.pop(); continue;
-            }
-            op = body.call(thisArg, _);
-        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
-        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
-    }
-}
-
-function __exportStar(m, exports) {
-    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
-}
-
-function __values(o) {
-    var m = typeof Symbol === "function" && o[Symbol.iterator], i = 0;
-    if (m) return m.call(o);
-    return {
-        next: function () {
-            if (o && i >= o.length) o = void 0;
-            return { value: o && o[i++], done: !o };
-        }
-    };
-}
-
-function __read(o, n) {
-    var m = typeof Symbol === "function" && o[Symbol.iterator];
-    if (!m) return o;
-    var i = m.call(o), r, ar = [], e;
-    try {
-        while ((n === void 0 || n-- > 0) && !(r = i.next()).done) ar.push(r.value);
-    }
-    catch (error) { e = { error: error }; }
-    finally {
-        try {
-            if (r && !r.done && (m = i["return"])) m.call(i);
-        }
-        finally { if (e) throw e.error; }
-    }
-    return ar;
-}
-
-function __spread() {
-    for (var ar = [], i = 0; i < arguments.length; i++)
-        ar = ar.concat(__read(arguments[i]));
-    return ar;
-}
-
-function __spreadArrays() {
-    for (var s = 0, i = 0, il = arguments.length; i < il; i++) s += arguments[i].length;
-    for (var r = Array(s), k = 0, i = 0; i < il; i++)
-        for (var a = arguments[i], j = 0, jl = a.length; j < jl; j++, k++)
-            r[k] = a[j];
-    return r;
-};
-
-function __await(v) {
-    return this instanceof __await ? (this.v = v, this) : new __await(v);
-}
-
-function __asyncGenerator(thisArg, _arguments, generator) {
-    if (!Symbol.asyncIterator) throw new TypeError("Symbol.asyncIterator is not defined.");
-    var g = generator.apply(thisArg, _arguments || []), i, q = [];
-    return i = {}, verb("next"), verb("throw"), verb("return"), i[Symbol.asyncIterator] = function () { return this; }, i;
-    function verb(n) { if (g[n]) i[n] = function (v) { return new Promise(function (a, b) { q.push([n, v, a, b]) > 1 || resume(n, v); }); }; }
-    function resume(n, v) { try { step(g[n](v)); } catch (e) { settle(q[0][3], e); } }
-    function step(r) { r.value instanceof __await ? Promise.resolve(r.value.v).then(fulfill, reject) : settle(q[0][2], r); }
-    function fulfill(value) { resume("next", value); }
-    function reject(value) { resume("throw", value); }
-    function settle(f, v) { if (f(v), q.shift(), q.length) resume(q[0][0], q[0][1]); }
-}
-
-function __asyncDelegator(o) {
-    var i, p;
-    return i = {}, verb("next"), verb("throw", function (e) { throw e; }), verb("return"), i[Symbol.iterator] = function () { return this; }, i;
-    function verb(n, f) { i[n] = o[n] ? function (v) { return (p = !p) ? { value: __await(o[n](v)), done: n === "return" } : f ? f(v) : v; } : f; }
-}
-
-function __asyncValues(o) {
-    if (!Symbol.asyncIterator) throw new TypeError("Symbol.asyncIterator is not defined.");
-    var m = o[Symbol.asyncIterator], i;
-    return m ? m.call(o) : (o = typeof __values === "function" ? __values(o) : o[Symbol.iterator](), i = {}, verb("next"), verb("throw"), verb("return"), i[Symbol.asyncIterator] = function () { return this; }, i);
-    function verb(n) { i[n] = o[n] && function (v) { return new Promise(function (resolve, reject) { v = o[n](v), settle(resolve, reject, v.done, v.value); }); }; }
-    function settle(resolve, reject, d, v) { Promise.resolve(v).then(function(v) { resolve({ value: v, done: d }); }, reject); }
-}
-
-function __makeTemplateObject(cooked, raw) {
-    if (Object.defineProperty) { Object.defineProperty(cooked, "raw", { value: raw }); } else { cooked.raw = raw; }
-    return cooked;
-};
-
-function __importStar(mod) {
-    if (mod && mod.__esModule) return mod;
-    var result = {};
-    if (mod != null) for (var k in mod) if (Object.hasOwnProperty.call(mod, k)) result[k] = mod[k];
-    result.default = mod;
-    return result;
-}
-
-function __importDefault(mod) {
-    return (mod && mod.__esModule) ? mod : { default: mod };
-}
-
-
-/***/ }),
-
-/***/ 697:
-/*!*********************************************************!*\
-  !*** ../node_modules/wix-ui-core/file-picker-button.js ***!
-  \*********************************************************/
-/*! no static exports found */
-/*! all exports used */
-/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__(/*! ./dist/src/components/file-picker-button */ 698);
-
-
-/***/ }),
-
-/***/ 698:
-/*!***********************************************************************************!*\
-  !*** ../node_modules/wix-ui-core/dist/src/components/file-picker-button/index.js ***!
-  \***********************************************************************************/
-/*! no static exports found */
-/*! all exports used */
-/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-Object.defineProperty(exports, "__esModule", { value: true });
-var FilePickerButton_1 = __webpack_require__(/*! ./FilePickerButton */ 699);
-exports.FilePickerButton = FilePickerButton_1.FilePickerButton;
-//# sourceMappingURL=index.js.map
-
-/***/ }),
-
-/***/ 699:
-/*!**********************************************************************************************!*\
-  !*** ../node_modules/wix-ui-core/dist/src/components/file-picker-button/FilePickerButton.js ***!
-  \**********************************************************************************************/
-/*! no static exports found */
-/*! all exports used */
-/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-Object.defineProperty(exports, "__esModule", { value: true });
-var tslib_1 = __webpack_require__(/*! tslib */ 6);
-var React = __webpack_require__(/*! react */ 0);
-var FilePickerButton_st_css_1 = __webpack_require__(/*! ./FilePickerButton.st.css */ 700);
-var FilePickerButton_helpers_1 = __webpack_require__(/*! ./test/FilePickerButton.helpers */ 701);
-var utils_1 = __webpack_require__(/*! ../../utils */ 58);
-var FilePickerButton = /** @class */ (function (_super) {
-    tslib_1.__extends(FilePickerButton, _super);
-    function FilePickerButton(props) {
-        var _this = _super.call(this, props) || this;
-        _this.handleFileInputChange = function (e) {
-            var files = Array.from(e.target.files);
-            _this.props.onChange(files);
-        };
-        _this.handleChooseFileButtonClick = function () {
-            if (!_this.props.disabled) {
-                _this.fileInputRef.current.click();
-                _this.chooseFileButtonRef.current.blur();
-            }
-        };
-        _this.handleChooseFileButtonFocus = function (e) {
-            !_this.props.disabled && _this.props.onFocus(e);
-        };
-        _this.handleChooseFileButtonBlur = function (e) {
-            !_this.props.disabled && _this.props.onBlur(e);
-        };
-        _this.fileInputRef = React.createRef();
-        _this.chooseFileButtonRef = React.createRef();
-        _this.state = {
-            selectedFiles: [],
-        };
-        return _this;
-    }
-    FilePickerButton.prototype.render = function () {
-        var _a = this.props, id = _a.id, children = _a.children, accept = _a.accept, required = _a.required, disabled = _a.disabled;
-        var buttonId = id ? FilePickerButton_helpers_1.DataHook.ChooseFileButton + "-" + id : null;
-        return (React.createElement("div", tslib_1.__assign({}, FilePickerButton_st_css_1.default('root', { required: required, disabled: disabled }, this.props)),
-            React.createElement("input", { id: id, type: "file", tabIndex: -1, "data-hook": FilePickerButton_helpers_1.DataHook.FileInput, ref: this.fileInputRef, className: FilePickerButton_st_css_1.default.fileInput, onChange: this.handleFileInputChange, accept: accept, required: required, disabled: disabled, "aria-labelledby": buttonId }),
-            React.createElement("button", { id: buttonId, type: "button", "data-hook": FilePickerButton_helpers_1.DataHook.ChooseFileButton, ref: this.chooseFileButtonRef, className: FilePickerButton_st_css_1.default.chooseFileButton, onClick: this.handleChooseFileButtonClick, onFocus: this.handleChooseFileButtonFocus, onBlur: this.handleChooseFileButtonBlur, disabled: disabled }, children)));
-    };
-    FilePickerButton.prototype.focus = function () {
-        this.chooseFileButtonRef.current.focus();
-    };
-    FilePickerButton.prototype.blur = function () {
-        this.chooseFileButtonRef.current.blur();
-    };
-    FilePickerButton.prototype.reset = function () {
-        this.fileInputRef.current.value = '';
-        this.props.onChange([]);
-    };
-    FilePickerButton.displayName = 'FilePickerButton';
-    FilePickerButton.defaultProps = {
-        required: false,
-        disabled: false,
-        onFocus: utils_1.noop,
-        onBlur: utils_1.noop,
-        onChange: utils_1.noop,
-    };
-    return FilePickerButton;
-}(React.Component));
-exports.FilePickerButton = FilePickerButton;
-//# sourceMappingURL=FilePickerButton.js.map
-
-/***/ }),
-
-/***/ 700:
-/*!**************************************************************************************************!*\
-  !*** ../node_modules/wix-ui-core/dist/src/components/file-picker-button/FilePickerButton.st.css ***!
-  \**************************************************************************************************/
-/*! exports provided: default */
-/*! all exports used */
-/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
-/***/ (function(module, exports, __webpack_require__) {
-
-Object.defineProperty(exports, "__esModule", { value: true })
-
-exports.default = __webpack_require__.stylable.create(
-  "root",
-  "FilePickerButton3895074374",
-  {"root":"FilePickerButton3895074374--root","fileInput":"FilePickerButton3895074374--fileInput","chooseFileButton":"FilePickerButton3895074374--chooseFileButton"},
-  "",
-  2,
-  /*! ../node_modules/wix-ui-core/dist/src/components/file-picker-button/FilePickerButton.st.css */ 700
-);
-
-
-
-/***/ }),
-
-/***/ 701:
-/*!***********************************************************************************************************!*\
-  !*** ../node_modules/wix-ui-core/dist/src/components/file-picker-button/test/FilePickerButton.helpers.js ***!
-  \***********************************************************************************************************/
-/*! no static exports found */
-/*! all exports used */
-/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-Object.defineProperty(exports, "__esModule", { value: true });
-var DataHook;
-(function (DataHook) {
-    DataHook["FileInput"] = "file-picker-button-file-input";
-    DataHook["ChooseFileButton"] = "file-picker-button-choose-file-button";
-})(DataHook = exports.DataHook || (exports.DataHook = {}));
-//# sourceMappingURL=FilePickerButton.helpers.js.map
-
-/***/ }),
-
-/***/ 702:
-/*!*****************************************************!*\
-  !*** ./components/BorisButton/BorisButton.santa.js ***!
-  \*****************************************************/
-/*! no static exports found */
-/*! all exports used */
-/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.santaBorisButton = exports.dataHooks = undefined;
+var _TagsSt2 = _interopRequireDefault(_TagsSt);
 
 var _createReactClass = __webpack_require__(/*! create-react-class */ 17);
 
 var _createReactClass2 = _interopRequireDefault(_createReactClass);
 
-var _BorisButtonSt = __webpack_require__(/*! ./BorisButton.st.css */ 273);
-
-var _BorisButtonSt2 = _interopRequireDefault(_BorisButtonSt);
-
 var _santaComponents = __webpack_require__(/*! santa-components */ 14);
-
-var _BorisButton = __webpack_require__(/*! ./BorisButton */ 367);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var skinBasedComp = _santaComponents.mixins.skinBasedComp;
+var Tags = exports.Tags = function Tags(props) {
+  var id = props.id,
+      alignment = props.alignment,
+      verticalSpacing = props.verticalSpacing,
+      horizontalSpacing = props.horizontalSpacing,
+      tags = props.tags,
+      onTagClick = props.onTagClick;
+
+  var tagsContainerStyle = {
+    margin: verticalSpacing / -2 + 'px ' + horizontalSpacing / -2 + 'px'
+  };
+  var tagStyle = {
+    margin: verticalSpacing / 2 + 'px ' + horizontalSpacing / 2 + 'px',
+    maxWidth: 'calc(100% + ' + horizontalSpacing + ')'
+  };
+
+  return _react2.default.createElement(
+    'div',
+    _extends({ id: id }, (0, _TagsSt2.default)('root', { alignment: alignment }, props), { style: props.style }),
+    _react2.default.createElement(
+      'nav',
+      {
+        style: tagsContainerStyle,
+        className: _TagsSt2.default.tagsContainer,
+        'aria-label': 'Tags Navigation'
+      },
+      tags.map(function (_ref, id) {
+        var label = _ref.label,
+            link = _ref.link;
+        return _react2.default.createElement(
+          'a',
+          _extends({
+            'data-hook': 'tag',
+            key: id,
+            tabIndex: '0',
+            style: tagStyle,
+            className: _TagsSt2.default.tag,
+            onClick: function onClick() {
+              return onTagClick(label);
+            }
+          }, link),
+          label
+        );
+      })
+    )
+  );
+};
+
+Tags.displayName = 'CoreTags';
+
+Tags.propTypes = {
+  id: _propTypes.string,
+  className: _propTypes.string,
+  tags: _propTypes.array,
+  horizontalSpacing: _propTypes.number,
+  verticalSpacing: _propTypes.number,
+  alignment: _propTypes.string,
+  onTagClick: _propTypes.func,
+  style: _propTypes.object
+};
+
+var skinBasedComp = _santaComponents.mixins.skinBasedComp,
+    runTimeCompData = _santaComponents.mixins.runTimeCompData;
 
 
 var getComponentSkins = function getComponentSkins() {
   return {
-    'wixui.skins.BorisButton': _BorisButtonSt2.default.$skin
+    'wixui.skins.Tags': _TagsSt2.default.$skin
   };
 };
 
-var dataHooks = exports.dataHooks = {
-  borisButton: 'boris-button'
-};
+var santaTags = exports.santaTags = (0, _createReactClass2.default)({
+  displayName: 'Tags',
 
-/**
- * @class components.BorisButton
- * @extends {core.skinBasedComp}
- */
-
-var santaBorisButton = exports.santaBorisButton = (0, _createReactClass2.default)({
-  displayName: 'BorisButton',
-
-  mixins: [skinBasedComp(getComponentSkins())],
+  mixins: [skinBasedComp(getComponentSkins()), runTimeCompData],
 
   propTypes: {
-    styleId: _santaComponents.santaTypesDefinitions.Component.styleId,
-    style: _santaComponents.santaTypesDefinitions.Component.style,
-    id: _santaComponents.santaTypesDefinitions.Component.id,
-    compData: _santaComponents.santaTypesDefinitions.Component.compData,
-    compProp: _santaComponents.santaTypesDefinitions.Component.compProp
+    tagList: _santaComponents.santaTypesDefinitions.Tags.tagList,
+    styleId: _santaComponents.santaTypesDefinitions.Component.styleId.isRequired,
+    compProp: _santaComponents.santaTypesDefinitions.Component.compProp.isRequired,
+    compData: _santaComponents.santaTypesDefinitions.Component.compData.isRequired,
+    style: _santaComponents.santaTypesDefinitions.Component.style.isRequired
   },
 
   statics: {
     getComponentSkins: getComponentSkins
   },
 
+  onTagClick: function onTagClick(tag) {
+    this.handleAction(_santaComponents.constants.SITE.ACTION_TYPES.TAG_CLICK, { tag: tag });
+  },
   getSkinProperties: function getSkinProperties() {
-    var props = {
-      className: this.props.styleId,
-      style: this.props.style,
-      id: this.props.id,
-      buttonLabel: this.props.compData.buttonLabel,
-      buttonAlignment: this.props.compProp.buttonAlignment,
-      filesAlignment: this.props.compProp.filesAlignment,
-      labelMargin: this.props.compProp.labelMargin,
-      labelPadding: this.props.compProp.labelPadding,
-      label: this.props.compData.label,
-      'data-hook': dataHooks.borisButton + '-' + this.props.id
-    };
+    var _props = this.props,
+        styleId = _props.styleId,
+        _props$compProp = _props.compProp,
+        horizontalSpacing = _props$compProp.horizontalSpacing,
+        verticalSpacing = _props$compProp.verticalSpacing,
+        alignment = _props$compProp.alignment;
+
 
     return {
       '': {
-        children: _santaComponents.utils.createReactElement(_BorisButton.BorisButton, props)
+        parentConst: Tags,
+        className: styleId,
+        tags: this.props.tagList,
+        horizontalSpacing: horizontalSpacing,
+        verticalSpacing: verticalSpacing,
+        alignment: alignment,
+        onTagClick: this.onTagClick,
+        style: this.props.style
       }
     };
   }
@@ -1770,4 +1239,4 @@ module.exports = invariant;
 /***/ })
 
 }]);
-//# sourceMappingURL=wixui.BorisButton.chunk.js.map
+//# sourceMappingURL=wixui.Tags.chunk.js.map

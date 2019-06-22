@@ -1,2 +1,660 @@
-!function webpackUniversalModuleDefinition(e,t){"object"==typeof exports&&"object"==typeof module?module.exports=t(require("react"),require("prop-types"),require("lodash"),require("react-dom"),require("santa-components")):"function"==typeof define&&define.amd?define(["react","prop-types","lodash","reactDOM","santa-components"],t):"object"==typeof exports?exports.viewerComponentService=t(require("react"),require("prop-types"),require("lodash"),require("react-dom"),require("santa-components")):e.viewerComponentService=t(e.React,e["prop-types"],e._,e.ReactDOM,e.santaComponents)}("undefined"!=typeof self?self:this,function(e,t,n,r,i){return function(e){function webpackJsonpCallback(t){for(var r,i,u=t[0],s=t[1],a=0,l=[];a<u.length;a++)i=u[a],n[i]&&l.push(n[i][0]),n[i]=0;for(r in s)Object.prototype.hasOwnProperty.call(s,r)&&(e[r]=s[r]);for(o&&o(t);l.length;)l.shift()()}var t={},n={34:0};function __webpack_require__(n){if(t[n])return t[n].exports;var r=t[n]={i:n,l:!1,exports:{}};return e[n].call(r.exports,r,r.exports,__webpack_require__),r.l=!0,r.exports}__webpack_require__.e=function requireEnsure(e){var t=[],r=n[e];if(0!==r)if(r)t.push(r[2]);else{var i=new Promise(function(t,i){r=n[e]=[t,i]});t.push(r[2]=i);var u,o=document.createElement("script");o.charset="utf-8",o.timeout=120,__webpack_require__.nc&&o.setAttribute("nonce",__webpack_require__.nc),o.src=function jsonpScriptSrc(e){return __webpack_require__.p+""+({36:"wixui.AddressInput",37:"wixui.BarChart",38:"wixui.BorisButton",39:"wixui.Captcha",40:"wixui.LineShareButton",41:"wixui.MusicPlayer",42:"wixui.Pagination",43:"wixui.ProgressBar",44:"wixui.RatingsDisplay",45:"wixui.RatingsInput",46:"wixui.RichTextBox",47:"wixui.SearchBox",48:"wixui.Slider",49:"wixui.StylableButton",50:"wixui.StylableLine",51:"wixui.Tags",52:"wixui.TimePicker",53:"wixui.ToggleSwitch",54:"wixui.VideoPlayer"}[e]||e)+".chunk.min.js"}(e),u=function(t){o.onerror=o.onload=null,clearTimeout(s);var r=n[e];if(0!==r){if(r){var i=t&&("load"===t.type?"missing":t.type),u=t&&t.target&&t.target.src,a=new Error("Loading chunk "+e+" failed.\n("+i+": "+u+")");a.type=i,a.request=u,r[1](a)}n[e]=void 0}};var s=setTimeout(function(){u({type:"timeout",target:o})},12e4);o.onerror=o.onload=u,document.head.appendChild(o)}return Promise.all(t)},__webpack_require__.m=e,__webpack_require__.c=t,__webpack_require__.d=function(e,t,n){__webpack_require__.o(e,t)||Object.defineProperty(e,t,{enumerable:!0,get:n})},__webpack_require__.r=function(e){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},__webpack_require__.t=function(e,t){if(1&t&&(e=__webpack_require__(e)),8&t)return e;if(4&t&&"object"==typeof e&&e&&e.__esModule)return e;var n=Object.create(null);if(__webpack_require__.r(n),Object.defineProperty(n,"default",{enumerable:!0,value:e}),2&t&&"string"!=typeof e)for(var r in e)__webpack_require__.d(n,r,function(t){return e[t]}.bind(null,r));return n},__webpack_require__.n=function(e){var t=e&&e.__esModule?function getDefault(){return e.default}:function getModuleExports(){return e};return __webpack_require__.d(t,"a",t),t},__webpack_require__.o=function(e,t){return Object.prototype.hasOwnProperty.call(e,t)},__webpack_require__.p="https://static.parastorage.com/services/wix-ui-santa/1.140.0/",__webpack_require__.oe=function(e){throw console.error(e),e},("undefined"!=typeof self?self:this).__stylable_yoshi__=__webpack_require__.stylable=("undefined"!=typeof self?self:this).__stylable_yoshi__||function StylableRuntime(e){function require(){return e}return e=e||{},function(){var t=function t(e){var t=this;this.options=e,this.create=function(e,n){var r=t.options.createElement("style");return r.textContent=e.$css||"",r.setAttribute(t.options.attrKey,n),r.setAttribute("st-depth",e.$depth+""),r},this.hasKey=function(e){return e.hasAttribute(t.options.attrKey)},this.update=function(e,t){return t.textContent!==e.$css&&(t.textContent=e.$css||""),t},this.renderKey=function(e){return e.$id}};e.CacheStyleNodeRenderer=t}(),e.createDOMListRenderer=function createDOMListRenderer(e){var t,n={},r=function(t){var r=e.renderKey(t),i=n[r];return i?e.update(t,i):function(t,r){return n[e.renderKey(t)]=r}(t,e.create(t,r))};return{render:function(i,u){var o;if(void 0===u&&(u=[]),u.length){for(var s=t,a=0;a<u.length;a++)(o=r(u[a]))!==s?i.insertBefore(o,s||null):s=o.nextElementSibling;for(t=n[e.renderKey(u[0])];o.nextElementSibling&&e.hasKey(o.nextElementSibling);)i.removeChild(o.nextElementSibling)}else for(;t;)s=t.nextElementSibling,i.removeChild(t),t=s&&e.hasKey(s)?s:void 0},nodes:n}},function(){var t=require(),n=require(),r=function(){function RuntimeRenderer(){var e=this;this.styles=[],this.stylesMap={},this.renderer=null,this.window=null,this.id=null,this.update=function(){e.renderer&&e.renderer.render(e.window.document.head,e.styles)}}return RuntimeRenderer.prototype.init=function(e){!this.window&&e&&(e.__stylable_renderer_global_counter=e.__stylable_renderer_global_counter||0,this.id=e.__stylable_renderer_global_counter++,this.window=e,this.renderer=n.createDOMListRenderer(new t.CacheStyleNodeRenderer({attrKey:"st-id"+(this.id?"-"+this.id:""),createElement:e.document.createElement.bind(e.document)})),this.update())},RuntimeRenderer.prototype.onRegister=function(){this.window&&this.window.requestAnimationFrame(this.update)},RuntimeRenderer.prototype.register=function(e){var t=this.stylesMap[e.$id];t&&this.removeStyle(t);var n=this.findDepthIndex(e.$depth);this.styles.splice(n+1,0,e),this.stylesMap[e.$id]=e,this.onRegister()},RuntimeRenderer.prototype.removeStyle=function(e){var t=this.styles.indexOf(e);~t&&this.styles.splice(t,1),delete this.stylesMap[e.$id]},RuntimeRenderer.prototype.findDepthIndex=function(e){for(var t=this.styles.length;t--;)if(this.styles[t].$depth<=e)return t;return t},RuntimeRenderer.prototype.getStyles=function(e,t){var n=this;return this.sortStyles(e.map(function(e){return n.stylesMap[e]}),t)},RuntimeRenderer.prototype.sortStyles=function(e,t){var n=this;void 0===t&&(t=!1);var r=e.slice();return t&&r.sort(function(e,t){return n.styles.indexOf(e)-n.styles.indexOf(t)}),r.sort(function(e,t){return e.$depth-t.$depth}),r},RuntimeRenderer}();e.RuntimeRenderer=r,e.$=new r}(),e.create=function create(e,t,n,r,i,u){var o="data-"+t.toLowerCase()+"-";function cssStates(e){return e?Object.keys(e).reduce(function(t,n){var r=e[n];return void 0===r||null===r||!1===r?t:(t[o+n.toLowerCase()]=r,t)},{}):{}}function get(e){return n[e]}function stylable_runtime_stylesheet(e,t,n){e=e?function mapClasses(e){return e.split(/\s+/g).map(function(e){return get(e)||e}).join(" ")}(e):"";var r=cssStates(t);if(n){for(var i in n)i.match(/^data-/)&&(r[i]=n[i]);n.className&&(e+=" "+n.className)}return e&&(r.className=e),r}return n.$root=e,n.$namespace=t,n.$depth=i,n.$id=u,n.$css=r,n.$get=get,n.$cssStates=cssStates,Object.setPrototypeOf(stylable_runtime_stylesheet,n),stylable_runtime_stylesheet[n.$root]=n[n.$root],stylable_runtime_stylesheet},e.createTheme=function createTheme(e,t,n){return{$css:e,$depth:t,$id:n,$theme:!0}},e}();var r=("undefined"!=typeof self?self:this).webpackJsonp_wix_ui_santa=("undefined"!=typeof self?self:this).webpackJsonp_wix_ui_santa||[],i=r.push.bind(r);r.push=webpackJsonpCallback,r=r.slice();for(var u=0;u<r.length;u++)webpackJsonpCallback(r[u]);var o=i;return __webpack_require__.p="undefined"!=typeof window&&window.__STATICS_BASE_URL__||__webpack_require__.p,__webpack_require__(__webpack_require__.s=1063)}({0:function(t,n){t.exports=e},1:function(e,n){e.exports=t},1063:function(e,t,n){"use strict";var r=function _interopRequireDefault(e){return e&&e.__esModule?e:{default:e}}(n(87));var i={"wixui.RichTextBox":function wixuiRichTextBox(){return Promise.all([n.e(46).then(n.t.bind(null,412,7))])},"wixui.ToggleSwitch":function wixuiToggleSwitch(){return Promise.all([n.e(53).then(n.t.bind(null,411,7))])},"wixui.Slider":function wixuiSlider(){return Promise.all([n.e(48).then(n.t.bind(null,441,7))])},"wixui.SearchBox":function wixuiSearchBox(){return Promise.all([n.e(47).then(n.t.bind(null,443,7))])},"wixui.Captcha":function wixuiCaptcha(){return Promise.all([n.e(39).then(n.t.bind(null,438,7))])},"wixui.Pagination":function wixuiPagination(){return Promise.all([n.e(42).then(n.t.bind(null,435,7))])},"wixui.AddressInput":function wixuiAddressInput(){return Promise.all([n.e(36).then(n.t.bind(null,445,7))])},"wixui.StylableLine":function wixuiStylableLine(){return Promise.all([n.e(50).then(n.t.bind(null,448,7))])},"wixui.Tags":function wixuiTags(){return Promise.all([n.e(51).then(n.t.bind(null,436,7))])},"wixui.RatingsInput":function wixuiRatingsInput(){return Promise.all([n.e(45).then(n.t.bind(null,437,7))])},"wixui.TimePicker":function wixuiTimePicker(){return Promise.all([n.e(52).then(n.t.bind(null,446,7))])},"wixui.RatingsDisplay":function wixuiRatingsDisplay(){return Promise.all([n.e(44).then(n.t.bind(null,439,7))])},"wixui.VideoPlayer":function wixuiVideoPlayer(){return Promise.all([n.e(54).then(n.t.bind(null,434,7))])},"wixui.LineShareButton":function wixuiLineShareButton(){return Promise.all([n.e(40).then(n.t.bind(null,447,7))])},"wixui.MusicPlayer":function wixuiMusicPlayer(){return Promise.all([n.e(41).then(n.t.bind(null,400,7))])},"wixui.StylableButton":function wixuiStylableButton(){return Promise.all([n.e(49).then(n.t.bind(null,449,7))])},"wixui.ProgressBar":function wixuiProgressBar(){return Promise.all([n.e(43).then(n.t.bind(null,442,7))])},"wixui.BarChart":function wixuiBarChart(){return Promise.all([n.e(37).then(n.t.bind(null,440,7))])},"wixui.BorisButton":function wixuiBorisButton(){return Promise.all([n.e(38).then(n.t.bind(null,444,7))])}};e.exports=new r.default(i)},11:function(e,t){e.exports=r},14:function(e,t){e.exports=i},2:function(e,t){e.exports=n},87:function(e,t,n){"use strict";e.exports=function BaseService(e){var t=e;function setWebpackPublicPath(e){n.p=e+"/"}function loadComponent(e){return exists(e)?t[e]().catch(function(t){return console.error("coudn't load "+e,t),[{default:{componentType:e,component:function component(){return null},santaComponent:function santaComponent(){return null},skin:{}}}]}):Promise.reject(new Error("no such component "+e))}function exists(e){return!!t[e]}return{exists:exists,loadAll:function loadAll(e){return setWebpackPublicPath(e),Promise.all(Object.keys(t).map(loadComponent))},load:function load(e,t){return setWebpackPublicPath(t),loadComponent(e)}}}}})});
-//# sourceMappingURL=viewerComponentService.bundle.min.js.map
+(function webpackUniversalModuleDefinition(root, factory) {
+	if(typeof exports === 'object' && typeof module === 'object')
+		module.exports = factory(require("react"), require("prop-types"), require("lodash"), require("react-dom"), require("santa-components"));
+	else if(typeof define === 'function' && define.amd)
+		define(["react", "prop-types", "lodash", "reactDOM", "santa-components"], factory);
+	else if(typeof exports === 'object')
+		exports["viewerComponentService"] = factory(require("react"), require("prop-types"), require("lodash"), require("react-dom"), require("santa-components"));
+	else
+		root["viewerComponentService"] = factory(root["React"], root["prop-types"], root["_"], root["ReactDOM"], root["santaComponents"]);
+})((typeof self !== 'undefined' ? self : this), function(__WEBPACK_EXTERNAL_MODULE__0__, __WEBPACK_EXTERNAL_MODULE__1__, __WEBPACK_EXTERNAL_MODULE__2__, __WEBPACK_EXTERNAL_MODULE__11__, __WEBPACK_EXTERNAL_MODULE__14__) {
+return /******/ (function(modules) { // webpackBootstrap
+/******/ 	// install a JSONP callback for chunk loading
+/******/ 	function webpackJsonpCallback(data) {
+/******/ 		var chunkIds = data[0];
+/******/ 		var moreModules = data[1];
+/******/
+/******/
+/******/ 		// add "moreModules" to the modules object,
+/******/ 		// then flag all "chunkIds" as loaded and fire callback
+/******/ 		var moduleId, chunkId, i = 0, resolves = [];
+/******/ 		for(;i < chunkIds.length; i++) {
+/******/ 			chunkId = chunkIds[i];
+/******/ 			if(installedChunks[chunkId]) {
+/******/ 				resolves.push(installedChunks[chunkId][0]);
+/******/ 			}
+/******/ 			installedChunks[chunkId] = 0;
+/******/ 		}
+/******/ 		for(moduleId in moreModules) {
+/******/ 			if(Object.prototype.hasOwnProperty.call(moreModules, moduleId)) {
+/******/ 				modules[moduleId] = moreModules[moduleId];
+/******/ 			}
+/******/ 		}
+/******/ 		if(parentJsonpFunction) parentJsonpFunction(data);
+/******/
+/******/ 		while(resolves.length) {
+/******/ 			resolves.shift()();
+/******/ 		}
+/******/
+/******/ 	};
+/******/
+/******/
+/******/ 	// The module cache
+/******/ 	var installedModules = {};
+/******/
+/******/ 	// object to store loaded and loading chunks
+/******/ 	// undefined = chunk not loaded, null = chunk preloaded/prefetched
+/******/ 	// Promise = chunk loading, 0 = chunk loaded
+/******/ 	var installedChunks = {
+/******/ 		34: 0
+/******/ 	};
+/******/
+/******/
+/******/
+/******/ 	// script path function
+/******/ 	function jsonpScriptSrc(chunkId) {
+/******/ 		return __webpack_require__.p + "" + ({"36":"wixui.AddressInput","37":"wixui.BarChart","38":"wixui.BorisButton","39":"wixui.Captcha","40":"wixui.LineShareButton","41":"wixui.MusicPlayer","42":"wixui.Pagination","43":"wixui.ProgressBar","44":"wixui.RatingsDisplay","45":"wixui.RatingsInput","46":"wixui.RichTextBox","47":"wixui.SearchBox","48":"wixui.Slider","49":"wixui.StylableButton","50":"wixui.StylableLine","51":"wixui.Tags","52":"wixui.TimePicker","53":"wixui.ToggleSwitch","54":"wixui.VideoPlayer"}[chunkId]||chunkId) + ".chunk.js"
+/******/ 	}
+/******/
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/
+/******/ 		// Check if module is in cache
+/******/ 		if(installedModules[moduleId]) {
+/******/ 			return installedModules[moduleId].exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = installedModules[moduleId] = {
+/******/ 			i: moduleId,
+/******/ 			l: false,
+/******/ 			exports: {}
+/******/ 		};
+/******/
+/******/ 		// Execute the module function
+/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+/******/
+/******/ 		// Flag the module as loaded
+/******/ 		module.l = true;
+/******/
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/
+/******/ 	// This file contains only the entry chunk.
+/******/ 	// The chunk loading function for additional chunks
+/******/ 	__webpack_require__.e = function requireEnsure(chunkId) {
+/******/ 		var promises = [];
+/******/
+/******/
+/******/ 		// JSONP chunk loading for javascript
+/******/
+/******/ 		var installedChunkData = installedChunks[chunkId];
+/******/ 		if(installedChunkData !== 0) { // 0 means "already installed".
+/******/
+/******/ 			// a Promise means "currently loading".
+/******/ 			if(installedChunkData) {
+/******/ 				promises.push(installedChunkData[2]);
+/******/ 			} else {
+/******/ 				// setup Promise in chunk cache
+/******/ 				var promise = new Promise(function(resolve, reject) {
+/******/ 					installedChunkData = installedChunks[chunkId] = [resolve, reject];
+/******/ 				});
+/******/ 				promises.push(installedChunkData[2] = promise);
+/******/
+/******/ 				// start chunk loading
+/******/ 				var script = document.createElement('script');
+/******/ 				var onScriptComplete;
+/******/
+/******/ 				script.charset = 'utf-8';
+/******/ 				script.timeout = 120;
+/******/ 				if (__webpack_require__.nc) {
+/******/ 					script.setAttribute("nonce", __webpack_require__.nc);
+/******/ 				}
+/******/ 				script.src = jsonpScriptSrc(chunkId);
+/******/
+/******/ 				onScriptComplete = function (event) {
+/******/ 					// avoid mem leaks in IE.
+/******/ 					script.onerror = script.onload = null;
+/******/ 					clearTimeout(timeout);
+/******/ 					var chunk = installedChunks[chunkId];
+/******/ 					if(chunk !== 0) {
+/******/ 						if(chunk) {
+/******/ 							var errorType = event && (event.type === 'load' ? 'missing' : event.type);
+/******/ 							var realSrc = event && event.target && event.target.src;
+/******/ 							var error = new Error('Loading chunk ' + chunkId + ' failed.\n(' + errorType + ': ' + realSrc + ')');
+/******/ 							error.type = errorType;
+/******/ 							error.request = realSrc;
+/******/ 							chunk[1](error);
+/******/ 						}
+/******/ 						installedChunks[chunkId] = undefined;
+/******/ 					}
+/******/ 				};
+/******/ 				var timeout = setTimeout(function(){
+/******/ 					onScriptComplete({ type: 'timeout', target: script });
+/******/ 				}, 120000);
+/******/ 				script.onerror = script.onload = onScriptComplete;
+/******/ 				document.head.appendChild(script);
+/******/ 			}
+/******/ 		}
+/******/ 		return Promise.all(promises);
+/******/ 	};
+/******/
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = modules;
+/******/
+/******/ 	// expose the module cache
+/******/ 	__webpack_require__.c = installedModules;
+/******/
+/******/ 	// define getter function for harmony exports
+/******/ 	__webpack_require__.d = function(exports, name, getter) {
+/******/ 		if(!__webpack_require__.o(exports, name)) {
+/******/ 			Object.defineProperty(exports, name, { enumerable: true, get: getter });
+/******/ 		}
+/******/ 	};
+/******/
+/******/ 	// define __esModule on exports
+/******/ 	__webpack_require__.r = function(exports) {
+/******/ 		if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 			Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 		}
+/******/ 		Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 	};
+/******/
+/******/ 	// create a fake namespace object
+/******/ 	// mode & 1: value is a module id, require it
+/******/ 	// mode & 2: merge all properties of value into the ns
+/******/ 	// mode & 4: return value when already ns object
+/******/ 	// mode & 8|1: behave like require
+/******/ 	__webpack_require__.t = function(value, mode) {
+/******/ 		if(mode & 1) value = __webpack_require__(value);
+/******/ 		if(mode & 8) return value;
+/******/ 		if((mode & 4) && typeof value === 'object' && value && value.__esModule) return value;
+/******/ 		var ns = Object.create(null);
+/******/ 		__webpack_require__.r(ns);
+/******/ 		Object.defineProperty(ns, 'default', { enumerable: true, value: value });
+/******/ 		if(mode & 2 && typeof value != 'string') for(var key in value) __webpack_require__.d(ns, key, function(key) { return value[key]; }.bind(null, key));
+/******/ 		return ns;
+/******/ 	};
+/******/
+/******/ 	// getDefaultExport function for compatibility with non-harmony modules
+/******/ 	__webpack_require__.n = function(module) {
+/******/ 		var getter = module && module.__esModule ?
+/******/ 			function getDefault() { return module['default']; } :
+/******/ 			function getModuleExports() { return module; };
+/******/ 		__webpack_require__.d(getter, 'a', getter);
+/******/ 		return getter;
+/******/ 	};
+/******/
+/******/ 	// Object.prototype.hasOwnProperty.call
+/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
+/******/
+/******/ 	// __webpack_public_path__
+/******/ 	__webpack_require__.p = "https://static.parastorage.com/services/wix-ui-santa/1.140.0/";
+/******/
+/******/ 	// on error function for async loading
+/******/ 	__webpack_require__.oe = function(err) { console.error(err); throw err; };
+/******/
+/******/ 	/* runtime version: 1.0.4 */
+/******/ 	function StylableRuntime(exports){
+/******/ 	exports = exports || {};
+/******/ 	function require(){return exports;};
+/******/
+/******/ 	(function(){/* source: cached-node-renderer.ts */
+/******/ 	var CacheStyleNodeRenderer = /** @class */ (function () {
+/******/ 	    function CacheStyleNodeRenderer(options) {
+/******/ 	        var _this = this;
+/******/ 	        this.options = options;
+/******/ 	        this.create = function (stylesheet, key) {
+/******/ 	            var node = _this.options.createElement('style');
+/******/ 	            node.textContent = stylesheet.$css || '';
+/******/ 	            node.setAttribute(_this.options.attrKey, key);
+/******/ 	            node.setAttribute('st-depth', stylesheet.$depth + '');
+/******/ 	            return node;
+/******/ 	        };
+/******/ 	        this.hasKey = function (node) { return node.hasAttribute(_this.options.attrKey); };
+/******/ 	        this.update = function (stylesheet, node) {
+/******/ 	            if (node.textContent !== stylesheet.$css) {
+/******/ 	                node.textContent = stylesheet.$css || '';
+/******/ 	            }
+/******/ 	            return node;
+/******/ 	        };
+/******/ 	        this.renderKey = function (stylesheet) { return stylesheet.$id; };
+/******/ 	    }
+/******/ 	    return CacheStyleNodeRenderer;
+/******/ 	}());
+/******/ 	exports.CacheStyleNodeRenderer = CacheStyleNodeRenderer;
+/******/ 	}());
+/******/ 	(function(){/* source: keyed-list-renderer.ts */
+/******/ 	function createDOMListRenderer(nodeRenderer) {
+/******/ 	    var first;
+/******/ 	    var nodes = {};
+/******/ 	    var setNode = function (dataItem, node) {
+/******/ 	        return (nodes[nodeRenderer.renderKey(dataItem)] = node);
+/******/ 	    };
+/******/ 	    var renderNode = function (dataItem) {
+/******/ 	        var key = nodeRenderer.renderKey(dataItem);
+/******/ 	        var node = nodes[key];
+/******/ 	        return node
+/******/ 	            ? nodeRenderer.update(dataItem, node)
+/******/ 	            : setNode(dataItem, nodeRenderer.create(dataItem, key));
+/******/ 	    };
+/******/ 	    var render = function (container, data) {
+/******/ 	        if (data === void 0) { data = []; }
+/******/ 	        var node;
+/******/ 	        if (data.length) {
+/******/ 	            var next = first;
+/******/ 	            // tslint:disable-next-line:prefer-for-of
+/******/ 	            for (var i = 0; i < data.length; i++) {
+/******/ 	                node = renderNode(data[i]);
+/******/ 	                if (node !== next) {
+/******/ 	                    container.insertBefore(node, next || null);
+/******/ 	                }
+/******/ 	                else {
+/******/ 	                    next = node.nextElementSibling;
+/******/ 	                }
+/******/ 	            }
+/******/ 	            first = nodes[nodeRenderer.renderKey(data[0])];
+/******/ 	            while (node.nextElementSibling) {
+/******/ 	                if (nodeRenderer.hasKey(node.nextElementSibling)) {
+/******/ 	                    container.removeChild(node.nextElementSibling);
+/******/ 	                }
+/******/ 	                else {
+/******/ 	                    break;
+/******/ 	                }
+/******/ 	            }
+/******/ 	        }
+/******/ 	        else {
+/******/ 	            while (first) {
+/******/ 	                var next = first.nextElementSibling;
+/******/ 	                container.removeChild(first);
+/******/ 	                first = next && nodeRenderer.hasKey(next) ? next : undefined;
+/******/ 	            }
+/******/ 	        }
+/******/ 	    };
+/******/ 	    return { render: render, nodes: nodes };
+/******/ 	}
+/******/ 	exports.createDOMListRenderer = createDOMListRenderer;
+/******/ 	}());
+/******/ 	(function(){/* source: css-runtime-renderer.ts */
+/******/ 	var cached_node_renderer_1 = require("./cached-node-renderer");
+/******/ 	var keyed_list_renderer_1 = require("./keyed-list-renderer");
+/******/ 	var RuntimeRenderer = /** @class */ (function () {
+/******/ 	    function RuntimeRenderer() {
+/******/ 	        var _this = this;
+/******/ 	        this.styles = [];
+/******/ 	        this.stylesMap = {};
+/******/ 	        this.renderer = null;
+/******/ 	        this.window = null;
+/******/ 	        this.id = null;
+/******/ 	        this.update = function () {
+/******/ 	            if (_this.renderer) {
+/******/ 	                _this.renderer.render(_this.window.document.head, _this.styles);
+/******/ 	            }
+/******/ 	        };
+/******/ 	    }
+/******/ 	    RuntimeRenderer.prototype.init = function (_window) {
+/******/ 	        if (this.window || !_window) {
+/******/ 	            return;
+/******/ 	        }
+/******/ 	        _window.__stylable_renderer_global_counter =
+/******/ 	            _window.__stylable_renderer_global_counter || 0;
+/******/ 	        this.id = _window.__stylable_renderer_global_counter++;
+/******/ 	        this.window = _window;
+/******/ 	        this.renderer = keyed_list_renderer_1.createDOMListRenderer(new cached_node_renderer_1.CacheStyleNodeRenderer({
+/******/ 	            attrKey: 'st-id' + (this.id ? '-' + this.id : ''),
+/******/ 	            createElement: _window.document.createElement.bind(_window.document)
+/******/ 	        }));
+/******/ 	        this.update();
+/******/ 	    };
+/******/ 	    RuntimeRenderer.prototype.onRegister = function () {
+/******/ 	        if (this.window) {
+/******/ 	            this.window.requestAnimationFrame(this.update);
+/******/ 	        }
+/******/ 	    };
+/******/ 	    RuntimeRenderer.prototype.register = function (stylesheet) {
+/******/ 	        var registered = this.stylesMap[stylesheet.$id];
+/******/ 	        if (registered) {
+/******/ 	            this.removeStyle(registered);
+/******/ 	        }
+/******/ 	        var i = this.findDepthIndex(stylesheet.$depth);
+/******/ 	        this.styles.splice(i + 1, 0, stylesheet);
+/******/ 	        this.stylesMap[stylesheet.$id] = stylesheet;
+/******/ 	        this.onRegister();
+/******/ 	    };
+/******/ 	    RuntimeRenderer.prototype.removeStyle = function (stylesheet) {
+/******/ 	        var i = this.styles.indexOf(stylesheet);
+/******/ 	        if (~i) {
+/******/ 	            this.styles.splice(i, 1);
+/******/ 	        }
+/******/ 	        delete this.stylesMap[stylesheet.$id];
+/******/ 	    };
+/******/ 	    RuntimeRenderer.prototype.findDepthIndex = function (depth) {
+/******/ 	        var index = this.styles.length;
+/******/ 	        while (index--) {
+/******/ 	            var stylesheet = this.styles[index];
+/******/ 	            if (stylesheet.$depth <= depth) {
+/******/ 	                return index;
+/******/ 	            }
+/******/ 	        }
+/******/ 	        return index;
+/******/ 	    };
+/******/ 	    RuntimeRenderer.prototype.getStyles = function (ids, sortIndexes) {
+/******/ 	        var _this = this;
+/******/ 	        return this.sortStyles(ids.map(function (id) { return _this.stylesMap[id]; }), sortIndexes);
+/******/ 	    };
+/******/ 	    RuntimeRenderer.prototype.sortStyles = function (styles, sortIndexes) {
+/******/ 	        var _this = this;
+/******/ 	        if (sortIndexes === void 0) { sortIndexes = false; }
+/******/ 	        var s = styles.slice();
+/******/ 	        if (sortIndexes) {
+/******/ 	            s.sort(function (a, b) {
+/******/ 	                return _this.styles.indexOf(a) - _this.styles.indexOf(b);
+/******/ 	            });
+/******/ 	        }
+/******/ 	        s.sort(function (a, b) {
+/******/ 	            return a.$depth - b.$depth;
+/******/ 	        });
+/******/ 	        return s;
+/******/ 	    };
+/******/ 	    return RuntimeRenderer;
+/******/ 	}());
+/******/ 	exports.RuntimeRenderer = RuntimeRenderer;
+/******/ 	// The $ export is a convention with the webpack plugin if changed both needs a change
+/******/ 	exports.$ = new RuntimeRenderer();
+/******/ 	}());
+/******/ 	(function(){/* source: css-runtime-stylesheet.ts */
+/******/ 	function create(root, namespace, locals, css, depth, id) {
+/******/ 	    var dataNamespace = 'data-' + namespace.toLowerCase() + '-';
+/******/ 	    function cssStates(stateMapping) {
+/******/ 	        return stateMapping
+/******/ 	            ? Object.keys(stateMapping).reduce(function (states, key) {
+/******/ 	                var stateValue = stateMapping[key];
+/******/ 	                if (stateValue === undefined ||
+/******/ 	                    stateValue === null ||
+/******/ 	                    stateValue === false) {
+/******/ 	                    return states;
+/******/ 	                }
+/******/ 	                states[dataNamespace + key.toLowerCase()] = stateValue;
+/******/ 	                return states;
+/******/ 	            }, {})
+/******/ 	            : {};
+/******/ 	    }
+/******/ 	    function get(localName) {
+/******/ 	        return locals[localName];
+/******/ 	    }
+/******/ 	    function mapClasses(className) {
+/******/ 	        return className
+/******/ 	            .split(/\s+/g)
+/******/ 	            .map(function (className) { return get(className) || className; })
+/******/ 	            .join(' ');
+/******/ 	    }
+/******/ 	    locals.$root = root;
+/******/ 	    locals.$namespace = namespace;
+/******/ 	    locals.$depth = depth;
+/******/ 	    locals.$id = id;
+/******/ 	    locals.$css = css;
+/******/ 	    locals.$get = get;
+/******/ 	    locals.$cssStates = cssStates;
+/******/ 	    function stylable_runtime_stylesheet(className, states, inheritedAttributes) {
+/******/ 	        className = className ? mapClasses(className) : '';
+/******/ 	        var base = cssStates(states);
+/******/ 	        if (inheritedAttributes) {
+/******/ 	            for (var k in inheritedAttributes) {
+/******/ 	                if (k.match(/^data-/)) {
+/******/ 	                    base[k] = inheritedAttributes[k];
+/******/ 	                }
+/******/ 	            }
+/******/ 	            if (inheritedAttributes.className) {
+/******/ 	                className += ' ' + inheritedAttributes.className;
+/******/ 	            }
+/******/ 	        }
+/******/ 	        if (className) {
+/******/ 	            base.className = className;
+/******/ 	        }
+/******/ 	        return base;
+/******/ 	    }
+/******/ 	    Object.setPrototypeOf(stylable_runtime_stylesheet, locals);
+/******/ 	    // EDGE CACHE BUG FIX
+/******/ 	    stylable_runtime_stylesheet[locals.$root] = locals[locals.$root];
+/******/ 	    return stylable_runtime_stylesheet;
+/******/ 	}
+/******/ 	exports.create = create;
+/******/ 	function createTheme(css, depth, id) {
+/******/ 	    return { $css: css, $depth: depth, $id: id, $theme: true };
+/******/ 	}
+/******/ 	exports.createTheme = createTheme;
+/******/ 	}());;
+/******/ 	return exports;
+/******/ 	};
+/******/ 	(typeof self !== 'undefined' ? self : this)["__stylable_yoshi__"] = __webpack_require__.stylable = (typeof self !== 'undefined' ? self : this)["__stylable_yoshi__"] || StylableRuntime();
+/******/ 	var jsonpArray = (typeof self !== 'undefined' ? self : this)["webpackJsonp_wix_ui_santa"] = (typeof self !== 'undefined' ? self : this)["webpackJsonp_wix_ui_santa"] || [];
+/******/ 	var oldJsonpFunction = jsonpArray.push.bind(jsonpArray);
+/******/ 	jsonpArray.push = webpackJsonpCallback;
+/******/ 	jsonpArray = jsonpArray.slice();
+/******/ 	for(var i = 0; i < jsonpArray.length; i++) webpackJsonpCallback(jsonpArray[i]);
+/******/ 	var parentJsonpFunction = oldJsonpFunction;
+/******/
+/******/
+/******/ 	__webpack_require__.p = typeof window !== 'undefined' && window.__STATICS_BASE_URL__ || __webpack_require__.p;
+/******/ 	// Load entry module and return exports
+/******/ 	return __webpack_require__(__webpack_require__.s = 1063);
+/******/ })
+/************************************************************************/
+/******/ ({
+
+/***/ 0:
+/*!**************************************************************************************!*\
+  !*** external {"amd":"react","commonjs":"react","commonjs2":"react","root":"React"} ***!
+  \**************************************************************************************/
+/*! no static exports found */
+/*! all exports used */
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+/***/ (function(module, exports) {
+
+module.exports = __WEBPACK_EXTERNAL_MODULE__0__;
+
+/***/ }),
+
+/***/ 1:
+/*!**********************************************************************************************************!*\
+  !*** external {"amd":"prop-types","commonjs":"prop-types","commonjs2":"prop-types","root":"prop-types"} ***!
+  \**********************************************************************************************************/
+/*! no static exports found */
+/*! all exports used */
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+/***/ (function(module, exports) {
+
+module.exports = __WEBPACK_EXTERNAL_MODULE__1__;
+
+/***/ }),
+
+/***/ 1063:
+/*!**************************************!*\
+  !*** ./components-service/viewer.js ***!
+  \**************************************/
+/*! no static exports found */
+/*! all exports used */
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _baseService = __webpack_require__(/*! ./base-service */ 87);
+
+var _baseService2 = _interopRequireDefault(_baseService);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var compsToPackages = {
+  'wixui.RichTextBox': function wixuiRichTextBox() {
+    return Promise.all([__webpack_require__.e(/*! import() | wixui.RichTextBox */ 46).then(__webpack_require__.t.bind(null, /*! ../legacy/components/RichTextBox */ 412, 7))]);
+  },
+  'wixui.ToggleSwitch': function wixuiToggleSwitch() {
+    return Promise.all([__webpack_require__.e(/*! import() | wixui.ToggleSwitch */ 53).then(__webpack_require__.t.bind(null, /*! ../legacy/components/ToggleSwitch */ 411, 7))]);
+  },
+  'wixui.Slider': function wixuiSlider() {
+    return Promise.all([__webpack_require__.e(/*! import() | wixui.Slider */ 48).then(__webpack_require__.t.bind(null, /*! ../components/Slider */ 441, 7))]);
+  },
+  'wixui.SearchBox': function wixuiSearchBox() {
+    return Promise.all([__webpack_require__.e(/*! import() | wixui.SearchBox */ 47).then(__webpack_require__.t.bind(null, /*! ../components/SearchBox */ 443, 7))]);
+  },
+  'wixui.Captcha': function wixuiCaptcha() {
+    return Promise.all([__webpack_require__.e(/*! import() | wixui.Captcha */ 39).then(__webpack_require__.t.bind(null, /*! ../components/Captcha */ 438, 7))]);
+  },
+  'wixui.Pagination': function wixuiPagination() {
+    return Promise.all([__webpack_require__.e(/*! import() | wixui.Pagination */ 42).then(__webpack_require__.t.bind(null, /*! ../components/Pagination */ 435, 7))]);
+  },
+  'wixui.AddressInput': function wixuiAddressInput() {
+    return Promise.all([__webpack_require__.e(/*! import() | wixui.AddressInput */ 36).then(__webpack_require__.t.bind(null, /*! ../components/AddressInput */ 445, 7))]);
+  },
+  'wixui.StylableLine': function wixuiStylableLine() {
+    return Promise.all([__webpack_require__.e(/*! import() | wixui.StylableLine */ 50).then(__webpack_require__.t.bind(null, /*! ../components/StylableLine */ 448, 7))]);
+  },
+  'wixui.Tags': function wixuiTags() {
+    return Promise.all([__webpack_require__.e(/*! import() | wixui.Tags */ 51).then(__webpack_require__.t.bind(null, /*! ../components/Tags */ 436, 7))]);
+  },
+  'wixui.RatingsInput': function wixuiRatingsInput() {
+    return Promise.all([__webpack_require__.e(/*! import() | wixui.RatingsInput */ 45).then(__webpack_require__.t.bind(null, /*! ../components/RatingsInput */ 437, 7))]);
+  },
+  'wixui.TimePicker': function wixuiTimePicker() {
+    return Promise.all([__webpack_require__.e(/*! import() | wixui.TimePicker */ 52).then(__webpack_require__.t.bind(null, /*! ../components/TimePicker */ 446, 7))]);
+  },
+  'wixui.RatingsDisplay': function wixuiRatingsDisplay() {
+    return Promise.all([__webpack_require__.e(/*! import() | wixui.RatingsDisplay */ 44).then(__webpack_require__.t.bind(null, /*! ../components/RatingsDisplay */ 439, 7))]);
+  },
+  'wixui.VideoPlayer': function wixuiVideoPlayer() {
+    return Promise.all([__webpack_require__.e(/*! import() | wixui.VideoPlayer */ 54).then(__webpack_require__.t.bind(null, /*! ../components/VideoPlayer */ 434, 7))]);
+  },
+  'wixui.LineShareButton': function wixuiLineShareButton() {
+    return Promise.all([__webpack_require__.e(/*! import() | wixui.LineShareButton */ 40).then(__webpack_require__.t.bind(null, /*! ../components/LineShareButton */ 447, 7))]);
+  },
+  'wixui.MusicPlayer': function wixuiMusicPlayer() {
+    return Promise.all([__webpack_require__.e(/*! import() | wixui.MusicPlayer */ 41).then(__webpack_require__.t.bind(null, /*! ../components/MusicPlayer */ 400, 7))]);
+  },
+  'wixui.StylableButton': function wixuiStylableButton() {
+    return Promise.all([__webpack_require__.e(/*! import() | wixui.StylableButton */ 49).then(__webpack_require__.t.bind(null, /*! ../components/StylableButton */ 449, 7))]);
+  },
+  'wixui.ProgressBar': function wixuiProgressBar() {
+    return Promise.all([__webpack_require__.e(/*! import() | wixui.ProgressBar */ 43).then(__webpack_require__.t.bind(null, /*! ../components/ProgressBar */ 442, 7))]);
+  },
+  'wixui.BarChart': function wixuiBarChart() {
+    return Promise.all([__webpack_require__.e(/*! import() | wixui.BarChart */ 37).then(__webpack_require__.t.bind(null, /*! ../components/BarChart */ 440, 7))]);
+  },
+  'wixui.BorisButton': function wixuiBorisButton() {
+    return Promise.all([__webpack_require__.e(/*! import() | wixui.BorisButton */ 38).then(__webpack_require__.t.bind(null, /*! ../components/BorisButton */ 444, 7))]);
+  }
+};
+
+module.exports = new _baseService2.default(compsToPackages);
+
+/***/ }),
+
+/***/ 11:
+/*!****************************************************************************************************!*\
+  !*** external {"amd":"reactDOM","commonjs":"react-dom","commonjs2":"react-dom","root":"ReactDOM"} ***!
+  \****************************************************************************************************/
+/*! no static exports found */
+/*! all exports used */
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+/***/ (function(module, exports) {
+
+module.exports = __WEBPACK_EXTERNAL_MODULE__11__;
+
+/***/ }),
+
+/***/ 14:
+/*!*********************************************************************************************************************************!*\
+  !*** external {"amd":"santa-components","commonjs":"santa-components","commonjs2":"santa-components","root":"santaComponents"} ***!
+  \*********************************************************************************************************************************/
+/*! no static exports found */
+/*! all exports used */
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+/***/ (function(module, exports) {
+
+module.exports = __WEBPACK_EXTERNAL_MODULE__14__;
+
+/***/ }),
+
+/***/ 2:
+/*!*************************************************************************************!*\
+  !*** external {"amd":"lodash","commonjs":"lodash","commonjs2":"lodash","root":"_"} ***!
+  \*************************************************************************************/
+/*! no static exports found */
+/*! all exports used */
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+/***/ (function(module, exports) {
+
+module.exports = __WEBPACK_EXTERNAL_MODULE__2__;
+
+/***/ }),
+
+/***/ 87:
+/*!********************************************!*\
+  !*** ./components-service/base-service.js ***!
+  \********************************************/
+/*! no static exports found */
+/*! all exports used */
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+function BaseService(_compsToPackages) {
+  var compsToPackages = _compsToPackages;
+
+  function setWebpackPublicPath(baseUrl) {
+    __webpack_require__.p = baseUrl + '/'; // eslint-disable-line
+  }
+
+  function loadComponent(componentType) {
+    if (!exists(componentType)) {
+      return Promise.reject(new Error('no such component ' + componentType));
+    }
+    return compsToPackages[componentType]().catch(function (e) {
+      //fix for ie11, doesn't load components
+      console.error('coudn\'t load ' + componentType, e);
+      return [{
+        default: {
+          componentType: componentType,
+          component: function component() {
+            return null;
+          },
+          santaComponent: function santaComponent() {
+            return null;
+          },
+          skin: {}
+        }
+      }];
+    });
+  }
+
+  function exists(componentType) {
+    return !!compsToPackages[componentType];
+  }
+
+  function loadAll(baseUrl) {
+    setWebpackPublicPath(baseUrl);
+    return Promise.all(Object.keys(compsToPackages).map(loadComponent));
+  }
+
+  function load(componentType, baseUrl) {
+    setWebpackPublicPath(baseUrl);
+    return loadComponent(componentType);
+  }
+
+  return {
+    exists: exists,
+    loadAll: loadAll,
+    load: load
+  };
+}
+
+module.exports = BaseService;
+
+/***/ })
+
+/******/ });
+});
+//# sourceMappingURL=viewerComponentService.bundle.js.map
