@@ -1,4 +1,4 @@
-((typeof self !== 'undefined' ? self : this)["webpackJsonp_wix_ui_santa"] = (typeof self !== 'undefined' ? self : this)["webpackJsonp_wix_ui_santa"] || []).push([[51],{
+((typeof self !== 'undefined' ? self : this)["webpackJsonp_wix_ui_santa"] = (typeof self !== 'undefined' ? self : this)["webpackJsonp_wix_ui_santa"] || []).push([[43],{
 
 /***/ 12:
 /*!**********************************************!*\
@@ -964,10 +964,10 @@ module.exports = emptyObject;
 
 /***/ }),
 
-/***/ 354:
-/*!*************************************!*\
-  !*** ./components/Tags/Tags.st.css ***!
-  \*************************************/
+/***/ 240:
+/*!***************************************************!*\
+  !*** ./components/ProgressBar/ProgressBar.st.css ***!
+  \***************************************************/
 /*! exports provided: default */
 /*! all exports used */
 /*! ModuleConcatenation bailout: Module is not an ECMAScript module */
@@ -977,24 +977,24 @@ Object.defineProperty(exports, "__esModule", { value: true })
 
 exports.default = __webpack_require__.stylable.create(
   "root",
-  "Tags3268887993",
-  {"root":"Tags3268887993--root","tagsContainer":"Tags3268887993--tagsContainer","tag":"Tags3268887993--tag","tagBackgroundColor":"color_8","tagBorderColor":"color_3","tagBorderSize":"3","tagBoxShadow":"0 1px 4px rgba(0, 0, 0, .6)","tagFont":"font_4","tagFontColor":"color_3","tagBackgroundColorHover":"color_6","tagFontColorHover":"color_1","tagBorderRadius":"100px"},
+  "ProgressBar944847283",
+  {"root":"ProgressBar944847283--root","barBackgroundColor":"color_8","barForegroundColor":"color_6","borderRadius":"0px","boxShadow":"0 1px 4px rgba(0, 0, 0, .6)","borderSize":"0px","borderColor":"color_5"},
   "",
-  1,
-  /*! ./components/Tags/Tags.st.css */ 354
+  7,
+  /*! ./components/ProgressBar/ProgressBar.st.css */ 240
 );
 
-exports.default.$skin = {"params":{"tagBackgroundColor":"COLOR","tagBorderColor":"BORDER_COLOR_ALPHA","tagBorderSize":"BORDER_SIZE","tagBoxShadow":"BOX_SHADOW","tagFont":"FONT","tagFontColor":"COLOR","tagBackgroundColorHover":"COLOR","tagFontColorHover":"COLOR","tagBorderRadius":"BORDER_RADIUS"},"paramsDefaults":{"tagBackgroundColor":"color_8","tagBorderColor":"color_3","tagBorderSize":"3","tagBoxShadow":"0 1px 4px rgba(0, 0, 0, .6)","tagFont":"font_4","tagFontColor":"color_3","tagBackgroundColorHover":"color_6","tagFontColorHover":"color_1","tagBorderRadius":"100px"}};
+exports.default.$skin = {"params":{"barBackgroundColor":"COLOR_ALPHA","barForegroundColor":"COLOR_ALPHA","borderRadius":"BORDER_RADIUS","boxShadow":"BOX_SHADOW","borderSize":"BORDER_SIZE","borderColor":"COLOR_ALPHA"},"paramsDefaults":{"barBackgroundColor":"color_8","barForegroundColor":"color_6","borderRadius":"0px","boxShadow":"0 1px 4px rgba(0, 0, 0, .6)","borderSize":"0px","borderColor":"color_5"}};
 exports.default.$skin.$render = function render_css($id, $params, $functions) {
-  return "\n" + $id + ".Tags3268887993--root{}\n" + $id + " .Tags3268887993--tagsContainer{display: flex;align-items: center;flex-direction: row;flex-wrap: wrap}\n" + $id + ".Tags3268887993--root[data-tags3268887993-alignment=\"left\"] .Tags3268887993--tagsContainer{justify-content: flex-start}\n" + $id + ".Tags3268887993--root[data-tags3268887993-alignment=\"center\"] .Tags3268887993--tagsContainer{justify-content: center}\n" + $id + ".Tags3268887993--root[data-tags3268887993-alignment=\"right\"] .Tags3268887993--tagsContainer{justify-content: flex-end}\n" + $id + " .Tags3268887993--tag{box-shadow: " + $params["tagBoxShadow"] + ";border: " + $params["tagBorderSize"] + " solid " + $params["tagBorderColor"] + ";border-radius: " + $params["tagBorderRadius"] + ";cursor: pointer;background-color: " + $params["tagBackgroundColor"] + ";font: " + $params["tagFont"] + ";color: " + $params["tagFontColor"] + ";text-decoration: none;white-space: nowrap;overflow: hidden;text-overflow: ellipsis}\n" + $id + " .Tags3268887993--tag:hover{color: " + $params["tagFontColorHover"] + ";background-color: " + $params["tagBackgroundColorHover"] + "}\n";
+  return "\n" + $id + ".LinearProgressBar3941501373--root{width: 100%;display: flex;align-items: center}\n" + $id + " .LinearProgressBar3941501373--progressIndicationSection{position: relative;height: 100%;display: flex;justify-content: center;align-items: center}\n" + $id + " .LinearProgressBar3941501373--barContainer{width: 100%;position: relative;height: 100%}\n" + $id + " .LinearProgressBar3941501373--barBackground, " + $id + " .LinearProgressBar3941501373--barForeground{top: 50%;transform: translateY(-50%);position: absolute}\n" + $id + " .LinearProgressBar3941501373--barBackground{width: 100%}\n" + $id + " .LinearProgressBar3941501373--indicationContainer{}\n" + $id + ".ProgressBar944847283--root{z-index: 0;height: 100%;width: 100%}\n" + $id + ".ProgressBar944847283--root .LinearProgressBar3941501373--barContainer{border-radius: " + $params["borderRadius"] + ";height: 100%;width: 100%;box-shadow: " + $params["boxShadow"] + ";border-width: " + $params["borderSize"] + ";border-color: " + $params["borderColor"] + ";box-sizing: border-box;overflow: hidden;border-style: solid}\n" + $id + ".ProgressBar944847283--root[data-progressbar944847283-direction=\"rtl\"]{direction: rtl}\n" + $id + ".ProgressBar944847283--root[data-progressbar944847283-direction=\"ltr\"]{direction: ltr}\n" + $id + ".ProgressBar944847283--root .LinearProgressBar3941501373--barBackground{background: " + $params["barBackgroundColor"] + ";border-radius: " + $functions["getInnerBorderRadius"]($params["borderRadius"], $params["borderSize"]) + ";height: 100%;width: 100%}\n" + $id + ".ProgressBar944847283--root .LinearProgressBar3941501373--barForeground{background: " + $params["barForegroundColor"] + ";height: 100%;border-radius: " + $functions["getInnerBorderRadius"]($params["borderRadius"], $params["borderSize"]) + ";transition-timing-function: cubic-bezier(0.645,0.045,0.355,1);transition-duration: 300ms}\n" + $id + ".ProgressBar944847283--root[data-progressbar944847283-viewmode=\"editor\"] .LinearProgressBar3941501373--barForeground{transition: initial}\n";
 };
 
 /***/ }),
 
-/***/ 436:
-/*!**********************************!*\
-  !*** ./components/Tags/index.js ***!
-  \**********************************/
+/***/ 359:
+/*!***********************************************!*\
+  !*** ./components/ProgressBar/ProgressBar.js ***!
+  \***********************************************/
 /*! no static exports found */
 /*! all exports used */
 /*! ModuleConcatenation bailout: Module is not an ECMAScript module */
@@ -1006,121 +1006,558 @@ exports.default.$skin.$render = function render_css($id, $params, $functions) {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-
-var _Tags = __webpack_require__(/*! ./Tags.js */ 652);
-
-var _TagsSt = __webpack_require__(/*! ./Tags.st.css */ 354);
-
-var _TagsSt2 = _interopRequireDefault(_TagsSt);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-exports.default = {
-  componentType: 'wixui.Tags',
-  component: _Tags.Tags,
-  santaComponent: _Tags.santaTags,
-  skin: _TagsSt2.default.$skin
-};
-
-/***/ }),
-
-/***/ 652:
-/*!*********************************!*\
-  !*** ./components/Tags/Tags.js ***!
-  \*********************************/
-/*! no static exports found */
-/*! all exports used */
-/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.santaTags = exports.Tags = undefined;
+exports.ProgressBar = undefined;
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 var _react = __webpack_require__(/*! react */ 0);
 
 var _react2 = _interopRequireDefault(_react);
 
+var _linearProgressBar = __webpack_require__(/*! wix-ui-core/linear-progress-bar */ 671);
+
+var _ProgressBarSt = __webpack_require__(/*! ./ProgressBar.st.css */ 240);
+
+var _ProgressBarSt2 = _interopRequireDefault(_ProgressBarSt);
+
 var _propTypes = __webpack_require__(/*! prop-types */ 1);
 
-var _TagsSt = __webpack_require__(/*! ./Tags.st.css */ 354);
+var _dataHooks = __webpack_require__(/*! ./data-hooks */ 676);
 
-var _TagsSt2 = _interopRequireDefault(_TagsSt);
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var ProgressBar = exports.ProgressBar = function (_React$Component) {
+  _inherits(ProgressBar, _React$Component);
+
+  function ProgressBar() {
+    _classCallCheck(this, ProgressBar);
+
+    return _possibleConstructorReturn(this, (ProgressBar.__proto__ || Object.getPrototypeOf(ProgressBar)).apply(this, arguments));
+  }
+
+  _createClass(ProgressBar, [{
+    key: 'render',
+    value: function render() {
+      var _props = this.props,
+          direction = _props.direction,
+          viewMode = _props.viewMode,
+          max = _props.targetValue,
+          rest = _objectWithoutProperties(_props, ['direction', 'viewMode', 'targetValue']);
+
+      var styles = (0, _ProgressBarSt2.default)('root', { direction: direction, viewMode: viewMode }, this.props);
+      return _react2.default.createElement(_linearProgressBar.LinearProgressBar, _extends({ max: max, 'data-hook': _dataHooks.DATAHOOKS.coreComponent }, rest, styles));
+    }
+  }]);
+
+  return ProgressBar;
+}(_react2.default.Component);
+
+ProgressBar.propTypes = {
+  className: _propTypes.string.isRequired,
+  value: _propTypes.number,
+  targetValue: _propTypes.number,
+  direction: (0, _propTypes.oneOf)(['rtl', 'ltr']).isRequired,
+  viewMode: _propTypes.string
+};
+
+/***/ }),
+
+/***/ 442:
+/*!*****************************************!*\
+  !*** ./components/ProgressBar/index.js ***!
+  \*****************************************/
+/*! no static exports found */
+/*! all exports used */
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _ProgressBar = __webpack_require__(/*! ./ProgressBar */ 359);
+
+var _ProgressBar2 = __webpack_require__(/*! ./ProgressBar.santa */ 677);
+
+var _ProgressBarSt = __webpack_require__(/*! ./ProgressBar.st.css */ 240);
+
+var _ProgressBarSt2 = _interopRequireDefault(_ProgressBarSt);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = {
+  componentType: 'wixui.ProgressBar',
+  component: _ProgressBar.ProgressBar,
+  santaComponent: _ProgressBar2.santaProgressBar,
+  skin: _ProgressBarSt2.default.$skin
+};
+
+/***/ }),
+
+/***/ 6:
+/*!******************************************!*\
+  !*** ../node_modules/tslib/tslib.es6.js ***!
+  \******************************************/
+/*! exports provided: __extends, __assign, __rest, __decorate, __param, __metadata, __awaiter, __generator, __exportStar, __values, __read, __spread, __spreadArrays, __await, __asyncGenerator, __asyncDelegator, __asyncValues, __makeTemplateObject, __importStar, __importDefault */
+/*! all exports used */
+/*! ModuleConcatenation bailout: Module is referenced from these modules with unsupported syntax: ../node_modules/@wix/search-box/dist/src/components/ClearButton/index.js (referenced with cjs require), ../node_modules/@wix/search-box/dist/src/components/QuickResultItem/QuickResultItem.js (referenced with cjs require), ../node_modules/@wix/search-box/dist/src/components/SearchBox/SearchBox.js (referenced with cjs require), ../node_modules/@wix/search-box/dist/src/components/SearchBox/index.js (referenced with cjs require), ../node_modules/@wix/search-box/dist/src/components/SuggestionItem/SuggestionItem.js (referenced with cjs require), ../node_modules/@wix/search-box/dist/src/index.js (referenced with cjs require), ../node_modules/wix-ui-core/dist/src/clients/GoogleMaps/google2address/google2address.js (referenced with cjs require), ../node_modules/wix-ui-core/dist/src/components/address-input/AddressInput.js (referenced with cjs require), ../node_modules/wix-ui-core/dist/src/components/button-next/button-next.js (referenced with cjs require), ../node_modules/wix-ui-core/dist/src/components/captcha/Captcha.js (referenced with cjs require), ../node_modules/wix-ui-core/dist/src/components/deprecated/divider/Divider.js (referenced with cjs require), ../node_modules/wix-ui-core/dist/src/components/dropdown-content/DropdownContent.js (referenced with cjs require), ../node_modules/wix-ui-core/dist/src/components/dropdown-option/DropdownOption.js (referenced with cjs require), ../node_modules/wix-ui-core/dist/src/components/dropdown-option/OptionFactory.js (referenced with cjs require), ../node_modules/wix-ui-core/dist/src/components/dropdown/Dropdown.js (referenced with cjs require), ../node_modules/wix-ui-core/dist/src/components/file-picker-button/FilePickerButton.js (referenced with cjs require), ../node_modules/wix-ui-core/dist/src/components/input-with-options/InputWithOptions.js (referenced with cjs require), ../node_modules/wix-ui-core/dist/src/components/input/Input.js (referenced with cjs require), ../node_modules/wix-ui-core/dist/src/components/linear-progress-bar/LinearProgressBar.js (referenced with cjs require), ../node_modules/wix-ui-core/dist/src/components/pagination/PageStrip.js (referenced with cjs require), ../node_modules/wix-ui-core/dist/src/components/pagination/Pagination.js (referenced with cjs require), ../node_modules/wix-ui-core/dist/src/components/popover/Popover.js (referenced with cjs require), ../node_modules/wix-ui-core/dist/src/components/popover/index.js (referenced with cjs require), ../node_modules/wix-ui-core/dist/src/components/popover/modifiers.js (referenced with cjs require), ../node_modules/wix-ui-core/dist/src/components/radio-button/RadioButton.js (referenced with cjs require), ../node_modules/wix-ui-core/dist/src/components/slider/Slider.js (referenced with cjs require), ../node_modules/wix-ui-core/dist/src/components/slider/Thumb.js (referenced with cjs require), ../node_modules/wix-ui-core/dist/src/components/slider/Ticks.js (referenced with cjs require), ../node_modules/wix-ui-core/dist/src/components/time-picker/Tickers.js (referenced with cjs require), ../node_modules/wix-ui-core/dist/src/components/time-picker/TimePicker.js (referenced with cjs require), ../node_modules/wix-ui-core/dist/src/components/video/Video.js (referenced with cjs require), ../node_modules/wix-ui-core/dist/src/components/video/players/DailyMotion.js (referenced with cjs require), ../node_modules/wix-ui-core/dist/src/components/video/players/Facebook.js (referenced with cjs require), ../node_modules/wix-ui-core/dist/src/components/video/players/Playable.js (referenced with cjs require), ../node_modules/wix-ui-core/dist/src/components/video/players/Twitch.js (referenced with cjs require), ../node_modules/wix-ui-core/dist/src/components/video/players/Vimeo.js (referenced with cjs require), ../node_modules/wix-ui-core/dist/src/components/video/players/YouTube.js (referenced with cjs require), ../node_modules/wix-ui-core/dist/src/components/video/players/playerHOC.js (referenced with cjs require), ../node_modules/wix-ui-core/dist/src/hocs/Focusable/FocusableHOC.js (referenced with cjs require) */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__extends", function() { return __extends; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__assign", function() { return __assign; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__rest", function() { return __rest; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__decorate", function() { return __decorate; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__param", function() { return __param; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__metadata", function() { return __metadata; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__awaiter", function() { return __awaiter; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__generator", function() { return __generator; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__exportStar", function() { return __exportStar; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__values", function() { return __values; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__read", function() { return __read; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__spread", function() { return __spread; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__spreadArrays", function() { return __spreadArrays; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__await", function() { return __await; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__asyncGenerator", function() { return __asyncGenerator; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__asyncDelegator", function() { return __asyncDelegator; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__asyncValues", function() { return __asyncValues; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__makeTemplateObject", function() { return __makeTemplateObject; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__importStar", function() { return __importStar; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__importDefault", function() { return __importDefault; });
+/*! *****************************************************************************
+Copyright (c) Microsoft Corporation. All rights reserved.
+Licensed under the Apache License, Version 2.0 (the "License"); you may not use
+this file except in compliance with the License. You may obtain a copy of the
+License at http://www.apache.org/licenses/LICENSE-2.0
+
+THIS CODE IS PROVIDED ON AN *AS IS* BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+KIND, EITHER EXPRESS OR IMPLIED, INCLUDING WITHOUT LIMITATION ANY IMPLIED
+WARRANTIES OR CONDITIONS OF TITLE, FITNESS FOR A PARTICULAR PURPOSE,
+MERCHANTABLITY OR NON-INFRINGEMENT.
+
+See the Apache Version 2.0 License for specific language governing permissions
+and limitations under the License.
+***************************************************************************** */
+/* global Reflect, Promise */
+
+var extendStatics = function(d, b) {
+    extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return extendStatics(d, b);
+};
+
+function __extends(d, b) {
+    extendStatics(d, b);
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+}
+
+var __assign = function() {
+    __assign = Object.assign || function __assign(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
+        }
+        return t;
+    }
+    return __assign.apply(this, arguments);
+}
+
+function __rest(s, e) {
+    var t = {};
+    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
+        t[p] = s[p];
+    if (s != null && typeof Object.getOwnPropertySymbols === "function")
+        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
+            if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))
+                t[p[i]] = s[p[i]];
+        }
+    return t;
+}
+
+function __decorate(decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+}
+
+function __param(paramIndex, decorator) {
+    return function (target, key) { decorator(target, key, paramIndex); }
+}
+
+function __metadata(metadataKey, metadataValue) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(metadataKey, metadataValue);
+}
+
+function __awaiter(thisArg, _arguments, P, generator) {
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+}
+
+function __generator(thisArg, body) {
+    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
+    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+    function verb(n) { return function (v) { return step([n, v]); }; }
+    function step(op) {
+        if (f) throw new TypeError("Generator is already executing.");
+        while (_) try {
+            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
+            if (y = 0, t) op = [op[0] & 2, t.value];
+            switch (op[0]) {
+                case 0: case 1: t = op; break;
+                case 4: _.label++; return { value: op[1], done: false };
+                case 5: _.label++; y = op[1]; op = [0]; continue;
+                case 7: op = _.ops.pop(); _.trys.pop(); continue;
+                default:
+                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
+                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
+                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
+                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
+                    if (t[2]) _.ops.pop();
+                    _.trys.pop(); continue;
+            }
+            op = body.call(thisArg, _);
+        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
+        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
+    }
+}
+
+function __exportStar(m, exports) {
+    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
+}
+
+function __values(o) {
+    var m = typeof Symbol === "function" && o[Symbol.iterator], i = 0;
+    if (m) return m.call(o);
+    return {
+        next: function () {
+            if (o && i >= o.length) o = void 0;
+            return { value: o && o[i++], done: !o };
+        }
+    };
+}
+
+function __read(o, n) {
+    var m = typeof Symbol === "function" && o[Symbol.iterator];
+    if (!m) return o;
+    var i = m.call(o), r, ar = [], e;
+    try {
+        while ((n === void 0 || n-- > 0) && !(r = i.next()).done) ar.push(r.value);
+    }
+    catch (error) { e = { error: error }; }
+    finally {
+        try {
+            if (r && !r.done && (m = i["return"])) m.call(i);
+        }
+        finally { if (e) throw e.error; }
+    }
+    return ar;
+}
+
+function __spread() {
+    for (var ar = [], i = 0; i < arguments.length; i++)
+        ar = ar.concat(__read(arguments[i]));
+    return ar;
+}
+
+function __spreadArrays() {
+    for (var s = 0, i = 0, il = arguments.length; i < il; i++) s += arguments[i].length;
+    for (var r = Array(s), k = 0, i = 0; i < il; i++)
+        for (var a = arguments[i], j = 0, jl = a.length; j < jl; j++, k++)
+            r[k] = a[j];
+    return r;
+};
+
+function __await(v) {
+    return this instanceof __await ? (this.v = v, this) : new __await(v);
+}
+
+function __asyncGenerator(thisArg, _arguments, generator) {
+    if (!Symbol.asyncIterator) throw new TypeError("Symbol.asyncIterator is not defined.");
+    var g = generator.apply(thisArg, _arguments || []), i, q = [];
+    return i = {}, verb("next"), verb("throw"), verb("return"), i[Symbol.asyncIterator] = function () { return this; }, i;
+    function verb(n) { if (g[n]) i[n] = function (v) { return new Promise(function (a, b) { q.push([n, v, a, b]) > 1 || resume(n, v); }); }; }
+    function resume(n, v) { try { step(g[n](v)); } catch (e) { settle(q[0][3], e); } }
+    function step(r) { r.value instanceof __await ? Promise.resolve(r.value.v).then(fulfill, reject) : settle(q[0][2], r); }
+    function fulfill(value) { resume("next", value); }
+    function reject(value) { resume("throw", value); }
+    function settle(f, v) { if (f(v), q.shift(), q.length) resume(q[0][0], q[0][1]); }
+}
+
+function __asyncDelegator(o) {
+    var i, p;
+    return i = {}, verb("next"), verb("throw", function (e) { throw e; }), verb("return"), i[Symbol.iterator] = function () { return this; }, i;
+    function verb(n, f) { i[n] = o[n] ? function (v) { return (p = !p) ? { value: __await(o[n](v)), done: n === "return" } : f ? f(v) : v; } : f; }
+}
+
+function __asyncValues(o) {
+    if (!Symbol.asyncIterator) throw new TypeError("Symbol.asyncIterator is not defined.");
+    var m = o[Symbol.asyncIterator], i;
+    return m ? m.call(o) : (o = typeof __values === "function" ? __values(o) : o[Symbol.iterator](), i = {}, verb("next"), verb("throw"), verb("return"), i[Symbol.asyncIterator] = function () { return this; }, i);
+    function verb(n) { i[n] = o[n] && function (v) { return new Promise(function (resolve, reject) { v = o[n](v), settle(resolve, reject, v.done, v.value); }); }; }
+    function settle(resolve, reject, d, v) { Promise.resolve(v).then(function(v) { resolve({ value: v, done: d }); }, reject); }
+}
+
+function __makeTemplateObject(cooked, raw) {
+    if (Object.defineProperty) { Object.defineProperty(cooked, "raw", { value: raw }); } else { cooked.raw = raw; }
+    return cooked;
+};
+
+function __importStar(mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (Object.hasOwnProperty.call(mod, k)) result[k] = mod[k];
+    result.default = mod;
+    return result;
+}
+
+function __importDefault(mod) {
+    return (mod && mod.__esModule) ? mod : { default: mod };
+}
+
+
+/***/ }),
+
+/***/ 671:
+/*!**********************************************************!*\
+  !*** ../node_modules/wix-ui-core/linear-progress-bar.js ***!
+  \**********************************************************/
+/*! no static exports found */
+/*! all exports used */
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(/*! ./dist/src/components/linear-progress-bar */ 672);
+
+
+/***/ }),
+
+/***/ 672:
+/*!************************************************************************************!*\
+  !*** ../node_modules/wix-ui-core/dist/src/components/linear-progress-bar/index.js ***!
+  \************************************************************************************/
+/*! no static exports found */
+/*! all exports used */
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var LinearProgressBar_1 = __webpack_require__(/*! ./LinearProgressBar */ 673);
+exports.LinearProgressBar = LinearProgressBar_1.LinearProgressBar;
+//# sourceMappingURL=index.js.map
+
+/***/ }),
+
+/***/ 673:
+/*!************************************************************************************************!*\
+  !*** ../node_modules/wix-ui-core/dist/src/components/linear-progress-bar/LinearProgressBar.js ***!
+  \************************************************************************************************/
+/*! no static exports found */
+/*! all exports used */
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var tslib_1 = __webpack_require__(/*! tslib */ 6);
+var React = __webpack_require__(/*! react */ 0);
+var LinearProgressBar_st_css_1 = __webpack_require__(/*! ./LinearProgressBar.st.css */ 674);
+var DataHooks_1 = __webpack_require__(/*! ./DataHooks */ 675);
+var FULL_PROGRESS = 100;
+var NO_PROGRESS = 0;
+var resolveIndicationElement = function (props) {
+    var wrapped = function (dataHook, children) { return (React.createElement("div", { "data-hook": dataHook, className: LinearProgressBar_st_css_1.default.indicationContainer }, children)); };
+    if (props.error && props.errorIcon) {
+        return wrapped(DataHooks_1.ProgressBarDataHooks.errorIcon, props.errorIcon);
+    }
+    if (props.value === FULL_PROGRESS && props.successIcon) {
+        return wrapped(DataHooks_1.ProgressBarDataHooks.successIcon, props.successIcon);
+    }
+    return wrapped(DataHooks_1.ProgressBarDataHooks.progressPercentage, React.createElement("span", null, props.value + "%"));
+};
+var renderBarSection = function (value) {
+    var progressWidth = { width: value + "%" };
+    return (React.createElement("div", { "data-hook": DataHooks_1.ProgressBarDataHooks.container, className: LinearProgressBar_st_css_1.default.barContainer },
+        React.createElement("div", { "data-hook": DataHooks_1.ProgressBarDataHooks.background, className: LinearProgressBar_st_css_1.default.barBackground }),
+        React.createElement("div", { "data-hook": DataHooks_1.ProgressBarDataHooks.foreground, style: progressWidth, className: LinearProgressBar_st_css_1.default.barForeground })));
+};
+var getRelativeValue = function (props) {
+    var value = props.value, min = props.min, max = props.max;
+    var relativeValue = ((+value - min) / (max - min)) * 100;
+    return parseInt(relativeValue, 10);
+};
+var normalizeProps = function (props) {
+    if (props.value >= props.max) {
+        return tslib_1.__assign({}, props, { value: FULL_PROGRESS });
+    }
+    if (props.value < props.min ||
+        [undefined, null, ''].includes(props.value)) {
+        return tslib_1.__assign({}, props, { value: NO_PROGRESS });
+    }
+    return tslib_1.__assign({}, props, { value: getRelativeValue(props) });
+};
+var getDataAttributes = function (props) {
+    var _a;
+    return _a = {},
+        _a[DataHooks_1.ProgressBarDataKeys.value] = props.value,
+        _a[DataHooks_1.ProgressBarDataKeys.min] = props.min,
+        _a[DataHooks_1.ProgressBarDataKeys.max] = props.max,
+        _a;
+};
+exports.LinearProgressBar = function (props) {
+    var error = props.error, showProgressIndication = props.showProgressIndication;
+    var _props = normalizeProps(props);
+    var success = _props.value === FULL_PROGRESS;
+    return (React.createElement("div", tslib_1.__assign({}, getDataAttributes(_props), { "data-min": _props.min }, LinearProgressBar_st_css_1.default('root', { error: error, success: success }, _props)),
+        renderBarSection(_props.value),
+        showProgressIndication && (React.createElement("div", { "data-hook": DataHooks_1.ProgressBarDataHooks.progressIndicator, className: LinearProgressBar_st_css_1.default.progressIndicationSection }, resolveIndicationElement(_props)))));
+};
+exports.LinearProgressBar.displayName = 'LinearProgressBar';
+exports.LinearProgressBar.defaultProps = {
+    min: NO_PROGRESS,
+    max: FULL_PROGRESS,
+};
+//# sourceMappingURL=LinearProgressBar.js.map
+
+/***/ }),
+
+/***/ 674:
+/*!****************************************************************************************************!*\
+  !*** ../node_modules/wix-ui-core/dist/src/components/linear-progress-bar/LinearProgressBar.st.css ***!
+  \****************************************************************************************************/
+/*! exports provided: default */
+/*! all exports used */
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+/***/ (function(module, exports, __webpack_require__) {
+
+Object.defineProperty(exports, "__esModule", { value: true })
+
+exports.default = __webpack_require__.stylable.create(
+  "root",
+  "LinearProgressBar3941501373",
+  {"root":"LinearProgressBar3941501373--root","progressIndicationSection":"LinearProgressBar3941501373--progressIndicationSection","barContainer":"LinearProgressBar3941501373--barContainer","barBackground":"LinearProgressBar3941501373--barBackground","barForeground":"LinearProgressBar3941501373--barForeground","indicationContainer":"LinearProgressBar3941501373--indicationContainer"},
+  "",
+  1,
+  /*! ../node_modules/wix-ui-core/dist/src/components/linear-progress-bar/LinearProgressBar.st.css */ 674
+);
+
+
+
+/***/ }),
+
+/***/ 675:
+/*!****************************************************************************************!*\
+  !*** ../node_modules/wix-ui-core/dist/src/components/linear-progress-bar/DataHooks.js ***!
+  \****************************************************************************************/
+/*! no static exports found */
+/*! all exports used */
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+/**
+ * ProgressBar data-hook props used for testing.
+ */
+var ProgressBarDataHooks;
+(function (ProgressBarDataHooks) {
+    ProgressBarDataHooks["container"] = "progressbar-container";
+    ProgressBarDataHooks["background"] = "progressbar-background";
+    ProgressBarDataHooks["foreground"] = "progressbar-foreground";
+    ProgressBarDataHooks["progressIndicator"] = "progress-indicator";
+    ProgressBarDataHooks["successIcon"] = "success-icon";
+    ProgressBarDataHooks["errorIcon"] = "error-icon";
+    ProgressBarDataHooks["progressPercentage"] = "progress-percentages";
+})(ProgressBarDataHooks = exports.ProgressBarDataHooks || (exports.ProgressBarDataHooks = {}));
+/**
+ * ProgressBar attribute keys used to store internal data (current value, min, max etc...)
+ */
+var ProgressBarDataKeys;
+(function (ProgressBarDataKeys) {
+    ProgressBarDataKeys["value"] = "data-progress-value";
+    ProgressBarDataKeys["min"] = "data-progress-min-value";
+    ProgressBarDataKeys["max"] = "data-progress-max-value";
+})(ProgressBarDataKeys = exports.ProgressBarDataKeys || (exports.ProgressBarDataKeys = {}));
+//# sourceMappingURL=DataHooks.js.map
+
+/***/ }),
+
+/***/ 676:
+/*!**********************************************!*\
+  !*** ./components/ProgressBar/data-hooks.js ***!
+  \**********************************************/
+/*! no static exports found */
+/*! all exports used */
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+module.exports = { DATAHOOKS: {
+    coreComponent: 'progress-bar-core-component'
+  } };
+
+/***/ }),
+
+/***/ 677:
+/*!*****************************************************!*\
+  !*** ./components/ProgressBar/ProgressBar.santa.js ***!
+  \*****************************************************/
+/*! no static exports found */
+/*! all exports used */
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.santaProgressBar = undefined;
 
 var _createReactClass = __webpack_require__(/*! create-react-class */ 17);
 
 var _createReactClass2 = _interopRequireDefault(_createReactClass);
 
+var _lodash = __webpack_require__(/*! lodash */ 2);
+
+var _lodash2 = _interopRequireDefault(_lodash);
+
+var _ProgressBarSt = __webpack_require__(/*! ./ProgressBar.st.css */ 240);
+
+var _ProgressBarSt2 = _interopRequireDefault(_ProgressBarSt);
+
 var _santaComponents = __webpack_require__(/*! santa-components */ 14);
 
+var _ProgressBar = __webpack_require__(/*! ./ProgressBar */ 359);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var Tags = exports.Tags = function Tags(props) {
-  var id = props.id,
-      alignment = props.alignment,
-      verticalSpacing = props.verticalSpacing,
-      horizontalSpacing = props.horizontalSpacing,
-      tags = props.tags,
-      onTagClick = props.onTagClick;
-
-  var tagsContainerStyle = {
-    margin: verticalSpacing / -2 + 'px ' + horizontalSpacing / -2 + 'px'
-  };
-  var tagStyle = {
-    margin: verticalSpacing / 2 + 'px ' + horizontalSpacing / 2 + 'px',
-    maxWidth: 'calc(100% + ' + horizontalSpacing + ')'
-  };
-
-  return _react2.default.createElement(
-    'div',
-    _extends({ id: id }, (0, _TagsSt2.default)('root', { alignment: alignment }, props), { style: props.style }),
-    _react2.default.createElement(
-      'nav',
-      {
-        style: tagsContainerStyle,
-        className: _TagsSt2.default.tagsContainer,
-        'aria-label': 'Tags Navigation'
-      },
-      tags.map(function (_ref, id) {
-        var label = _ref.label,
-            link = _ref.link;
-        return _react2.default.createElement(
-          'a',
-          _extends({
-            'data-hook': 'tag',
-            key: id,
-            tabIndex: '0',
-            style: tagStyle,
-            className: _TagsSt2.default.tag,
-            onClick: function onClick() {
-              return onTagClick(label);
-            }
-          }, link),
-          label
-        );
-      })
-    )
-  );
-};
-
-Tags.displayName = 'CoreTags';
-
-Tags.propTypes = {
-  id: _propTypes.string,
-  className: _propTypes.string,
-  tags: _propTypes.array,
-  horizontalSpacing: _propTypes.number,
-  verticalSpacing: _propTypes.number,
-  alignment: _propTypes.string,
-  onTagClick: _propTypes.func,
-  style: _propTypes.object
-};
 
 var skinBasedComp = _santaComponents.mixins.skinBasedComp,
     runTimeCompData = _santaComponents.mixins.runTimeCompData;
@@ -1128,49 +1565,68 @@ var skinBasedComp = _santaComponents.mixins.skinBasedComp,
 
 var getComponentSkins = function getComponentSkins() {
   return {
-    'wixui.skins.Tags': _TagsSt2.default.$skin
+    'wixui.skins.ProgressBar': _ProgressBarSt2.default.$skin
   };
 };
 
-var santaTags = exports.santaTags = (0, _createReactClass2.default)({
-  displayName: 'Tags',
+var DEFAULT_EDITING_VALUE = 60;
+
+/**
+ * @class components.progressBar
+ * @extends {core.skinBasedComp}
+ */
+var santaProgressBar = exports.santaProgressBar = (0, _createReactClass2.default)({
+  displayName: 'ProgressBar',
 
   mixins: [skinBasedComp(getComponentSkins()), runTimeCompData],
 
   propTypes: {
-    tagList: _santaComponents.santaTypesDefinitions.Tags.tagList,
-    styleId: _santaComponents.santaTypesDefinitions.Component.styleId.isRequired,
-    compProp: _santaComponents.santaTypesDefinitions.Component.compProp.isRequired,
+    structure: _santaComponents.santaTypesDefinitions.Component.structure.isRequired,
     compData: _santaComponents.santaTypesDefinitions.Component.compData.isRequired,
-    style: _santaComponents.santaTypesDefinitions.Component.style.isRequired
+    compProp: _santaComponents.santaTypesDefinitions.Component.compProp.isRequired,
+    style: _santaComponents.santaTypesDefinitions.Component.style,
+    styleId: _santaComponents.santaTypesDefinitions.Component.styleId,
+    componentViewMode: _santaComponents.santaTypesDefinitions.RenderFlags.componentViewMode
   },
 
   statics: {
     getComponentSkins: getComponentSkins
   },
 
-  onTagClick: function onTagClick(tag) {
-    this.handleAction(_santaComponents.constants.SITE.ACTION_TYPES.TAG_CLICK, { tag: tag });
+  getRelativeDefaultEditingValue: function getRelativeDefaultEditingValue(targetValue) {
+    return targetValue / 100 * DEFAULT_EDITING_VALUE;
+  },
+  getValue: function getValue() {
+    var _props = this.props,
+        compData = _props.compData,
+        componentViewMode = _props.componentViewMode;
+    var value = compData.value,
+        targetValue = compData.targetValue;
+
+    return componentViewMode === 'editor' && (!value || value >= targetValue) ? this.getRelativeDefaultEditingValue(targetValue) : value;
   },
   getSkinProperties: function getSkinProperties() {
-    var _props = this.props,
-        styleId = _props.styleId,
-        _props$compProp = _props.compProp,
-        horizontalSpacing = _props$compProp.horizontalSpacing,
-        verticalSpacing = _props$compProp.verticalSpacing,
-        alignment = _props$compProp.alignment;
+    var _props2 = this.props,
+        structure = _props2.structure,
+        style = _props2.style,
+        compData = _props2.compData,
+        compProp = _props2.compProp,
+        styleId = _props2.styleId,
+        componentViewMode = _props2.componentViewMode;
 
+    var props = _lodash2.default.assign({}, compProp, compData, {
+      styleId: styleId,
+      className: styleId,
+      style: style,
+      viewMode: componentViewMode,
+      width: _lodash2.default.get(structure, 'layout.width', 0),
+      height: _lodash2.default.get(structure, 'layout.height', 0),
+      value: this.getValue()
+    });
 
     return {
       '': {
-        parentConst: Tags,
-        className: styleId,
-        tags: this.props.tagList,
-        horizontalSpacing: horizontalSpacing,
-        verticalSpacing: verticalSpacing,
-        alignment: alignment,
-        onTagClick: this.onTagClick,
-        style: this.props.style
+        children: [_santaComponents.utils.createReactElement(_ProgressBar.ProgressBar, props)]
       }
     };
   }
@@ -1239,4 +1695,4 @@ module.exports = invariant;
 /***/ })
 
 }]);
-//# sourceMappingURL=wixui.Tags.chunk.js.map
+//# sourceMappingURL=wixui.ProgressBar.chunk.js.map

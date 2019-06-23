@@ -1,4 +1,4 @@
-((typeof self !== 'undefined' ? self : this)["webpackJsonp_wix_ui_santa"] = (typeof self !== 'undefined' ? self : this)["webpackJsonp_wix_ui_santa"] || []).push([[42],{
+((typeof self !== 'undefined' ? self : this)["webpackJsonp_wix_ui_santa"] = (typeof self !== 'undefined' ? self : this)["webpackJsonp_wix_ui_santa"] || []).push([[39],{
 
 /***/ 12:
 /*!**********************************************!*\
@@ -964,198 +964,43 @@ module.exports = emptyObject;
 
 /***/ }),
 
-/***/ 351:
-/*!********************************************************************************!*\
-  !*** ../node_modules/wix-ui-core/dist/src/components/pagination/Pagination.js ***!
-  \********************************************************************************/
+/***/ 21:
+/*!*************************************************!*\
+  !*** ../node_modules/webpack/buildin/global.js ***!
+  \*************************************************/
 /*! no static exports found */
 /*! all exports used */
 /*! ModuleConcatenation bailout: Module is not an ECMAScript module */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, exports) {
 
-"use strict";
+var g;
 
-Object.defineProperty(exports, "__esModule", { value: true });
-var tslib_1 = __webpack_require__(/*! tslib */ 6);
-var React = __webpack_require__(/*! react */ 0);
-var PageStrip_1 = __webpack_require__(/*! ./PageStrip */ 648);
-var Pagination_st_css_1 = __webpack_require__(/*! ./Pagination.st.css */ 352);
-var root_min_width_1 = __webpack_require__(/*! ./root-min-width */ 650);
-var upperCaseFirst = function (str) {
-    return str[0].toUpperCase() + str.slice(1);
-};
-exports.getId = function (idPrefix, name) {
-    if (idPrefix === void 0) { idPrefix = ''; }
-    if (name === void 0) { name = ''; }
-    return idPrefix ? idPrefix + name : null;
-};
-exports.calculateWidth = function (totalPages) {
-    return totalPages.toString().length + "em";
-};
-var Pagination = /** @class */ (function (_super) {
-    tslib_1.__extends(Pagination, _super);
-    function Pagination() {
-        var _this = _super !== null && _super.apply(this, arguments) || this;
-        _this.state = {
-            pageInputValue: String(_this.props.currentPage),
-            pageInputHasError: false,
-        };
-        _this.handlePageInputChange = function (e) {
-            _this.setState({
-                pageInputValue: e.target.value,
-                pageInputHasError: false,
-            });
-        };
-        _this.handlePageInputKeyDown = function (event) {
-            // Enter
-            if (event.keyCode === 13) {
-                var page = Number(_this.state.pageInputValue);
-                if (page !== _this.props.currentPage) {
-                    if (1 <= page && page <= _this.props.totalPages) {
-                        _this.props.onChange({ event: event, page: page });
-                    }
-                    else {
-                        _this.setState({ pageInputHasError: true });
-                    }
-                }
-            }
-        };
-        _this.handlePageInputBlur = function (event) {
-            _this.setState({
-                pageInputValue: String(_this.props.currentPage),
-                pageInputHasError: false,
-            });
-        };
-        _this.handlePageClick = function (event, page) {
-            _this.props.onChange({ event: event, page: page });
-        };
-        _this.handlePageKeyDown = function (event, page) {
-            // Enter or Space
-            if (event.keyCode === 13 || event.keyCode === 32) {
-                _this.props.onChange({ event: event, page: page });
-            }
-        };
-        return _this;
-    }
-    Pagination.prototype.updateRootMinWidth = function () {
-        root_min_width_1.measureAndSetRootMinWidth(this.rootNode, this.props.paginationMode, this.props.id);
-    };
-    Pagination.prototype.componentDidMount = function () {
-        this.props.updateResponsiveLayout && this.updateRootMinWidth();
-    };
-    Pagination.prototype.componentDidUpdate = function () {
-        this.props.updateResponsiveLayout && this.updateRootMinWidth();
-    };
-    Pagination.prototype.getId = function (elementName) {
-        if (elementName === void 0) { elementName = ''; }
-        return exports.getId(this.props.id, elementName);
-    };
-    Object.defineProperty(Pagination.prototype, "maxPagesToShow", {
-        get: function () {
-            if (this.props.maxPagesToShow) {
-                return this.props.maxPagesToShow;
-            }
-            if (this.props.responsive) {
-                return 20;
-            }
-            return 7;
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Pagination.prototype.renderPageStrip = function () {
-        return (React.createElement(PageStrip_1.PageStrip, { id: this.props.id, totalPages: this.props.totalPages, currentPage: this.props.currentPage, maxPagesToShow: this.maxPagesToShow, showFirstPage: this.props.showFirstPage, showLastPage: this.props.showLastPage, responsive: this.props.responsive, pageUrl: this.props.pageUrl, gapLabel: this.props.gapLabel, onPageClick: this.handlePageClick, onPageKeyDown: this.handlePageKeyDown, updateResponsiveLayout: this.props.updateResponsiveLayout, disabled: this.props.disabled }));
-    };
-    Pagination.prototype.renderPageForm = function () {
-        return (React.createElement("div", { "data-hook": "page-form", id: this.getId('pageForm'), className: Pagination_st_css_1.default.pageForm, dir: "ltr" },
-            React.createElement("input", { id: this.getId('pageInput'), "data-hook": "page-input", type: "number", className: Pagination_st_css_1.default.pageInput, min: 1, max: this.props.totalPages, value: this.state.pageInputValue, disabled: this.props.disabled, onChange: this.handlePageInputChange, onKeyDown: this.handlePageInputKeyDown, "aria-label": 'Page number, select a number between 1 and ' +
-                    this.props.totalPages, onBlur: this.handlePageInputBlur, style: { width: exports.calculateWidth(this.props.totalPages) } }),
-            this.props.showInputModeTotalPages && [
-                React.createElement("span", { key: "slash", id: this.getId('slash'), className: Pagination_st_css_1.default.slash }, this.props.slashLabel),
-                React.createElement("span", { key: "total-pages", id: this.getId('totalPages'), "data-hook": "total-pages", className: Pagination_st_css_1.default.totalPages }, this.props.totalPages),
-            ]));
-    };
-    Pagination.prototype.renderNavButton = function (type) {
-        var _this = this;
-        var _a;
-        var _b = this.props, currentPage = _b.currentPage, totalPages = _b.totalPages, pageUrl = _b.pageUrl;
-        var disabled = this.props.disabled ||
-            (((type === "first" /* First */ || type === "previous" /* Prev */) &&
-                currentPage <= 1) ||
-                ((type === "last" /* Last */ || type === "next" /* Next */) &&
-                    currentPage >= totalPages));
-        var _c = (_a = {},
-            _a["previous" /* Prev */] = [
-                Pagination_st_css_1.default.navButtonPrevious,
-                this.props.previousLabel,
-                currentPage - 1,
-            ],
-            _a["next" /* Next */] = [
-                Pagination_st_css_1.default.navButtonNext,
-                this.props.nextLabel,
-                currentPage + 1,
-            ],
-            _a["first" /* First */] = [Pagination_st_css_1.default.navButtonFirst, this.props.firstLabel, 1],
-            _a["last" /* Last */] = [
-                Pagination_st_css_1.default.navButtonLast,
-                this.props.lastLabel,
-                totalPages,
-            ],
-            _a)[type], btnClass = _c[0], label = _c[1], page = _c[2];
-        return (React.createElement("a", tslib_1.__assign({ "data-hook": type, id: this.getId('navButton' + upperCaseFirst(type)) }, Pagination_st_css_1.default('navButton ' + btnClass, { disabled: disabled }), { "aria-label": upperCaseFirst(type) + ' Page', tabIndex: disabled || pageUrl ? null : 0, onClick: disabled ? null : function (event) { return _this.handlePageClick(event, page); }, onKeyDown: disabled ? null : function (event) { return _this.handlePageKeyDown(event, page); }, href: !disabled && pageUrl ? pageUrl(page) : null }), label));
-    };
-    Pagination.prototype.componentWillReceiveProps = function (nextProps) {
-        this.setState({
-            pageInputValue: String(nextProps.currentPage),
-            pageInputHasError: false,
-        });
-    };
-    Pagination.prototype.render = function () {
-        var _this = this;
-        var _a = this.props, showFirstLastNavButtons = _a.showFirstLastNavButtons, paginationMode = _a.paginationMode, width = _a.width, style = _a.style;
-        var styleStates = {
-            disabled: this.props.disabled,
-            error: this.state.pageInputHasError,
-        };
-        return (React.createElement("nav", tslib_1.__assign({ ref: function (el) { return (_this.rootNode = el); }, id: this.getId(''), "aria-label": "Pagination Navigation", dir: this.props.rtl ? 'rtl' : null, onClick: this.props.onClick, onDoubleClick: this.props.onDoubleClick, onMouseEnter: this.props.onMouseEnter, onMouseLeave: this.props.onMouseLeave, style: style || { width: width } }, Pagination_st_css_1.default('root', styleStates, this.props)),
-            this.renderNavButton("next" /* Next */),
-            this.renderNavButton("previous" /* Prev */),
-            paginationMode === 'input'
-                ? this.renderPageForm()
-                : this.renderPageStrip(),
-            showFirstLastNavButtons && this.renderNavButton("first" /* First */),
-            showFirstLastNavButtons && this.renderNavButton("last" /* Last */)));
-    };
-    Pagination.displayName = 'Pagination';
-    Pagination.defaultProps = {
-        currentPage: 1,
-        showFirstLastNavButtons: false,
-        showFirstPage: false,
-        showLastPage: false,
-        responsive: false,
-        paginationMode: 'pages',
-        showInputModeTotalPages: false,
-        disabled: false,
-        // dir="rtl" automatically flips the direction of less-than and more-than signs.
-        // If we decide to use different labels we need to add conditional logic.
-        firstLabel: '<<',
-        lastLabel: '>>',
-        previousLabel: '<',
-        nextLabel: '>',
-        gapLabel: '...',
-        slashLabel: '\u00A0/\u00A0',
-    };
-    return Pagination;
-}(React.Component));
-exports.Pagination = Pagination;
-//# sourceMappingURL=Pagination.js.map
+// This works in non-strict mode
+g = (function() {
+	return this;
+})();
+
+try {
+	// This works if eval is allowed (see CSP)
+	g = g || new Function("return this")();
+} catch (e) {
+	// This works if the window reference is available
+	if (typeof window === "object") g = window;
+}
+
+// g can still be undefined, but nothing to do about it...
+// We return undefined, instead of nothing here, so it's
+// easier to handle this case. if(!global) { ...}
+
+module.exports = g;
+
 
 /***/ }),
 
-/***/ 352:
-/*!************************************************************************************!*\
-  !*** ../node_modules/wix-ui-core/dist/src/components/pagination/Pagination.st.css ***!
-  \************************************************************************************/
+/***/ 355:
+/*!*******************************************!*\
+  !*** ./components/Captcha/Captcha.st.css ***!
+  \*******************************************/
 /*! exports provided: default */
 /*! all exports used */
 /*! ModuleConcatenation bailout: Module is not an ECMAScript module */
@@ -1165,48 +1010,24 @@ Object.defineProperty(exports, "__esModule", { value: true })
 
 exports.default = __webpack_require__.stylable.create(
   "root",
-  "Pagination3815741391",
-  {"button-common-mixin":"Pagination3815741391--button-common-mixin","root":"Pagination3815741391--root","navButton":"Pagination3815741391--navButton","disabled":"Pagination3815741391--disabled","navButtonFirst":"Pagination3815741391--navButtonFirst","navButtonPrevious":"Pagination3815741391--navButtonPrevious","navButtonNext":"Pagination3815741391--navButtonNext","navButtonLast":"Pagination3815741391--navButtonLast","pageStrip":"Pagination3815741391--pageStrip","pageStripInner":"Pagination3815741391--pageStripInner","pageStripTemplate":"Pagination3815741391--pageStripTemplate","pageButton":"Pagination3815741391--pageButton","currentPage":"Pagination3815741391--currentPage","gap":"Pagination3815741391--gap","pageForm":"Pagination3815741391--pageForm","pageInput":"Pagination3815741391--pageInput","totalPages":"Pagination3815741391--totalPages","slash":"Pagination3815741391--slash"},
-  "",
-  1,
-  /*! ../node_modules/wix-ui-core/dist/src/components/pagination/Pagination.st.css */ 352
-);
-
-
-
-/***/ }),
-
-/***/ 353:
-/*!*************************************************!*\
-  !*** ./components/Pagination/Pagination.st.css ***!
-  \*************************************************/
-/*! exports provided: default */
-/*! all exports used */
-/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
-/***/ (function(module, exports, __webpack_require__) {
-
-Object.defineProperty(exports, "__esModule", { value: true })
-
-exports.default = __webpack_require__.stylable.create(
-  "root",
-  "Pagination3298768303",
-  {"pageButtonRules":"Pagination3298768303--pageButtonRules","root":"Pagination3298768303--root","selectedPageBG":"color_22","selectedPageBorderColor":"color_26","selectedPageBorderWidth":"0","selectedPageTextColor":"color_25","pageNumbersTextColor":"color_6","pageInputBG":"color_23","pageInputBorderColor":"color_27","pageInputBorderWidth":"0","pageInputTextColor":"color_26","totalPagesTextColor":"color_7","pageInputFocusBG":"color_8","pageInputFocusBorderColor":"color_38","pageInputFocusBorderWidth":"3","pageInputErrorBG":"color_2","pageInputErrorBorderColor":"color_22","pageInputErrorBorderWidth":"3","navButtonBG":"transparent","navButtonBorderWidth":"3","navButtonBorderColor":"color_32","navButtonDisabledBorderWidth":"3","navButtonDisabledBorderColor":"color_43","navButtonDisabledBG":"color_27","arrowsColor":"color_32","arrowsDisabledColor":"color_37","navButtonTextSize":"15px","navButtonTextColor":"color_15","navButtonDisabledTextColor":"color_11","fnt":"font_8","bRadius":"100px","shadow":"none"},
+  "Captcha217700995",
+  {"root":"Captcha217700995--root"},
   "",
   7,
-  /*! ./components/Pagination/Pagination.st.css */ 353
+  /*! ./components/Captcha/Captcha.st.css */ 355
 );
 
-exports.default.$skin = {"params":{"selectedPageBG":"COLOR_ALPHA","selectedPageBorderColor":"BORDER_COLOR_ALPHA","selectedPageBorderWidth":"BORDER_SIZE","selectedPageTextColor":"TEXT_COLOR","pageNumbersTextColor":"TEXT_COLOR","pageInputBG":"COLOR_ALPHA","pageInputBorderColor":"BORDER_COLOR_ALPHA","pageInputBorderWidth":"BORDER_SIZE","pageInputTextColor":"TEXT_COLOR","totalPagesTextColor":"TEXT_COLOR","pageInputFocusBG":"COLOR_ALPHA","pageInputFocusBorderColor":"BORDER_COLOR_ALPHA","pageInputFocusBorderWidth":"BORDER_SIZE","pageInputErrorBG":"COLOR_ALPHA","pageInputErrorBorderColor":"BORDER_COLOR_ALPHA","pageInputErrorBorderWidth":"BORDER_SIZE","navButtonBG":"COLOR_ALPHA","navButtonBorderWidth":"BORDER_SIZE","navButtonBorderColor":"BORDER_COLOR_ALPHA","navButtonDisabledBorderWidth":"BORDER_SIZE","navButtonDisabledBorderColor":"BORDER_COLOR_ALPHA","navButtonDisabledBG":"COLOR_ALPHA","arrowsColor":"COLOR_ALPHA","arrowsDisabledColor":"COLOR_ALPHA","navButtonTextSize":"TEXT_SIZE","navButtonTextColor":"TEXT_COLOR","navButtonDisabledTextColor":"TEXT_COLOR","fnt":"FONT","bRadius":"BORDER_RADIUS","shadow":"BOX_SHADOW"},"paramsDefaults":{"selectedPageBG":"color_22","selectedPageBorderColor":"color_26","selectedPageBorderWidth":"0","selectedPageTextColor":"color_25","pageNumbersTextColor":"color_6","pageInputBG":"color_23","pageInputBorderColor":"color_27","pageInputBorderWidth":"0","pageInputTextColor":"color_26","totalPagesTextColor":"color_7","pageInputFocusBG":"color_8","pageInputFocusBorderColor":"color_38","pageInputFocusBorderWidth":"3","pageInputErrorBG":"color_2","pageInputErrorBorderColor":"color_22","pageInputErrorBorderWidth":"3","navButtonBG":"transparent","navButtonBorderWidth":"3","navButtonBorderColor":"color_32","navButtonDisabledBorderWidth":"3","navButtonDisabledBorderColor":"color_43","navButtonDisabledBG":"color_27","arrowsColor":"color_32","arrowsDisabledColor":"color_37","navButtonTextSize":"15px","navButtonTextColor":"color_15","navButtonDisabledTextColor":"color_11","fnt":"font_8","bRadius":"100px","shadow":"none"}};
+exports.default.$skin = {"params":{},"paramsDefaults":{}};
 exports.default.$skin.$render = function render_css($id, $params, $functions) {
-  return "\n" + $id + " .Pagination3815741391--button-common-mixin{display: inline-flex;flex-shrink: 0}\n" + $id + ".Pagination3815741391--root{display: inline-flex;user-select: none}\n" + $id + " .Pagination3815741391--navButton{display: inline-flex;flex-shrink: 0}\n" + $id + " .Pagination3815741391--navButton:not(.Pagination3815741391--disabled){cursor: pointer}\n" + $id + " .Pagination3815741391--navButtonFirst{order: 1}\n" + $id + " .Pagination3815741391--navButtonPrevious{order: 2}\n" + $id + " .Pagination3815741391--navButtonNext{order: 4}\n" + $id + " .Pagination3815741391--navButtonLast{order: 5}\n" + $id + " .Pagination3815741391--pageStrip{order: 3;overflow-x: hidden}\n" + $id + " .Pagination3815741391--pageStripInner{display: flex}\n" + $id + " .Pagination3815741391--pageStripTemplate{height: 0;overflow: hidden}\n" + $id + " .Pagination3815741391--pageButton{display: inline-flex;flex-shrink: 0;cursor: pointer}\n" + $id + " .Pagination3815741391--currentPage{display: inline-flex;flex-shrink: 0}\n" + $id + " .Pagination3815741391--gap{display: inline-flex;flex-shrink: 0}\n" + $id + " .Pagination3815741391--pageForm{display: flex;order: 3}\n" + $id + " .Pagination3815741391--pageInput{}\n" + $id + " .Pagination3815741391--totalPages{}\n" + $id + " .Pagination3815741391--slash{}\n" + $id + " .Pagination3298768303--pageButtonRules{min-width: 1em;min-height: 1em;line-height: 1em;justify-content: center;align-items: center;padding: 0.5em 0.5em;margin: 0.25em}\n" + $id + ".Pagination3298768303--root{align-items: stretch;font: " + $params["fnt"] + ";box-sizing: border-box}\n" + $id + ".Pagination3298768303--root .Pagination3815741391--pageButton{min-width: 1em;min-height: 1em;line-height: 1em;justify-content: center;align-items: center;padding: 0.5em 0.5em;margin: 0.25em;position: relative;color: " + $params["pageNumbersTextColor"] + "}\n" + $id + ".Pagination3298768303--root .Pagination3815741391--currentPage{min-width: 1em;min-height: 1em;line-height: 1em;justify-content: center;align-items: center;padding: 0.5em 0.5em;margin: 0.25em;color: " + $params["selectedPageTextColor"] + ";background: " + $params["selectedPageBG"] + ";border-radius: " + $params["bRadius"] + ";border: " + $params["selectedPageBorderWidth"] + " solid " + $params["selectedPageBorderColor"] + ";box-shadow: " + $params["shadow"] + ";padding: calc(0.5em - " + $params["selectedPageBorderWidth"] + ") calc(0.5em - " + $params["selectedPageBorderWidth"] + ")}\n" + $id + ".Pagination3298768303--root:not([data-pagination3815741391-disabled]) .Pagination3815741391--pageButton:hover::before{background: " + $params["selectedPageBG"] + ";opacity: 0.2;content: \"\";position: absolute;top: 0;right: 0;bottom: 0;left: 0;border-radius: " + $params["bRadius"] + "}\n" + $id + ".Pagination3298768303--root:not([data-pagination3815741391-disabled]) .Pagination3815741391--pageButton:hover{opacity: 0.7}\n" + $id + ".Pagination3298768303--root[data-pagination3815741391-disabled] .Pagination3815741391--pageButton{cursor: default}\n" + $id + ".Pagination3298768303--root .Pagination3815741391--navButton{min-width: 1em;min-height: 1em;padding: calc(0.75em - " + $params["navButtonBorderWidth"] + ");display: flex;justify-content: center;align-items: center;border: " + $params["navButtonBorderWidth"] + " solid " + $params["navButtonBorderColor"] + ";background: " + $params["navButtonBG"] + ";border-radius: " + $params["bRadius"] + "}\n" + $id + ".Pagination3298768303--root .Pagination3815741391--navButton[data-pagination3815741391-disabled], " + $id + ".Pagination3298768303--root[data-preview=\"disabled\"] .Pagination3815741391--navButton{padding: calc(0.75em - " + $params["navButtonDisabledBorderWidth"] + ");border: " + $params["navButtonDisabledBorderWidth"] + " solid " + $params["navButtonDisabledBorderColor"] + ";background: " + $params["navButtonDisabledBG"] + ";cursor: default}\n" + $id + ".Pagination3298768303--root .Pagination3815741391--navButton[data-pagination3815741391-disabled] svg, " + $id + ".Pagination3298768303--root[data-preview=\"disabled\"] .Pagination3815741391--navButton svg{fill: " + $params["arrowsDisabledColor"] + "}\n" + $id + ".Pagination3298768303--root .Pagination3815741391--navButton:hover:not([data-pagination3815741391-disabled]){opacity: 0.8}\n" + $id + ".Pagination3298768303--root .Pagination3815741391--navButton svg{width: 1em;min-width: 16px;height: 1em;min-height: 16px;fill: " + $params["arrowsColor"] + "}\n" + $id + ".Pagination3298768303--root[dir=\"rtl\"] .Pagination3815741391--navButton svg{transform: scaleX(-1)}\n" + $id + ".Pagination3298768303--root .Pagination3815741391--navButton span{font-size: " + $params["navButtonTextSize"] + ";color: " + $params["navButtonTextColor"] + ";line-height: 1em}\n" + $id + ".Pagination3298768303--root .Pagination3815741391--navButton[data-pagination3815741391-disabled] span, " + $id + ".Pagination3298768303--root[data-preview=\"disabled\"] .Pagination3815741391--navButton span{color: " + $params["navButtonDisabledTextColor"] + "}\n" + $id + ".Pagination3298768303--root .Pagination3815741391--navButtonFirst{margin-right: 1em}\n" + $id + ".Pagination3298768303--root[dir=\"rtl\"] .Pagination3815741391--navButtonFirst{margin-right: 0;margin-left: 1em}\n" + $id + ".Pagination3298768303--root .Pagination3815741391--navButtonPrevious{margin-right: 1em}\n" + $id + ".Pagination3298768303--root[dir=\"rtl\"] .Pagination3815741391--navButtonPrevious{margin-right: 0;margin-left: 1em}\n" + $id + ".Pagination3298768303--root .Pagination3815741391--navButtonLast{margin-left: 1em}\n" + $id + ".Pagination3298768303--root[dir=\"rtl\"] .Pagination3815741391--navButtonLast{margin-left: 0;margin-right: 1em}\n" + $id + ".Pagination3298768303--root .Pagination3815741391--navButtonNext{margin-left: 1em}\n" + $id + ".Pagination3298768303--root[dir=\"rtl\"] .Pagination3815741391--navButtonNext{margin-left: 0;margin-right: 1em}\n" + $id + ".Pagination3298768303--root .Pagination3815741391--gap{min-width: 1em;min-height: 1em;line-height: 1em;justify-content: center;align-items: center;padding: 0.5em 0.5em;margin: 0.25em;color: " + $params["pageNumbersTextColor"] + "}\n" + $id + ".Pagination3298768303--root .Pagination3815741391--pageStrip{min-width: 3em;overflow: visible;align-self: center}\n" + $id + ".Pagination3298768303--root .Pagination3815741391--pageStripInner{flex-grow: 1;flex-basis: auto;justify-content: center;overflow: visible;align-items: center}\n" + $id + ".Pagination3298768303--root .Pagination3815741391--pageStripTemplate{overflow: hidden}\n" + $id + ".Pagination3298768303--root .Pagination3815741391--pageForm{flex-grow: 1;flex-basis: auto;justify-content: center;align-items: stretch}\n" + $id + ".Pagination3298768303--root .Pagination3815741391--slash{width: 1em;height: 1em;flex-shrink: 0;align-self: center}\n" + $id + ".Pagination3298768303--root .Pagination3815741391--slash svg{width: 1em;height: 1em}\n" + $id + ".Pagination3298768303--root .Pagination3815741391--slash svg > g{stroke: " + $params["totalPagesTextColor"] + "}\n" + $id + ".Pagination3298768303--root .Pagination3815741391--pageInput{min-width: 3.5em;padding: calc(0.25em - " + $params["pageInputBorderWidth"] + ") calc(0.5ch - " + $params["pageInputBorderWidth"] + ");color: " + $params["pageInputTextColor"] + ";border-radius: " + $params["bRadius"] + ";border: " + $params["pageInputBorderWidth"] + " solid " + $params["pageInputBorderColor"] + ";text-align: center;margin: 0 0.25em;background: " + $params["pageInputBG"] + ";box-shadow: " + $params["shadow"] + ";font: inherit;-moz-appearance: textfield}\n" + $id + ".Pagination3298768303--root .Pagination3815741391--pageInput:hover{opacity: 0.8}\n" + $id + ".Pagination3298768303--root .Pagination3815741391--pageInput:focus, " + $id + ".Pagination3298768303--root[data-preview=\"focus\"] .Pagination3815741391--pageInput{padding: calc(0.25em - " + $params["pageInputFocusBorderWidth"] + ") calc(0.5ch - " + $params["pageInputFocusBorderWidth"] + ");background: " + $params["pageInputFocusBG"] + ";border: " + $params["pageInputFocusBorderWidth"] + " solid " + $params["pageInputFocusBorderColor"] + "}\n" + $id + ".Pagination3298768303--root .Pagination3815741391--pageInput::-webkit-inner-spin-button, " + $id + ".Pagination3298768303--root .Pagination3815741391--pageInput::-webkit-outer-spin-button{-webkit-appearance: none}\n" + $id + ".Pagination3298768303--root .Pagination3815741391--totalPages{max-width: 4ch;min-width: 1ch;padding-left: 0.25em;overflow: hidden;text-overflow: ellipsis;color: " + $params["totalPagesTextColor"] + ";align-self: center}\n" + $id + ".Pagination3298768303--root[data-pagination3815741391-error] .Pagination3815741391--pageInput, " + $id + ".Pagination3298768303--root[data-preview=\"error\"] .Pagination3815741391--pageInput{padding: calc(0.25em - " + $params["pageInputErrorBorderWidth"] + ") calc(0.5ch - " + $params["pageInputErrorBorderWidth"] + ");background: " + $params["pageInputErrorBG"] + ";border: " + $params["pageInputErrorBorderWidth"] + " solid " + $params["pageInputErrorBorderColor"] + "}\n@media all and (-ms-high-contrast: none), (-ms-high-contrast: active){\n  " + $id + ".Pagination3298768303--root .Pagination3815741391--totalPages{max-width: 6ch;min-width: 6ch}\n}\n";
+  return "\n" + $id + ".Captcha3325868082--root{position: relative}\n" + $id + " .Captcha3325868082--loaderWrapper{}\n" + $id + " .Captcha3325868082--captcha{}\n" + $id + ".Captcha3325868082--root[data-captcha3325868082-loaded] .Captcha3325868082--captcha{display: block}\n" + $id + ".Captcha3325868082--root[data-captcha3325868082-loaded] .Captcha3325868082--loaderWrapper{display: none}\n" + $id + ".Captcha3325868082--root .Captcha3325868082--captcha{display: none}\n" + $id + ".Captcha3325868082--root .Captcha3325868082--requiredField{position: absolute;opacity: 0.0;bottom: 0;left: 0;-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none}\n" + $id + ".Captcha217700995--root{}\n" + $id + ".Captcha217700995--root .Captcha3325868082--captcha{transform: scale(0.77);transform-origin: top left}\n";
 };
 
 /***/ }),
 
-/***/ 435:
-/*!****************************************!*\
-  !*** ./components/Pagination/index.js ***!
-  \****************************************/
+/***/ 438:
+/*!*************************************!*\
+  !*** ./components/Captcha/index.js ***!
+  \*************************************/
 /*! no static exports found */
 /*! all exports used */
 /*! ModuleConcatenation bailout: Module is not an ECMAScript module */
@@ -1219,19 +1040,19 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _Pagination = __webpack_require__(/*! ./Pagination */ 645);
+var _Captcha = __webpack_require__(/*! ./Captcha */ 654);
 
-var _PaginationSt = __webpack_require__(/*! ./Pagination.st.css */ 353);
+var _CaptchaSt = __webpack_require__(/*! ./Captcha.st.css */ 355);
 
-var _PaginationSt2 = _interopRequireDefault(_PaginationSt);
+var _CaptchaSt2 = _interopRequireDefault(_CaptchaSt);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = {
-  componentType: 'wixui.Pagination',
-  component: _Pagination.Pagination,
-  santaComponent: _Pagination.santaPagination,
-  skin: _PaginationSt2.default.$skin
+  componentType: 'wixui.Captcha',
+  component: _Captcha.Captcha,
+  santaComponent: _Captcha.santaCaptcha,
+  skin: _CaptchaSt2.default.$skin
 };
 
 /***/ }),
@@ -1467,10 +1288,10 @@ function __importDefault(mod) {
 
 /***/ }),
 
-/***/ 645:
-/*!*********************************************!*\
-  !*** ./components/Pagination/Pagination.js ***!
-  \*********************************************/
+/***/ 654:
+/*!***************************************!*\
+  !*** ./components/Captcha/Captcha.js ***!
+  \***************************************/
 /*! no static exports found */
 /*! all exports used */
 /*! ModuleConcatenation bailout: Module is not an ECMAScript module */
@@ -1482,9 +1303,11 @@ function __importDefault(mod) {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.santaPagination = exports.Pagination = undefined;
+exports.santaCaptcha = exports.Captcha = undefined;
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 var _react = __webpack_require__(/*! react */ 0);
 
@@ -1494,251 +1317,209 @@ var _createReactClass = __webpack_require__(/*! create-react-class */ 17);
 
 var _createReactClass2 = _interopRequireDefault(_createReactClass);
 
-var _reactDom = __webpack_require__(/*! react-dom */ 11);
-
-var _reactDom2 = _interopRequireDefault(_reactDom);
-
-var _pagination = __webpack_require__(/*! wix-ui-core/pagination */ 646);
-
-var _paginationIcons = __webpack_require__(/*! ./paginationIcons */ 651);
-
-var _PaginationSt = __webpack_require__(/*! ./Pagination.st.css */ 353);
-
-var _PaginationSt2 = _interopRequireDefault(_PaginationSt);
-
-var _santaComponents = __webpack_require__(/*! santa-components */ 14);
-
 var _lodash = __webpack_require__(/*! lodash */ 2);
 
 var _lodash2 = _interopRequireDefault(_lodash);
 
 var _propTypes = __webpack_require__(/*! prop-types */ 1);
 
+var _captcha = __webpack_require__(/*! wix-ui-core/captcha */ 655);
+
+var _CaptchaSt = __webpack_require__(/*! ./Captcha.st.css */ 355);
+
+var _CaptchaSt2 = _interopRequireDefault(_CaptchaSt);
+
+var _santaComponents = __webpack_require__(/*! santa-components */ 14);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var Pagination = exports.Pagination = function Pagination(props) {
-  var replaceArrowsWithText = props.replaceArrowsWithText,
-      firstLabel = props.firstLabel,
-      lastLabel = props.lastLabel,
-      previousLabel = props.previousLabel,
-      nextLabel = props.nextLabel,
-      paginationMode = props.paginationMode,
-      showFirstLastNavButtons = props.showFirstLastNavButtons;
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var wixCaptchaPublicKey = '6LejwKAUAAAAACs5B-wV9ndjxrE49x3lGztPznl_';
+var defaultLangCode = _captcha.CaptchaLang.EnglishUS.toString();
+
+var Captcha = exports.Captcha = function (_React$Component) {
+  _inherits(Captcha, _React$Component);
+
+  function Captcha() {
+    _classCallCheck(this, Captcha);
+
+    return _possibleConstructorReturn(this, (Captcha.__proto__ || Object.getPrototypeOf(Captcha)).apply(this, arguments));
+  }
+
+  _createClass(Captcha, [{
+    key: 'render',
+    value: function render() {
+      var _this2 = this;
+
+      var _props = this.props,
+          required = _props.required,
+          onVerify = _props.onVerify,
+          onExpire = _props.onExpire,
+          onReset = _props.onReset,
+          captchaKey = _props.captchaKey,
+          size = _props.size,
+          lang = _props.lang,
+          theme = _props.theme,
+          captchaType = _props.captchaType;
 
 
-  var navigationButtonLabels = replaceArrowsWithText ? {
-    firstLabel: _react2.default.createElement(
-      'span',
-      null,
-      firstLabel
-    ),
-    lastLabel: _react2.default.createElement(
-      'span',
-      null,
-      lastLabel
-    ),
-    previousLabel: _react2.default.createElement(
-      'span',
-      null,
-      previousLabel
-    ),
-    nextLabel: _react2.default.createElement(
-      'span',
-      null,
-      nextLabel
-    )
-  } : {
-    replaceArrowsWithText: true,
-    firstLabel: _paginationIcons.arrowFirst,
-    lastLabel: _paginationIcons.arrowLast,
-    previousLabel: _paginationIcons.arrowPrevious,
-    nextLabel: _paginationIcons.arrowNext
-  };
+      var publicKey = captchaKey ? captchaKey : wixCaptchaPublicKey;
+      return _react2.default.createElement(_captcha.Captcha, _extends({
+        ref: function ref(node) {
+          return _this2.node = node;
+        },
+        required: required,
+        sitekey: publicKey,
+        onVerify: onVerify,
+        onExpire: onExpire,
+        onReset: onReset,
+        size: size,
+        lang: Captcha.tranlateLangCodeToCaptchaLang(lang),
+        theme: theme,
+        captchaType: captchaType
+      }, (0, _CaptchaSt2.default)('root', {}, this.props)));
+    }
+  }], [{
+    key: 'tranlateLangCodeToCaptchaLang',
+    value: function tranlateLangCodeToCaptchaLang(siteLangCode) {
+      if (siteLangCode === _captcha.CaptchaLang.EnglishUS.toString()) {
+        return _captcha.CaptchaLang.EnglishUS;
+      }
+      var foundLang = Object.values(_captcha.CaptchaLang).includes(siteLangCode);
+      if (foundLang) {
+        return siteLangCode;
+      } else {
+        return _captcha.CaptchaLang.EnglishUS;
+      }
+    }
+  }]);
 
-  var slashLabel = { slashLabel: _paginationIcons.slash }; //slash?
+  return Captcha;
+}(_react2.default.Component);
 
-  var states = {
-    navButtonsType: replaceArrowsWithText ? 'text' : 'arrows',
-    paginationMode: paginationMode,
-    navButtonsAmount: showFirstLastNavButtons ? 4 : 2
-  };
-
-  var coreProps = Object.assign({}, props, navigationButtonLabels, slashLabel);
-  return _react2.default.createElement(_pagination.Pagination, _extends({}, coreProps, (0, _PaginationSt2.default)('root', states, coreProps)));
-};
-
-Pagination.displayName = 'Pagination';
-Pagination.propTypes = {
-  replaceArrowsWithText: _propTypes.bool,
-  firstLabel: _propTypes.string,
-  lastLabel: _propTypes.string,
-  previousLabel: _propTypes.string,
-  nextLabel: _propTypes.string,
-  paginationMode: _propTypes.string,
-  showFirstLastNavButtons: _propTypes.bool
+Captcha.displayName = 'Captcha';
+Captcha.propTypes = {
+  onVerify: _propTypes.func,
+  onExpire: _propTypes.func,
+  onReset: _propTypes.func,
+  captchaKey: _propTypes.string,
+  size: _propTypes.string,
+  captchaType: _propTypes.string,
+  theme: _propTypes.string,
+  lang: _propTypes.string,
+  componentViewMode: _propTypes.string,
+  required: _propTypes.bool,
+  style: _propTypes.object
 };
 
 var skinBasedComp = _santaComponents.mixins.skinBasedComp,
     runTimeCompData = _santaComponents.mixins.runTimeCompData,
-    textScaleMixin = _santaComponents.mixins.textScaleMixin;
-
+    inputFocusMixin = _santaComponents.mixins.inputFocusMixin;
 
 var getComponentSkins = function getComponentSkins() {
-  return {
-    'wixui.skins.Pagination': _PaginationSt2.default.$skin
-  };
+  return { 'wixui.skins.Captcha': _CaptchaSt2.default.$skin };
 };
 
-var santaPagination = exports.santaPagination = (0, _createReactClass2.default)({
-  displayName: 'Pagination',
+/**
+ * @class components.captcha
+ * @extends {core.skinBasedComp}
+ */
 
-  mixins: [skinBasedComp(getComponentSkins()), runTimeCompData, textScaleMixin(getComponentSkins())],
+var santaCaptcha = exports.santaCaptcha = (0, _createReactClass2.default)({
+  displayName: 'Captcha',
+
+  mixins: [skinBasedComp(getComponentSkins()), runTimeCompData, inputFocusMixin],
 
   propTypes: {
-    registerLayoutFunc: _santaComponents.santaTypesDefinitions.Layout.registerLayoutFunc.isRequired,
-    compTheme: _santaComponents.santaTypesDefinitions.Component.theme, // trigger re-render on style changes,
+    structure: _santaComponents.santaTypesDefinitions.Component.structure.isRequired,
+    shouldResetComponent: _santaComponents.santaTypesDefinitions.RenderFlags.shouldResetComponent,
     compProp: _santaComponents.santaTypesDefinitions.Component.compProp.isRequired,
     compData: _santaComponents.santaTypesDefinitions.Component.compData.isRequired,
+    componentViewMode: _santaComponents.santaTypesDefinitions.RenderFlags.componentViewMode,
     styleId: _santaComponents.santaTypesDefinitions.Component.styleId,
-    id: _santaComponents.santaTypesDefinitions.Component.id,
     style: _santaComponents.santaTypesDefinitions.Component.style,
-    isMobileView: _santaComponents.santaTypesDefinitions.isMobileView,
-    scale: _santaComponents.santaTypesDefinitions.Component.scale,
-    onChange: _propTypes.func
+    id: _santaComponents.santaTypesDefinitions.Component.id,
+    currentLanguage: _santaComponents.santaTypesDefinitions.RendererModel.multilingual.currentLanguage,
+    isMLEnabled: _santaComponents.santaTypesDefinitions.RendererModel.multilingual.isEnabled
   },
 
   statics: {
-    compSpecificIsDomOnlyOverride: function compSpecificIsDomOnlyOverride() {
-      return false;
+    behaviors: {
+      resetCaptcha: { methodName: 'resetCaptcha' }
     },
     getComponentSkins: getComponentSkins
   },
 
-  handleChange: function handleChange(evt) {
-    var event = evt.event,
-        page = evt.page;
+  resetCaptcha: function resetCaptcha() {
+    this.captchaRef.node.resetCaptcha();
+  },
 
 
-    if (event.keyCode) {
-      event.preventDefault(); //prevents viewer from scrolling after keyboard press
+  /**
+   * in case where we preview the site and go back to the editor we want to reset the captcha.
+   * @param prevProps
+   */
+  componentDidUpdate: function componentDidUpdate(prevProps) {
+    if (this.props.shouldResetComponent && prevProps.shouldResetComponent !== this.props.shouldResetComponent) {
+      this.resetCaptcha();
     }
-
-    var target = _lodash2.default.defaults({ currentPage: page }, event.target);
-    var ev = _lodash2.default.defaults({ target: target }, event);
-
-    this.updateData({ currentPage: page });
-
-    if (this.props.onChange) {
-      this.props.onChange({ page: page });
-    }
-
-    this.handleAction(_santaComponents.constants.SITE.ACTION_TYPES.CHANGE, ev);
   },
   getSkinProperties: function getSkinProperties() {
-    var _this = this;
+    var _this3 = this;
 
-    var _props$compData = this.props.compData,
-        totalPages = _props$compData.totalPages,
-        currentPage = _props$compData.currentPage,
-        firstText = _props$compData.firstText,
-        previousText = _props$compData.previousText,
-        nextText = _props$compData.nextText,
-        lastText = _props$compData.lastText;
-    var _props$compProp = this.props.compProp,
-        paginationMode = _props$compProp.paginationMode,
-        showFirstLastNavButtons = _props$compProp.showFirstLastNavButtons,
-        navigationType = _props$compProp.navigationType,
-        paginationDirection = _props$compProp.paginationDirection,
-        showInputModeTotalPages = _props$compProp.showInputModeTotalPages,
-        showFirstPage = _props$compProp.showFirstPage,
-        showLastPage = _props$compProp.showLastPage,
-        isDisabled = _props$compProp.isDisabled;
-    var _props = this.props,
-        styleId = _props.styleId,
-        id = _props.id,
-        isMobileView = _props.isMobileView;
-
-
-    var replaceArrowsWithText = !isMobileView && navigationType === 'text';
-
-    var getStyle = function getStyle() {
-      // eslint-disable-line complexity
-      var fontStyle = {};
-      var pagesModeMinFontSize = showFirstLastNavButtons ? 15 : 24;
-      var inputModeMinFontSize = showFirstLastNavButtons ? 11 : 16;
-
-      if (isMobileView) {
-        var fontSize = parseInt(_this.getFontSize('fnt').fontSize, 10);
-
-        if (paginationMode === 'pages' && fontSize > pagesModeMinFontSize) {
-          fontStyle.fontSize = pagesModeMinFontSize * _this.props.scale + 'px';
-        } else if (paginationMode === 'input' && fontSize > inputModeMinFontSize) {
-          fontStyle.fontSize = inputModeMinFontSize * _this.props.scale + 'px';
-        } else {
-          fontStyle.fontSize = fontSize * _this.props.scale + 'px';
-        }
-      }
-      return _lodash2.default.merge(_this.props.style, fontStyle);
-    };
-
-    var paginationProps = {
-      parentConst: Pagination,
-      id: id,
-      styleId: styleId,
-      totalPages: totalPages,
-      currentPage: currentPage,
-      onChange: this.handleChange,
-      paginationMode: paginationMode,
-      showFirstLastNavButtons: showFirstLastNavButtons,
-      firstLabel: firstText,
-      previousLabel: previousText,
-      nextLabel: nextText,
-      lastLabel: lastText,
-      replaceArrowsWithText: replaceArrowsWithText,
-      rtl: paginationDirection === 'rtl',
-      showInputModeTotalPages: showInputModeTotalPages,
-      responsive: true,
-      maxPagesToShow: 100,
-      showFirstPage: showFirstPage,
-      showLastPage: showLastPage,
-      width: this.props.style.width,
-      updateResponsiveLayout: function updateResponsiveLayout(updateFunc) {
-        _this.props.registerLayoutFunc(_reactDom2.default.findDOMNode(_this), updateFunc);
+    var languageCode = this.props.isMLEnabled ? this.props.currentLanguage.code : defaultLangCode;
+    var captchaProps = _lodash2.default.assign({}, this.props.compData, this.props.compProp, {
+      className: this.props.styleId,
+      style: this.props.style,
+      id: this.props.id,
+      lang: languageCode,
+      required: true,
+      onVerify: function onVerify(token) {
+        _this3.updateData({ token: token });
       },
-      style: getStyle(),
-      disabled: isDisabled,
-      onMouseEnter: this.onMouseIn,
-      onMouseLeave: this.onMouseOut,
-      onClick: this.onClick,
-      onDoubleClick: this.onDblClick
-    };
-
+      onExpire: function onExpire() {
+        _this3.updateData({ token: undefined });
+      },
+      onReset: function onReset() {
+        _this3.updateData({ token: undefined });
+      },
+      ref: function ref(captchaRef) {
+        _this3.captchaRef = captchaRef;
+      }
+    });
     return {
-      '': paginationProps
+      '': {
+        children: [_santaComponents.utils.createReactElement(Captcha, captchaProps)]
+      }
     };
   }
 });
 
 /***/ }),
 
-/***/ 646:
-/*!*************************************************!*\
-  !*** ../node_modules/wix-ui-core/pagination.js ***!
-  \*************************************************/
+/***/ 655:
+/*!**********************************************!*\
+  !*** ../node_modules/wix-ui-core/captcha.js ***!
+  \**********************************************/
 /*! no static exports found */
 /*! all exports used */
 /*! ModuleConcatenation bailout: Module is not an ECMAScript module */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! ./dist/src/components/pagination */ 647);
+module.exports = __webpack_require__(/*! ./dist/src/components/captcha */ 656);
 
 
 /***/ }),
 
-/***/ 647:
-/*!***************************************************************************!*\
-  !*** ../node_modules/wix-ui-core/dist/src/components/pagination/index.js ***!
-  \***************************************************************************/
+/***/ 656:
+/*!************************************************************************!*\
+  !*** ../node_modules/wix-ui-core/dist/src/components/captcha/index.js ***!
+  \************************************************************************/
 /*! no static exports found */
 /*! all exports used */
 /*! ModuleConcatenation bailout: Module is not an ECMAScript module */
@@ -1747,16 +1528,21 @@ module.exports = __webpack_require__(/*! ./dist/src/components/pagination */ 647
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
-var Pagination_1 = __webpack_require__(/*! ./Pagination */ 351);
-exports.Pagination = Pagination_1.Pagination;
+var Captcha_1 = __webpack_require__(/*! ./Captcha */ 657);
+exports.Captcha = Captcha_1.Captcha;
+var types_1 = __webpack_require__(/*! ./types */ 660);
+exports.Size = types_1.Size;
+exports.CaptchaType = types_1.CaptchaType;
+exports.Theme = types_1.Theme;
+exports.CaptchaLang = types_1.CaptchaLang;
 //# sourceMappingURL=index.js.map
 
 /***/ }),
 
-/***/ 648:
-/*!*******************************************************************************!*\
-  !*** ../node_modules/wix-ui-core/dist/src/components/pagination/PageStrip.js ***!
-  \*******************************************************************************/
+/***/ 657:
+/*!**************************************************************************!*\
+  !*** ../node_modules/wix-ui-core/dist/src/components/captcha/Captcha.js ***!
+  \**************************************************************************/
 /*! no static exports found */
 /*! all exports used */
 /*! ModuleConcatenation bailout: Module is not an ECMAScript module */
@@ -1767,466 +1553,603 @@ exports.Pagination = Pagination_1.Pagination;
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = __webpack_require__(/*! tslib */ 6);
 var React = __webpack_require__(/*! react */ 0);
-var page_strip_layout_1 = __webpack_require__(/*! ./page-strip-layout */ 649);
-var Pagination_st_css_1 = __webpack_require__(/*! ./Pagination.st.css */ 352);
-var PageStrip = /** @class */ (function (_super) {
-    tslib_1.__extends(PageStrip, _super);
-    function PageStrip() {
+var Reaptcha = __webpack_require__(/*! reaptcha */ 658);
+var Captcha_st_css_1 = __webpack_require__(/*! ./Captcha.st.css */ 659);
+/**
+ * Captcha
+ */
+var Captcha = /** @class */ (function (_super) {
+    tslib_1.__extends(Captcha, _super);
+    function Captcha() {
         var _this = _super !== null && _super.apply(this, arguments) || this;
-        _this.responsiveLayoutIsFresh = false;
-        _this.unmounted = false;
-        _this.state = { responsiveLayout: null };
+        _this.captchaRef = null;
+        _this.state = {
+            rendered: false,
+            token: undefined,
+        };
+        /**
+         * this will indicate the google component is loaded and ready to be displayed
+         */
+        _this.onLoad = function () {
+            if (_this.props.onLoad) {
+                _this.props.onLoad();
+            }
+        };
+        /**
+         * the user has successfully taken the captcha and we have the verification id
+         * @param verificationString
+         */
+        _this.onVerified = function (verificationString) {
+            _this.setState({ token: verificationString });
+            if (_this.props.onVerify) {
+                _this.props.onVerify(verificationString);
+            }
+        };
+        /**
+         * The user has taken the captcha challange however it has not been verified the page was not submitted in time
+         * so we need to ask the user to retake the captcha challenge.
+         */
+        _this.onExpired = function () {
+            _this.setState({ token: undefined });
+            if (_this.props.onExpire) {
+                _this.props.onExpire();
+            }
+        };
+        /**
+         * triggered when the inner captcha is actually rendered
+         */
+        _this.onRender = function () {
+            _this.setState({ rendered: true });
+            if (_this.props.onRender) {
+                _this.props.onRender();
+            }
+        };
+        /**
+         * this method will pass the error to the registered error call back.
+         */
+        _this.onError = function () {
+            if (_this.props.onError) {
+                _this.props.onError();
+            }
+        };
         return _this;
     }
-    PageStrip.prototype.componentDidMount = function () {
+    /**
+     * reload a new captcha from google
+     */
+    Captcha.prototype.resetCaptcha = function () {
         var _this = this;
-        if (this.props.updateResponsiveLayout) {
-            // We can't do this in componentWillMount because the caller might need to access DOM here,
-            // and SSR wouldn't work.
-            this.props.updateResponsiveLayout(function () {
-                _this.responsiveLayoutIsFresh = false;
-                // Even though we register a noop callback for `this.props.updateResponsiveLayout`
-                // in `componentWillUnmount`, we cannot guarantee that the user will not hold onto
-                // the old callback and invoke it after unmount, which is the reason for checking
-                // `this.unmounted`.
-                if (!_this.unmounted) {
-                    _this.updateLayoutIfNeeded();
-                }
-            });
+        if (this.captchaRef) {
+            this.captchaRef.reset();
         }
-        else {
-            this.updateLayoutIfNeeded();
-        }
-    };
-    PageStrip.prototype.componentWillReceiveProps = function () {
-        this.responsiveLayoutIsFresh = false;
-    };
-    PageStrip.prototype.componentDidUpdate = function () {
-        if (!this.props.updateResponsiveLayout) {
-            this.updateLayoutIfNeeded();
-        }
-        this.forceRepaintInMsEdge();
-    };
-    PageStrip.prototype.componentWillUnmount = function () {
-        this.unmounted = true;
-        if (this.props.updateResponsiveLayout) {
-            this.props.updateResponsiveLayout(function () { return null; });
-        }
-    };
-    PageStrip.prototype.render = function () {
-        var _this = this;
-        return (React.createElement("div", { ref: function (el) { return (_this.rootNode = el); }, "data-hook": "page-strip", id: this.props.id ? this.props.id + 'pageStrip' : null, className: Pagination_st_css_1.default.pageStrip, "data-aid": "qa-page-strip" },
-            React.createElement("div", { className: Pagination_st_css_1.default.pageStripInner }, this.renderLayout(this.getLayout(), false)),
-            this.isResponsive() && (React.createElement("div", { className: Pagination_st_css_1.default.pageStripInner + ' ' + Pagination_st_css_1.default.pageStripTemplate }, this.renderLayout(page_strip_layout_1.createResponsiveLayoutTemplate(this.props), true)))));
-    };
-    PageStrip.prototype.forceRepaintInMsEdge = function () {
-        // MS Edge has a glitch that makes page numbers invisible when switching to the preview
-        // mode in Santa editor. As a workaround we need to force text re-rendering.
-        // Changing font-variant to small-caps should do the trick without actually affecting
-        // the appearance of digits.
-        var inlineStyle = this.rootNode.style;
-        inlineStyle.fontVariant = inlineStyle.fontVariant ? '' : 'small-caps';
-    };
-    // We can't use page numbers as keys, because we might need to render the same page twice
-    // for responsive layout. We also can't use index as a key, because React might reuse the
-    // node for another page, and keep keyboard focus on it, which we don't want.
-    PageStrip.prototype.renderLayout = function (layout, isDummy) {
-        var _this = this;
-        var _a = this.props, currentPage = _a.currentPage, pageUrl = _a.pageUrl, disabled = _a.disabled;
-        return layout.map(function (pageNumber, index) {
-            if (!pageNumber) {
-                return (React.createElement("span", { key: index, className: Pagination_st_css_1.default.gap }, _this.props.gapLabel));
+        this.setState({ token: undefined }, function () {
+            if (_this.props.onReset) {
+                _this.props.onReset();
             }
-            if (pageNumber === currentPage) {
-                return (React.createElement("span", { key: pageNumber + '-' + index, "data-hook": "page-" + pageNumber + " current-page", "aria-label": "Page " + pageNumber, className: Pagination_st_css_1.default.currentPage }, pageNumber));
-            }
-            if (isDummy) {
-                return (React.createElement("a", { key: pageNumber + '-' + index, className: Pagination_st_css_1.default.pageButton }, pageNumber));
-            }
-            return (React.createElement("a", { key: pageNumber + '-' + index, "data-hook": "page-" + pageNumber, "aria-label": "Page " + pageNumber, className: Pagination_st_css_1.default.pageButton, tabIndex: disabled || pageUrl ? null : 0, onClick: disabled ? null : function (e) { return _this.props.onPageClick(e, pageNumber); }, onKeyDown: disabled ? null : function (e) { return _this.props.onPageKeyDown(e, pageNumber); }, href: !disabled && pageUrl ? pageUrl(pageNumber) : null }, pageNumber));
         });
     };
-    PageStrip.prototype.isResponsive = function () {
-        return (this.props.responsive &&
-            this.props.totalPages > 0 &&
-            this.props.maxPagesToShow > 1);
+    /**
+     * returns the verification token to the caller
+     */
+    Captcha.prototype.getVerificationToken = function () {
+        return this.state.token;
     };
-    PageStrip.prototype.getLayout = function () {
-        if (!this.isResponsive()) {
-            return page_strip_layout_1.createStaticLayout(this.props);
-        }
-        if (this.state.responsiveLayout) {
-            return this.state.responsiveLayout;
-        }
-        return page_strip_layout_1.createStaticLayout({
-            totalPages: this.props.totalPages,
-            currentPage: this.props.currentPage,
-            showFirstPage: this.props.showFirstPage,
-            showLastPage: this.props.showLastPage,
-            // This is pretty arbitrary. 5 is the minimum space required to show the first, current, and last page.
-            maxPagesToShow: 5,
-        });
+    /**
+     * return true if the captcha challenge has been successfully taken
+     */
+    Captcha.prototype.isVerified = function () {
+        return this.state.token !== undefined;
     };
-    PageStrip.prototype.updateLayoutIfNeeded = function () {
-        if (!this.isResponsive() || this.responsiveLayoutIsFresh) {
-            return;
-        }
-        this.responsiveLayoutIsFresh = true;
-        this.setState({
-            responsiveLayout: page_strip_layout_1.createResponsiveLayout({
-                container: this.rootNode.children[1],
-                totalPages: this.props.totalPages,
-                currentPage: this.props.currentPage,
-                maxPagesToShow: this.props.maxPagesToShow,
-                showFirstPage: this.props.showFirstPage,
-                showLastPage: this.props.showLastPage,
-            }),
-        });
+    /**
+     * we render the captcha.
+     * we render a loader until we get a loaded indication from the captcha lib
+     *
+     */
+    Captcha.prototype.render = function () {
+        var _this = this;
+        var _a = this.props, sitekey = _a.sitekey, loader = _a.loader, captchaType = _a.captchaType, size = _a.size, theme = _a.theme, lang = _a.lang, required = _a.required;
+        return (React.createElement("div", tslib_1.__assign({}, Captcha_st_css_1.default('root', { loaded: this.state.rendered }, this.props), { "data-captcha-type": captchaType, "data-theme": theme, "data-lang": lang, "data-size": size }),
+            !this.state.rendered && (React.createElement("div", { className: Captcha_st_css_1.default.loaderWrapper }, loader)),
+            React.createElement("div", { className: Captcha_st_css_1.default.captcha },
+                React.createElement(Reaptcha, { ref: function (e) { return (_this.captchaRef = e); }, sitekey: sitekey, captchaType: captchaType, size: size, theme: theme, hl: lang, onLoad: this.onLoad, onVerify: this.onVerified, onExpire: this.onExpired, onRender: this.onRender, onError: this.onError }),
+                required && (React.createElement("input", { "data-hook": "required-field", className: Captcha_st_css_1.default.requiredField, type: "checkbox", required: true, onChange: function () { }, checked: this.isVerified() })))));
     };
-    return PageStrip;
-}(React.Component));
-exports.PageStrip = PageStrip;
-//# sourceMappingURL=PageStrip.js.map
+    Captcha.displayName = 'Captcha';
+    return Captcha;
+}(React.PureComponent));
+exports.Captcha = Captcha;
+//# sourceMappingURL=Captcha.js.map
 
 /***/ }),
 
-/***/ 649:
-/*!***************************************************************************************!*\
-  !*** ../node_modules/wix-ui-core/dist/src/components/pagination/page-strip-layout.js ***!
-  \***************************************************************************************/
+/***/ 658:
+/*!**********************************************!*\
+  !*** ../node_modules/reaptcha/dist/index.js ***!
+  \**********************************************/
 /*! no static exports found */
 /*! all exports used */
 /*! ModuleConcatenation bailout: Module is not an ECMAScript module */
 /***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
+/* WEBPACK VAR INJECTION */(function(global) {(function webpackUniversalModuleDefinition(root, factory) {
+	if(true)
+		module.exports = factory(__webpack_require__(/*! react */ 0));
+	else {}
+})(global, function(__WEBPACK_EXTERNAL_MODULE__0__) {
+return /******/ (function(modules) { // webpackBootstrap
+/******/ 	// The module cache
+/******/ 	var installedModules = {};
+/******/
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/
+/******/ 		// Check if module is in cache
+/******/ 		if(installedModules[moduleId]) {
+/******/ 			return installedModules[moduleId].exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = installedModules[moduleId] = {
+/******/ 			i: moduleId,
+/******/ 			l: false,
+/******/ 			exports: {}
+/******/ 		};
+/******/
+/******/ 		// Execute the module function
+/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+/******/
+/******/ 		// Flag the module as loaded
+/******/ 		module.l = true;
+/******/
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/
+/******/
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = modules;
+/******/
+/******/ 	// expose the module cache
+/******/ 	__webpack_require__.c = installedModules;
+/******/
+/******/ 	// define getter function for harmony exports
+/******/ 	__webpack_require__.d = function(exports, name, getter) {
+/******/ 		if(!__webpack_require__.o(exports, name)) {
+/******/ 			Object.defineProperty(exports, name, { enumerable: true, get: getter });
+/******/ 		}
+/******/ 	};
+/******/
+/******/ 	// define __esModule on exports
+/******/ 	__webpack_require__.r = function(exports) {
+/******/ 		if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 			Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 		}
+/******/ 		Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 	};
+/******/
+/******/ 	// create a fake namespace object
+/******/ 	// mode & 1: value is a module id, require it
+/******/ 	// mode & 2: merge all properties of value into the ns
+/******/ 	// mode & 4: return value when already ns object
+/******/ 	// mode & 8|1: behave like require
+/******/ 	__webpack_require__.t = function(value, mode) {
+/******/ 		if(mode & 1) value = __webpack_require__(value);
+/******/ 		if(mode & 8) return value;
+/******/ 		if((mode & 4) && typeof value === 'object' && value && value.__esModule) return value;
+/******/ 		var ns = Object.create(null);
+/******/ 		__webpack_require__.r(ns);
+/******/ 		Object.defineProperty(ns, 'default', { enumerable: true, value: value });
+/******/ 		if(mode & 2 && typeof value != 'string') for(var key in value) __webpack_require__.d(ns, key, function(key) { return value[key]; }.bind(null, key));
+/******/ 		return ns;
+/******/ 	};
+/******/
+/******/ 	// getDefaultExport function for compatibility with non-harmony modules
+/******/ 	__webpack_require__.n = function(module) {
+/******/ 		var getter = module && module.__esModule ?
+/******/ 			function getDefault() { return module['default']; } :
+/******/ 			function getModuleExports() { return module; };
+/******/ 		__webpack_require__.d(getter, 'a', getter);
+/******/ 		return getter;
+/******/ 	};
+/******/
+/******/ 	// Object.prototype.hasOwnProperty.call
+/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
+/******/
+/******/ 	// __webpack_public_path__
+/******/ 	__webpack_require__.p = "";
+/******/
+/******/
+/******/ 	// Load entry module and return exports
+/******/ 	return __webpack_require__(__webpack_require__.s = 1);
+/******/ })
+/************************************************************************/
+/******/ ([
+/* 0 */
+/***/ (function(module, exports) {
 
-Object.defineProperty(exports, "__esModule", { value: true });
-function createStaticLayout(_a) {
-    var totalPages = _a.totalPages, currentPage = _a.currentPage, maxPagesToShow = _a.maxPagesToShow, showFirstPage = _a.showFirstPage, showLastPage = _a.showLastPage;
-    return createLayout({
-        totalPages: totalPages,
-        currentPage: currentPage,
-        lowerBound: 1,
-        upperBound: totalPages,
-        pageRangeCost: function (a, b) { return b - a + 1; },
-        showFirstPage: showFirstPage,
-        showLastPage: showLastPage,
-        rewindToFirstCost: 2,
-        rewindToLastCost: 2,
-        budget: maxPagesToShow,
-    });
-}
-exports.createStaticLayout = createStaticLayout;
-function rangeToPreRenderForResponsiveLayout(totalPages, currentPage, maxPagesToShow) {
-    return [
-        Math.max(currentPage - maxPagesToShow, 1),
-        Math.min(currentPage + maxPagesToShow, totalPages),
-    ];
-}
-function createResponsiveLayoutTemplate(_a) {
-    var totalPages = _a.totalPages, currentPage = _a.currentPage, maxPagesToShow = _a.maxPagesToShow;
-    var _b = rangeToPreRenderForResponsiveLayout(totalPages, currentPage, maxPagesToShow), lowerBound = _b[0], upperBound = _b[1];
-    return [1, 0].concat(closedRange(lowerBound, upperBound), [0, totalPages]);
-}
-exports.createResponsiveLayoutTemplate = createResponsiveLayoutTemplate;
-// Takes a container with children rendered using createResponsiveLayoutTemplate,
-// measures the children, and decides how many can be shown without overflowing the container.
-// For measurements to work correctly the pages must not have any dynamic spacing between them
-// such as justify-content: space-evenly, but they can have static spacing such as margins.
-// As long as we're using flexbox with centered pages we don't need to worry about the outer
-// margins of the first and last page, they will be trimmed by flexbox automatically.
-// maxPagesToShow is not really taken into account, it's used to derive the range of pages
-// that was pre-rendered by createResponsiveLayoutTemplate().
-function createResponsiveLayout(_a) {
-    var container = _a.container, totalPages = _a.totalPages, currentPage = _a.currentPage, maxPagesToShow = _a.maxPagesToShow, showFirstPage = _a.showFirstPage, showLastPage = _a.showLastPage;
-    var children = Array.from(container.children);
-    var pages = children.slice(2, -2);
-    var containerWidth = container.getBoundingClientRect().width;
-    var firstRect = children[0].getBoundingClientRect();
-    var lastRect = children[children.length - 1].getBoundingClientRect();
-    var lowerRect = pages[0].getBoundingClientRect();
-    var upperRect = pages[pages.length - 1].getBoundingClientRect();
-    var rewindToFirstCost = mergeBoundingRects(firstRect, lowerRect).width - lowerRect.width;
-    var rewindToLastCost = mergeBoundingRects(lastRect, upperRect).width - upperRect.width;
-    var _b = rangeToPreRenderForResponsiveLayout(totalPages, currentPage, maxPagesToShow), lowerBound = _b[0], upperBound = _b[1];
-    var pageRangeCost = function (a, b) {
-        var aRect = pages[a - lowerBound].getBoundingClientRect();
-        var bRect = pages[b - lowerBound].getBoundingClientRect();
-        return mergeBoundingRects(aRect, bRect).width;
-    };
-    return createLayout({
-        totalPages: totalPages,
-        currentPage: currentPage,
-        lowerBound: lowerBound,
-        upperBound: upperBound,
-        pageRangeCost: pageRangeCost,
-        showFirstPage: showFirstPage,
-        showLastPage: showLastPage,
-        rewindToFirstCost: rewindToFirstCost,
-        rewindToLastCost: rewindToLastCost,
-        budget: containerWidth,
-    });
-}
-exports.createResponsiveLayout = createResponsiveLayout;
-function createLayoutByExpandingPageRange(_a) {
-    var totalPages = _a.totalPages, low = _a.low, high = _a.high, lowerBound = _a.lowerBound, upperBound = _a.upperBound, pageRangeCost = _a.pageRangeCost, budget = _a.budget, showRewindToFirst = _a.showRewindToFirst, showRewindToLast = _a.showRewindToLast, rewindToFirstCost = _a.rewindToFirstCost, rewindToLastCost = _a.rewindToLastCost;
-    var safeLowerBound = showRewindToFirst
-        ? Math.max(lowerBound, 4)
-        : lowerBound;
-    var safeUpperBound = showRewindToLast
-        ? Math.min(upperBound, totalPages - 3)
-        : upperBound;
-    if (!isNondecreasing([
-        lowerBound,
-        safeLowerBound,
-        low,
-        high,
-        safeUpperBound,
-        upperBound,
-    ])) {
-        return null;
-    }
-    lowerBound = safeLowerBound;
-    upperBound = safeUpperBound;
-    budget -=
-        (showRewindToFirst ? rewindToFirstCost : 0) +
-            (showRewindToLast ? rewindToLastCost : 0);
-    var acceptableLow = 0;
-    var acceptableHigh = 0;
-    while (lowerBound <= low &&
-        high <= upperBound &&
-        pageRangeCost(low, high) <= budget) {
-        acceptableLow = low;
-        acceptableHigh = high;
-        if (low === lowerBound && high === upperBound) {
-            break;
-        }
-        low = Math.max(low - 1, lowerBound);
-        high = Math.min(high + 1, upperBound);
-    }
-    return acceptableLow && acceptableHigh
-        ? (showRewindToFirst ? [1, 0] : []).concat(closedRange(acceptableLow, acceptableHigh), (showRewindToLast ? [0, totalPages] : [])) : null;
-}
-function createLayout(_a) {
-    var totalPages = _a.totalPages, currentPage = _a.currentPage, lowerBound = _a.lowerBound, upperBound = _a.upperBound, pageRangeCost = _a.pageRangeCost, showFirstPage = _a.showFirstPage, showLastPage = _a.showLastPage, rewindToFirstCost = _a.rewindToFirstCost, rewindToLastCost = _a.rewindToLastCost, budget = _a.budget;
-    var prevOrLowerBound = Math.max(currentPage - 1, lowerBound);
-    var nextOrUpperBound = Math.min(currentPage + 1, upperBound);
-    var expand = function (low, high, showRewindToFirst, showRewindToLast) {
-        return createLayoutByExpandingPageRange({
-            totalPages: totalPages,
-            low: low,
-            high: high,
-            lowerBound: lowerBound,
-            upperBound: upperBound,
-            pageRangeCost: pageRangeCost,
-            budget: budget,
-            showRewindToFirst: showRewindToFirst,
-            showRewindToLast: showRewindToLast,
-            rewindToFirstCost: rewindToFirstCost,
-            rewindToLastCost: rewindToLastCost,
-        });
-    };
-    return (
-    // Try to show the entire range.
-    ((lowerBound === 1 || !showFirstPage) &&
-        (upperBound === totalPages || !showLastPage) &&
-        expand(lowerBound, upperBound, false, false)) ||
-        // Ellipsis only in the end. Show at least one page after the current.
-        (showLastPage &&
-            lowerBound === 1 &&
-            expand(lowerBound, nextOrUpperBound, false, true)) ||
-        // Ellipsis only in the beginning. Show at least one page before the current.
-        (showFirstPage &&
-            upperBound === totalPages &&
-            expand(prevOrLowerBound, upperBound, true, false)) ||
-        // Ellipses on both sides. Show at least one page before the current and one after.
-        (showFirstPage &&
-            showLastPage &&
-            expand(prevOrLowerBound, nextOrUpperBound, true, true)) ||
-        // Ellipsis only in the end. Don't try to include the next page.
-        (showLastPage &&
-            lowerBound === 1 &&
-            expand(lowerBound, currentPage, false, true)) ||
-        // Ellipsis only in the beginning. Don't try to include the previous page.
-        (showFirstPage &&
-            upperBound === totalPages &&
-            expand(currentPage, upperBound, true, false)) ||
-        // Ellipses on both sides. Don't try to include the previous and the next page.
-        (showFirstPage &&
-            showLastPage &&
-            expand(currentPage, currentPage, true, true)) ||
-        // Cut off both sides without adding ellipses.
-        expand(currentPage, currentPage, false, false) || [currentPage] // If there's not enough space even for the current page, still show it.
-    );
-}
-function closedRange(start, stop, step) {
-    if (step === void 0) { step = 1; }
-    var result = [];
-    for (var i = start; i <= stop; i += step) {
-        result.push(i);
-    }
-    return result;
-}
-function isNondecreasing(sequence) {
-    for (var i = 1; i < sequence.length; i++) {
-        if (sequence[i] < sequence[i - 1]) {
-            return false;
-        }
-    }
-    return true;
-}
-function mergeBoundingRects(a, b) {
-    var top = Math.min(a.top, b.top);
-    var right = Math.max(a.right, b.right);
-    var bottom = Math.max(a.bottom, b.bottom);
-    var left = Math.min(a.left, b.left);
-    var width = right - left;
-    var height = bottom - top;
-    return { top: top, right: right, bottom: bottom, left: left, width: width, height: height };
-}
-//# sourceMappingURL=page-strip-layout.js.map
+module.exports = __WEBPACK_EXTERNAL_MODULE__0__;
 
 /***/ }),
-
-/***/ 650:
-/*!************************************************************************************!*\
-  !*** ../node_modules/wix-ui-core/dist/src/components/pagination/root-min-width.js ***!
-  \************************************************************************************/
-/*! no static exports found */
-/*! all exports used */
-/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
-/***/ (function(module, exports, __webpack_require__) {
+/* 1 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+__webpack_require__.r(__webpack_exports__);
 
-Object.defineProperty(exports, "__esModule", { value: true });
-var Pagination_1 = __webpack_require__(/*! ./Pagination */ 351);
-exports.measureAndSetRootMinWidth = function (compNode, paginationMode, idPrefix) {
-    if (idPrefix === void 0) { idPrefix = ''; }
-    compNode.style.minWidth = '';
-    compNode.style.minHeight = '';
-    var getById = function (id) {
-        return compNode.querySelector("#" + Pagination_1.getId(idPrefix, id));
-    };
-    var getMinWidth = function (elmnt) {
-        return elmnt ? parseInt(window.getComputedStyle(elmnt).minWidth, 10) : 0;
-    };
-    var getWidthWithMargins = function (element) {
-        if (!element) {
-            return 0;
-        }
-        var style = window.getComputedStyle(element);
-        return (parseInt(style.marginRight, 10) +
-            element.offsetWidth +
-            parseInt(style.marginLeft, 10));
-    };
-    var getHeightWithMargins = function (element) {
-        if (!element) {
-            return 0;
-        }
-        var style = window.getComputedStyle(element);
-        return (parseInt(style.marginBottom, 10) +
-            element.offsetHeight +
-            parseInt(style.marginTop, 10));
-    };
-    var navButtonsMinWidth = getWidthWithMargins(getById('navButtonNext')) +
-        getWidthWithMargins(getById('navButtonPrevious')) +
-        getWidthWithMargins(getById('navButtonFirst')) +
-        getWidthWithMargins(getById('navButtonLast'));
-    var selectionMinWidth = 0;
-    var minHeight = 0;
-    if (paginationMode === 'pages') {
-        // means we're in "pages" pagination mode
-        selectionMinWidth = getMinWidth(getById('pageStrip'));
-        minHeight = Math.max(getHeightWithMargins(getById('pageStrip')), getHeightWithMargins(getById('navButtonNext')));
-    }
-    else {
-        // means we're in "input" pagination mode
-        selectionMinWidth =
-            getWidthWithMargins(getById('totalPages')) +
-                getWidthWithMargins(getById('slash')) +
-                getWidthWithMargins(getById('pageInput'));
-        minHeight = Math.max(getHeightWithMargins(getById('pageInput')), getHeightWithMargins(getById('navButtonNext')));
-    }
-    compNode.style.minWidth = navButtonsMinWidth + selectionMinWidth + 'px';
-    compNode.style.minHeight = minHeight + 'px';
-};
-//# sourceMappingURL=root-min-width.js.map
+// EXTERNAL MODULE: external {"amd":"react","commonjs":"react","commonjs2":"react","root":"React"}
+var external_amd_react_commonjs_react_commonjs2_react_root_React_ = __webpack_require__(0);
+var external_amd_react_commonjs_react_commonjs2_react_root_React_default = /*#__PURE__*/__webpack_require__.n(external_amd_react_commonjs_react_commonjs2_react_root_React_);
 
-/***/ }),
+// CONCATENATED MODULE: ./utils/injectScript.js
+/* harmony default export */ var injectScript = (function (scriptSrc) {
+  var script = document.createElement('script');
+  script.async = true;
+  script.defer = true;
+  script.src = scriptSrc;
 
-/***/ 651:
-/*!**************************************************!*\
-  !*** ./components/Pagination/paginationIcons.js ***!
-  \**************************************************/
-/*! no static exports found */
-/*! all exports used */
-/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
+  if (document.head) {
+    document.head.appendChild(script);
+  }
 });
-exports.slash = exports.arrowNext = exports.arrowPrevious = exports.arrowLast = exports.arrowFirst = undefined;
+// CONCATENATED MODULE: ./utils/isAnyScriptPresent.js
+/* harmony default export */ var isAnyScriptPresent = (function (regex) {
+  return Array.from(document.scripts).reduce(function (isPresent, script) {
+    return isPresent ? isPresent : regex.test(script.src);
+  }, false);
+});
+// CONCATENATED MODULE: ./index.js
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
-var _react = __webpack_require__(/*! react */ 0);
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-var _react2 = _interopRequireDefault(_react);
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
-var arrowFirst = exports.arrowFirst = _react2.default.createElement(
-  "svg",
-  { version: "1.1", xmlns: "http://www.w3.org/2000/svg", x: "0px", y: "0px", viewBox: "0 0 200 200", enableBackground: "new 0 0 200 200", xmlSpace: "preserve" },
-  _react2.default.createElement(
-    "g",
-    null,
-    _react2.default.createElement("path", { d: "M94.606,32.523l-72.009,68.199l70.48,66.745l-5.518,5.837l-76.627-72.582l78.156-74.027L94.606,32.523z" }),
-    _react2.default.createElement("path", { d: "M107.059,100.723l70.48,66.745l-5.518,5.837l-76.627-72.582l78.156-74.027l5.518,5.828L107.059,100.723z" })
-  )
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
+
+
+var RECAPTCHA_SCRIPT_URL = 'https://recaptcha.net/recaptcha/api.js';
+var RECAPTCHA_SCRIPT_REGEX = /(http|https):\/\/(www)?.+\/recaptcha/;
+
+var index_Reaptcha =
+/*#__PURE__*/
+function (_Component) {
+  _inherits(Reaptcha, _Component);
+
+  function Reaptcha(props) {
+    var _this;
+
+    _classCallCheck(this, Reaptcha);
+
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(Reaptcha).call(this, props));
+
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "container", null);
+
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "_isAvailable", function () {
+      return Boolean(window && window.grecaptcha && window.grecaptcha.ready);
+    });
+
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "_inject", function () {
+      if (_this.props.inject && !isAnyScriptPresent(RECAPTCHA_SCRIPT_REGEX)) {
+        var hlParam = _this.props.hl ? "&hl=".concat(_this.props.hl) : '';
+        var src = "".concat(RECAPTCHA_SCRIPT_URL, "?render=explicit").concat(hlParam);
+        injectScript(src);
+      }
+    });
+
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "_prepare", function () {
+      var _this$props = _this.props,
+          explicit = _this$props.explicit,
+          onLoad = _this$props.onLoad;
+      window.grecaptcha.ready(function () {
+        _this.setState({
+          ready: true
+        }, function () {
+          if (!explicit) {
+            _this.renderExplicitly();
+          }
+
+          if (onLoad) {
+            onLoad();
+          }
+        });
+      });
+    });
+
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "_renderRecaptcha", function (container, config) {
+      return window.grecaptcha.render(container, config);
+    });
+
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "_resetRecaptcha", function () {
+      return window.grecaptcha.reset(_this.state.instanceId);
+    });
+
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "_executeRecaptcha", function () {
+      return window.grecaptcha.execute(_this.state.instanceId);
+    });
+
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "_stopTimer", function () {
+      if (_this.state.timer) {
+        clearInterval(_this.state.timer);
+      }
+    });
+
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "componentDidMount", function () {
+      _this._inject();
+
+      if (_this._isAvailable()) {
+        _this._prepare();
+      } else {
+        var timer = setInterval(function () {
+          if (_this._isAvailable()) {
+            _this._prepare();
+
+            _this._stopTimer();
+          }
+        }, 500);
+
+        _this.setState({
+          timer: timer
+        });
+      }
+    });
+
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "shouldComponentUpdate", function () {
+      return !_this.state.rendered;
+    });
+
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "componentWillUnmount", function () {
+      _this._stopTimer();
+
+      if (_this.state.rendered) {
+        _this._resetRecaptcha();
+      }
+    });
+
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "renderExplicitly", function () {
+      return new Promise(function (resolve, reject) {
+        if (_this.state.rendered) {
+          return reject(new Error('This recaptcha instance has been already rendered.'));
+        }
+
+        if (_this.state.ready && _this.container) {
+          var instanceId = _this._renderRecaptcha(_this.container, {
+            sitekey: _this.props.sitekey,
+            theme: _this.props.theme,
+            size: _this.props.size,
+            badge: _this.state.invisible ? _this.props.badge : null,
+            tabindex: _this.props.tabindex,
+            callback: _this.props.onVerify,
+            'expired-callback': _this.props.onExpire,
+            'error-callback': _this.props.onError,
+            isolated: _this.state.invisible ? _this.props.isolated : null,
+            hl: _this.state.invisible ? null : _this.props.hl
+          });
+
+          _this.setState({
+            instanceId: instanceId,
+            rendered: true
+          }, function () {
+            if (_this.props.onRender) {
+              _this.props.onRender();
+            }
+
+            resolve();
+          });
+        } else {
+          return reject(new Error('Recaptcha is not ready for rendering yet.'));
+        }
+      });
+    });
+
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "reset", function () {
+      return new Promise(function (resolve, reject) {
+        if (_this.state.rendered) {
+          _this._resetRecaptcha();
+
+          return resolve();
+        }
+
+        reject(new Error('This recaptcha instance did not render yet.'));
+      });
+    });
+
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "execute", function () {
+      return new Promise(function (resolve, reject) {
+        if (!_this.state.invisible) {
+          return reject(new Error('Manual execution is only available for invisible size.'));
+        }
+
+        if (_this.state.rendered) {
+          _this._executeRecaptcha();
+
+          resolve();
+        }
+
+        return reject(new Error('This recaptcha instance did not render yet.'));
+      });
+    });
+
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "render", function () {
+      return external_amd_react_commonjs_react_commonjs2_react_root_React_default.a.createElement("div", {
+        id: _this.props.id,
+        className: _this.props.className,
+        ref: function ref(e) {
+          return _this.container = e;
+        }
+      });
+    });
+
+    _this.state = {
+      instanceId: null,
+      ready: false,
+      rendered: false,
+      invisible: _this.props.size === 'invisible',
+      timer: null
+    };
+    return _this;
+  }
+
+  return Reaptcha;
+}(external_amd_react_commonjs_react_commonjs2_react_root_React_["Component"]);
+
+_defineProperty(index_Reaptcha, "defaultProps", {
+  id: '',
+  className: 'g-recaptcha',
+  theme: 'light',
+  size: 'normal',
+  badge: 'bottomright',
+  tabindex: 0,
+  explicit: false,
+  inject: true,
+  isolated: false,
+  hl: ''
+});
+
+/* harmony default export */ var index = __webpack_exports__["default"] = (index_Reaptcha);
+
+/***/ })
+/******/ ])["default"];
+});
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../webpack/buildin/global.js */ 21)))
+
+/***/ }),
+
+/***/ 659:
+/*!******************************************************************************!*\
+  !*** ../node_modules/wix-ui-core/dist/src/components/captcha/Captcha.st.css ***!
+  \******************************************************************************/
+/*! exports provided: default */
+/*! all exports used */
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+/***/ (function(module, exports, __webpack_require__) {
+
+Object.defineProperty(exports, "__esModule", { value: true })
+
+exports.default = __webpack_require__.stylable.create(
+  "root",
+  "Captcha3325868082",
+  {"root":"Captcha3325868082--root","loaderWrapper":"Captcha3325868082--loaderWrapper","captcha":"Captcha3325868082--captcha","requiredField":"Captcha3325868082--requiredField"},
+  "",
+  1,
+  /*! ../node_modules/wix-ui-core/dist/src/components/captcha/Captcha.st.css */ 659
 );
 
-var arrowLast = exports.arrowLast = _react2.default.createElement(
-  "svg",
-  { version: "1.1", xmlns: "http://www.w3.org/2000/svg", x: "0px", y: "0px", viewBox: "0 0 200 200", enableBackground: "new 0 0 200 200", xmlSpace: "preserve" },
-  _react2.default.createElement(
-    "g",
-    null,
-    _react2.default.createElement("path", { d: "M112.442,26.696l76.627,72.582l-78.156,74.027l-5.518-5.828l72.009-68.199l-70.48-66.745L112.442,26.696z" }),
-    _react2.default.createElement("path", { d: "M27.979,26.696l76.627,72.582l-78.156,74.027l-5.518-5.828l72.009-68.199l-70.48-66.745L27.979,26.696z" })
-  )
-);
 
-var arrowPrevious = exports.arrowPrevious = _react2.default.createElement(
-  "svg",
-  { version: "1.1", xmlns: "http://www.w3.org/2000/svg", x: "0px", y: "0px", viewBox: "0 0 200 200", enableBackground: "new 0 0 200 200", xmlSpace: "preserve" },
-  _react2.default.createElement("path", { d: "M130.789,173.304l-76.627-72.582l78.156-74.027l5.518,5.828l-72.009,68.199l70.48,66.745L130.789,173.304z" })
-);
 
-var arrowNext = exports.arrowNext = _react2.default.createElement(
-  "svg",
-  { version: "1.1", xmlns: "http://www.w3.org/2000/svg", x: "0px", y: "0px", viewBox: "0 0 200 200", enableBackground: "new 0 0 200 200", xmlSpace: "preserve" },
-  _react2.default.createElement("path", { d: "M69.211,26.696l76.627,72.582l-78.156,74.027l-5.518-5.828l72.009-68.199l-70.48-66.745L69.211,26.696z" })
-);
+/***/ }),
 
-var slash = exports.slash = _react2.default.createElement(
-  "svg",
-  { xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 15 26", version: "1.1" },
-  _react2.default.createElement("defs", null),
-  _react2.default.createElement(
-    "g",
-    { stroke: "none", strokeWidth: "1", fill: "none", fillRule: "evenodd", strokeLinecap: "square" },
-    _react2.default.createElement(
-      "g",
-      null,
-      _react2.default.createElement("path", { d: "M13.5,4.5 L2,21.9807621" })
-    )
-  )
-);
+/***/ 660:
+/*!************************************************************************!*\
+  !*** ../node_modules/wix-ui-core/dist/src/components/captcha/types.js ***!
+  \************************************************************************/
+/*! no static exports found */
+/*! all exports used */
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var CaptchaType;
+(function (CaptchaType) {
+    CaptchaType["image"] = "image";
+    CaptchaType["audio"] = "audio";
+})(CaptchaType = exports.CaptchaType || (exports.CaptchaType = {}));
+var Theme;
+(function (Theme) {
+    Theme["light"] = "light";
+    Theme["dark"] = "dark";
+})(Theme = exports.Theme || (exports.Theme = {}));
+var Size;
+(function (Size) {
+    Size["normal"] = "normal";
+    Size["compact"] = "compact";
+})(Size = exports.Size || (exports.Size = {}));
+// to ensure that the passed lang is supported we expose the supported langs
+// all of these languages are taken from
+// this list: https://developers.google.com/recaptcha/docs/language
+var CaptchaLang;
+(function (CaptchaLang) {
+    CaptchaLang["Arabic"] = "ar";
+    CaptchaLang["Afrikaans"] = "af";
+    CaptchaLang["Amharic"] = "am";
+    CaptchaLang["Armenian"] = "hy";
+    CaptchaLang["Azerbaijani"] = "az";
+    CaptchaLang["Basque"] = "eu";
+    CaptchaLang["Bengali"] = "bn";
+    CaptchaLang["Bulgarian"] = "bg";
+    CaptchaLang["Catalan"] = "ca";
+    CaptchaLang["ChineseHongKong"] = "zh-HK";
+    CaptchaLang["ChineseSimplified"] = "zh-CN";
+    CaptchaLang["ChineseTraditional"] = "zh-TW";
+    CaptchaLang["Croatian"] = "hr";
+    CaptchaLang["Czech"] = "cs";
+    CaptchaLang["Danish"] = "da";
+    CaptchaLang["Dutch"] = "nl";
+    CaptchaLang["EnglishUK"] = "en-GB";
+    CaptchaLang["EnglishUS"] = "en";
+    CaptchaLang["Estonian"] = "et";
+    CaptchaLang["Filipino"] = "fil";
+    CaptchaLang["Finnish"] = "fr";
+    CaptchaLang["FrenchCanadian"] = "fr-CA";
+    CaptchaLang["Galician"] = "gl";
+    CaptchaLang["Georgian"] = "ka";
+    CaptchaLang["German"] = "de";
+    CaptchaLang["GermanAustria"] = "de-AT";
+    CaptchaLang["GermanSwitzerland"] = "de-CH";
+    CaptchaLang["Greek"] = "el";
+    CaptchaLang["Gujarati"] = "gu";
+    CaptchaLang["Hebrew"] = "iw";
+    CaptchaLang["Hindi"] = "hi";
+    CaptchaLang["Hungarain"] = "hu";
+    CaptchaLang["Icelandic"] = "is";
+    CaptchaLang["Indonesian"] = "id";
+    CaptchaLang["Italian"] = "it";
+    CaptchaLang["Japanese"] = "ja";
+    CaptchaLang["Kannada"] = "kn";
+    CaptchaLang["Korean"] = "ko";
+    CaptchaLang["Laothian"] = "lo";
+    CaptchaLang["Latvian"] = "lv";
+    CaptchaLang["Lithuanian"] = "lt";
+    CaptchaLang["Malay"] = "ms";
+    CaptchaLang["Malayalam"] = "ml";
+    CaptchaLang["Marathi"] = "mr";
+    CaptchaLang["Mongolian"] = "mn";
+    CaptchaLang["Norwegian"] = "no";
+    CaptchaLang["Persian"] = "fa";
+    CaptchaLang["Polish"] = "pl";
+    CaptchaLang["Portuguese"] = "pt";
+    CaptchaLang["PortugueseBrazil"] = "pt-BR";
+    CaptchaLang["PortuguesePortugal"] = "pt-PT";
+    CaptchaLang["Romanian"] = "ro";
+    CaptchaLang["Russian"] = "ru";
+    CaptchaLang["Serbian"] = "sr";
+    CaptchaLang["Sinhalese"] = "si";
+    CaptchaLang["Slovak"] = "sk";
+    CaptchaLang["Slovenian"] = "sl";
+    CaptchaLang["Spanish"] = "es";
+    CaptchaLang["SpanishLatinAmerica"] = "es-419";
+    CaptchaLang["Swahili"] = "sw";
+    CaptchaLang["Swedish"] = "sv";
+    CaptchaLang["Tamil"] = "ta";
+    CaptchaLang["Telugu"] = "te";
+    CaptchaLang["Thai"] = "th";
+    CaptchaLang["Turkish"] = "tr";
+    CaptchaLang["Ukrainian"] = "uk";
+    CaptchaLang["Urdu"] = "ur";
+    CaptchaLang["Vietnamese"] = "vi";
+    CaptchaLang["Zulu"] = "zu";
+})(CaptchaLang = exports.CaptchaLang || (exports.CaptchaLang = {}));
+//# sourceMappingURL=types.js.map
 
 /***/ }),
 
@@ -2291,4 +2214,4 @@ module.exports = invariant;
 /***/ })
 
 }]);
-//# sourceMappingURL=wixui.Pagination.chunk.js.map
+//# sourceMappingURL=wixui.Captcha.chunk.js.map

@@ -1,4 +1,4 @@
-((typeof self !== 'undefined' ? self : this)["webpackJsonp_wix_ui_santa"] = (typeof self !== 'undefined' ? self : this)["webpackJsonp_wix_ui_santa"] || []).push([[52],{
+((typeof self !== 'undefined' ? self : this)["webpackJsonp_wix_ui_santa"] = (typeof self !== 'undefined' ? self : this)["webpackJsonp_wix_ui_santa"] || []).push([[48],{
 
 /***/ 12:
 /*!**********************************************!*\
@@ -101,127 +101,6 @@ module.exports = shouldUseNative() ? Object.assign : function (target, source) {
 	return to;
 };
 
-
-/***/ }),
-
-/***/ 141:
-/*!**********************************************************************************!*\
-  !*** ../node_modules/wix-ui-core/dist/src/components/time-picker/Tickers.st.css ***!
-  \**********************************************************************************/
-/*! exports provided: default */
-/*! all exports used */
-/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
-/***/ (function(module, exports, __webpack_require__) {
-
-Object.defineProperty(exports, "__esModule", { value: true })
-
-exports.default = __webpack_require__.stylable.create(
-  "root",
-  "Tickers798854095",
-  {"root":"Tickers798854095--root","ticker":"Tickers798854095--ticker"},
-  "",
-  1,
-  /*! ../node_modules/wix-ui-core/dist/src/components/time-picker/Tickers.st.css */ 141
-);
-
-
-
-/***/ }),
-
-/***/ 142:
-/*!****************************************************************************!*\
-  !*** ../node_modules/wix-ui-core/dist/src/components/time-picker/utils.js ***!
-  \****************************************************************************/
-/*! no static exports found */
-/*! all exports used */
-/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-Object.defineProperty(exports, "__esModule", { value: true });
-var constants_1 = __webpack_require__(/*! ./constants */ 64);
-exports.leftpad = function (str) { return ('00' + str).slice(-2); };
-exports.getFieldFromPos = function (pos) { return Math.floor(pos / 3) + 1; };
-exports.parseTime = function (timeStr) { return ({
-    hour: timeStr.substr(0, 2),
-    minute: timeStr.substr(3, 2),
-}); };
-exports.isValidTime = function (timeStr, useAmPm) {
-    if (useAmPm === void 0) { useAmPm = false; }
-    // HH:MM with optional HH:MM:SS and optional HH:MM:SS.mmm
-    var test12 = /^(0[1-9]|1[0-2]):([0-5][0-9])(:([0-5][0-9])(\.[0-9]{3})?)?$/;
-    var test24 = /^([0-1][0-9]|2[0-3]):([0-5][0-9])(:([0-5][0-9])(\.[0-9]{3})?)?$/;
-    return useAmPm ? test12.test(timeStr) : test24.test(timeStr);
-};
-var parseIntOrZero = function (str) { return parseInt(str) || 0; };
-var changeTime = function (_a) {
-    var value = _a.value, field = _a.field, _b = _a.step, step = _b === void 0 ? 1 : _b;
-    var _c = exports.parseTime(value), hour = _c.hour, minute = _c.minute;
-    switch (field) {
-        case constants_1.FIELD.HOUR:
-            hour = "" + (parseIntOrZero(hour) + 24 + Math.sign(step)) % 24;
-            break;
-        case constants_1.FIELD.AMPM:
-            if (hour !== constants_1.BLANK) {
-                hour = "" + (parseIntOrZero(hour) + 12) % 24;
-            }
-            break;
-        case constants_1.FIELD.MINUTE:
-            var nMinute = parseIntOrZero(minute);
-            nMinute += step;
-            if (nMinute > 59) {
-                nMinute -= 60;
-                if (hour !== constants_1.BLANK) {
-                    hour = "" + (parseIntOrZero(hour) + 1) % 24;
-                }
-            }
-            else if (nMinute < 0) {
-                nMinute += 60;
-                if (hour !== constants_1.BLANK) {
-                    hour = "" + (parseIntOrZero(hour) + 23) % 24;
-                }
-            }
-            minute = "" + nMinute;
-            break;
-        default:
-    }
-    return exports.leftpad(hour) + ":" + exports.leftpad(minute);
-};
-exports.increment = function (_a) {
-    var value = _a.value, field = _a.field, _b = _a.step, step = _b === void 0 ? 1 : _b;
-    return changeTime({
-        value: value,
-        field: field,
-        step: +step,
-    });
-};
-exports.decrement = function (_a) {
-    var value = _a.value, field = _a.field, _b = _a.step, step = _b === void 0 ? 1 : _b;
-    return changeTime({
-        value: value,
-        field: field,
-        step: -step,
-    });
-};
-exports.convertToAmPm = function (_a) {
-    var value = _a.value, _b = _a.strings, strings = _b === void 0 ? { am: 'AM', pm: 'PM' } : _b;
-    var _c = exports.parseTime(value), hour = _c.hour, minute = _c.minute;
-    var ampm = strings.am;
-    if (hour !== constants_1.BLANK) {
-        var nHour = parseInt(hour);
-        if (nHour > 11) {
-            ampm = strings.pm;
-        }
-        nHour = nHour % 12;
-        if (nHour === 0) {
-            nHour = 12;
-        }
-        hour = exports.leftpad(nHour);
-    }
-    return hour + ":" + minute + " " + ampm;
-};
-//# sourceMappingURL=utils.js.map
 
 /***/ }),
 
@@ -1085,509 +964,10 @@ module.exports = emptyObject;
 
 /***/ }),
 
-/***/ 213:
-/*!**************************************************!*\
-  !*** ../node_modules/wix-ui-core/time-picker.js ***!
-  \**************************************************/
-/*! no static exports found */
-/*! all exports used */
-/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__(/*! ./dist/src/components/time-picker */ 288);
-
-
-/***/ }),
-
-/***/ 272:
-/*!************************************************************************************!*\
-  !*** ../node_modules/wix-ui-icons-common/dist/src/system/dist/components/Close.js ***!
-  \************************************************************************************/
-/*! no static exports found */
-/*! all exports used */
-/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __assign = (this && this.__assign) || Object.assign || function(t) {
-    for (var s, i = 1, n = arguments.length; i < n; i++) {
-        s = arguments[i];
-        for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-            t[p] = s[p];
-    }
-    return t;
-};
-var __rest = (this && this.__rest) || function (s, e) {
-    var t = {};
-    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
-        t[p] = s[p];
-    if (s != null && typeof Object.getOwnPropertySymbols === "function")
-        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) if (e.indexOf(p[i]) < 0)
-            t[p[i]] = s[p[i]];
-    return t;
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-/* eslint-disable */
-/* tslint:disable */
-var React = __webpack_require__(/*! react */ 0);
-var Close = function (_a) {
-    var size = _a.size, props = __rest(_a, ["size"]);
-    return (React.createElement("svg", __assign({ viewBox: "0 0 6 6", fill: "currentColor", width: size || "6", height: size || "6" }, props),
-        React.createElement("path", { d: "M5.2 0L3 2.2 0.8 0 0 0.8 2.2 3 0 5.3 0.8 6 3 3.8 5.2 6 6 5.3 3.8 3 6 0.8z" })));
-};
-Close.displayName = 'Close';
-exports.default = Close;
-/* tslint:enable */
-/* eslint-enable */
-//# sourceMappingURL=Close.js.map
-
-/***/ }),
-
-/***/ 282:
-/*!*************************************************!*\
-  !*** ./components/TimePicker/TimePicker.st.css ***!
-  \*************************************************/
-/*! exports provided: default */
-/*! all exports used */
-/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
-/***/ (function(module, exports, __webpack_require__) {
-
-Object.defineProperty(exports, "__esModule", { value: true })
-
-exports.default = __webpack_require__.stylable.create(
-  "root",
-  "TimePicker3828613967",
-  {"root":"TimePicker3828613967--root","dropdown-root":"TimePicker3828613967--dropdown-root","timepicker-root":"TimePicker3828613967--timepicker-root","backgroundColor":"#FFFFFF","iconColor":"#000000","borderColor":"#919191","borderWidth":"1px","borderRadius":"0px","boxShadow":"0 0px 0px rgba(0, 0, 0, .7)","textFont":"font_1","textColor":"#000000","placeholderTextColor":"#000000","hoverBackgroundColor":"#F2FAF9","hoverBorderColor":"#000000","hoverBorderWidth":"1px","focusBackgroundColor":"#FFFFFF","focusBorderColor":"#000000","focusBorderWidth":"1px","errorBackgroundColor":"#FFFFFF","errorBorderColor":"#ff4040","errorBorderWidth":"1px","disabledBackgroundColor":"#FFFFFF","disabledBorderColor":"#DBDBDB","disabledBorderWidth":"1px","disabledTextColor":"#D4D4D4"},
-  "",
-  7,
-  /*! ./components/TimePicker/TimePicker.st.css */ 282
-);
-
-exports.default.$skin = {"params":{"backgroundColor":"COLOR_ALPHA","iconColor":"COLOR_ALPHA","borderColor":"COLOR_ALPHA","borderWidth":"BORDER_SIZE","borderRadius":"BORDER_RADIUS","boxShadow":"BOX_SHADOW","textFont":"FONT","textColor":"TEXT_COLOR","placeholderTextColor":"TEXT_COLOR","hoverBackgroundColor":"COLOR_ALPHA","hoverBorderColor":"COLOR_ALPHA","hoverBorderWidth":"BORDER_SIZE","focusBackgroundColor":"COLOR_ALPHA","focusBorderColor":"COLOR_ALPHA","focusBorderWidth":"BORDER_SIZE","errorBackgroundColor":"COLOR_ALPHA","errorBorderColor":"COLOR_ALPHA","errorBorderWidth":"BORDER_SIZE","disabledBackgroundColor":"COLOR_ALPHA","disabledBorderColor":"COLOR_ALPHA","disabledBorderWidth":"BORDER_SIZE","disabledTextColor":"TEXT_COLOR"},"paramsDefaults":{"backgroundColor":"#FFFFFF","iconColor":"#000000","borderColor":"#919191","borderWidth":"1px","borderRadius":"0px","boxShadow":"0 0px 0px rgba(0, 0, 0, .7)","textFont":"font_1","textColor":"#000000","placeholderTextColor":"#000000","hoverBackgroundColor":"#F2FAF9","hoverBorderColor":"#000000","hoverBorderWidth":"1px","focusBackgroundColor":"#FFFFFF","focusBorderColor":"#000000","focusBorderWidth":"1px","errorBackgroundColor":"#FFFFFF","errorBorderColor":"#ff4040","errorBorderWidth":"1px","disabledBackgroundColor":"#FFFFFF","disabledBorderColor":"#DBDBDB","disabledBorderWidth":"1px","disabledTextColor":"#D4D4D4"}};
-exports.default.$skin.$render = function render_css($id, $params, $functions) {
-  return "\n" + $id + " .Tickers798854095--root{display: inline-flex;flex-direction: column;vertical-align: top}\n" + $id + " .Tickers798854095--ticker{border: none;outline: none;cursor: pointer;background-color: transparent;padding: 0;margin: 0;flex-grow: 1;display: flex;justify-content: center}\n" + $id + " .Input2974256547--root{position: relative}\n" + $id + " .Input2974256547--nativeInput{}\n" + $id + " .TimePicker3399308503--root{}\n" + $id + " .TimePicker3399308503--tickers{}\n" + $id + ".TimePicker3828613967--root{height: 100%}\n" + $id + " .TimePicker3828613967--dropdown-root, " + $id + " .TimePicker3828613967--timepicker-root{border-width: " + $params["borderWidth"] + ";border-color: " + $params["borderColor"] + ";border-style: solid;border-radius: " + $params["borderRadius"] + ";background-color: " + $params["backgroundColor"] + ";box-shadow: " + $params["boxShadow"] + ";box-sizing: border-box;color: " + $params["textColor"] + ";height: 100%}\n" + $id + ".TimePicker3828613967--root:hover .TimePicker3828613967--dropdown-root, " + $id + ".TimePicker3828613967--root:hover .TimePicker3828613967--timepicker-root, " + $id + ".TimePicker3828613967--root:hover .TimePicker3828613967--timepicker-root .Input2974256547--nativeInput, " + $id + ".TimePicker3828613967--root[data-timepicker3828613967-previewstate=\"hover\"] .TimePicker3828613967--dropdown-root, " + $id + ".TimePicker3828613967--root[data-timepicker3828613967-previewstate=\"hover\"] .TimePicker3828613967--timepicker-root, " + $id + ".TimePicker3828613967--root[data-timepicker3828613967-previewstate=\"hover\"] .TimePicker3828613967--timepicker-root .Input2974256547--nativeInput{background-color: " + $params["hoverBackgroundColor"] + ";border-color: " + $params["hoverBorderColor"] + ";border-width: " + $params["hoverBorderWidth"] + "}\n" + $id + " .TimePicker3828613967--dropdown-root:focus, " + $id + " .TimePicker3828613967--timepicker-root[data-timepicker3399308503-focus], " + $id + " .TimePicker3828613967--timepicker-root[data-timepicker3399308503-focus] .Input2974256547--nativeInput, " + $id + ".TimePicker3828613967--root[data-timepicker3828613967-previewstate=\"focus\"] .TimePicker3828613967--dropdown-root, " + $id + ".TimePicker3828613967--root[data-timepicker3828613967-previewstate=\"focus\"] .TimePicker3828613967--timepicker-root, " + $id + ".TimePicker3828613967--root[data-timepicker3828613967-previewstate=\"focus\"] .TimePicker3828613967--timepicker-root .Input2974256547--nativeInput, " + $id + ".TimePicker3828613967--root[data-timepicker3828613967-isfocused] .TimePicker3828613967--dropdown-root{background-color: " + $params["focusBackgroundColor"] + ";border-color: " + $params["focusBorderColor"] + ";border-width: " + $params["focusBorderWidth"] + "}\n" + $id + ".TimePicker3828613967--root[data-timepicker3828613967-disabled] .TimePicker3828613967--dropdown-root, " + $id + ".TimePicker3828613967--root[data-timepicker3828613967-disabled] .TimePicker3828613967--timepicker-root, " + $id + ".TimePicker3828613967--root[data-timepicker3828613967-disabled] .TimePicker3828613967--timepicker-root .Input2974256547--nativeInput, " + $id + ".TimePicker3828613967--root[data-timepicker3828613967-previewstate=\"disabled\"] .TimePicker3828613967--dropdown-root, " + $id + ".TimePicker3828613967--root[data-timepicker3828613967-previewstate=\"disabled\"] .TimePicker3828613967--timepicker-root, " + $id + ".TimePicker3828613967--root[data-timepicker3828613967-previewstate=\"disabled\"] .TimePicker3828613967--timepicker-root .Input2974256547--nativeInput{background-color: " + $params["disabledBackgroundColor"] + ";border-color: " + $params["disabledBorderColor"] + ";border-width: " + $params["disabledBorderWidth"] + ";color: " + $params["disabledTextColor"] + "}\n" + $id + ".TimePicker3828613967--root[data-timepicker3828613967-error] .TimePicker3828613967--dropdown-root, " + $id + ".TimePicker3828613967--root[data-timepicker3828613967-error] .TimePicker3828613967--timepicker-root, " + $id + ".TimePicker3828613967--root[data-timepicker3828613967-error] .TimePicker3828613967--timepicker-root .Input2974256547--nativeInput, " + $id + ".TimePicker3828613967--root[data-timepicker3828613967-previewstate=\"error\"] .TimePicker3828613967--dropdown-root, " + $id + ".TimePicker3828613967--root[data-timepicker3828613967-previewstate=\"error\"] .TimePicker3828613967--timepicker-root, " + $id + ".TimePicker3828613967--root[data-timepicker3828613967-previewstate=\"error\"] .TimePicker3828613967--timepicker-root .Input2974256547--nativeInput{background-color: " + $params["errorBackgroundColor"] + ";border-color: " + $params["errorBorderColor"] + ";border-width: " + $params["errorBorderWidth"] + "}\n" + $id + ".TimePicker3828613967--root[data-timepicker3828613967-alignment=\"center\"] .TimePicker3828613967--dropdown-root, " + $id + ".TimePicker3828613967--root[data-timepicker3828613967-alignment=\"center\"] .TimePicker3828613967--timepicker-root .Input2974256547--nativeInput{text-align: center}\n" + $id + ".TimePicker3828613967--root[data-timepicker3828613967-alignment=\"right\"] .TimePicker3828613967--dropdown-root, " + $id + ".TimePicker3828613967--root[data-timepicker3828613967-alignment=\"right\"] .TimePicker3828613967--timepicker-root{flex-direction: row-reverse}\n" + $id + ".TimePicker3828613967--root[data-timepicker3828613967-alignment=\"right\"] .TimePicker3828613967--timepicker-root .TimePicker3399308503--tickers{margin-right: 0;margin-left: 20px}\n" + $id + ".TimePicker3828613967--root[data-timepicker3828613967-alignment=\"right\"] .TimePicker3828613967--dropdown-root, " + $id + ".TimePicker3828613967--root[data-timepicker3828613967-alignment=\"right\"] .TimePicker3828613967--timepicker-root .Input2974256547--nativeInput{text-align: right}\n" + $id + ".TimePicker3828613967--root[data-timepicker3828613967-alignment=\"right\"] .TimePicker3828613967--dropdown-root svg{margin-right: 0px;margin-left: 20px}\n" + $id + " .TimePicker3828613967--timepicker-root{display: inline-flex;height: 100%;width: 100%}\n" + $id + " .TimePicker3828613967--timepicker-root .Input2974256547--nativeInput{width: 100%;font: " + $params["textFont"] + ";color: inherit;border: none;outline: none;margin: 0px;padding: 8px 0;background-color: " + $params["backgroundColor"] + ";border-radius: " + $params["borderRadius"] + ";min-width: 0}\n" + $id + ".TimePicker3828613967--root[data-timepicker3828613967-ismobile] .TimePicker3828613967--timepicker-root .Input2974256547--nativeInput{font-size: inherit}\n" + $id + " .TimePicker3828613967--timepicker-root .TimePicker3399308503--tickers{margin-right: 20px;padding: 3px 0px;justify-content: center}\n" + $id + " .TimePicker3828613967--timepicker-root .TimePicker3399308503--tickers .Tickers798854095--ticker{color: " + $params["iconColor"] + ";flex-grow: initial;height: 9px;max-height: 9px}\n" + $id + " .TimePicker3828613967--timepicker-root .TimePicker3399308503--tickers .Tickers798854095--ticker:first-of-type{margin-bottom: 6px}\n" + $id + " .TimePicker3828613967--dropdown-root{height: 100%;position: relative;display: flex;align-items: center;font: " + $params["textFont"] + "}\n" + $id + " .TimePicker3828613967--dropdown-root [data-hook=\"timepicker-dropdown-value\"], " + $id + " .TimePicker3828613967--dropdown-root [data-hook=\"timepicker-dropdown-placeholder\"]{flex: 1;padding: 0;text-overflow: ellipsis;overflow: hidden;white-space: nowrap}\n" + $id + " .TimePicker3828613967--dropdown-root [data-hook=\"timepicker-dropdown-placeholder\"]{color: " + $params["placeholderTextColor"] + "}\n" + $id + " .TimePicker3828613967--dropdown-root select{opacity: 0;position: absolute;top: 0;left: 0;width: 100%;height: 100%;-webkit-appearance: menulist-button}\n" + $id + " .TimePicker3828613967--dropdown-root svg{margin-right: 20px;color: " + $params["iconColor"] + "}\n";
-};
-
-/***/ }),
-
-/***/ 288:
+/***/ 357:
 /*!****************************************************************************!*\
-  !*** ../node_modules/wix-ui-core/dist/src/components/time-picker/index.js ***!
+  !*** ../node_modules/wix-ui-core/dist/src/components/slider/Slider.st.css ***!
   \****************************************************************************/
-/*! no static exports found */
-/*! all exports used */
-/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-Object.defineProperty(exports, "__esModule", { value: true });
-var TimePicker_1 = __webpack_require__(/*! ./TimePicker */ 289);
-exports.TimePicker = TimePicker_1.TimePicker;
-var TimePickerConstants = __webpack_require__(/*! ./constants */ 64);
-exports.TimePickerConstants = TimePickerConstants;
-var TimePickerUtils = __webpack_require__(/*! ./utils */ 142);
-exports.TimePickerUtils = TimePickerUtils;
-//# sourceMappingURL=index.js.map
-
-/***/ }),
-
-/***/ 289:
-/*!*********************************************************************************!*\
-  !*** ../node_modules/wix-ui-core/dist/src/components/time-picker/TimePicker.js ***!
-  \*********************************************************************************/
-/*! no static exports found */
-/*! all exports used */
-/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-Object.defineProperty(exports, "__esModule", { value: true });
-var tslib_1 = __webpack_require__(/*! tslib */ 6);
-var React = __webpack_require__(/*! react */ 0);
-var Tickers_1 = __webpack_require__(/*! ./Tickers */ 290);
-var input_1 = __webpack_require__(/*! ../input */ 62);
-var TimePicker_st_css_1 = __webpack_require__(/*! ./TimePicker.st.css */ 291);
-var constants_1 = __webpack_require__(/*! ./constants */ 64);
-var utils_1 = __webpack_require__(/*! ./utils */ 142);
-// TODO: make all _prefix private when the parser won't choke on it
-/**
- * Time Picker - following the Chrome on Mac behavior (mostly)
- */
-var TimePicker = /** @class */ (function (_super) {
-    tslib_1.__extends(TimePicker, _super);
-    function TimePicker(props) {
-        var _this = _super.call(this, props) || this;
-        _this.state = {
-            value: _this.props.value && utils_1.isValidTime(_this.props.value)
-                ? _this.props.value.substr(0, 5)
-                : constants_1.NULL_TIME,
-            focus: false,
-        };
-        _this._shouldHighlightOnFocus = true;
-        _this._hasStartedTyping = false;
-        _this._mouseDown = false;
-        _this._lastFocusedField = constants_1.FIELD.BEFORE;
-        _this._inputRef = null;
-        _this._highlightField = _this._highlightField.bind(_this);
-        _this._onMouseDown = _this._onMouseDown.bind(_this);
-        _this._onMouseUp = _this._onMouseUp.bind(_this);
-        _this._onMouseMove = _this._onMouseMove.bind(_this);
-        _this._onClick = _this._onClick.bind(_this);
-        _this._onBlur = _this._onBlur.bind(_this);
-        _this._onFocus = _this._onFocus.bind(_this);
-        _this._onKeyDown = _this._onKeyDown.bind(_this);
-        _this._tick = _this._tick.bind(_this);
-        return _this;
-    }
-    TimePicker.prototype.componentWillReceiveProps = function (nextProps) {
-        var value = nextProps.value;
-        if (this.props.value !== value) {
-            if (!value || !utils_1.isValidTime(value)) {
-                value = constants_1.NULL_TIME;
-            }
-            this.setState({ value: value.substr(0, 5) });
-        }
-    };
-    TimePicker.prototype._highlightField = function (input, field) {
-        var startPos = (field - 1) * 3;
-        if (startPos < 0) {
-            return;
-        }
-        input.setSelectionRange(startPos, startPos + 2);
-    };
-    TimePicker.prototype._onMouseDown = function (e) {
-        this._shouldHighlightOnFocus = false;
-        this._hasStartedTyping = false;
-        this._mouseDown = true;
-    };
-    TimePicker.prototype._onMouseUp = function (e) {
-        this._mouseDown = false;
-    };
-    TimePicker.prototype._onMouseMove = function (e) {
-        if (this._mouseDown) {
-            e.preventDefault();
-        }
-    };
-    TimePicker.prototype._onClick = function (e) {
-        var _this = this;
-        // Highlighting on click instead of mousedown because the selectionStart isn't set yet
-        e.preventDefault();
-        var elem = e.target;
-        var field = utils_1.getFieldFromPos(elem.selectionStart);
-        // Using setTimeout because otherwise mouse clicking on a selection will de-select :/
-        setTimeout(function () { return _this._highlightField(elem, field); }, 0);
-    };
-    TimePicker.prototype._onBlur = function (e) {
-        var _this = this;
-        this._shouldHighlightOnFocus = e.target !== document.activeElement;
-        this._hasStartedTyping = false;
-        this._lastFocusedField = utils_1.getFieldFromPos(e.target.selectionStart);
-        // Validate on blur and call onChange if needed
-        var value = this.state.value;
-        var _a = this.props, onChange = _a.onChange, useAmPm = _a.useAmPm;
-        if (value === constants_1.NULL_TIME) {
-            if (this.props.value) {
-                onChange(null);
-            }
-        }
-        else if (utils_1.isValidTime(value, useAmPm !== constants_1.AmPmOptions.None)) {
-            if (this.props.value !== value) {
-                onChange(value);
-            }
-        }
-        else {
-            var _b = utils_1.parseTime(value), hour = _b.hour, minute = _b.minute;
-            var nHour = parseInt(hour, 10) || 0;
-            var nMinute = parseInt(minute, 10) || 0;
-            if (nMinute > 59) {
-                nMinute = 59;
-            }
-            value = utils_1.leftpad(nHour) + ":" + utils_1.leftpad(nMinute);
-            this.setState({ value: value }, function () {
-                if (value !== _this.props.value) {
-                    onChange(value);
-                }
-            });
-        }
-        this.setState({ focus: false });
-        this.props.onBlur && this.props.onBlur(e);
-    };
-    TimePicker.prototype._onFocus = function (e) {
-        if (this._shouldHighlightOnFocus) {
-            var elem = e.target;
-            this._highlightField(elem, constants_1.FIELD.HOUR);
-            this._hasStartedTyping = false;
-        }
-        this.setState({ focus: true });
-        this.props.onFocus && this.props.onFocus(e);
-    };
-    TimePicker.prototype._onKeyDown = function (e) {
-        /*
-          Respond to:
-          - tab
-          - numbers
-          - case-insensitive A, P (for am/pm)
-          - arrow keys
-          - delete and backspace
-        */
-        var _this = this;
-        if (e.altKey || e.ctrlKey || e.metaKey || this.props.readOnly) {
-            return;
-        }
-        var elem = e.target;
-        var startPos = elem.selectionStart;
-        var _a = this.props, useAmPm = _a.useAmPm, onChange = _a.onChange;
-        var value = this.state.value;
-        var currentField = utils_1.getFieldFromPos(startPos);
-        var isAmPm = useAmPm !== constants_1.AmPmOptions.None;
-        // Checking for TAB first because it's the only key that might have default behavior
-        // Shift focus between fields if tab is pressed, or use regular behavior if the field is on the edge
-        // i.e., tabbing while on AM/PM or shift+tab on hour
-        if (e.key === 'Tab') {
-            currentField += e.shiftKey ? -1 : 1;
-            if (currentField === constants_1.FIELD.HOUR ||
-                currentField === constants_1.FIELD.MINUTE ||
-                (currentField === constants_1.FIELD.AMPM && isAmPm)) {
-                e.preventDefault();
-                this._highlightField(elem, currentField);
-            }
-            return;
-        }
-        // Block other input default behavior
-        e.preventDefault();
-        // Handle numeric input
-        if (/^[0-9]$/.test(e.key)) {
-            var num = parseInt(e.key, 10);
-            var _b = utils_1.parseTime(value), hour = _b.hour, minute = _b.minute;
-            if (currentField === constants_1.FIELD.HOUR) {
-                if (this._hasStartedTyping) {
-                    var nHour = parseInt("" + hour[1] + num, 10);
-                    if (nHour > 12 && isAmPm) {
-                        nHour = 12;
-                    }
-                    if (nHour > 23) {
-                        nHour = 23;
-                    }
-                    hour = "" + nHour;
-                    currentField = constants_1.FIELD.MINUTE;
-                    this._hasStartedTyping = false;
-                }
-                else {
-                    if ((num > 1 && isAmPm) || num > 2) {
-                        currentField = constants_1.FIELD.MINUTE;
-                    }
-                    else {
-                        this._hasStartedTyping = true;
-                    }
-                    hour = e.key;
-                }
-            }
-            else if (currentField === constants_1.FIELD.MINUTE) {
-                if (this._hasStartedTyping) {
-                    minute = "" + parseInt("" + minute[1] + num, 10);
-                }
-                else {
-                    this._hasStartedTyping = true;
-                    minute = e.key;
-                }
-            }
-            value = utils_1.leftpad(hour) + ":" + utils_1.leftpad(minute);
-            this.setState({ value: value }, function () {
-                _this._highlightField(elem, currentField);
-                if (utils_1.isValidTime(value)) {
-                    onChange(value);
-                }
-            });
-            return;
-        }
-        this._hasStartedTyping = false;
-        // All the rest: arrow keys, tab, delete, backspace, A/P
-        switch (e.key) {
-            // Change focus on arrow left or right
-            case 'ArrowLeft': {
-                currentField -= 1;
-                if (currentField === constants_1.FIELD.BEFORE) {
-                    currentField = constants_1.FIELD.HOUR;
-                }
-                this._highlightField(elem, currentField);
-                break;
-            }
-            case 'ArrowRight': {
-                currentField += 1;
-                if (currentField === constants_1.FIELD.AMPM && !isAmPm) {
-                    currentField = constants_1.FIELD.MINUTE;
-                }
-                if (currentField === constants_1.FIELD.AFTER) {
-                    currentField = constants_1.FIELD.AMPM;
-                }
-                this._highlightField(elem, currentField);
-                break;
-            }
-            // Increment or decrement for up/down arrows
-            case 'ArrowUp':
-            case 'ArrowDown': {
-                var step = this.props.step;
-                value =
-                    e.key === 'ArrowUp'
-                        ? utils_1.increment({ value: value, field: currentField, step: step })
-                        : utils_1.decrement({ value: value, field: currentField, step: step });
-                this.setState({ value: value }, function () {
-                    _this._highlightField(elem, currentField);
-                    if (utils_1.isValidTime(value)) {
-                        onChange(value);
-                    }
-                });
-                break;
-            }
-            // AM / PM only if on relevant field
-            case 'a':
-            case 'A':
-            case 'p':
-            case 'P': {
-                if (currentField !== constants_1.FIELD.AMPM) {
-                    break;
-                }
-                var hour = utils_1.parseTime(value).hour;
-                var nHour = parseInt(hour, 10);
-                if ((nHour < 12 && (e.key === 'p' || e.key === 'P')) ||
-                    (nHour > 11 && (e.key === 'a' || e.key === 'A'))) {
-                    value = utils_1.increment({ value: value, field: constants_1.FIELD.AMPM });
-                    this.setState({ value: value }, function () {
-                        _this._highlightField(elem, constants_1.FIELD.AMPM);
-                        onChange(value);
-                    });
-                }
-                break;
-            }
-            // Change field to BLANK on delete or backspace. Ignore if field is AM/PM
-            case 'Delete':
-            case 'Backspace': {
-                var _c = utils_1.parseTime(value), hour = _c.hour, minute = _c.minute;
-                var callback = function () {
-                    if (_this.state.value === constants_1.NULL_TIME) {
-                        onChange(null);
-                    }
-                    _this._highlightField(elem, currentField);
-                };
-                if (currentField === constants_1.FIELD.HOUR) {
-                    this.setState({ value: constants_1.BLANK + ":" + minute }, callback);
-                }
-                if (currentField === constants_1.FIELD.MINUTE) {
-                    this.setState({ value: hour + ":" + constants_1.BLANK }, callback);
-                }
-                break;
-            }
-            default:
-        }
-    };
-    TimePicker.prototype._tick = function (action) {
-        var _this = this;
-        if (this.props.readOnly) {
-            return;
-        }
-        var startPos = this._inputRef.getSelectionStart();
-        var currentField = utils_1.getFieldFromPos(startPos);
-        var value = this.state.value;
-        var _a = this.props, step = _a.step, onChange = _a.onChange;
-        var field = this.state.focus
-            ? currentField
-            : this._lastFocusedField || constants_1.FIELD.MINUTE;
-        value = action({ value: value, field: field, step: step });
-        this.setState({ value: value }, function () {
-            _this._highlightField(_this._inputRef, currentField);
-            if (utils_1.isValidTime(value)) {
-                onChange(value);
-            }
-        });
-    };
-    TimePicker.prototype.focus = function () {
-        this._inputRef.focus();
-    };
-    TimePicker.prototype.blur = function () {
-        this._inputRef.blur();
-    };
-    TimePicker.prototype.render = function () {
-        var _this = this;
-        var _a = this.props, useNativeInteraction = _a.useNativeInteraction, useAmPm = _a.useAmPm, tickerUpIcon = _a.tickerUpIcon, tickerDownIcon = _a.tickerDownIcon, inlineStyle = _a.style, disabled = _a.disabled, readOnly = _a.readOnly, rest = tslib_1.__rest(_a, ["useNativeInteraction", "useAmPm", "tickerUpIcon", "tickerDownIcon", "style", "disabled", "readOnly"]);
-        var restOnChange = rest.onChange, restStep = rest.step, restValue = rest.value, allOther = tslib_1.__rest(rest, ["onChange", "step", "value"]);
-        var passThroughProps = tslib_1.__assign({}, allOther, { disabled: disabled,
-            readOnly: readOnly });
-        if (useNativeInteraction) {
-            var _b = this.props, propsValue = _b.value, onChange_1 = _b.onChange;
-            var sanitizedValue = propsValue && utils_1.isValidTime(propsValue) ? propsValue.substr(0, 5) : '';
-            return (React.createElement(input_1.Input, tslib_1.__assign({}, passThroughProps, TimePicker_st_css_1.default('root', {}, this.props), { type: "time", value: sanitizedValue, onChange: function (e) { return onChange_1(e.target.value); }, style: inlineStyle })));
-        }
-        var _c = this.state, value = _c.value, focus = _c.focus;
-        if (useAmPm !== constants_1.AmPmOptions.None) {
-            value = utils_1.convertToAmPm({ value: value, strings: constants_1.AmPmStrings[useAmPm] });
-        }
-        var tickers = tickerUpIcon && tickerDownIcon && (React.createElement(Tickers_1.Tickers, { className: TimePicker_st_css_1.default.tickers, disabled: disabled, onIncrement: function () { return _this._tick(utils_1.increment); }, onDecrement: function () { return _this._tick(utils_1.decrement); }, tickerUpIcon: tickerUpIcon, tickerDownIcon: tickerDownIcon }));
-        return (React.createElement(input_1.Input, tslib_1.__assign({}, passThroughProps, TimePicker_st_css_1.default('root', { focus: focus }, this.props), { ref: function (ref) { return (_this._inputRef = ref); }, type: "text", value: value, suffix: tickers, onKeyDown: this._onKeyDown, onFocus: this._onFocus, onBlur: this._onBlur, onMouseDown: this._onMouseDown, onMouseUp: this._onMouseUp, onMouseMove: this._onMouseMove, onClick: this._onClick, onDragStart: function (e) { return e.stopPropagation(); }, style: inlineStyle })));
-    };
-    TimePicker.displayName = 'TimePicker';
-    TimePicker.defaultProps = {
-        onChange: function () { return null; },
-        useNativeInteraction: false,
-        useAmPm: constants_1.AmPmOptions.None,
-        step: 1,
-        value: null,
-        disabled: false,
-    };
-    return TimePicker;
-}(React.PureComponent));
-exports.TimePicker = TimePicker;
-//# sourceMappingURL=TimePicker.js.map
-
-/***/ }),
-
-/***/ 290:
-/*!******************************************************************************!*\
-  !*** ../node_modules/wix-ui-core/dist/src/components/time-picker/Tickers.js ***!
-  \******************************************************************************/
-/*! no static exports found */
-/*! all exports used */
-/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-Object.defineProperty(exports, "__esModule", { value: true });
-var tslib_1 = __webpack_require__(/*! tslib */ 6);
-var React = __webpack_require__(/*! react */ 0);
-var Tickers_st_css_1 = __webpack_require__(/*! ./Tickers.st.css */ 141);
-var Tickers = /** @class */ (function (_super) {
-    tslib_1.__extends(Tickers, _super);
-    function Tickers() {
-        var _this = _super !== null && _super.apply(this, arguments) || this;
-        _this.handleIncrement = function (e) {
-            e.preventDefault();
-            _this.props.onIncrement(e);
-        };
-        _this.handleDecrement = function (e) {
-            e.preventDefault();
-            _this.props.onDecrement(e);
-        };
-        return _this;
-    }
-    Tickers.prototype.render = function () {
-        return (React.createElement("div", tslib_1.__assign({}, Tickers_st_css_1.default('root', {}, this.props)),
-            React.createElement("button", { tabIndex: -1, type: "button", onMouseDown: this.handleIncrement, className: Tickers_st_css_1.default.ticker, disabled: this.props.disabled, "data-hook": "ticker-button-up" }, this.props.tickerUpIcon),
-            React.createElement("button", { tabIndex: -1, type: "button", onMouseDown: this.handleDecrement, className: Tickers_st_css_1.default.ticker, disabled: this.props.disabled, "data-hook": "ticker-button-down" }, this.props.tickerDownIcon)));
-    };
-    return Tickers;
-}(React.PureComponent));
-exports.Tickers = Tickers;
-//# sourceMappingURL=Tickers.js.map
-
-/***/ }),
-
-/***/ 291:
-/*!*************************************************************************************!*\
-  !*** ../node_modules/wix-ui-core/dist/src/components/time-picker/TimePicker.st.css ***!
-  \*************************************************************************************/
 /*! exports provided: default */
 /*! all exports used */
 /*! ModuleConcatenation bailout: Module is not an ECMAScript module */
@@ -1597,45 +977,48 @@ Object.defineProperty(exports, "__esModule", { value: true })
 
 exports.default = __webpack_require__.stylable.create(
   "root",
-  "TimePicker3399308503",
-  {"root":"TimePicker3399308503--root","tickers":"TimePicker3399308503--tickers"},
-  "",
-  2,
-  /*! ../node_modules/wix-ui-core/dist/src/components/time-picker/TimePicker.st.css */ 291
-);
-
-
-
-/***/ }),
-
-/***/ 37:
-/*!**************************************************************************!*\
-  !*** ../node_modules/wix-ui-core/dist/src/components/input/Input.st.css ***!
-  \**************************************************************************/
-/*! exports provided: default */
-/*! all exports used */
-/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
-/***/ (function(module, exports, __webpack_require__) {
-
-Object.defineProperty(exports, "__esModule", { value: true })
-
-exports.default = __webpack_require__.stylable.create(
-  "root",
-  "Input2974256547",
-  {"root":"Input2974256547--root","nativeInput":"Input2974256547--nativeInput"},
+  "Slider2207263592",
+  {"root":"Slider2207263592--root","tooltip":"Slider2207263592--tooltip","track":"Slider2207263592--track","inner":"Slider2207263592--inner","trackFill":"Slider2207263592--trackFill","thumb":"Slider2207263592--thumb","thumbShape":"Slider2207263592--thumbShape","tick":"Slider2207263592--tick","tickLineWidth":"1px","tickLineHeight":"10px","tickDotSize":"3px","tickMarksGap":"12px","tooltipGap":"10px"},
   "",
   1,
-  /*! ../node_modules/wix-ui-core/dist/src/components/input/Input.st.css */ 37
+  /*! ../node_modules/wix-ui-core/dist/src/components/slider/Slider.st.css */ 357
 );
 
 
 
 /***/ }),
 
-/***/ 395:
-/*!*********************************************!*\
-  !*** ./components/TimePicker/TimePicker.js ***!
-  \*********************************************/
+/***/ 358:
+/*!*****************************************!*\
+  !*** ./components/Slider/Slider.st.css ***!
+  \*****************************************/
+/*! exports provided: default */
+/*! all exports used */
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+/***/ (function(module, exports, __webpack_require__) {
+
+Object.defineProperty(exports, "__esModule", { value: true })
+
+exports.default = __webpack_require__.stylable.create(
+  "root",
+  "Slider3992224720",
+  {"root":"Slider3992224720--root","thumbBackground":"color_25","thumbBackgroundHover":"color_23","thumbBackgroundFocus":"color_22","thumbBackgroundDisabled":"color_21","thumbBoxShadow":"0 1px 4px rgba(0, 0, 0, .6)","trackFill":"color_22","trackFillHover":"color_23","trackFillFocus":"color_24","trackFillDisabled":"color_25","trackBoxShadow":"0 1px 4px rgba(0, 0, 0, .6)","trackBackground":"color_26","trackBackgroundHover":"color_27","trackBackgroundFocus":"color_28","trackBackgroundDisabled":"color_29","tooltipBackground":"color_30","tooltipFontSize":"14","tooltipFontFamily":"arial","tooltipFontColor":"color_1","tooltipBoxShadow":"initial","tickMarkColor":"color_4","thumbBorderColor":"color_22","thumbBorderColorHover":"color_23","thumbBorderColorFocus":"color_24","thumbBorderColorDisabled":"color_25","thumbBorderWidth":"4","thumbBorderWidthHover":"4","thumbBorderWidthFocus":"4","thumbBorderWidthDisabled":"4","thumbBorderRadius":"8px","trackBorderColor":"color_28","trackBorderColorHover":"color_29","trackBorderColorFocus":"color_30","trackBorderColorDisabled":"color_31","trackBorderWidth":"7","trackBorderWidthHover":"6","trackBorderWidthFocus":"6","trackBorderWidthDisabled":"6","tooltipBorderRadius":"2px","trackBorderRadius":"8px"},
+  "",
+  7,
+  /*! ./components/Slider/Slider.st.css */ 358
+);
+
+exports.default.$skin = {"params":{"thumbBackground":"COLOR_ALPHA","thumbBackgroundHover":"COLOR_ALPHA","thumbBackgroundFocus":"COLOR_ALPHA","thumbBackgroundDisabled":"COLOR_ALPHA","thumbBoxShadow":"BOX_SHADOW","trackFill":"COLOR_ALPHA","trackFillHover":"COLOR_ALPHA","trackFillFocus":"COLOR_ALPHA","trackFillDisabled":"COLOR_ALPHA","trackBoxShadow":"BOX_SHADOW","trackBackground":"COLOR_ALPHA","trackBackgroundHover":"COLOR_ALPHA","trackBackgroundFocus":"COLOR_ALPHA","trackBackgroundDisabled":"COLOR_ALPHA","tooltipBackground":"COLOR_ALPHA","tooltipFontSize":"TEXT_SIZE","tooltipFontFamily":"FONT_FAMILY","tooltipFontColor":"TEXT_COLOR","tooltipBoxShadow":"BOX_SHADOW","tickMarkColor":"COLOR_ALPHA","thumbBorderColor":"COLOR_ALPHA","thumbBorderColorHover":"COLOR_ALPHA","thumbBorderColorFocus":"COLOR_ALPHA","thumbBorderColorDisabled":"COLOR_ALPHA","thumbBorderWidth":"BORDER_SIZE","thumbBorderWidthHover":"BORDER_SIZE","thumbBorderWidthFocus":"BORDER_SIZE","thumbBorderWidthDisabled":"BORDER_SIZE","thumbBorderRadius":"BORDER_RADIUS","trackBorderColor":"COLOR_ALPHA","trackBorderColorHover":"COLOR_ALPHA","trackBorderColorFocus":"COLOR_ALPHA","trackBorderColorDisabled":"COLOR_ALPHA","trackBorderWidth":"BORDER_SIZE","trackBorderWidthHover":"BORDER_SIZE","trackBorderWidthFocus":"BORDER_SIZE","trackBorderWidthDisabled":"BORDER_SIZE","tooltipBorderRadius":"BORDER_RADIUS","trackBorderRadius":"BORDER_RADIUS"},"paramsDefaults":{"thumbBackground":"color_25","thumbBackgroundHover":"color_23","thumbBackgroundFocus":"color_22","thumbBackgroundDisabled":"color_21","thumbBoxShadow":"0 1px 4px rgba(0, 0, 0, .6)","trackFill":"color_22","trackFillHover":"color_23","trackFillFocus":"color_24","trackFillDisabled":"color_25","trackBoxShadow":"0 1px 4px rgba(0, 0, 0, .6)","trackBackground":"color_26","trackBackgroundHover":"color_27","trackBackgroundFocus":"color_28","trackBackgroundDisabled":"color_29","tooltipBackground":"color_30","tooltipFontSize":"14","tooltipFontFamily":"arial","tooltipFontColor":"color_1","tooltipBoxShadow":"initial","tickMarkColor":"color_4","thumbBorderColor":"color_22","thumbBorderColorHover":"color_23","thumbBorderColorFocus":"color_24","thumbBorderColorDisabled":"color_25","thumbBorderWidth":"4","thumbBorderWidthHover":"4","thumbBorderWidthFocus":"4","thumbBorderWidthDisabled":"4","thumbBorderRadius":"8px","trackBorderColor":"color_28","trackBorderColorHover":"color_29","trackBorderColorFocus":"color_30","trackBorderColorDisabled":"color_31","trackBorderWidth":"7","trackBorderWidthHover":"6","trackBorderWidthFocus":"6","trackBorderWidthDisabled":"6","tooltipBorderRadius":"2px","trackBorderRadius":"8px"}};
+exports.default.$skin.$render = function render_css($id, $params, $functions) {
+  return "\n" + $id + ".Slider2207263592--root{position: relative;box-sizing: border-box;outline: none}\n" + $id + ".Slider2207263592--root *{box-sizing: border-box}\n" + $id + " .Slider2207263592--tooltip{position: absolute;background: #363636;color: #fff;padding: 4px 12px;text-align: center;font-size: 14px;line-height: 1.5;border-radius: 3px;white-space: nowrap}\n" + $id + " .Slider2207263592--tooltip::after, " + $id + " .Slider2207263592--tooltip::before{content: ' ';position: absolute;margin-left: -8px;border-width: 8px;border-style: solid}\n" + $id + " .Slider2207263592--track{z-index: 0;width: 100%;height: 25%;position: relative;cursor: pointer;background: #dadada;opacity: 1;border-radius: 8px;overflow: hidden;border: 2px solid transparent;min-height: 1px}\n" + $id + " .Slider2207263592--inner{display: flex;position: relative;align-items: center;justify-content: center;width: 100%;height: 100%}\n" + $id + " .Slider2207263592--trackFill{position: absolute;background: linear-gradient(to right,#4992e3,#70bff3);height: 100%;width: 100%}\n" + $id + ".Slider2207263592--root[data-slider2207263592-dir=\"rtl\"] .Slider2207263592--trackFill{right: 0}\n" + $id + ".Slider2207263592--root[data-slider2207263592-orientation=\"vertical\"] .Slider2207263592--track{width: 25%;height: 100%}\n" + $id + ".Slider2207263592--root[data-slider2207263592-orientation=\"vertical\"] .Slider2207263592--trackFill{background: linear-gradient(to top,#4992e3,#70bff3)}\n" + $id + " .Slider2207263592--thumb{z-index: 2;position: absolute;cursor: pointer}\n" + $id + " .Slider2207263592--thumbShape{width: 100%;height: 100%;background: green;border: 2px solid blue}\n" + $id + " .Slider2207263592--thumbShape[data-slider2207263592-shapetype=\"circle\"]{border-radius: 50%}\n" + $id + " .Slider2207263592--thumbShape[data-slider2207263592-shapetype=\"square\"]{border-radius: 7px}\n" + $id + " .Slider2207263592--thumbShape[data-slider2207263592-shapetype=\"rectangle\"]{border-radius: 37px}\n" + $id + " .Slider2207263592--thumbShape[data-slider2207263592-shapetype=\"bar\"]{border-radius: 7px}\n" + $id + ".Slider2207263592--root[data-slider2207263592-orientation=\"horizontal\"] .Slider2207263592--tooltip[data-slider2207263592-normalposition]{left: 50%;top: calc(-7px - 10px);transform: translate(-50%,-100%)}\n" + $id + ".Slider2207263592--root[data-slider2207263592-orientation=\"horizontal\"] .Slider2207263592--tooltip[data-slider2207263592-acrossposition]{left: 50%;bottom: calc(-7px - 10px);transform: translate(-50%,100%)}\n" + $id + ".Slider2207263592--root[data-slider2207263592-orientation=\"vertical\"] .Slider2207263592--tooltip[data-slider2207263592-normalposition]{left: 50%;left: calc(-7px - 10px);transform: translate(-100%,-50%)}\n" + $id + ".Slider2207263592--root[data-slider2207263592-orientation=\"vertical\"] .Slider2207263592--tooltip[data-slider2207263592-acrossposition]{right: calc(-7px - 10px);transform: translate(100%,-50%)}\n" + $id + ".Slider2207263592--root[data-slider2207263592-orientation=\"horizontal\"] .Slider2207263592--tooltip[data-slider2207263592-normalposition]::after, " + $id + ".Slider2207263592--root[data-slider2207263592-orientation=\"horizontal\"] .Slider2207263592--tooltip[data-slider2207263592-normalposition]::before{border-color: #363636 transparent transparent transparent;top: 100%;left: 50%}\n" + $id + ".Slider2207263592--root[data-slider2207263592-orientation=\"horizontal\"] .Slider2207263592--tooltip[data-slider2207263592-acrossposition]::after, " + $id + ".Slider2207263592--root[data-slider2207263592-orientation=\"horizontal\"] .Slider2207263592--tooltip[data-slider2207263592-acrossposition]::before{border-color: transparent transparent #363636 transparent;bottom: 100%;left: 50%}\n" + $id + ".Slider2207263592--root[data-slider2207263592-orientation=\"vertical\"] .Slider2207263592--tooltip{top: 50%}\n" + $id + ".Slider2207263592--root[data-slider2207263592-orientation=\"vertical\"] .Slider2207263592--tooltip::after, " + $id + ".Slider2207263592--root[data-slider2207263592-orientation=\"vertical\"] .Slider2207263592--tooltip::before{top: 50%;transform: translateY(-50%)}\n" + $id + ".Slider2207263592--root[data-slider2207263592-orientation=\"vertical\"] .Slider2207263592--tooltip[data-slider2207263592-normalposition]::after, " + $id + ".Slider2207263592--root[data-slider2207263592-orientation=\"vertical\"] .Slider2207263592--tooltip[data-slider2207263592-normalposition]::before{left: 100%;margin-left: 0;border-color: transparent transparent transparent #363636}\n" + $id + ".Slider2207263592--root[data-slider2207263592-orientation=\"vertical\"] .Slider2207263592--tooltip[data-slider2207263592-acrossposition]::after, " + $id + ".Slider2207263592--root[data-slider2207263592-orientation=\"vertical\"] .Slider2207263592--tooltip[data-slider2207263592-acrossposition]::before{right: 100%;border-color: transparent #363636 transparent transparent}\n" + $id + " .Slider2207263592--tick{display: inline-block;position: absolute;background: #000;cursor: pointer}\n" + $id + ".Slider2207263592--root[data-slider2207263592-orientation=\"horizontal\"][data-slider2207263592-tickmarksshape=\"line\"] .Slider2207263592--tick{width: 1px;height: 10px}\n" + $id + ".Slider2207263592--root[data-slider2207263592-orientation=\"vertical\"][data-slider2207263592-tickmarksshape=\"line\"] .Slider2207263592--tick{height: 1px;width: 10px}\n" + $id + ".Slider2207263592--root[data-slider2207263592-tickmarksshape=\"dot\"] .Slider2207263592--tick{width: 3px;height: 3px;border-radius: 50%}\n" + $id + ".Slider2207263592--root[data-slider2207263592-orientation=\"horizontal\"][data-slider2207263592-tickmarksshape=\"dot\"] .Slider2207263592--tick{transform: translateX(calc(- 3px,2))}\n" + $id + ".Slider2207263592--root[data-slider2207263592-orientation=\"vertical\"][data-slider2207263592-tickmarksshape=\"dot\"] .Slider2207263592--tick{transform: translateY(calc(3px,2))}\n" + $id + ".Slider2207263592--root[data-slider2207263592-orientation=\"horizontal\"][data-slider2207263592-tickmarksposition=\"normal\"] .Slider2207263592--tick{bottom: 0}\n" + $id + ".Slider2207263592--root[data-slider2207263592-orientation=\"vertical\"][data-slider2207263592-tickmarksposition=\"normal\"] .Slider2207263592--tick{right: 0}\n" + $id + ".Slider2207263592--root[data-slider2207263592-orientation=\"horizontal\"][data-slider2207263592-tickmarksposition=\"middle\"] .Slider2207263592--tick{top: 50%;transform: translateY(-50%)}\n" + $id + ".Slider2207263592--root[data-slider2207263592-orientation=\"vertical\"][data-slider2207263592-tickmarksposition=\"middle\"] .Slider2207263592--tick{left: 50%;transform: translateX(-50%)}\n" + $id + ".Slider2207263592--root[data-slider2207263592-orientation=\"horizontal\"][data-slider2207263592-tickmarksposition=\"across\"] .Slider2207263592--tick{top: 0}\n" + $id + ".Slider2207263592--root[data-slider2207263592-orientation=\"vertical\"][data-slider2207263592-tickmarksposition=\"across\"] .Slider2207263592--tick{left: 0}\n" + $id + ".Slider3992224720--root{z-index: 0}\n" + $id + ".Slider3992224720--root .Slider2207263592--thumbShape{background: " + $params["thumbBackground"] + ";border-color: " + $params["thumbBorderColor"] + ";border-width: " + $params["thumbBorderWidth"] + ";box-shadow: " + $params["thumbBoxShadow"] + ";border-style: solid}\n" + $id + ".Slider3992224720--root .Slider2207263592--tick{background: " + $params["tickMarkColor"] + "}\n" + $id + ".Slider3992224720--root .Slider2207263592--tooltip{font-family: " + $params["tooltipFontFamily"] + ";font-size: " + $params["tooltipFontSize"] + ";color: " + $params["tooltipFontColor"] + ";background: " + $params["tooltipBackground"] + ";border-width: 0;border-radius: " + $params["tooltipBorderRadius"] + ";box-shadow: " + $params["tooltipBoxShadow"] + "}\n" + $id + ".Slider3992224720--root .Slider2207263592--tooltip::before{border-width: 0}\n" + $id + ".Slider3992224720--root[data-slider2207263592-orientation=\"horizontal\"] .Slider2207263592--tooltip[data-slider2207263592-normalposition]::after{border-color: " + $params["tooltipBackground"] + " transparent transparent transparent}\n" + $id + ".Slider3992224720--root[data-slider2207263592-orientation=\"horizontal\"] .Slider2207263592--tooltip[data-slider2207263592-acrossposition]::after{border-color: transparent transparent " + $params["tooltipBackground"] + " transparent}\n" + $id + ".Slider3992224720--root[data-slider2207263592-orientation=\"vertical\"] .Slider2207263592--tooltip[data-slider2207263592-normalposition]::after{border-color: transparent transparent transparent " + $params["tooltipBackground"] + "}\n" + $id + ".Slider3992224720--root[data-slider2207263592-orientation=\"vertical\"] .Slider2207263592--tooltip[data-slider2207263592-acrossposition]::after{border-color: transparent " + $params["tooltipBackground"] + " transparent transparent}\n" + $id + ".Slider3992224720--root[data-slider3992224720-preview-hover] .Slider2207263592--thumbShape, " + $id + ".Slider3992224720--root:hover .Slider2207263592--thumbShape{background: " + $params["thumbBackgroundHover"] + ";border-color: " + $params["thumbBorderColorHover"] + ";border-width: " + $params["thumbBorderWidthHover"] + "}\n" + $id + ".Slider3992224720--root[data-slider3992224720-preview-focus] .Slider2207263592--thumbShape, " + $id + ".Slider3992224720--root:focus .Slider2207263592--thumbShape{background: " + $params["thumbBackgroundFocus"] + ";border-color: " + $params["thumbBorderColorFocus"] + ";border-width: " + $params["thumbBorderWidthFocus"] + "}\n" + $id + ".Slider3992224720--root[data-slider3992224720-preview-disabled] .Slider2207263592--thumbShape, " + $id + ".Slider3992224720--root[data-slider2207263592-disabled] .Slider2207263592--thumbShape{background: " + $params["thumbBackgroundDisabled"] + ";border-color: " + $params["thumbBorderColorDisabled"] + ";border-width: " + $params["thumbBorderWidthDisabled"] + "}\n" + $id + ".Slider3992224720--root .Slider2207263592--track{background: " + $params["trackBackground"] + ";border-radius: " + $params["trackBorderRadius"] + ";border-color: " + $params["trackBorderColor"] + ";border-width: " + $params["trackBorderWidth"] + ";box-shadow: " + $params["trackBoxShadow"] + "}\n" + $id + ".Slider3992224720--root .Slider2207263592--trackFill{background: " + $params["trackFill"] + ";border-radius: " + $params["trackBorderRadius"] + "}\n" + $id + ".Slider3992224720--root[data-slider2207263592-orientation=\"horizontal\"][data-slider2207263592-dir=\"ltr\"] .Slider2207263592--trackFill{border-top-left-radius: 0;border-bottom-left-radius: 0}\n" + $id + ".Slider3992224720--root[data-slider2207263592-orientation=\"horizontal\"][data-slider2207263592-dir=\"rtl\"] .Slider2207263592--trackFill{border-top-right-radius: 0;border-bottom-right-radius: 0}\n" + $id + ".Slider3992224720--root[data-slider2207263592-orientation=\"vertical\"] .Slider2207263592--trackFill{border-bottom-right-radius: 0;border-bottom-left-radius: 0}\n" + $id + ".Slider3992224720--root[data-slider3992224720-preview-hover] .Slider2207263592--trackFill, " + $id + ".Slider3992224720--root:hover .Slider2207263592--trackFill{background: " + $params["trackFillHover"] + "}\n" + $id + ".Slider3992224720--root[data-slider3992224720-preview-focus] .Slider2207263592--trackFill, " + $id + ".Slider3992224720--root:focus .Slider2207263592--trackFill{background: " + $params["trackFillFocus"] + "}\n" + $id + ".Slider3992224720--root[data-slider3992224720-preview-disabled] .Slider2207263592--trackFill, " + $id + ".Slider3992224720--root[data-slider2207263592-disabled] .Slider2207263592--trackFill{background: " + $params["trackFillDisabled"] + "}\n" + $id + ".Slider3992224720--root[data-slider3992224720-preview-hover] .Slider2207263592--track, " + $id + ".Slider3992224720--root:hover .Slider2207263592--track{background: " + $params["trackBackgroundHover"] + ";border-color: " + $params["trackBorderColorHover"] + ";border-width: " + $params["trackBorderWidthHover"] + "}\n" + $id + ".Slider3992224720--root[data-slider3992224720-preview-focus] .Slider2207263592--track, " + $id + ".Slider3992224720--root:focus .Slider2207263592--track{background: " + $params["trackBackgroundFocus"] + ";border-color: " + $params["trackBorderColorFocus"] + ";border-width: " + $params["trackBorderWidthFocus"] + "}\n" + $id + ".Slider3992224720--root[data-slider3992224720-preview-disabled] .Slider2207263592--track, " + $id + ".Slider3992224720--root[data-slider2207263592-disabled] .Slider2207263592--track{background: " + $params["trackBackgroundDisabled"] + ";border-color: " + $params["trackBorderColorDisabled"] + ";border-width: " + $params["trackBorderWidthDisabled"] + "}\n" + $id + ".Slider3992224720--root .Slider2207263592--thumbShape[data-slider2207263592-shapetype=\"circle\"]{border-radius: 50%}\n" + $id + ".Slider3992224720--root .Slider2207263592--thumbShape[data-slider2207263592-shapetype=\"circle\"][data-slider2207263592-shapetype=\"circle\"]{border-radius: " + $params["thumbBorderRadius"] + "}\n" + $id + ".Slider3992224720--root .Slider2207263592--thumbShape[data-slider2207263592-shapetype=\"square\"]{border-radius: 17px}\n" + $id + ".Slider3992224720--root .Slider2207263592--thumbShape[data-slider2207263592-shapetype=\"square\"][data-slider2207263592-shapetype=\"square\"]{border-radius: " + $params["thumbBorderRadius"] + "}\n" + $id + ".Slider3992224720--root .Slider2207263592--thumbShape[data-slider2207263592-shapetype=\"rectangle\"]{border-radius: 37px}\n" + $id + ".Slider3992224720--root .Slider2207263592--thumbShape[data-slider2207263592-shapetype=\"rectangle\"][data-slider2207263592-shapetype=\"rectangle\"]{border-radius: " + $params["thumbBorderRadius"] + "}\n" + $id + ".Slider3992224720--root .Slider2207263592--thumbShape[data-slider2207263592-shapetype=\"bar\"]{border-radius: 5px}\n" + $id + ".Slider3992224720--root .Slider2207263592--thumbShape[data-slider2207263592-shapetype=\"bar\"][data-slider2207263592-shapetype=\"bar\"]{border-radius: " + $params["thumbBorderRadius"] + "}\n";
+};
+
+/***/ }),
+
+/***/ 441:
+/*!************************************!*\
+  !*** ./components/Slider/index.js ***!
+  \************************************/
 /*! no static exports found */
 /*! all exports used */
 /*! ModuleConcatenation bailout: Module is not an ECMAScript module */
@@ -1648,297 +1031,19 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+var _Slider = __webpack_require__(/*! ./Slider */ 664);
 
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+var _SliderSt = __webpack_require__(/*! ./Slider.st.css */ 358);
 
-var _lodash = __webpack_require__(/*! lodash */ 2);
-
-var _lodash2 = _interopRequireDefault(_lodash);
-
-var _react = __webpack_require__(/*! react */ 0);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _propTypes = __webpack_require__(/*! prop-types */ 1);
-
-var _system = __webpack_require__(/*! wix-ui-icons-common/system */ 396);
-
-var _timePicker = __webpack_require__(/*! wix-ui-core/time-picker */ 213);
-
-var _TimePickerDropdown = __webpack_require__(/*! ./TimePickerDropdown */ 842);
-
-var _TimePickerSt = __webpack_require__(/*! ./TimePicker.st.css */ 282);
-
-var _TimePickerSt2 = _interopRequireDefault(_TimePickerSt);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var TimePicker = function (_React$PureComponent) {
-  _inherits(TimePicker, _React$PureComponent);
-
-  function TimePicker(props) {
-    _classCallCheck(this, TimePicker);
-
-    var _this = _possibleConstructorReturn(this, (TimePicker.__proto__ || Object.getPrototypeOf(TimePicker)).call(this, props));
-
-    _this.handleChange = function (value) {
-      var parsedValue = _timePicker.TimePickerUtils.isValidTime(value, false) ? value + ':00.000' : value;
-      _this.props.onChange && _this.props.onChange(parsedValue);
-    };
-
-    _this.handleFocus = function (e) {
-      _this.props.onFocus && _this.props.onFocus(e);
-      _this.setState({ isFocused: true });
-    };
-
-    _this.handleBlur = function (e) {
-      _this.props.onBlur && _this.props.onBlur(e);
-      _this.setState({ isFocused: false });
-    };
-
-    _this.state = { isFocused: false };
-    return _this;
-  }
-
-  _createClass(TimePicker, [{
-    key: 'focus',
-    value: function focus() {
-      this.ref.focus();
-      this.setState({ isFocused: true });
-    }
-  }, {
-    key: 'blur',
-    value: function blur() {
-      this.ref.blur();
-      this.setState({ isFocused: false });
-    }
-  }, {
-    key: 'render',
-    value: function render() {
-      var _this2 = this;
-
-      var _props = this.props,
-          controller = _props.controller,
-          error = _props.error,
-          disabled = _props.disabled,
-          step = _props.step,
-          useAmPmFormat = _props.useAmPmFormat,
-          initialTime = _props.initialTime,
-          value = _props.value,
-          isMobile = _props.isMobile,
-          previewState = _props.previewState,
-          alignment = _props.alignment,
-          paddingStart = _props.paddingStart,
-          fontSize = _props.fontSize,
-          rest = _objectWithoutProperties(_props, ['controller', 'error', 'disabled', 'step', 'useAmPmFormat', 'initialTime', 'value', 'isMobile', 'previewState', 'alignment', 'paddingStart', 'fontSize']);
-
-      var isFocused = this.state.isFocused;
-
-
-      var stylableStates = { error: error, disabled: disabled, previewState: previewState, isMobile: isMobile, alignment: alignment, isFocused: isFocused };
-
-      var timeValue = value;
-      if (!timeValue) {
-        if (initialTime === 'current') {
-          timeValue = new Date().toTimeString().slice(0, 5);
-        }
-        if (initialTime === 'value') {
-          timeValue = this.props.value;
-        }
-      }
-
-      var useAmPm = useAmPmFormat ? _timePicker.TimePickerConstants.AmPmOptions.Uppercase : _timePicker.TimePickerConstants.AmPmOptions.None;
-
-      var extraStyles = {};
-      if (alignment === 'left') {
-        extraStyles.paddingLeft = paddingStart;
-      } else if (alignment === 'right') {
-        extraStyles.paddingRight = paddingStart;
-      }
-
-      if (isMobile) {
-        extraStyles.paddingLeft = paddingStart;
-        extraStyles.paddingRight = paddingStart;
-      }
-
-      if (fontSize) {
-        extraStyles.fontSize = fontSize;
-      }
-
-      var timePickerProps = _extends({}, _lodash2.default.omit(rest, ['style', 'ref', 'styleId']), {
-        useAmPm: useAmPm,
-        disabled: disabled,
-        step: step,
-        value: value || timeValue,
-        onChange: this.handleChange,
-        onFocus: this.handleFocus,
-        onBlur: this.handleBlur,
-        style: extraStyles,
-        'aria-label': 'Time Picker'
-      });
-
-      if (isMobile || controller === 'dropdown') {
-        return _react2.default.createElement(
-          'div',
-          (0, _TimePickerSt2.default)('root', stylableStates, this.props),
-          _react2.default.createElement(_TimePickerDropdown.TimePickerDropdown, _extends({
-            ref: function ref(_ref) {
-              return _this2.ref = _ref;
-            }
-          }, timePickerProps, (0, _TimePickerSt2.default)('dropdown-root', stylableStates, this.props), {
-            placeholder: initialTime === 'none' ? '' : this.props.placeholder
-          }))
-        );
-      }
-
-      if (!isMobile && controller === 'stepper') {
-        timePickerProps.tickerUpIcon = _react2.default.createElement(_system.FormFieldSpinnerUp, { size: 9 });
-        timePickerProps.tickerDownIcon = _react2.default.createElement(_system.FormFieldSpinnerDown, { size: 9 });
-      }
-
-      return _react2.default.createElement(
-        'div',
-        (0, _TimePickerSt2.default)('root', stylableStates, this.props),
-        _react2.default.createElement(_timePicker.TimePicker, _extends({
-          'data-hook': 'coreTimePicker',
-          ref: function ref(_ref2) {
-            return _this2.ref = _ref2;
-          }
-        }, timePickerProps, (0, _TimePickerSt2.default)('timepicker-root', stylableStates, this.props)))
-      );
-    }
-  }]);
-
-  return TimePicker;
-}(_react2.default.PureComponent);
-
-exports.default = TimePicker;
-
-
-TimePicker.displayName = 'TimePicker';
-
-TimePicker.propTypes = {
-  alignment: (0, _propTypes.oneOf)(['left', 'center', 'right']),
-  controller: (0, _propTypes.oneOf)(['text', 'stepper', 'dropdown']),
-  useAmPmFormat: _propTypes.bool,
-  initialTime: (0, _propTypes.oneOf)(['none', 'current', 'value']),
-  placeholder: _propTypes.string,
-  step: function step(props, propName, componentName) {
-    var step = props[propName];
-    if (typeof step === 'undefined' || step === null) {
-      return null;
-    }
-
-    if (typeof step !== 'number') {
-      return new Error('Invalid prop \'' + propName + '\' supplied to \'' + componentName + '\': [' + step + '] is not a number.');
-    }
-
-    var integerStep = Math.trunc(step);
-
-    if (integerStep !== step) {
-      return new Error('Invalid prop \'' + propName + '\' supplied to \'' + componentName + '\': [' + step + '] is not an integer.');
-    }
-
-    if (integerStep < 1 || integerStep > 60) {
-      return new Error('Invalid prop \'' + propName + '\' supplied to \'' + componentName + '\': [' + step + '] is not in range 1-60.');
-    }
-  },
-  /** Time in 24hour format according to the spec 23:59(:59(.999)) (https://html.spec.whatwg.org/multipage/common-microsyntaxes.html#times). Can be null */
-  value: function value(props, propName, componentName) {
-    var value = props[propName];
-    if (value !== null && !_timePicker.TimePickerUtils.isValidTime(value)) {
-      return new Error('Invalid prop \'' + propName + '\' supplied to \'' + componentName + '\': [' + value + '] is not valid, must be in 23:59(:59(.999)) format.\n        For details see https://html.spec.whatwg.org/multipage/common-microsyntaxes.html#times');
-    }
-  },
-  onChange: _propTypes.func,
-  onFocus: _propTypes.func,
-  onBlur: _propTypes.func,
-  error: _propTypes.bool,
-  disabled: _propTypes.bool,
-  required: _propTypes.bool,
-  readOnly: _propTypes.bool,
-  isMobile: _propTypes.bool,
-  previewState: (0, _propTypes.oneOf)(['regular', 'hover', 'focus', 'error', 'disabled']),
-  paddingStart: _propTypes.number,
-  fontSize: _propTypes.number
-};
-
-TimePicker.defaultProps = {
-  alignment: 'left',
-  controller: 'stepper',
-  useAmPmFormat: false,
-  initialTime: 'none',
-  step: 1,
-  value: _timePicker.TimePicker.defaultProps.value,
-  error: false,
-  disabled: false,
-  required: false,
-  readOnly: false,
-  isMobile: false,
-  previewState: 'regular',
-  paddingStart: 15
-};
-
-/***/ }),
-
-/***/ 396:
-/*!***********************************************************!*\
-  !*** ../node_modules/wix-ui-icons-common/system/index.js ***!
-  \***********************************************************/
-/*! no static exports found */
-/*! all exports used */
-/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__(/*! ./../dist/src/system/dist */ 799);
-
-
-/***/ }),
-
-/***/ 446:
-/*!****************************************!*\
-  !*** ./components/TimePicker/index.js ***!
-  \****************************************/
-/*! no static exports found */
-/*! all exports used */
-/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _TimePicker = __webpack_require__(/*! ./TimePicker */ 395);
-
-var _TimePicker2 = _interopRequireDefault(_TimePicker);
-
-var _TimePicker3 = __webpack_require__(/*! ./TimePicker.santa */ 843);
-
-var _TimePicker4 = _interopRequireDefault(_TimePicker3);
-
-var _TimePickerSt = __webpack_require__(/*! ./TimePicker.st.css */ 282);
-
-var _TimePickerSt2 = _interopRequireDefault(_TimePickerSt);
+var _SliderSt2 = _interopRequireDefault(_SliderSt);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = {
-  componentType: 'wixui.TimePicker',
-  component: _TimePicker2.default,
-  santaComponent: _TimePicker4.default,
-  skin: _TimePickerSt2.default.$skin
+  componentType: 'wixui.Slider',
+  component: _Slider.Slider,
+  santaComponent: _Slider.santaSlider,
+  skin: _SliderSt2.default.$skin
 };
 
 /***/ }),
@@ -2174,10 +1279,251 @@ function __importDefault(mod) {
 
 /***/ }),
 
-/***/ 62:
-/*!**********************************************************************!*\
-  !*** ../node_modules/wix-ui-core/dist/src/components/input/index.js ***!
-  \**********************************************************************/
+/***/ 664:
+/*!*************************************!*\
+  !*** ./components/Slider/Slider.js ***!
+  \*************************************/
+/*! no static exports found */
+/*! all exports used */
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.santaSlider = exports.Slider = undefined;
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(/*! react */ 0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _createReactClass = __webpack_require__(/*! create-react-class */ 17);
+
+var _createReactClass2 = _interopRequireDefault(_createReactClass);
+
+var _lodash = __webpack_require__(/*! lodash */ 2);
+
+var _lodash2 = _interopRequireDefault(_lodash);
+
+var _propTypes = __webpack_require__(/*! prop-types */ 1);
+
+var _slider = __webpack_require__(/*! wix-ui-core/slider */ 665);
+
+var _SliderSt = __webpack_require__(/*! ./Slider.st.css */ 358);
+
+var _SliderSt2 = _interopRequireDefault(_SliderSt);
+
+var _santaComponents = __webpack_require__(/*! santa-components */ 14);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Slider = exports.Slider = function (_React$Component) {
+  _inherits(Slider, _React$Component);
+
+  function Slider() {
+    _classCallCheck(this, Slider);
+
+    return _possibleConstructorReturn(this, (Slider.__proto__ || Object.getPrototypeOf(Slider)).apply(this, arguments));
+  }
+
+  _createClass(Slider, [{
+    key: 'focus',
+    value: function focus() {
+      this.node.focus();
+    }
+  }, {
+    key: 'blur',
+    value: function blur() {
+      this.node.blur();
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      var _this2 = this;
+
+      var _props = this.props,
+          previewState = _props.previewState,
+          componentViewMode = _props.componentViewMode,
+          isMobileView = _props.isMobileView,
+          tooltipPosition = _props.tooltipPosition,
+          orientation = _props.orientation,
+          isDisabled = _props.isDisabled,
+          restOfProps = _objectWithoutProperties(_props, ['previewState', 'componentViewMode', 'isMobileView', 'tooltipPosition', 'orientation', 'isDisabled']);
+
+      var styles = (0, _SliderSt2.default)('root', _defineProperty({}, 'preview-' + previewState, true), restOfProps);
+      var shouldAlwaysShowTooltip = componentViewMode === 'editor' && this.props.tooltipVisibility !== 'none';
+      var overriddenProps = {
+        tooltipVisibility: shouldAlwaysShowTooltip ? 'always' : this.props.tooltipVisibility,
+        tooltipPosition: isMobileView ? 'normal' : tooltipPosition,
+        orientation: isMobileView ? 'horizontal' : orientation
+      };
+      var overriddenStyle = {
+        width: this.props.style.width,
+        height: this.props.style.height
+      };
+
+      return _react2.default.createElement(_slider.Slider, _extends({
+        ref: function ref(node) {
+          return _this2.node = node;
+        }
+      }, restOfProps, styles, overriddenProps, {
+        disabled: isDisabled,
+        style: overriddenStyle
+      }));
+    }
+  }]);
+
+  return Slider;
+}(_react2.default.Component);
+
+Slider.displayName = 'Slider';
+Slider.propTypes = {
+  previewState: _propTypes.string,
+  tooltipVisibility: _propTypes.string,
+  componentViewMode: _propTypes.string,
+  tooltipPosition: _propTypes.string,
+  orientation: _propTypes.string,
+  isMobileView: _propTypes.bool,
+  isDisabled: _propTypes.bool,
+  style: _propTypes.object
+};
+Slider.defaultProps = {
+  style: { width: 0, height: 0 }
+};
+
+var skinBasedComp = _santaComponents.mixins.skinBasedComp,
+    runTimeCompData = _santaComponents.mixins.runTimeCompData,
+    inputFocusMixin = _santaComponents.mixins.inputFocusMixin;
+
+
+var getComponentSkins = function getComponentSkins() {
+  return {
+    'wixui.skins.Slider': _SliderSt2.default.$skin
+  };
+};
+
+/**
+ * @class components.slider
+ * @extends {core.skinBasedComp}
+ */
+
+var santaSlider = exports.santaSlider = (0, _createReactClass2.default)({
+  displayName: 'Slider',
+
+  mixins: [skinBasedComp(getComponentSkins()), runTimeCompData, inputFocusMixin],
+
+  propTypes: {
+    structure: _santaComponents.santaTypesDefinitions.Component.structure.isRequired,
+    compProp: _santaComponents.santaTypesDefinitions.Component.compProp.isRequired,
+    compData: _santaComponents.santaTypesDefinitions.Component.compData.isRequired,
+    componentViewMode: _santaComponents.santaTypesDefinitions.RenderFlags.componentViewMode,
+    componentPreviewState: _santaComponents.santaTypesDefinitions.RenderFlags.componentPreviewState,
+    styleId: _santaComponents.santaTypesDefinitions.Component.styleId,
+    style: _santaComponents.santaTypesDefinitions.Component.style,
+    isMobileView: _santaComponents.santaTypesDefinitions.isMobileView
+  },
+
+  statics: {
+    compSpecificIsDomOnlyOverride: function compSpecificIsDomOnlyOverride() {
+      return false;
+    },
+    behaviors: _lodash2.default.clone(inputFocusMixin.INPUT_FOCUS_BEHAVIORS),
+    getComponentSkins: getComponentSkins
+  },
+
+  getInitialState: function getInitialState() {
+    return {
+      value: this.props.compData.value
+    };
+  },
+  UNSAFE_componentWillReceiveProps: function UNSAFE_componentWillReceiveProps(nextProps) {
+    // eslint-disable-line
+    this.setState({ value: nextProps.compData.value });
+  },
+  handleChange: function handleChange(value) {
+    var nextState = { value: value };
+    this.setState(nextState);
+    this.updateData(nextState);
+    this.handleAction('change', nextState);
+  },
+  focus: function focus() {
+    this.sliderRef.focus();
+  },
+  blur: function blur() {
+    this.sliderRef.blur();
+  },
+  handleFocus: function handleFocus() {
+    this.handleAction('focus');
+  },
+  handleBlur: function handleBlur() {
+    this.handleAction('blur');
+  },
+  getSkinProperties: function getSkinProperties() {
+    var _this3 = this;
+
+    var sliderProps = _lodash2.default.assign({}, this.props.compData, this.props.compProp, {
+      styleId: this.props.styleId,
+      className: this.props.styleId,
+      style: this.props.style,
+      onChange: this.handleChange,
+      onFocus: this.handleFocus,
+      onBlur: this.handleBlur,
+      value: this.state.value,
+      width: _lodash2.default.get(this.props.structure, 'layout.width', 0),
+      height: _lodash2.default.get(this.props.structure, 'layout.height', 0),
+      previewState: this.props.componentPreviewState,
+      componentViewMode: this.props.componentViewMode,
+      isMobileView: this.props.isMobileView,
+      ref: function ref(sliderRef) {
+        _this3.sliderRef = sliderRef;
+      }
+    });
+
+    return {
+      '': {
+        children: [_santaComponents.utils.createReactElement(Slider, sliderProps)]
+      }
+    };
+  }
+});
+
+/***/ }),
+
+/***/ 665:
+/*!*********************************************!*\
+  !*** ../node_modules/wix-ui-core/slider.js ***!
+  \*********************************************/
+/*! no static exports found */
+/*! all exports used */
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(/*! ./dist/src/components/slider */ 666);
+
+
+/***/ }),
+
+/***/ 666:
+/*!***********************************************************************!*\
+  !*** ../node_modules/wix-ui-core/dist/src/components/slider/index.js ***!
+  \***********************************************************************/
 /*! no static exports found */
 /*! all exports used */
 /*! ModuleConcatenation bailout: Module is not an ECMAScript module */
@@ -2186,16 +1532,16 @@ function __importDefault(mod) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
-var Input_1 = __webpack_require__(/*! ./Input */ 63);
-exports.Input = Input_1.Input;
+var Slider_1 = __webpack_require__(/*! ./Slider */ 667);
+exports.Slider = Slider_1.Slider;
 //# sourceMappingURL=index.js.map
 
 /***/ }),
 
-/***/ 63:
-/*!**********************************************************************!*\
-  !*** ../node_modules/wix-ui-core/dist/src/components/input/Input.js ***!
-  \**********************************************************************/
+/***/ 667:
+/*!************************************************************************!*\
+  !*** ../node_modules/wix-ui-core/dist/src/components/slider/Slider.js ***!
+  \************************************************************************/
 /*! no static exports found */
 /*! all exports used */
 /*! ModuleConcatenation bailout: Module is not an ECMAScript module */
@@ -2206,2444 +1552,578 @@ exports.Input = Input_1.Input;
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = __webpack_require__(/*! tslib */ 6);
 var React = __webpack_require__(/*! react */ 0);
-var Input_st_css_1 = __webpack_require__(/*! ./Input.st.css */ 37);
-var Input = /** @class */ (function (_super) {
-    tslib_1.__extends(Input, _super);
-    function Input() {
+var Ticks_1 = __webpack_require__(/*! ./Ticks */ 668);
+var Thumb_1 = __webpack_require__(/*! ./Thumb */ 669);
+var Slider_st_css_1 = __webpack_require__(/*! ./Slider.st.css */ 357);
+var noop = __webpack_require__(/*! lodash/noop */ 670);
+var CONTINUOUS_STEP = 0.01;
+var Slider = /** @class */ (function (_super) {
+    tslib_1.__extends(Slider, _super);
+    function Slider() {
         var _this = _super !== null && _super.apply(this, arguments) || this;
         _this.state = {
-            focus: false,
+            dragging: false,
+            mouseDown: false,
+            thumbHover: false,
+            inKeyPress: false,
         };
-        _this.handleFocus = function (event) {
-            _this.setState({ focus: true });
-            _this.props.onFocus(event);
+        _this.setTrackNode = function (track) {
+            _this.track = track;
         };
-        _this.handleBlur = function (event) {
-            _this.setState({ focus: false });
-            _this.props.onBlur(event);
+        _this.handleBlur = function () {
+            _this.setState({ inKeyPress: false });
+            _this.props.onBlur();
+        };
+        _this.handleMouseDown = function () {
+            _this.setState({ mouseDown: true });
+        };
+        _this.handleMouseUp = function () {
+            _this.setState({ mouseDown: false, dragging: false });
+        };
+        _this.handleKeyDown = function (ev) {
+            var _a = _this.props, min = _a.min, max = _a.max, value = _a.value, disabled = _a.disabled, readOnly = _a.readOnly, dir = _a.dir;
+            var ltr = dir === 'ltr';
+            if (disabled || readOnly) {
+                return;
+            }
+            var step = _this.getStepValue();
+            var nextValue;
+            switch (ev.key) {
+                case 'ArrowDown':
+                    nextValue = value - step;
+                    break;
+                case 'ArrowLeft':
+                    if (ltr) {
+                        nextValue = value - step;
+                    }
+                    else {
+                        nextValue = value + step;
+                    }
+                    break;
+                case 'ArrowUp':
+                    nextValue = value + step;
+                    break;
+                case 'ArrowRight':
+                    if (ltr) {
+                        nextValue = value + step;
+                    }
+                    else {
+                        nextValue = value - step;
+                    }
+                    break;
+                case 'PageDown':
+                    nextValue = value - 0.1 * (max - min);
+                    break;
+                case 'PageUp':
+                    nextValue = value + 0.1 * (max - min);
+                    break;
+                case 'Home':
+                    nextValue = min;
+                    break;
+                case 'End':
+                    nextValue = max;
+                    break;
+                default:
+                    nextValue = undefined;
+            }
+            if (typeof nextValue !== 'undefined') {
+                _this.handleChange(nextValue);
+                _this.setState({
+                    inKeyPress: true,
+                });
+                ev.preventDefault();
+            }
+        };
+        _this.handleMouseMove = function (ev) {
+            if (_this.state.mouseDown && !_this.state.dragging) {
+                _this.setState({ dragging: true });
+            }
+            if (_this.state.dragging) {
+                _this.moveThumbByMouse(ev);
+            }
+        };
+        _this.handleThumbEnter = function () {
+            _this.setState({ thumbHover: true });
+        };
+        _this.handleThumbLeave = function () {
+            _this.setState({ thumbHover: false });
+        };
+        _this.moveThumbByMouse = function (ev) {
+            if (ev.touches) {
+                ev.preventDefault();
+                ev = ev.touches[0];
+            }
+            var _a = _this.props, min = _a.min, max = _a.max, disabled = _a.disabled, readOnly = _a.readOnly, dir = _a.dir;
+            var rtl = _this.isRtl();
+            if (disabled || readOnly) {
+                return;
+            }
+            var isVertical = _this.isVertical();
+            var step = _this.getStepValue();
+            var thumbSize = _this.getThumbSizeMainAxis();
+            var totalSteps = Math.ceil((max - min) / step);
+            var rect = _this.track.getBoundingClientRect();
+            var value, pxStep, sliderPos;
+            if (isVertical) {
+                sliderPos = rect.bottom - (ev.clientY + thumbSize / 2);
+                pxStep = (rect.height - thumbSize) / totalSteps;
+            }
+            else {
+                if (rtl) {
+                    sliderPos = rect.left + rect.width - thumbSize / 2 - ev.clientX;
+                }
+                else {
+                    sliderPos = ev.clientX - (rect.left + thumbSize / 2);
+                }
+                pxStep = (rect.width - thumbSize) / totalSteps;
+            }
+            value = min + step * Math.round(sliderPos / pxStep);
+            _this.handleChange(value);
         };
         return _this;
     }
-    Input.prototype.render = function () {
+    Slider.prototype.componentDidMount = function () {
+        document.addEventListener('mouseup', this.handleMouseUp);
+        document.addEventListener('mousemove', this.handleMouseMove);
+        document.addEventListener('touchend', this.handleMouseUp);
+        document.addEventListener('touchmove', this.handleMouseMove, {
+            passive: false,
+        });
+    };
+    Slider.prototype.componentWillUnmount = function () {
+        document.removeEventListener('mouseup', this.handleMouseUp);
+        document.removeEventListener('mousemove', this.handleMouseMove);
+        document.removeEventListener('touchend', this.handleMouseUp);
+        document.removeEventListener('touchmove', this.handleMouseMove);
+    };
+    Slider.prototype.focus = function () {
+        this.root.focus();
+        this.props.onFocus();
+    };
+    Slider.prototype.blur = function () {
+        this.root.blur();
+        this.props.onBlur();
+    };
+    Slider.prototype.getStartPos = function () {
+        return this.props.dir === 'rtl' ? 'right' : 'left';
+    };
+    Slider.prototype.calcDiscreteStepValue = function (min, max, step, stepType) {
+        if (stepType === 'count') {
+            return (max - min) / step;
+        }
+        return step;
+    };
+    Slider.prototype.getStepValue = function () {
+        var _a = this.props, min = _a.min, max = _a.max, step = _a.step, stepType = _a.stepType;
+        if (step > 0) {
+            return this.calcDiscreteStepValue(min, max, step, stepType);
+        }
+        return CONTINUOUS_STEP;
+    };
+    Slider.prototype.isShallowEqual = function (v, o) {
+        for (var key in v) {
+            if (!(key in o) || v[key] !== o[key]) {
+                return false;
+            }
+        }
+        for (var key in o) {
+            if (!(key in v) || v[key] !== o[key]) {
+                return false;
+            }
+        }
+        return true;
+    };
+    Slider.prototype.getSliderSize = function () {
+        var _a = this.props.style, width = _a.width, height = _a.height;
+        var isVertical = this.isVertical();
+        var val = isVertical ? width : height;
+        return Math.min(val, Math.min(width, height));
+    };
+    Slider.prototype.getSliderLength = function () {
+        return this.isVertical() ? this.props.style.height : this.props.style.width;
+    };
+    Slider.prototype.getThumbSize = function () {
+        var size = Thumb_1.getThumbSize(this.props.thumbShape, this.getSliderSize(), this.isVertical());
+        var offsets = this.getInnerOffsets();
+        var offset = offsets.offsetHeight || offsets.offsetWidth || 0;
+        return {
+            width: size.width - offset,
+            height: size.height - offset,
+        };
+    };
+    Slider.prototype.getThumbSizeMainAxis = function () {
+        var size = this.getThumbSize();
+        return this.isVertical() ? size.height : size.width;
+    };
+    Slider.prototype.getThumbSizeCrossAxis = function () {
+        var size = this.getThumbSize();
+        return this.isVertical() ? size.width : size.height;
+    };
+    Slider.prototype.handleChange = function (value) {
+        value = this.floorValue(this.clamp(value, this.props.min, this.props.max), 2);
+        if (value !== this.props.value) {
+            this.props.onChange(value);
+        }
+    };
+    Slider.prototype.clamp = function (val, min, max) {
+        return Math.min(Math.max(val, min), max);
+    };
+    Slider.prototype.isRtl = function () {
+        return this.props.dir === 'rtl';
+    };
+    Slider.prototype.isVertical = function () {
+        return this.props.orientation === 'vertical';
+    };
+    Slider.prototype.isContinuous = function () {
+        return !this.props.step;
+    };
+    Slider.prototype.shouldShowTooltip = function () {
+        switch (this.props.tooltipVisibility) {
+            case 'always':
+                return true;
+            case 'none':
+                return false;
+            default:
+            case 'hover':
+                return (this.state.dragging || this.state.thumbHover || this.state.inKeyPress);
+        }
+    };
+    Slider.prototype.calcThumbProgressPosition = function () {
+        var thumbSize = this.getThumbSizeMainAxis();
+        var _a = this.props, value = _a.value, min = _a.min, max = _a.max;
+        var pct = (value - min) / (max - min);
+        var clampedPct = this.clamp(pct, 0, 1);
+        return "calc(" + clampedPct + " *(100% - " + thumbSize + "px))";
+    };
+    Slider.prototype.calcTrackFillPosition = function () {
+        var thumbSize = this.getThumbSizeMainAxis();
+        var _a = this.props, value = _a.value, min = _a.min, max = _a.max;
+        var pct = (value - min) / (max - min);
+        var clampedPct = this.clamp(pct, 0, 1);
+        return "calc(" + clampedPct + " *(100% - " + thumbSize + "px) + " + thumbSize + "px - 2px)";
+    };
+    Slider.prototype.calcThumbCrossPosition = function () {
+        var thumbSize = this.getThumbSizeCrossAxis();
+        return "calc(50% - " + thumbSize / 2 + "px)";
+    };
+    Slider.prototype.calcThumbPosition = function () {
+        var _a;
+        var progressVal = this.calcThumbProgressPosition();
+        var crossVal = this.calcThumbCrossPosition();
+        if (this.isVertical()) {
+            return { bottom: progressVal, left: 0 };
+        }
+        return _a = {}, _a[this.getStartPos()] = progressVal, _a.top = 0, _a;
+    };
+    Slider.prototype.floorValue = function (value, precision) {
+        if (precision === void 0) { precision = 1; }
+        var clampedValue = Math.floor(Math.pow(10, precision) * value) / Math.pow(10, precision);
+        return clampedValue;
+    };
+    Slider.prototype.renderTooltip = function () {
+        var _a;
+        if (!this.shouldShowTooltip()) {
+            return null;
+        }
+        var tooltipPosition = this.props.tooltipPosition;
+        var positionClassname = tooltipPosition + 'Position';
+        var clampedValue = this.floorValue(this.props.value);
+        return (React.createElement("div", tslib_1.__assign({ "data-hook": "tooltip" }, Slider_st_css_1.default('tooltip', (_a = {}, _a[positionClassname] = true, _a))),
+            this.props.tooltipPrefix,
+            clampedValue,
+            this.props.tooltipSuffix));
+    };
+    Slider.prototype.ticksShown = function () {
+        return !this.isContinuous() && this.props.tickMarksShape !== 'none';
+    };
+    Slider.prototype.getInnerOffsets = function () {
+        var showTicks = this.ticksShown();
+        if (!showTicks) {
+            return {};
+        }
+        var isHorizontal = !this.isVertical();
+        var tickSize = this.props.tickMarksShape === 'line' ? 10 : 3;
+        var tickMarksPos = this.props.tickMarksPosition;
+        var tickMarksGap = 12;
+        var offsetWidth, offsetHeight, offsetLeft, offsetTop;
+        if (tickMarksPos === 'normal') {
+            offsetHeight = tickSize + tickMarksGap;
+        }
+        else if (tickMarksPos === 'across') {
+            offsetTop = tickSize + tickMarksGap;
+            offsetHeight = tickSize + tickMarksGap;
+        }
+        if (isHorizontal) {
+            return { offsetHeight: offsetHeight, offsetTop: offsetTop };
+        }
+        return { offsetWidth: offsetHeight, offsetLeft: offsetTop };
+    };
+    Slider.prototype.getInnerDims = function () {
+        var offsets = this.getInnerOffsets();
+        var style = {};
+        if (offsets.offsetTop) {
+            style.top = offsets.offsetTop;
+        }
+        if (offsets.offsetLeft) {
+            style.left = offsets.offsetLeft;
+        }
+        if (offsets.offsetHeight) {
+            style.height = "calc(100% - " + offsets.offsetHeight + "px)";
+        }
+        if (offsets.offsetWidth) {
+            style.width = "calc(100% - " + offsets.offsetWidth + "px)";
+        }
+        return style;
+    };
+    Slider.prototype.render = function () {
         var _this = this;
-        var focus = this.state.focus;
-        var _a = this.props, error = _a.error, disabled = _a.disabled, prefix = _a.prefix, suffix = _a.suffix, inlineStyle = _a.style;
-        var _b = this.props, errorProp = _b.error, styleProp = _b.style, prefixProps = _b.prefix, suffixProp = _b.suffix, allOtherProps = tslib_1.__rest(_b, ["error", "style", "prefix", "suffix"]);
-        return (React.createElement("div", tslib_1.__assign({}, Input_st_css_1.default('root', { disabled: disabled, error: !!error && !disabled, focus: focus }, this.props), { style: inlineStyle }),
-            prefix,
-            React.createElement("input", tslib_1.__assign({}, allOtherProps, { ref: function (input) { return (_this.input = input); }, className: Input_st_css_1.default.nativeInput, onBlur: this.handleBlur, onFocus: this.handleFocus })),
-            suffix));
+        var _a = this.props, value = _a.value, min = _a.min, max = _a.max, trackSize = _a.trackSize, disabled = _a.disabled, dir = _a.dir, onFocus = _a.onFocus, tickMarksPosition = _a.tickMarksPosition, tickMarksShape = _a.tickMarksShape, thumbShape = _a.thumbShape, orientation = _a.orientation, style = _a.style;
+        var vertical = this.isVertical();
+        var thumbSize = this.getThumbSize();
+        var crossThumbSize = this.getThumbSizeCrossAxis();
+        var mainThumbSize = this.getThumbSizeMainAxis();
+        var showTicks = this.ticksShown();
+        var step = this.getStepValue();
+        var thumbPosition = this.calcThumbPosition();
+        var trackStyle = vertical
+            ? { width: trackSize + "%" }
+            : { height: trackSize + "%" };
+        var trackFillPosition = vertical
+            ? {
+                bottom: 0,
+                height: this.calcTrackFillPosition(),
+            }
+            : {
+                width: this.calcTrackFillPosition(),
+            };
+        return (React.createElement("div", tslib_1.__assign({}, Slider_st_css_1.default('root', {
+            orientation: vertical ? 'vertical' : 'horizontal',
+            dir: dir,
+            tickMarksPosition: tickMarksPosition,
+            tickMarksShape: tickMarksShape,
+            disabled: disabled,
+        }, this.props), { onMouseDown: this.handleMouseDown, onTouchStart: this.handleMouseDown, onKeyDown: this.handleKeyDown, onFocus: onFocus, onBlur: this.handleBlur, "data-value": value, "data-min": min, "data-max": max, "data-orientation": orientation, "data-dir": dir, tabIndex: 0, style: style, ref: function (root) { return (_this.root = root); }, role: "slider", "aria-valuemin": min, "aria-valuemax": max, "aria-valuenow": value }),
+            React.createElement("div", { className: Slider_st_css_1.default.inner, style: this.getInnerDims() },
+                React.createElement("div", { "data-hook": "track", ref: this.setTrackNode, className: Slider_st_css_1.default.track, onClick: this.moveThumbByMouse, style: trackStyle },
+                    React.createElement("div", { className: Slider_st_css_1.default.trackFill, style: trackFillPosition })),
+                React.createElement(Thumb_1.Thumb, { shape: thumbShape, thumbPosition: thumbPosition, thumbSize: thumbSize, onMouseEnter: this.handleThumbEnter, onMouseLeave: this.handleThumbLeave }, this.renderTooltip())),
+            showTicks && (React.createElement(Ticks_1.Ticks, { pStyle: Slider_st_css_1.default, step: step, min: min, max: max, thumbSize: mainThumbSize, vertical: vertical, trackSize: vertical
+                    ? this.props.style.height - mainThumbSize
+                    : this.props.style.width - crossThumbSize, tickMarksShape: tickMarksShape, onTickClick: this.moveThumbByMouse }))));
     };
-    Input.prototype.focus = function () {
-        this.input.focus();
+    Slider.displayName = 'Slider';
+    Slider.defaultProps = {
+        min: 0,
+        max: 10,
+        value: 5,
+        stepType: 'value',
+        thumbShape: 'circle',
+        orientation: 'horizontal',
+        disabled: false,
+        readOnly: false,
+        tooltipVisibility: 'hover',
+        tooltipPosition: 'normal',
+        tooltipPrefix: '',
+        tooltipSuffix: '',
+        tickMarksPosition: 'normal',
+        tickMarksShape: 'line',
+        dir: 'ltr',
+        onFocus: noop,
+        onBlur: noop,
+        style: {
+            width: 0,
+            height: 0,
+        },
     };
-    Input.prototype.blur = function () {
-        this.input.blur();
+    return Slider;
+}(React.PureComponent));
+exports.Slider = Slider;
+//# sourceMappingURL=Slider.js.map
+
+/***/ }),
+
+/***/ 668:
+/*!***********************************************************************!*\
+  !*** ../node_modules/wix-ui-core/dist/src/components/slider/Ticks.js ***!
+  \***********************************************************************/
+/*! no static exports found */
+/*! all exports used */
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var tslib_1 = __webpack_require__(/*! tslib */ 6);
+var React = __webpack_require__(/*! react */ 0);
+var Ticks = /** @class */ (function (_super) {
+    tslib_1.__extends(Ticks, _super);
+    function Ticks() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    Ticks.prototype.calcMaximumTickDensity = function () {
+        if (this.props.tickMarksShape === 'line') {
+            return 1 / 8;
+        }
+        return 1 / 16;
     };
-    Input.prototype.select = function () {
-        this.input.select();
+    Ticks.prototype.calcStep = function () {
+        var _a = this.props, step = _a.step, min = _a.min, max = _a.max, trackSize = _a.trackSize;
+        var totalTickCount = (max - min) / Number(step);
+        var density = Math.min(totalTickCount / trackSize, this.calcMaximumTickDensity());
+        var adjustedStep = (max - min) / (trackSize * density);
+        return adjustedStep;
     };
-    Input.prototype.getSelectionStart = function () {
-        return this.input.selectionStart;
+    Ticks.prototype.renderTick = function (i, min, max, vertical, thumbSize, pStyle) {
+        var tickMarksShape = this.props.tickMarksShape;
+        var pct = (i - min) / (max - min);
+        var val = "calc(" + pct + " * calc(100% - " + thumbSize + "px) + " + thumbSize /
+            2 + "px)";
+        return (React.createElement("div", tslib_1.__assign({}, pStyle('tick', { tickMarksShape: tickMarksShape }), { key: i, "data-hook": "tick", onClick: this.props.onTickClick, style: vertical ? { bottom: val } : { left: val } })));
     };
-    Input.prototype.getSelectionEnd = function () {
-        return this.input.selectionEnd;
+    Ticks.prototype.render = function () {
+        var _a = this.props, min = _a.min, max = _a.max, thumbSize = _a.thumbSize, vertical = _a.vertical, trackSize = _a.trackSize, pStyle = _a.pStyle;
+        if (!trackSize) {
+            return null;
+        }
+        var step = this.calcStep();
+        var ticks = [];
+        for (var i = min; i < max; i += step) {
+            ticks.push(this.renderTick(i, min, max, vertical, thumbSize, pStyle));
+        }
+        ticks.push(this.renderTick(max, min, max, vertical, thumbSize, pStyle));
+        return React.createElement("div", { "data-hook": "ticks-wrapper" }, ticks);
     };
-    Input.prototype.setSelectionRange = function (start, end) {
-        this.input.setSelectionRange(start, end);
+    return Ticks;
+}(React.PureComponent));
+exports.Ticks = Ticks;
+//# sourceMappingURL=Ticks.js.map
+
+/***/ }),
+
+/***/ 669:
+/*!***********************************************************************!*\
+  !*** ../node_modules/wix-ui-core/dist/src/components/slider/Thumb.js ***!
+  \***********************************************************************/
+/*! no static exports found */
+/*! all exports used */
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var tslib_1 = __webpack_require__(/*! tslib */ 6);
+var React = __webpack_require__(/*! react */ 0);
+var Slider_st_css_1 = __webpack_require__(/*! ./Slider.st.css */ 357);
+var Thumb = /** @class */ (function (_super) {
+    tslib_1.__extends(Thumb, _super);
+    function Thumb() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    Thumb.prototype.render = function () {
+        var _a = this.props, shape = _a.shape, thumbSize = _a.thumbSize;
+        var ThumbShape = thumbShapes[shape];
+        return (React.createElement("div", { "data-hook": "thumb", className: Slider_st_css_1.default.thumb, onMouseEnter: this.props.onMouseEnter, onMouseLeave: this.props.onMouseLeave, style: tslib_1.__assign({}, this.props.thumbPosition, thumbSize) },
+            React.createElement(ThumbShape.component, null),
+            this.props.children));
     };
-    Input.displayName = 'Input';
-    Input.defaultProps = {
-        type: 'text',
-        onFocus: function () { return null; },
-        onBlur: function () { return null; },
-        onChange: function () { return null; },
-    };
-    return Input;
+    return Thumb;
 }(React.Component));
-exports.Input = Input;
-//# sourceMappingURL=Input.js.map
-
-/***/ }),
-
-/***/ 64:
-/*!********************************************************************************!*\
-  !*** ../node_modules/wix-ui-core/dist/src/components/time-picker/constants.js ***!
-  \********************************************************************************/
-/*! no static exports found */
-/*! all exports used */
-/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-Object.defineProperty(exports, "__esModule", { value: true });
-var _a;
-var FIELD;
-(function (FIELD) {
-    FIELD[FIELD["BEFORE"] = 0] = "BEFORE";
-    FIELD[FIELD["HOUR"] = 1] = "HOUR";
-    FIELD[FIELD["MINUTE"] = 2] = "MINUTE";
-    FIELD[FIELD["AMPM"] = 3] = "AMPM";
-    FIELD[FIELD["AFTER"] = 4] = "AFTER";
-})(FIELD = exports.FIELD || (exports.FIELD = {}));
-exports.BLANK = '--';
-exports.NULL_TIME = exports.BLANK + ":" + exports.BLANK;
-var AmPmOptions;
-(function (AmPmOptions) {
-    AmPmOptions["None"] = "none";
-    AmPmOptions["Lowercase"] = "lowercase";
-    AmPmOptions["Uppercase"] = "uppercase";
-    AmPmOptions["Capitalized"] = "capitalized";
-})(AmPmOptions = exports.AmPmOptions || (exports.AmPmOptions = {}));
-exports.AmPmStrings = (_a = {},
-    _a[AmPmOptions.Lowercase] = { am: 'am', pm: 'pm' },
-    _a[AmPmOptions.Uppercase] = { am: 'AM', pm: 'PM' },
-    _a[AmPmOptions.Capitalized] = { am: 'Am', pm: 'Pm' },
-    _a);
-//# sourceMappingURL=constants.js.map
-
-/***/ }),
-
-/***/ 799:
-/*!*************************************************************************!*\
-  !*** ../node_modules/wix-ui-icons-common/dist/src/system/dist/index.js ***!
-  \*************************************************************************/
-/*! no static exports found */
-/*! all exports used */
-/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-Object.defineProperty(exports, "__esModule", { value: true });
-/* eslint-disable */
-/* tslint:disable */
-var AddItemLarge_1 = __webpack_require__(/*! ./components/AddItemLarge */ 800);
-exports.AddItemLarge = AddItemLarge_1.default;
-var AddItemMedium_1 = __webpack_require__(/*! ./components/AddItemMedium */ 801);
-exports.AddItemMedium = AddItemMedium_1.default;
-var AddItemSmall_1 = __webpack_require__(/*! ./components/AddItemSmall */ 802);
-exports.AddItemSmall = AddItemSmall_1.default;
-var AddMedia_1 = __webpack_require__(/*! ./components/AddMedia */ 803);
-exports.AddMedia = AddMedia_1.default;
-var BreadcrumbsChevronRight_1 = __webpack_require__(/*! ./components/BreadcrumbsChevronRight */ 804);
-exports.BreadcrumbsChevronRight = BreadcrumbsChevronRight_1.default;
-var CheckboxChecked_1 = __webpack_require__(/*! ./components/CheckboxChecked */ 805);
-exports.CheckboxChecked = CheckboxChecked_1.default;
-var CheckboxIndeterminate_1 = __webpack_require__(/*! ./components/CheckboxIndeterminate */ 806);
-exports.CheckboxIndeterminate = CheckboxIndeterminate_1.default;
-var CircleLoaderCheck_1 = __webpack_require__(/*! ./components/CircleLoaderCheck */ 807);
-exports.CircleLoaderCheck = CircleLoaderCheck_1.default;
-var CircleLoaderCheckSmall_1 = __webpack_require__(/*! ./components/CircleLoaderCheckSmall */ 808);
-exports.CircleLoaderCheckSmall = CircleLoaderCheckSmall_1.default;
-var Close_1 = __webpack_require__(/*! ./components/Close */ 272);
-exports.Close = Close_1.default;
-var CloseLarge_1 = __webpack_require__(/*! ./components/CloseLarge */ 809);
-exports.CloseLarge = CloseLarge_1.default;
-var DragAndDropLarge_1 = __webpack_require__(/*! ./components/DragAndDropLarge */ 810);
-exports.DragAndDropLarge = DragAndDropLarge_1.default;
-var DragAndDropLockedLarge_1 = __webpack_require__(/*! ./components/DragAndDropLockedLarge */ 811);
-exports.DragAndDropLockedLarge = DragAndDropLockedLarge_1.default;
-var DragAndDropSmall_1 = __webpack_require__(/*! ./components/DragAndDropSmall */ 812);
-exports.DragAndDropSmall = DragAndDropSmall_1.default;
-var DropDownArrow_1 = __webpack_require__(/*! ./components/DropDownArrow */ 813);
-exports.DropDownArrow = DropDownArrow_1.default;
-var FormFieldError_1 = __webpack_require__(/*! ./components/FormFieldError */ 814);
-exports.FormFieldError = FormFieldError_1.default;
-var FormFieldErrorFilled_1 = __webpack_require__(/*! ./components/FormFieldErrorFilled */ 815);
-exports.FormFieldErrorFilled = FormFieldErrorFilled_1.default;
-var FormFieldErrorSmall_1 = __webpack_require__(/*! ./components/FormFieldErrorSmall */ 816);
-exports.FormFieldErrorSmall = FormFieldErrorSmall_1.default;
-var FormFieldSpinnerDown_1 = __webpack_require__(/*! ./components/FormFieldSpinnerDown */ 817);
-exports.FormFieldSpinnerDown = FormFieldSpinnerDown_1.default;
-var FormFieldSpinnerUp_1 = __webpack_require__(/*! ./components/FormFieldSpinnerUp */ 818);
-exports.FormFieldSpinnerUp = FormFieldSpinnerUp_1.default;
-var FormFieldWarningFilled_1 = __webpack_require__(/*! ./components/FormFieldWarningFilled */ 819);
-exports.FormFieldWarningFilled = FormFieldWarningFilled_1.default;
-var Move_1 = __webpack_require__(/*! ./components/Move */ 820);
-exports.Move = Move_1.default;
-var SortByArrowDown_1 = __webpack_require__(/*! ./components/SortByArrowDown */ 821);
-exports.SortByArrowDown = SortByArrowDown_1.default;
-var SortByArrowUp_1 = __webpack_require__(/*! ./components/SortByArrowUp */ 822);
-exports.SortByArrowUp = SortByArrowUp_1.default;
-var TextAreaAlignCenter_1 = __webpack_require__(/*! ./components/TextAreaAlignCenter */ 823);
-exports.TextAreaAlignCenter = TextAreaAlignCenter_1.default;
-var TextAreaAlignJustify_1 = __webpack_require__(/*! ./components/TextAreaAlignJustify */ 824);
-exports.TextAreaAlignJustify = TextAreaAlignJustify_1.default;
-var TextAreaAlignLeft_1 = __webpack_require__(/*! ./components/TextAreaAlignLeft */ 825);
-exports.TextAreaAlignLeft = TextAreaAlignLeft_1.default;
-var TextAreaAlignRight_1 = __webpack_require__(/*! ./components/TextAreaAlignRight */ 826);
-exports.TextAreaAlignRight = TextAreaAlignRight_1.default;
-var TextAreaBold_1 = __webpack_require__(/*! ./components/TextAreaBold */ 827);
-exports.TextAreaBold = TextAreaBold_1.default;
-var TextAreaBulletList_1 = __webpack_require__(/*! ./components/TextAreaBulletList */ 828);
-exports.TextAreaBulletList = TextAreaBulletList_1.default;
-var TextAreaImage_1 = __webpack_require__(/*! ./components/TextAreaImage */ 829);
-exports.TextAreaImage = TextAreaImage_1.default;
-var TextAreaItalic_1 = __webpack_require__(/*! ./components/TextAreaItalic */ 830);
-exports.TextAreaItalic = TextAreaItalic_1.default;
-var TextAreaLeftToRight_1 = __webpack_require__(/*! ./components/TextAreaLeftToRight */ 831);
-exports.TextAreaLeftToRight = TextAreaLeftToRight_1.default;
-var TextAreaLink_1 = __webpack_require__(/*! ./components/TextAreaLink */ 832);
-exports.TextAreaLink = TextAreaLink_1.default;
-var TextAreaNumberedList_1 = __webpack_require__(/*! ./components/TextAreaNumberedList */ 833);
-exports.TextAreaNumberedList = TextAreaNumberedList_1.default;
-var TextAreaRightToLeft_1 = __webpack_require__(/*! ./components/TextAreaRightToLeft */ 834);
-exports.TextAreaRightToLeft = TextAreaRightToLeft_1.default;
-var TextAreaTable_1 = __webpack_require__(/*! ./components/TextAreaTable */ 835);
-exports.TextAreaTable = TextAreaTable_1.default;
-var TextAreaTextColor_1 = __webpack_require__(/*! ./components/TextAreaTextColor */ 836);
-exports.TextAreaTextColor = TextAreaTextColor_1.default;
-var TextAreaUnderline_1 = __webpack_require__(/*! ./components/TextAreaUnderline */ 837);
-exports.TextAreaUnderline = TextAreaUnderline_1.default;
-var ToggleOff_1 = __webpack_require__(/*! ./components/ToggleOff */ 838);
-exports.ToggleOff = ToggleOff_1.default;
-var ToggleOffSmall_1 = __webpack_require__(/*! ./components/ToggleOffSmall */ 839);
-exports.ToggleOffSmall = ToggleOffSmall_1.default;
-var ToggleOn_1 = __webpack_require__(/*! ./components/ToggleOn */ 840);
-exports.ToggleOn = ToggleOn_1.default;
-var ToggleOnSmall_1 = __webpack_require__(/*! ./components/ToggleOnSmall */ 841);
-exports.ToggleOnSmall = ToggleOnSmall_1.default;
-/* tslint:enable */
-/* eslint-enable */
-//# sourceMappingURL=index.js.map
-
-/***/ }),
-
-/***/ 800:
-/*!*******************************************************************************************!*\
-  !*** ../node_modules/wix-ui-icons-common/dist/src/system/dist/components/AddItemLarge.js ***!
-  \*******************************************************************************************/
-/*! no static exports found */
-/*! all exports used */
-/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __assign = (this && this.__assign) || Object.assign || function(t) {
-    for (var s, i = 1, n = arguments.length; i < n; i++) {
-        s = arguments[i];
-        for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-            t[p] = s[p];
+exports.Thumb = Thumb;
+function getThumbSize(shape) {
+    var rest = [];
+    for (var _i = 1; _i < arguments.length; _i++) {
+        rest[_i - 1] = arguments[_i];
     }
-    return t;
-};
-var __rest = (this && this.__rest) || function (s, e) {
-    var t = {};
-    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
-        t[p] = s[p];
-    if (s != null && typeof Object.getOwnPropertySymbols === "function")
-        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) if (e.indexOf(p[i]) < 0)
-            t[p[i]] = s[p[i]];
-    return t;
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-/* eslint-disable */
-/* tslint:disable */
-var React = __webpack_require__(/*! react */ 0);
-var AddItemLarge = function (_a) {
-    var size = _a.size, props = __rest(_a, ["size"]);
-    return (React.createElement("svg", __assign({ viewBox: "0 0 63 63", fill: "currentColor", width: size || "63", height: size || "63" }, props),
-        React.createElement("path", { d: "M31 31V0h1v31h31v1H32v31h-1V32H0v-1z" })));
-};
-AddItemLarge.displayName = 'AddItemLarge';
-exports.default = AddItemLarge;
-/* tslint:enable */
-/* eslint-enable */
-//# sourceMappingURL=AddItemLarge.js.map
-
-/***/ }),
-
-/***/ 801:
-/*!********************************************************************************************!*\
-  !*** ../node_modules/wix-ui-icons-common/dist/src/system/dist/components/AddItemMedium.js ***!
-  \********************************************************************************************/
-/*! no static exports found */
-/*! all exports used */
-/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __assign = (this && this.__assign) || Object.assign || function(t) {
-    for (var s, i = 1, n = arguments.length; i < n; i++) {
-        s = arguments[i];
-        for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-            t[p] = s[p];
+    var _a;
+    return (_a = thumbShapes[shape]).getThumbSize.apply(_a, rest);
+}
+exports.getThumbSize = getThumbSize;
+var CircleThumb = /** @class */ (function (_super) {
+    tslib_1.__extends(CircleThumb, _super);
+    function CircleThumb() {
+        return _super !== null && _super.apply(this, arguments) || this;
     }
-    return t;
-};
-var __rest = (this && this.__rest) || function (s, e) {
-    var t = {};
-    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
-        t[p] = s[p];
-    if (s != null && typeof Object.getOwnPropertySymbols === "function")
-        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) if (e.indexOf(p[i]) < 0)
-            t[p[i]] = s[p[i]];
-    return t;
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-/* eslint-disable */
-/* tslint:disable */
-var React = __webpack_require__(/*! react */ 0);
-var AddItemMedium = function (_a) {
-    var size = _a.size, props = __rest(_a, ["size"]);
-    return (React.createElement("svg", __assign({ viewBox: "0 0 47 47", fill: "currentColor", width: size || "47", height: size || "47" }, props),
-        React.createElement("path", { d: "M23 23V0h1v23h23v1H24v23h-1V24H0v-1z" })));
-};
-AddItemMedium.displayName = 'AddItemMedium';
-exports.default = AddItemMedium;
-/* tslint:enable */
-/* eslint-enable */
-//# sourceMappingURL=AddItemMedium.js.map
-
-/***/ }),
-
-/***/ 802:
-/*!*******************************************************************************************!*\
-  !*** ../node_modules/wix-ui-icons-common/dist/src/system/dist/components/AddItemSmall.js ***!
-  \*******************************************************************************************/
-/*! no static exports found */
-/*! all exports used */
-/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __assign = (this && this.__assign) || Object.assign || function(t) {
-    for (var s, i = 1, n = arguments.length; i < n; i++) {
-        s = arguments[i];
-        for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-            t[p] = s[p];
-    }
-    return t;
-};
-var __rest = (this && this.__rest) || function (s, e) {
-    var t = {};
-    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
-        t[p] = s[p];
-    if (s != null && typeof Object.getOwnPropertySymbols === "function")
-        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) if (e.indexOf(p[i]) < 0)
-            t[p[i]] = s[p[i]];
-    return t;
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-/* eslint-disable */
-/* tslint:disable */
-var React = __webpack_require__(/*! react */ 0);
-var AddItemSmall = function (_a) {
-    var size = _a.size, props = __rest(_a, ["size"]);
-    return (React.createElement("svg", __assign({ viewBox: "0 0 23 23", fill: "currentColor", width: size || "23", height: size || "23" }, props),
-        React.createElement("path", { d: "M11.026 11L11 0h.974L12 11h11v1H12l-.026 11H11l.026-11H0v-1z" })));
-};
-AddItemSmall.displayName = 'AddItemSmall';
-exports.default = AddItemSmall;
-/* tslint:enable */
-/* eslint-enable */
-//# sourceMappingURL=AddItemSmall.js.map
-
-/***/ }),
-
-/***/ 803:
-/*!***************************************************************************************!*\
-  !*** ../node_modules/wix-ui-icons-common/dist/src/system/dist/components/AddMedia.js ***!
-  \***************************************************************************************/
-/*! no static exports found */
-/*! all exports used */
-/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __assign = (this && this.__assign) || Object.assign || function(t) {
-    for (var s, i = 1, n = arguments.length; i < n; i++) {
-        s = arguments[i];
-        for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-            t[p] = s[p];
-    }
-    return t;
-};
-var __rest = (this && this.__rest) || function (s, e) {
-    var t = {};
-    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
-        t[p] = s[p];
-    if (s != null && typeof Object.getOwnPropertySymbols === "function")
-        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) if (e.indexOf(p[i]) < 0)
-            t[p[i]] = s[p[i]];
-    return t;
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-/* eslint-disable */
-/* tslint:disable */
-var React = __webpack_require__(/*! react */ 0);
-var AddMedia = function (_a) {
-    var size = _a.size, props = __rest(_a, ["size"]);
-    return (React.createElement("svg", __assign({ viewBox: "0 0 31 31", fill: "currentColor", width: size || "31", height: size || "31" }, props),
-        React.createElement("path", { d: "M15 15H0v1h15v15h1V16h15v-1H16V0h-1z" })));
-};
-AddMedia.displayName = 'AddMedia';
-exports.default = AddMedia;
-/* tslint:enable */
-/* eslint-enable */
-//# sourceMappingURL=AddMedia.js.map
-
-/***/ }),
-
-/***/ 804:
-/*!******************************************************************************************************!*\
-  !*** ../node_modules/wix-ui-icons-common/dist/src/system/dist/components/BreadcrumbsChevronRight.js ***!
-  \******************************************************************************************************/
-/*! no static exports found */
-/*! all exports used */
-/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __assign = (this && this.__assign) || Object.assign || function(t) {
-    for (var s, i = 1, n = arguments.length; i < n; i++) {
-        s = arguments[i];
-        for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-            t[p] = s[p];
-    }
-    return t;
-};
-var __rest = (this && this.__rest) || function (s, e) {
-    var t = {};
-    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
-        t[p] = s[p];
-    if (s != null && typeof Object.getOwnPropertySymbols === "function")
-        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) if (e.indexOf(p[i]) < 0)
-            t[p[i]] = s[p[i]];
-    return t;
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-/* eslint-disable */
-/* tslint:disable */
-var React = __webpack_require__(/*! react */ 0);
-var BreadcrumbsChevronRight = function (_a) {
-    var size = _a.size, props = __rest(_a, ["size"]);
-    return (React.createElement("svg", __assign({ viewBox: "0 0 6 14", fill: "currentColor", width: size || "6", height: size || "14" }, props),
-        React.createElement("path", { d: "M0 0.7L4.6 7 0 13.3 0.8 14 6 7 0.8 0z" })));
-};
-BreadcrumbsChevronRight.displayName = 'BreadcrumbsChevronRight';
-exports.default = BreadcrumbsChevronRight;
-/* tslint:enable */
-/* eslint-enable */
-//# sourceMappingURL=BreadcrumbsChevronRight.js.map
-
-/***/ }),
-
-/***/ 805:
-/*!**********************************************************************************************!*\
-  !*** ../node_modules/wix-ui-icons-common/dist/src/system/dist/components/CheckboxChecked.js ***!
-  \**********************************************************************************************/
-/*! no static exports found */
-/*! all exports used */
-/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __assign = (this && this.__assign) || Object.assign || function(t) {
-    for (var s, i = 1, n = arguments.length; i < n; i++) {
-        s = arguments[i];
-        for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-            t[p] = s[p];
-    }
-    return t;
-};
-var __rest = (this && this.__rest) || function (s, e) {
-    var t = {};
-    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
-        t[p] = s[p];
-    if (s != null && typeof Object.getOwnPropertySymbols === "function")
-        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) if (e.indexOf(p[i]) < 0)
-            t[p[i]] = s[p[i]];
-    return t;
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-/* eslint-disable */
-/* tslint:disable */
-var React = __webpack_require__(/*! react */ 0);
-var CheckboxChecked = function (_a) {
-    var size = _a.size, props = __rest(_a, ["size"]);
-    return (React.createElement("svg", __assign({ viewBox: "0 0 10 8", fill: "currentColor", width: size || "10", height: size || "8" }, props),
-        React.createElement("path", { d: "M3.5 5.2L1.2 3 0 4.2 3.5 7.8 10 1.2 8.8 0z" })));
-};
-CheckboxChecked.displayName = 'CheckboxChecked';
-exports.default = CheckboxChecked;
-/* tslint:enable */
-/* eslint-enable */
-//# sourceMappingURL=CheckboxChecked.js.map
-
-/***/ }),
-
-/***/ 806:
-/*!****************************************************************************************************!*\
-  !*** ../node_modules/wix-ui-icons-common/dist/src/system/dist/components/CheckboxIndeterminate.js ***!
-  \****************************************************************************************************/
-/*! no static exports found */
-/*! all exports used */
-/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __assign = (this && this.__assign) || Object.assign || function(t) {
-    for (var s, i = 1, n = arguments.length; i < n; i++) {
-        s = arguments[i];
-        for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-            t[p] = s[p];
-    }
-    return t;
-};
-var __rest = (this && this.__rest) || function (s, e) {
-    var t = {};
-    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
-        t[p] = s[p];
-    if (s != null && typeof Object.getOwnPropertySymbols === "function")
-        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) if (e.indexOf(p[i]) < 0)
-            t[p[i]] = s[p[i]];
-    return t;
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-/* eslint-disable */
-/* tslint:disable */
-var React = __webpack_require__(/*! react */ 0);
-var CheckboxIndeterminate = function (_a) {
-    var size = _a.size, props = __rest(_a, ["size"]);
-    return (React.createElement("svg", __assign({ viewBox: "0 0 8 2", fill: "currentColor", width: size || "8", height: size || "2" }, props),
-        React.createElement("path", { d: "M0 0H8V2H0z" })));
-};
-CheckboxIndeterminate.displayName = 'CheckboxIndeterminate';
-exports.default = CheckboxIndeterminate;
-/* tslint:enable */
-/* eslint-enable */
-//# sourceMappingURL=CheckboxIndeterminate.js.map
-
-/***/ }),
-
-/***/ 807:
-/*!************************************************************************************************!*\
-  !*** ../node_modules/wix-ui-icons-common/dist/src/system/dist/components/CircleLoaderCheck.js ***!
-  \************************************************************************************************/
-/*! no static exports found */
-/*! all exports used */
-/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __assign = (this && this.__assign) || Object.assign || function(t) {
-    for (var s, i = 1, n = arguments.length; i < n; i++) {
-        s = arguments[i];
-        for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-            t[p] = s[p];
-    }
-    return t;
-};
-var __rest = (this && this.__rest) || function (s, e) {
-    var t = {};
-    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
-        t[p] = s[p];
-    if (s != null && typeof Object.getOwnPropertySymbols === "function")
-        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) if (e.indexOf(p[i]) < 0)
-            t[p[i]] = s[p[i]];
-    return t;
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-/* eslint-disable */
-/* tslint:disable */
-var React = __webpack_require__(/*! react */ 0);
-var CircleLoaderCheck = function (_a) {
-    var size = _a.size, props = __rest(_a, ["size"]);
-    return (React.createElement("svg", __assign({ viewBox: "0 0 19 14", fill: "currentColor", width: size || "19", height: size || "14" }, props),
-        React.createElement("path", { d: "M16.4482656,0.439339828 C17.034052,-0.146446609 17.9837995,-0.146446609 18.5695859,0.439339828 C19.1553723,1.02512627 19.1553723,1.97487373 18.5695859,2.56066017 L7.56066017,13.5695859 C6.97487373,14.1553723 6.02512627,14.1553723 5.43933983,13.5695859 L0.439339828,8.5695859 C-0.146446609,7.98379946 -0.146446609,7.03405199 0.439339828,6.44826555 C1.02512627,5.86247912 1.97487373,5.86247912 2.56066017,6.44826555 L6.5,10.3876054 L16.4482656,0.439339828 Z" })));
-};
-CircleLoaderCheck.displayName = 'CircleLoaderCheck';
-exports.default = CircleLoaderCheck;
-/* tslint:enable */
-/* eslint-enable */
-//# sourceMappingURL=CircleLoaderCheck.js.map
-
-/***/ }),
-
-/***/ 808:
-/*!*****************************************************************************************************!*\
-  !*** ../node_modules/wix-ui-icons-common/dist/src/system/dist/components/CircleLoaderCheckSmall.js ***!
-  \*****************************************************************************************************/
-/*! no static exports found */
-/*! all exports used */
-/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __assign = (this && this.__assign) || Object.assign || function(t) {
-    for (var s, i = 1, n = arguments.length; i < n; i++) {
-        s = arguments[i];
-        for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-            t[p] = s[p];
-    }
-    return t;
-};
-var __rest = (this && this.__rest) || function (s, e) {
-    var t = {};
-    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
-        t[p] = s[p];
-    if (s != null && typeof Object.getOwnPropertySymbols === "function")
-        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) if (e.indexOf(p[i]) < 0)
-            t[p[i]] = s[p[i]];
-    return t;
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-/* eslint-disable */
-/* tslint:disable */
-var React = __webpack_require__(/*! react */ 0);
-var CircleLoaderCheckSmall = function (_a) {
-    var size = _a.size, props = __rest(_a, ["size"]);
-    return (React.createElement("svg", __assign({ viewBox: "0 0 11 8", fill: "currentColor", width: size || "11", height: size || "8" }, props),
-        React.createElement("path", { d: "M1.70710678,3.29289322 C1.31658249,2.90236893 0.683417511,2.90236893 0.292893219,3.29289322 C-0.0976310729,3.68341751 -0.0976310729,4.31658249 0.292893219,4.70710678 L3.29289322,7.70710678 C3.68341751,8.09763107 4.31658249,8.09763107 4.70710678,7.70710678 L10.7071068,1.70710678 C11.0976311,1.31658249 11.0976311,0.683417511 10.7071068,0.292893219 C10.3165825,-0.0976310729 9.68341751,-0.0976310729 9.29289322,0.292893219 L4,5.58578644 L1.70710678,3.29289322 Z" })));
-};
-CircleLoaderCheckSmall.displayName = 'CircleLoaderCheckSmall';
-exports.default = CircleLoaderCheckSmall;
-/* tslint:enable */
-/* eslint-enable */
-//# sourceMappingURL=CircleLoaderCheckSmall.js.map
-
-/***/ }),
-
-/***/ 809:
-/*!*****************************************************************************************!*\
-  !*** ../node_modules/wix-ui-icons-common/dist/src/system/dist/components/CloseLarge.js ***!
-  \*****************************************************************************************/
-/*! no static exports found */
-/*! all exports used */
-/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __assign = (this && this.__assign) || Object.assign || function(t) {
-    for (var s, i = 1, n = arguments.length; i < n; i++) {
-        s = arguments[i];
-        for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-            t[p] = s[p];
-    }
-    return t;
-};
-var __rest = (this && this.__rest) || function (s, e) {
-    var t = {};
-    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
-        t[p] = s[p];
-    if (s != null && typeof Object.getOwnPropertySymbols === "function")
-        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) if (e.indexOf(p[i]) < 0)
-            t[p[i]] = s[p[i]];
-    return t;
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-/* eslint-disable */
-/* tslint:disable */
-var React = __webpack_require__(/*! react */ 0);
-var CloseLarge = function (_a) {
-    var size = _a.size, props = __rest(_a, ["size"]);
-    return (React.createElement("svg", __assign({ viewBox: "0 0 8 8", fill: "currentColor", width: size || "8", height: size || "8" }, props),
-        React.createElement("path", { d: "M7.2 0L4 3.2 0.8 0 0.1 0.7 3.3 4 0 7.3 0.7 8 4 4.7 7.3 8 8 7.3 4.7 4 7.9 0.7z" })));
-};
-CloseLarge.displayName = 'CloseLarge';
-exports.default = CloseLarge;
-/* tslint:enable */
-/* eslint-enable */
-//# sourceMappingURL=CloseLarge.js.map
-
-/***/ }),
-
-/***/ 810:
-/*!***********************************************************************************************!*\
-  !*** ../node_modules/wix-ui-icons-common/dist/src/system/dist/components/DragAndDropLarge.js ***!
-  \***********************************************************************************************/
-/*! no static exports found */
-/*! all exports used */
-/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __assign = (this && this.__assign) || Object.assign || function(t) {
-    for (var s, i = 1, n = arguments.length; i < n; i++) {
-        s = arguments[i];
-        for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-            t[p] = s[p];
-    }
-    return t;
-};
-var __rest = (this && this.__rest) || function (s, e) {
-    var t = {};
-    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
-        t[p] = s[p];
-    if (s != null && typeof Object.getOwnPropertySymbols === "function")
-        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) if (e.indexOf(p[i]) < 0)
-            t[p[i]] = s[p[i]];
-    return t;
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-/* eslint-disable */
-/* tslint:disable */
-var React = __webpack_require__(/*! react */ 0);
-var DragAndDropLarge = function (_a) {
-    var size = _a.size, props = __rest(_a, ["size"]);
-    return (React.createElement("svg", __assign({ viewBox: "0 0 6 22", fill: "currentColor", width: size || "6", height: size || "22" }, props),
-        React.createElement("path", { d: "M0,0 L2,0 L2,2 L0,2 L0,0 Z M0,5 L2,5 L2,7 L0,7 L0,5 Z M4,0 L6,0 L6,2 L4,2 L4,0 Z M4,5 L6,5 L6,7 L4,7 L4,5 Z M0,10 L2,10 L2,12 L0,12 L0,10 Z M4,10 L6,10 L6,12 L4,12 L4,10 Z M0,15 L2,15 L2,17 L0,17 L0,15 Z M4,15 L6,15 L6,17 L4,17 L4,15 Z M0,20 L2,20 L2,22 L0,22 L0,20 Z M4,20 L6,20 L6,22 L4,22 L4,20 Z" })));
-};
-DragAndDropLarge.displayName = 'DragAndDropLarge';
-exports.default = DragAndDropLarge;
-/* tslint:enable */
-/* eslint-enable */
-//# sourceMappingURL=DragAndDropLarge.js.map
-
-/***/ }),
-
-/***/ 811:
-/*!*****************************************************************************************************!*\
-  !*** ../node_modules/wix-ui-icons-common/dist/src/system/dist/components/DragAndDropLockedLarge.js ***!
-  \*****************************************************************************************************/
-/*! no static exports found */
-/*! all exports used */
-/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __assign = (this && this.__assign) || Object.assign || function(t) {
-    for (var s, i = 1, n = arguments.length; i < n; i++) {
-        s = arguments[i];
-        for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-            t[p] = s[p];
-    }
-    return t;
-};
-var __rest = (this && this.__rest) || function (s, e) {
-    var t = {};
-    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
-        t[p] = s[p];
-    if (s != null && typeof Object.getOwnPropertySymbols === "function")
-        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) if (e.indexOf(p[i]) < 0)
-            t[p[i]] = s[p[i]];
-    return t;
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-/* eslint-disable */
-/* tslint:disable */
-var React = __webpack_require__(/*! react */ 0);
-var DragAndDropLockedLarge = function (_a) {
-    var size = _a.size, props = __rest(_a, ["size"]);
-    return (React.createElement("svg", __assign({ viewBox: "0 0 12 22", fill: "currentColor", width: size || "12", height: size || "22" }, props),
-        React.createElement("path", { d: "M2,9 L9,9 C10.1045695,9 11,9.8954305 11,11 L11,16 C11,17.6568542 9.65685425,19 8,19 L3,19 C1.34314575,19 0,17.6568542 0,16 L0,11 C0,9.8954305 0.8954305,9 2,9 Z M2,10 C1.44771525,10 1,10.4477153 1,11 L1,16 C1,17.1045695 1.8954305,18 3,18 L8,18 C9.1045695,18 10,17.1045695 10,16 L10,11 C10,10.4477153 9.55228475,10 9,10 L2,10 Z M5.5,5 C7.43299662,5 9,6.56700338 9,8.5 L9,9 L2,9 L2,8.5 C2,6.56700338 3.56700338,5 5.5,5 Z M5.5,6 C4.11928813,6 3,7.11928813 3,8.5 L3,9 L8,9 L8,8.5 C8,7.11928813 6.88071187,6 5.5,6 Z M6,13 L7,13 L7,14 L6,14 L6,16 L5,16 L5,14 L4,14 L4,13 L5,13 L5,12 L6,12 L6,13 Z M6,0 L8,0 L8,2 L6,2 L6,0 Z M10,0 L12,0 L12,2 L10,2 L10,0 Z M10,5 L12,5 L12,7 L10,7 L10,5 Z M6,20 L8,20 L8,22 L6,22 L6,20 Z M10,20 L12,20 L12,22 L10,22 L10,20 Z" })));
-};
-DragAndDropLockedLarge.displayName = 'DragAndDropLockedLarge';
-exports.default = DragAndDropLockedLarge;
-/* tslint:enable */
-/* eslint-enable */
-//# sourceMappingURL=DragAndDropLockedLarge.js.map
-
-/***/ }),
-
-/***/ 812:
-/*!***********************************************************************************************!*\
-  !*** ../node_modules/wix-ui-icons-common/dist/src/system/dist/components/DragAndDropSmall.js ***!
-  \***********************************************************************************************/
-/*! no static exports found */
-/*! all exports used */
-/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __assign = (this && this.__assign) || Object.assign || function(t) {
-    for (var s, i = 1, n = arguments.length; i < n; i++) {
-        s = arguments[i];
-        for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-            t[p] = s[p];
-    }
-    return t;
-};
-var __rest = (this && this.__rest) || function (s, e) {
-    var t = {};
-    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
-        t[p] = s[p];
-    if (s != null && typeof Object.getOwnPropertySymbols === "function")
-        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) if (e.indexOf(p[i]) < 0)
-            t[p[i]] = s[p[i]];
-    return t;
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-/* eslint-disable */
-/* tslint:disable */
-var React = __webpack_require__(/*! react */ 0);
-var DragAndDropSmall = function (_a) {
-    var size = _a.size, props = __rest(_a, ["size"]);
-    return (React.createElement("svg", __assign({ viewBox: "0 0 7 12", fill: "currentColor", width: size || "7", height: size || "12" }, props),
-        React.createElement("path", { d: "M0,2 L2,2 L2,0 L0,0 L0,2 Z M5,2 L7,2 L7,0 L5,0 L5,2 Z M0,7 L2,7 L2,5 L0,5 L0,7 Z M5,7 L7,7 L7,5 L5,5 L5,7 Z M0,12 L2,12 L2,10 L0,10 L0,12 Z M5,12 L7,12 L7,10 L5,10 L5,12 Z" })));
-};
-DragAndDropSmall.displayName = 'DragAndDropSmall';
-exports.default = DragAndDropSmall;
-/* tslint:enable */
-/* eslint-enable */
-//# sourceMappingURL=DragAndDropSmall.js.map
-
-/***/ }),
-
-/***/ 813:
-/*!********************************************************************************************!*\
-  !*** ../node_modules/wix-ui-icons-common/dist/src/system/dist/components/DropDownArrow.js ***!
-  \********************************************************************************************/
-/*! no static exports found */
-/*! all exports used */
-/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __assign = (this && this.__assign) || Object.assign || function(t) {
-    for (var s, i = 1, n = arguments.length; i < n; i++) {
-        s = arguments[i];
-        for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-            t[p] = s[p];
-    }
-    return t;
-};
-var __rest = (this && this.__rest) || function (s, e) {
-    var t = {};
-    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
-        t[p] = s[p];
-    if (s != null && typeof Object.getOwnPropertySymbols === "function")
-        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) if (e.indexOf(p[i]) < 0)
-            t[p[i]] = s[p[i]];
-    return t;
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-/* eslint-disable */
-/* tslint:disable */
-var React = __webpack_require__(/*! react */ 0);
-var DropDownArrow = function (_a) {
-    var size = _a.size, props = __rest(_a, ["size"]);
-    return (React.createElement("svg", __assign({ viewBox: "0 0 10 6", fill: "currentColor", width: size || "10", height: size || "6" }, props),
-        React.createElement("path", { d: "M5 4.1L0.7 0 0 0.7 5 5.6 10 0.7 9.3 0z" })));
-};
-DropDownArrow.displayName = 'DropDownArrow';
-exports.default = DropDownArrow;
-/* tslint:enable */
-/* eslint-enable */
-//# sourceMappingURL=DropDownArrow.js.map
-
-/***/ }),
-
-/***/ 814:
-/*!*********************************************************************************************!*\
-  !*** ../node_modules/wix-ui-icons-common/dist/src/system/dist/components/FormFieldError.js ***!
-  \*********************************************************************************************/
-/*! no static exports found */
-/*! all exports used */
-/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __assign = (this && this.__assign) || Object.assign || function(t) {
-    for (var s, i = 1, n = arguments.length; i < n; i++) {
-        s = arguments[i];
-        for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-            t[p] = s[p];
-    }
-    return t;
-};
-var __rest = (this && this.__rest) || function (s, e) {
-    var t = {};
-    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
-        t[p] = s[p];
-    if (s != null && typeof Object.getOwnPropertySymbols === "function")
-        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) if (e.indexOf(p[i]) < 0)
-            t[p[i]] = s[p[i]];
-    return t;
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-/* eslint-disable */
-/* tslint:disable */
-var React = __webpack_require__(/*! react */ 0);
-var FormFieldError = function (_a) {
-    var size = _a.size, props = __rest(_a, ["size"]);
-    return (React.createElement("svg", __assign({ viewBox: "0 0 2 10", fill: "currentColor", width: size || "2", height: size || "10" }, props),
-        React.createElement("path", { d: "M1.72673061,0.273269394 C1.91828145,0.464820242 2.01788194,0.72969704 2,1 L2,5 C2.01788194,5.27030296 1.91828145,5.53517976 1.72673061,5.72673061 C1.53517976,5.91828145 1.27030296,6.01788194 1,6 C0.72969704,6.01788194 0.464820242,5.91828145 0.273269394,5.72673061 C0.0817185472,5.53517976 -0.0178819397,5.27030296 -3.39950724e-13,5 L-3.39950724e-13,1 C-0.0178819397,0.72969704 0.0817185472,0.464820242 0.273269394,0.273269394 C0.464820242,0.0817185472 0.72969704,-0.0178819397 1,1.22124533e-15 C1.27030296,-0.0178819397 1.53517976,0.0817185472 1.72673061,0.273269394 Z M1.72673061,8.27326939 C1.91828145,8.46482024 2.01788194,8.72969704 2,9 C2.01788194,9.27030296 1.91828145,9.53517976 1.72673061,9.72673061 C1.53517976,9.91828145 1.27030296,10.0178819 1,10 C0.72969704,10.0178819 0.464820242,9.91828145 0.273269394,9.72673061 C0.0817185472,9.53517976 -0.0178819397,9.27030296 -3.40054807e-13,9 C-0.0178819397,8.72969704 0.0817185472,8.46482024 0.273269394,8.27326939 C0.464820242,8.08171855 0.72969704,7.98211806 1,8 C1.27030296,7.98211806 1.53517976,8.08171855 1.72673061,8.27326939 Z" })));
-};
-FormFieldError.displayName = 'FormFieldError';
-exports.default = FormFieldError;
-/* tslint:enable */
-/* eslint-enable */
-//# sourceMappingURL=FormFieldError.js.map
-
-/***/ }),
-
-/***/ 815:
-/*!***************************************************************************************************!*\
-  !*** ../node_modules/wix-ui-icons-common/dist/src/system/dist/components/FormFieldErrorFilled.js ***!
-  \***************************************************************************************************/
-/*! no static exports found */
-/*! all exports used */
-/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __assign = (this && this.__assign) || Object.assign || function(t) {
-    for (var s, i = 1, n = arguments.length; i < n; i++) {
-        s = arguments[i];
-        for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-            t[p] = s[p];
-    }
-    return t;
-};
-var __rest = (this && this.__rest) || function (s, e) {
-    var t = {};
-    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
-        t[p] = s[p];
-    if (s != null && typeof Object.getOwnPropertySymbols === "function")
-        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) if (e.indexOf(p[i]) < 0)
-            t[p[i]] = s[p[i]];
-    return t;
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-/* eslint-disable */
-/* tslint:disable */
-var React = __webpack_require__(/*! react */ 0);
-var FormFieldErrorFilled = function (_a) {
-    var size = _a.size, props = __rest(_a, ["size"]);
-    return (React.createElement("svg", __assign({ viewBox: "0 0 18 18", fill: "currentColor", width: size || "18", height: size || "18" }, props),
-        React.createElement("path", { d: "M9,18 C4.02943725,18 0,13.9705627 0,9 C0,4.02943725 4.02943725,0 9,0 C13.9705627,0 18,4.02943725 18,9 C18,13.9705627 13.9705627,18 9,18 Z M9,4 C8.44771525,4 8,4.44771525 8,5 L8,9 C8,9.55228475 8.44771525,10 9,10 C9.55228475,10 10,9.55228475 10,9 L10,5 C10,4.44771525 9.55228475,4 9,4 Z M9,12 C8.44771525,12 8,12.4477153 8,13 C8,13.5522847 8.44771525,14 9,14 C9.55228475,14 10,13.5522847 10,13 C10,12.4477153 9.55228475,12 9,12 Z", fillRule: "evenodd" })));
-};
-FormFieldErrorFilled.displayName = 'FormFieldErrorFilled';
-exports.default = FormFieldErrorFilled;
-/* tslint:enable */
-/* eslint-enable */
-//# sourceMappingURL=FormFieldErrorFilled.js.map
-
-/***/ }),
-
-/***/ 816:
-/*!**************************************************************************************************!*\
-  !*** ../node_modules/wix-ui-icons-common/dist/src/system/dist/components/FormFieldErrorSmall.js ***!
-  \**************************************************************************************************/
-/*! no static exports found */
-/*! all exports used */
-/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __assign = (this && this.__assign) || Object.assign || function(t) {
-    for (var s, i = 1, n = arguments.length; i < n; i++) {
-        s = arguments[i];
-        for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-            t[p] = s[p];
-    }
-    return t;
-};
-var __rest = (this && this.__rest) || function (s, e) {
-    var t = {};
-    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
-        t[p] = s[p];
-    if (s != null && typeof Object.getOwnPropertySymbols === "function")
-        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) if (e.indexOf(p[i]) < 0)
-            t[p[i]] = s[p[i]];
-    return t;
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-/* eslint-disable */
-/* tslint:disable */
-var React = __webpack_require__(/*! react */ 0);
-var FormFieldErrorSmall = function (_a) {
-    var size = _a.size, props = __rest(_a, ["size"]);
-    return (React.createElement("svg", __assign({ viewBox: "0 0 2 10", fill: "currentColor", width: size || "2", height: size || "10" }, props),
-        React.createElement("path", { d: "M1,0 C1.55228475,0 2,0.44771525 2,1 L2,5 C2,5.55228475 1.55228475,6 1,6 C0.44771525,6 0,5.55228475 0,5 L0,1 C0,0.44771525 0.44771525,0 1,0 L1,0 Z M1,8 C1.55228475,8 2,8.44771525 2,9 C2,9.55228475 1.55228475,10 1,10 C0.44771525,10 0,9.55228475 0,9 C0,8.44771525 0.44771525,8 1,8 L1,8 Z", fillRule: "evenodd" })));
-};
-FormFieldErrorSmall.displayName = 'FormFieldErrorSmall';
-exports.default = FormFieldErrorSmall;
-/* tslint:enable */
-/* eslint-enable */
-//# sourceMappingURL=FormFieldErrorSmall.js.map
-
-/***/ }),
-
-/***/ 817:
-/*!***************************************************************************************************!*\
-  !*** ../node_modules/wix-ui-icons-common/dist/src/system/dist/components/FormFieldSpinnerDown.js ***!
-  \***************************************************************************************************/
-/*! no static exports found */
-/*! all exports used */
-/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __assign = (this && this.__assign) || Object.assign || function(t) {
-    for (var s, i = 1, n = arguments.length; i < n; i++) {
-        s = arguments[i];
-        for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-            t[p] = s[p];
-    }
-    return t;
-};
-var __rest = (this && this.__rest) || function (s, e) {
-    var t = {};
-    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
-        t[p] = s[p];
-    if (s != null && typeof Object.getOwnPropertySymbols === "function")
-        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) if (e.indexOf(p[i]) < 0)
-            t[p[i]] = s[p[i]];
-    return t;
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-/* eslint-disable */
-/* tslint:disable */
-var React = __webpack_require__(/*! react */ 0);
-var FormFieldSpinnerDown = function (_a) {
-    var size = _a.size, props = __rest(_a, ["size"]);
-    return (React.createElement("svg", __assign({ viewBox: "0 0 8 5", fill: "currentColor", width: size || "8", height: size || "5" }, props),
-        React.createElement("path", { d: "M4 3.2L0.7 0 0 0.8 4 4.8 8 0.8 7.2 0z" })));
-};
-FormFieldSpinnerDown.displayName = 'FormFieldSpinnerDown';
-exports.default = FormFieldSpinnerDown;
-/* tslint:enable */
-/* eslint-enable */
-//# sourceMappingURL=FormFieldSpinnerDown.js.map
-
-/***/ }),
-
-/***/ 818:
-/*!*************************************************************************************************!*\
-  !*** ../node_modules/wix-ui-icons-common/dist/src/system/dist/components/FormFieldSpinnerUp.js ***!
-  \*************************************************************************************************/
-/*! no static exports found */
-/*! all exports used */
-/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __assign = (this && this.__assign) || Object.assign || function(t) {
-    for (var s, i = 1, n = arguments.length; i < n; i++) {
-        s = arguments[i];
-        for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-            t[p] = s[p];
-    }
-    return t;
-};
-var __rest = (this && this.__rest) || function (s, e) {
-    var t = {};
-    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
-        t[p] = s[p];
-    if (s != null && typeof Object.getOwnPropertySymbols === "function")
-        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) if (e.indexOf(p[i]) < 0)
-            t[p[i]] = s[p[i]];
-    return t;
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-/* eslint-disable */
-/* tslint:disable */
-var React = __webpack_require__(/*! react */ 0);
-var FormFieldSpinnerUp = function (_a) {
-    var size = _a.size, props = __rest(_a, ["size"]);
-    return (React.createElement("svg", __assign({ viewBox: "0 0 8 5", fill: "currentColor", width: size || "8", height: size || "5" }, props),
-        React.createElement("path", { d: "M0 4L0.8 4.8 4 1.5 7.3 4.8 8 4 4 0z" })));
-};
-FormFieldSpinnerUp.displayName = 'FormFieldSpinnerUp';
-exports.default = FormFieldSpinnerUp;
-/* tslint:enable */
-/* eslint-enable */
-//# sourceMappingURL=FormFieldSpinnerUp.js.map
-
-/***/ }),
-
-/***/ 819:
-/*!*****************************************************************************************************!*\
-  !*** ../node_modules/wix-ui-icons-common/dist/src/system/dist/components/FormFieldWarningFilled.js ***!
-  \*****************************************************************************************************/
-/*! no static exports found */
-/*! all exports used */
-/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __assign = (this && this.__assign) || Object.assign || function(t) {
-    for (var s, i = 1, n = arguments.length; i < n; i++) {
-        s = arguments[i];
-        for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-            t[p] = s[p];
-    }
-    return t;
-};
-var __rest = (this && this.__rest) || function (s, e) {
-    var t = {};
-    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
-        t[p] = s[p];
-    if (s != null && typeof Object.getOwnPropertySymbols === "function")
-        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) if (e.indexOf(p[i]) < 0)
-            t[p[i]] = s[p[i]];
-    return t;
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-/* eslint-disable */
-/* tslint:disable */
-var React = __webpack_require__(/*! react */ 0);
-var FormFieldWarningFilled = function (_a) {
-    var size = _a.size, props = __rest(_a, ["size"]);
-    return (React.createElement("svg", __assign({ viewBox: "0 0 18 16", fill: "currentColor", width: size || "18", height: size || "16" }, props),
-        React.createElement("path", { d: "M17.6762281,12.4439502 C18.3394859,13.5746099 17.9511638,15.0233988 16.8088864,15.6799109 C16.4440973,15.8895697 16.0297764,16 15.6079519,16 L2.3916543,16 C1.0707801,16 2.65526967e-16,14.9401105 0,13.6326705 C0,13.2151362 0.11156502,12.8050293 0.323378097,12.4439502 L6.93152689,1.17899911 C7.59478473,0.0483394554 9.05846025,-0.336033117 10.2007377,0.32047894 C10.560335,0.527153794 10.8592808,0.823059086 11.0680793,1.17899911 L17.6762281,12.4439502 Z M9,4 C8.44771525,4 8,4.44771525 8,5 L8,9 C8,9.55228475 8.44771525,10 9,10 C9.55228475,10 10,9.55228475 10,9 L10,5 C10,4.44771525 9.55228475,4 9,4 Z M9,12 C8.44771525,12 8,12.4477153 8,13 C8,13.5522847 8.44771525,14 9,14 C9.55228475,14 10,13.5522847 10,13 C10,12.4477153 9.55228475,12 9,12 Z" })));
-};
-FormFieldWarningFilled.displayName = 'FormFieldWarningFilled';
-exports.default = FormFieldWarningFilled;
-/* tslint:enable */
-/* eslint-enable */
-//# sourceMappingURL=FormFieldWarningFilled.js.map
-
-/***/ }),
-
-/***/ 820:
-/*!***********************************************************************************!*\
-  !*** ../node_modules/wix-ui-icons-common/dist/src/system/dist/components/Move.js ***!
-  \***********************************************************************************/
-/*! no static exports found */
-/*! all exports used */
-/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __assign = (this && this.__assign) || Object.assign || function(t) {
-    for (var s, i = 1, n = arguments.length; i < n; i++) {
-        s = arguments[i];
-        for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-            t[p] = s[p];
-    }
-    return t;
-};
-var __rest = (this && this.__rest) || function (s, e) {
-    var t = {};
-    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
-        t[p] = s[p];
-    if (s != null && typeof Object.getOwnPropertySymbols === "function")
-        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) if (e.indexOf(p[i]) < 0)
-            t[p[i]] = s[p[i]];
-    return t;
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-/* eslint-disable */
-/* tslint:disable */
-var React = __webpack_require__(/*! react */ 0);
-var Move = function (_a) {
-    var size = _a.size, props = __rest(_a, ["size"]);
-    return (React.createElement("svg", __assign({ viewBox: "0 0 21 21", fill: "currentColor", width: size || "21", height: size || "21" }, props),
-        React.createElement("path", { d: "M10 11L10 19.026 7.729 16.671 7.002 17.397 10.5 21 14.192 17.397 13.466 16.671 11 19.026 11 11 19.026 11 16.671 13.271 17.397 13.998 21 10.5 17.397 6.808 16.671 7.534 19.026 10 11 10 11 1.974 13.466 4.329 14.192 3.603 10.5 0 7.002 3.603 7.729 4.329 10 1.974 10 10 1.974 10 4.329 7.534 3.603 6.808 0 10.5 3.603 13.998 4.329 13.271 1.974 11z" })));
-};
-Move.displayName = 'Move';
-exports.default = Move;
-/* tslint:enable */
-/* eslint-enable */
-//# sourceMappingURL=Move.js.map
-
-/***/ }),
-
-/***/ 821:
-/*!**********************************************************************************************!*\
-  !*** ../node_modules/wix-ui-icons-common/dist/src/system/dist/components/SortByArrowDown.js ***!
-  \**********************************************************************************************/
-/*! no static exports found */
-/*! all exports used */
-/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __assign = (this && this.__assign) || Object.assign || function(t) {
-    for (var s, i = 1, n = arguments.length; i < n; i++) {
-        s = arguments[i];
-        for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-            t[p] = s[p];
-    }
-    return t;
-};
-var __rest = (this && this.__rest) || function (s, e) {
-    var t = {};
-    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
-        t[p] = s[p];
-    if (s != null && typeof Object.getOwnPropertySymbols === "function")
-        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) if (e.indexOf(p[i]) < 0)
-            t[p[i]] = s[p[i]];
-    return t;
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-/* eslint-disable */
-/* tslint:disable */
-var React = __webpack_require__(/*! react */ 0);
-var SortByArrowDown = function (_a) {
-    var size = _a.size, props = __rest(_a, ["size"]);
-    return (React.createElement("svg", __assign({ viewBox: "0 0 9 11", fill: "currentColor", width: size || "9", height: size || "11" }, props),
-        React.createElement("path", { d: "M5 6L5 0 4 0 4 6 0.297 6.004 4.5 10.207 8.706 6.001z" })));
-};
-SortByArrowDown.displayName = 'SortByArrowDown';
-exports.default = SortByArrowDown;
-/* tslint:enable */
-/* eslint-enable */
-//# sourceMappingURL=SortByArrowDown.js.map
-
-/***/ }),
-
-/***/ 822:
-/*!********************************************************************************************!*\
-  !*** ../node_modules/wix-ui-icons-common/dist/src/system/dist/components/SortByArrowUp.js ***!
-  \********************************************************************************************/
-/*! no static exports found */
-/*! all exports used */
-/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __assign = (this && this.__assign) || Object.assign || function(t) {
-    for (var s, i = 1, n = arguments.length; i < n; i++) {
-        s = arguments[i];
-        for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-            t[p] = s[p];
-    }
-    return t;
-};
-var __rest = (this && this.__rest) || function (s, e) {
-    var t = {};
-    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
-        t[p] = s[p];
-    if (s != null && typeof Object.getOwnPropertySymbols === "function")
-        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) if (e.indexOf(p[i]) < 0)
-            t[p[i]] = s[p[i]];
-    return t;
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-/* eslint-disable */
-/* tslint:disable */
-var React = __webpack_require__(/*! react */ 0);
-var SortByArrowUp = function (_a) {
-    var size = _a.size, props = __rest(_a, ["size"]);
-    return (React.createElement("svg", __assign({ viewBox: "0 0 9 11", fill: "currentColor", width: size || "9", height: size || "11" }, props),
-        React.createElement("path", { d: "M5 5L5 11 4 11 4 5 0.297 4.996 4.5 0.793 8.706 4.999z" })));
-};
-SortByArrowUp.displayName = 'SortByArrowUp';
-exports.default = SortByArrowUp;
-/* tslint:enable */
-/* eslint-enable */
-//# sourceMappingURL=SortByArrowUp.js.map
-
-/***/ }),
-
-/***/ 823:
-/*!**************************************************************************************************!*\
-  !*** ../node_modules/wix-ui-icons-common/dist/src/system/dist/components/TextAreaAlignCenter.js ***!
-  \**************************************************************************************************/
-/*! no static exports found */
-/*! all exports used */
-/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __assign = (this && this.__assign) || Object.assign || function(t) {
-    for (var s, i = 1, n = arguments.length; i < n; i++) {
-        s = arguments[i];
-        for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-            t[p] = s[p];
-    }
-    return t;
-};
-var __rest = (this && this.__rest) || function (s, e) {
-    var t = {};
-    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
-        t[p] = s[p];
-    if (s != null && typeof Object.getOwnPropertySymbols === "function")
-        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) if (e.indexOf(p[i]) < 0)
-            t[p[i]] = s[p[i]];
-    return t;
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-/* eslint-disable */
-/* tslint:disable */
-var React = __webpack_require__(/*! react */ 0);
-var TextAreaAlignCenter = function (_a) {
-    var size = _a.size, props = __rest(_a, ["size"]);
-    return (React.createElement("svg", __assign({ viewBox: "0 0 30 30", fill: "currentColor", width: size || "30", height: size || "30" }, props),
-        React.createElement("path", { d: "M8 11L21.999 11 21.999 9 8 9zM11 14L20 14 20 11.999 11 11.999zM9 17L21 17 21 15 9 15zM11 20L20 20 20 18 11 18zM8 23L21.999 23 21.999 20.999 8 20.999z" })));
-};
-TextAreaAlignCenter.displayName = 'TextAreaAlignCenter';
-exports.default = TextAreaAlignCenter;
-/* tslint:enable */
-/* eslint-enable */
-//# sourceMappingURL=TextAreaAlignCenter.js.map
-
-/***/ }),
-
-/***/ 824:
-/*!***************************************************************************************************!*\
-  !*** ../node_modules/wix-ui-icons-common/dist/src/system/dist/components/TextAreaAlignJustify.js ***!
-  \***************************************************************************************************/
-/*! no static exports found */
-/*! all exports used */
-/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __assign = (this && this.__assign) || Object.assign || function(t) {
-    for (var s, i = 1, n = arguments.length; i < n; i++) {
-        s = arguments[i];
-        for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-            t[p] = s[p];
-    }
-    return t;
-};
-var __rest = (this && this.__rest) || function (s, e) {
-    var t = {};
-    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
-        t[p] = s[p];
-    if (s != null && typeof Object.getOwnPropertySymbols === "function")
-        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) if (e.indexOf(p[i]) < 0)
-            t[p[i]] = s[p[i]];
-    return t;
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-/* eslint-disable */
-/* tslint:disable */
-var React = __webpack_require__(/*! react */ 0);
-var TextAreaAlignJustify = function (_a) {
-    var size = _a.size, props = __rest(_a, ["size"]);
-    return (React.createElement("svg", __assign({ viewBox: "0 0 30 30", fill: "currentColor", width: size || "30", height: size || "30" }, props),
-        React.createElement("path", { d: "M8 11L22 11 22 9 8 9zM8 14L22 14 22 11.999 8 11.999zM8 17L22 17 22 15 8 15zM8 20L22 20 22 18 8 18zM8 23L22 23 22 20.999 8 20.999z" })));
-};
-TextAreaAlignJustify.displayName = 'TextAreaAlignJustify';
-exports.default = TextAreaAlignJustify;
-/* tslint:enable */
-/* eslint-enable */
-//# sourceMappingURL=TextAreaAlignJustify.js.map
-
-/***/ }),
-
-/***/ 825:
-/*!************************************************************************************************!*\
-  !*** ../node_modules/wix-ui-icons-common/dist/src/system/dist/components/TextAreaAlignLeft.js ***!
-  \************************************************************************************************/
-/*! no static exports found */
-/*! all exports used */
-/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __assign = (this && this.__assign) || Object.assign || function(t) {
-    for (var s, i = 1, n = arguments.length; i < n; i++) {
-        s = arguments[i];
-        for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-            t[p] = s[p];
-    }
-    return t;
-};
-var __rest = (this && this.__rest) || function (s, e) {
-    var t = {};
-    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
-        t[p] = s[p];
-    if (s != null && typeof Object.getOwnPropertySymbols === "function")
-        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) if (e.indexOf(p[i]) < 0)
-            t[p[i]] = s[p[i]];
-    return t;
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-/* eslint-disable */
-/* tslint:disable */
-var React = __webpack_require__(/*! react */ 0);
-var TextAreaAlignLeft = function (_a) {
-    var size = _a.size, props = __rest(_a, ["size"]);
-    return (React.createElement("svg", __assign({ viewBox: "0 0 30 30", fill: "currentColor", width: size || "30", height: size || "30" }, props),
-        React.createElement("path", { d: "M8 11L21.999 11 21.999 9 8 9zM8 14L17 14 17 11.999 8 11.999zM8 17L21 17 21 15 8 15zM8 20L17 20 17 18 8 18zM8 23L21.999 23 21.999 20.999 8 20.999z" })));
-};
-TextAreaAlignLeft.displayName = 'TextAreaAlignLeft';
-exports.default = TextAreaAlignLeft;
-/* tslint:enable */
-/* eslint-enable */
-//# sourceMappingURL=TextAreaAlignLeft.js.map
-
-/***/ }),
-
-/***/ 826:
-/*!*************************************************************************************************!*\
-  !*** ../node_modules/wix-ui-icons-common/dist/src/system/dist/components/TextAreaAlignRight.js ***!
-  \*************************************************************************************************/
-/*! no static exports found */
-/*! all exports used */
-/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __assign = (this && this.__assign) || Object.assign || function(t) {
-    for (var s, i = 1, n = arguments.length; i < n; i++) {
-        s = arguments[i];
-        for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-            t[p] = s[p];
-    }
-    return t;
-};
-var __rest = (this && this.__rest) || function (s, e) {
-    var t = {};
-    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
-        t[p] = s[p];
-    if (s != null && typeof Object.getOwnPropertySymbols === "function")
-        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) if (e.indexOf(p[i]) < 0)
-            t[p[i]] = s[p[i]];
-    return t;
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-/* eslint-disable */
-/* tslint:disable */
-var React = __webpack_require__(/*! react */ 0);
-var TextAreaAlignRight = function (_a) {
-    var size = _a.size, props = __rest(_a, ["size"]);
-    return (React.createElement("svg", __assign({ viewBox: "0 0 30 30", fill: "currentColor", width: size || "30", height: size || "30" }, props),
-        React.createElement("path", { d: "M8 11L21.999 11 21.999 9 8 9zM12 14L22 14 22 11.999 12 11.999zM9 17L22 17 22 15 9 15zM12 20L22 20 22 18 12 18zM8 23L21.999 23 21.999 20.999 8 20.999z" })));
-};
-TextAreaAlignRight.displayName = 'TextAreaAlignRight';
-exports.default = TextAreaAlignRight;
-/* tslint:enable */
-/* eslint-enable */
-//# sourceMappingURL=TextAreaAlignRight.js.map
-
-/***/ }),
-
-/***/ 827:
-/*!*******************************************************************************************!*\
-  !*** ../node_modules/wix-ui-icons-common/dist/src/system/dist/components/TextAreaBold.js ***!
-  \*******************************************************************************************/
-/*! no static exports found */
-/*! all exports used */
-/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __assign = (this && this.__assign) || Object.assign || function(t) {
-    for (var s, i = 1, n = arguments.length; i < n; i++) {
-        s = arguments[i];
-        for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-            t[p] = s[p];
-    }
-    return t;
-};
-var __rest = (this && this.__rest) || function (s, e) {
-    var t = {};
-    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
-        t[p] = s[p];
-    if (s != null && typeof Object.getOwnPropertySymbols === "function")
-        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) if (e.indexOf(p[i]) < 0)
-            t[p[i]] = s[p[i]];
-    return t;
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-/* eslint-disable */
-/* tslint:disable */
-var React = __webpack_require__(/*! react */ 0);
-var TextAreaBold = function (_a) {
-    var size = _a.size, props = __rest(_a, ["size"]);
-    return (React.createElement("svg", __assign({ viewBox: "0 0 30 30", fill: "currentColor", width: size || "30", height: size || "30" }, props),
-        React.createElement("path", { d: "M10.9966313,15 L14.9898939,15 C15.5888833,15 16.9865252,15 16.9865252,13 C16.9865252,11.1 15.7885464,11 14.9898939,11 L10.9966313,11 L10.9966313,15 Z M10.9966313,17 L10.9966313,21 L15.9882095,21 C17.0863568,21 17.9848408,20.5 17.9848408,19 C17.9848408,17.5 17.0863568,17 15.9882095,17 L10.9966313,17 Z M10.9966313,23 C10.4974735,23 9,23 9,23 C9,23 9,21.6 9,21 L9,11 C9,10.5 9,9 9,9 C9,9 10.3976419,9 10.9966313,9 L14.8900623,9 C16.3875358,9 17.485683,9.6 18.2843355,10.8 C19.082988,12 19.1828196,13.6 18.4839987,14.9 C18.3841671,15.2 18.184504,15.4 17.9848408,15.6 C19.082988,16.2 19.8816406,17.3 19.9814721,18.5 C20.0813037,19.7 19.781809,20.7 18.9831565,21.6 C18.184504,22.5 16.9865252,23 15.7885464,23 L10.9966313,23 Z" })));
-};
-TextAreaBold.displayName = 'TextAreaBold';
-exports.default = TextAreaBold;
-/* tslint:enable */
-/* eslint-enable */
-//# sourceMappingURL=TextAreaBold.js.map
-
-/***/ }),
-
-/***/ 828:
-/*!*************************************************************************************************!*\
-  !*** ../node_modules/wix-ui-icons-common/dist/src/system/dist/components/TextAreaBulletList.js ***!
-  \*************************************************************************************************/
-/*! no static exports found */
-/*! all exports used */
-/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __assign = (this && this.__assign) || Object.assign || function(t) {
-    for (var s, i = 1, n = arguments.length; i < n; i++) {
-        s = arguments[i];
-        for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-            t[p] = s[p];
-    }
-    return t;
-};
-var __rest = (this && this.__rest) || function (s, e) {
-    var t = {};
-    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
-        t[p] = s[p];
-    if (s != null && typeof Object.getOwnPropertySymbols === "function")
-        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) if (e.indexOf(p[i]) < 0)
-            t[p[i]] = s[p[i]];
-    return t;
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-/* eslint-disable */
-/* tslint:disable */
-var React = __webpack_require__(/*! react */ 0);
-var TextAreaBulletList = function (_a) {
-    var size = _a.size, props = __rest(_a, ["size"]);
-    return (React.createElement("svg", __assign({ viewBox: "0 0 30 30", fill: "currentColor", width: size || "30", height: size || "30" }, props),
-        React.createElement("path", { d: "M12,23 L22,23 L22,21 L12,21 L12,23 Z M7,23 L10,23 L10,20 L7,20 L7,23 Z M7,17 L10,17 L10,14 L7,14 L7,17 Z M7,11 L10,11 L10,8 L7,8 L7,11 Z M12,11 L22,11 L22,9 L12,9 L12,11 Z M12,17 L22,17 L22,15 L12,15 L12,17 Z" })));
-};
-TextAreaBulletList.displayName = 'TextAreaBulletList';
-exports.default = TextAreaBulletList;
-/* tslint:enable */
-/* eslint-enable */
-//# sourceMappingURL=TextAreaBulletList.js.map
-
-/***/ }),
-
-/***/ 829:
-/*!********************************************************************************************!*\
-  !*** ../node_modules/wix-ui-icons-common/dist/src/system/dist/components/TextAreaImage.js ***!
-  \********************************************************************************************/
-/*! no static exports found */
-/*! all exports used */
-/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __assign = (this && this.__assign) || Object.assign || function(t) {
-    for (var s, i = 1, n = arguments.length; i < n; i++) {
-        s = arguments[i];
-        for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-            t[p] = s[p];
-    }
-    return t;
-};
-var __rest = (this && this.__rest) || function (s, e) {
-    var t = {};
-    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
-        t[p] = s[p];
-    if (s != null && typeof Object.getOwnPropertySymbols === "function")
-        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) if (e.indexOf(p[i]) < 0)
-            t[p[i]] = s[p[i]];
-    return t;
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-/* eslint-disable */
-/* tslint:disable */
-var React = __webpack_require__(/*! react */ 0);
-var TextAreaImage = function (_a) {
-    var size = _a.size, props = __rest(_a, ["size"]);
-    return (React.createElement("svg", __assign({ viewBox: "0 0 30 30", fill: "currentColor", width: size || "30", height: size || "30" }, props),
-        React.createElement("path", { d: "M10.1,21 L13.1,18 L14.1,20 L17.1,16 L20.1,21 L10.1,21 Z M11.5,12 C12.3,12 13,12.7 13,13.5 C13,14.3 12.3,15 11.5,15 C10.7,15 10,14.3 10,13.5 C10,12.7 10.7,12 11.5,12 Z M19,10 L11,10 C9.3,10 8,11.3 8,13 L8,20 C8,21.7 9.3,23 11,23 L19,23 C20.7,23 22,21.7 22,20 L22,13 C22,11.3 20.7,10 19,10 Z" })));
-};
-TextAreaImage.displayName = 'TextAreaImage';
-exports.default = TextAreaImage;
-/* tslint:enable */
-/* eslint-enable */
-//# sourceMappingURL=TextAreaImage.js.map
-
-/***/ }),
-
-/***/ 830:
-/*!*********************************************************************************************!*\
-  !*** ../node_modules/wix-ui-icons-common/dist/src/system/dist/components/TextAreaItalic.js ***!
-  \*********************************************************************************************/
-/*! no static exports found */
-/*! all exports used */
-/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __assign = (this && this.__assign) || Object.assign || function(t) {
-    for (var s, i = 1, n = arguments.length; i < n; i++) {
-        s = arguments[i];
-        for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-            t[p] = s[p];
-    }
-    return t;
-};
-var __rest = (this && this.__rest) || function (s, e) {
-    var t = {};
-    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
-        t[p] = s[p];
-    if (s != null && typeof Object.getOwnPropertySymbols === "function")
-        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) if (e.indexOf(p[i]) < 0)
-            t[p[i]] = s[p[i]];
-    return t;
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-/* eslint-disable */
-/* tslint:disable */
-var React = __webpack_require__(/*! react */ 0);
-var TextAreaItalic = function (_a) {
-    var size = _a.size, props = __rest(_a, ["size"]);
-    return (React.createElement("svg", __assign({ viewBox: "0 0 30 30", fill: "currentColor", width: size || "30", height: size || "30" }, props),
-        React.createElement("path", { d: "M19 11L19 9 12 9 12 11 14.7 11 13.1 21 11 21 11 23 18 23 18 21 15.1 21 16.7 11z" })));
-};
-TextAreaItalic.displayName = 'TextAreaItalic';
-exports.default = TextAreaItalic;
-/* tslint:enable */
-/* eslint-enable */
-//# sourceMappingURL=TextAreaItalic.js.map
-
-/***/ }),
-
-/***/ 831:
-/*!**************************************************************************************************!*\
-  !*** ../node_modules/wix-ui-icons-common/dist/src/system/dist/components/TextAreaLeftToRight.js ***!
-  \**************************************************************************************************/
-/*! no static exports found */
-/*! all exports used */
-/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __assign = (this && this.__assign) || Object.assign || function(t) {
-    for (var s, i = 1, n = arguments.length; i < n; i++) {
-        s = arguments[i];
-        for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-            t[p] = s[p];
-    }
-    return t;
-};
-var __rest = (this && this.__rest) || function (s, e) {
-    var t = {};
-    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
-        t[p] = s[p];
-    if (s != null && typeof Object.getOwnPropertySymbols === "function")
-        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) if (e.indexOf(p[i]) < 0)
-            t[p[i]] = s[p[i]];
-    return t;
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-/* eslint-disable */
-/* tslint:disable */
-var React = __webpack_require__(/*! react */ 0);
-var TextAreaLeftToRight = function (_a) {
-    var size = _a.size, props = __rest(_a, ["size"]);
-    return (React.createElement("svg", __assign({ viewBox: "0 0 30 30", fill: "currentColor", width: size || "30", height: size || "30" }, props),
-        React.createElement("path", { d: "M9.39223869,18.795 L11.0002387,20 L9.39223869,21.206 C8.95423869,21.54 8.87023869,22.168 9.20523869,22.607 C9.40223869,22.865 9.69923869,23 10.0012387,23 C10.2132387,23 10.4262387,22.934 10.6072387,22.795 L14.0002387,20 L10.6072387,17.206 C10.1672387,16.869 9.54023869,16.956 9.20523869,17.394 C8.87023869,17.832 8.95423869,18.46 9.39223869,18.795 Z M19.0002387,23 L21.0002387,23 L21.0002387,9 L19.0002387,9 L19.0002387,23 Z M14.6952387,15 L16.0002387,15 L16.0002387,23 L18.0002387,23 L18.0002387,9 L14.6952387,9 C12.8782387,9 11.4042387,10.183 11.4042387,12 C11.4042387,13.818 12.8782387,15 14.6952387,15 Z" })));
-};
-TextAreaLeftToRight.displayName = 'TextAreaLeftToRight';
-exports.default = TextAreaLeftToRight;
-/* tslint:enable */
-/* eslint-enable */
-//# sourceMappingURL=TextAreaLeftToRight.js.map
-
-/***/ }),
-
-/***/ 832:
-/*!*******************************************************************************************!*\
-  !*** ../node_modules/wix-ui-icons-common/dist/src/system/dist/components/TextAreaLink.js ***!
-  \*******************************************************************************************/
-/*! no static exports found */
-/*! all exports used */
-/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __assign = (this && this.__assign) || Object.assign || function(t) {
-    for (var s, i = 1, n = arguments.length; i < n; i++) {
-        s = arguments[i];
-        for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-            t[p] = s[p];
-    }
-    return t;
-};
-var __rest = (this && this.__rest) || function (s, e) {
-    var t = {};
-    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
-        t[p] = s[p];
-    if (s != null && typeof Object.getOwnPropertySymbols === "function")
-        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) if (e.indexOf(p[i]) < 0)
-            t[p[i]] = s[p[i]];
-    return t;
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-/* eslint-disable */
-/* tslint:disable */
-var React = __webpack_require__(/*! react */ 0);
-var TextAreaLink = function (_a) {
-    var size = _a.size, props = __rest(_a, ["size"]);
-    return (React.createElement("svg", __assign({ viewBox: "0 0 30 30", fill: "currentColor", width: size || "30", height: size || "30" }, props),
-        React.createElement("path", { d: "M11.2,20.7 C10.4,21.5 9.1,21.5 8.3,20.7 C7.5,19.9 7.5,18.6 8.3,17.8 L11.6,14.5 C12.4,13.7 13.7,13.7 14.5,14.5 C14.8,14.8 15.4,14.8 15.7,14.5 C16,14.2 16,13.6 15.7,13.3 C14.2,11.8 11.8,11.8 10.4,13.3 L7.1,16.6 C6.4,17.3 6,18.2 6,19.2 C6,20.2 6.4,21.2 7.1,21.9 C7.8,22.6 8.8,23 9.8,23 C10.8,23 11.7,22.6 12.5,21.9 L14.2,20.2 C14.5,19.9 14.5,19.3 14.2,19 C13.8,18.7 13.2,18.7 12.9,19 L11.2,20.7 Z M15.6,8.1 L13.9,9.8 C13.6,10.1 13.6,10.7 13.9,11 C14.2,11.3 14.8,11.3 15.1,11 L16.8,9.3 C17.6,8.5 18.9,8.5 19.7,9.3 C20.5,10.1 20.5,11.4 19.7,12.2 L16.4,15.5 C15.6,16.3 14.3,16.3 13.5,15.5 C13.2,15.2 12.6,15.2 12.3,15.5 C12,15.8 12,16.4 12.3,16.7 C13,17.4 14,17.8 15,17.8 C16,17.8 16.9,17.4 17.7,16.7 L21,13.4 C22.4,12 22.4,9.6 20.9,8.1 C19.4,6.6 17,6.6 15.6,8.1 Z" })));
-};
-TextAreaLink.displayName = 'TextAreaLink';
-exports.default = TextAreaLink;
-/* tslint:enable */
-/* eslint-enable */
-//# sourceMappingURL=TextAreaLink.js.map
-
-/***/ }),
-
-/***/ 833:
-/*!***************************************************************************************************!*\
-  !*** ../node_modules/wix-ui-icons-common/dist/src/system/dist/components/TextAreaNumberedList.js ***!
-  \***************************************************************************************************/
-/*! no static exports found */
-/*! all exports used */
-/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __assign = (this && this.__assign) || Object.assign || function(t) {
-    for (var s, i = 1, n = arguments.length; i < n; i++) {
-        s = arguments[i];
-        for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-            t[p] = s[p];
-    }
-    return t;
-};
-var __rest = (this && this.__rest) || function (s, e) {
-    var t = {};
-    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
-        t[p] = s[p];
-    if (s != null && typeof Object.getOwnPropertySymbols === "function")
-        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) if (e.indexOf(p[i]) < 0)
-            t[p[i]] = s[p[i]];
-    return t;
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-/* eslint-disable */
-/* tslint:disable */
-var React = __webpack_require__(/*! react */ 0);
-var TextAreaNumberedList = function (_a) {
-    var size = _a.size, props = __rest(_a, ["size"]);
-    return (React.createElement("svg", __assign({ viewBox: "0 0 30 30", fill: "currentColor", width: size || "30", height: size || "30" }, props),
-        React.createElement("path", { d: "M7,21 L9,21 L8,22 L9,23 L7,23 L7,24 L10,24 L10,23 L9,22 L10,21 L10,20 L7,20 L7,21 Z M7,15 L9.1,15 L7,17 C7,17 7,17 7,18 L10,18 L10,17 L8.1,17 L10,15 L10,14 L7,14 L7,15 Z M8,12 L9,12 L9,8 L7,8 L7,9 L8,9 L8,12 Z M12,11 L22,11 L22,9 L12,9 L12,11 Z M12,17 L22,17 L22,15 L12,15 L12,17 Z M12,23 L22,23 L22,21 L12,21 L12,23 Z" })));
-};
-TextAreaNumberedList.displayName = 'TextAreaNumberedList';
-exports.default = TextAreaNumberedList;
-/* tslint:enable */
-/* eslint-enable */
-//# sourceMappingURL=TextAreaNumberedList.js.map
-
-/***/ }),
-
-/***/ 834:
-/*!**************************************************************************************************!*\
-  !*** ../node_modules/wix-ui-icons-common/dist/src/system/dist/components/TextAreaRightToLeft.js ***!
-  \**************************************************************************************************/
-/*! no static exports found */
-/*! all exports used */
-/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __assign = (this && this.__assign) || Object.assign || function(t) {
-    for (var s, i = 1, n = arguments.length; i < n; i++) {
-        s = arguments[i];
-        for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-            t[p] = s[p];
-    }
-    return t;
-};
-var __rest = (this && this.__rest) || function (s, e) {
-    var t = {};
-    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
-        t[p] = s[p];
-    if (s != null && typeof Object.getOwnPropertySymbols === "function")
-        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) if (e.indexOf(p[i]) < 0)
-            t[p[i]] = s[p[i]];
-    return t;
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-/* eslint-disable */
-/* tslint:disable */
-var React = __webpack_require__(/*! react */ 0);
-var TextAreaRightToLeft = function (_a) {
-    var size = _a.size, props = __rest(_a, ["size"]);
-    return (React.createElement("svg", __assign({ viewBox: "0 0 30 30", fill: "currentColor", width: size || "30", height: size || "30" }, props),
-        React.createElement("path", { d: "M10.291,15 L12,15 L12,23 L14,23 L14,9 L10.291,9 C8.474,9 7,10.182 7,12 C7,13.818 8.474,15 10.291,15 Z M15,23 L15,9 L17,9 L17,23 L15,23 Z M23.608,18.795 L22,20 L23.608,21.206 C24.046,21.54 24.13,22.168 23.795,22.607 C23.598,22.865 23.301,23 22.999,23 C22.787,23 22.574,22.934 22.393,22.795 L19,20 L22.393,17.206 C22.833,16.869 23.46,16.956 23.795,17.394 C24.13,17.832 24.046,18.46 23.608,18.795 Z" })));
-};
-TextAreaRightToLeft.displayName = 'TextAreaRightToLeft';
-exports.default = TextAreaRightToLeft;
-/* tslint:enable */
-/* eslint-enable */
-//# sourceMappingURL=TextAreaRightToLeft.js.map
-
-/***/ }),
-
-/***/ 835:
-/*!********************************************************************************************!*\
-  !*** ../node_modules/wix-ui-icons-common/dist/src/system/dist/components/TextAreaTable.js ***!
-  \********************************************************************************************/
-/*! no static exports found */
-/*! all exports used */
-/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __assign = (this && this.__assign) || Object.assign || function(t) {
-    for (var s, i = 1, n = arguments.length; i < n; i++) {
-        s = arguments[i];
-        for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-            t[p] = s[p];
-    }
-    return t;
-};
-var __rest = (this && this.__rest) || function (s, e) {
-    var t = {};
-    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
-        t[p] = s[p];
-    if (s != null && typeof Object.getOwnPropertySymbols === "function")
-        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) if (e.indexOf(p[i]) < 0)
-            t[p[i]] = s[p[i]];
-    return t;
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-/* eslint-disable */
-/* tslint:disable */
-var React = __webpack_require__(/*! react */ 0);
-var TextAreaTable = function (_a) {
-    var size = _a.size, props = __rest(_a, ["size"]);
-    return (React.createElement("svg", __assign({ viewBox: "0 0 30 30", fill: "currentColor", width: size || "30", height: size || "30" }, props),
-        React.createElement("path", { d: "M14,16 L17,16 L17,13 L14,13 L14,16 Z M14,18 L14,21 L17,21 L17,18 L14,18 Z M22,16 L22,13 L19,13 L19,16 L22,16 Z M22,18 L19,18 L19,21 L22,21 L22,18 Z M9,16 L12,16 L12,13 L9,13 L9,16 Z M9,18 L9,21 L12,21 L12,18 L9,18 Z M14,11 L17,11 L17,8 L14,8 L14,11 Z M22,11 L22,8 L19,8 L19,11 L22,11 Z M9,11 L12,11 L12,8 L9,8 L9,11 Z M7,6 L24,6 L24,23 L7,23 L7,6 Z" })));
-};
-TextAreaTable.displayName = 'TextAreaTable';
-exports.default = TextAreaTable;
-/* tslint:enable */
-/* eslint-enable */
-//# sourceMappingURL=TextAreaTable.js.map
-
-/***/ }),
-
-/***/ 836:
-/*!************************************************************************************************!*\
-  !*** ../node_modules/wix-ui-icons-common/dist/src/system/dist/components/TextAreaTextColor.js ***!
-  \************************************************************************************************/
-/*! no static exports found */
-/*! all exports used */
-/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __assign = (this && this.__assign) || Object.assign || function(t) {
-    for (var s, i = 1, n = arguments.length; i < n; i++) {
-        s = arguments[i];
-        for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-            t[p] = s[p];
-    }
-    return t;
-};
-var __rest = (this && this.__rest) || function (s, e) {
-    var t = {};
-    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
-        t[p] = s[p];
-    if (s != null && typeof Object.getOwnPropertySymbols === "function")
-        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) if (e.indexOf(p[i]) < 0)
-            t[p[i]] = s[p[i]];
-    return t;
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-/* eslint-disable */
-/* tslint:disable */
-var React = __webpack_require__(/*! react */ 0);
-var TextAreaTextColor = function (_a) {
-    var size = _a.size, props = __rest(_a, ["size"]);
-    return (React.createElement("svg", __assign({ viewBox: "0 0 30 30", fill: "currentColor", width: size || "30", height: size || "30" }, props),
-        React.createElement("path", { d: "M8.66,14 L10.722,9.352 L12.589,14 L8.66,14 Z M9.043,8.177 L4,20 L6,20 L7.773,16 L13.392,16 L14.5,19 L15,15.003 L12.401,8.178 C12.101,7.452 11.458,7 10.723,7 C9.986,7 9.343,7.451 9.043,8.177 Z M17,20 C17,17.156 20.958,10.958 20.958,10.958 C20.958,10.958 25,17.156 25,20 C25,21.49 23.892,24 20.958,24 C18.024,24 17,21.49 17,20 Z M20.949,9.078 L20.115,10.384 C19.694,11.043 16,16.952 16,20 C16,21.917 17.346,25 20.958,25 C24.435,25 26,22.059 26,20 C26,16.947 22.226,11.036 21.796,10.376 L20.949,9.078 Z" })));
-};
-TextAreaTextColor.displayName = 'TextAreaTextColor';
-exports.default = TextAreaTextColor;
-/* tslint:enable */
-/* eslint-enable */
-//# sourceMappingURL=TextAreaTextColor.js.map
-
-/***/ }),
-
-/***/ 837:
-/*!************************************************************************************************!*\
-  !*** ../node_modules/wix-ui-icons-common/dist/src/system/dist/components/TextAreaUnderline.js ***!
-  \************************************************************************************************/
-/*! no static exports found */
-/*! all exports used */
-/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __assign = (this && this.__assign) || Object.assign || function(t) {
-    for (var s, i = 1, n = arguments.length; i < n; i++) {
-        s = arguments[i];
-        for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-            t[p] = s[p];
-    }
-    return t;
-};
-var __rest = (this && this.__rest) || function (s, e) {
-    var t = {};
-    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
-        t[p] = s[p];
-    if (s != null && typeof Object.getOwnPropertySymbols === "function")
-        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) if (e.indexOf(p[i]) < 0)
-            t[p[i]] = s[p[i]];
-    return t;
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-/* eslint-disable */
-/* tslint:disable */
-var React = __webpack_require__(/*! react */ 0);
-var TextAreaUnderline = function (_a) {
-    var size = _a.size, props = __rest(_a, ["size"]);
-    return (React.createElement("svg", __assign({ viewBox: "0 0 30 30", fill: "currentColor", width: size || "30", height: size || "30" }, props),
-        React.createElement("path", { d: "M9,23 L20,23 L20,21 L9,21 L9,23 Z M19,14.4 L19,9 C19,8.4 18.6,8 18,8 C17.4,8 17,8.4 17,9 L17,14.4 C17,15.8 16.1,17.2 14.5,17.2 C12.9,17.2 12,15.8 12,14.4 L12,9 C12,8.4 11.6,8 11,8 C10.4,8 10,8.4 10,9 L10,14.4 C10,17.2 11.9,19.2 14.5,19.2 C17.1,19.2 19,17.1 19,14.4 Z" })));
-};
-TextAreaUnderline.displayName = 'TextAreaUnderline';
-exports.default = TextAreaUnderline;
-/* tslint:enable */
-/* eslint-enable */
-//# sourceMappingURL=TextAreaUnderline.js.map
-
-/***/ }),
-
-/***/ 838:
-/*!****************************************************************************************!*\
-  !*** ../node_modules/wix-ui-icons-common/dist/src/system/dist/components/ToggleOff.js ***!
-  \****************************************************************************************/
-/*! no static exports found */
-/*! all exports used */
-/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __assign = (this && this.__assign) || Object.assign || function(t) {
-    for (var s, i = 1, n = arguments.length; i < n; i++) {
-        s = arguments[i];
-        for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-            t[p] = s[p];
-    }
-    return t;
-};
-var __rest = (this && this.__rest) || function (s, e) {
-    var t = {};
-    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
-        t[p] = s[p];
-    if (s != null && typeof Object.getOwnPropertySymbols === "function")
-        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) if (e.indexOf(p[i]) < 0)
-            t[p[i]] = s[p[i]];
-    return t;
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-/* eslint-disable */
-/* tslint:disable */
-var React = __webpack_require__(/*! react */ 0);
-var ToggleOff = function (_a) {
-    var size = _a.size, props = __rest(_a, ["size"]);
-    return (React.createElement("svg", __assign({ viewBox: "0 0 10 2", fill: "currentColor", width: size || "10", height: size || "2" }, props),
-        React.createElement("path", { d: "M0 0H10V2H0z" })));
-};
-ToggleOff.displayName = 'ToggleOff';
-exports.default = ToggleOff;
-/* tslint:enable */
-/* eslint-enable */
-//# sourceMappingURL=ToggleOff.js.map
-
-/***/ }),
-
-/***/ 839:
-/*!*********************************************************************************************!*\
-  !*** ../node_modules/wix-ui-icons-common/dist/src/system/dist/components/ToggleOffSmall.js ***!
-  \*********************************************************************************************/
-/*! no static exports found */
-/*! all exports used */
-/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __assign = (this && this.__assign) || Object.assign || function(t) {
-    for (var s, i = 1, n = arguments.length; i < n; i++) {
-        s = arguments[i];
-        for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-            t[p] = s[p];
-    }
-    return t;
-};
-var __rest = (this && this.__rest) || function (s, e) {
-    var t = {};
-    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
-        t[p] = s[p];
-    if (s != null && typeof Object.getOwnPropertySymbols === "function")
-        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) if (e.indexOf(p[i]) < 0)
-            t[p[i]] = s[p[i]];
-    return t;
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-/* eslint-disable */
-/* tslint:disable */
-var React = __webpack_require__(/*! react */ 0);
-var ToggleOffSmall = function (_a) {
-    var size = _a.size, props = __rest(_a, ["size"]);
-    return (React.createElement("svg", __assign({ viewBox: "0 0 8 2", fill: "currentColor", width: size || "8", height: size || "2" }, props),
-        React.createElement("path", { d: "M0 0H8V2H0z" })));
-};
-ToggleOffSmall.displayName = 'ToggleOffSmall';
-exports.default = ToggleOffSmall;
-/* tslint:enable */
-/* eslint-enable */
-//# sourceMappingURL=ToggleOffSmall.js.map
-
-/***/ }),
-
-/***/ 840:
-/*!***************************************************************************************!*\
-  !*** ../node_modules/wix-ui-icons-common/dist/src/system/dist/components/ToggleOn.js ***!
-  \***************************************************************************************/
-/*! no static exports found */
-/*! all exports used */
-/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __assign = (this && this.__assign) || Object.assign || function(t) {
-    for (var s, i = 1, n = arguments.length; i < n; i++) {
-        s = arguments[i];
-        for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-            t[p] = s[p];
-    }
-    return t;
-};
-var __rest = (this && this.__rest) || function (s, e) {
-    var t = {};
-    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
-        t[p] = s[p];
-    if (s != null && typeof Object.getOwnPropertySymbols === "function")
-        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) if (e.indexOf(p[i]) < 0)
-            t[p[i]] = s[p[i]];
-    return t;
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-/* eslint-disable */
-/* tslint:disable */
-var React = __webpack_require__(/*! react */ 0);
-var ToggleOn = function (_a) {
-    var size = _a.size, props = __rest(_a, ["size"]);
-    return (React.createElement("svg", __assign({ viewBox: "0 0 10 8", fill: "currentColor", width: size || "10", height: size || "8" }, props),
-        React.createElement("path", { d: "M3.8 5L1.2 2.5 0 3.7 3.8 7.5 10 1.2 8.8 0z" })));
-};
-ToggleOn.displayName = 'ToggleOn';
-exports.default = ToggleOn;
-/* tslint:enable */
-/* eslint-enable */
-//# sourceMappingURL=ToggleOn.js.map
-
-/***/ }),
-
-/***/ 841:
-/*!********************************************************************************************!*\
-  !*** ../node_modules/wix-ui-icons-common/dist/src/system/dist/components/ToggleOnSmall.js ***!
-  \********************************************************************************************/
-/*! no static exports found */
-/*! all exports used */
-/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __assign = (this && this.__assign) || Object.assign || function(t) {
-    for (var s, i = 1, n = arguments.length; i < n; i++) {
-        s = arguments[i];
-        for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-            t[p] = s[p];
-    }
-    return t;
-};
-var __rest = (this && this.__rest) || function (s, e) {
-    var t = {};
-    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
-        t[p] = s[p];
-    if (s != null && typeof Object.getOwnPropertySymbols === "function")
-        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) if (e.indexOf(p[i]) < 0)
-            t[p[i]] = s[p[i]];
-    return t;
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-/* eslint-disable */
-/* tslint:disable */
-var React = __webpack_require__(/*! react */ 0);
-var ToggleOnSmall = function (_a) {
-    var size = _a.size, props = __rest(_a, ["size"]);
-    return (React.createElement("svg", __assign({ viewBox: "0 0 9 7", fill: "currentColor", width: size || "9", height: size || "7" }, props),
-        React.createElement("path", { d: "M3.2 4L1.2 2 0 3.2 3.2 6.5 8.5 1.2 7.2 0z" })));
-};
-ToggleOnSmall.displayName = 'ToggleOnSmall';
-exports.default = ToggleOnSmall;
-/* tslint:enable */
-/* eslint-enable */
-//# sourceMappingURL=ToggleOnSmall.js.map
-
-/***/ }),
-
-/***/ 842:
-/*!*****************************************************!*\
-  !*** ./components/TimePicker/TimePickerDropdown.js ***!
-  \*****************************************************/
-/*! no static exports found */
-/*! all exports used */
-/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.TimePickerDropdown = undefined;
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _lodash = __webpack_require__(/*! lodash */ 2);
-
-var _lodash2 = _interopRequireDefault(_lodash);
-
-var _react = __webpack_require__(/*! react */ 0);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _propTypes = __webpack_require__(/*! prop-types */ 1);
-
-var _system = __webpack_require__(/*! wix-ui-icons-common/system */ 396);
-
-var _timePicker = __webpack_require__(/*! wix-ui-core/time-picker */ 213);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var createOptions = function createOptions(step, useAmPm) {
-  var options = [];
-  var m = 0;
-  for (var h = 0; h < 24; h++) {
-    var hour = h < 10 ? '0' + h : h;
-    while (m < 60) {
-      var minute = m < 10 ? '0' + m : m;
-      var id = hour + ':' + minute;
-      options.push({
-        id: id,
-        value: useAmPm !== _timePicker.TimePickerConstants.AmPmOptions.None ? _timePicker.TimePickerUtils.convertToAmPm({ value: id }) : id
-      });
-      m += step;
-    }
-    m %= 60;
-  }
-  return options;
-};
-
-var TimePickerDropdown = exports.TimePickerDropdown = function (_React$PureComponent) {
-  _inherits(TimePickerDropdown, _React$PureComponent);
-
-  function TimePickerDropdown() {
-    var _ref;
-
-    var _temp, _this, _ret;
-
-    _classCallCheck(this, TimePickerDropdown);
-
-    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
-    }
-
-    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = TimePickerDropdown.__proto__ || Object.getPrototypeOf(TimePickerDropdown)).call.apply(_ref, [this].concat(args))), _this), _this.onChange = function (e) {
-      // Unclear why stopPropagation is needed, but the event is firing twice in the parent
-      e.stopPropagation();
-      _this.props.onChange(e.target.value);
-    }, _temp), _possibleConstructorReturn(_this, _ret);
-  }
-
-  _createClass(TimePickerDropdown, [{
-    key: 'focus',
-    value: function focus() {
-      this.ref.focus();
-    }
-  }, {
-    key: 'blur',
-    value: function blur() {
-      this.ref.blur();
-    }
-  }, {
-    key: 'render',
-    value: function render() {
-      var _this2 = this;
-
-      var _props = this.props,
-          step = _props.step,
-          value = _props.value,
-          placeholder = _props.placeholder,
-          useAmPm = _props.useAmPm,
-          disabled = _props.disabled,
-          rest = _objectWithoutProperties(_props, ['step', 'value', 'placeholder', 'useAmPm', 'disabled']);
-
-      var strippedProps = _lodash2.default.omit(rest, ['id', 'styleId', 'previewState', 'useNativeInteraction']);
-      var options = createOptions(step, useAmPm);
-
-      var timeValue = !!value && useAmPm !== _timePicker.TimePickerConstants.AmPmOptions.None ? _timePicker.TimePickerUtils.convertToAmPm({ value: value, strings: _timePicker.TimePickerConstants.AmPmStrings.Uppercase }) : value && value.substr(0, 5);
-
-      return _react2.default.createElement(
-        'div',
-        strippedProps,
-        _react2.default.createElement(
-          'select',
-          { disabled: disabled, onChange: this.onChange, value: timeValue || '', ref: function ref(_ref2) {
-              return _this2.ref = _ref2;
-            } },
-          options.map(function (option) {
-            return _react2.default.createElement(
-              'option',
-              { key: option.id, value: option.id },
-              option.value
-            );
-          })
-        ),
-        timeValue && _react2.default.createElement(
-          'span',
-          { 'data-hook': 'timepicker-dropdown-value' },
-          timeValue
-        ),
-        !timeValue && _react2.default.createElement(
-          'span',
-          { 'data-hook': 'timepicker-dropdown-placeholder' },
-          placeholder
-        ),
-        _react2.default.createElement(_system.FormFieldSpinnerDown, { size: 9 })
-      );
-    }
-  }]);
-
-  return TimePickerDropdown;
-}(_react2.default.PureComponent);
-
-TimePickerDropdown.propTypes = {
-  step: _propTypes.number,
-  disabled: _propTypes.bool,
-  value: _propTypes.string,
-  onChange: _propTypes.func,
-  useAmPm: (0, _propTypes.oneOf)(Object.values(_timePicker.TimePickerConstants.AmPmOptions)),
-  placeholder: _propTypes.string,
-  style: _propTypes.object
-};
-TimePickerDropdown.defaultProps = {
-  onChange: function onChange() {
-    return null;
-  },
-  useAmPm: _timePicker.TimePickerConstants.AmPmOptions.None
-};
-
-/***/ }),
-
-/***/ 843:
-/*!***************************************************!*\
-  !*** ./components/TimePicker/TimePicker.santa.js ***!
-  \***************************************************/
-/*! no static exports found */
-/*! all exports used */
-/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
-var _createReactClass = __webpack_require__(/*! create-react-class */ 17);
-
-var _createReactClass2 = _interopRequireDefault(_createReactClass);
-
-var _santaComponents = __webpack_require__(/*! santa-components */ 14);
-
-var _TimePicker = __webpack_require__(/*! ./TimePicker */ 395);
-
-var _TimePicker2 = _interopRequireDefault(_TimePicker);
-
-var _TimePickerSt = __webpack_require__(/*! ./TimePicker.st.css */ 282);
-
-var _TimePickerSt2 = _interopRequireDefault(_TimePickerSt);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var skinBasedComp = _santaComponents.mixins.skinBasedComp,
-    runTimeCompData = _santaComponents.mixins.runTimeCompData,
-    inputFocusMixin = _santaComponents.mixins.inputFocusMixin,
-    validatableWithSyncMixin = _santaComponents.mixins.validatableWithSyncMixin,
-    textScaleMixin = _santaComponents.mixins.textScaleMixin;
-
-var getComponentSkins = function getComponentSkins() {
-  return {
-    'wixui.skins.TimePicker': _TimePickerSt2.default.$skin
-  };
-};
-
-var getPublicState = function getPublicState(state) {
-  return validatableWithSyncMixin.getPublicState(state);
-};
-
-var timePicker = (0, _createReactClass2.default)({
-  displayName: 'TimePicker',
-
-  propTypes: {
-    compProp: _santaComponents.santaTypesDefinitions.Component.compProp.isRequired,
-    compData: _santaComponents.santaTypesDefinitions.Component.compData.isRequired,
-    componentViewMode: _santaComponents.santaTypesDefinitions.RenderFlags.componentViewMode,
-    componentPreviewState: _santaComponents.santaTypesDefinitions.RenderFlags.componentPreviewState,
-    shouldResetComponent: _santaComponents.santaTypesDefinitions.RenderFlags.shouldResetComponent,
-    styleId: _santaComponents.santaTypesDefinitions.Component.styleId,
-    id: _santaComponents.santaTypesDefinitions.Component.id,
-    style: _santaComponents.santaTypesDefinitions.Component.style,
-    isMobileView: _santaComponents.santaTypesDefinitions.isMobileView,
-    scale: _santaComponents.santaTypesDefinitions.Component.scale
-  },
-
-  mixins: [skinBasedComp(getComponentSkins()), textScaleMixin(getComponentSkins()), runTimeCompData, inputFocusMixin, validatableWithSyncMixin.validatableWithSync],
-
-  statics: {
-    getComponentSkins: getComponentSkins,
-    behaviors: _extends({}, validatableWithSyncMixin.VALIDATABLE_WITH_SYNC_BEHAVIORS, inputFocusMixin.INPUT_FOCUS_BEHAVIORS)
-  },
-
-  getInitialState: function getInitialState() {
-    return _extends({}, getPublicState(), {
-      isFocused: false,
-      shouldTriggerChange: false
-    });
-  },
-  componentDidUpdate: function componentDidUpdate(prevProps) {
-    if (this.props.shouldResetComponent && prevProps.shouldResetComponent !== this.props.shouldResetComponent) {
-      this.hideValidityIndication();
-    }
-  },
-  focus: function focus() {
-    this.componentRef.focus();
-  },
-  blur: function blur() {
-    this.componentRef.blur();
-  },
-  getSkinProperties: function getSkinProperties() {
-    var _this = this;
-
-    var value = this.props.compData.value || null;
-    var _props$compData = this.props.compData,
-        placeholder = _props$compData.placeholder,
-        step = _props$compData.step;
-    var _props$compProp = this.props.compProp,
-        alignment = _props$compProp.alignment,
-        useAmPmFormat = _props$compProp.useAmPmFormat,
-        controller = _props$compProp.controller,
-        initialTime = _props$compProp.initialTime,
-        readOnly = _props$compProp.readOnly,
-        paddingStart = _props$compProp.margin;
-
-    var disabled = this.props.compProp.isDisabled;
-    var _props = this.props,
-        style = _props.style,
-        styleId = _props.styleId,
-        isMobileView = _props.isMobileView;
-
-    var id = this.props.id + '-inner';
-    var className = styleId;
-    var previewState = this.getComponentPreviewState();
-    var onChange = function onChange(e) {
-      _this.updateData({ value: e });
-      if (_this.state.isFocused) {
-        _this.hideValidityIndication();
-        _this.setState({ shouldTriggerChange: true });
-      } else {
-        _this.showValidityIndication();
-        _this.handleAction('change');
-        _this.setState({ shouldTriggerChange: false });
-      }
+    CircleThumb.prototype.render = function () {
+        return (React.createElement("div", tslib_1.__assign({}, Slider_st_css_1.default('thumbShape', { shapeType: 'circle' }), { style: { borderRadius: '50%' } })));
     };
-    var onFocus = function onFocus() {
-      _this.setState({ isFocused: true });
-      _this.handleAction('focus');
+    return CircleThumb;
+}(React.PureComponent));
+var RectangleThumb = /** @class */ (function (_super) {
+    tslib_1.__extends(RectangleThumb, _super);
+    function RectangleThumb() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    RectangleThumb.prototype.render = function () {
+        return React.createElement("div", tslib_1.__assign({}, Slider_st_css_1.default('thumbShape', { shapeType: 'rectangle' })));
     };
-    var onBlur = function onBlur() {
-      var shouldTriggerChange = _this.state.shouldTriggerChange;
-
-      _this.setState({ isFocused: false, shouldTriggerChange: false });
-      _this.handleAction('blur');
-      _this.showValidityIndication();
-      if (shouldTriggerChange) {
-        _this.handleAction('change');
-      }
+    return RectangleThumb;
+}(React.PureComponent));
+var SquareThumb = /** @class */ (function (_super) {
+    tslib_1.__extends(SquareThumb, _super);
+    function SquareThumb() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    SquareThumb.prototype.render = function () {
+        return React.createElement("div", tslib_1.__assign({}, Slider_st_css_1.default('thumbShape', { shapeType: 'square' })));
     };
-    var isMobile = isMobileView;
-    var error = !this.isValid() && this.shouldShowValidityIndication();
-
-    var fontSize = parseInt(this.getFontSize('textFont').fontSize, 10);
-
-    var props = {
-      value: value,
-      placeholder: placeholder,
-      step: step,
-      alignment: alignment,
-      useAmPmFormat: useAmPmFormat,
-      controller: controller,
-      initialTime: initialTime,
-      readOnly: readOnly,
-      disabled: disabled,
-      style: style,
-      id: id,
-      styleId: styleId,
-      className: className,
-      previewState: previewState,
-      onChange: onChange,
-      onFocus: onFocus,
-      onBlur: onBlur,
-      isMobile: isMobile,
-      error: error,
-      paddingStart: paddingStart,
-      fontSize: isMobile && !isNaN(fontSize) ? fontSize : null,
-      ref: function ref(componentRef) {
-        _this.componentRef = componentRef;
-      }
+    return SquareThumb;
+}(React.PureComponent));
+var BarThumb = /** @class */ (function (_super) {
+    tslib_1.__extends(BarThumb, _super);
+    function BarThumb() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    BarThumb.prototype.render = function () {
+        return React.createElement("div", tslib_1.__assign({}, Slider_st_css_1.default('thumbShape', { shapeType: 'bar' })));
     };
+    return BarThumb;
+}(React.PureComponent));
+var thumbShapes = {
+    circle: {
+        component: CircleThumb,
+        getThumbSize: function (sliderSize) { return ({ width: sliderSize, height: sliderSize }); },
+    },
+    rectangle: {
+        component: RectangleThumb,
+        getThumbSize: function (sliderSize, isVertical) {
+            var _a;
+            return (_a = {},
+                _a[isVertical ? 'height' : 'width'] = 1.5 * sliderSize,
+                _a[isVertical ? 'width' : 'height'] = sliderSize,
+                _a);
+        },
+    },
+    square: {
+        component: SquareThumb,
+        getThumbSize: function (sliderSize) { return ({ width: sliderSize, height: sliderSize }); },
+    },
+    bar: {
+        component: BarThumb,
+        getThumbSize: function (sliderSize, isVertical) {
+            var _a;
+            return (_a = {},
+                _a[isVertical ? 'height' : 'width'] = 0.5 * sliderSize,
+                _a[isVertical ? 'width' : 'height'] = sliderSize,
+                _a);
+        },
+    },
+};
+//# sourceMappingURL=Thumb.js.map
 
-    return {
-      '': {
-        children: [_santaComponents.utils.createReactElement(_TimePicker2.default, props)]
-      }
-    };
-  }
-});
+/***/ }),
 
-exports.default = timePicker;
+/***/ 670:
+/*!**************************************!*\
+  !*** ../node_modules/lodash/noop.js ***!
+  \**************************************/
+/*! no static exports found */
+/*! all exports used */
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(/*! lodash */ 2).noop
 
 /***/ }),
 
@@ -4708,4 +2188,4 @@ module.exports = invariant;
 /***/ })
 
 }]);
-//# sourceMappingURL=wixui.TimePicker.chunk.js.map
+//# sourceMappingURL=wixui.Slider.chunk.js.map

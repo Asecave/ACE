@@ -1,4 +1,4 @@
-((typeof self !== 'undefined' ? self : this)["webpackJsonp_wix_ui_santa"] = (typeof self !== 'undefined' ? self : this)["webpackJsonp_wix_ui_santa"] || []).push([[48],{
+((typeof self !== 'undefined' ? self : this)["webpackJsonp_wix_ui_santa"] = (typeof self !== 'undefined' ? self : this)["webpackJsonp_wix_ui_santa"] || []).push([[42],{
 
 /***/ 12:
 /*!**********************************************!*\
@@ -964,10 +964,198 @@ module.exports = emptyObject;
 
 /***/ }),
 
-/***/ 357:
-/*!****************************************************************************!*\
-  !*** ../node_modules/wix-ui-core/dist/src/components/slider/Slider.st.css ***!
-  \****************************************************************************/
+/***/ 351:
+/*!********************************************************************************!*\
+  !*** ../node_modules/wix-ui-core/dist/src/components/pagination/Pagination.js ***!
+  \********************************************************************************/
+/*! no static exports found */
+/*! all exports used */
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var tslib_1 = __webpack_require__(/*! tslib */ 6);
+var React = __webpack_require__(/*! react */ 0);
+var PageStrip_1 = __webpack_require__(/*! ./PageStrip */ 648);
+var Pagination_st_css_1 = __webpack_require__(/*! ./Pagination.st.css */ 352);
+var root_min_width_1 = __webpack_require__(/*! ./root-min-width */ 650);
+var upperCaseFirst = function (str) {
+    return str[0].toUpperCase() + str.slice(1);
+};
+exports.getId = function (idPrefix, name) {
+    if (idPrefix === void 0) { idPrefix = ''; }
+    if (name === void 0) { name = ''; }
+    return idPrefix ? idPrefix + name : null;
+};
+exports.calculateWidth = function (totalPages) {
+    return totalPages.toString().length + "em";
+};
+var Pagination = /** @class */ (function (_super) {
+    tslib_1.__extends(Pagination, _super);
+    function Pagination() {
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.state = {
+            pageInputValue: String(_this.props.currentPage),
+            pageInputHasError: false,
+        };
+        _this.handlePageInputChange = function (e) {
+            _this.setState({
+                pageInputValue: e.target.value,
+                pageInputHasError: false,
+            });
+        };
+        _this.handlePageInputKeyDown = function (event) {
+            // Enter
+            if (event.keyCode === 13) {
+                var page = Number(_this.state.pageInputValue);
+                if (page !== _this.props.currentPage) {
+                    if (1 <= page && page <= _this.props.totalPages) {
+                        _this.props.onChange({ event: event, page: page });
+                    }
+                    else {
+                        _this.setState({ pageInputHasError: true });
+                    }
+                }
+            }
+        };
+        _this.handlePageInputBlur = function (event) {
+            _this.setState({
+                pageInputValue: String(_this.props.currentPage),
+                pageInputHasError: false,
+            });
+        };
+        _this.handlePageClick = function (event, page) {
+            _this.props.onChange({ event: event, page: page });
+        };
+        _this.handlePageKeyDown = function (event, page) {
+            // Enter or Space
+            if (event.keyCode === 13 || event.keyCode === 32) {
+                _this.props.onChange({ event: event, page: page });
+            }
+        };
+        return _this;
+    }
+    Pagination.prototype.updateRootMinWidth = function () {
+        root_min_width_1.measureAndSetRootMinWidth(this.rootNode, this.props.paginationMode, this.props.id);
+    };
+    Pagination.prototype.componentDidMount = function () {
+        this.props.updateResponsiveLayout && this.updateRootMinWidth();
+    };
+    Pagination.prototype.componentDidUpdate = function () {
+        this.props.updateResponsiveLayout && this.updateRootMinWidth();
+    };
+    Pagination.prototype.getId = function (elementName) {
+        if (elementName === void 0) { elementName = ''; }
+        return exports.getId(this.props.id, elementName);
+    };
+    Object.defineProperty(Pagination.prototype, "maxPagesToShow", {
+        get: function () {
+            if (this.props.maxPagesToShow) {
+                return this.props.maxPagesToShow;
+            }
+            if (this.props.responsive) {
+                return 20;
+            }
+            return 7;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Pagination.prototype.renderPageStrip = function () {
+        return (React.createElement(PageStrip_1.PageStrip, { id: this.props.id, totalPages: this.props.totalPages, currentPage: this.props.currentPage, maxPagesToShow: this.maxPagesToShow, showFirstPage: this.props.showFirstPage, showLastPage: this.props.showLastPage, responsive: this.props.responsive, pageUrl: this.props.pageUrl, gapLabel: this.props.gapLabel, onPageClick: this.handlePageClick, onPageKeyDown: this.handlePageKeyDown, updateResponsiveLayout: this.props.updateResponsiveLayout, disabled: this.props.disabled }));
+    };
+    Pagination.prototype.renderPageForm = function () {
+        return (React.createElement("div", { "data-hook": "page-form", id: this.getId('pageForm'), className: Pagination_st_css_1.default.pageForm, dir: "ltr" },
+            React.createElement("input", { id: this.getId('pageInput'), "data-hook": "page-input", type: "number", className: Pagination_st_css_1.default.pageInput, min: 1, max: this.props.totalPages, value: this.state.pageInputValue, disabled: this.props.disabled, onChange: this.handlePageInputChange, onKeyDown: this.handlePageInputKeyDown, "aria-label": 'Page number, select a number between 1 and ' +
+                    this.props.totalPages, onBlur: this.handlePageInputBlur, style: { width: exports.calculateWidth(this.props.totalPages) } }),
+            this.props.showInputModeTotalPages && [
+                React.createElement("span", { key: "slash", id: this.getId('slash'), className: Pagination_st_css_1.default.slash }, this.props.slashLabel),
+                React.createElement("span", { key: "total-pages", id: this.getId('totalPages'), "data-hook": "total-pages", className: Pagination_st_css_1.default.totalPages }, this.props.totalPages),
+            ]));
+    };
+    Pagination.prototype.renderNavButton = function (type) {
+        var _this = this;
+        var _a;
+        var _b = this.props, currentPage = _b.currentPage, totalPages = _b.totalPages, pageUrl = _b.pageUrl;
+        var disabled = this.props.disabled ||
+            (((type === "first" /* First */ || type === "previous" /* Prev */) &&
+                currentPage <= 1) ||
+                ((type === "last" /* Last */ || type === "next" /* Next */) &&
+                    currentPage >= totalPages));
+        var _c = (_a = {},
+            _a["previous" /* Prev */] = [
+                Pagination_st_css_1.default.navButtonPrevious,
+                this.props.previousLabel,
+                currentPage - 1,
+            ],
+            _a["next" /* Next */] = [
+                Pagination_st_css_1.default.navButtonNext,
+                this.props.nextLabel,
+                currentPage + 1,
+            ],
+            _a["first" /* First */] = [Pagination_st_css_1.default.navButtonFirst, this.props.firstLabel, 1],
+            _a["last" /* Last */] = [
+                Pagination_st_css_1.default.navButtonLast,
+                this.props.lastLabel,
+                totalPages,
+            ],
+            _a)[type], btnClass = _c[0], label = _c[1], page = _c[2];
+        return (React.createElement("a", tslib_1.__assign({ "data-hook": type, id: this.getId('navButton' + upperCaseFirst(type)) }, Pagination_st_css_1.default('navButton ' + btnClass, { disabled: disabled }), { "aria-label": upperCaseFirst(type) + ' Page', tabIndex: disabled || pageUrl ? null : 0, onClick: disabled ? null : function (event) { return _this.handlePageClick(event, page); }, onKeyDown: disabled ? null : function (event) { return _this.handlePageKeyDown(event, page); }, href: !disabled && pageUrl ? pageUrl(page) : null }), label));
+    };
+    Pagination.prototype.componentWillReceiveProps = function (nextProps) {
+        this.setState({
+            pageInputValue: String(nextProps.currentPage),
+            pageInputHasError: false,
+        });
+    };
+    Pagination.prototype.render = function () {
+        var _this = this;
+        var _a = this.props, showFirstLastNavButtons = _a.showFirstLastNavButtons, paginationMode = _a.paginationMode, width = _a.width, style = _a.style;
+        var styleStates = {
+            disabled: this.props.disabled,
+            error: this.state.pageInputHasError,
+        };
+        return (React.createElement("nav", tslib_1.__assign({ ref: function (el) { return (_this.rootNode = el); }, id: this.getId(''), "aria-label": "Pagination Navigation", dir: this.props.rtl ? 'rtl' : null, onClick: this.props.onClick, onDoubleClick: this.props.onDoubleClick, onMouseEnter: this.props.onMouseEnter, onMouseLeave: this.props.onMouseLeave, style: style || { width: width } }, Pagination_st_css_1.default('root', styleStates, this.props)),
+            this.renderNavButton("next" /* Next */),
+            this.renderNavButton("previous" /* Prev */),
+            paginationMode === 'input'
+                ? this.renderPageForm()
+                : this.renderPageStrip(),
+            showFirstLastNavButtons && this.renderNavButton("first" /* First */),
+            showFirstLastNavButtons && this.renderNavButton("last" /* Last */)));
+    };
+    Pagination.displayName = 'Pagination';
+    Pagination.defaultProps = {
+        currentPage: 1,
+        showFirstLastNavButtons: false,
+        showFirstPage: false,
+        showLastPage: false,
+        responsive: false,
+        paginationMode: 'pages',
+        showInputModeTotalPages: false,
+        disabled: false,
+        // dir="rtl" automatically flips the direction of less-than and more-than signs.
+        // If we decide to use different labels we need to add conditional logic.
+        firstLabel: '<<',
+        lastLabel: '>>',
+        previousLabel: '<',
+        nextLabel: '>',
+        gapLabel: '...',
+        slashLabel: '\u00A0/\u00A0',
+    };
+    return Pagination;
+}(React.Component));
+exports.Pagination = Pagination;
+//# sourceMappingURL=Pagination.js.map
+
+/***/ }),
+
+/***/ 352:
+/*!************************************************************************************!*\
+  !*** ../node_modules/wix-ui-core/dist/src/components/pagination/Pagination.st.css ***!
+  \************************************************************************************/
 /*! exports provided: default */
 /*! all exports used */
 /*! ModuleConcatenation bailout: Module is not an ECMAScript module */
@@ -977,21 +1165,21 @@ Object.defineProperty(exports, "__esModule", { value: true })
 
 exports.default = __webpack_require__.stylable.create(
   "root",
-  "Slider2207263592",
-  {"root":"Slider2207263592--root","tooltip":"Slider2207263592--tooltip","track":"Slider2207263592--track","inner":"Slider2207263592--inner","trackFill":"Slider2207263592--trackFill","thumb":"Slider2207263592--thumb","thumbShape":"Slider2207263592--thumbShape","tick":"Slider2207263592--tick","tickLineWidth":"1px","tickLineHeight":"10px","tickDotSize":"3px","tickMarksGap":"12px","tooltipGap":"10px"},
+  "Pagination3815741391",
+  {"button-common-mixin":"Pagination3815741391--button-common-mixin","root":"Pagination3815741391--root","navButton":"Pagination3815741391--navButton","disabled":"Pagination3815741391--disabled","navButtonFirst":"Pagination3815741391--navButtonFirst","navButtonPrevious":"Pagination3815741391--navButtonPrevious","navButtonNext":"Pagination3815741391--navButtonNext","navButtonLast":"Pagination3815741391--navButtonLast","pageStrip":"Pagination3815741391--pageStrip","pageStripInner":"Pagination3815741391--pageStripInner","pageStripTemplate":"Pagination3815741391--pageStripTemplate","pageButton":"Pagination3815741391--pageButton","currentPage":"Pagination3815741391--currentPage","gap":"Pagination3815741391--gap","pageForm":"Pagination3815741391--pageForm","pageInput":"Pagination3815741391--pageInput","totalPages":"Pagination3815741391--totalPages","slash":"Pagination3815741391--slash"},
   "",
   1,
-  /*! ../node_modules/wix-ui-core/dist/src/components/slider/Slider.st.css */ 357
+  /*! ../node_modules/wix-ui-core/dist/src/components/pagination/Pagination.st.css */ 352
 );
 
 
 
 /***/ }),
 
-/***/ 358:
-/*!*****************************************!*\
-  !*** ./components/Slider/Slider.st.css ***!
-  \*****************************************/
+/***/ 353:
+/*!*************************************************!*\
+  !*** ./components/Pagination/Pagination.st.css ***!
+  \*************************************************/
 /*! exports provided: default */
 /*! all exports used */
 /*! ModuleConcatenation bailout: Module is not an ECMAScript module */
@@ -1001,24 +1189,24 @@ Object.defineProperty(exports, "__esModule", { value: true })
 
 exports.default = __webpack_require__.stylable.create(
   "root",
-  "Slider3992224720",
-  {"root":"Slider3992224720--root","thumbBackground":"color_25","thumbBackgroundHover":"color_23","thumbBackgroundFocus":"color_22","thumbBackgroundDisabled":"color_21","thumbBoxShadow":"0 1px 4px rgba(0, 0, 0, .6)","trackFill":"color_22","trackFillHover":"color_23","trackFillFocus":"color_24","trackFillDisabled":"color_25","trackBoxShadow":"0 1px 4px rgba(0, 0, 0, .6)","trackBackground":"color_26","trackBackgroundHover":"color_27","trackBackgroundFocus":"color_28","trackBackgroundDisabled":"color_29","tooltipBackground":"color_30","tooltipFontSize":"14","tooltipFontFamily":"arial","tooltipFontColor":"color_1","tooltipBoxShadow":"initial","tickMarkColor":"color_4","thumbBorderColor":"color_22","thumbBorderColorHover":"color_23","thumbBorderColorFocus":"color_24","thumbBorderColorDisabled":"color_25","thumbBorderWidth":"4","thumbBorderWidthHover":"4","thumbBorderWidthFocus":"4","thumbBorderWidthDisabled":"4","thumbBorderRadius":"8px","trackBorderColor":"color_28","trackBorderColorHover":"color_29","trackBorderColorFocus":"color_30","trackBorderColorDisabled":"color_31","trackBorderWidth":"7","trackBorderWidthHover":"6","trackBorderWidthFocus":"6","trackBorderWidthDisabled":"6","tooltipBorderRadius":"2px","trackBorderRadius":"8px"},
+  "Pagination3298768303",
+  {"pageButtonRules":"Pagination3298768303--pageButtonRules","root":"Pagination3298768303--root","selectedPageBG":"color_22","selectedPageBorderColor":"color_26","selectedPageBorderWidth":"0","selectedPageTextColor":"color_25","pageNumbersTextColor":"color_6","pageInputBG":"color_23","pageInputBorderColor":"color_27","pageInputBorderWidth":"0","pageInputTextColor":"color_26","totalPagesTextColor":"color_7","pageInputFocusBG":"color_8","pageInputFocusBorderColor":"color_38","pageInputFocusBorderWidth":"3","pageInputErrorBG":"color_2","pageInputErrorBorderColor":"color_22","pageInputErrorBorderWidth":"3","navButtonBG":"transparent","navButtonBorderWidth":"3","navButtonBorderColor":"color_32","navButtonDisabledBorderWidth":"3","navButtonDisabledBorderColor":"color_43","navButtonDisabledBG":"color_27","arrowsColor":"color_32","arrowsDisabledColor":"color_37","navButtonTextSize":"15px","navButtonTextColor":"color_15","navButtonDisabledTextColor":"color_11","fnt":"font_8","bRadius":"100px","shadow":"none"},
   "",
   7,
-  /*! ./components/Slider/Slider.st.css */ 358
+  /*! ./components/Pagination/Pagination.st.css */ 353
 );
 
-exports.default.$skin = {"params":{"thumbBackground":"COLOR_ALPHA","thumbBackgroundHover":"COLOR_ALPHA","thumbBackgroundFocus":"COLOR_ALPHA","thumbBackgroundDisabled":"COLOR_ALPHA","thumbBoxShadow":"BOX_SHADOW","trackFill":"COLOR_ALPHA","trackFillHover":"COLOR_ALPHA","trackFillFocus":"COLOR_ALPHA","trackFillDisabled":"COLOR_ALPHA","trackBoxShadow":"BOX_SHADOW","trackBackground":"COLOR_ALPHA","trackBackgroundHover":"COLOR_ALPHA","trackBackgroundFocus":"COLOR_ALPHA","trackBackgroundDisabled":"COLOR_ALPHA","tooltipBackground":"COLOR_ALPHA","tooltipFontSize":"TEXT_SIZE","tooltipFontFamily":"FONT_FAMILY","tooltipFontColor":"TEXT_COLOR","tooltipBoxShadow":"BOX_SHADOW","tickMarkColor":"COLOR_ALPHA","thumbBorderColor":"COLOR_ALPHA","thumbBorderColorHover":"COLOR_ALPHA","thumbBorderColorFocus":"COLOR_ALPHA","thumbBorderColorDisabled":"COLOR_ALPHA","thumbBorderWidth":"BORDER_SIZE","thumbBorderWidthHover":"BORDER_SIZE","thumbBorderWidthFocus":"BORDER_SIZE","thumbBorderWidthDisabled":"BORDER_SIZE","thumbBorderRadius":"BORDER_RADIUS","trackBorderColor":"COLOR_ALPHA","trackBorderColorHover":"COLOR_ALPHA","trackBorderColorFocus":"COLOR_ALPHA","trackBorderColorDisabled":"COLOR_ALPHA","trackBorderWidth":"BORDER_SIZE","trackBorderWidthHover":"BORDER_SIZE","trackBorderWidthFocus":"BORDER_SIZE","trackBorderWidthDisabled":"BORDER_SIZE","tooltipBorderRadius":"BORDER_RADIUS","trackBorderRadius":"BORDER_RADIUS"},"paramsDefaults":{"thumbBackground":"color_25","thumbBackgroundHover":"color_23","thumbBackgroundFocus":"color_22","thumbBackgroundDisabled":"color_21","thumbBoxShadow":"0 1px 4px rgba(0, 0, 0, .6)","trackFill":"color_22","trackFillHover":"color_23","trackFillFocus":"color_24","trackFillDisabled":"color_25","trackBoxShadow":"0 1px 4px rgba(0, 0, 0, .6)","trackBackground":"color_26","trackBackgroundHover":"color_27","trackBackgroundFocus":"color_28","trackBackgroundDisabled":"color_29","tooltipBackground":"color_30","tooltipFontSize":"14","tooltipFontFamily":"arial","tooltipFontColor":"color_1","tooltipBoxShadow":"initial","tickMarkColor":"color_4","thumbBorderColor":"color_22","thumbBorderColorHover":"color_23","thumbBorderColorFocus":"color_24","thumbBorderColorDisabled":"color_25","thumbBorderWidth":"4","thumbBorderWidthHover":"4","thumbBorderWidthFocus":"4","thumbBorderWidthDisabled":"4","thumbBorderRadius":"8px","trackBorderColor":"color_28","trackBorderColorHover":"color_29","trackBorderColorFocus":"color_30","trackBorderColorDisabled":"color_31","trackBorderWidth":"7","trackBorderWidthHover":"6","trackBorderWidthFocus":"6","trackBorderWidthDisabled":"6","tooltipBorderRadius":"2px","trackBorderRadius":"8px"}};
+exports.default.$skin = {"params":{"selectedPageBG":"COLOR_ALPHA","selectedPageBorderColor":"BORDER_COLOR_ALPHA","selectedPageBorderWidth":"BORDER_SIZE","selectedPageTextColor":"TEXT_COLOR","pageNumbersTextColor":"TEXT_COLOR","pageInputBG":"COLOR_ALPHA","pageInputBorderColor":"BORDER_COLOR_ALPHA","pageInputBorderWidth":"BORDER_SIZE","pageInputTextColor":"TEXT_COLOR","totalPagesTextColor":"TEXT_COLOR","pageInputFocusBG":"COLOR_ALPHA","pageInputFocusBorderColor":"BORDER_COLOR_ALPHA","pageInputFocusBorderWidth":"BORDER_SIZE","pageInputErrorBG":"COLOR_ALPHA","pageInputErrorBorderColor":"BORDER_COLOR_ALPHA","pageInputErrorBorderWidth":"BORDER_SIZE","navButtonBG":"COLOR_ALPHA","navButtonBorderWidth":"BORDER_SIZE","navButtonBorderColor":"BORDER_COLOR_ALPHA","navButtonDisabledBorderWidth":"BORDER_SIZE","navButtonDisabledBorderColor":"BORDER_COLOR_ALPHA","navButtonDisabledBG":"COLOR_ALPHA","arrowsColor":"COLOR_ALPHA","arrowsDisabledColor":"COLOR_ALPHA","navButtonTextSize":"TEXT_SIZE","navButtonTextColor":"TEXT_COLOR","navButtonDisabledTextColor":"TEXT_COLOR","fnt":"FONT","bRadius":"BORDER_RADIUS","shadow":"BOX_SHADOW"},"paramsDefaults":{"selectedPageBG":"color_22","selectedPageBorderColor":"color_26","selectedPageBorderWidth":"0","selectedPageTextColor":"color_25","pageNumbersTextColor":"color_6","pageInputBG":"color_23","pageInputBorderColor":"color_27","pageInputBorderWidth":"0","pageInputTextColor":"color_26","totalPagesTextColor":"color_7","pageInputFocusBG":"color_8","pageInputFocusBorderColor":"color_38","pageInputFocusBorderWidth":"3","pageInputErrorBG":"color_2","pageInputErrorBorderColor":"color_22","pageInputErrorBorderWidth":"3","navButtonBG":"transparent","navButtonBorderWidth":"3","navButtonBorderColor":"color_32","navButtonDisabledBorderWidth":"3","navButtonDisabledBorderColor":"color_43","navButtonDisabledBG":"color_27","arrowsColor":"color_32","arrowsDisabledColor":"color_37","navButtonTextSize":"15px","navButtonTextColor":"color_15","navButtonDisabledTextColor":"color_11","fnt":"font_8","bRadius":"100px","shadow":"none"}};
 exports.default.$skin.$render = function render_css($id, $params, $functions) {
-  return "\n" + $id + ".Slider2207263592--root{position: relative;box-sizing: border-box;outline: none}\n" + $id + ".Slider2207263592--root *{box-sizing: border-box}\n" + $id + " .Slider2207263592--tooltip{position: absolute;background: #363636;color: #fff;padding: 4px 12px;text-align: center;font-size: 14px;line-height: 1.5;border-radius: 3px;white-space: nowrap}\n" + $id + " .Slider2207263592--tooltip::after, " + $id + " .Slider2207263592--tooltip::before{content: ' ';position: absolute;margin-left: -8px;border-width: 8px;border-style: solid}\n" + $id + " .Slider2207263592--track{z-index: 0;width: 100%;height: 25%;position: relative;cursor: pointer;background: #dadada;opacity: 1;border-radius: 8px;overflow: hidden;border: 2px solid transparent;min-height: 1px}\n" + $id + " .Slider2207263592--inner{display: flex;position: relative;align-items: center;justify-content: center;width: 100%;height: 100%}\n" + $id + " .Slider2207263592--trackFill{position: absolute;background: linear-gradient(to right,#4992e3,#70bff3);height: 100%;width: 100%}\n" + $id + ".Slider2207263592--root[data-slider2207263592-dir=\"rtl\"] .Slider2207263592--trackFill{right: 0}\n" + $id + ".Slider2207263592--root[data-slider2207263592-orientation=\"vertical\"] .Slider2207263592--track{width: 25%;height: 100%}\n" + $id + ".Slider2207263592--root[data-slider2207263592-orientation=\"vertical\"] .Slider2207263592--trackFill{background: linear-gradient(to top,#4992e3,#70bff3)}\n" + $id + " .Slider2207263592--thumb{z-index: 2;position: absolute;cursor: pointer}\n" + $id + " .Slider2207263592--thumbShape{width: 100%;height: 100%;background: green;border: 2px solid blue}\n" + $id + " .Slider2207263592--thumbShape[data-slider2207263592-shapetype=\"circle\"]{border-radius: 50%}\n" + $id + " .Slider2207263592--thumbShape[data-slider2207263592-shapetype=\"square\"]{border-radius: 7px}\n" + $id + " .Slider2207263592--thumbShape[data-slider2207263592-shapetype=\"rectangle\"]{border-radius: 37px}\n" + $id + " .Slider2207263592--thumbShape[data-slider2207263592-shapetype=\"bar\"]{border-radius: 7px}\n" + $id + ".Slider2207263592--root[data-slider2207263592-orientation=\"horizontal\"] .Slider2207263592--tooltip[data-slider2207263592-normalposition]{left: 50%;top: calc(-7px - 10px);transform: translate(-50%,-100%)}\n" + $id + ".Slider2207263592--root[data-slider2207263592-orientation=\"horizontal\"] .Slider2207263592--tooltip[data-slider2207263592-acrossposition]{left: 50%;bottom: calc(-7px - 10px);transform: translate(-50%,100%)}\n" + $id + ".Slider2207263592--root[data-slider2207263592-orientation=\"vertical\"] .Slider2207263592--tooltip[data-slider2207263592-normalposition]{left: 50%;left: calc(-7px - 10px);transform: translate(-100%,-50%)}\n" + $id + ".Slider2207263592--root[data-slider2207263592-orientation=\"vertical\"] .Slider2207263592--tooltip[data-slider2207263592-acrossposition]{right: calc(-7px - 10px);transform: translate(100%,-50%)}\n" + $id + ".Slider2207263592--root[data-slider2207263592-orientation=\"horizontal\"] .Slider2207263592--tooltip[data-slider2207263592-normalposition]::after, " + $id + ".Slider2207263592--root[data-slider2207263592-orientation=\"horizontal\"] .Slider2207263592--tooltip[data-slider2207263592-normalposition]::before{border-color: #363636 transparent transparent transparent;top: 100%;left: 50%}\n" + $id + ".Slider2207263592--root[data-slider2207263592-orientation=\"horizontal\"] .Slider2207263592--tooltip[data-slider2207263592-acrossposition]::after, " + $id + ".Slider2207263592--root[data-slider2207263592-orientation=\"horizontal\"] .Slider2207263592--tooltip[data-slider2207263592-acrossposition]::before{border-color: transparent transparent #363636 transparent;bottom: 100%;left: 50%}\n" + $id + ".Slider2207263592--root[data-slider2207263592-orientation=\"vertical\"] .Slider2207263592--tooltip{top: 50%}\n" + $id + ".Slider2207263592--root[data-slider2207263592-orientation=\"vertical\"] .Slider2207263592--tooltip::after, " + $id + ".Slider2207263592--root[data-slider2207263592-orientation=\"vertical\"] .Slider2207263592--tooltip::before{top: 50%;transform: translateY(-50%)}\n" + $id + ".Slider2207263592--root[data-slider2207263592-orientation=\"vertical\"] .Slider2207263592--tooltip[data-slider2207263592-normalposition]::after, " + $id + ".Slider2207263592--root[data-slider2207263592-orientation=\"vertical\"] .Slider2207263592--tooltip[data-slider2207263592-normalposition]::before{left: 100%;margin-left: 0;border-color: transparent transparent transparent #363636}\n" + $id + ".Slider2207263592--root[data-slider2207263592-orientation=\"vertical\"] .Slider2207263592--tooltip[data-slider2207263592-acrossposition]::after, " + $id + ".Slider2207263592--root[data-slider2207263592-orientation=\"vertical\"] .Slider2207263592--tooltip[data-slider2207263592-acrossposition]::before{right: 100%;border-color: transparent #363636 transparent transparent}\n" + $id + " .Slider2207263592--tick{display: inline-block;position: absolute;background: #000;cursor: pointer}\n" + $id + ".Slider2207263592--root[data-slider2207263592-orientation=\"horizontal\"][data-slider2207263592-tickmarksshape=\"line\"] .Slider2207263592--tick{width: 1px;height: 10px}\n" + $id + ".Slider2207263592--root[data-slider2207263592-orientation=\"vertical\"][data-slider2207263592-tickmarksshape=\"line\"] .Slider2207263592--tick{height: 1px;width: 10px}\n" + $id + ".Slider2207263592--root[data-slider2207263592-tickmarksshape=\"dot\"] .Slider2207263592--tick{width: 3px;height: 3px;border-radius: 50%}\n" + $id + ".Slider2207263592--root[data-slider2207263592-orientation=\"horizontal\"][data-slider2207263592-tickmarksshape=\"dot\"] .Slider2207263592--tick{transform: translateX(calc(- 3px,2))}\n" + $id + ".Slider2207263592--root[data-slider2207263592-orientation=\"vertical\"][data-slider2207263592-tickmarksshape=\"dot\"] .Slider2207263592--tick{transform: translateY(calc(3px,2))}\n" + $id + ".Slider2207263592--root[data-slider2207263592-orientation=\"horizontal\"][data-slider2207263592-tickmarksposition=\"normal\"] .Slider2207263592--tick{bottom: 0}\n" + $id + ".Slider2207263592--root[data-slider2207263592-orientation=\"vertical\"][data-slider2207263592-tickmarksposition=\"normal\"] .Slider2207263592--tick{right: 0}\n" + $id + ".Slider2207263592--root[data-slider2207263592-orientation=\"horizontal\"][data-slider2207263592-tickmarksposition=\"middle\"] .Slider2207263592--tick{top: 50%;transform: translateY(-50%)}\n" + $id + ".Slider2207263592--root[data-slider2207263592-orientation=\"vertical\"][data-slider2207263592-tickmarksposition=\"middle\"] .Slider2207263592--tick{left: 50%;transform: translateX(-50%)}\n" + $id + ".Slider2207263592--root[data-slider2207263592-orientation=\"horizontal\"][data-slider2207263592-tickmarksposition=\"across\"] .Slider2207263592--tick{top: 0}\n" + $id + ".Slider2207263592--root[data-slider2207263592-orientation=\"vertical\"][data-slider2207263592-tickmarksposition=\"across\"] .Slider2207263592--tick{left: 0}\n" + $id + ".Slider3992224720--root{z-index: 0}\n" + $id + ".Slider3992224720--root .Slider2207263592--thumbShape{background: " + $params["thumbBackground"] + ";border-color: " + $params["thumbBorderColor"] + ";border-width: " + $params["thumbBorderWidth"] + ";box-shadow: " + $params["thumbBoxShadow"] + ";border-style: solid}\n" + $id + ".Slider3992224720--root .Slider2207263592--tick{background: " + $params["tickMarkColor"] + "}\n" + $id + ".Slider3992224720--root .Slider2207263592--tooltip{font-family: " + $params["tooltipFontFamily"] + ";font-size: " + $params["tooltipFontSize"] + ";color: " + $params["tooltipFontColor"] + ";background: " + $params["tooltipBackground"] + ";border-width: 0;border-radius: " + $params["tooltipBorderRadius"] + ";box-shadow: " + $params["tooltipBoxShadow"] + "}\n" + $id + ".Slider3992224720--root .Slider2207263592--tooltip::before{border-width: 0}\n" + $id + ".Slider3992224720--root[data-slider2207263592-orientation=\"horizontal\"] .Slider2207263592--tooltip[data-slider2207263592-normalposition]::after{border-color: " + $params["tooltipBackground"] + " transparent transparent transparent}\n" + $id + ".Slider3992224720--root[data-slider2207263592-orientation=\"horizontal\"] .Slider2207263592--tooltip[data-slider2207263592-acrossposition]::after{border-color: transparent transparent " + $params["tooltipBackground"] + " transparent}\n" + $id + ".Slider3992224720--root[data-slider2207263592-orientation=\"vertical\"] .Slider2207263592--tooltip[data-slider2207263592-normalposition]::after{border-color: transparent transparent transparent " + $params["tooltipBackground"] + "}\n" + $id + ".Slider3992224720--root[data-slider2207263592-orientation=\"vertical\"] .Slider2207263592--tooltip[data-slider2207263592-acrossposition]::after{border-color: transparent " + $params["tooltipBackground"] + " transparent transparent}\n" + $id + ".Slider3992224720--root[data-slider3992224720-preview-hover] .Slider2207263592--thumbShape, " + $id + ".Slider3992224720--root:hover .Slider2207263592--thumbShape{background: " + $params["thumbBackgroundHover"] + ";border-color: " + $params["thumbBorderColorHover"] + ";border-width: " + $params["thumbBorderWidthHover"] + "}\n" + $id + ".Slider3992224720--root[data-slider3992224720-preview-focus] .Slider2207263592--thumbShape, " + $id + ".Slider3992224720--root:focus .Slider2207263592--thumbShape{background: " + $params["thumbBackgroundFocus"] + ";border-color: " + $params["thumbBorderColorFocus"] + ";border-width: " + $params["thumbBorderWidthFocus"] + "}\n" + $id + ".Slider3992224720--root[data-slider3992224720-preview-disabled] .Slider2207263592--thumbShape, " + $id + ".Slider3992224720--root[data-slider2207263592-disabled] .Slider2207263592--thumbShape{background: " + $params["thumbBackgroundDisabled"] + ";border-color: " + $params["thumbBorderColorDisabled"] + ";border-width: " + $params["thumbBorderWidthDisabled"] + "}\n" + $id + ".Slider3992224720--root .Slider2207263592--track{background: " + $params["trackBackground"] + ";border-radius: " + $params["trackBorderRadius"] + ";border-color: " + $params["trackBorderColor"] + ";border-width: " + $params["trackBorderWidth"] + ";box-shadow: " + $params["trackBoxShadow"] + "}\n" + $id + ".Slider3992224720--root .Slider2207263592--trackFill{background: " + $params["trackFill"] + ";border-radius: " + $params["trackBorderRadius"] + "}\n" + $id + ".Slider3992224720--root[data-slider2207263592-orientation=\"horizontal\"][data-slider2207263592-dir=\"ltr\"] .Slider2207263592--trackFill{border-top-left-radius: 0;border-bottom-left-radius: 0}\n" + $id + ".Slider3992224720--root[data-slider2207263592-orientation=\"horizontal\"][data-slider2207263592-dir=\"rtl\"] .Slider2207263592--trackFill{border-top-right-radius: 0;border-bottom-right-radius: 0}\n" + $id + ".Slider3992224720--root[data-slider2207263592-orientation=\"vertical\"] .Slider2207263592--trackFill{border-bottom-right-radius: 0;border-bottom-left-radius: 0}\n" + $id + ".Slider3992224720--root[data-slider3992224720-preview-hover] .Slider2207263592--trackFill, " + $id + ".Slider3992224720--root:hover .Slider2207263592--trackFill{background: " + $params["trackFillHover"] + "}\n" + $id + ".Slider3992224720--root[data-slider3992224720-preview-focus] .Slider2207263592--trackFill, " + $id + ".Slider3992224720--root:focus .Slider2207263592--trackFill{background: " + $params["trackFillFocus"] + "}\n" + $id + ".Slider3992224720--root[data-slider3992224720-preview-disabled] .Slider2207263592--trackFill, " + $id + ".Slider3992224720--root[data-slider2207263592-disabled] .Slider2207263592--trackFill{background: " + $params["trackFillDisabled"] + "}\n" + $id + ".Slider3992224720--root[data-slider3992224720-preview-hover] .Slider2207263592--track, " + $id + ".Slider3992224720--root:hover .Slider2207263592--track{background: " + $params["trackBackgroundHover"] + ";border-color: " + $params["trackBorderColorHover"] + ";border-width: " + $params["trackBorderWidthHover"] + "}\n" + $id + ".Slider3992224720--root[data-slider3992224720-preview-focus] .Slider2207263592--track, " + $id + ".Slider3992224720--root:focus .Slider2207263592--track{background: " + $params["trackBackgroundFocus"] + ";border-color: " + $params["trackBorderColorFocus"] + ";border-width: " + $params["trackBorderWidthFocus"] + "}\n" + $id + ".Slider3992224720--root[data-slider3992224720-preview-disabled] .Slider2207263592--track, " + $id + ".Slider3992224720--root[data-slider2207263592-disabled] .Slider2207263592--track{background: " + $params["trackBackgroundDisabled"] + ";border-color: " + $params["trackBorderColorDisabled"] + ";border-width: " + $params["trackBorderWidthDisabled"] + "}\n" + $id + ".Slider3992224720--root .Slider2207263592--thumbShape[data-slider2207263592-shapetype=\"circle\"]{border-radius: 50%}\n" + $id + ".Slider3992224720--root .Slider2207263592--thumbShape[data-slider2207263592-shapetype=\"circle\"][data-slider2207263592-shapetype=\"circle\"]{border-radius: " + $params["thumbBorderRadius"] + "}\n" + $id + ".Slider3992224720--root .Slider2207263592--thumbShape[data-slider2207263592-shapetype=\"square\"]{border-radius: 17px}\n" + $id + ".Slider3992224720--root .Slider2207263592--thumbShape[data-slider2207263592-shapetype=\"square\"][data-slider2207263592-shapetype=\"square\"]{border-radius: " + $params["thumbBorderRadius"] + "}\n" + $id + ".Slider3992224720--root .Slider2207263592--thumbShape[data-slider2207263592-shapetype=\"rectangle\"]{border-radius: 37px}\n" + $id + ".Slider3992224720--root .Slider2207263592--thumbShape[data-slider2207263592-shapetype=\"rectangle\"][data-slider2207263592-shapetype=\"rectangle\"]{border-radius: " + $params["thumbBorderRadius"] + "}\n" + $id + ".Slider3992224720--root .Slider2207263592--thumbShape[data-slider2207263592-shapetype=\"bar\"]{border-radius: 5px}\n" + $id + ".Slider3992224720--root .Slider2207263592--thumbShape[data-slider2207263592-shapetype=\"bar\"][data-slider2207263592-shapetype=\"bar\"]{border-radius: " + $params["thumbBorderRadius"] + "}\n";
+  return "\n" + $id + " .Pagination3815741391--button-common-mixin{display: inline-flex;flex-shrink: 0}\n" + $id + ".Pagination3815741391--root{display: inline-flex;user-select: none}\n" + $id + " .Pagination3815741391--navButton{display: inline-flex;flex-shrink: 0}\n" + $id + " .Pagination3815741391--navButton:not(.Pagination3815741391--disabled){cursor: pointer}\n" + $id + " .Pagination3815741391--navButtonFirst{order: 1}\n" + $id + " .Pagination3815741391--navButtonPrevious{order: 2}\n" + $id + " .Pagination3815741391--navButtonNext{order: 4}\n" + $id + " .Pagination3815741391--navButtonLast{order: 5}\n" + $id + " .Pagination3815741391--pageStrip{order: 3;overflow-x: hidden}\n" + $id + " .Pagination3815741391--pageStripInner{display: flex}\n" + $id + " .Pagination3815741391--pageStripTemplate{height: 0;overflow: hidden}\n" + $id + " .Pagination3815741391--pageButton{display: inline-flex;flex-shrink: 0;cursor: pointer}\n" + $id + " .Pagination3815741391--currentPage{display: inline-flex;flex-shrink: 0}\n" + $id + " .Pagination3815741391--gap{display: inline-flex;flex-shrink: 0}\n" + $id + " .Pagination3815741391--pageForm{display: flex;order: 3}\n" + $id + " .Pagination3815741391--pageInput{}\n" + $id + " .Pagination3815741391--totalPages{}\n" + $id + " .Pagination3815741391--slash{}\n" + $id + " .Pagination3298768303--pageButtonRules{min-width: 1em;min-height: 1em;line-height: 1em;justify-content: center;align-items: center;padding: 0.5em 0.5em;margin: 0.25em}\n" + $id + ".Pagination3298768303--root{align-items: stretch;font: " + $params["fnt"] + ";box-sizing: border-box}\n" + $id + ".Pagination3298768303--root .Pagination3815741391--pageButton{min-width: 1em;min-height: 1em;line-height: 1em;justify-content: center;align-items: center;padding: 0.5em 0.5em;margin: 0.25em;position: relative;color: " + $params["pageNumbersTextColor"] + "}\n" + $id + ".Pagination3298768303--root .Pagination3815741391--currentPage{min-width: 1em;min-height: 1em;line-height: 1em;justify-content: center;align-items: center;padding: 0.5em 0.5em;margin: 0.25em;color: " + $params["selectedPageTextColor"] + ";background: " + $params["selectedPageBG"] + ";border-radius: " + $params["bRadius"] + ";border: " + $params["selectedPageBorderWidth"] + " solid " + $params["selectedPageBorderColor"] + ";box-shadow: " + $params["shadow"] + ";padding: calc(0.5em - " + $params["selectedPageBorderWidth"] + ") calc(0.5em - " + $params["selectedPageBorderWidth"] + ")}\n" + $id + ".Pagination3298768303--root:not([data-pagination3815741391-disabled]) .Pagination3815741391--pageButton:hover::before{background: " + $params["selectedPageBG"] + ";opacity: 0.2;content: \"\";position: absolute;top: 0;right: 0;bottom: 0;left: 0;border-radius: " + $params["bRadius"] + "}\n" + $id + ".Pagination3298768303--root:not([data-pagination3815741391-disabled]) .Pagination3815741391--pageButton:hover{opacity: 0.7}\n" + $id + ".Pagination3298768303--root[data-pagination3815741391-disabled] .Pagination3815741391--pageButton{cursor: default}\n" + $id + ".Pagination3298768303--root .Pagination3815741391--navButton{min-width: 1em;min-height: 1em;padding: calc(0.75em - " + $params["navButtonBorderWidth"] + ");display: flex;justify-content: center;align-items: center;border: " + $params["navButtonBorderWidth"] + " solid " + $params["navButtonBorderColor"] + ";background: " + $params["navButtonBG"] + ";border-radius: " + $params["bRadius"] + "}\n" + $id + ".Pagination3298768303--root .Pagination3815741391--navButton[data-pagination3815741391-disabled], " + $id + ".Pagination3298768303--root[data-preview=\"disabled\"] .Pagination3815741391--navButton{padding: calc(0.75em - " + $params["navButtonDisabledBorderWidth"] + ");border: " + $params["navButtonDisabledBorderWidth"] + " solid " + $params["navButtonDisabledBorderColor"] + ";background: " + $params["navButtonDisabledBG"] + ";cursor: default}\n" + $id + ".Pagination3298768303--root .Pagination3815741391--navButton[data-pagination3815741391-disabled] svg, " + $id + ".Pagination3298768303--root[data-preview=\"disabled\"] .Pagination3815741391--navButton svg{fill: " + $params["arrowsDisabledColor"] + "}\n" + $id + ".Pagination3298768303--root .Pagination3815741391--navButton:hover:not([data-pagination3815741391-disabled]){opacity: 0.8}\n" + $id + ".Pagination3298768303--root .Pagination3815741391--navButton svg{width: 1em;min-width: 16px;height: 1em;min-height: 16px;fill: " + $params["arrowsColor"] + "}\n" + $id + ".Pagination3298768303--root[dir=\"rtl\"] .Pagination3815741391--navButton svg{transform: scaleX(-1)}\n" + $id + ".Pagination3298768303--root .Pagination3815741391--navButton span{font-size: " + $params["navButtonTextSize"] + ";color: " + $params["navButtonTextColor"] + ";line-height: 1em}\n" + $id + ".Pagination3298768303--root .Pagination3815741391--navButton[data-pagination3815741391-disabled] span, " + $id + ".Pagination3298768303--root[data-preview=\"disabled\"] .Pagination3815741391--navButton span{color: " + $params["navButtonDisabledTextColor"] + "}\n" + $id + ".Pagination3298768303--root .Pagination3815741391--navButtonFirst{margin-right: 1em}\n" + $id + ".Pagination3298768303--root[dir=\"rtl\"] .Pagination3815741391--navButtonFirst{margin-right: 0;margin-left: 1em}\n" + $id + ".Pagination3298768303--root .Pagination3815741391--navButtonPrevious{margin-right: 1em}\n" + $id + ".Pagination3298768303--root[dir=\"rtl\"] .Pagination3815741391--navButtonPrevious{margin-right: 0;margin-left: 1em}\n" + $id + ".Pagination3298768303--root .Pagination3815741391--navButtonLast{margin-left: 1em}\n" + $id + ".Pagination3298768303--root[dir=\"rtl\"] .Pagination3815741391--navButtonLast{margin-left: 0;margin-right: 1em}\n" + $id + ".Pagination3298768303--root .Pagination3815741391--navButtonNext{margin-left: 1em}\n" + $id + ".Pagination3298768303--root[dir=\"rtl\"] .Pagination3815741391--navButtonNext{margin-left: 0;margin-right: 1em}\n" + $id + ".Pagination3298768303--root .Pagination3815741391--gap{min-width: 1em;min-height: 1em;line-height: 1em;justify-content: center;align-items: center;padding: 0.5em 0.5em;margin: 0.25em;color: " + $params["pageNumbersTextColor"] + "}\n" + $id + ".Pagination3298768303--root .Pagination3815741391--pageStrip{min-width: 3em;overflow: visible;align-self: center}\n" + $id + ".Pagination3298768303--root .Pagination3815741391--pageStripInner{flex-grow: 1;flex-basis: auto;justify-content: center;overflow: visible;align-items: center}\n" + $id + ".Pagination3298768303--root .Pagination3815741391--pageStripTemplate{overflow: hidden}\n" + $id + ".Pagination3298768303--root .Pagination3815741391--pageForm{flex-grow: 1;flex-basis: auto;justify-content: center;align-items: stretch}\n" + $id + ".Pagination3298768303--root .Pagination3815741391--slash{width: 1em;height: 1em;flex-shrink: 0;align-self: center}\n" + $id + ".Pagination3298768303--root .Pagination3815741391--slash svg{width: 1em;height: 1em}\n" + $id + ".Pagination3298768303--root .Pagination3815741391--slash svg > g{stroke: " + $params["totalPagesTextColor"] + "}\n" + $id + ".Pagination3298768303--root .Pagination3815741391--pageInput{min-width: 3.5em;padding: calc(0.25em - " + $params["pageInputBorderWidth"] + ") calc(0.5ch - " + $params["pageInputBorderWidth"] + ");color: " + $params["pageInputTextColor"] + ";border-radius: " + $params["bRadius"] + ";border: " + $params["pageInputBorderWidth"] + " solid " + $params["pageInputBorderColor"] + ";text-align: center;margin: 0 0.25em;background: " + $params["pageInputBG"] + ";box-shadow: " + $params["shadow"] + ";font: inherit;-moz-appearance: textfield}\n" + $id + ".Pagination3298768303--root .Pagination3815741391--pageInput:hover{opacity: 0.8}\n" + $id + ".Pagination3298768303--root .Pagination3815741391--pageInput:focus, " + $id + ".Pagination3298768303--root[data-preview=\"focus\"] .Pagination3815741391--pageInput{padding: calc(0.25em - " + $params["pageInputFocusBorderWidth"] + ") calc(0.5ch - " + $params["pageInputFocusBorderWidth"] + ");background: " + $params["pageInputFocusBG"] + ";border: " + $params["pageInputFocusBorderWidth"] + " solid " + $params["pageInputFocusBorderColor"] + "}\n" + $id + ".Pagination3298768303--root .Pagination3815741391--pageInput::-webkit-inner-spin-button, " + $id + ".Pagination3298768303--root .Pagination3815741391--pageInput::-webkit-outer-spin-button{-webkit-appearance: none}\n" + $id + ".Pagination3298768303--root .Pagination3815741391--totalPages{max-width: 4ch;min-width: 1ch;padding-left: 0.25em;overflow: hidden;text-overflow: ellipsis;color: " + $params["totalPagesTextColor"] + ";align-self: center}\n" + $id + ".Pagination3298768303--root[data-pagination3815741391-error] .Pagination3815741391--pageInput, " + $id + ".Pagination3298768303--root[data-preview=\"error\"] .Pagination3815741391--pageInput{padding: calc(0.25em - " + $params["pageInputErrorBorderWidth"] + ") calc(0.5ch - " + $params["pageInputErrorBorderWidth"] + ");background: " + $params["pageInputErrorBG"] + ";border: " + $params["pageInputErrorBorderWidth"] + " solid " + $params["pageInputErrorBorderColor"] + "}\n@media all and (-ms-high-contrast: none), (-ms-high-contrast: active){\n  " + $id + ".Pagination3298768303--root .Pagination3815741391--totalPages{max-width: 6ch;min-width: 6ch}\n}\n";
 };
 
 /***/ }),
 
-/***/ 441:
-/*!************************************!*\
-  !*** ./components/Slider/index.js ***!
-  \************************************/
+/***/ 435:
+/*!****************************************!*\
+  !*** ./components/Pagination/index.js ***!
+  \****************************************/
 /*! no static exports found */
 /*! all exports used */
 /*! ModuleConcatenation bailout: Module is not an ECMAScript module */
@@ -1031,19 +1219,19 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _Slider = __webpack_require__(/*! ./Slider */ 664);
+var _Pagination = __webpack_require__(/*! ./Pagination */ 645);
 
-var _SliderSt = __webpack_require__(/*! ./Slider.st.css */ 358);
+var _PaginationSt = __webpack_require__(/*! ./Pagination.st.css */ 353);
 
-var _SliderSt2 = _interopRequireDefault(_SliderSt);
+var _PaginationSt2 = _interopRequireDefault(_PaginationSt);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = {
-  componentType: 'wixui.Slider',
-  component: _Slider.Slider,
-  santaComponent: _Slider.santaSlider,
-  skin: _SliderSt2.default.$skin
+  componentType: 'wixui.Pagination',
+  component: _Pagination.Pagination,
+  santaComponent: _Pagination.santaPagination,
+  skin: _PaginationSt2.default.$skin
 };
 
 /***/ }),
@@ -1279,10 +1467,10 @@ function __importDefault(mod) {
 
 /***/ }),
 
-/***/ 664:
-/*!*************************************!*\
-  !*** ./components/Slider/Slider.js ***!
-  \*************************************/
+/***/ 645:
+/*!*********************************************!*\
+  !*** ./components/Pagination/Pagination.js ***!
+  \*********************************************/
 /*! no static exports found */
 /*! all exports used */
 /*! ModuleConcatenation bailout: Module is not an ECMAScript module */
@@ -1294,11 +1482,9 @@ function __importDefault(mod) {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.santaSlider = exports.Slider = undefined;
+exports.santaPagination = exports.Pagination = undefined;
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 var _react = __webpack_require__(/*! react */ 0);
 
@@ -1308,222 +1494,251 @@ var _createReactClass = __webpack_require__(/*! create-react-class */ 17);
 
 var _createReactClass2 = _interopRequireDefault(_createReactClass);
 
+var _reactDom = __webpack_require__(/*! react-dom */ 11);
+
+var _reactDom2 = _interopRequireDefault(_reactDom);
+
+var _pagination = __webpack_require__(/*! wix-ui-core/pagination */ 646);
+
+var _paginationIcons = __webpack_require__(/*! ./paginationIcons */ 651);
+
+var _PaginationSt = __webpack_require__(/*! ./Pagination.st.css */ 353);
+
+var _PaginationSt2 = _interopRequireDefault(_PaginationSt);
+
+var _santaComponents = __webpack_require__(/*! santa-components */ 14);
+
 var _lodash = __webpack_require__(/*! lodash */ 2);
 
 var _lodash2 = _interopRequireDefault(_lodash);
 
 var _propTypes = __webpack_require__(/*! prop-types */ 1);
 
-var _slider = __webpack_require__(/*! wix-ui-core/slider */ 665);
-
-var _SliderSt = __webpack_require__(/*! ./Slider.st.css */ 358);
-
-var _SliderSt2 = _interopRequireDefault(_SliderSt);
-
-var _santaComponents = __webpack_require__(/*! santa-components */ 14);
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+var Pagination = exports.Pagination = function Pagination(props) {
+  var replaceArrowsWithText = props.replaceArrowsWithText,
+      firstLabel = props.firstLabel,
+      lastLabel = props.lastLabel,
+      previousLabel = props.previousLabel,
+      nextLabel = props.nextLabel,
+      paginationMode = props.paginationMode,
+      showFirstLastNavButtons = props.showFirstLastNavButtons;
 
-function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
 
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+  var navigationButtonLabels = replaceArrowsWithText ? {
+    firstLabel: _react2.default.createElement(
+      'span',
+      null,
+      firstLabel
+    ),
+    lastLabel: _react2.default.createElement(
+      'span',
+      null,
+      lastLabel
+    ),
+    previousLabel: _react2.default.createElement(
+      'span',
+      null,
+      previousLabel
+    ),
+    nextLabel: _react2.default.createElement(
+      'span',
+      null,
+      nextLabel
+    )
+  } : {
+    replaceArrowsWithText: true,
+    firstLabel: _paginationIcons.arrowFirst,
+    lastLabel: _paginationIcons.arrowLast,
+    previousLabel: _paginationIcons.arrowPrevious,
+    nextLabel: _paginationIcons.arrowNext
+  };
 
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+  var slashLabel = { slashLabel: _paginationIcons.slash }; //slash?
 
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+  var states = {
+    navButtonsType: replaceArrowsWithText ? 'text' : 'arrows',
+    paginationMode: paginationMode,
+    navButtonsAmount: showFirstLastNavButtons ? 4 : 2
+  };
 
-var Slider = exports.Slider = function (_React$Component) {
-  _inherits(Slider, _React$Component);
-
-  function Slider() {
-    _classCallCheck(this, Slider);
-
-    return _possibleConstructorReturn(this, (Slider.__proto__ || Object.getPrototypeOf(Slider)).apply(this, arguments));
-  }
-
-  _createClass(Slider, [{
-    key: 'focus',
-    value: function focus() {
-      this.node.focus();
-    }
-  }, {
-    key: 'blur',
-    value: function blur() {
-      this.node.blur();
-    }
-  }, {
-    key: 'render',
-    value: function render() {
-      var _this2 = this;
-
-      var _props = this.props,
-          previewState = _props.previewState,
-          componentViewMode = _props.componentViewMode,
-          isMobileView = _props.isMobileView,
-          tooltipPosition = _props.tooltipPosition,
-          orientation = _props.orientation,
-          isDisabled = _props.isDisabled,
-          restOfProps = _objectWithoutProperties(_props, ['previewState', 'componentViewMode', 'isMobileView', 'tooltipPosition', 'orientation', 'isDisabled']);
-
-      var styles = (0, _SliderSt2.default)('root', _defineProperty({}, 'preview-' + previewState, true), restOfProps);
-      var shouldAlwaysShowTooltip = componentViewMode === 'editor' && this.props.tooltipVisibility !== 'none';
-      var overriddenProps = {
-        tooltipVisibility: shouldAlwaysShowTooltip ? 'always' : this.props.tooltipVisibility,
-        tooltipPosition: isMobileView ? 'normal' : tooltipPosition,
-        orientation: isMobileView ? 'horizontal' : orientation
-      };
-      var overriddenStyle = {
-        width: this.props.style.width,
-        height: this.props.style.height
-      };
-
-      return _react2.default.createElement(_slider.Slider, _extends({
-        ref: function ref(node) {
-          return _this2.node = node;
-        }
-      }, restOfProps, styles, overriddenProps, {
-        disabled: isDisabled,
-        style: overriddenStyle
-      }));
-    }
-  }]);
-
-  return Slider;
-}(_react2.default.Component);
-
-Slider.displayName = 'Slider';
-Slider.propTypes = {
-  previewState: _propTypes.string,
-  tooltipVisibility: _propTypes.string,
-  componentViewMode: _propTypes.string,
-  tooltipPosition: _propTypes.string,
-  orientation: _propTypes.string,
-  isMobileView: _propTypes.bool,
-  isDisabled: _propTypes.bool,
-  style: _propTypes.object
+  var coreProps = Object.assign({}, props, navigationButtonLabels, slashLabel);
+  return _react2.default.createElement(_pagination.Pagination, _extends({}, coreProps, (0, _PaginationSt2.default)('root', states, coreProps)));
 };
-Slider.defaultProps = {
-  style: { width: 0, height: 0 }
+
+Pagination.displayName = 'Pagination';
+Pagination.propTypes = {
+  replaceArrowsWithText: _propTypes.bool,
+  firstLabel: _propTypes.string,
+  lastLabel: _propTypes.string,
+  previousLabel: _propTypes.string,
+  nextLabel: _propTypes.string,
+  paginationMode: _propTypes.string,
+  showFirstLastNavButtons: _propTypes.bool
 };
 
 var skinBasedComp = _santaComponents.mixins.skinBasedComp,
     runTimeCompData = _santaComponents.mixins.runTimeCompData,
-    inputFocusMixin = _santaComponents.mixins.inputFocusMixin;
+    textScaleMixin = _santaComponents.mixins.textScaleMixin;
 
 
 var getComponentSkins = function getComponentSkins() {
   return {
-    'wixui.skins.Slider': _SliderSt2.default.$skin
+    'wixui.skins.Pagination': _PaginationSt2.default.$skin
   };
 };
 
-/**
- * @class components.slider
- * @extends {core.skinBasedComp}
- */
+var santaPagination = exports.santaPagination = (0, _createReactClass2.default)({
+  displayName: 'Pagination',
 
-var santaSlider = exports.santaSlider = (0, _createReactClass2.default)({
-  displayName: 'Slider',
-
-  mixins: [skinBasedComp(getComponentSkins()), runTimeCompData, inputFocusMixin],
+  mixins: [skinBasedComp(getComponentSkins()), runTimeCompData, textScaleMixin(getComponentSkins())],
 
   propTypes: {
-    structure: _santaComponents.santaTypesDefinitions.Component.structure.isRequired,
+    registerLayoutFunc: _santaComponents.santaTypesDefinitions.Layout.registerLayoutFunc.isRequired,
+    compTheme: _santaComponents.santaTypesDefinitions.Component.theme, // trigger re-render on style changes,
     compProp: _santaComponents.santaTypesDefinitions.Component.compProp.isRequired,
     compData: _santaComponents.santaTypesDefinitions.Component.compData.isRequired,
-    componentViewMode: _santaComponents.santaTypesDefinitions.RenderFlags.componentViewMode,
-    componentPreviewState: _santaComponents.santaTypesDefinitions.RenderFlags.componentPreviewState,
     styleId: _santaComponents.santaTypesDefinitions.Component.styleId,
+    id: _santaComponents.santaTypesDefinitions.Component.id,
     style: _santaComponents.santaTypesDefinitions.Component.style,
-    isMobileView: _santaComponents.santaTypesDefinitions.isMobileView
+    isMobileView: _santaComponents.santaTypesDefinitions.isMobileView,
+    scale: _santaComponents.santaTypesDefinitions.Component.scale,
+    onChange: _propTypes.func
   },
 
   statics: {
     compSpecificIsDomOnlyOverride: function compSpecificIsDomOnlyOverride() {
       return false;
     },
-    behaviors: _lodash2.default.clone(inputFocusMixin.INPUT_FOCUS_BEHAVIORS),
     getComponentSkins: getComponentSkins
   },
 
-  getInitialState: function getInitialState() {
-    return {
-      value: this.props.compData.value
-    };
-  },
-  UNSAFE_componentWillReceiveProps: function UNSAFE_componentWillReceiveProps(nextProps) {
-    // eslint-disable-line
-    this.setState({ value: nextProps.compData.value });
-  },
-  handleChange: function handleChange(value) {
-    var nextState = { value: value };
-    this.setState(nextState);
-    this.updateData(nextState);
-    this.handleAction('change', nextState);
-  },
-  focus: function focus() {
-    this.sliderRef.focus();
-  },
-  blur: function blur() {
-    this.sliderRef.blur();
-  },
-  handleFocus: function handleFocus() {
-    this.handleAction('focus');
-  },
-  handleBlur: function handleBlur() {
-    this.handleAction('blur');
+  handleChange: function handleChange(evt) {
+    var event = evt.event,
+        page = evt.page;
+
+
+    if (event.keyCode) {
+      event.preventDefault(); //prevents viewer from scrolling after keyboard press
+    }
+
+    var target = _lodash2.default.defaults({ currentPage: page }, event.target);
+    var ev = _lodash2.default.defaults({ target: target }, event);
+
+    this.updateData({ currentPage: page });
+
+    if (this.props.onChange) {
+      this.props.onChange({ page: page });
+    }
+
+    this.handleAction(_santaComponents.constants.SITE.ACTION_TYPES.CHANGE, ev);
   },
   getSkinProperties: function getSkinProperties() {
-    var _this3 = this;
+    var _this = this;
 
-    var sliderProps = _lodash2.default.assign({}, this.props.compData, this.props.compProp, {
-      styleId: this.props.styleId,
-      className: this.props.styleId,
-      style: this.props.style,
-      onChange: this.handleChange,
-      onFocus: this.handleFocus,
-      onBlur: this.handleBlur,
-      value: this.state.value,
-      width: _lodash2.default.get(this.props.structure, 'layout.width', 0),
-      height: _lodash2.default.get(this.props.structure, 'layout.height', 0),
-      previewState: this.props.componentPreviewState,
-      componentViewMode: this.props.componentViewMode,
-      isMobileView: this.props.isMobileView,
-      ref: function ref(sliderRef) {
-        _this3.sliderRef = sliderRef;
+    var _props$compData = this.props.compData,
+        totalPages = _props$compData.totalPages,
+        currentPage = _props$compData.currentPage,
+        firstText = _props$compData.firstText,
+        previousText = _props$compData.previousText,
+        nextText = _props$compData.nextText,
+        lastText = _props$compData.lastText;
+    var _props$compProp = this.props.compProp,
+        paginationMode = _props$compProp.paginationMode,
+        showFirstLastNavButtons = _props$compProp.showFirstLastNavButtons,
+        navigationType = _props$compProp.navigationType,
+        paginationDirection = _props$compProp.paginationDirection,
+        showInputModeTotalPages = _props$compProp.showInputModeTotalPages,
+        showFirstPage = _props$compProp.showFirstPage,
+        showLastPage = _props$compProp.showLastPage,
+        isDisabled = _props$compProp.isDisabled;
+    var _props = this.props,
+        styleId = _props.styleId,
+        id = _props.id,
+        isMobileView = _props.isMobileView;
+
+
+    var replaceArrowsWithText = !isMobileView && navigationType === 'text';
+
+    var getStyle = function getStyle() {
+      // eslint-disable-line complexity
+      var fontStyle = {};
+      var pagesModeMinFontSize = showFirstLastNavButtons ? 15 : 24;
+      var inputModeMinFontSize = showFirstLastNavButtons ? 11 : 16;
+
+      if (isMobileView) {
+        var fontSize = parseInt(_this.getFontSize('fnt').fontSize, 10);
+
+        if (paginationMode === 'pages' && fontSize > pagesModeMinFontSize) {
+          fontStyle.fontSize = pagesModeMinFontSize * _this.props.scale + 'px';
+        } else if (paginationMode === 'input' && fontSize > inputModeMinFontSize) {
+          fontStyle.fontSize = inputModeMinFontSize * _this.props.scale + 'px';
+        } else {
+          fontStyle.fontSize = fontSize * _this.props.scale + 'px';
+        }
       }
-    });
+      return _lodash2.default.merge(_this.props.style, fontStyle);
+    };
+
+    var paginationProps = {
+      parentConst: Pagination,
+      id: id,
+      styleId: styleId,
+      totalPages: totalPages,
+      currentPage: currentPage,
+      onChange: this.handleChange,
+      paginationMode: paginationMode,
+      showFirstLastNavButtons: showFirstLastNavButtons,
+      firstLabel: firstText,
+      previousLabel: previousText,
+      nextLabel: nextText,
+      lastLabel: lastText,
+      replaceArrowsWithText: replaceArrowsWithText,
+      rtl: paginationDirection === 'rtl',
+      showInputModeTotalPages: showInputModeTotalPages,
+      responsive: true,
+      maxPagesToShow: 100,
+      showFirstPage: showFirstPage,
+      showLastPage: showLastPage,
+      width: this.props.style.width,
+      updateResponsiveLayout: function updateResponsiveLayout(updateFunc) {
+        _this.props.registerLayoutFunc(_reactDom2.default.findDOMNode(_this), updateFunc);
+      },
+      style: getStyle(),
+      disabled: isDisabled,
+      onMouseEnter: this.onMouseIn,
+      onMouseLeave: this.onMouseOut,
+      onClick: this.onClick,
+      onDoubleClick: this.onDblClick
+    };
 
     return {
-      '': {
-        children: [_santaComponents.utils.createReactElement(Slider, sliderProps)]
-      }
+      '': paginationProps
     };
   }
 });
 
 /***/ }),
 
-/***/ 665:
-/*!*********************************************!*\
-  !*** ../node_modules/wix-ui-core/slider.js ***!
-  \*********************************************/
+/***/ 646:
+/*!*************************************************!*\
+  !*** ../node_modules/wix-ui-core/pagination.js ***!
+  \*************************************************/
 /*! no static exports found */
 /*! all exports used */
 /*! ModuleConcatenation bailout: Module is not an ECMAScript module */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! ./dist/src/components/slider */ 666);
+module.exports = __webpack_require__(/*! ./dist/src/components/pagination */ 647);
 
 
 /***/ }),
 
-/***/ 666:
-/*!***********************************************************************!*\
-  !*** ../node_modules/wix-ui-core/dist/src/components/slider/index.js ***!
-  \***********************************************************************/
+/***/ 647:
+/*!***************************************************************************!*\
+  !*** ../node_modules/wix-ui-core/dist/src/components/pagination/index.js ***!
+  \***************************************************************************/
 /*! no static exports found */
 /*! all exports used */
 /*! ModuleConcatenation bailout: Module is not an ECMAScript module */
@@ -1532,16 +1747,16 @@ module.exports = __webpack_require__(/*! ./dist/src/components/slider */ 666);
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
-var Slider_1 = __webpack_require__(/*! ./Slider */ 667);
-exports.Slider = Slider_1.Slider;
+var Pagination_1 = __webpack_require__(/*! ./Pagination */ 351);
+exports.Pagination = Pagination_1.Pagination;
 //# sourceMappingURL=index.js.map
 
 /***/ }),
 
-/***/ 667:
-/*!************************************************************************!*\
-  !*** ../node_modules/wix-ui-core/dist/src/components/slider/Slider.js ***!
-  \************************************************************************/
+/***/ 648:
+/*!*******************************************************************************!*\
+  !*** ../node_modules/wix-ui-core/dist/src/components/pagination/PageStrip.js ***!
+  \*******************************************************************************/
 /*! no static exports found */
 /*! all exports used */
 /*! ModuleConcatenation bailout: Module is not an ECMAScript module */
@@ -1552,578 +1767,466 @@ exports.Slider = Slider_1.Slider;
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = __webpack_require__(/*! tslib */ 6);
 var React = __webpack_require__(/*! react */ 0);
-var Ticks_1 = __webpack_require__(/*! ./Ticks */ 668);
-var Thumb_1 = __webpack_require__(/*! ./Thumb */ 669);
-var Slider_st_css_1 = __webpack_require__(/*! ./Slider.st.css */ 357);
-var noop = __webpack_require__(/*! lodash/noop */ 670);
-var CONTINUOUS_STEP = 0.01;
-var Slider = /** @class */ (function (_super) {
-    tslib_1.__extends(Slider, _super);
-    function Slider() {
+var page_strip_layout_1 = __webpack_require__(/*! ./page-strip-layout */ 649);
+var Pagination_st_css_1 = __webpack_require__(/*! ./Pagination.st.css */ 352);
+var PageStrip = /** @class */ (function (_super) {
+    tslib_1.__extends(PageStrip, _super);
+    function PageStrip() {
         var _this = _super !== null && _super.apply(this, arguments) || this;
-        _this.state = {
-            dragging: false,
-            mouseDown: false,
-            thumbHover: false,
-            inKeyPress: false,
-        };
-        _this.setTrackNode = function (track) {
-            _this.track = track;
-        };
-        _this.handleBlur = function () {
-            _this.setState({ inKeyPress: false });
-            _this.props.onBlur();
-        };
-        _this.handleMouseDown = function () {
-            _this.setState({ mouseDown: true });
-        };
-        _this.handleMouseUp = function () {
-            _this.setState({ mouseDown: false, dragging: false });
-        };
-        _this.handleKeyDown = function (ev) {
-            var _a = _this.props, min = _a.min, max = _a.max, value = _a.value, disabled = _a.disabled, readOnly = _a.readOnly, dir = _a.dir;
-            var ltr = dir === 'ltr';
-            if (disabled || readOnly) {
-                return;
-            }
-            var step = _this.getStepValue();
-            var nextValue;
-            switch (ev.key) {
-                case 'ArrowDown':
-                    nextValue = value - step;
-                    break;
-                case 'ArrowLeft':
-                    if (ltr) {
-                        nextValue = value - step;
-                    }
-                    else {
-                        nextValue = value + step;
-                    }
-                    break;
-                case 'ArrowUp':
-                    nextValue = value + step;
-                    break;
-                case 'ArrowRight':
-                    if (ltr) {
-                        nextValue = value + step;
-                    }
-                    else {
-                        nextValue = value - step;
-                    }
-                    break;
-                case 'PageDown':
-                    nextValue = value - 0.1 * (max - min);
-                    break;
-                case 'PageUp':
-                    nextValue = value + 0.1 * (max - min);
-                    break;
-                case 'Home':
-                    nextValue = min;
-                    break;
-                case 'End':
-                    nextValue = max;
-                    break;
-                default:
-                    nextValue = undefined;
-            }
-            if (typeof nextValue !== 'undefined') {
-                _this.handleChange(nextValue);
-                _this.setState({
-                    inKeyPress: true,
-                });
-                ev.preventDefault();
-            }
-        };
-        _this.handleMouseMove = function (ev) {
-            if (_this.state.mouseDown && !_this.state.dragging) {
-                _this.setState({ dragging: true });
-            }
-            if (_this.state.dragging) {
-                _this.moveThumbByMouse(ev);
-            }
-        };
-        _this.handleThumbEnter = function () {
-            _this.setState({ thumbHover: true });
-        };
-        _this.handleThumbLeave = function () {
-            _this.setState({ thumbHover: false });
-        };
-        _this.moveThumbByMouse = function (ev) {
-            if (ev.touches) {
-                ev.preventDefault();
-                ev = ev.touches[0];
-            }
-            var _a = _this.props, min = _a.min, max = _a.max, disabled = _a.disabled, readOnly = _a.readOnly, dir = _a.dir;
-            var rtl = _this.isRtl();
-            if (disabled || readOnly) {
-                return;
-            }
-            var isVertical = _this.isVertical();
-            var step = _this.getStepValue();
-            var thumbSize = _this.getThumbSizeMainAxis();
-            var totalSteps = Math.ceil((max - min) / step);
-            var rect = _this.track.getBoundingClientRect();
-            var value, pxStep, sliderPos;
-            if (isVertical) {
-                sliderPos = rect.bottom - (ev.clientY + thumbSize / 2);
-                pxStep = (rect.height - thumbSize) / totalSteps;
-            }
-            else {
-                if (rtl) {
-                    sliderPos = rect.left + rect.width - thumbSize / 2 - ev.clientX;
-                }
-                else {
-                    sliderPos = ev.clientX - (rect.left + thumbSize / 2);
-                }
-                pxStep = (rect.width - thumbSize) / totalSteps;
-            }
-            value = min + step * Math.round(sliderPos / pxStep);
-            _this.handleChange(value);
-        };
+        _this.responsiveLayoutIsFresh = false;
+        _this.unmounted = false;
+        _this.state = { responsiveLayout: null };
         return _this;
     }
-    Slider.prototype.componentDidMount = function () {
-        document.addEventListener('mouseup', this.handleMouseUp);
-        document.addEventListener('mousemove', this.handleMouseMove);
-        document.addEventListener('touchend', this.handleMouseUp);
-        document.addEventListener('touchmove', this.handleMouseMove, {
-            passive: false,
+    PageStrip.prototype.componentDidMount = function () {
+        var _this = this;
+        if (this.props.updateResponsiveLayout) {
+            // We can't do this in componentWillMount because the caller might need to access DOM here,
+            // and SSR wouldn't work.
+            this.props.updateResponsiveLayout(function () {
+                _this.responsiveLayoutIsFresh = false;
+                // Even though we register a noop callback for `this.props.updateResponsiveLayout`
+                // in `componentWillUnmount`, we cannot guarantee that the user will not hold onto
+                // the old callback and invoke it after unmount, which is the reason for checking
+                // `this.unmounted`.
+                if (!_this.unmounted) {
+                    _this.updateLayoutIfNeeded();
+                }
+            });
+        }
+        else {
+            this.updateLayoutIfNeeded();
+        }
+    };
+    PageStrip.prototype.componentWillReceiveProps = function () {
+        this.responsiveLayoutIsFresh = false;
+    };
+    PageStrip.prototype.componentDidUpdate = function () {
+        if (!this.props.updateResponsiveLayout) {
+            this.updateLayoutIfNeeded();
+        }
+        this.forceRepaintInMsEdge();
+    };
+    PageStrip.prototype.componentWillUnmount = function () {
+        this.unmounted = true;
+        if (this.props.updateResponsiveLayout) {
+            this.props.updateResponsiveLayout(function () { return null; });
+        }
+    };
+    PageStrip.prototype.render = function () {
+        var _this = this;
+        return (React.createElement("div", { ref: function (el) { return (_this.rootNode = el); }, "data-hook": "page-strip", id: this.props.id ? this.props.id + 'pageStrip' : null, className: Pagination_st_css_1.default.pageStrip, "data-aid": "qa-page-strip" },
+            React.createElement("div", { className: Pagination_st_css_1.default.pageStripInner }, this.renderLayout(this.getLayout(), false)),
+            this.isResponsive() && (React.createElement("div", { className: Pagination_st_css_1.default.pageStripInner + ' ' + Pagination_st_css_1.default.pageStripTemplate }, this.renderLayout(page_strip_layout_1.createResponsiveLayoutTemplate(this.props), true)))));
+    };
+    PageStrip.prototype.forceRepaintInMsEdge = function () {
+        // MS Edge has a glitch that makes page numbers invisible when switching to the preview
+        // mode in Santa editor. As a workaround we need to force text re-rendering.
+        // Changing font-variant to small-caps should do the trick without actually affecting
+        // the appearance of digits.
+        var inlineStyle = this.rootNode.style;
+        inlineStyle.fontVariant = inlineStyle.fontVariant ? '' : 'small-caps';
+    };
+    // We can't use page numbers as keys, because we might need to render the same page twice
+    // for responsive layout. We also can't use index as a key, because React might reuse the
+    // node for another page, and keep keyboard focus on it, which we don't want.
+    PageStrip.prototype.renderLayout = function (layout, isDummy) {
+        var _this = this;
+        var _a = this.props, currentPage = _a.currentPage, pageUrl = _a.pageUrl, disabled = _a.disabled;
+        return layout.map(function (pageNumber, index) {
+            if (!pageNumber) {
+                return (React.createElement("span", { key: index, className: Pagination_st_css_1.default.gap }, _this.props.gapLabel));
+            }
+            if (pageNumber === currentPage) {
+                return (React.createElement("span", { key: pageNumber + '-' + index, "data-hook": "page-" + pageNumber + " current-page", "aria-label": "Page " + pageNumber, className: Pagination_st_css_1.default.currentPage }, pageNumber));
+            }
+            if (isDummy) {
+                return (React.createElement("a", { key: pageNumber + '-' + index, className: Pagination_st_css_1.default.pageButton }, pageNumber));
+            }
+            return (React.createElement("a", { key: pageNumber + '-' + index, "data-hook": "page-" + pageNumber, "aria-label": "Page " + pageNumber, className: Pagination_st_css_1.default.pageButton, tabIndex: disabled || pageUrl ? null : 0, onClick: disabled ? null : function (e) { return _this.props.onPageClick(e, pageNumber); }, onKeyDown: disabled ? null : function (e) { return _this.props.onPageKeyDown(e, pageNumber); }, href: !disabled && pageUrl ? pageUrl(pageNumber) : null }, pageNumber));
         });
     };
-    Slider.prototype.componentWillUnmount = function () {
-        document.removeEventListener('mouseup', this.handleMouseUp);
-        document.removeEventListener('mousemove', this.handleMouseMove);
-        document.removeEventListener('touchend', this.handleMouseUp);
-        document.removeEventListener('touchmove', this.handleMouseMove);
+    PageStrip.prototype.isResponsive = function () {
+        return (this.props.responsive &&
+            this.props.totalPages > 0 &&
+            this.props.maxPagesToShow > 1);
     };
-    Slider.prototype.focus = function () {
-        this.root.focus();
-        this.props.onFocus();
-    };
-    Slider.prototype.blur = function () {
-        this.root.blur();
-        this.props.onBlur();
-    };
-    Slider.prototype.getStartPos = function () {
-        return this.props.dir === 'rtl' ? 'right' : 'left';
-    };
-    Slider.prototype.calcDiscreteStepValue = function (min, max, step, stepType) {
-        if (stepType === 'count') {
-            return (max - min) / step;
+    PageStrip.prototype.getLayout = function () {
+        if (!this.isResponsive()) {
+            return page_strip_layout_1.createStaticLayout(this.props);
         }
-        return step;
-    };
-    Slider.prototype.getStepValue = function () {
-        var _a = this.props, min = _a.min, max = _a.max, step = _a.step, stepType = _a.stepType;
-        if (step > 0) {
-            return this.calcDiscreteStepValue(min, max, step, stepType);
+        if (this.state.responsiveLayout) {
+            return this.state.responsiveLayout;
         }
-        return CONTINUOUS_STEP;
+        return page_strip_layout_1.createStaticLayout({
+            totalPages: this.props.totalPages,
+            currentPage: this.props.currentPage,
+            showFirstPage: this.props.showFirstPage,
+            showLastPage: this.props.showLastPage,
+            // This is pretty arbitrary. 5 is the minimum space required to show the first, current, and last page.
+            maxPagesToShow: 5,
+        });
     };
-    Slider.prototype.isShallowEqual = function (v, o) {
-        for (var key in v) {
-            if (!(key in o) || v[key] !== o[key]) {
-                return false;
-            }
+    PageStrip.prototype.updateLayoutIfNeeded = function () {
+        if (!this.isResponsive() || this.responsiveLayoutIsFresh) {
+            return;
         }
-        for (var key in o) {
-            if (!(key in v) || v[key] !== o[key]) {
-                return false;
-            }
-        }
-        return true;
+        this.responsiveLayoutIsFresh = true;
+        this.setState({
+            responsiveLayout: page_strip_layout_1.createResponsiveLayout({
+                container: this.rootNode.children[1],
+                totalPages: this.props.totalPages,
+                currentPage: this.props.currentPage,
+                maxPagesToShow: this.props.maxPagesToShow,
+                showFirstPage: this.props.showFirstPage,
+                showLastPage: this.props.showLastPage,
+            }),
+        });
     };
-    Slider.prototype.getSliderSize = function () {
-        var _a = this.props.style, width = _a.width, height = _a.height;
-        var isVertical = this.isVertical();
-        var val = isVertical ? width : height;
-        return Math.min(val, Math.min(width, height));
-    };
-    Slider.prototype.getSliderLength = function () {
-        return this.isVertical() ? this.props.style.height : this.props.style.width;
-    };
-    Slider.prototype.getThumbSize = function () {
-        var size = Thumb_1.getThumbSize(this.props.thumbShape, this.getSliderSize(), this.isVertical());
-        var offsets = this.getInnerOffsets();
-        var offset = offsets.offsetHeight || offsets.offsetWidth || 0;
-        return {
-            width: size.width - offset,
-            height: size.height - offset,
-        };
-    };
-    Slider.prototype.getThumbSizeMainAxis = function () {
-        var size = this.getThumbSize();
-        return this.isVertical() ? size.height : size.width;
-    };
-    Slider.prototype.getThumbSizeCrossAxis = function () {
-        var size = this.getThumbSize();
-        return this.isVertical() ? size.width : size.height;
-    };
-    Slider.prototype.handleChange = function (value) {
-        value = this.floorValue(this.clamp(value, this.props.min, this.props.max), 2);
-        if (value !== this.props.value) {
-            this.props.onChange(value);
-        }
-    };
-    Slider.prototype.clamp = function (val, min, max) {
-        return Math.min(Math.max(val, min), max);
-    };
-    Slider.prototype.isRtl = function () {
-        return this.props.dir === 'rtl';
-    };
-    Slider.prototype.isVertical = function () {
-        return this.props.orientation === 'vertical';
-    };
-    Slider.prototype.isContinuous = function () {
-        return !this.props.step;
-    };
-    Slider.prototype.shouldShowTooltip = function () {
-        switch (this.props.tooltipVisibility) {
-            case 'always':
-                return true;
-            case 'none':
-                return false;
-            default:
-            case 'hover':
-                return (this.state.dragging || this.state.thumbHover || this.state.inKeyPress);
-        }
-    };
-    Slider.prototype.calcThumbProgressPosition = function () {
-        var thumbSize = this.getThumbSizeMainAxis();
-        var _a = this.props, value = _a.value, min = _a.min, max = _a.max;
-        var pct = (value - min) / (max - min);
-        var clampedPct = this.clamp(pct, 0, 1);
-        return "calc(" + clampedPct + " *(100% - " + thumbSize + "px))";
-    };
-    Slider.prototype.calcTrackFillPosition = function () {
-        var thumbSize = this.getThumbSizeMainAxis();
-        var _a = this.props, value = _a.value, min = _a.min, max = _a.max;
-        var pct = (value - min) / (max - min);
-        var clampedPct = this.clamp(pct, 0, 1);
-        return "calc(" + clampedPct + " *(100% - " + thumbSize + "px) + " + thumbSize + "px - 2px)";
-    };
-    Slider.prototype.calcThumbCrossPosition = function () {
-        var thumbSize = this.getThumbSizeCrossAxis();
-        return "calc(50% - " + thumbSize / 2 + "px)";
-    };
-    Slider.prototype.calcThumbPosition = function () {
-        var _a;
-        var progressVal = this.calcThumbProgressPosition();
-        var crossVal = this.calcThumbCrossPosition();
-        if (this.isVertical()) {
-            return { bottom: progressVal, left: 0 };
-        }
-        return _a = {}, _a[this.getStartPos()] = progressVal, _a.top = 0, _a;
-    };
-    Slider.prototype.floorValue = function (value, precision) {
-        if (precision === void 0) { precision = 1; }
-        var clampedValue = Math.floor(Math.pow(10, precision) * value) / Math.pow(10, precision);
-        return clampedValue;
-    };
-    Slider.prototype.renderTooltip = function () {
-        var _a;
-        if (!this.shouldShowTooltip()) {
-            return null;
-        }
-        var tooltipPosition = this.props.tooltipPosition;
-        var positionClassname = tooltipPosition + 'Position';
-        var clampedValue = this.floorValue(this.props.value);
-        return (React.createElement("div", tslib_1.__assign({ "data-hook": "tooltip" }, Slider_st_css_1.default('tooltip', (_a = {}, _a[positionClassname] = true, _a))),
-            this.props.tooltipPrefix,
-            clampedValue,
-            this.props.tooltipSuffix));
-    };
-    Slider.prototype.ticksShown = function () {
-        return !this.isContinuous() && this.props.tickMarksShape !== 'none';
-    };
-    Slider.prototype.getInnerOffsets = function () {
-        var showTicks = this.ticksShown();
-        if (!showTicks) {
-            return {};
-        }
-        var isHorizontal = !this.isVertical();
-        var tickSize = this.props.tickMarksShape === 'line' ? 10 : 3;
-        var tickMarksPos = this.props.tickMarksPosition;
-        var tickMarksGap = 12;
-        var offsetWidth, offsetHeight, offsetLeft, offsetTop;
-        if (tickMarksPos === 'normal') {
-            offsetHeight = tickSize + tickMarksGap;
-        }
-        else if (tickMarksPos === 'across') {
-            offsetTop = tickSize + tickMarksGap;
-            offsetHeight = tickSize + tickMarksGap;
-        }
-        if (isHorizontal) {
-            return { offsetHeight: offsetHeight, offsetTop: offsetTop };
-        }
-        return { offsetWidth: offsetHeight, offsetLeft: offsetTop };
-    };
-    Slider.prototype.getInnerDims = function () {
-        var offsets = this.getInnerOffsets();
-        var style = {};
-        if (offsets.offsetTop) {
-            style.top = offsets.offsetTop;
-        }
-        if (offsets.offsetLeft) {
-            style.left = offsets.offsetLeft;
-        }
-        if (offsets.offsetHeight) {
-            style.height = "calc(100% - " + offsets.offsetHeight + "px)";
-        }
-        if (offsets.offsetWidth) {
-            style.width = "calc(100% - " + offsets.offsetWidth + "px)";
-        }
-        return style;
-    };
-    Slider.prototype.render = function () {
-        var _this = this;
-        var _a = this.props, value = _a.value, min = _a.min, max = _a.max, trackSize = _a.trackSize, disabled = _a.disabled, dir = _a.dir, onFocus = _a.onFocus, tickMarksPosition = _a.tickMarksPosition, tickMarksShape = _a.tickMarksShape, thumbShape = _a.thumbShape, orientation = _a.orientation, style = _a.style;
-        var vertical = this.isVertical();
-        var thumbSize = this.getThumbSize();
-        var crossThumbSize = this.getThumbSizeCrossAxis();
-        var mainThumbSize = this.getThumbSizeMainAxis();
-        var showTicks = this.ticksShown();
-        var step = this.getStepValue();
-        var thumbPosition = this.calcThumbPosition();
-        var trackStyle = vertical
-            ? { width: trackSize + "%" }
-            : { height: trackSize + "%" };
-        var trackFillPosition = vertical
-            ? {
-                bottom: 0,
-                height: this.calcTrackFillPosition(),
-            }
-            : {
-                width: this.calcTrackFillPosition(),
-            };
-        return (React.createElement("div", tslib_1.__assign({}, Slider_st_css_1.default('root', {
-            orientation: vertical ? 'vertical' : 'horizontal',
-            dir: dir,
-            tickMarksPosition: tickMarksPosition,
-            tickMarksShape: tickMarksShape,
-            disabled: disabled,
-        }, this.props), { onMouseDown: this.handleMouseDown, onTouchStart: this.handleMouseDown, onKeyDown: this.handleKeyDown, onFocus: onFocus, onBlur: this.handleBlur, "data-value": value, "data-min": min, "data-max": max, "data-orientation": orientation, "data-dir": dir, tabIndex: 0, style: style, ref: function (root) { return (_this.root = root); }, role: "slider", "aria-valuemin": min, "aria-valuemax": max, "aria-valuenow": value }),
-            React.createElement("div", { className: Slider_st_css_1.default.inner, style: this.getInnerDims() },
-                React.createElement("div", { "data-hook": "track", ref: this.setTrackNode, className: Slider_st_css_1.default.track, onClick: this.moveThumbByMouse, style: trackStyle },
-                    React.createElement("div", { className: Slider_st_css_1.default.trackFill, style: trackFillPosition })),
-                React.createElement(Thumb_1.Thumb, { shape: thumbShape, thumbPosition: thumbPosition, thumbSize: thumbSize, onMouseEnter: this.handleThumbEnter, onMouseLeave: this.handleThumbLeave }, this.renderTooltip())),
-            showTicks && (React.createElement(Ticks_1.Ticks, { pStyle: Slider_st_css_1.default, step: step, min: min, max: max, thumbSize: mainThumbSize, vertical: vertical, trackSize: vertical
-                    ? this.props.style.height - mainThumbSize
-                    : this.props.style.width - crossThumbSize, tickMarksShape: tickMarksShape, onTickClick: this.moveThumbByMouse }))));
-    };
-    Slider.displayName = 'Slider';
-    Slider.defaultProps = {
-        min: 0,
-        max: 10,
-        value: 5,
-        stepType: 'value',
-        thumbShape: 'circle',
-        orientation: 'horizontal',
-        disabled: false,
-        readOnly: false,
-        tooltipVisibility: 'hover',
-        tooltipPosition: 'normal',
-        tooltipPrefix: '',
-        tooltipSuffix: '',
-        tickMarksPosition: 'normal',
-        tickMarksShape: 'line',
-        dir: 'ltr',
-        onFocus: noop,
-        onBlur: noop,
-        style: {
-            width: 0,
-            height: 0,
-        },
-    };
-    return Slider;
-}(React.PureComponent));
-exports.Slider = Slider;
-//# sourceMappingURL=Slider.js.map
-
-/***/ }),
-
-/***/ 668:
-/*!***********************************************************************!*\
-  !*** ../node_modules/wix-ui-core/dist/src/components/slider/Ticks.js ***!
-  \***********************************************************************/
-/*! no static exports found */
-/*! all exports used */
-/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-Object.defineProperty(exports, "__esModule", { value: true });
-var tslib_1 = __webpack_require__(/*! tslib */ 6);
-var React = __webpack_require__(/*! react */ 0);
-var Ticks = /** @class */ (function (_super) {
-    tslib_1.__extends(Ticks, _super);
-    function Ticks() {
-        return _super !== null && _super.apply(this, arguments) || this;
-    }
-    Ticks.prototype.calcMaximumTickDensity = function () {
-        if (this.props.tickMarksShape === 'line') {
-            return 1 / 8;
-        }
-        return 1 / 16;
-    };
-    Ticks.prototype.calcStep = function () {
-        var _a = this.props, step = _a.step, min = _a.min, max = _a.max, trackSize = _a.trackSize;
-        var totalTickCount = (max - min) / Number(step);
-        var density = Math.min(totalTickCount / trackSize, this.calcMaximumTickDensity());
-        var adjustedStep = (max - min) / (trackSize * density);
-        return adjustedStep;
-    };
-    Ticks.prototype.renderTick = function (i, min, max, vertical, thumbSize, pStyle) {
-        var tickMarksShape = this.props.tickMarksShape;
-        var pct = (i - min) / (max - min);
-        var val = "calc(" + pct + " * calc(100% - " + thumbSize + "px) + " + thumbSize /
-            2 + "px)";
-        return (React.createElement("div", tslib_1.__assign({}, pStyle('tick', { tickMarksShape: tickMarksShape }), { key: i, "data-hook": "tick", onClick: this.props.onTickClick, style: vertical ? { bottom: val } : { left: val } })));
-    };
-    Ticks.prototype.render = function () {
-        var _a = this.props, min = _a.min, max = _a.max, thumbSize = _a.thumbSize, vertical = _a.vertical, trackSize = _a.trackSize, pStyle = _a.pStyle;
-        if (!trackSize) {
-            return null;
-        }
-        var step = this.calcStep();
-        var ticks = [];
-        for (var i = min; i < max; i += step) {
-            ticks.push(this.renderTick(i, min, max, vertical, thumbSize, pStyle));
-        }
-        ticks.push(this.renderTick(max, min, max, vertical, thumbSize, pStyle));
-        return React.createElement("div", { "data-hook": "ticks-wrapper" }, ticks);
-    };
-    return Ticks;
-}(React.PureComponent));
-exports.Ticks = Ticks;
-//# sourceMappingURL=Ticks.js.map
-
-/***/ }),
-
-/***/ 669:
-/*!***********************************************************************!*\
-  !*** ../node_modules/wix-ui-core/dist/src/components/slider/Thumb.js ***!
-  \***********************************************************************/
-/*! no static exports found */
-/*! all exports used */
-/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-Object.defineProperty(exports, "__esModule", { value: true });
-var tslib_1 = __webpack_require__(/*! tslib */ 6);
-var React = __webpack_require__(/*! react */ 0);
-var Slider_st_css_1 = __webpack_require__(/*! ./Slider.st.css */ 357);
-var Thumb = /** @class */ (function (_super) {
-    tslib_1.__extends(Thumb, _super);
-    function Thumb() {
-        return _super !== null && _super.apply(this, arguments) || this;
-    }
-    Thumb.prototype.render = function () {
-        var _a = this.props, shape = _a.shape, thumbSize = _a.thumbSize;
-        var ThumbShape = thumbShapes[shape];
-        return (React.createElement("div", { "data-hook": "thumb", className: Slider_st_css_1.default.thumb, onMouseEnter: this.props.onMouseEnter, onMouseLeave: this.props.onMouseLeave, style: tslib_1.__assign({}, this.props.thumbPosition, thumbSize) },
-            React.createElement(ThumbShape.component, null),
-            this.props.children));
-    };
-    return Thumb;
+    return PageStrip;
 }(React.Component));
-exports.Thumb = Thumb;
-function getThumbSize(shape) {
-    var rest = [];
-    for (var _i = 1; _i < arguments.length; _i++) {
-        rest[_i - 1] = arguments[_i];
-    }
-    var _a;
-    return (_a = thumbShapes[shape]).getThumbSize.apply(_a, rest);
-}
-exports.getThumbSize = getThumbSize;
-var CircleThumb = /** @class */ (function (_super) {
-    tslib_1.__extends(CircleThumb, _super);
-    function CircleThumb() {
-        return _super !== null && _super.apply(this, arguments) || this;
-    }
-    CircleThumb.prototype.render = function () {
-        return (React.createElement("div", tslib_1.__assign({}, Slider_st_css_1.default('thumbShape', { shapeType: 'circle' }), { style: { borderRadius: '50%' } })));
-    };
-    return CircleThumb;
-}(React.PureComponent));
-var RectangleThumb = /** @class */ (function (_super) {
-    tslib_1.__extends(RectangleThumb, _super);
-    function RectangleThumb() {
-        return _super !== null && _super.apply(this, arguments) || this;
-    }
-    RectangleThumb.prototype.render = function () {
-        return React.createElement("div", tslib_1.__assign({}, Slider_st_css_1.default('thumbShape', { shapeType: 'rectangle' })));
-    };
-    return RectangleThumb;
-}(React.PureComponent));
-var SquareThumb = /** @class */ (function (_super) {
-    tslib_1.__extends(SquareThumb, _super);
-    function SquareThumb() {
-        return _super !== null && _super.apply(this, arguments) || this;
-    }
-    SquareThumb.prototype.render = function () {
-        return React.createElement("div", tslib_1.__assign({}, Slider_st_css_1.default('thumbShape', { shapeType: 'square' })));
-    };
-    return SquareThumb;
-}(React.PureComponent));
-var BarThumb = /** @class */ (function (_super) {
-    tslib_1.__extends(BarThumb, _super);
-    function BarThumb() {
-        return _super !== null && _super.apply(this, arguments) || this;
-    }
-    BarThumb.prototype.render = function () {
-        return React.createElement("div", tslib_1.__assign({}, Slider_st_css_1.default('thumbShape', { shapeType: 'bar' })));
-    };
-    return BarThumb;
-}(React.PureComponent));
-var thumbShapes = {
-    circle: {
-        component: CircleThumb,
-        getThumbSize: function (sliderSize) { return ({ width: sliderSize, height: sliderSize }); },
-    },
-    rectangle: {
-        component: RectangleThumb,
-        getThumbSize: function (sliderSize, isVertical) {
-            var _a;
-            return (_a = {},
-                _a[isVertical ? 'height' : 'width'] = 1.5 * sliderSize,
-                _a[isVertical ? 'width' : 'height'] = sliderSize,
-                _a);
-        },
-    },
-    square: {
-        component: SquareThumb,
-        getThumbSize: function (sliderSize) { return ({ width: sliderSize, height: sliderSize }); },
-    },
-    bar: {
-        component: BarThumb,
-        getThumbSize: function (sliderSize, isVertical) {
-            var _a;
-            return (_a = {},
-                _a[isVertical ? 'height' : 'width'] = 0.5 * sliderSize,
-                _a[isVertical ? 'width' : 'height'] = sliderSize,
-                _a);
-        },
-    },
-};
-//# sourceMappingURL=Thumb.js.map
+exports.PageStrip = PageStrip;
+//# sourceMappingURL=PageStrip.js.map
 
 /***/ }),
 
-/***/ 670:
-/*!**************************************!*\
-  !*** ../node_modules/lodash/noop.js ***!
-  \**************************************/
+/***/ 649:
+/*!***************************************************************************************!*\
+  !*** ../node_modules/wix-ui-core/dist/src/components/pagination/page-strip-layout.js ***!
+  \***************************************************************************************/
 /*! no static exports found */
 /*! all exports used */
 /*! ModuleConcatenation bailout: Module is not an ECMAScript module */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! lodash */ 2).noop
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+function createStaticLayout(_a) {
+    var totalPages = _a.totalPages, currentPage = _a.currentPage, maxPagesToShow = _a.maxPagesToShow, showFirstPage = _a.showFirstPage, showLastPage = _a.showLastPage;
+    return createLayout({
+        totalPages: totalPages,
+        currentPage: currentPage,
+        lowerBound: 1,
+        upperBound: totalPages,
+        pageRangeCost: function (a, b) { return b - a + 1; },
+        showFirstPage: showFirstPage,
+        showLastPage: showLastPage,
+        rewindToFirstCost: 2,
+        rewindToLastCost: 2,
+        budget: maxPagesToShow,
+    });
+}
+exports.createStaticLayout = createStaticLayout;
+function rangeToPreRenderForResponsiveLayout(totalPages, currentPage, maxPagesToShow) {
+    return [
+        Math.max(currentPage - maxPagesToShow, 1),
+        Math.min(currentPage + maxPagesToShow, totalPages),
+    ];
+}
+function createResponsiveLayoutTemplate(_a) {
+    var totalPages = _a.totalPages, currentPage = _a.currentPage, maxPagesToShow = _a.maxPagesToShow;
+    var _b = rangeToPreRenderForResponsiveLayout(totalPages, currentPage, maxPagesToShow), lowerBound = _b[0], upperBound = _b[1];
+    return [1, 0].concat(closedRange(lowerBound, upperBound), [0, totalPages]);
+}
+exports.createResponsiveLayoutTemplate = createResponsiveLayoutTemplate;
+// Takes a container with children rendered using createResponsiveLayoutTemplate,
+// measures the children, and decides how many can be shown without overflowing the container.
+// For measurements to work correctly the pages must not have any dynamic spacing between them
+// such as justify-content: space-evenly, but they can have static spacing such as margins.
+// As long as we're using flexbox with centered pages we don't need to worry about the outer
+// margins of the first and last page, they will be trimmed by flexbox automatically.
+// maxPagesToShow is not really taken into account, it's used to derive the range of pages
+// that was pre-rendered by createResponsiveLayoutTemplate().
+function createResponsiveLayout(_a) {
+    var container = _a.container, totalPages = _a.totalPages, currentPage = _a.currentPage, maxPagesToShow = _a.maxPagesToShow, showFirstPage = _a.showFirstPage, showLastPage = _a.showLastPage;
+    var children = Array.from(container.children);
+    var pages = children.slice(2, -2);
+    var containerWidth = container.getBoundingClientRect().width;
+    var firstRect = children[0].getBoundingClientRect();
+    var lastRect = children[children.length - 1].getBoundingClientRect();
+    var lowerRect = pages[0].getBoundingClientRect();
+    var upperRect = pages[pages.length - 1].getBoundingClientRect();
+    var rewindToFirstCost = mergeBoundingRects(firstRect, lowerRect).width - lowerRect.width;
+    var rewindToLastCost = mergeBoundingRects(lastRect, upperRect).width - upperRect.width;
+    var _b = rangeToPreRenderForResponsiveLayout(totalPages, currentPage, maxPagesToShow), lowerBound = _b[0], upperBound = _b[1];
+    var pageRangeCost = function (a, b) {
+        var aRect = pages[a - lowerBound].getBoundingClientRect();
+        var bRect = pages[b - lowerBound].getBoundingClientRect();
+        return mergeBoundingRects(aRect, bRect).width;
+    };
+    return createLayout({
+        totalPages: totalPages,
+        currentPage: currentPage,
+        lowerBound: lowerBound,
+        upperBound: upperBound,
+        pageRangeCost: pageRangeCost,
+        showFirstPage: showFirstPage,
+        showLastPage: showLastPage,
+        rewindToFirstCost: rewindToFirstCost,
+        rewindToLastCost: rewindToLastCost,
+        budget: containerWidth,
+    });
+}
+exports.createResponsiveLayout = createResponsiveLayout;
+function createLayoutByExpandingPageRange(_a) {
+    var totalPages = _a.totalPages, low = _a.low, high = _a.high, lowerBound = _a.lowerBound, upperBound = _a.upperBound, pageRangeCost = _a.pageRangeCost, budget = _a.budget, showRewindToFirst = _a.showRewindToFirst, showRewindToLast = _a.showRewindToLast, rewindToFirstCost = _a.rewindToFirstCost, rewindToLastCost = _a.rewindToLastCost;
+    var safeLowerBound = showRewindToFirst
+        ? Math.max(lowerBound, 4)
+        : lowerBound;
+    var safeUpperBound = showRewindToLast
+        ? Math.min(upperBound, totalPages - 3)
+        : upperBound;
+    if (!isNondecreasing([
+        lowerBound,
+        safeLowerBound,
+        low,
+        high,
+        safeUpperBound,
+        upperBound,
+    ])) {
+        return null;
+    }
+    lowerBound = safeLowerBound;
+    upperBound = safeUpperBound;
+    budget -=
+        (showRewindToFirst ? rewindToFirstCost : 0) +
+            (showRewindToLast ? rewindToLastCost : 0);
+    var acceptableLow = 0;
+    var acceptableHigh = 0;
+    while (lowerBound <= low &&
+        high <= upperBound &&
+        pageRangeCost(low, high) <= budget) {
+        acceptableLow = low;
+        acceptableHigh = high;
+        if (low === lowerBound && high === upperBound) {
+            break;
+        }
+        low = Math.max(low - 1, lowerBound);
+        high = Math.min(high + 1, upperBound);
+    }
+    return acceptableLow && acceptableHigh
+        ? (showRewindToFirst ? [1, 0] : []).concat(closedRange(acceptableLow, acceptableHigh), (showRewindToLast ? [0, totalPages] : [])) : null;
+}
+function createLayout(_a) {
+    var totalPages = _a.totalPages, currentPage = _a.currentPage, lowerBound = _a.lowerBound, upperBound = _a.upperBound, pageRangeCost = _a.pageRangeCost, showFirstPage = _a.showFirstPage, showLastPage = _a.showLastPage, rewindToFirstCost = _a.rewindToFirstCost, rewindToLastCost = _a.rewindToLastCost, budget = _a.budget;
+    var prevOrLowerBound = Math.max(currentPage - 1, lowerBound);
+    var nextOrUpperBound = Math.min(currentPage + 1, upperBound);
+    var expand = function (low, high, showRewindToFirst, showRewindToLast) {
+        return createLayoutByExpandingPageRange({
+            totalPages: totalPages,
+            low: low,
+            high: high,
+            lowerBound: lowerBound,
+            upperBound: upperBound,
+            pageRangeCost: pageRangeCost,
+            budget: budget,
+            showRewindToFirst: showRewindToFirst,
+            showRewindToLast: showRewindToLast,
+            rewindToFirstCost: rewindToFirstCost,
+            rewindToLastCost: rewindToLastCost,
+        });
+    };
+    return (
+    // Try to show the entire range.
+    ((lowerBound === 1 || !showFirstPage) &&
+        (upperBound === totalPages || !showLastPage) &&
+        expand(lowerBound, upperBound, false, false)) ||
+        // Ellipsis only in the end. Show at least one page after the current.
+        (showLastPage &&
+            lowerBound === 1 &&
+            expand(lowerBound, nextOrUpperBound, false, true)) ||
+        // Ellipsis only in the beginning. Show at least one page before the current.
+        (showFirstPage &&
+            upperBound === totalPages &&
+            expand(prevOrLowerBound, upperBound, true, false)) ||
+        // Ellipses on both sides. Show at least one page before the current and one after.
+        (showFirstPage &&
+            showLastPage &&
+            expand(prevOrLowerBound, nextOrUpperBound, true, true)) ||
+        // Ellipsis only in the end. Don't try to include the next page.
+        (showLastPage &&
+            lowerBound === 1 &&
+            expand(lowerBound, currentPage, false, true)) ||
+        // Ellipsis only in the beginning. Don't try to include the previous page.
+        (showFirstPage &&
+            upperBound === totalPages &&
+            expand(currentPage, upperBound, true, false)) ||
+        // Ellipses on both sides. Don't try to include the previous and the next page.
+        (showFirstPage &&
+            showLastPage &&
+            expand(currentPage, currentPage, true, true)) ||
+        // Cut off both sides without adding ellipses.
+        expand(currentPage, currentPage, false, false) || [currentPage] // If there's not enough space even for the current page, still show it.
+    );
+}
+function closedRange(start, stop, step) {
+    if (step === void 0) { step = 1; }
+    var result = [];
+    for (var i = start; i <= stop; i += step) {
+        result.push(i);
+    }
+    return result;
+}
+function isNondecreasing(sequence) {
+    for (var i = 1; i < sequence.length; i++) {
+        if (sequence[i] < sequence[i - 1]) {
+            return false;
+        }
+    }
+    return true;
+}
+function mergeBoundingRects(a, b) {
+    var top = Math.min(a.top, b.top);
+    var right = Math.max(a.right, b.right);
+    var bottom = Math.max(a.bottom, b.bottom);
+    var left = Math.min(a.left, b.left);
+    var width = right - left;
+    var height = bottom - top;
+    return { top: top, right: right, bottom: bottom, left: left, width: width, height: height };
+}
+//# sourceMappingURL=page-strip-layout.js.map
+
+/***/ }),
+
+/***/ 650:
+/*!************************************************************************************!*\
+  !*** ../node_modules/wix-ui-core/dist/src/components/pagination/root-min-width.js ***!
+  \************************************************************************************/
+/*! no static exports found */
+/*! all exports used */
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var Pagination_1 = __webpack_require__(/*! ./Pagination */ 351);
+exports.measureAndSetRootMinWidth = function (compNode, paginationMode, idPrefix) {
+    if (idPrefix === void 0) { idPrefix = ''; }
+    compNode.style.minWidth = '';
+    compNode.style.minHeight = '';
+    var getById = function (id) {
+        return compNode.querySelector("#" + Pagination_1.getId(idPrefix, id));
+    };
+    var getMinWidth = function (elmnt) {
+        return elmnt ? parseInt(window.getComputedStyle(elmnt).minWidth, 10) : 0;
+    };
+    var getWidthWithMargins = function (element) {
+        if (!element) {
+            return 0;
+        }
+        var style = window.getComputedStyle(element);
+        return (parseInt(style.marginRight, 10) +
+            element.offsetWidth +
+            parseInt(style.marginLeft, 10));
+    };
+    var getHeightWithMargins = function (element) {
+        if (!element) {
+            return 0;
+        }
+        var style = window.getComputedStyle(element);
+        return (parseInt(style.marginBottom, 10) +
+            element.offsetHeight +
+            parseInt(style.marginTop, 10));
+    };
+    var navButtonsMinWidth = getWidthWithMargins(getById('navButtonNext')) +
+        getWidthWithMargins(getById('navButtonPrevious')) +
+        getWidthWithMargins(getById('navButtonFirst')) +
+        getWidthWithMargins(getById('navButtonLast'));
+    var selectionMinWidth = 0;
+    var minHeight = 0;
+    if (paginationMode === 'pages') {
+        // means we're in "pages" pagination mode
+        selectionMinWidth = getMinWidth(getById('pageStrip'));
+        minHeight = Math.max(getHeightWithMargins(getById('pageStrip')), getHeightWithMargins(getById('navButtonNext')));
+    }
+    else {
+        // means we're in "input" pagination mode
+        selectionMinWidth =
+            getWidthWithMargins(getById('totalPages')) +
+                getWidthWithMargins(getById('slash')) +
+                getWidthWithMargins(getById('pageInput'));
+        minHeight = Math.max(getHeightWithMargins(getById('pageInput')), getHeightWithMargins(getById('navButtonNext')));
+    }
+    compNode.style.minWidth = navButtonsMinWidth + selectionMinWidth + 'px';
+    compNode.style.minHeight = minHeight + 'px';
+};
+//# sourceMappingURL=root-min-width.js.map
+
+/***/ }),
+
+/***/ 651:
+/*!**************************************************!*\
+  !*** ./components/Pagination/paginationIcons.js ***!
+  \**************************************************/
+/*! no static exports found */
+/*! all exports used */
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.slash = exports.arrowNext = exports.arrowPrevious = exports.arrowLast = exports.arrowFirst = undefined;
+
+var _react = __webpack_require__(/*! react */ 0);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var arrowFirst = exports.arrowFirst = _react2.default.createElement(
+  "svg",
+  { version: "1.1", xmlns: "http://www.w3.org/2000/svg", x: "0px", y: "0px", viewBox: "0 0 200 200", enableBackground: "new 0 0 200 200", xmlSpace: "preserve" },
+  _react2.default.createElement(
+    "g",
+    null,
+    _react2.default.createElement("path", { d: "M94.606,32.523l-72.009,68.199l70.48,66.745l-5.518,5.837l-76.627-72.582l78.156-74.027L94.606,32.523z" }),
+    _react2.default.createElement("path", { d: "M107.059,100.723l70.48,66.745l-5.518,5.837l-76.627-72.582l78.156-74.027l5.518,5.828L107.059,100.723z" })
+  )
+);
+
+var arrowLast = exports.arrowLast = _react2.default.createElement(
+  "svg",
+  { version: "1.1", xmlns: "http://www.w3.org/2000/svg", x: "0px", y: "0px", viewBox: "0 0 200 200", enableBackground: "new 0 0 200 200", xmlSpace: "preserve" },
+  _react2.default.createElement(
+    "g",
+    null,
+    _react2.default.createElement("path", { d: "M112.442,26.696l76.627,72.582l-78.156,74.027l-5.518-5.828l72.009-68.199l-70.48-66.745L112.442,26.696z" }),
+    _react2.default.createElement("path", { d: "M27.979,26.696l76.627,72.582l-78.156,74.027l-5.518-5.828l72.009-68.199l-70.48-66.745L27.979,26.696z" })
+  )
+);
+
+var arrowPrevious = exports.arrowPrevious = _react2.default.createElement(
+  "svg",
+  { version: "1.1", xmlns: "http://www.w3.org/2000/svg", x: "0px", y: "0px", viewBox: "0 0 200 200", enableBackground: "new 0 0 200 200", xmlSpace: "preserve" },
+  _react2.default.createElement("path", { d: "M130.789,173.304l-76.627-72.582l78.156-74.027l5.518,5.828l-72.009,68.199l70.48,66.745L130.789,173.304z" })
+);
+
+var arrowNext = exports.arrowNext = _react2.default.createElement(
+  "svg",
+  { version: "1.1", xmlns: "http://www.w3.org/2000/svg", x: "0px", y: "0px", viewBox: "0 0 200 200", enableBackground: "new 0 0 200 200", xmlSpace: "preserve" },
+  _react2.default.createElement("path", { d: "M69.211,26.696l76.627,72.582l-78.156,74.027l-5.518-5.828l72.009-68.199l-70.48-66.745L69.211,26.696z" })
+);
+
+var slash = exports.slash = _react2.default.createElement(
+  "svg",
+  { xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 15 26", version: "1.1" },
+  _react2.default.createElement("defs", null),
+  _react2.default.createElement(
+    "g",
+    { stroke: "none", strokeWidth: "1", fill: "none", fillRule: "evenodd", strokeLinecap: "square" },
+    _react2.default.createElement(
+      "g",
+      null,
+      _react2.default.createElement("path", { d: "M13.5,4.5 L2,21.9807621" })
+    )
+  )
+);
 
 /***/ }),
 
@@ -2188,4 +2291,4 @@ module.exports = invariant;
 /***/ })
 
 }]);
-//# sourceMappingURL=wixui.Slider.chunk.js.map
+//# sourceMappingURL=wixui.Pagination.chunk.js.map

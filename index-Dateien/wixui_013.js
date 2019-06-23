@@ -1,4 +1,4 @@
-((typeof self !== 'undefined' ? self : this)["webpackJsonp_wix_ui_santa"] = (typeof self !== 'undefined' ? self : this)["webpackJsonp_wix_ui_santa"] || []).push([[39],{
+((typeof self !== 'undefined' ? self : this)["webpackJsonp_wix_ui_santa"] = (typeof self !== 'undefined' ? self : this)["webpackJsonp_wix_ui_santa"] || []).push([[53],{
 
 /***/ 12:
 /*!**********************************************!*\
@@ -964,70 +964,10 @@ module.exports = emptyObject;
 
 /***/ }),
 
-/***/ 21:
-/*!*************************************************!*\
-  !*** ../node_modules/webpack/buildin/global.js ***!
-  \*************************************************/
-/*! no static exports found */
-/*! all exports used */
-/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
-/***/ (function(module, exports) {
-
-var g;
-
-// This works in non-strict mode
-g = (function() {
-	return this;
-})();
-
-try {
-	// This works if eval is allowed (see CSP)
-	g = g || new Function("return this")();
-} catch (e) {
-	// This works if the window reference is available
-	if (typeof window === "object") g = window;
-}
-
-// g can still be undefined, but nothing to do about it...
-// We return undefined, instead of nothing here, so it's
-// easier to handle this case. if(!global) { ...}
-
-module.exports = g;
-
-
-/***/ }),
-
-/***/ 355:
-/*!*******************************************!*\
-  !*** ./components/Captcha/Captcha.st.css ***!
-  \*******************************************/
-/*! exports provided: default */
-/*! all exports used */
-/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
-/***/ (function(module, exports, __webpack_require__) {
-
-Object.defineProperty(exports, "__esModule", { value: true })
-
-exports.default = __webpack_require__.stylable.create(
-  "root",
-  "Captcha217700995",
-  {"root":"Captcha217700995--root"},
-  "",
-  7,
-  /*! ./components/Captcha/Captcha.st.css */ 355
-);
-
-exports.default.$skin = {"params":{},"paramsDefaults":{}};
-exports.default.$skin.$render = function render_css($id, $params, $functions) {
-  return "\n" + $id + ".Captcha3325868082--root{position: relative}\n" + $id + " .Captcha3325868082--loaderWrapper{}\n" + $id + " .Captcha3325868082--captcha{}\n" + $id + ".Captcha3325868082--root[data-captcha3325868082-loaded] .Captcha3325868082--captcha{display: block}\n" + $id + ".Captcha3325868082--root[data-captcha3325868082-loaded] .Captcha3325868082--loaderWrapper{display: none}\n" + $id + ".Captcha3325868082--root .Captcha3325868082--captcha{display: none}\n" + $id + ".Captcha3325868082--root .Captcha3325868082--requiredField{position: absolute;opacity: 0.0;bottom: 0;left: 0;-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none}\n" + $id + ".Captcha217700995--root{}\n" + $id + ".Captcha217700995--root .Captcha3325868082--captcha{transform: scale(0.77);transform-origin: top left}\n";
-};
-
-/***/ }),
-
-/***/ 438:
-/*!*************************************!*\
-  !*** ./components/Captcha/index.js ***!
-  \*************************************/
+/***/ 224:
+/*!******************************************!*\
+  !*** ./legacy/utils/namespaceClasses.js ***!
+  \******************************************/
 /*! no static exports found */
 /*! all exports used */
 /*! ModuleConcatenation bailout: Module is not an ECMAScript module */
@@ -1040,258 +980,83 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _Captcha = __webpack_require__(/*! ./Captcha */ 654);
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-var _CaptchaSt = __webpack_require__(/*! ./Captcha.st.css */ 355);
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _CaptchaSt2 = _interopRequireDefault(_CaptchaSt);
+exports.default = namespaceClasses;
+
+var _react = __webpack_require__(/*! react */ 0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _propTypes = __webpack_require__(/*! prop-types */ 1);
+
+var _hoistNonReactMethods = __webpack_require__(/*! hoist-non-react-methods */ 60);
+
+var _hoistNonReactMethods2 = _interopRequireDefault(_hoistNonReactMethods);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-exports.default = {
-  componentType: 'wixui.Captcha',
-  component: _Captcha.Captcha,
-  santaComponent: _Captcha.santaCaptcha,
-  skin: _CaptchaSt2.default.$skin
+function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var isStatelessComponent = function isStatelessComponent(Component) {
+  return !(Component.prototype && Component.prototype.render);
 };
+
+function namespaceClasses(Component, classes) {
+  var Namespaced = function (_React$Component) {
+    _inherits(Namespaced, _React$Component);
+
+    function Namespaced() {
+      _classCallCheck(this, Namespaced);
+
+      return _possibleConstructorReturn(this, (Namespaced.__proto__ || Object.getPrototypeOf(Namespaced)).apply(this, arguments));
+    }
+
+    _createClass(Namespaced, [{
+      key: 'render',
+      value: function render() {
+        var _this2 = this;
+
+        var _props = this.props,
+            styleId = _props.styleId,
+            rest = _objectWithoutProperties(_props, ['styleId']);
+
+        var withNamespace = {};
+        classes.forEach(function (cls) {
+          withNamespace[cls] = styleId + '_' + cls;
+        });
+        return isStatelessComponent(Component) ? _react2.default.createElement(Component, _extends({ classes: withNamespace }, rest)) : _react2.default.createElement(Component, _extends({ ref: function ref(_ref) {
+            return _this2.wrappedComponentRef = _ref;
+          }, classes: withNamespace }, rest));
+      }
+    }]);
+
+    return Namespaced;
+  }(_react2.default.Component);
+
+  Namespaced.propTypes = _extends({
+    styleId: _propTypes.string
+  }, Component.propTypes);
+
+  return isStatelessComponent(Component) ? Namespaced : (0, _hoistNonReactMethods2.default)(Namespaced, Component, { delegateTo: function delegateTo(c) {
+      return c.wrappedComponentRef;
+    }, hoistStatics: true });
+}
 
 /***/ }),
 
-/***/ 6:
-/*!******************************************!*\
-  !*** ../node_modules/tslib/tslib.es6.js ***!
-  \******************************************/
-/*! exports provided: __extends, __assign, __rest, __decorate, __param, __metadata, __awaiter, __generator, __exportStar, __values, __read, __spread, __spreadArrays, __await, __asyncGenerator, __asyncDelegator, __asyncValues, __makeTemplateObject, __importStar, __importDefault */
-/*! all exports used */
-/*! ModuleConcatenation bailout: Module is referenced from these modules with unsupported syntax: ../node_modules/@wix/search-box/dist/src/components/ClearButton/index.js (referenced with cjs require), ../node_modules/@wix/search-box/dist/src/components/QuickResultItem/QuickResultItem.js (referenced with cjs require), ../node_modules/@wix/search-box/dist/src/components/SearchBox/SearchBox.js (referenced with cjs require), ../node_modules/@wix/search-box/dist/src/components/SearchBox/index.js (referenced with cjs require), ../node_modules/@wix/search-box/dist/src/components/SuggestionItem/SuggestionItem.js (referenced with cjs require), ../node_modules/@wix/search-box/dist/src/index.js (referenced with cjs require), ../node_modules/wix-ui-core/dist/src/clients/GoogleMaps/google2address/google2address.js (referenced with cjs require), ../node_modules/wix-ui-core/dist/src/components/address-input/AddressInput.js (referenced with cjs require), ../node_modules/wix-ui-core/dist/src/components/button-next/button-next.js (referenced with cjs require), ../node_modules/wix-ui-core/dist/src/components/captcha/Captcha.js (referenced with cjs require), ../node_modules/wix-ui-core/dist/src/components/deprecated/divider/Divider.js (referenced with cjs require), ../node_modules/wix-ui-core/dist/src/components/dropdown-content/DropdownContent.js (referenced with cjs require), ../node_modules/wix-ui-core/dist/src/components/dropdown-option/DropdownOption.js (referenced with cjs require), ../node_modules/wix-ui-core/dist/src/components/dropdown-option/OptionFactory.js (referenced with cjs require), ../node_modules/wix-ui-core/dist/src/components/dropdown/Dropdown.js (referenced with cjs require), ../node_modules/wix-ui-core/dist/src/components/file-picker-button/FilePickerButton.js (referenced with cjs require), ../node_modules/wix-ui-core/dist/src/components/input-with-options/InputWithOptions.js (referenced with cjs require), ../node_modules/wix-ui-core/dist/src/components/input/Input.js (referenced with cjs require), ../node_modules/wix-ui-core/dist/src/components/linear-progress-bar/LinearProgressBar.js (referenced with cjs require), ../node_modules/wix-ui-core/dist/src/components/pagination/PageStrip.js (referenced with cjs require), ../node_modules/wix-ui-core/dist/src/components/pagination/Pagination.js (referenced with cjs require), ../node_modules/wix-ui-core/dist/src/components/popover/Popover.js (referenced with cjs require), ../node_modules/wix-ui-core/dist/src/components/popover/index.js (referenced with cjs require), ../node_modules/wix-ui-core/dist/src/components/popover/modifiers.js (referenced with cjs require), ../node_modules/wix-ui-core/dist/src/components/radio-button/RadioButton.js (referenced with cjs require), ../node_modules/wix-ui-core/dist/src/components/slider/Slider.js (referenced with cjs require), ../node_modules/wix-ui-core/dist/src/components/slider/Thumb.js (referenced with cjs require), ../node_modules/wix-ui-core/dist/src/components/slider/Ticks.js (referenced with cjs require), ../node_modules/wix-ui-core/dist/src/components/time-picker/Tickers.js (referenced with cjs require), ../node_modules/wix-ui-core/dist/src/components/time-picker/TimePicker.js (referenced with cjs require), ../node_modules/wix-ui-core/dist/src/components/video/Video.js (referenced with cjs require), ../node_modules/wix-ui-core/dist/src/components/video/players/DailyMotion.js (referenced with cjs require), ../node_modules/wix-ui-core/dist/src/components/video/players/Facebook.js (referenced with cjs require), ../node_modules/wix-ui-core/dist/src/components/video/players/Playable.js (referenced with cjs require), ../node_modules/wix-ui-core/dist/src/components/video/players/Twitch.js (referenced with cjs require), ../node_modules/wix-ui-core/dist/src/components/video/players/Vimeo.js (referenced with cjs require), ../node_modules/wix-ui-core/dist/src/components/video/players/YouTube.js (referenced with cjs require), ../node_modules/wix-ui-core/dist/src/components/video/players/playerHOC.js (referenced with cjs require), ../node_modules/wix-ui-core/dist/src/hocs/Focusable/FocusableHOC.js (referenced with cjs require) */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__extends", function() { return __extends; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__assign", function() { return __assign; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__rest", function() { return __rest; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__decorate", function() { return __decorate; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__param", function() { return __param; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__metadata", function() { return __metadata; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__awaiter", function() { return __awaiter; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__generator", function() { return __generator; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__exportStar", function() { return __exportStar; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__values", function() { return __values; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__read", function() { return __read; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__spread", function() { return __spread; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__spreadArrays", function() { return __spreadArrays; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__await", function() { return __await; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__asyncGenerator", function() { return __asyncGenerator; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__asyncDelegator", function() { return __asyncDelegator; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__asyncValues", function() { return __asyncValues; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__makeTemplateObject", function() { return __makeTemplateObject; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__importStar", function() { return __importStar; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__importDefault", function() { return __importDefault; });
-/*! *****************************************************************************
-Copyright (c) Microsoft Corporation. All rights reserved.
-Licensed under the Apache License, Version 2.0 (the "License"); you may not use
-this file except in compliance with the License. You may obtain a copy of the
-License at http://www.apache.org/licenses/LICENSE-2.0
-
-THIS CODE IS PROVIDED ON AN *AS IS* BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
-KIND, EITHER EXPRESS OR IMPLIED, INCLUDING WITHOUT LIMITATION ANY IMPLIED
-WARRANTIES OR CONDITIONS OF TITLE, FITNESS FOR A PARTICULAR PURPOSE,
-MERCHANTABLITY OR NON-INFRINGEMENT.
-
-See the Apache Version 2.0 License for specific language governing permissions
-and limitations under the License.
-***************************************************************************** */
-/* global Reflect, Promise */
-
-var extendStatics = function(d, b) {
-    extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return extendStatics(d, b);
-};
-
-function __extends(d, b) {
-    extendStatics(d, b);
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-}
-
-var __assign = function() {
-    __assign = Object.assign || function __assign(t) {
-        for (var s, i = 1, n = arguments.length; i < n; i++) {
-            s = arguments[i];
-            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
-        }
-        return t;
-    }
-    return __assign.apply(this, arguments);
-}
-
-function __rest(s, e) {
-    var t = {};
-    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
-        t[p] = s[p];
-    if (s != null && typeof Object.getOwnPropertySymbols === "function")
-        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
-            if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))
-                t[p[i]] = s[p[i]];
-        }
-    return t;
-}
-
-function __decorate(decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-}
-
-function __param(paramIndex, decorator) {
-    return function (target, key) { decorator(target, key, paramIndex); }
-}
-
-function __metadata(metadataKey, metadataValue) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(metadataKey, metadataValue);
-}
-
-function __awaiter(thisArg, _arguments, P, generator) {
-    return new (P || (P = Promise))(function (resolve, reject) {
-        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
-        step((generator = generator.apply(thisArg, _arguments || [])).next());
-    });
-}
-
-function __generator(thisArg, body) {
-    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
-    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
-    function verb(n) { return function (v) { return step([n, v]); }; }
-    function step(op) {
-        if (f) throw new TypeError("Generator is already executing.");
-        while (_) try {
-            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
-            if (y = 0, t) op = [op[0] & 2, t.value];
-            switch (op[0]) {
-                case 0: case 1: t = op; break;
-                case 4: _.label++; return { value: op[1], done: false };
-                case 5: _.label++; y = op[1]; op = [0]; continue;
-                case 7: op = _.ops.pop(); _.trys.pop(); continue;
-                default:
-                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
-                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
-                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
-                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
-                    if (t[2]) _.ops.pop();
-                    _.trys.pop(); continue;
-            }
-            op = body.call(thisArg, _);
-        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
-        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
-    }
-}
-
-function __exportStar(m, exports) {
-    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
-}
-
-function __values(o) {
-    var m = typeof Symbol === "function" && o[Symbol.iterator], i = 0;
-    if (m) return m.call(o);
-    return {
-        next: function () {
-            if (o && i >= o.length) o = void 0;
-            return { value: o && o[i++], done: !o };
-        }
-    };
-}
-
-function __read(o, n) {
-    var m = typeof Symbol === "function" && o[Symbol.iterator];
-    if (!m) return o;
-    var i = m.call(o), r, ar = [], e;
-    try {
-        while ((n === void 0 || n-- > 0) && !(r = i.next()).done) ar.push(r.value);
-    }
-    catch (error) { e = { error: error }; }
-    finally {
-        try {
-            if (r && !r.done && (m = i["return"])) m.call(i);
-        }
-        finally { if (e) throw e.error; }
-    }
-    return ar;
-}
-
-function __spread() {
-    for (var ar = [], i = 0; i < arguments.length; i++)
-        ar = ar.concat(__read(arguments[i]));
-    return ar;
-}
-
-function __spreadArrays() {
-    for (var s = 0, i = 0, il = arguments.length; i < il; i++) s += arguments[i].length;
-    for (var r = Array(s), k = 0, i = 0; i < il; i++)
-        for (var a = arguments[i], j = 0, jl = a.length; j < jl; j++, k++)
-            r[k] = a[j];
-    return r;
-};
-
-function __await(v) {
-    return this instanceof __await ? (this.v = v, this) : new __await(v);
-}
-
-function __asyncGenerator(thisArg, _arguments, generator) {
-    if (!Symbol.asyncIterator) throw new TypeError("Symbol.asyncIterator is not defined.");
-    var g = generator.apply(thisArg, _arguments || []), i, q = [];
-    return i = {}, verb("next"), verb("throw"), verb("return"), i[Symbol.asyncIterator] = function () { return this; }, i;
-    function verb(n) { if (g[n]) i[n] = function (v) { return new Promise(function (a, b) { q.push([n, v, a, b]) > 1 || resume(n, v); }); }; }
-    function resume(n, v) { try { step(g[n](v)); } catch (e) { settle(q[0][3], e); } }
-    function step(r) { r.value instanceof __await ? Promise.resolve(r.value.v).then(fulfill, reject) : settle(q[0][2], r); }
-    function fulfill(value) { resume("next", value); }
-    function reject(value) { resume("throw", value); }
-    function settle(f, v) { if (f(v), q.shift(), q.length) resume(q[0][0], q[0][1]); }
-}
-
-function __asyncDelegator(o) {
-    var i, p;
-    return i = {}, verb("next"), verb("throw", function (e) { throw e; }), verb("return"), i[Symbol.iterator] = function () { return this; }, i;
-    function verb(n, f) { i[n] = o[n] ? function (v) { return (p = !p) ? { value: __await(o[n](v)), done: n === "return" } : f ? f(v) : v; } : f; }
-}
-
-function __asyncValues(o) {
-    if (!Symbol.asyncIterator) throw new TypeError("Symbol.asyncIterator is not defined.");
-    var m = o[Symbol.asyncIterator], i;
-    return m ? m.call(o) : (o = typeof __values === "function" ? __values(o) : o[Symbol.iterator](), i = {}, verb("next"), verb("throw"), verb("return"), i[Symbol.asyncIterator] = function () { return this; }, i);
-    function verb(n) { i[n] = o[n] && function (v) { return new Promise(function (resolve, reject) { v = o[n](v), settle(resolve, reject, v.done, v.value); }); }; }
-    function settle(resolve, reject, d, v) { Promise.resolve(v).then(function(v) { resolve({ value: v, done: d }); }, reject); }
-}
-
-function __makeTemplateObject(cooked, raw) {
-    if (Object.defineProperty) { Object.defineProperty(cooked, "raw", { value: raw }); } else { cooked.raw = raw; }
-    return cooked;
-};
-
-function __importStar(mod) {
-    if (mod && mod.__esModule) return mod;
-    var result = {};
-    if (mod != null) for (var k in mod) if (Object.hasOwnProperty.call(mod, k)) result[k] = mod[k];
-    result.default = mod;
-    return result;
-}
-
-function __importDefault(mod) {
-    return (mod && mod.__esModule) ? mod : { default: mod };
-}
-
-
-/***/ }),
-
-/***/ 654:
-/*!***************************************!*\
-  !*** ./components/Captcha/Captcha.js ***!
-  \***************************************/
+/***/ 286:
+/*!****************************************************************!*\
+  !*** ./legacy/components/CoreToggleSwitch/CoreToggleSwitch.js ***!
+  \****************************************************************/
 /*! no static exports found */
 /*! all exports used */
 /*! ModuleConcatenation bailout: Module is not an ECMAScript module */
@@ -1303,9 +1068,6 @@ function __importDefault(mod) {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.santaCaptcha = exports.Captcha = undefined;
-
-var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -1313,23 +1075,9 @@ var _react = __webpack_require__(/*! react */ 0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _createReactClass = __webpack_require__(/*! create-react-class */ 17);
-
-var _createReactClass2 = _interopRequireDefault(_createReactClass);
-
-var _lodash = __webpack_require__(/*! lodash */ 2);
-
-var _lodash2 = _interopRequireDefault(_lodash);
-
 var _propTypes = __webpack_require__(/*! prop-types */ 1);
 
-var _captcha = __webpack_require__(/*! wix-ui-core/captcha */ 655);
-
-var _CaptchaSt = __webpack_require__(/*! ./Captcha.st.css */ 355);
-
-var _CaptchaSt2 = _interopRequireDefault(_CaptchaSt);
-
-var _santaComponents = __webpack_require__(/*! santa-components */ 14);
+var _utils = __webpack_require__(/*! ./utils */ 287);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -1339,162 +1087,513 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var wixCaptchaPublicKey = '6LejwKAUAAAAACs5B-wV9ndjxrE49x3lGztPznl_';
-var defaultLangCode = _captcha.CaptchaLang.EnglishUS.toString();
+var _ = __webpack_require__(/*! lodash */ 2);
 
-var Captcha = exports.Captcha = function (_React$Component) {
-  _inherits(Captcha, _React$Component);
+/**
+ * Toggle Switch
+ */
 
-  function Captcha() {
-    _classCallCheck(this, Captcha);
+var ToggleSwitch = function (_React$PureComponent) {
+  _inherits(ToggleSwitch, _React$PureComponent);
 
-    return _possibleConstructorReturn(this, (Captcha.__proto__ || Object.getPrototypeOf(Captcha)).apply(this, arguments));
+  function ToggleSwitch() {
+    var _ref;
+
+    var _temp, _this, _ret;
+
+    _classCallCheck(this, ToggleSwitch);
+
+    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = ToggleSwitch.__proto__ || Object.getPrototypeOf(ToggleSwitch)).call.apply(_ref, [this].concat(args))), _this), _this.id = _this.props.id || _.uniqueId('ToggleSwitch'), _this.inputRef = null, _this.toggle = null, _temp), _possibleConstructorReturn(_this, _ret);
   }
 
-  _createClass(Captcha, [{
+  _createClass(ToggleSwitch, [{
+    key: 'handleChange',
+    value: function handleChange(e) {
+      if (!this.props.disabled) {
+        this.props.onChange(e);
+      }
+    }
+  }, {
+    key: 'focus',
+    value: function focus() {
+      this.inputRef.focus();
+    }
+  }, {
+    key: 'blur',
+    value: function blur() {
+      this.inputRef.blur();
+    }
+  }, {
     key: 'render',
     value: function render() {
       var _this2 = this;
 
       var _props = this.props,
-          required = _props.required,
-          onVerify = _props.onVerify,
-          onExpire = _props.onExpire,
-          onReset = _props.onReset,
-          captchaKey = _props.captchaKey,
-          size = _props.size,
-          lang = _props.lang,
-          theme = _props.theme,
-          captchaType = _props.captchaType;
+          checked = _props.checked,
+          disabled = _props.disabled,
+          classes = _props.classes,
+          styles = _props.styles,
+          previewState = _props.previewState,
+          dataHook = _props.dataHook,
+          dataClass = _props.dataClass;
+      var id = this.id;
 
 
-      var publicKey = captchaKey ? captchaKey : wixCaptchaPublicKey;
-      return _react2.default.createElement(_captcha.Captcha, _extends({
-        ref: function ref(node) {
-          return _this2.node = node;
+      return _react2.default.createElement(
+        'label',
+        {
+          className: classes.root,
+          style: styles.root,
+          ref: function ref(_ref2) {
+            return _this2.toggle = _ref2;
+          },
+          'data-preview': previewState,
+          onClick: function onClick() {
+            return _this2.inputRef && _this2.inputRef.focus();
+          },
+          'data-hook': dataHook,
+          'data-class': dataClass
         },
-        required: required,
-        sitekey: publicKey,
-        onVerify: onVerify,
-        onExpire: onExpire,
-        onReset: onReset,
-        size: size,
-        lang: Captcha.tranlateLangCodeToCaptchaLang(lang),
-        theme: theme,
-        captchaType: captchaType
-      }, (0, _CaptchaSt2.default)('root', {}, this.props)));
-    }
-  }], [{
-    key: 'tranlateLangCodeToCaptchaLang',
-    value: function tranlateLangCodeToCaptchaLang(siteLangCode) {
-      if (siteLangCode === _captcha.CaptchaLang.EnglishUS.toString()) {
-        return _captcha.CaptchaLang.EnglishUS;
-      }
-      var foundLang = Object.values(_captcha.CaptchaLang).includes(siteLangCode);
-      if (foundLang) {
-        return siteLangCode;
-      } else {
-        return _captcha.CaptchaLang.EnglishUS;
-      }
+        _react2.default.createElement('input', {
+          type: 'checkbox',
+          id: id,
+          checked: checked,
+          disabled: disabled,
+          onChange: function onChange(e) {
+            return _this2.handleChange(e);
+          },
+          ref: function ref(el) {
+            return _this2.inputRef = el;
+          }
+        }),
+        _react2.default.createElement('div', { className: classes.outerLabel, style: styles.outerLabel, 'aria-label': 'Toggle' }),
+        _react2.default.createElement(
+          'div',
+          { className: classes.innerLabel, style: styles.innerLabel },
+          _react2.default.createElement(
+            'svg',
+            { className: classes.toggleIcon, style: styles.toggleIcon, viewBox: (0, _utils.getViewBox)(checked) },
+            _react2.default.createElement('path', { d: (0, _utils.getPathDescription)(checked) })
+          )
+        )
+      );
     }
   }]);
 
-  return Captcha;
+  return ToggleSwitch;
+}(_react2.default.PureComponent);
+
+ToggleSwitch.propTypes = {
+  /** Is the toggleSwitch checked or not */
+  checked: _propTypes.bool,
+  /** Callback function when user changes the value of the component */
+  onChange: _propTypes.func.isRequired,
+  /** Is the toggleSwitch disabled or not */
+  disabled: _propTypes.bool,
+  /** Classes object */
+  classes: _propTypes.object.isRequired,
+  /** Component ID, will be generated automatically if not provided */
+  /** Styles object */
+  styles: _propTypes.object,
+  /** Component ID, will be generated automatically if not provided */
+  id: _propTypes.string,
+  /** Preview state, initiate hover, focus, etc. synthetically */
+  previewState: _propTypes.string,
+  dataHook: _propTypes.string,
+  dataClass: _propTypes.string
+};
+ToggleSwitch.defaultProps = {
+  checked: false,
+  styles: {},
+  previewState: ''
+};
+exports.default = ToggleSwitch;
+
+/***/ }),
+
+/***/ 287:
+/*!*****************************************************!*\
+  !*** ./legacy/components/CoreToggleSwitch/utils.js ***!
+  \*****************************************************/
+/*! no static exports found */
+/*! all exports used */
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+var activeViewBox = exports.activeViewBox = '0 0 41 32';
+var activePathD = exports.activePathD = 'M0.169 17.815c0.169 1.098 0.76 2.111 1.689 2.871l14.269 10.385c1.942 1.435 4.644 1.013 6.079-0.844l18.069-23.303c1.435-1.858 1.098-4.559-0.844-5.995s-4.644-1.098-6.164 0.844l-15.367 19.842-10.723-7.852c-1.942-1.435-4.644-1.013-6.164 0.844-0.76 0.929-1.013 2.111-0.844 3.208z';
+
+var inactiveViewBox = exports.inactiveViewBox = '0 0 143 32';
+var inactivePathD = exports.inactivePathD = 'M0 0h142.545v32h-142.545v-32z';
+
+var getViewBox = exports.getViewBox = function getViewBox(checked) {
+  return checked ? activeViewBox : inactiveViewBox;
+};
+
+var getPathDescription = exports.getPathDescription = function getPathDescription(checked) {
+  return checked ? activePathD : inactivePathD;
+};
+
+/***/ }),
+
+/***/ 411:
+/*!*************************************************!*\
+  !*** ./legacy/components/ToggleSwitch/index.js ***!
+  \*************************************************/
+/*! no static exports found */
+/*! all exports used */
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _ToggleSwitch = __webpack_require__(/*! ./ToggleSwitch */ 464);
+
+exports.default = {
+  componentType: 'wixui.ToggleSwitch',
+  component: _ToggleSwitch.ToggleSwitchWithClasses,
+  santaComponent: _ToggleSwitch.ToggleSwitchSanta,
+  skin: _ToggleSwitch.skinJson
+};
+
+/***/ }),
+
+/***/ 464:
+/*!********************************************************!*\
+  !*** ./legacy/components/ToggleSwitch/ToggleSwitch.js ***!
+  \********************************************************/
+/*! no static exports found */
+/*! all exports used */
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.ToggleSwitchSanta = exports.skinJson = exports.ToggleSwitchWithClasses = undefined;
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _createReactClass = __webpack_require__(/*! create-react-class */ 17);
+
+var _createReactClass2 = _interopRequireDefault(_createReactClass);
+
+var _react = __webpack_require__(/*! react */ 0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _lodash = __webpack_require__(/*! lodash */ 2);
+
+var _lodash2 = _interopRequireDefault(_lodash);
+
+var _CoreToggleSwitch = __webpack_require__(/*! ../CoreToggleSwitch/CoreToggleSwitch */ 286);
+
+var _CoreToggleSwitch2 = _interopRequireDefault(_CoreToggleSwitch);
+
+var _propTypes = __webpack_require__(/*! prop-types */ 1);
+
+var _theme = __webpack_require__(/*! ./theme */ 465);
+
+var skin = _interopRequireWildcard(_theme);
+
+var _santaComponents = __webpack_require__(/*! santa-components */ 14);
+
+var _namespaceClasses = __webpack_require__(/*! ../../utils/namespaceClasses */ 224);
+
+var _namespaceClasses2 = _interopRequireDefault(_namespaceClasses);
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+function handleClick(e, onClick) {
+  e.stopPropagation();
+  if (e.target.tagName === 'INPUT') {
+    onClick();
+  }
+}
+
+function concatPercent(value) {
+  return value !== 0 ? value + '%' : value;
+}
+
+function calcUncheckedLeftValue(pKnobSize, pTrackHeight, knobWidth, isRtl) {
+  if (isRtl) {
+    return pKnobSize > pTrackHeight ? 100 - knobWidth : 100 - knobWidth - (pTrackHeight - pKnobSize) / 4;
+  } else {
+    return pKnobSize > pTrackHeight ? 0 : (pTrackHeight - pKnobSize) / 4;
+  }
+}
+
+function calcCheckedLeftValue(pKnobSize, pTrackHeight, knobWidth, isRtl) {
+  if (isRtl) {
+    return pKnobSize > pTrackHeight ? 0 : (pTrackHeight - pKnobSize) / 4;
+  } else {
+    return pKnobSize > pTrackHeight ? 100 - knobWidth : 100 - knobWidth - (pTrackHeight - pKnobSize) / 4;
+  }
+}
+
+var ToggleSwitch = function (_React$Component) {
+  _inherits(ToggleSwitch, _React$Component);
+
+  function ToggleSwitch() {
+    _classCallCheck(this, ToggleSwitch);
+
+    return _possibleConstructorReturn(this, (ToggleSwitch.__proto__ || Object.getPrototypeOf(ToggleSwitch)).apply(this, arguments));
+  }
+
+  _createClass(ToggleSwitch, [{
+    key: 'focus',
+    value: function focus() {
+      this.coreRef.focus();
+      this.props.onFocus();
+    }
+  }, {
+    key: 'blur',
+    value: function blur() {
+      this.coreRef.blur();
+      this.props.onBlur();
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      var _this2 = this;
+
+      var _props = this.props,
+          classes = _props.classes,
+          checked = _props.checked,
+          id = _props.id,
+          trackHeight = _props.trackHeight,
+          knobSize = _props.knobSize,
+          isDisabled = _props.isDisabled,
+          displayKnobIcons = _props.displayKnobIcons,
+          onChange = _props.onChange,
+          _onClick = _props.onClick,
+          onFocus = _props.onFocus,
+          onBlur = _props.onBlur,
+          isRtl = _props.isRtl,
+          previewState = _props.previewState,
+          coreProps = _objectWithoutProperties(_props, ['classes', 'checked', 'id', 'trackHeight', 'knobSize', 'isDisabled', 'displayKnobIcons', 'onChange', 'onClick', 'onFocus', 'onBlur', 'isRtl', 'previewState']);
+
+      var pKnobSize = Number(knobSize);
+      var knobHeight = pKnobSize;
+      var knobWidth = pKnobSize / 2;
+      var pTrackHeight = Number(trackHeight);
+
+      var uncheckedLeft = calcUncheckedLeftValue(pKnobSize, pTrackHeight, knobWidth, isRtl);
+      var checkedLeft = calcCheckedLeftValue(pKnobSize, pTrackHeight, knobWidth, isRtl);
+
+      var parsedPreviewState = (previewState || '').replace('regular', '').trim().replace(/ /g, ':');
+      var isChecked = previewState ? parsedPreviewState.indexOf('checked') !== -1 : checked;
+
+      var styles = {
+        outerLabel: {
+          height: pTrackHeight + '%'
+        },
+        innerLabel: {
+          width: concatPercent(knobWidth),
+          height: concatPercent(knobHeight),
+          left: isChecked ? concatPercent(checkedLeft) : concatPercent(uncheckedLeft)
+        },
+        toggleIcon: {
+          display: displayKnobIcons ? 'block' : 'none'
+        }
+      };
+
+      var style = { display: 'inline-block', width: '100%', height: '100%' };
+      return _react2.default.createElement(
+        'div',
+        { style: style, onClick: function onClick(e) {
+            return handleClick(e, _onClick);
+          }, onFocus: onFocus, onBlur: onBlur },
+        _react2.default.createElement(_CoreToggleSwitch2.default, _extends({
+          classes: classes,
+          styles: styles,
+          disabled: isDisabled,
+          checked: isChecked,
+          id: id,
+          onChange: onChange,
+          previewState: parsedPreviewState,
+          ref: function ref(e) {
+            return _this2.coreRef = e;
+          }
+        }, coreProps))
+      );
+    }
+  }]);
+
+  return ToggleSwitch;
 }(_react2.default.Component);
 
-Captcha.displayName = 'Captcha';
-Captcha.propTypes = {
-  onVerify: _propTypes.func,
-  onExpire: _propTypes.func,
-  onReset: _propTypes.func,
-  captchaKey: _propTypes.string,
-  size: _propTypes.string,
-  captchaType: _propTypes.string,
-  theme: _propTypes.string,
-  lang: _propTypes.string,
-  componentViewMode: _propTypes.string,
-  required: _propTypes.bool,
-  style: _propTypes.object
+ToggleSwitch.displayName = 'ToggleSwitch';
+ToggleSwitch.propTypes = _extends({}, _CoreToggleSwitch2.default.propTypes, {
+  classes: _propTypes.object,
+  checked: _propTypes.bool,
+  id: _propTypes.string.isRequired,
+  trackHeight: _propTypes.number.isRequired,
+  knobSize: _propTypes.number.isRequired,
+  isDisabled: _propTypes.bool,
+  displayKnobIcons: _propTypes.bool,
+  onChange: _propTypes.func.isRequired,
+  onClick: _propTypes.func,
+  onFocus: _propTypes.func,
+  onBlur: _propTypes.func,
+  isRtl: _propTypes.bool,
+  previewState: _propTypes.string
+});
+ToggleSwitch.defaultProps = {
+  onClick: function onClick() {},
+  onFocus: function onFocus() {},
+  onBlur: function onBlur() {},
+  isRtl: false,
+  previewState: ''
 };
+
+var ToggleSwitchWithClasses = exports.ToggleSwitchWithClasses = (0, _namespaceClasses2.default)(ToggleSwitch, skin.classes);
 
 var skinBasedComp = _santaComponents.mixins.skinBasedComp,
     runTimeCompData = _santaComponents.mixins.runTimeCompData,
     inputFocusMixin = _santaComponents.mixins.inputFocusMixin;
+var skinJson = exports.skinJson = skin.json;
 
 var getComponentSkins = function getComponentSkins() {
-  return { 'wixui.skins.Captcha': _CaptchaSt2.default.$skin };
+  return skinJson;
 };
 
 /**
- * @class components.captcha
- * @extends {core.skinBasedComp}
- */
+     * @class components.toggleSwitch
+     * @extends {core.skinBasedComp}
+     */
 
-var santaCaptcha = exports.santaCaptcha = (0, _createReactClass2.default)({
-  displayName: 'Captcha',
+var ToggleSwitchSanta = exports.ToggleSwitchSanta = (0, _createReactClass2.default)({
+  displayName: 'ToggleSwitch',
 
   mixins: [skinBasedComp(getComponentSkins()), runTimeCompData, inputFocusMixin],
 
   propTypes: {
     structure: _santaComponents.santaTypesDefinitions.Component.structure.isRequired,
-    shouldResetComponent: _santaComponents.santaTypesDefinitions.RenderFlags.shouldResetComponent,
     compProp: _santaComponents.santaTypesDefinitions.Component.compProp.isRequired,
     compData: _santaComponents.santaTypesDefinitions.Component.compData.isRequired,
     componentViewMode: _santaComponents.santaTypesDefinitions.RenderFlags.componentViewMode,
+    componentPreviewState: _santaComponents.santaTypesDefinitions.RenderFlags.componentPreviewState,
     styleId: _santaComponents.santaTypesDefinitions.Component.styleId,
     style: _santaComponents.santaTypesDefinitions.Component.style,
     id: _santaComponents.santaTypesDefinitions.Component.id,
-    currentLanguage: _santaComponents.santaTypesDefinitions.RendererModel.multilingual.currentLanguage,
-    isMLEnabled: _santaComponents.santaTypesDefinitions.RendererModel.multilingual.isEnabled
+    isMobileView: _santaComponents.santaTypesDefinitions.isMobileView
   },
 
   statics: {
-    behaviors: {
-      resetCaptcha: { methodName: 'resetCaptcha' }
-    },
+    behaviors: _lodash2.default.assign({}, inputFocusMixin.INPUT_FOCUS_BEHAVIORS),
     getComponentSkins: getComponentSkins
   },
 
-  resetCaptcha: function resetCaptcha() {
-    this.captchaRef.node.resetCaptcha();
+  focus: function focus() {
+    this.toggleSwitchRef.focus();
   },
-
-
-  /**
-   * in case where we preview the site and go back to the editor we want to reset the captcha.
-   * @param prevProps
-   */
-  componentDidUpdate: function componentDidUpdate(prevProps) {
-    if (this.props.shouldResetComponent && prevProps.shouldResetComponent !== this.props.shouldResetComponent) {
-      this.resetCaptcha();
-    }
+  blur: function blur() {
+    this.toggleSwitchRef.blur();
+  },
+  getInitialState: function getInitialState() {
+    return {
+      checked: Boolean(this.props.compData.checked)
+    };
+  },
+  UNSAFE_componentWillReceiveProps: function UNSAFE_componentWillReceiveProps(nextProps) {
+    // eslint-disable-line
+    this.setState({
+      checked: Boolean(nextProps.compData.checked)
+    });
+  },
+  onChange: function onChange() {
+    var updatedData = {
+      checked: !this.state.checked
+    };
+    this.setState(updatedData);
+    this.updateData(updatedData);
+    this.handleAction('change', updatedData);
+  },
+  onFocus: function onFocus() {
+    this.handleAction('focus');
+  },
+  onBlur: function onBlur() {
+    this.handleAction('blur');
+  },
+  onClick: function onClick() {
+    this.handleAction('click');
   },
   getSkinProperties: function getSkinProperties() {
     var _this3 = this;
 
-    var languageCode = this.props.isMLEnabled ? this.props.currentLanguage.code : defaultLangCode;
-    var captchaProps = _lodash2.default.assign({}, this.props.compData, this.props.compProp, {
-      className: this.props.styleId,
-      style: this.props.style,
-      id: this.props.id,
-      lang: languageCode,
-      required: true,
-      onVerify: function onVerify(token) {
-        _this3.updateData({ token: token });
+    var checked = this.state.checked;
+    var _props2 = this.props,
+        id = _props2.id,
+        styleId = _props2.styleId;
+    var _props$compProp = this.props.compProp,
+        trackHeight = _props$compProp.trackHeight,
+        knobSize = _props$compProp.knobSize,
+        isDisabled = _props$compProp.isDisabled,
+        displayKnobIcons = _props$compProp.displayKnobIcons,
+        alignment = _props$compProp.alignment;
+
+
+    var toggleProps = {
+      id: 'toggle-switch-' + id,
+      styleId: styleId,
+      checked: checked,
+      trackHeight: trackHeight,
+      knobSize: knobSize,
+      isDisabled: isDisabled,
+      displayKnobIcons: displayKnobIcons,
+      isRtl: alignment === 'right',
+      previewState: this.getComponentPreviewState(),
+      onChange: function onChange() {
+        return _this3.onChange();
       },
-      onExpire: function onExpire() {
-        _this3.updateData({ token: undefined });
+      onFocus: function onFocus() {
+        return _this3.onFocus();
       },
-      onReset: function onReset() {
-        _this3.updateData({ token: undefined });
+      onBlur: function onBlur() {
+        return _this3.onBlur();
       },
-      ref: function ref(captchaRef) {
-        _this3.captchaRef = captchaRef;
+      onClick: function onClick() {
+        return _this3.onClick();
+      },
+      ref: function ref(toggleSwitchRef) {
+        _this3.toggleSwitchRef = toggleSwitchRef;
       }
-    });
+    };
+
     return {
       '': {
-        children: [_santaComponents.utils.createReactElement(Captcha, captchaProps)]
+        children: [_santaComponents.utils.createReactElement(ToggleSwitchWithClasses, toggleProps)]
       }
     };
   }
@@ -1502,24 +1601,10 @@ var santaCaptcha = exports.santaCaptcha = (0, _createReactClass2.default)({
 
 /***/ }),
 
-/***/ 655:
-/*!**********************************************!*\
-  !*** ../node_modules/wix-ui-core/captcha.js ***!
-  \**********************************************/
-/*! no static exports found */
-/*! all exports used */
-/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__(/*! ./dist/src/components/captcha */ 656);
-
-
-/***/ }),
-
-/***/ 656:
-/*!************************************************************************!*\
-  !*** ../node_modules/wix-ui-core/dist/src/components/captcha/index.js ***!
-  \************************************************************************/
+/***/ 465:
+/*!*************************************************!*\
+  !*** ./legacy/components/ToggleSwitch/theme.js ***!
+  \*************************************************/
 /*! no static exports found */
 /*! all exports used */
 /*! ModuleConcatenation bailout: Module is not an ECMAScript module */
@@ -1527,22 +1612,20 @@ module.exports = __webpack_require__(/*! ./dist/src/components/captcha */ 656);
 
 "use strict";
 
-Object.defineProperty(exports, "__esModule", { value: true });
-var Captcha_1 = __webpack_require__(/*! ./Captcha */ 657);
-exports.Captcha = Captcha_1.Captcha;
-var types_1 = __webpack_require__(/*! ./types */ 660);
-exports.Size = types_1.Size;
-exports.CaptchaType = types_1.CaptchaType;
-exports.Theme = types_1.Theme;
-exports.CaptchaLang = types_1.CaptchaLang;
-//# sourceMappingURL=index.js.map
+
+// this file was prevaled
+
+module.exports = { "json": { "wixui.skins.ToggleSwitch": { "params": { "outerLabelBorderSizeFocus": "BORDER_SIZE", "outerLabelBorderColorFocus": "COLOR_ALPHA", "backgroundColorFocus": "COLOR_ALPHA", "outerLabelBorderSizeDisabled": "BORDER_SIZE", "outerLabelBorderColorDisabled": "COLOR_ALPHA", "backgroundColorDisabled": "COLOR_ALPHA", "innerLabelBorderSizeDisabled": "BORDER_SIZE", "innerLabelBorderColorDisabled": "COLOR_ALPHA", "innerLabelBackgroundColorDisabled": "COLOR_ALPHA", "colorCheckedDisabled": "COLOR_ALPHA", "colorDisabled": "COLOR_ALPHA", "outerLabelBorderSizeHoverChecked": "BORDER_SIZE", "outerLabelBorderColorHoverChecked": "COLOR_ALPHA", "backgroundColorHoverChecked": "COLOR_ALPHA", "innerLabelBorderSizeHoverChecked": "BORDER_SIZE", "innerLabelBorderColorHoverChecked": "COLOR_ALPHA", "innerLabelBackgroundColorHoverChecked": "COLOR_ALPHA", "colorHoverChecked": "COLOR_ALPHA", "outerLabelBorderSizeHover": "BORDER_SIZE", "outerLabelBorderColorHover": "COLOR_ALPHA", "backgroundColorHover": "COLOR_ALPHA", "innerLabelBorderSizeHover": "BORDER_SIZE", "innerLabelBorderColorHover": "COLOR_ALPHA", "innerLabelBackgroundColorHover": "COLOR_ALPHA", "colorHover": "COLOR_ALPHA", "outerLabelBorderSizeChecked": "BORDER_SIZE", "outerLabelBorderColorChecked": "COLOR_ALPHA", "backgroundColorChecked": "COLOR_ALPHA", "innerLabelBorderSizeChecked": "BORDER_SIZE", "innerLabelBorderColorChecked": "COLOR_ALPHA", "innerLabelBackgroundColorChecked": "COLOR_ALPHA", "colorChecked": "COLOR_ALPHA", "outerLabelBoxShadow": "BOX_SHADOW", "outerLabelBorderSize": "BORDER_SIZE", "outerLabelBorderColor": "COLOR_ALPHA", "borderRadius": "BORDER_RADIUS", "backgroundColor": "COLOR_ALPHA", "innerLabelBoxShadow": "BOX_SHADOW", "innerLabelBorderSize": "BORDER_SIZE", "innerLabelBorderColor": "COLOR_ALPHA", "innerLabelBackgroundColor": "COLOR_ALPHA", "color": "COLOR_ALPHA" }, "paramsDefaults": { "outerLabelBorderSizeFocus": "0", "outerLabelBorderColorFocus": "color_23", "backgroundColorFocus": "color_6", "outerLabelBorderSizeDisabled": "0", "outerLabelBorderColorDisabled": "color_20", "backgroundColorDisabled": "color_3", "innerLabelBorderSizeDisabled": "0", "innerLabelBorderColorDisabled": "color_25", "innerLabelBackgroundColorDisabled": "color_15", "colorCheckedDisabled": "color_9", "colorDisabled": "color_8",
+        "outerLabelBorderSizeHoverChecked": "0", "outerLabelBorderColorHoverChecked": "color_22", "backgroundColorHoverChecked": "color_1", "innerLabelBorderSizeHoverChecked": "0", "innerLabelBorderColorHoverChecked": "color_27", "innerLabelBackgroundColorHoverChecked": "color_17", "colorHoverChecked": "color_11", "outerLabelBorderSizeHover": "0", "outerLabelBorderColorHover": "color_21", "backgroundColorHover": "color_2", "innerLabelBorderSizeHover": "0", "innerLabelBorderColorHover": "color_26",
+        "innerLabelBackgroundColorHover": "color_16", "colorHover": "color_10", "outerLabelBorderSizeChecked": "0", "outerLabelBorderColorChecked": "color_19", "backgroundColorChecked": "color_4", "innerLabelBorderSizeChecked": "0", "innerLabelBorderColorChecked": "color_24", "innerLabelBackgroundColorChecked": "color_14", "colorChecked": "color_7", "outerLabelBoxShadow": "1.5px 1.5px 1px rgba(0,0,0,0.2)", "outerLabelBorderSize": "0", "outerLabelBorderColor": "color_18", "borderRadius": "12px", "backgroundColor": "color_5", "innerLabelBoxShadow": "1.5px 1.5px 1px rgba(0,0,0,0.2)", "innerLabelBorderSize": "0", "innerLabelBorderColor": "color_23", "innerLabelBackgroundColor": "color_13", "color": "color_6" }, "css": { "%_root": "width:100%;height:100%;display:inline-flex;outline:none;position:relative;align-items:center;-webkit-tap-highlight-color:rgba(0, 0, 0, 0);", "%_root > input[type=checkbox]": "width:1px;height:1px;margin:0;opacity:0;position:absolute;", "%_root > input[type=checkbox]:focus,%_root[data-preview~=\"focus\"] > input[type=checkbox][type=checkbox]": "outline:none;",
+        "%_root > input[type=checkbox]:checked:focus,%_root[data-preview~=\"checked:focus\"] > input[type=checkbox][type=checkbox]": "outline:none;", "%_root > input[type=checkbox]:checked:focus + %_outerLabel,%_root[data-preview~=\"checked:focus\"] > input[type=checkbox][type=checkbox] + %_outerLabel": "border-width:[outerLabelBorderSizeFocus];border-color:[outerLabelBorderColorFocus];background-color:[backgroundColorFocus];", "%_root > input[type=checkbox]:focus + %_outerLabel,%_root[data-preview~=\"focus\"] > input[type=checkbox][type=checkbox] + %_outerLabel": "border-width:[outerLabelBorderSizeFocus];border-color:[outerLabelBorderColorFocus];background-color:[backgroundColorFocus];", "%_root > input[type=checkbox]:checked:disabled:hover + %_outerLabel,%_root[data-preview~=\"checked:disabled:hover\"] > input[type=checkbox][type=checkbox] + %_outerLabel": "cursor:default;border-width:[outerLabelBorderSizeDisabled];border-color:[outerLabelBorderColorDisabled];background-color:[backgroundColorDisabled];", "%_root > input[type=checkbox]:checked:disabled:hover ~ %_innerLabel,%_root[data-preview~=\"checked:disabled:hover\"] > input[type=checkbox][type=checkbox] ~ %_innerLabel": "cursor:default;border-width:[innerLabelBorderSizeDisabled];border-color:[innerLabelBorderColorDisabled];background-color:[innerLabelBackgroundColorDisabled];", "%_root > input[type=checkbox]:checked:disabled:hover ~ %_innerLabel > %_toggleIcon path,%_root[data-preview~=\"checked:disabled:hover\"] > input[type=checkbox][type=checkbox] ~ %_innerLabel > %_toggleIcon path": "fill:[colorCheckedDisabled];", "%_root > input[type=checkbox]:disabled:hover + %_outerLabel,%_root[data-preview~=\"disabled:hover\"] > input[type=checkbox][type=checkbox] + %_outerLabel": "cursor:default;border-width:[outerLabelBorderSizeDisabled];border-color:[outerLabelBorderColorDisabled];background-color:[backgroundColorDisabled];", "%_root > input[type=checkbox]:disabled:hover ~ %_innerLabel,%_root[data-preview~=\"disabled:hover\"] > input[type=checkbox][type=checkbox] ~ %_innerLabel": "cursor:default;border-width:[innerLabelBorderSizeDisabled];border-color:[innerLabelBorderColorDisabled];background-color:[innerLabelBackgroundColorDisabled];", "%_root > input[type=checkbox]:disabled:hover ~ %_innerLabel > %_toggleIcon path,%_root[data-preview~=\"disabled:hover\"] > input[type=checkbox][type=checkbox] ~ %_innerLabel > %_toggleIcon path": "fill:[colorDisabled];", "%_root > input[type=checkbox]:checked:hover + %_outerLabel,%_root[data-preview~=\"checked:hover\"] > input[type=checkbox][type=checkbox] + %_outerLabel": "border-width:[outerLabelBorderSizeHoverChecked];border-color:[outerLabelBorderColorHoverChecked];background-color:[backgroundColorHoverChecked];", "%_root > input[type=checkbox]:checked:hover ~ %_innerLabel,%_root[data-preview~=\"checked:hover\"] > input[type=checkbox][type=checkbox] ~ %_innerLabel": "border-width:[innerLabelBorderSizeHoverChecked];border-color:[innerLabelBorderColorHoverChecked];background-color:[innerLabelBackgroundColorHoverChecked];", "%_root > input[type=checkbox]:checked:hover ~ %_innerLabel > %_toggleIcon path,%_root[data-preview~=\"checked:hover\"] > input[type=checkbox][type=checkbox] ~ %_innerLabel > %_toggleIcon path": "fill:[colorHoverChecked];", "%_root > input[type=checkbox]:hover + %_outerLabel,%_root[data-preview~=\"hover\"] > input[type=checkbox][type=checkbox] + %_outerLabel": "border-width:[outerLabelBorderSizeHover];border-color:[outerLabelBorderColorHover];background-color:[backgroundColorHover];", "%_root > input[type=checkbox]:hover ~ %_innerLabel,%_root[data-preview~=\"hover\"] > input[type=checkbox][type=checkbox] ~ %_innerLabel": "border-width:[innerLabelBorderSizeHover];border-color:[innerLabelBorderColorHover];background-color:[innerLabelBackgroundColorHover];", "%_root > input[type=checkbox]:hover ~ %_innerLabel > %_toggleIcon path,%_root[data-preview~=\"hover\"] > input[type=checkbox][type=checkbox] ~ %_innerLabel > %_toggleIcon path": "fill:[colorHover];", "%_root > input[type=checkbox]:checked:disabled + %_outerLabel,%_root[data-preview~=\"checked:disabled\"] > input[type=checkbox][type=checkbox] + %_outerLabel": "cursor:default;border-width:[outerLabelBorderSizeDisabled];border-color:[outerLabelBorderColorDisabled];background-color:[backgroundColorDisabled];", "%_root > input[type=checkbox]:checked:disabled ~ %_innerLabel,%_root[data-preview~=\"checked:disabled\"] > input[type=checkbox][type=checkbox] ~ %_innerLabel": "cursor:default;border-width:[innerLabelBorderSizeDisabled];border-color:[innerLabelBorderColorDisabled];background-color:[innerLabelBackgroundColorDisabled];", "%_root > input[type=checkbox]:checked:disabled ~ %_innerLabel > %_toggleIcon path,%_root[data-preview~=\"checked:disabled\"] > input[type=checkbox][type=checkbox] ~ %_innerLabel > %_toggleIcon path": "fill:[colorCheckedDisabled];", "%_root > input[type=checkbox]:disabled + %_outerLabel,%_root[data-preview~=\"disabled\"] > input[type=checkbox][type=checkbox] + %_outerLabel": "cursor:default;border-width:[outerLabelBorderSizeDisabled];border-color:[outerLabelBorderColorDisabled];background-color:[backgroundColorDisabled];", "%_root > input[type=checkbox]:disabled ~ %_innerLabel,%_root[data-preview~=\"disabled\"] > input[type=checkbox][type=checkbox] ~ %_innerLabel": "cursor:default;border-width:[innerLabelBorderSizeDisabled];border-color:[innerLabelBorderColorDisabled];background-color:[innerLabelBackgroundColorDisabled];", "%_root > input[type=checkbox]:disabled ~ %_innerLabel > %_toggleIcon path,%_root[data-preview~=\"disabled\"] > input[type=checkbox][type=checkbox] ~ %_innerLabel > %_toggleIcon path": "fill:[colorDisabled];", "%_root > input[type=checkbox]:checked + %_outerLabel,%_root[data-preview~=\"checked\"] > input[type=checkbox][type=checkbox] + %_outerLabel": "border-width:[outerLabelBorderSizeChecked];border-color:[outerLabelBorderColorChecked];background-color:[backgroundColorChecked];", "%_root > input[type=checkbox]:checked ~ %_innerLabel,%_root[data-preview~=\"checked\"] > input[type=checkbox][type=checkbox] ~ %_innerLabel": "left:23px;border-width:[innerLabelBorderSizeChecked];border-color:[innerLabelBorderColorChecked];background-color:[innerLabelBackgroundColorChecked];", "%_root > input[type=checkbox]:checked ~ %_innerLabel > %_toggleIcon,%_root[data-preview~=\"checked\"] > input[type=checkbox][type=checkbox] ~ %_innerLabel > %_toggleIcon": "transition:all .3s cubic-bezier(0,1,0,1), visibility 0s;", "%_root > input[type=checkbox]:checked ~ %_innerLabel > %_toggleIcon path,%_root[data-preview~=\"checked\"] > input[type=checkbox][type=checkbox] ~ %_innerLabel > %_toggleIcon path": "fill:[colorChecked];", "%_outerLabel": "width:100%;cursor:pointer;height:100%;display:inline-block;box-sizing:border-box;transition:all .3s ease, visibility 0s;[outerLabelBoxShadow];border-width:[outerLabelBorderSize];border-color:[outerLabelBorderColor];border-style:solid;[borderRadius];background-color:[backgroundColor];", "%_innerLabel": "top:50%;left:1px;width:21px;height:22px;cursor:pointer;display:flex;position:absolute;transform:translate(0, -50%);transition:all .3s ease, visibility 0s;text-align:center;[innerLabelBoxShadow];box-sizing:border-box;align-items:center;border-width:[innerLabelBorderSize];border-color:[innerLabelBorderColor];border-style:solid;[borderRadius];justify-content:center;background-color:[innerLabelBackgroundColor];", "%_toggleIcon": "width:50%;height:50%;display:none;transition:all .3s cubic-bezier(1,0,1,0), visibility 0s;", "%_toggleIcon path": "fill:[color];" } } }, "classes": ["root", "outerLabel", "innerLabel", "toggleIcon"] };
 
 /***/ }),
 
-/***/ 657:
-/*!**************************************************************************!*\
-  !*** ../node_modules/wix-ui-core/dist/src/components/captcha/Captcha.js ***!
-  \**************************************************************************/
+/***/ 60:
+/*!************************************************************!*\
+  !*** ../node_modules/hoist-non-react-methods/lib/index.js ***!
+  \************************************************************/
 /*! no static exports found */
 /*! all exports used */
 /*! ModuleConcatenation bailout: Module is not an ECMAScript module */
@@ -1550,606 +1633,108 @@ exports.CaptchaLang = types_1.CaptchaLang;
 
 "use strict";
 
-Object.defineProperty(exports, "__esModule", { value: true });
-var tslib_1 = __webpack_require__(/*! tslib */ 6);
-var React = __webpack_require__(/*! react */ 0);
-var Reaptcha = __webpack_require__(/*! reaptcha */ 658);
-var Captcha_st_css_1 = __webpack_require__(/*! ./Captcha.st.css */ 659);
-/**
- * Captcha
- */
-var Captcha = /** @class */ (function (_super) {
-    tslib_1.__extends(Captcha, _super);
-    function Captcha() {
-        var _this = _super !== null && _super.apply(this, arguments) || this;
-        _this.captchaRef = null;
-        _this.state = {
-            rendered: false,
-            token: undefined,
-        };
-        /**
-         * this will indicate the google component is loaded and ready to be displayed
-         */
-        _this.onLoad = function () {
-            if (_this.props.onLoad) {
-                _this.props.onLoad();
-            }
-        };
-        /**
-         * the user has successfully taken the captcha and we have the verification id
-         * @param verificationString
-         */
-        _this.onVerified = function (verificationString) {
-            _this.setState({ token: verificationString });
-            if (_this.props.onVerify) {
-                _this.props.onVerify(verificationString);
-            }
-        };
-        /**
-         * The user has taken the captcha challange however it has not been verified the page was not submitted in time
-         * so we need to ask the user to retake the captcha challenge.
-         */
-        _this.onExpired = function () {
-            _this.setState({ token: undefined });
-            if (_this.props.onExpire) {
-                _this.props.onExpire();
-            }
-        };
-        /**
-         * triggered when the inner captcha is actually rendered
-         */
-        _this.onRender = function () {
-            _this.setState({ rendered: true });
-            if (_this.props.onRender) {
-                _this.props.onRender();
-            }
-        };
-        /**
-         * this method will pass the error to the registered error call back.
-         */
-        _this.onError = function () {
-            if (_this.props.onError) {
-                _this.props.onError();
-            }
-        };
-        return _this;
+
+exports.__esModule = true;
+exports.default = hoistNonReactMethods;
+var REACT_PROTOTYPE = {
+  autobind: true,
+  childContextTypes: true,
+  componentDidMount: true,
+  componentDidUpdate: true,
+  componentWillMount: true,
+  componentWillReceiveProps: true,
+  componentWillUnmount: true,
+  componentWillUpdate: true,
+  contextTypes: true,
+  displayName: true,
+  forceUpdate: true,
+  getChildContext: true,
+  getDefaultProps: true,
+  getDOMNode: true,
+  getInitialState: true,
+  isMounted: true,
+  mixins: true,
+  propTypes: true,
+  render: true,
+  replaceProps: true,
+  replaceState: true,
+  setProps: true,
+  setState: true,
+  shouldComponentUpdate: true,
+  statics: true,
+  updateComponent: true
+};
+
+var REACT_STATICS = {
+  childContextTypes: true,
+  contextTypes: true,
+  defaultProps: true,
+  displayName: true,
+  getDefaultProps: true,
+  mixins: true,
+  propTypes: true,
+  type: true
+};
+
+var KNOWN_STATICS = {
+  name: true,
+  length: true,
+  prototype: true,
+  caller: true,
+  arguments: true,
+  arity: true
+};
+
+var defaultConfig = {
+  delegateTo: function delegateTo(w) {
+    return w.refs.child;
+  },
+  hoistStatics: true
+};
+
+function hoistNonReactMethods(targetComponent, sourceComponent, config) {
+  var targetComponentName = targetComponent.displayName || targetComponent.name || 'Wrapper';
+  var sourceComponentName = sourceComponent.displayName || sourceComponent.name || 'WrappedComponent';
+  var hoistStatics = config && typeof config.hoistStatics !== 'undefined' ? config.hoistStatics : defaultConfig.hoistStatics;
+  var delegateTo = config && typeof config.delegateTo !== 'undefined' ? config.delegateTo : defaultConfig.delegateTo;
+  // backwards compatible where config option is delegateTo function
+  if (typeof config === 'function') delegateTo = config;
+
+  if (hoistStatics) {
+    var statics = Object.getOwnPropertyNames(sourceComponent).filter(function (k) {
+      return !REACT_STATICS[k] && !KNOWN_STATICS[k];
+    });
+
+    statics.forEach(function (methodName) {
+      if (targetComponent[methodName]) console.warn('Static method ' + methodName + ' already exists in wrapper component ' + targetComponentName + ', and won\'t be hoisted. Consider changing the name on ' + sourceComponentName + '.');
+      targetComponent[methodName] = sourceComponent[methodName];
+    });
+  }
+
+  var methods = Object.getOwnPropertyNames(sourceComponent.prototype).filter(function (k) {
+    return !REACT_PROTOTYPE[k];
+  });
+
+  methods.forEach(function (methodName) {
+    if (targetComponent.prototype[methodName]) {
+      console.warn('Method ' + methodName + ' already exists in wrapper component ' + targetComponentName + ', and won\'t be hoisted. Consider changing the name on ' + sourceComponentName + '.');
+      return;
     }
-    /**
-     * reload a new captcha from google
-     */
-    Captcha.prototype.resetCaptcha = function () {
-        var _this = this;
-        if (this.captchaRef) {
-            this.captchaRef.reset();
-        }
-        this.setState({ token: undefined }, function () {
-            if (_this.props.onReset) {
-                _this.props.onReset();
-            }
-        });
-    };
-    /**
-     * returns the verification token to the caller
-     */
-    Captcha.prototype.getVerificationToken = function () {
-        return this.state.token;
-    };
-    /**
-     * return true if the captcha challenge has been successfully taken
-     */
-    Captcha.prototype.isVerified = function () {
-        return this.state.token !== undefined;
-    };
-    /**
-     * we render the captcha.
-     * we render a loader until we get a loaded indication from the captcha lib
-     *
-     */
-    Captcha.prototype.render = function () {
-        var _this = this;
-        var _a = this.props, sitekey = _a.sitekey, loader = _a.loader, captchaType = _a.captchaType, size = _a.size, theme = _a.theme, lang = _a.lang, required = _a.required;
-        return (React.createElement("div", tslib_1.__assign({}, Captcha_st_css_1.default('root', { loaded: this.state.rendered }, this.props), { "data-captcha-type": captchaType, "data-theme": theme, "data-lang": lang, "data-size": size }),
-            !this.state.rendered && (React.createElement("div", { className: Captcha_st_css_1.default.loaderWrapper }, loader)),
-            React.createElement("div", { className: Captcha_st_css_1.default.captcha },
-                React.createElement(Reaptcha, { ref: function (e) { return (_this.captchaRef = e); }, sitekey: sitekey, captchaType: captchaType, size: size, theme: theme, hl: lang, onLoad: this.onLoad, onVerify: this.onVerified, onExpire: this.onExpired, onRender: this.onRender, onError: this.onError }),
-                required && (React.createElement("input", { "data-hook": "required-field", className: Captcha_st_css_1.default.requiredField, type: "checkbox", required: true, onChange: function () { }, checked: this.isVerified() })))));
-    };
-    Captcha.displayName = 'Captcha';
-    return Captcha;
-}(React.PureComponent));
-exports.Captcha = Captcha;
-//# sourceMappingURL=Captcha.js.map
 
-/***/ }),
+    targetComponent.prototype[methodName] = function () {
+      var _sourceComponent$prot;
 
-/***/ 658:
-/*!**********************************************!*\
-  !*** ../node_modules/reaptcha/dist/index.js ***!
-  \**********************************************/
-/*! no static exports found */
-/*! all exports used */
-/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
-/***/ (function(module, exports, __webpack_require__) {
-
-/* WEBPACK VAR INJECTION */(function(global) {(function webpackUniversalModuleDefinition(root, factory) {
-	if(true)
-		module.exports = factory(__webpack_require__(/*! react */ 0));
-	else {}
-})(global, function(__WEBPACK_EXTERNAL_MODULE__0__) {
-return /******/ (function(modules) { // webpackBootstrap
-/******/ 	// The module cache
-/******/ 	var installedModules = {};
-/******/
-/******/ 	// The require function
-/******/ 	function __webpack_require__(moduleId) {
-/******/
-/******/ 		// Check if module is in cache
-/******/ 		if(installedModules[moduleId]) {
-/******/ 			return installedModules[moduleId].exports;
-/******/ 		}
-/******/ 		// Create a new module (and put it into the cache)
-/******/ 		var module = installedModules[moduleId] = {
-/******/ 			i: moduleId,
-/******/ 			l: false,
-/******/ 			exports: {}
-/******/ 		};
-/******/
-/******/ 		// Execute the module function
-/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
-/******/
-/******/ 		// Flag the module as loaded
-/******/ 		module.l = true;
-/******/
-/******/ 		// Return the exports of the module
-/******/ 		return module.exports;
-/******/ 	}
-/******/
-/******/
-/******/ 	// expose the modules object (__webpack_modules__)
-/******/ 	__webpack_require__.m = modules;
-/******/
-/******/ 	// expose the module cache
-/******/ 	__webpack_require__.c = installedModules;
-/******/
-/******/ 	// define getter function for harmony exports
-/******/ 	__webpack_require__.d = function(exports, name, getter) {
-/******/ 		if(!__webpack_require__.o(exports, name)) {
-/******/ 			Object.defineProperty(exports, name, { enumerable: true, get: getter });
-/******/ 		}
-/******/ 	};
-/******/
-/******/ 	// define __esModule on exports
-/******/ 	__webpack_require__.r = function(exports) {
-/******/ 		if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
-/******/ 			Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
-/******/ 		}
-/******/ 		Object.defineProperty(exports, '__esModule', { value: true });
-/******/ 	};
-/******/
-/******/ 	// create a fake namespace object
-/******/ 	// mode & 1: value is a module id, require it
-/******/ 	// mode & 2: merge all properties of value into the ns
-/******/ 	// mode & 4: return value when already ns object
-/******/ 	// mode & 8|1: behave like require
-/******/ 	__webpack_require__.t = function(value, mode) {
-/******/ 		if(mode & 1) value = __webpack_require__(value);
-/******/ 		if(mode & 8) return value;
-/******/ 		if((mode & 4) && typeof value === 'object' && value && value.__esModule) return value;
-/******/ 		var ns = Object.create(null);
-/******/ 		__webpack_require__.r(ns);
-/******/ 		Object.defineProperty(ns, 'default', { enumerable: true, value: value });
-/******/ 		if(mode & 2 && typeof value != 'string') for(var key in value) __webpack_require__.d(ns, key, function(key) { return value[key]; }.bind(null, key));
-/******/ 		return ns;
-/******/ 	};
-/******/
-/******/ 	// getDefaultExport function for compatibility with non-harmony modules
-/******/ 	__webpack_require__.n = function(module) {
-/******/ 		var getter = module && module.__esModule ?
-/******/ 			function getDefault() { return module['default']; } :
-/******/ 			function getModuleExports() { return module; };
-/******/ 		__webpack_require__.d(getter, 'a', getter);
-/******/ 		return getter;
-/******/ 	};
-/******/
-/******/ 	// Object.prototype.hasOwnProperty.call
-/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
-/******/
-/******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "";
-/******/
-/******/
-/******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 1);
-/******/ })
-/************************************************************************/
-/******/ ([
-/* 0 */
-/***/ (function(module, exports) {
-
-module.exports = __WEBPACK_EXTERNAL_MODULE__0__;
-
-/***/ }),
-/* 1 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-
-// EXTERNAL MODULE: external {"amd":"react","commonjs":"react","commonjs2":"react","root":"React"}
-var external_amd_react_commonjs_react_commonjs2_react_root_React_ = __webpack_require__(0);
-var external_amd_react_commonjs_react_commonjs2_react_root_React_default = /*#__PURE__*/__webpack_require__.n(external_amd_react_commonjs_react_commonjs2_react_root_React_);
-
-// CONCATENATED MODULE: ./utils/injectScript.js
-/* harmony default export */ var injectScript = (function (scriptSrc) {
-  var script = document.createElement('script');
-  script.async = true;
-  script.defer = true;
-  script.src = scriptSrc;
-
-  if (document.head) {
-    document.head.appendChild(script);
-  }
-});
-// CONCATENATED MODULE: ./utils/isAnyScriptPresent.js
-/* harmony default export */ var isAnyScriptPresent = (function (regex) {
-  return Array.from(document.scripts).reduce(function (isPresent, script) {
-    return isPresent ? isPresent : regex.test(script.src);
-  }, false);
-});
-// CONCATENATED MODULE: ./index.js
-function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
-
-function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
-
-function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
-
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-
-
-
-var RECAPTCHA_SCRIPT_URL = 'https://recaptcha.net/recaptcha/api.js';
-var RECAPTCHA_SCRIPT_REGEX = /(http|https):\/\/(www)?.+\/recaptcha/;
-
-var index_Reaptcha =
-/*#__PURE__*/
-function (_Component) {
-  _inherits(Reaptcha, _Component);
-
-  function Reaptcha(props) {
-    var _this;
-
-    _classCallCheck(this, Reaptcha);
-
-    _this = _possibleConstructorReturn(this, _getPrototypeOf(Reaptcha).call(this, props));
-
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "container", null);
-
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "_isAvailable", function () {
-      return Boolean(window && window.grecaptcha && window.grecaptcha.ready);
-    });
-
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "_inject", function () {
-      if (_this.props.inject && !isAnyScriptPresent(RECAPTCHA_SCRIPT_REGEX)) {
-        var hlParam = _this.props.hl ? "&hl=".concat(_this.props.hl) : '';
-        var src = "".concat(RECAPTCHA_SCRIPT_URL, "?render=explicit").concat(hlParam);
-        injectScript(src);
+      for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+        args[_key] = arguments[_key];
       }
-    });
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "_prepare", function () {
-      var _this$props = _this.props,
-          explicit = _this$props.explicit,
-          onLoad = _this$props.onLoad;
-      window.grecaptcha.ready(function () {
-        _this.setState({
-          ready: true
-        }, function () {
-          if (!explicit) {
-            _this.renderExplicitly();
-          }
-
-          if (onLoad) {
-            onLoad();
-          }
-        });
-      });
-    });
-
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "_renderRecaptcha", function (container, config) {
-      return window.grecaptcha.render(container, config);
-    });
-
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "_resetRecaptcha", function () {
-      return window.grecaptcha.reset(_this.state.instanceId);
-    });
-
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "_executeRecaptcha", function () {
-      return window.grecaptcha.execute(_this.state.instanceId);
-    });
-
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "_stopTimer", function () {
-      if (_this.state.timer) {
-        clearInterval(_this.state.timer);
-      }
-    });
-
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "componentDidMount", function () {
-      _this._inject();
-
-      if (_this._isAvailable()) {
-        _this._prepare();
-      } else {
-        var timer = setInterval(function () {
-          if (_this._isAvailable()) {
-            _this._prepare();
-
-            _this._stopTimer();
-          }
-        }, 500);
-
-        _this.setState({
-          timer: timer
-        });
-      }
-    });
-
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "shouldComponentUpdate", function () {
-      return !_this.state.rendered;
-    });
-
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "componentWillUnmount", function () {
-      _this._stopTimer();
-
-      if (_this.state.rendered) {
-        _this._resetRecaptcha();
-      }
-    });
-
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "renderExplicitly", function () {
-      return new Promise(function (resolve, reject) {
-        if (_this.state.rendered) {
-          return reject(new Error('This recaptcha instance has been already rendered.'));
-        }
-
-        if (_this.state.ready && _this.container) {
-          var instanceId = _this._renderRecaptcha(_this.container, {
-            sitekey: _this.props.sitekey,
-            theme: _this.props.theme,
-            size: _this.props.size,
-            badge: _this.state.invisible ? _this.props.badge : null,
-            tabindex: _this.props.tabindex,
-            callback: _this.props.onVerify,
-            'expired-callback': _this.props.onExpire,
-            'error-callback': _this.props.onError,
-            isolated: _this.state.invisible ? _this.props.isolated : null,
-            hl: _this.state.invisible ? null : _this.props.hl
-          });
-
-          _this.setState({
-            instanceId: instanceId,
-            rendered: true
-          }, function () {
-            if (_this.props.onRender) {
-              _this.props.onRender();
-            }
-
-            resolve();
-          });
-        } else {
-          return reject(new Error('Recaptcha is not ready for rendering yet.'));
-        }
-      });
-    });
-
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "reset", function () {
-      return new Promise(function (resolve, reject) {
-        if (_this.state.rendered) {
-          _this._resetRecaptcha();
-
-          return resolve();
-        }
-
-        reject(new Error('This recaptcha instance did not render yet.'));
-      });
-    });
-
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "execute", function () {
-      return new Promise(function (resolve, reject) {
-        if (!_this.state.invisible) {
-          return reject(new Error('Manual execution is only available for invisible size.'));
-        }
-
-        if (_this.state.rendered) {
-          _this._executeRecaptcha();
-
-          resolve();
-        }
-
-        return reject(new Error('This recaptcha instance did not render yet.'));
-      });
-    });
-
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "render", function () {
-      return external_amd_react_commonjs_react_commonjs2_react_root_React_default.a.createElement("div", {
-        id: _this.props.id,
-        className: _this.props.className,
-        ref: function ref(e) {
-          return _this.container = e;
-        }
-      });
-    });
-
-    _this.state = {
-      instanceId: null,
-      ready: false,
-      rendered: false,
-      invisible: _this.props.size === 'invisible',
-      timer: null
+      return (_sourceComponent$prot = sourceComponent.prototype[methodName]).call.apply(_sourceComponent$prot, [delegateTo.call(this, this)].concat(args));
     };
-    return _this;
-  }
+  });
 
-  return Reaptcha;
-}(external_amd_react_commonjs_react_commonjs2_react_root_React_["Component"]);
-
-_defineProperty(index_Reaptcha, "defaultProps", {
-  id: '',
-  className: 'g-recaptcha',
-  theme: 'light',
-  size: 'normal',
-  badge: 'bottomright',
-  tabindex: 0,
-  explicit: false,
-  inject: true,
-  isolated: false,
-  hl: ''
-});
-
-/* harmony default export */ var index = __webpack_exports__["default"] = (index_Reaptcha);
-
-/***/ })
-/******/ ])["default"];
-});
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../webpack/buildin/global.js */ 21)))
-
-/***/ }),
-
-/***/ 659:
-/*!******************************************************************************!*\
-  !*** ../node_modules/wix-ui-core/dist/src/components/captcha/Captcha.st.css ***!
-  \******************************************************************************/
-/*! exports provided: default */
-/*! all exports used */
-/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
-/***/ (function(module, exports, __webpack_require__) {
-
-Object.defineProperty(exports, "__esModule", { value: true })
-
-exports.default = __webpack_require__.stylable.create(
-  "root",
-  "Captcha3325868082",
-  {"root":"Captcha3325868082--root","loaderWrapper":"Captcha3325868082--loaderWrapper","captcha":"Captcha3325868082--captcha","requiredField":"Captcha3325868082--requiredField"},
-  "",
-  1,
-  /*! ../node_modules/wix-ui-core/dist/src/components/captcha/Captcha.st.css */ 659
-);
-
-
-
-/***/ }),
-
-/***/ 660:
-/*!************************************************************************!*\
-  !*** ../node_modules/wix-ui-core/dist/src/components/captcha/types.js ***!
-  \************************************************************************/
-/*! no static exports found */
-/*! all exports used */
-/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-Object.defineProperty(exports, "__esModule", { value: true });
-var CaptchaType;
-(function (CaptchaType) {
-    CaptchaType["image"] = "image";
-    CaptchaType["audio"] = "audio";
-})(CaptchaType = exports.CaptchaType || (exports.CaptchaType = {}));
-var Theme;
-(function (Theme) {
-    Theme["light"] = "light";
-    Theme["dark"] = "dark";
-})(Theme = exports.Theme || (exports.Theme = {}));
-var Size;
-(function (Size) {
-    Size["normal"] = "normal";
-    Size["compact"] = "compact";
-})(Size = exports.Size || (exports.Size = {}));
-// to ensure that the passed lang is supported we expose the supported langs
-// all of these languages are taken from
-// this list: https://developers.google.com/recaptcha/docs/language
-var CaptchaLang;
-(function (CaptchaLang) {
-    CaptchaLang["Arabic"] = "ar";
-    CaptchaLang["Afrikaans"] = "af";
-    CaptchaLang["Amharic"] = "am";
-    CaptchaLang["Armenian"] = "hy";
-    CaptchaLang["Azerbaijani"] = "az";
-    CaptchaLang["Basque"] = "eu";
-    CaptchaLang["Bengali"] = "bn";
-    CaptchaLang["Bulgarian"] = "bg";
-    CaptchaLang["Catalan"] = "ca";
-    CaptchaLang["ChineseHongKong"] = "zh-HK";
-    CaptchaLang["ChineseSimplified"] = "zh-CN";
-    CaptchaLang["ChineseTraditional"] = "zh-TW";
-    CaptchaLang["Croatian"] = "hr";
-    CaptchaLang["Czech"] = "cs";
-    CaptchaLang["Danish"] = "da";
-    CaptchaLang["Dutch"] = "nl";
-    CaptchaLang["EnglishUK"] = "en-GB";
-    CaptchaLang["EnglishUS"] = "en";
-    CaptchaLang["Estonian"] = "et";
-    CaptchaLang["Filipino"] = "fil";
-    CaptchaLang["Finnish"] = "fr";
-    CaptchaLang["FrenchCanadian"] = "fr-CA";
-    CaptchaLang["Galician"] = "gl";
-    CaptchaLang["Georgian"] = "ka";
-    CaptchaLang["German"] = "de";
-    CaptchaLang["GermanAustria"] = "de-AT";
-    CaptchaLang["GermanSwitzerland"] = "de-CH";
-    CaptchaLang["Greek"] = "el";
-    CaptchaLang["Gujarati"] = "gu";
-    CaptchaLang["Hebrew"] = "iw";
-    CaptchaLang["Hindi"] = "hi";
-    CaptchaLang["Hungarain"] = "hu";
-    CaptchaLang["Icelandic"] = "is";
-    CaptchaLang["Indonesian"] = "id";
-    CaptchaLang["Italian"] = "it";
-    CaptchaLang["Japanese"] = "ja";
-    CaptchaLang["Kannada"] = "kn";
-    CaptchaLang["Korean"] = "ko";
-    CaptchaLang["Laothian"] = "lo";
-    CaptchaLang["Latvian"] = "lv";
-    CaptchaLang["Lithuanian"] = "lt";
-    CaptchaLang["Malay"] = "ms";
-    CaptchaLang["Malayalam"] = "ml";
-    CaptchaLang["Marathi"] = "mr";
-    CaptchaLang["Mongolian"] = "mn";
-    CaptchaLang["Norwegian"] = "no";
-    CaptchaLang["Persian"] = "fa";
-    CaptchaLang["Polish"] = "pl";
-    CaptchaLang["Portuguese"] = "pt";
-    CaptchaLang["PortugueseBrazil"] = "pt-BR";
-    CaptchaLang["PortuguesePortugal"] = "pt-PT";
-    CaptchaLang["Romanian"] = "ro";
-    CaptchaLang["Russian"] = "ru";
-    CaptchaLang["Serbian"] = "sr";
-    CaptchaLang["Sinhalese"] = "si";
-    CaptchaLang["Slovak"] = "sk";
-    CaptchaLang["Slovenian"] = "sl";
-    CaptchaLang["Spanish"] = "es";
-    CaptchaLang["SpanishLatinAmerica"] = "es-419";
-    CaptchaLang["Swahili"] = "sw";
-    CaptchaLang["Swedish"] = "sv";
-    CaptchaLang["Tamil"] = "ta";
-    CaptchaLang["Telugu"] = "te";
-    CaptchaLang["Thai"] = "th";
-    CaptchaLang["Turkish"] = "tr";
-    CaptchaLang["Ukrainian"] = "uk";
-    CaptchaLang["Urdu"] = "ur";
-    CaptchaLang["Vietnamese"] = "vi";
-    CaptchaLang["Zulu"] = "zu";
-})(CaptchaLang = exports.CaptchaLang || (exports.CaptchaLang = {}));
-//# sourceMappingURL=types.js.map
+  return targetComponent;
+}
+//# sourceMappingURL=index.js.map
 
 /***/ }),
 
@@ -2214,4 +1799,4 @@ module.exports = invariant;
 /***/ })
 
 }]);
-//# sourceMappingURL=wixui.Captcha.chunk.js.map
+//# sourceMappingURL=wixui.ToggleSwitch.chunk.js.map
